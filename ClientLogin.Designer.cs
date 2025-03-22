@@ -267,7 +267,7 @@
             this.SignInButton.TabIndex = 9;
             this.SignInButton.Text = "Sign In";
             this.SignInButton.UseVisualStyleBackColor = false;
-            this.SignInButton.Click += new System.EventHandler(this.LoginButton_Click);
+            this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
             // EmailSLabel
             // 

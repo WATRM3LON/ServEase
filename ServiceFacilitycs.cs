@@ -259,7 +259,7 @@ namespace OOP2
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
             PButton.BackColor = Color.White;
-            SOAPanel.Visible = false;
+            //SOAPanel.Visible = false;
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;

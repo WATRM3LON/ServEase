@@ -3897,10 +3897,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(914, 681);
+            this.Controls.Add(this.ProfilePanel);
             this.Controls.Add(this.NotificationPanel);
             this.Controls.Add(this.ATPanel);
             this.Controls.Add(this.ServicesOfferedPanel);
-            this.Controls.Add(this.ProfilePanel);
             this.Controls.Add(this.ViewdetailsPanel);
             this.Controls.Add(this.SettingsPanel);
             this.Controls.Add(this.AnalyticPannel2);

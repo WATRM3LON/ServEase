@@ -137,5 +137,12 @@ namespace OOP2
             ClientDashboard clientDashboard = new ClientDashboard();
             clientDashboard.ShowDialog();
         }
+
+        private void SignInButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin admin = new Admin();
+            admin.ShowDialog();
+        }
     }
 }
