@@ -14,7 +14,7 @@ namespace OOP2
 {
     public partial class ClientDashboard : Form
     {
-        bool dbp1 = false, dbp2 = false;
+        bool dbp1 = false, dbp2 = false, notify = false, dashboard, services, ser, profile, calendar;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
             (
@@ -38,10 +38,23 @@ namespace OOP2
             ServicesPanel.Visible = false;
             SerPanel.Visible = false;
             SerButton.Visible = false;
+            CalendarAppointmentPanel.Visible = false;
+            CalendarPanel.Visible = false;
+            AppointmentsPanel.Visible = false;
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            ProfilePanel.Visible = false;
+            NotificationPanel.Visible = false;
+            SettingPanel.Visible = false;
+            panel44.Visible = false;
+            FacilityProPanel.Visible = false;  
+            FPButton.Visible = false;
+            FacilityProPanel2.Visible = false;
         }
 
         public void Loaders()
         {
+            NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
             DashboardPanel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel2.Width, DashboardPanel2.Height, 20, 20));
@@ -55,8 +68,6 @@ namespace OOP2
             PButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PButton.Width, PButton.Height, 20, 20));
             SettingsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SettingsButton.Width, SettingsButton.Height, 10, 10));
             StButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, StButton.Width, StButton.Height, 20, 20));
-            HelpButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HelpButton.Width, HelpButton.Height, 10, 10));
-            HButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HButton.Width, HButton.Height, 20, 20));
             LogoutButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogoutButton.Width, LogoutButton.Height, 10, 10));
             LButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LButton.Width, LButton.Height, 20, 20));
             SearchButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SearchButton.Width, SearchButton.Height, 10, 10));
@@ -100,6 +111,51 @@ namespace OOP2
             button25.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button25.Width, button25.Height, 10, 10));
             //SERVICES 2
             SerPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerPanel.Width, SerPanel.Height, 10, 10));
+            panel48.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel48.Width, panel48.Height, 10, 10));
+            panel47.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel47.Width, panel47.Height, 10, 10));
+            EditButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton.Width, EditButton.Height, 10, 10));
+            BAPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BAPanel.Width, BAPanel.Height, 10, 10));
+            panel93.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel93.Width, panel93.Height, 10, 10));
+            panel71.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel71.Width, panel71.Height, 10, 10));
+            //Calendar
+            CalendarPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CalendarPanel.Width, CalendarPanel.Height, 10, 10));
+            calendarsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, calendarsButton.Width, calendarsButton.Height, 10, 10));
+            //Appointment
+            AppointmentsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentsPanel.Width, AppointmentsPanel.Height, 10, 10));
+            appointmentsbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, appointmentsbutton.Width, appointmentsbutton.Height, 10, 10));
+            button43.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button43.Width, button43.Height, 10, 10));
+            button44.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button44.Width, button44.Height, 10, 10));
+            button45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button45.Width, button45.Height, 10, 10));
+            panel39.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel39.Width, panel39.Height, 10, 10));
+            panel40.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel40.Width, panel40.Height, 10, 10));
+            panel41.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel41.Width, panel41.Height, 10, 10));
+            panel42.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel42.Width, panel42.Height, 10, 10));
+            panel43.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel43.Width, panel43.Height, 10, 10));
+            panel38.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel38.Width, panel38.Height, 10, 10));
+            panel44.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel44.Width, panel44.Height, 10, 10));
+            //APPOINTMENT DETAILS
+            AstoreproPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AstoreproPanel.Width, AstoreproPanel.Height, 10, 10));
+            AstatPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AstatPanel.Width, AstatPanel.Height, 10, 10));
+            ReschedButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ReschedButton.Width, ReschedButton.Height, 10, 10));
+            AproPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AproPanel.Width, AproPanel.Height, 10, 10));
+            //PROFILE
+            ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
+            PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
+            GPPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GPPanel.Width, GPPanel.Height, 10, 10));
+            button47.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button47.Width, button47.Height, 10, 10));
+            button48.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button48.Width, button48.Height, 10, 10));
+            button49.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button49.Width, button49.Height, 10, 10));
+            button60.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button60.Width, button60.Height, 10, 10));
+            //SETTINGS
+            GeneralPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GeneralPanel.Width, GeneralPanel.Height, 10, 10));
+            AppearancePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppearancePanel.Width, AppearancePanel.Height, 10, 10));
+            NotsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotsPanel.Width, NotsPanel.Height, 10, 10));
+            AccsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AccsPanel.Width, AccsPanel.Height, 10, 10));
+            PrivPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PrivPanel.Width, PrivPanel.Height, 10, 10));
+            AccessPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AccessPanel.Width, AccessPanel.Height, 10, 10));
+            AboutPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AboutPanel.Width, AboutPanel.Height, 10, 10));
+            HelpPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HelpPanel.Width, HelpPanel.Height, 10, 10));
+            panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
 
         }
         private void CloseButton_Click(object sender, EventArgs e)
@@ -114,7 +170,7 @@ namespace OOP2
 
         private void CloseButton_MouseLeave(object sender, EventArgs e)
         {
-            CloseButton.BackColor = ColorTranslator.FromHtml("#f7fff3");
+            CloseButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
         }
 
         private void MaximizeButton_MouseHover(object sender, EventArgs e)
@@ -124,7 +180,7 @@ namespace OOP2
 
         private void MaximizeButton_MouseLeave(object sender, EventArgs e)
         {
-            MaximizeButton.BackColor = ColorTranslator.FromHtml("#f7fff3");
+            MaximizeButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
         }
 
         private void MaximizeButton_Click(object sender, EventArgs e)
@@ -151,17 +207,20 @@ namespace OOP2
         {
             MinimizeButton.BackColor = ColorTranslator.FromHtml("#81eedf");
         }
+        private void MinimizeButton_MouseLeave(object sender, EventArgs e)
+        {
+            MinimizeButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+        }
 
         private void LogoButton_Click(object sender, EventArgs e)
         {
             dbp1 = false;
             dbp2 = true;
             DashboardPanel.Visible = false;
-            panel1.Visible = false;
+            panel1.Visible = true;
             DashboardPanel2.Visible = true;
-            HeaderPanel.Location = new Point(90,44);
-            //HiLabel.Location = new Point(105, 51);
-            //WelcomeLabel.Location = new Point(102, 76);
+            HeaderPanel.Location = new Point(75,44);
+            panel44.Visible = true;
         }
 
         private void LogosButton_Click(object sender, EventArgs e)
@@ -171,10 +230,8 @@ namespace OOP2
             DashboardPanel.Visible = true;
             panel1.Visible = true;
             DashboardPanel2.Visible = false;
-            HeaderPanel.Location = new Point(193, 44);
-            //HiLabel.Location = new Point(272, 51);
-            //WelcomeLabel.Location = new Point(269, 76);
-
+            HeaderPanel.Location = new Point(190, 44);
+            panel44.Visible = false;
         }
 
         private void panel2_MouseHover(object sender, EventArgs e)
@@ -225,36 +282,129 @@ namespace OOP2
             ClientLogin clientLogin = new ClientLogin();
             clientLogin.ShowDialog();
         }
+        private void NotifyButton_Click(object sender, EventArgs e)
+        {
+            
+            if(notify == false)
+            {
+                NotificationPanel.Visible = true;
+                NotifyButton.BackColor = Color.White;
+                notify = true;
+            }
+            else
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            
+        }
+        private void NotiCloseButton_Click(object sender, EventArgs e)
+        {
+            NotificationPanel.Visible = false;
+            notify = false;
+        }
 
         private void ServicesButton_Click(object sender, EventArgs e)
         {
+            //DASHBOARD
             AppointmentPanel.Visible = false;
             panel3.Visible = false;
             HiLabel.Visible = false;
+            WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Services";
-            ServicesPanel.Visible = true;
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
+            SearchPanel.Visible = true;
+            panel45.Visible = false;
+            //SERVICES
+            ServicesPanel.Visible = true;
             ServicesButton.BackColor = ColorTranslator.FromHtml("#69e331");
             SButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            //SERVICES2
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            //CALENDAR
+            CalendarAppointmentPanel.Visible = false;
+            CalendarPanel.Visible = false;
+            CalendarButton.BackColor = Color.White;
+            CButton.BackColor = Color.White;
+            calendarsButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
+            calendarsButton.FlatStyle = FlatStyle.System;
+            //Appointment
+            AppointmentsPanel.Visible = false;
+            appointmentsbutton.FlatStyle = FlatStyle.Flat;
+            appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            //PROFILE
+            ProfilePanel.Visible = false;
+            ProfileButton.BackColor = Color.White;
+            PButton.BackColor = Color.White;
+            //SETTINGS
+            SettingPanel.Visible = false;
+            SettingsButton.BackColor = Color.White;
+            StButton.BackColor = Color.White;
+            if(notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
         }
 
         private void DashboardButton_Click(object sender, EventArgs e)
         {
+            //DASHBOARD
             AppointmentPanel.Visible = true;
             panel3.Visible = true;
             HiLabel.Visible = true;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Welcome ServEase!";
-            //SERVICES
-            ServicesPanel.Visible = false;
             DashboardButton.BackColor = ColorTranslator.FromHtml("#69e331");
             Dbutton.BackColor = ColorTranslator.FromHtml("#69e331");
+            SearchPanel.Visible = true;
+            panel45.Visible = true;
+            //SERVICES
+            ServicesPanel.Visible = false;
             ServicesButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
             //SERVICES2
             SerButton.Visible = false;
             SerPanel.Visible = false;
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            //CALENDAR
+            CalendarAppointmentPanel.Visible = false;
+            CalendarPanel.Visible = false;
+            CalendarButton.BackColor = Color.White;
+            CButton.BackColor = Color.White;
+            calendarsButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
+            calendarsButton.FlatStyle = FlatStyle.System;
+            //Appointment
+            AppointmentsPanel.Visible = false;
+            appointmentsbutton.FlatStyle = FlatStyle.Flat;
+            appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            //PROFILE
+            ProfilePanel.Visible = false;
+            ProfileButton.BackColor = Color.White;
+            PButton.BackColor = Color.White;
+            //SETTINGS
+            SettingPanel.Visible = false;
+            SettingsButton.BackColor = Color.White;
+            StButton.BackColor = Color.White;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -263,27 +413,381 @@ namespace OOP2
             SerButton.Visible = true;
             SerPanel.Visible = true;
             ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+
+        private void DashboardPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DashboardPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SerStoreButton1_Click(object sender, EventArgs e)
+        {
+            //PROFILE
+            FacilityProPanel.Visible = true;
+            FPButton.Visible = true;
+            FacilityProPanel2.Visible = false;
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+
+        private void FPButton_Click(object sender, EventArgs e)
+        {
+            //PROFILE
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+
+        private void label152_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = true;
+            FPButton.Visible = true;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
         }
 
         private void SerButton_Click(object sender, EventArgs e)
         {
-            SerPanel.Visible = false;
-            SerButton.Visible = false;
+            //DASHBOARD
+            AppointmentPanel.Visible = false;
             panel3.Visible = false;
             HiLabel.Visible = false;
-            WelcomeLabel.Visible= true;
+            WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Services";
-            ServicesPanel.Visible = true;
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
+            panel45.Visible = false;
+            //SERVICES
+            ServicesPanel.Visible = true;
             ServicesButton.BackColor = ColorTranslator.FromHtml("#69e331");
             SButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            //SERVICES2
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            //CALENDAR
+            CalendarAppointmentPanel.Visible = false;
+            CalendarPanel.Visible = false;
+            AppointmentsPanel.Visible = false;
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            //PROFILE
+            ProfilePanel.Visible = false;
+            ProfileButton.BackColor = Color.White;
+            PButton.BackColor = Color.White;
+            //SETTINGS
+            SettingPanel.Visible = false;
+            SettingsButton.BackColor = Color.White;
+            StButton.BackColor = Color.White;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
         }
 
-        private void MinimizeButton_MouseLeave(object sender, EventArgs e)
+        private void CalendarButton_Click(object sender, EventArgs e)
         {
-            MinimizeButton.BackColor = ColorTranslator.FromHtml("#f7fff3");
+            //DASHBOARD
+            AppointmentPanel.Visible = false;
+            panel3.Visible = false;
+            HiLabel.Visible = false;
+            WelcomeLabel.Visible = true;
+            WelcomeLabel.Text = "Calendar";
+            DashboardButton.BackColor = Color.White;
+            Dbutton.BackColor = Color.White;
+            SearchPanel.Visible = false;
+            panel45.Visible = false;
+            //SERVICES
+            ServicesPanel.Visible = false;
+            ServicesButton.BackColor = Color.White;
+            SButton.BackColor = Color.White;
+            //SERVICES2
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            //CALENDAR
+            CalendarAppointmentPanel.Visible = true;
+            CalendarPanel.Visible = true;
+            CalendarButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            CButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            calendarsButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
+            calendarsButton.FlatStyle = FlatStyle.System;
+            //Appointment
+            AppointmentsPanel.Visible = false;
+            appointmentsbutton.FlatStyle = FlatStyle.Flat;
+            appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            //PROFILE
+            ProfilePanel.Visible = false;
+            ProfileButton.BackColor = Color.White;
+            PButton.BackColor = Color.White;
+            //SETTINGS
+            SettingPanel.Visible = false;
+            SettingsButton.BackColor = Color.White;
+            StButton.BackColor = Color.White;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
         }
 
+        private void appointmentsbutton_Click(object sender, EventArgs e)
+        {
+            //DASHBOARD
+            AppointmentPanel.Visible = false;
+            panel3.Visible = false;
+            HiLabel.Visible = false;
+            WelcomeLabel.Visible = true;
+            WelcomeLabel.Text = "Calendar";
+            DashboardButton.BackColor = Color.White;
+            Dbutton.BackColor = Color.White;
+            panel45.Visible = false;
+            //SERVICES
+            ServicesPanel.Visible = false;
+            ServicesButton.BackColor = Color.White;
+            SButton.BackColor = Color.White;
+            //SERVICES2
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            //CALENDAR
+            CalendarAppointmentPanel.Visible = true;
+            CalendarPanel.Visible = false;
+            CalendarButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            CButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            calendarsButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
+            calendarsButton.FlatStyle = FlatStyle.Flat;
+            //Appointment
+            AppointmentsPanel.Visible = true;
+            appointmentsbutton.FlatStyle = FlatStyle.System;
+            appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            //PROFILE
+            ProfilePanel.Visible = false;
+            ProfileButton.BackColor = Color.White;
+            PButton.BackColor = Color.White;
+            //SETTINGS
+            SettingPanel.Visible = false;
+            SettingsButton.BackColor = Color.White;
+            StButton.BackColor = Color.White;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            //DASHBOARD
+            AppointmentPanel.Visible = false;
+            panel3.Visible = false;
+            HiLabel.Visible = false;
+            WelcomeLabel.Visible = true;
+            WelcomeLabel.Text = "Calendar";
+            DashboardButton.BackColor = Color.White;
+            Dbutton.BackColor = Color.White;
+            panel45.Visible = false;
+            //SERVICES
+            ServicesPanel.Visible = false;
+            ServicesButton.BackColor = Color.White;
+            SButton.BackColor = Color.White;
+            //SERVICES2
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            //CALENDAR
+            CalendarAppointmentPanel.Visible = true;
+            CalendarPanel.Visible = false;
+            CalendarButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            CButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            calendarsButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
+            calendarsButton.FlatStyle = FlatStyle.Flat;
+            //Appointment
+            AppointmentsPanel.Visible = true;
+            appointmentsbutton.FlatStyle = FlatStyle.System;
+            appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            //PROFILE
+            ProfilePanel.Visible = false;
+            ProfileButton.BackColor = Color.White;
+            PButton.BackColor = Color.White;
+            //SETTINGS
+            SettingPanel.Visible = false;
+            SettingsButton.BackColor = Color.White;
+            StButton.BackColor = Color.White;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            button41.Visible = true;
+            AppointmentsPanel.Visible = false;
+            CalendarAppointmentPanel.Visible = false;
+            ViewdetailsPanel.Visible = true;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+
+
+        private void ProfileButton_Click(object sender, EventArgs e)
+        {
+            //DASHBOARD
+            AppointmentPanel.Visible = false;
+            panel3.Visible = false;
+            HiLabel.Visible = false;
+            WelcomeLabel.Visible = true;
+            WelcomeLabel.Text = "Profile";
+            DashboardButton.BackColor = Color.White;
+            Dbutton.BackColor = Color.White;
+            panel45.Visible = false;
+            //SERVICES
+            ServicesPanel.Visible = false;
+            ServicesButton.BackColor = Color.White;
+            SButton.BackColor = Color.White;
+            //SERVICES2
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            //CALENDAR
+            CalendarAppointmentPanel.Visible = false;
+            CalendarPanel.Visible = false;
+            CalendarButton.BackColor = Color.White;
+            CButton.BackColor = Color.White;
+            calendarsButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
+            calendarsButton.FlatStyle = FlatStyle.Flat;
+            //Appointment
+            AppointmentsPanel.Visible = false;
+            appointmentsbutton.FlatStyle = FlatStyle.System;
+            appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            //PROFILE
+            ProfilePanel.Visible = true;
+            ProfileButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            PButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            //SETTINGS
+            SettingPanel.Visible = false;
+            SettingsButton.BackColor = Color.White;
+            StButton.BackColor = Color.White;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            //DASHBOARD
+            AppointmentPanel.Visible = false;
+            panel3.Visible = false;
+            HiLabel.Visible = false;
+            WelcomeLabel.Visible = true;
+            WelcomeLabel.Text = "Settings";
+            DashboardButton.BackColor = Color.White;
+            Dbutton.BackColor = Color.White;
+            panel45.Visible = false;
+            //SERVICES
+            ServicesPanel.Visible = false;
+            ServicesButton.BackColor = Color.White;
+            SButton.BackColor = Color.White;
+            //SERVICES2
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            FacilityProPanel.Visible = false;
+            FacilityProPanel2.Visible = false;
+            FPButton.Visible = false;
+            //CALENDAR
+            CalendarAppointmentPanel.Visible = false;
+            CalendarPanel.Visible = false;
+            CalendarButton.BackColor = Color.White;
+            CButton.BackColor = Color.White;
+            calendarsButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
+            calendarsButton.FlatStyle = FlatStyle.Flat;
+            //Appointment
+            AppointmentsPanel.Visible = false;
+            appointmentsbutton.FlatStyle = FlatStyle.System;
+            appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
+            button41.Visible = false;
+            ViewdetailsPanel.Visible = false;
+            //PROFILE
+            ProfilePanel.Visible = false;
+            ProfileButton.BackColor = Color.White;
+            PButton.BackColor = Color.White;
+            //SETTINGS
+            SettingPanel.Visible = true;
+            SettingsButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            StButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
     }
 }

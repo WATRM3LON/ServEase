@@ -113,11 +113,6 @@ namespace OOP2
             Loaders();
         }
 
-        private void NameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void LogButton_Click(object sender, EventArgs e)
         {
             SigninPanel.Visible = false;
@@ -134,6 +129,13 @@ namespace OOP2
             this.Hide();
             ClientLogin clientLogin = new ClientLogin();
             clientLogin.ShowDialog();
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ServiceFacilitycs serviceFacilitycs = new ServiceFacilitycs();
+            serviceFacilitycs.ShowDialog();
         }
 
     }

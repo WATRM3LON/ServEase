@@ -59,7 +59,7 @@ namespace OOP2
 
         private void CloseButton_MouseLeave(object sender, EventArgs e)
         {
-            CloseButton.BackColor = ColorTranslator.FromHtml("#f7fff3");
+            CloseButton.BackColor = ColorTranslator.FromHtml("#e8f5e9");
         }
 
         private void MaximizeButton_MouseHover(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace OOP2
 
         private void MaximizeButton_MouseLeave(object sender, EventArgs e)
         {
-            MaximizeButton.BackColor = ColorTranslator.FromHtml("#f7fff3");
+            MaximizeButton.BackColor = ColorTranslator.FromHtml("#e8f5e9");
         }
 
         private void MaximizeButton_Click(object sender, EventArgs e)
@@ -99,7 +99,7 @@ namespace OOP2
 
         private void MinimizeButton_MouseLeave(object sender, EventArgs e)
         {
-            MinimizeButton.BackColor = ColorTranslator.FromHtml("#f7fff3");
+            MinimizeButton.BackColor = ColorTranslator.FromHtml("#e8f5e9");
         }
 
         private void SignButton_Click(object sender, EventArgs e)
