@@ -35,6 +35,7 @@ namespace OOP2
         {
             InitializeComponent();
             Loaders();
+            NmatchLabel.Visible = false;
         }
         public void Loaders()
         {
@@ -148,7 +149,7 @@ namespace OOP2
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-
+            NmatchLabel.Visible = false;
             myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb");
             ds = new DataSet();
             myConn.Open();
@@ -173,9 +174,19 @@ namespace OOP2
                 }
             }
 
-            this.Hide();
-            Admin admin = new Admin();
-            admin.ShowDialog();
+            if(PasswordSTextBox.Text != CPasswordTextBox.Text)
+            {
+                NmatchLabel.Visible = true;
+                PasswordSTextBox.Text = string.Empty;
+                CPasswordTextBox.Text = string.Empty;
+                
+            }
+            else
+            {
+                this.Hide();
+                Admin admin = new Admin();
+                admin.ShowDialog();
+            }
         }
     }
 }

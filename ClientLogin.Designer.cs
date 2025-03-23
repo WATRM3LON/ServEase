@@ -35,6 +35,7 @@
             LogButton = new System.Windows.Forms.Button();
             GifBox = new System.Windows.Forms.PictureBox();
             SigninPanel = new System.Windows.Forms.Panel();
+            NmatchLabel = new System.Windows.Forms.Label();
             LnamePanel = new System.Windows.Forms.Panel();
             LNameTextBox = new System.Windows.Forms.TextBox();
             LNameLabel = new System.Windows.Forms.Label();
@@ -159,6 +160,7 @@
             // 
             SigninPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             SigninPanel.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            SigninPanel.Controls.Add(NmatchLabel);
             SigninPanel.Controls.Add(LnamePanel);
             SigninPanel.Controls.Add(LNameLabel);
             SigninPanel.Controls.Add(FnamePanel);
@@ -177,6 +179,18 @@
             SigninPanel.Size = new System.Drawing.Size(520, 653);
             SigninPanel.TabIndex = 11;
             SigninPanel.Visible = false;
+            // 
+            // NmatchLabel
+            // 
+            NmatchLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            NmatchLabel.AutoSize = true;
+            NmatchLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            NmatchLabel.ForeColor = System.Drawing.Color.Red;
+            NmatchLabel.Location = new System.Drawing.Point(157, 547);
+            NmatchLabel.Name = "NmatchLabel";
+            NmatchLabel.Size = new System.Drawing.Size(196, 23);
+            NmatchLabel.TabIndex = 21;
+            NmatchLabel.Text = "Passwords do not match";
             // 
             // LnamePanel
             // 
@@ -282,7 +296,7 @@
             SignInButton.FlatAppearance.BorderSize = 0;
             SignInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SignInButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            SignInButton.Location = new System.Drawing.Point(52, 574);
+            SignInButton.Location = new System.Drawing.Point(50, 585);
             SignInButton.Name = "SignInButton";
             SignInButton.Size = new System.Drawing.Size(422, 51);
             SignInButton.TabIndex = 9;
@@ -360,7 +374,6 @@
             PasswordSTextBox.Location = new System.Drawing.Point(3, 10);
             PasswordSTextBox.Multiline = true;
             PasswordSTextBox.Name = "PasswordSTextBox";
-            PasswordSTextBox.PasswordChar = '*';
             PasswordSTextBox.Size = new System.Drawing.Size(416, 37);
             PasswordSTextBox.TabIndex = 13;
             // 
@@ -382,7 +395,6 @@
             CPasswordTextBox.Location = new System.Drawing.Point(3, 10);
             CPasswordTextBox.Multiline = true;
             CPasswordTextBox.Name = "CPasswordTextBox";
-            CPasswordTextBox.PasswordChar = '*';
             CPasswordTextBox.Size = new System.Drawing.Size(416, 37);
             CPasswordTextBox.TabIndex = 17;
             // 
@@ -666,5 +678,6 @@
         private System.Windows.Forms.Panel LnamePanel;
         private System.Windows.Forms.TextBox LNameTextBox;
         private System.Windows.Forms.Label LNameLabel;
+        private System.Windows.Forms.Label NmatchLabel;
     }
 }
