@@ -29,606 +29,600 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientLogin));
-            this.GreenPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SignButton = new System.Windows.Forms.Button();
-            this.LogButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.SigninPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.CPasswordLabel = new System.Windows.Forms.Label();
-            this.ContactNumberLabel = new System.Windows.Forms.Label();
-            this.PasswordSLabel = new System.Windows.Forms.Label();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.SignInButton = new System.Windows.Forms.Button();
-            this.EmailSLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.EmailSTextBox = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.CNumberTextBox = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.PasswordSTextBox = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.CPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.CloseButton = new System.Windows.Forms.Button();
-            this.MaximizeButton = new System.Windows.Forms.Button();
-            this.MinimizeButton = new System.Windows.Forms.Button();
-            this.EmailLLabel = new System.Windows.Forms.Label();
-            this.EmailLTextBox = new System.Windows.Forms.TextBox();
-            this.LogInPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
-            this.PasswordLLabel = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.PasswordLTextBox = new System.Windows.Forms.TextBox();
-            this.ServiceFacilityButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.GreenPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SigninPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.LogInPanel.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            GreenPanel = new System.Windows.Forms.Panel();
+            button1 = new System.Windows.Forms.Button();
+            SignButton = new System.Windows.Forms.Button();
+            LogButton = new System.Windows.Forms.Button();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            SigninPanel = new System.Windows.Forms.Panel();
+            LnamePanel = new System.Windows.Forms.Panel();
+            LNameTextBox = new System.Windows.Forms.TextBox();
+            LNameLabel = new System.Windows.Forms.Label();
+            FnamePanel = new System.Windows.Forms.Panel();
+            FNameTextBox = new System.Windows.Forms.TextBox();
+            CPasswordLabel = new System.Windows.Forms.Label();
+            ContactNumberLabel = new System.Windows.Forms.Label();
+            PasswordSLabel = new System.Windows.Forms.Label();
+            FNameLabel = new System.Windows.Forms.Label();
+            SignInButton = new System.Windows.Forms.Button();
+            EmailSLabel = new System.Windows.Forms.Label();
+            EmailSPanel = new System.Windows.Forms.Panel();
+            EmailSTextBox = new System.Windows.Forms.TextBox();
+            panel3 = new System.Windows.Forms.Panel();
+            CNumberS = new System.Windows.Forms.TextBox();
+            panel4 = new System.Windows.Forms.Panel();
+            PasswordSTextBox = new System.Windows.Forms.TextBox();
+            panel5 = new System.Windows.Forms.Panel();
+            CPasswordTextBox = new System.Windows.Forms.TextBox();
+            CloseButton = new System.Windows.Forms.Button();
+            MaximizeButton = new System.Windows.Forms.Button();
+            MinimizeButton = new System.Windows.Forms.Button();
+            EmailLLabel = new System.Windows.Forms.Label();
+            EmailLTextBox = new System.Windows.Forms.TextBox();
+            LogInPanel = new System.Windows.Forms.Panel();
+            label1 = new System.Windows.Forms.Label();
+            LoginButton = new System.Windows.Forms.Button();
+            PasswordLLabel = new System.Windows.Forms.Label();
+            panel6 = new System.Windows.Forms.Panel();
+            panel7 = new System.Windows.Forms.Panel();
+            PasswordLTextBox = new System.Windows.Forms.TextBox();
+            ServiceFacilityButton = new System.Windows.Forms.Button();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            label2 = new System.Windows.Forms.Label();
+            GreenPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SigninPanel.SuspendLayout();
+            LnamePanel.SuspendLayout();
+            FnamePanel.SuspendLayout();
+            EmailSPanel.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            LogInPanel.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // GreenPanel
             // 
-            this.GreenPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.GreenPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(227)))), ((int)(((byte)(49)))));
-            this.GreenPanel.Controls.Add(this.button1);
-            this.GreenPanel.Controls.Add(this.SignButton);
-            this.GreenPanel.Controls.Add(this.LogButton);
-            this.GreenPanel.Controls.Add(this.pictureBox2);
-            this.GreenPanel.Location = new System.Drawing.Point(0, 0);
-            this.GreenPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.GreenPanel.Name = "GreenPanel";
-            this.GreenPanel.Size = new System.Drawing.Size(435, 726);
-            this.GreenPanel.TabIndex = 0;
+            GreenPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            GreenPanel.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
+            GreenPanel.Controls.Add(button1);
+            GreenPanel.Controls.Add(SignButton);
+            GreenPanel.Controls.Add(LogButton);
+            GreenPanel.Controls.Add(pictureBox2);
+            GreenPanel.Location = new System.Drawing.Point(0, 0);
+            GreenPanel.Name = "GreenPanel";
+            GreenPanel.Size = new System.Drawing.Size(580, 982);
+            GreenPanel.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(227)))), ((int)(((byte)(49)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(243)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(269, 639);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 70);
-            this.button1.TabIndex = 15;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = false;
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            button1.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
+            button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(247, 255, 243);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            button1.Location = new System.Drawing.Point(359, 860);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(203, 108);
+            button1.TabIndex = 15;
+            button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            button1.UseVisualStyleBackColor = false;
             // 
             // SignButton
             // 
-            this.SignButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SignButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(227)))), ((int)(((byte)(49)))));
-            this.SignButton.FlatAppearance.BorderSize = 0;
-            this.SignButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SignButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SignButton.Location = new System.Drawing.Point(331, 328);
-            this.SignButton.Margin = new System.Windows.Forms.Padding(2);
-            this.SignButton.Name = "SignButton";
-            this.SignButton.Size = new System.Drawing.Size(110, 51);
-            this.SignButton.TabIndex = 13;
-            this.SignButton.Text = "Sign In";
-            this.SignButton.UseVisualStyleBackColor = false;
-            this.SignButton.Click += new System.EventHandler(this.SignButton_Click);
+            SignButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SignButton.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
+            SignButton.FlatAppearance.BorderSize = 0;
+            SignButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            SignButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SignButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            SignButton.Location = new System.Drawing.Point(441, 505);
+            SignButton.Name = "SignButton";
+            SignButton.Size = new System.Drawing.Size(139, 78);
+            SignButton.TabIndex = 13;
+            SignButton.Text = "Sign In";
+            SignButton.UseVisualStyleBackColor = false;
+            SignButton.Click += SignButton_Click;
             // 
             // LogButton
             // 
-            this.LogButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(243)))));
-            this.LogButton.FlatAppearance.BorderSize = 0;
-            this.LogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogButton.Location = new System.Drawing.Point(331, 260);
-            this.LogButton.Margin = new System.Windows.Forms.Padding(2);
-            this.LogButton.Name = "LogButton";
-            this.LogButton.Size = new System.Drawing.Size(110, 51);
-            this.LogButton.TabIndex = 12;
-            this.LogButton.Text = "Log In";
-            this.LogButton.UseVisualStyleBackColor = false;
-            this.LogButton.Click += new System.EventHandler(this.LogButton_Click);
+            LogButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            LogButton.BackColor = System.Drawing.Color.FromArgb(247, 255, 243);
+            LogButton.FlatAppearance.BorderSize = 0;
+            LogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            LogButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            LogButton.Location = new System.Drawing.Point(441, 400);
+            LogButton.Name = "LogButton";
+            LogButton.Size = new System.Drawing.Size(139, 78);
+            LogButton.TabIndex = 12;
+            LogButton.Text = "Log In";
+            LogButton.UseVisualStyleBackColor = false;
+            LogButton.Click += LogButton_Click;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(435, 726);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new System.Drawing.Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(580, 982);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
             // 
             // SigninPanel
             // 
-            this.SigninPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.SigninPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.SigninPanel.Controls.Add(this.panel1);
-            this.SigninPanel.Controls.Add(this.CPasswordLabel);
-            this.SigninPanel.Controls.Add(this.ContactNumberLabel);
-            this.SigninPanel.Controls.Add(this.PasswordSLabel);
-            this.SigninPanel.Controls.Add(this.NameLabel);
-            this.SigninPanel.Controls.Add(this.SignInButton);
-            this.SigninPanel.Controls.Add(this.EmailSLabel);
-            this.SigninPanel.Controls.Add(this.panel2);
-            this.SigninPanel.Controls.Add(this.panel3);
-            this.SigninPanel.Controls.Add(this.panel4);
-            this.SigninPanel.Controls.Add(this.panel5);
-            this.SigninPanel.Location = new System.Drawing.Point(552, 167);
-            this.SigninPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.SigninPanel.Name = "SigninPanel";
-            this.SigninPanel.Size = new System.Drawing.Size(280, 468);
-            this.SigninPanel.TabIndex = 11;
-            this.SigninPanel.Visible = false;
+            SigninPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SigninPanel.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            SigninPanel.Controls.Add(LnamePanel);
+            SigninPanel.Controls.Add(LNameLabel);
+            SigninPanel.Controls.Add(FnamePanel);
+            SigninPanel.Controls.Add(CPasswordLabel);
+            SigninPanel.Controls.Add(ContactNumberLabel);
+            SigninPanel.Controls.Add(PasswordSLabel);
+            SigninPanel.Controls.Add(FNameLabel);
+            SigninPanel.Controls.Add(SignInButton);
+            SigninPanel.Controls.Add(EmailSLabel);
+            SigninPanel.Controls.Add(EmailSPanel);
+            SigninPanel.Controls.Add(panel3);
+            SigninPanel.Controls.Add(panel4);
+            SigninPanel.Controls.Add(panel5);
+            SigninPanel.Location = new System.Drawing.Point(654, 195);
+            SigninPanel.Name = "SigninPanel";
+            SigninPanel.Size = new System.Drawing.Size(520, 653);
+            SigninPanel.TabIndex = 11;
+            SigninPanel.Visible = false;
             // 
-            // panel1
+            // LnamePanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.NameTextBox);
-            this.panel1.Location = new System.Drawing.Point(40, 60);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(206, 33);
-            this.panel1.TabIndex = 18;
+            LnamePanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            LnamePanel.BackColor = System.Drawing.Color.White;
+            LnamePanel.Controls.Add(LNameTextBox);
+            LnamePanel.Location = new System.Drawing.Point(268, 78);
+            LnamePanel.Name = "LnamePanel";
+            LnamePanel.Size = new System.Drawing.Size(207, 51);
+            LnamePanel.TabIndex = 24;
             // 
-            // NameTextBox
+            // LNameTextBox
             // 
-            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTextBox.Location = new System.Drawing.Point(2, 5);
-            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.NameTextBox.Multiline = true;
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(202, 24);
-            this.NameTextBox.TabIndex = 11;
+            LNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            LNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            LNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            LNameTextBox.Location = new System.Drawing.Point(3, 6);
+            LNameTextBox.Multiline = true;
+            LNameTextBox.Name = "LNameTextBox";
+            LNameTextBox.Size = new System.Drawing.Size(203, 37);
+            LNameTextBox.TabIndex = 11;
+            // 
+            // LNameLabel
+            // 
+            LNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            LNameLabel.AutoSize = true;
+            LNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            LNameLabel.Location = new System.Drawing.Point(264, 35);
+            LNameLabel.Name = "LNameLabel";
+            LNameLabel.Size = new System.Drawing.Size(99, 25);
+            LNameLabel.TabIndex = 23;
+            LNameLabel.Text = "Last Name";
+            // 
+            // FnamePanel
+            // 
+            FnamePanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FnamePanel.BackColor = System.Drawing.Color.White;
+            FnamePanel.Controls.Add(FNameTextBox);
+            FnamePanel.Location = new System.Drawing.Point(53, 78);
+            FnamePanel.Name = "FnamePanel";
+            FnamePanel.Size = new System.Drawing.Size(207, 51);
+            FnamePanel.TabIndex = 18;
+            // 
+            // FNameTextBox
+            // 
+            FNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            FNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            FNameTextBox.Location = new System.Drawing.Point(3, 8);
+            FNameTextBox.Multiline = true;
+            FNameTextBox.Name = "FNameTextBox";
+            FNameTextBox.Size = new System.Drawing.Size(200, 37);
+            FNameTextBox.TabIndex = 11;
             // 
             // CPasswordLabel
             // 
-            this.CPasswordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CPasswordLabel.AutoSize = true;
-            this.CPasswordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPasswordLabel.Location = new System.Drawing.Point(23, 302);
-            this.CPasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CPasswordLabel.Name = "CPasswordLabel";
-            this.CPasswordLabel.Size = new System.Drawing.Size(162, 25);
-            this.CPasswordLabel.TabIndex = 16;
-            this.CPasswordLabel.Text = "Confirm Password";
+            CPasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CPasswordLabel.AutoSize = true;
+            CPasswordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            CPasswordLabel.Location = new System.Drawing.Point(31, 451);
+            CPasswordLabel.Name = "CPasswordLabel";
+            CPasswordLabel.Size = new System.Drawing.Size(162, 25);
+            CPasswordLabel.TabIndex = 16;
+            CPasswordLabel.Text = "Confirm Password";
             // 
             // ContactNumberLabel
             // 
-            this.ContactNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ContactNumberLabel.AutoSize = true;
-            this.ContactNumberLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContactNumberLabel.Location = new System.Drawing.Point(23, 167);
-            this.ContactNumberLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ContactNumberLabel.Name = "ContactNumberLabel";
-            this.ContactNumberLabel.Size = new System.Drawing.Size(150, 25);
-            this.ContactNumberLabel.TabIndex = 14;
-            this.ContactNumberLabel.Text = "Contact Number";
+            ContactNumberLabel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ContactNumberLabel.AutoSize = true;
+            ContactNumberLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ContactNumberLabel.Location = new System.Drawing.Point(31, 243);
+            ContactNumberLabel.Name = "ContactNumberLabel";
+            ContactNumberLabel.Size = new System.Drawing.Size(150, 25);
+            ContactNumberLabel.TabIndex = 14;
+            ContactNumberLabel.Text = "Contact Number";
             // 
             // PasswordSLabel
             // 
-            this.PasswordSLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordSLabel.AutoSize = true;
-            this.PasswordSLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordSLabel.Location = new System.Drawing.Point(23, 233);
-            this.PasswordSLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.PasswordSLabel.Name = "PasswordSLabel";
-            this.PasswordSLabel.Size = new System.Drawing.Size(90, 25);
-            this.PasswordSLabel.TabIndex = 12;
-            this.PasswordSLabel.Text = "Password";
+            PasswordSLabel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PasswordSLabel.AutoSize = true;
+            PasswordSLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PasswordSLabel.Location = new System.Drawing.Point(31, 344);
+            PasswordSLabel.Name = "PasswordSLabel";
+            PasswordSLabel.Size = new System.Drawing.Size(90, 25);
+            PasswordSLabel.TabIndex = 12;
+            PasswordSLabel.Text = "Password";
             // 
-            // NameLabel
+            // FNameLabel
             // 
-            this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(23, 32);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(61, 25);
-            this.NameLabel.TabIndex = 10;
-            this.NameLabel.Text = "Name";
+            FNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FNameLabel.AutoSize = true;
+            FNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FNameLabel.Location = new System.Drawing.Point(31, 35);
+            FNameLabel.Name = "FNameLabel";
+            FNameLabel.Size = new System.Drawing.Size(102, 25);
+            FNameLabel.TabIndex = 10;
+            FNameLabel.Text = "First Name";
             // 
             // SignInButton
             // 
-            this.SignInButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.SignInButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(238)))), ((int)(((byte)(223)))));
-            this.SignInButton.FlatAppearance.BorderSize = 0;
-            this.SignInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SignInButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignInButton.Location = new System.Drawing.Point(39, 395);
-            this.SignInButton.Margin = new System.Windows.Forms.Padding(2);
-            this.SignInButton.Name = "SignInButton";
-            this.SignInButton.Size = new System.Drawing.Size(206, 33);
-            this.SignInButton.TabIndex = 9;
-            this.SignInButton.Text = "Sign In";
-            this.SignInButton.UseVisualStyleBackColor = false;
-            this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
+            SignInButton.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SignInButton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            SignInButton.FlatAppearance.BorderSize = 0;
+            SignInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            SignInButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            SignInButton.Location = new System.Drawing.Point(52, 574);
+            SignInButton.Name = "SignInButton";
+            SignInButton.Size = new System.Drawing.Size(422, 51);
+            SignInButton.TabIndex = 9;
+            SignInButton.Text = "Sign In";
+            SignInButton.UseVisualStyleBackColor = false;
+            SignInButton.Click += SignInButton_Click;
             // 
             // EmailSLabel
             // 
-            this.EmailSLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailSLabel.AutoSize = true;
-            this.EmailSLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailSLabel.Location = new System.Drawing.Point(23, 98);
-            this.EmailSLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.EmailSLabel.Name = "EmailSLabel";
-            this.EmailSLabel.Size = new System.Drawing.Size(56, 25);
-            this.EmailSLabel.TabIndex = 0;
-            this.EmailSLabel.Text = "Email";
+            EmailSLabel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailSLabel.AutoSize = true;
+            EmailSLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            EmailSLabel.Location = new System.Drawing.Point(31, 137);
+            EmailSLabel.Name = "EmailSLabel";
+            EmailSLabel.Size = new System.Drawing.Size(56, 25);
+            EmailSLabel.TabIndex = 0;
+            EmailSLabel.Text = "Email";
             // 
-            // panel2
+            // EmailSPanel
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.EmailSTextBox);
-            this.panel2.Location = new System.Drawing.Point(40, 124);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(206, 33);
-            this.panel2.TabIndex = 19;
+            EmailSPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailSPanel.BackColor = System.Drawing.Color.White;
+            EmailSPanel.Controls.Add(EmailSTextBox);
+            EmailSPanel.Location = new System.Drawing.Point(53, 177);
+            EmailSPanel.Name = "EmailSPanel";
+            EmailSPanel.Size = new System.Drawing.Size(422, 51);
+            EmailSPanel.TabIndex = 19;
             // 
             // EmailSTextBox
             // 
-            this.EmailSTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailSTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EmailSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailSTextBox.Location = new System.Drawing.Point(2, 5);
-            this.EmailSTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.EmailSTextBox.Multiline = true;
-            this.EmailSTextBox.Name = "EmailSTextBox";
-            this.EmailSTextBox.Size = new System.Drawing.Size(202, 24);
-            this.EmailSTextBox.TabIndex = 6;
+            EmailSTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailSTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            EmailSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EmailSTextBox.Location = new System.Drawing.Point(3, 8);
+            EmailSTextBox.Multiline = true;
+            EmailSTextBox.Name = "EmailSTextBox";
+            EmailSTextBox.Size = new System.Drawing.Size(416, 37);
+            EmailSTextBox.TabIndex = 6;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.CNumberTextBox);
-            this.panel3.Location = new System.Drawing.Point(40, 193);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(206, 33);
-            this.panel3.TabIndex = 20;
+            panel3.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel3.BackColor = System.Drawing.Color.White;
+            panel3.Controls.Add(CNumberS);
+            panel3.Location = new System.Drawing.Point(53, 283);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(422, 51);
+            panel3.TabIndex = 20;
             // 
-            // CNumberTextBox
+            // CNumberS
             // 
-            this.CNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CNumberTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CNumberTextBox.Location = new System.Drawing.Point(2, 5);
-            this.CNumberTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.CNumberTextBox.Multiline = true;
-            this.CNumberTextBox.Name = "CNumberTextBox";
-            this.CNumberTextBox.Size = new System.Drawing.Size(202, 24);
-            this.CNumberTextBox.TabIndex = 15;
+            CNumberS.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CNumberS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            CNumberS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CNumberS.Location = new System.Drawing.Point(3, 8);
+            CNumberS.Multiline = true;
+            CNumberS.Name = "CNumberS";
+            CNumberS.Size = new System.Drawing.Size(416, 37);
+            CNumberS.TabIndex = 15;
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.PasswordSTextBox);
-            this.panel4.Location = new System.Drawing.Point(40, 261);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(206, 33);
-            this.panel4.TabIndex = 21;
+            panel4.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel4.BackColor = System.Drawing.Color.White;
+            panel4.Controls.Add(PasswordSTextBox);
+            panel4.Location = new System.Drawing.Point(53, 388);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(422, 51);
+            panel4.TabIndex = 21;
             // 
             // PasswordSTextBox
             // 
-            this.PasswordSTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordSTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PasswordSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordSTextBox.Location = new System.Drawing.Point(2, 5);
-            this.PasswordSTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.PasswordSTextBox.Multiline = true;
-            this.PasswordSTextBox.Name = "PasswordSTextBox";
-            this.PasswordSTextBox.PasswordChar = '*';
-            this.PasswordSTextBox.Size = new System.Drawing.Size(202, 24);
-            this.PasswordSTextBox.TabIndex = 13;
+            PasswordSTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PasswordSTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            PasswordSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PasswordSTextBox.Location = new System.Drawing.Point(3, 8);
+            PasswordSTextBox.Multiline = true;
+            PasswordSTextBox.Name = "PasswordSTextBox";
+            PasswordSTextBox.PasswordChar = '*';
+            PasswordSTextBox.Size = new System.Drawing.Size(416, 37);
+            PasswordSTextBox.TabIndex = 13;
             // 
             // panel5
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.CPasswordTextBox);
-            this.panel5.Location = new System.Drawing.Point(40, 328);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(206, 33);
-            this.panel5.TabIndex = 22;
+            panel5.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel5.BackColor = System.Drawing.Color.White;
+            panel5.Controls.Add(CPasswordTextBox);
+            panel5.Location = new System.Drawing.Point(53, 491);
+            panel5.Name = "panel5";
+            panel5.Size = new System.Drawing.Size(422, 51);
+            panel5.TabIndex = 22;
             // 
             // CPasswordTextBox
             // 
-            this.CPasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPasswordTextBox.Location = new System.Drawing.Point(2, 5);
-            this.CPasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.CPasswordTextBox.Multiline = true;
-            this.CPasswordTextBox.Name = "CPasswordTextBox";
-            this.CPasswordTextBox.PasswordChar = '*';
-            this.CPasswordTextBox.Size = new System.Drawing.Size(202, 24);
-            this.CPasswordTextBox.TabIndex = 17;
+            CPasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            CPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CPasswordTextBox.Location = new System.Drawing.Point(3, 8);
+            CPasswordTextBox.Multiline = true;
+            CPasswordTextBox.Name = "CPasswordTextBox";
+            CPasswordTextBox.PasswordChar = '*';
+            CPasswordTextBox.Size = new System.Drawing.Size(416, 37);
+            CPasswordTextBox.TabIndex = 17;
             // 
             // CloseButton
             // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.FlatAppearance.BorderSize = 0;
-            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
-            this.CloseButton.Location = new System.Drawing.Point(887, 0);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(2);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(37, 41);
-            this.CloseButton.TabIndex = 1;
-            this.CloseButton.UseVisualStyleBackColor = true;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
-            this.CloseButton.MouseHover += new System.EventHandler(this.CloseButton_MouseHover);
+            CloseButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            CloseButton.FlatAppearance.BorderSize = 0;
+            CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            CloseButton.Image = (System.Drawing.Image)resources.GetObject("CloseButton.Image");
+            CloseButton.Location = new System.Drawing.Point(1183, 0);
+            CloseButton.Name = "CloseButton";
+            CloseButton.Size = new System.Drawing.Size(49, 63);
+            CloseButton.TabIndex = 1;
+            CloseButton.UseVisualStyleBackColor = true;
+            CloseButton.Click += CloseButton_Click;
+            CloseButton.MouseLeave += CloseButton_MouseLeave;
+            CloseButton.MouseHover += CloseButton_MouseHover;
             // 
             // MaximizeButton
             // 
-            this.MaximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MaximizeButton.FlatAppearance.BorderSize = 0;
-            this.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeButton.Image = ((System.Drawing.Image)(resources.GetObject("MaximizeButton.Image")));
-            this.MaximizeButton.Location = new System.Drawing.Point(844, 0);
-            this.MaximizeButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeButton.Name = "MaximizeButton";
-            this.MaximizeButton.Size = new System.Drawing.Size(37, 41);
-            this.MaximizeButton.TabIndex = 2;
-            this.MaximizeButton.UseVisualStyleBackColor = true;
-            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
-            this.MaximizeButton.MouseLeave += new System.EventHandler(this.MaximizeButton_MouseLeave);
-            this.MaximizeButton.MouseHover += new System.EventHandler(this.MaximizeButton_MouseHover);
+            MaximizeButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            MaximizeButton.FlatAppearance.BorderSize = 0;
+            MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            MaximizeButton.Image = (System.Drawing.Image)resources.GetObject("MaximizeButton.Image");
+            MaximizeButton.Location = new System.Drawing.Point(1125, 0);
+            MaximizeButton.Name = "MaximizeButton";
+            MaximizeButton.Size = new System.Drawing.Size(49, 63);
+            MaximizeButton.TabIndex = 2;
+            MaximizeButton.UseVisualStyleBackColor = true;
+            MaximizeButton.Click += MaximizeButton_Click;
+            MaximizeButton.MouseLeave += MaximizeButton_MouseLeave;
+            MaximizeButton.MouseHover += MaximizeButton_MouseHover;
             // 
             // MinimizeButton
             // 
-            this.MinimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinimizeButton.FlatAppearance.BorderSize = 0;
-            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("MinimizeButton.Image")));
-            this.MinimizeButton.Location = new System.Drawing.Point(804, 0);
-            this.MinimizeButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(37, 41);
-            this.MinimizeButton.TabIndex = 3;
-            this.MinimizeButton.UseVisualStyleBackColor = true;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            this.MinimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_MouseLeave);
-            this.MinimizeButton.MouseHover += new System.EventHandler(this.MinimizeButton_MouseHover);
+            MinimizeButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            MinimizeButton.FlatAppearance.BorderSize = 0;
+            MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            MinimizeButton.Image = (System.Drawing.Image)resources.GetObject("MinimizeButton.Image");
+            MinimizeButton.Location = new System.Drawing.Point(1072, 0);
+            MinimizeButton.Name = "MinimizeButton";
+            MinimizeButton.Size = new System.Drawing.Size(49, 63);
+            MinimizeButton.TabIndex = 3;
+            MinimizeButton.UseVisualStyleBackColor = true;
+            MinimizeButton.Click += MinimizeButton_Click;
+            MinimizeButton.MouseLeave += MinimizeButton_MouseLeave;
+            MinimizeButton.MouseHover += MinimizeButton_MouseHover;
             // 
             // EmailLLabel
             // 
-            this.EmailLLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailLLabel.AutoSize = true;
-            this.EmailLLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailLLabel.Location = new System.Drawing.Point(23, 24);
-            this.EmailLLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.EmailLLabel.Name = "EmailLLabel";
-            this.EmailLLabel.Size = new System.Drawing.Size(72, 32);
-            this.EmailLLabel.TabIndex = 0;
-            this.EmailLLabel.Text = "Email";
+            EmailLLabel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailLLabel.AutoSize = true;
+            EmailLLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            EmailLLabel.Location = new System.Drawing.Point(31, 37);
+            EmailLLabel.Name = "EmailLLabel";
+            EmailLLabel.Size = new System.Drawing.Size(72, 32);
+            EmailLLabel.TabIndex = 0;
+            EmailLLabel.Text = "Email";
             // 
             // EmailLTextBox
             // 
-            this.EmailLTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailLTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EmailLTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailLTextBox.Location = new System.Drawing.Point(2, 5);
-            this.EmailLTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.EmailLTextBox.Multiline = true;
-            this.EmailLTextBox.Name = "EmailLTextBox";
-            this.EmailLTextBox.Size = new System.Drawing.Size(202, 24);
-            this.EmailLTextBox.TabIndex = 6;
+            EmailLTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailLTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            EmailLTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EmailLTextBox.Location = new System.Drawing.Point(3, 8);
+            EmailLTextBox.Multiline = true;
+            EmailLTextBox.Name = "EmailLTextBox";
+            EmailLTextBox.Size = new System.Drawing.Size(269, 37);
+            EmailLTextBox.TabIndex = 6;
             // 
             // LogInPanel
             // 
-            this.LogInPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogInPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.LogInPanel.Controls.Add(this.label1);
-            this.LogInPanel.Controls.Add(this.LoginButton);
-            this.LogInPanel.Controls.Add(this.PasswordLLabel);
-            this.LogInPanel.Controls.Add(this.EmailLLabel);
-            this.LogInPanel.Controls.Add(this.panel6);
-            this.LogInPanel.Controls.Add(this.panel7);
-            this.LogInPanel.Location = new System.Drawing.Point(552, 219);
-            this.LogInPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.LogInPanel.Name = "LogInPanel";
-            this.LogInPanel.Size = new System.Drawing.Size(280, 294);
-            this.LogInPanel.TabIndex = 7;
+            LogInPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            LogInPanel.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            LogInPanel.Controls.Add(label1);
+            LogInPanel.Controls.Add(LoginButton);
+            LogInPanel.Controls.Add(PasswordLLabel);
+            LogInPanel.Controls.Add(EmailLLabel);
+            LogInPanel.Controls.Add(panel6);
+            LogInPanel.Controls.Add(panel7);
+            LogInPanel.Location = new System.Drawing.Point(724, 276);
+            LogInPanel.Name = "LogInPanel";
+            LogInPanel.Size = new System.Drawing.Size(373, 452);
+            LogInPanel.TabIndex = 7;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 249);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 23);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Forgot Password?";
+            label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Location = new System.Drawing.Point(33, 383);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(143, 23);
+            label1.TabIndex = 10;
+            label1.Text = "Forgot Password?";
             // 
             // LoginButton
             // 
-            this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(238)))), ((int)(((byte)(223)))));
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(39, 205);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(2);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(206, 33);
-            this.LoginButton.TabIndex = 9;
-            this.LoginButton.Text = "Log In";
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            LoginButton.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            LoginButton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            LoginButton.FlatAppearance.BorderSize = 0;
+            LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            LoginButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            LoginButton.Location = new System.Drawing.Point(52, 315);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new System.Drawing.Size(275, 51);
+            LoginButton.TabIndex = 9;
+            LoginButton.Text = "Log In";
+            LoginButton.UseVisualStyleBackColor = false;
+            LoginButton.Click += LoginButton_Click;
             // 
             // PasswordLLabel
             // 
-            this.PasswordLLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordLLabel.AutoSize = true;
-            this.PasswordLLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLLabel.Location = new System.Drawing.Point(23, 100);
-            this.PasswordLLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.PasswordLLabel.Name = "PasswordLLabel";
-            this.PasswordLLabel.Size = new System.Drawing.Size(115, 32);
-            this.PasswordLLabel.TabIndex = 7;
-            this.PasswordLLabel.Text = "Password";
+            PasswordLLabel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PasswordLLabel.AutoSize = true;
+            PasswordLLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PasswordLLabel.Location = new System.Drawing.Point(31, 154);
+            PasswordLLabel.Name = "PasswordLLabel";
+            PasswordLLabel.Size = new System.Drawing.Size(115, 32);
+            PasswordLLabel.TabIndex = 7;
+            PasswordLLabel.Text = "Password";
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.EmailLTextBox);
-            this.panel6.Location = new System.Drawing.Point(39, 50);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(206, 33);
-            this.panel6.TabIndex = 19;
+            panel6.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel6.BackColor = System.Drawing.Color.White;
+            panel6.Controls.Add(EmailLTextBox);
+            panel6.Location = new System.Drawing.Point(52, 77);
+            panel6.Name = "panel6";
+            panel6.Size = new System.Drawing.Size(275, 51);
+            panel6.TabIndex = 19;
             // 
             // panel7
             // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.PasswordLTextBox);
-            this.panel7.Location = new System.Drawing.Point(39, 128);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(206, 33);
-            this.panel7.TabIndex = 20;
+            panel7.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel7.BackColor = System.Drawing.Color.White;
+            panel7.Controls.Add(PasswordLTextBox);
+            panel7.Location = new System.Drawing.Point(52, 197);
+            panel7.Name = "panel7";
+            panel7.Size = new System.Drawing.Size(275, 51);
+            panel7.TabIndex = 20;
             // 
             // PasswordLTextBox
             // 
-            this.PasswordLTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordLTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PasswordLTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLTextBox.Location = new System.Drawing.Point(2, 5);
-            this.PasswordLTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.PasswordLTextBox.Multiline = true;
-            this.PasswordLTextBox.Name = "PasswordLTextBox";
-            this.PasswordLTextBox.PasswordChar = '*';
-            this.PasswordLTextBox.Size = new System.Drawing.Size(202, 24);
-            this.PasswordLTextBox.TabIndex = 8;
+            PasswordLTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PasswordLTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            PasswordLTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PasswordLTextBox.Location = new System.Drawing.Point(3, 8);
+            PasswordLTextBox.Multiline = true;
+            PasswordLTextBox.Name = "PasswordLTextBox";
+            PasswordLTextBox.PasswordChar = '*';
+            PasswordLTextBox.Size = new System.Drawing.Size(269, 37);
+            PasswordLTextBox.TabIndex = 8;
             // 
             // ServiceFacilityButton
             // 
-            this.ServiceFacilityButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ServiceFacilityButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(36)))), ((int)(((byte)(110)))));
-            this.ServiceFacilityButton.FlatAppearance.BorderSize = 0;
-            this.ServiceFacilityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ServiceFacilityButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceFacilityButton.Location = new System.Drawing.Point(716, 648);
-            this.ServiceFacilityButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ServiceFacilityButton.Name = "ServiceFacilityButton";
-            this.ServiceFacilityButton.Size = new System.Drawing.Size(166, 42);
-            this.ServiceFacilityButton.TabIndex = 11;
-            this.ServiceFacilityButton.Text = "Service Facility";
-            this.ServiceFacilityButton.UseVisualStyleBackColor = false;
-            this.ServiceFacilityButton.Click += new System.EventHandler(this.ServiceFacilityButton_Click);
+            ServiceFacilityButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            ServiceFacilityButton.BackColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            ServiceFacilityButton.FlatAppearance.BorderSize = 0;
+            ServiceFacilityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ServiceFacilityButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ServiceFacilityButton.Location = new System.Drawing.Point(955, 874);
+            ServiceFacilityButton.Name = "ServiceFacilityButton";
+            ServiceFacilityButton.Size = new System.Drawing.Size(221, 65);
+            ServiceFacilityButton.TabIndex = 11;
+            ServiceFacilityButton.Text = "Service Facility";
+            ServiceFacilityButton.UseVisualStyleBackColor = false;
+            ServiceFacilityButton.Click += ServiceFacilityButton_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(507, -59);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(374, 362);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new System.Drawing.Point(654, -153);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(499, 557);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(506, 660);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(261, 20);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Click here if you are a Service Provider";
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label2.Location = new System.Drawing.Point(688, 900);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(261, 20);
+            label2.TabIndex = 32;
+            label2.Text = "Click here if you are a Service Provider";
             // 
             // ClientLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(927, 719);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.SigninPanel);
-            this.Controls.Add(this.ServiceFacilityButton);
-            this.Controls.Add(this.LogInPanel);
-            this.Controls.Add(this.MinimizeButton);
-            this.Controls.Add(this.MaximizeButton);
-            this.Controls.Add(this.CloseButton);
-            this.Controls.Add(this.GreenPanel);
-            this.Controls.Add(this.pictureBox1);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ClientLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ClientLogin";
-            this.GreenPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.SigninPanel.ResumeLayout(false);
-            this.SigninPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.LogInPanel.ResumeLayout(false);
-            this.LogInPanel.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(232, 245, 233);
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ClientSize = new System.Drawing.Size(1236, 983);
+            Controls.Add(SigninPanel);
+            Controls.Add(label2);
+            Controls.Add(ServiceFacilityButton);
+            Controls.Add(LogInPanel);
+            Controls.Add(MinimizeButton);
+            Controls.Add(MaximizeButton);
+            Controls.Add(CloseButton);
+            Controls.Add(GreenPanel);
+            Controls.Add(pictureBox1);
+            DoubleBuffered = true;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Name = "ClientLogin";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "ClientLogin";
+            GreenPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            SigninPanel.ResumeLayout(false);
+            SigninPanel.PerformLayout();
+            LnamePanel.ResumeLayout(false);
+            LnamePanel.PerformLayout();
+            FnamePanel.ResumeLayout(false);
+            FnamePanel.PerformLayout();
+            EmailSPanel.ResumeLayout(false);
+            EmailSPanel.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            LogInPanel.ResumeLayout(false);
+            LogInPanel.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -652,23 +646,26 @@
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.TextBox EmailSTextBox;
         private System.Windows.Forms.Label EmailSLabel;
-        private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.TextBox FNameTextBox;
+        private System.Windows.Forms.Label FNameLabel;
         private System.Windows.Forms.TextBox CPasswordTextBox;
         private System.Windows.Forms.Label CPasswordLabel;
-        private System.Windows.Forms.TextBox CNumberTextBox;
+        private System.Windows.Forms.TextBox CNumberS;
         private System.Windows.Forms.Label ContactNumberLabel;
         private System.Windows.Forms.TextBox PasswordSTextBox;
         private System.Windows.Forms.Label PasswordSLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel FnamePanel;
+        private System.Windows.Forms.Panel EmailSPanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel LnamePanel;
+        private System.Windows.Forms.TextBox LNameTextBox;
+        private System.Windows.Forms.Label LNameLabel;
     }
 }
