@@ -5592,9 +5592,9 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(NotificationPanel);
             Controls.Add(SerPanel);
             Controls.Add(ServicesPanel);
-            Controls.Add(NotificationPanel);
             Controls.Add(FacilityProPanel2);
             Controls.Add(FacilityProPanel);
             Controls.Add(ViewdetailsPanel);

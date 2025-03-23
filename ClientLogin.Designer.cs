@@ -172,7 +172,7 @@
             SigninPanel.Controls.Add(panel3);
             SigninPanel.Controls.Add(panel4);
             SigninPanel.Controls.Add(panel5);
-            SigninPanel.Location = new System.Drawing.Point(654, 195);
+            SigninPanel.Location = new System.Drawing.Point(654, 204);
             SigninPanel.Name = "SigninPanel";
             SigninPanel.Size = new System.Drawing.Size(520, 653);
             SigninPanel.TabIndex = 11;
@@ -193,7 +193,7 @@
             LNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             LNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             LNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            LNameTextBox.Location = new System.Drawing.Point(3, 6);
+            LNameTextBox.Location = new System.Drawing.Point(3, 8);
             LNameTextBox.Multiline = true;
             LNameTextBox.Name = "LNameTextBox";
             LNameTextBox.Size = new System.Drawing.Size(203, 37);
@@ -225,7 +225,7 @@
             FNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             FNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            FNameTextBox.Location = new System.Drawing.Point(3, 8);
+            FNameTextBox.Location = new System.Drawing.Point(3, 9);
             FNameTextBox.Multiline = true;
             FNameTextBox.Name = "FNameTextBox";
             FNameTextBox.Size = new System.Drawing.Size(200, 37);
@@ -313,10 +313,9 @@
             // 
             // EmailSTextBox
             // 
-            EmailSTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EmailSTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             EmailSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            EmailSTextBox.Location = new System.Drawing.Point(3, 8);
+            EmailSTextBox.Location = new System.Drawing.Point(3, 10);
             EmailSTextBox.Multiline = true;
             EmailSTextBox.Name = "EmailSTextBox";
             EmailSTextBox.Size = new System.Drawing.Size(416, 37);
@@ -337,7 +336,7 @@
             CNumberS.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             CNumberS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             CNumberS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            CNumberS.Location = new System.Drawing.Point(3, 8);
+            CNumberS.Location = new System.Drawing.Point(3, 10);
             CNumberS.Multiline = true;
             CNumberS.Name = "CNumberS";
             CNumberS.Size = new System.Drawing.Size(416, 37);
@@ -358,7 +357,7 @@
             PasswordSTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PasswordSTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             PasswordSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            PasswordSTextBox.Location = new System.Drawing.Point(3, 8);
+            PasswordSTextBox.Location = new System.Drawing.Point(3, 10);
             PasswordSTextBox.Multiline = true;
             PasswordSTextBox.Name = "PasswordSTextBox";
             PasswordSTextBox.PasswordChar = '*';
@@ -380,7 +379,7 @@
             CPasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             CPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             CPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            CPasswordTextBox.Location = new System.Drawing.Point(3, 8);
+            CPasswordTextBox.Location = new System.Drawing.Point(3, 10);
             CPasswordTextBox.Multiline = true;
             CPasswordTextBox.Name = "CPasswordTextBox";
             CPasswordTextBox.PasswordChar = '*';
@@ -584,7 +583,6 @@
             BackColor = System.Drawing.Color.FromArgb(232, 245, 233);
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             ClientSize = new System.Drawing.Size(1236, 983);
-            Controls.Add(SigninPanel);
             Controls.Add(label2);
             Controls.Add(ServiceFacilityButton);
             Controls.Add(LogInPanel);
@@ -592,6 +590,7 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(GreenPanel);
+            Controls.Add(SigninPanel);
             Controls.Add(pictureBox1);
             DoubleBuffered = true;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
