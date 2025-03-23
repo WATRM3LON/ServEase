@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Collections;
 
 namespace OOP2
 {
@@ -43,13 +44,14 @@ namespace OOP2
             LogButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogButton.Width, LogButton.Height, 10, 10));
             SignButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SignButton.Width, SignButton.Height, 10, 10));
             SigninPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SigninPanel.Width, SigninPanel.Height, 20, 20));
-            panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 10, 10));
-            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 10, 10));
-            panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 10, 10));
-            panel4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel4.Width, panel4.Height, 10, 10));
-            panel5.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel5.Width, panel5.Height, 10, 10));
-            panel6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel6.Height, 10, 10));
-            panel7.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel7.Width, panel7.Height, 10, 10));
+            FnamePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FnamePanel.Width, FnamePanel.Height, 10, 10));
+            LnamePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LnamePanel.Width, LnamePanel.Height, 10, 10));
+            EmailSPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EmailSPanel.Width, EmailSPanel.Height, 10, 10));
+            CNumberPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CNumberPanel.Width, CNumberPanel.Height, 10, 10));
+            PasswordSPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PasswordSPanel.Width, PasswordSPanel.Height, 10, 10));
+            ConfirmSPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ConfirmSPanel.Width, ConfirmSPanel.Height, 10, 10));
+            EmailAddLPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EmailAddLPanel.Width, EmailAddLPanel.Height, 10, 10));
+            PasswordLPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PasswordLPanel.Width, PasswordLPanel.Height, 10, 10));
             SignInButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SignInButton.Width, SignInButton.Height, 10, 10));
             
         }
@@ -146,6 +148,31 @@ namespace OOP2
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
+
+            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb");
+            ds = new DataSet();
+            myConn.Open();
+            System.Windows.Forms.MessageBox.Show("Connected successfully!");
+            myConn.Close();
+
+            using (OleDbConnection myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb"))
+            {
+                string query = "INSERT INTO Client_Sign_In ([First Name], [Last Name], [Email Address], [Contact Number], [Password]) " +
+                               "VALUES (@FName, @LName, @EmailAdd, @CNumber, @Password)";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@FName", FNameTextBox.Text);
+                    cmd.Parameters.AddWithValue("@LName", LNameTextBox.Text);
+                    cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
+                    cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
+
+                    myConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
             this.Hide();
             Admin admin = new Admin();
             admin.ShowDialog();

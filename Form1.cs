@@ -54,12 +54,6 @@ namespace OOP2
 
         private void ContinueButton_Click(object sender, EventArgs e)
         {
-            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb");
-            ds = new DataSet();
-            myConn.Open();
-            System.Windows.Forms.MessageBox.Show("Connected successfully!");
-            myConn.Close();
-
             this.Hide();
             ClientLogin clientLogin = new ClientLogin();
             clientLogin.ShowDialog();
@@ -67,12 +61,6 @@ namespace OOP2
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb");
-            ds = new DataSet();
-            myConn.Open();
-            System.Windows.Forms.MessageBox.Show("Connected successfully!");
-            myConn.Close();
-
             this.Hide();
             ClientLogin clientLogin = new ClientLogin();
             clientLogin.ShowDialog();

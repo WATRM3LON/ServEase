@@ -33,7 +33,7 @@
             button1 = new System.Windows.Forms.Button();
             SignButton = new System.Windows.Forms.Button();
             LogButton = new System.Windows.Forms.Button();
-            pictureBox2 = new System.Windows.Forms.PictureBox();
+            GifBox = new System.Windows.Forms.PictureBox();
             SigninPanel = new System.Windows.Forms.Panel();
             LnamePanel = new System.Windows.Forms.Panel();
             LNameTextBox = new System.Windows.Forms.TextBox();
@@ -48,11 +48,11 @@
             EmailSLabel = new System.Windows.Forms.Label();
             EmailSPanel = new System.Windows.Forms.Panel();
             EmailSTextBox = new System.Windows.Forms.TextBox();
-            panel3 = new System.Windows.Forms.Panel();
-            CNumberS = new System.Windows.Forms.TextBox();
-            panel4 = new System.Windows.Forms.Panel();
+            CNumberPanel = new System.Windows.Forms.Panel();
+            CNumberSTextBox = new System.Windows.Forms.TextBox();
+            PasswordSPanel = new System.Windows.Forms.Panel();
             PasswordSTextBox = new System.Windows.Forms.TextBox();
-            panel5 = new System.Windows.Forms.Panel();
+            ConfirmSPanel = new System.Windows.Forms.Panel();
             CPasswordTextBox = new System.Windows.Forms.TextBox();
             CloseButton = new System.Windows.Forms.Button();
             MaximizeButton = new System.Windows.Forms.Button();
@@ -60,28 +60,28 @@
             EmailLLabel = new System.Windows.Forms.Label();
             EmailLTextBox = new System.Windows.Forms.TextBox();
             LogInPanel = new System.Windows.Forms.Panel();
-            label1 = new System.Windows.Forms.Label();
+            FPLabel = new System.Windows.Forms.Label();
             LoginButton = new System.Windows.Forms.Button();
             PasswordLLabel = new System.Windows.Forms.Label();
-            panel6 = new System.Windows.Forms.Panel();
-            panel7 = new System.Windows.Forms.Panel();
+            EmailAddLPanel = new System.Windows.Forms.Panel();
+            PasswordLPanel = new System.Windows.Forms.Panel();
             PasswordLTextBox = new System.Windows.Forms.TextBox();
             ServiceFacilityButton = new System.Windows.Forms.Button();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
-            label2 = new System.Windows.Forms.Label();
+            LogoBox = new System.Windows.Forms.PictureBox();
+            ClickherLabel = new System.Windows.Forms.Label();
             GreenPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)GifBox).BeginInit();
             SigninPanel.SuspendLayout();
             LnamePanel.SuspendLayout();
             FnamePanel.SuspendLayout();
             EmailSPanel.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
+            CNumberPanel.SuspendLayout();
+            PasswordSPanel.SuspendLayout();
+            ConfirmSPanel.SuspendLayout();
             LogInPanel.SuspendLayout();
-            panel6.SuspendLayout();
-            panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            EmailAddLPanel.SuspendLayout();
+            PasswordLPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoBox).BeginInit();
             SuspendLayout();
             // 
             // GreenPanel
@@ -91,7 +91,7 @@
             GreenPanel.Controls.Add(button1);
             GreenPanel.Controls.Add(SignButton);
             GreenPanel.Controls.Add(LogButton);
-            GreenPanel.Controls.Add(pictureBox2);
+            GreenPanel.Controls.Add(GifBox);
             GreenPanel.Location = new System.Drawing.Point(0, 0);
             GreenPanel.Name = "GreenPanel";
             GreenPanel.Size = new System.Drawing.Size(580, 982);
@@ -144,16 +144,16 @@
             LogButton.UseVisualStyleBackColor = false;
             LogButton.Click += LogButton_Click;
             // 
-            // pictureBox2
+            // GifBox
             // 
-            pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new System.Drawing.Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(580, 982);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 14;
-            pictureBox2.TabStop = false;
+            GifBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            GifBox.Image = (System.Drawing.Image)resources.GetObject("GifBox.Image");
+            GifBox.Location = new System.Drawing.Point(0, 0);
+            GifBox.Name = "GifBox";
+            GifBox.Size = new System.Drawing.Size(580, 982);
+            GifBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            GifBox.TabIndex = 14;
+            GifBox.TabStop = false;
             // 
             // SigninPanel
             // 
@@ -169,9 +169,9 @@
             SigninPanel.Controls.Add(SignInButton);
             SigninPanel.Controls.Add(EmailSLabel);
             SigninPanel.Controls.Add(EmailSPanel);
-            SigninPanel.Controls.Add(panel3);
-            SigninPanel.Controls.Add(panel4);
-            SigninPanel.Controls.Add(panel5);
+            SigninPanel.Controls.Add(CNumberPanel);
+            SigninPanel.Controls.Add(PasswordSPanel);
+            SigninPanel.Controls.Add(ConfirmSPanel);
             SigninPanel.Location = new System.Drawing.Point(654, 204);
             SigninPanel.Name = "SigninPanel";
             SigninPanel.Size = new System.Drawing.Size(520, 653);
@@ -321,36 +321,36 @@
             EmailSTextBox.Size = new System.Drawing.Size(416, 37);
             EmailSTextBox.TabIndex = 6;
             // 
-            // panel3
+            // CNumberPanel
             // 
-            panel3.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel3.BackColor = System.Drawing.Color.White;
-            panel3.Controls.Add(CNumberS);
-            panel3.Location = new System.Drawing.Point(53, 283);
-            panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(422, 51);
-            panel3.TabIndex = 20;
+            CNumberPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CNumberPanel.BackColor = System.Drawing.Color.White;
+            CNumberPanel.Controls.Add(CNumberSTextBox);
+            CNumberPanel.Location = new System.Drawing.Point(53, 283);
+            CNumberPanel.Name = "CNumberPanel";
+            CNumberPanel.Size = new System.Drawing.Size(422, 51);
+            CNumberPanel.TabIndex = 20;
             // 
-            // CNumberS
+            // CNumberSTextBox
             // 
-            CNumberS.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            CNumberS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            CNumberS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            CNumberS.Location = new System.Drawing.Point(3, 10);
-            CNumberS.Multiline = true;
-            CNumberS.Name = "CNumberS";
-            CNumberS.Size = new System.Drawing.Size(416, 37);
-            CNumberS.TabIndex = 15;
+            CNumberSTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CNumberSTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            CNumberSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CNumberSTextBox.Location = new System.Drawing.Point(3, 10);
+            CNumberSTextBox.Multiline = true;
+            CNumberSTextBox.Name = "CNumberSTextBox";
+            CNumberSTextBox.Size = new System.Drawing.Size(416, 37);
+            CNumberSTextBox.TabIndex = 15;
             // 
-            // panel4
+            // PasswordSPanel
             // 
-            panel4.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel4.BackColor = System.Drawing.Color.White;
-            panel4.Controls.Add(PasswordSTextBox);
-            panel4.Location = new System.Drawing.Point(53, 388);
-            panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(422, 51);
-            panel4.TabIndex = 21;
+            PasswordSPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PasswordSPanel.BackColor = System.Drawing.Color.White;
+            PasswordSPanel.Controls.Add(PasswordSTextBox);
+            PasswordSPanel.Location = new System.Drawing.Point(53, 388);
+            PasswordSPanel.Name = "PasswordSPanel";
+            PasswordSPanel.Size = new System.Drawing.Size(422, 51);
+            PasswordSPanel.TabIndex = 21;
             // 
             // PasswordSTextBox
             // 
@@ -364,15 +364,15 @@
             PasswordSTextBox.Size = new System.Drawing.Size(416, 37);
             PasswordSTextBox.TabIndex = 13;
             // 
-            // panel5
+            // ConfirmSPanel
             // 
-            panel5.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel5.BackColor = System.Drawing.Color.White;
-            panel5.Controls.Add(CPasswordTextBox);
-            panel5.Location = new System.Drawing.Point(53, 491);
-            panel5.Name = "panel5";
-            panel5.Size = new System.Drawing.Size(422, 51);
-            panel5.TabIndex = 22;
+            ConfirmSPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ConfirmSPanel.BackColor = System.Drawing.Color.White;
+            ConfirmSPanel.Controls.Add(CPasswordTextBox);
+            ConfirmSPanel.Location = new System.Drawing.Point(53, 491);
+            ConfirmSPanel.Name = "ConfirmSPanel";
+            ConfirmSPanel.Size = new System.Drawing.Size(422, 51);
+            ConfirmSPanel.TabIndex = 22;
             // 
             // CPasswordTextBox
             // 
@@ -457,27 +457,27 @@
             // 
             LogInPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             LogInPanel.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
-            LogInPanel.Controls.Add(label1);
+            LogInPanel.Controls.Add(FPLabel);
             LogInPanel.Controls.Add(LoginButton);
             LogInPanel.Controls.Add(PasswordLLabel);
             LogInPanel.Controls.Add(EmailLLabel);
-            LogInPanel.Controls.Add(panel6);
-            LogInPanel.Controls.Add(panel7);
+            LogInPanel.Controls.Add(EmailAddLPanel);
+            LogInPanel.Controls.Add(PasswordLPanel);
             LogInPanel.Location = new System.Drawing.Point(724, 276);
             LogInPanel.Name = "LogInPanel";
             LogInPanel.Size = new System.Drawing.Size(373, 452);
             LogInPanel.TabIndex = 7;
             // 
-            // label1
+            // FPLabel
             // 
-            label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, 0);
-            label1.Location = new System.Drawing.Point(33, 383);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(143, 23);
-            label1.TabIndex = 10;
-            label1.Text = "Forgot Password?";
+            FPLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FPLabel.AutoSize = true;
+            FPLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, 0);
+            FPLabel.Location = new System.Drawing.Point(33, 383);
+            FPLabel.Name = "FPLabel";
+            FPLabel.Size = new System.Drawing.Size(143, 23);
+            FPLabel.TabIndex = 10;
+            FPLabel.Text = "Forgot Password?";
             // 
             // LoginButton
             // 
@@ -505,25 +505,25 @@
             PasswordLLabel.TabIndex = 7;
             PasswordLLabel.Text = "Password";
             // 
-            // panel6
+            // EmailAddLPanel
             // 
-            panel6.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel6.BackColor = System.Drawing.Color.White;
-            panel6.Controls.Add(EmailLTextBox);
-            panel6.Location = new System.Drawing.Point(52, 77);
-            panel6.Name = "panel6";
-            panel6.Size = new System.Drawing.Size(275, 51);
-            panel6.TabIndex = 19;
+            EmailAddLPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailAddLPanel.BackColor = System.Drawing.Color.White;
+            EmailAddLPanel.Controls.Add(EmailLTextBox);
+            EmailAddLPanel.Location = new System.Drawing.Point(52, 77);
+            EmailAddLPanel.Name = "EmailAddLPanel";
+            EmailAddLPanel.Size = new System.Drawing.Size(275, 51);
+            EmailAddLPanel.TabIndex = 19;
             // 
-            // panel7
+            // PasswordLPanel
             // 
-            panel7.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel7.BackColor = System.Drawing.Color.White;
-            panel7.Controls.Add(PasswordLTextBox);
-            panel7.Location = new System.Drawing.Point(52, 197);
-            panel7.Name = "panel7";
-            panel7.Size = new System.Drawing.Size(275, 51);
-            panel7.TabIndex = 20;
+            PasswordLPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PasswordLPanel.BackColor = System.Drawing.Color.White;
+            PasswordLPanel.Controls.Add(PasswordLTextBox);
+            PasswordLPanel.Location = new System.Drawing.Point(52, 197);
+            PasswordLPanel.Name = "PasswordLPanel";
+            PasswordLPanel.Size = new System.Drawing.Size(275, 51);
+            PasswordLPanel.TabIndex = 20;
             // 
             // PasswordLTextBox
             // 
@@ -552,38 +552,38 @@
             ServiceFacilityButton.UseVisualStyleBackColor = false;
             ServiceFacilityButton.Click += ServiceFacilityButton_Click;
             // 
-            // pictureBox1
+            // LogoBox
             // 
-            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(654, -153);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(499, 557);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            LogoBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            LogoBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            LogoBox.Image = (System.Drawing.Image)resources.GetObject("LogoBox.Image");
+            LogoBox.Location = new System.Drawing.Point(654, -153);
+            LogoBox.Name = "LogoBox";
+            LogoBox.Size = new System.Drawing.Size(499, 557);
+            LogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            LogoBox.TabIndex = 4;
+            LogoBox.TabStop = false;
             // 
-            // label2
+            // ClickherLabel
             // 
-            label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label2.Location = new System.Drawing.Point(688, 900);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(261, 20);
-            label2.TabIndex = 32;
-            label2.Text = "Click here if you are a Service Provider";
+            ClickherLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ClickherLabel.AutoSize = true;
+            ClickherLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ClickherLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            ClickherLabel.Location = new System.Drawing.Point(688, 900);
+            ClickherLabel.Name = "ClickherLabel";
+            ClickherLabel.Size = new System.Drawing.Size(261, 20);
+            ClickherLabel.TabIndex = 32;
+            ClickherLabel.Text = "Click here if you are a Service Provider";
             // 
             // ClientLogin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.FromArgb(232, 245, 233);
+            BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             ClientSize = new System.Drawing.Size(1236, 983);
-            Controls.Add(label2);
+            Controls.Add(ClickherLabel);
             Controls.Add(ServiceFacilityButton);
             Controls.Add(LogInPanel);
             Controls.Add(MinimizeButton);
@@ -591,14 +591,14 @@
             Controls.Add(CloseButton);
             Controls.Add(GreenPanel);
             Controls.Add(SigninPanel);
-            Controls.Add(pictureBox1);
+            Controls.Add(LogoBox);
             DoubleBuffered = true;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientLogin";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ClientLogin";
             GreenPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GifBox).EndInit();
             SigninPanel.ResumeLayout(false);
             SigninPanel.PerformLayout();
             LnamePanel.ResumeLayout(false);
@@ -607,19 +607,19 @@
             FnamePanel.PerformLayout();
             EmailSPanel.ResumeLayout(false);
             EmailSPanel.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            CNumberPanel.ResumeLayout(false);
+            CNumberPanel.PerformLayout();
+            PasswordSPanel.ResumeLayout(false);
+            PasswordSPanel.PerformLayout();
+            ConfirmSPanel.ResumeLayout(false);
+            ConfirmSPanel.PerformLayout();
             LogInPanel.ResumeLayout(false);
             LogInPanel.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            EmailAddLPanel.ResumeLayout(false);
+            EmailAddLPanel.PerformLayout();
+            PasswordLPanel.ResumeLayout(false);
+            PasswordLPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -636,11 +636,11 @@
         private System.Windows.Forms.TextBox PasswordLTextBox;
         private System.Windows.Forms.Label PasswordLLabel;
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label FPLabel;
         private System.Windows.Forms.Button ServiceFacilityButton;
         private System.Windows.Forms.Button SignButton;
         private System.Windows.Forms.Button LogButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox LogoBox;
         private System.Windows.Forms.Panel SigninPanel;
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.TextBox EmailSTextBox;
@@ -649,20 +649,20 @@
         private System.Windows.Forms.Label FNameLabel;
         private System.Windows.Forms.TextBox CPasswordTextBox;
         private System.Windows.Forms.Label CPasswordLabel;
-        private System.Windows.Forms.TextBox CNumberS;
+        private System.Windows.Forms.TextBox CNumberSTextBox;
         private System.Windows.Forms.Label ContactNumberLabel;
         private System.Windows.Forms.TextBox PasswordSTextBox;
         private System.Windows.Forms.Label PasswordSLabel;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox GifBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel FnamePanel;
         private System.Windows.Forms.Panel EmailSPanel;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel CNumberPanel;
+        private System.Windows.Forms.Panel PasswordSPanel;
+        private System.Windows.Forms.Panel ConfirmSPanel;
+        private System.Windows.Forms.Panel EmailAddLPanel;
+        private System.Windows.Forms.Panel PasswordLPanel;
+        private System.Windows.Forms.Label ClickherLabel;
         private System.Windows.Forms.Panel LnamePanel;
         private System.Windows.Forms.TextBox LNameTextBox;
         private System.Windows.Forms.Label LNameLabel;
