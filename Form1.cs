@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -14,6 +15,11 @@ namespace OOP2
     
     public partial class Form1 : Form
     {
+        OleDbConnection? myConn;
+        OleDbDataAdapter? da;
+        OleDbCommand? cmd;
+        DataSet ds;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
             (
@@ -48,6 +54,12 @@ namespace OOP2
 
         private void ContinueButton_Click(object sender, EventArgs e)
         {
+            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb");
+            ds = new DataSet();
+            myConn.Open();
+            System.Windows.Forms.MessageBox.Show("Connected successfully!");
+            myConn.Close();
+
             this.Hide();
             ClientLogin clientLogin = new ClientLogin();
             clientLogin.ShowDialog();
@@ -55,14 +67,16 @@ namespace OOP2
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb");
+            ds = new DataSet();
+            myConn.Open();
+            System.Windows.Forms.MessageBox.Show("Connected successfully!");
+            myConn.Close();
+
             this.Hide();
             ClientLogin clientLogin = new ClientLogin();
             clientLogin.ShowDialog();
         }
 
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
     }
 }
