@@ -47,7 +47,7 @@ namespace OOP2
             NotificationPanel.Visible = false;
             SettingPanel.Visible = false;
             panel44.Visible = false;
-            FacilityProPanel.Visible = false;  
+            FacilityProPanel.Visible = false;
             FPButton.Visible = false;
             FacilityProPanel2.Visible = false;
         }
@@ -219,7 +219,7 @@ namespace OOP2
             DashboardPanel.Visible = false;
             panel1.Visible = true;
             DashboardPanel2.Visible = true;
-            HeaderPanel.Location = new Point(75,44);
+            HeaderPanel.Location = new Point(75, 44);
             panel44.Visible = true;
         }
 
@@ -284,8 +284,8 @@ namespace OOP2
         }
         private void NotifyButton_Click(object sender, EventArgs e)
         {
-            
-            if(notify == false)
+
+            if (notify == false)
             {
                 NotificationPanel.Visible = true;
                 NotifyButton.BackColor = Color.White;
@@ -297,7 +297,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
-            
+
         }
         private void NotiCloseButton_Click(object sender, EventArgs e)
         {
@@ -348,7 +348,7 @@ namespace OOP2
             SettingPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
             StButton.BackColor = Color.White;
-            if(notify == true)
+            if (notify == true)
             {
                 NotificationPanel.Visible = false;
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
@@ -789,5 +789,6 @@ namespace OOP2
                 notify = false;
             }
         }
+
     }
 }

@@ -384,7 +384,7 @@
             DashboardPanel2.Controls.Add(panel1);
             DashboardPanel2.Location = new System.Drawing.Point(-4, -3);
             DashboardPanel2.Name = "DashboardPanel2";
-            DashboardPanel2.Size = new System.Drawing.Size(85, 1003);
+            DashboardPanel2.Size = new System.Drawing.Size(85, 983);
             DashboardPanel2.TabIndex = 47;
             // 
             // LButton
@@ -396,7 +396,7 @@
             LButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             LButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             LButton.Image = (System.Drawing.Image)resources.GetObject("LButton.Image");
-            LButton.Location = new System.Drawing.Point(9, 912);
+            LButton.Location = new System.Drawing.Point(9, 892);
             LButton.Name = "LButton";
             LButton.Size = new System.Drawing.Size(68, 77);
             LButton.TabIndex = 21;
@@ -502,7 +502,7 @@
             panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             panel1.Location = new System.Drawing.Point(0, 3);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(64, 1000);
+            panel1.Size = new System.Drawing.Size(64, 983);
             panel1.TabIndex = 50;
             // 
             // DashboardPanel
@@ -518,7 +518,7 @@
             DashboardPanel.Controls.Add(LogoButton);
             DashboardPanel.Location = new System.Drawing.Point(-4, -3);
             DashboardPanel.Name = "DashboardPanel";
-            DashboardPanel.Size = new System.Drawing.Size(252, 1003);
+            DashboardPanel.Size = new System.Drawing.Size(252, 983);
             DashboardPanel.TabIndex = 46;
             // 
             // LogoutButton
@@ -531,7 +531,7 @@
             LogoutButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             LogoutButton.Image = (System.Drawing.Image)resources.GetObject("LogoutButton.Image");
             LogoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            LogoutButton.Location = new System.Drawing.Point(32, 912);
+            LogoutButton.Location = new System.Drawing.Point(32, 892);
             LogoutButton.Name = "LogoutButton";
             LogoutButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             LogoutButton.Size = new System.Drawing.Size(187, 77);
@@ -866,7 +866,7 @@
             CalendarPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             CalendarPanel.Location = new System.Drawing.Point(277, 231);
             CalendarPanel.Name = "CalendarPanel";
-            CalendarPanel.Size = new System.Drawing.Size(893, 754);
+            CalendarPanel.Size = new System.Drawing.Size(893, 737);
             CalendarPanel.TabIndex = 51;
             // 
             // AppointmentsPanel
@@ -879,7 +879,7 @@
             AppointmentsPanel.Controls.Add(panel38);
             AppointmentsPanel.Location = new System.Drawing.Point(277, 231);
             AppointmentsPanel.Name = "AppointmentsPanel";
-            AppointmentsPanel.Size = new System.Drawing.Size(893, 754);
+            AppointmentsPanel.Size = new System.Drawing.Size(893, 737);
             AppointmentsPanel.TabIndex = 52;
             // 
             // panel42
@@ -1178,7 +1178,7 @@
             ViewdetailsPanel.Controls.Add(tableLayoutPanel2);
             ViewdetailsPanel.Location = new System.Drawing.Point(277, 231);
             ViewdetailsPanel.Name = "ViewdetailsPanel";
-            ViewdetailsPanel.Size = new System.Drawing.Size(893, 754);
+            ViewdetailsPanel.Size = new System.Drawing.Size(893, 737);
             ViewdetailsPanel.TabIndex = 54;
             // 
             // tableLayoutPanel2
@@ -1513,7 +1513,7 @@
             AppointmentPanel.Controls.Add(MonthPanel);
             AppointmentPanel.Location = new System.Drawing.Point(771, 189);
             AppointmentPanel.Name = "AppointmentPanel";
-            AppointmentPanel.Size = new System.Drawing.Size(399, 409);
+            AppointmentPanel.Size = new System.Drawing.Size(399, 392);
             AppointmentPanel.TabIndex = 55;
             // 
             // panel7
@@ -1917,7 +1917,7 @@
             panel44.Location = new System.Drawing.Point(100, 171);
             panel44.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             panel44.Name = "panel44";
-            panel44.Size = new System.Drawing.Size(168, 809);
+            panel44.Size = new System.Drawing.Size(168, 792);
             panel44.TabIndex = 56;
             // 
             // pictureBox2
@@ -1927,7 +1927,7 @@
             pictureBox2.Location = new System.Drawing.Point(0, 0);
             pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(168, 809);
+            pictureBox2.Size = new System.Drawing.Size(168, 792);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -1940,7 +1940,7 @@
             panel45.Location = new System.Drawing.Point(277, 189);
             panel45.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             panel45.Name = "panel45";
-            panel45.Size = new System.Drawing.Size(484, 410);
+            panel45.Size = new System.Drawing.Size(484, 393);
             panel45.TabIndex = 57;
             // 
             // NotificationPanel
@@ -2020,7 +2020,7 @@
             panel11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             panel11.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel11.BackgroundImage");
             panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            panel11.Location = new System.Drawing.Point(277, 604);
+            panel11.Location = new System.Drawing.Point(277, 587);
             panel11.Name = "panel11";
             panel11.Size = new System.Drawing.Size(893, 363);
             panel11.TabIndex = 30;
@@ -2122,7 +2122,7 @@
             ProfilePanel.Controls.Add(ProPicPanel);
             ProfilePanel.Location = new System.Drawing.Point(277, 177);
             ProfilePanel.Name = "ProfilePanel";
-            ProfilePanel.Size = new System.Drawing.Size(893, 809);
+            ProfilePanel.Size = new System.Drawing.Size(893, 792);
             ProfilePanel.TabIndex = 61;
             // 
             // GDPanel
@@ -2134,7 +2134,7 @@
             GDPanel.Controls.Add(label21);
             GDPanel.Controls.Add(button8);
             GDPanel.Controls.Add(label22);
-            GDPanel.Location = new System.Drawing.Point(8, 685);
+            GDPanel.Location = new System.Drawing.Point(7, 640);
             GDPanel.Name = "GDPanel";
             GDPanel.Size = new System.Drawing.Size(867, 145);
             GDPanel.TabIndex = 47;
@@ -2154,7 +2154,6 @@
             button1.Size = new System.Drawing.Size(80, 46);
             button1.TabIndex = 39;
             button1.Text = "Enable";
-            button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             button1.UseVisualStyleBackColor = false;
             // 
@@ -2196,7 +2195,6 @@
             button8.Size = new System.Drawing.Size(80, 46);
             button8.TabIndex = 33;
             button8.Text = "Change";
-            button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             button8.UseVisualStyleBackColor = false;
             // 
@@ -2221,7 +2219,7 @@
             SOAPanel.Controls.Add(label111);
             SOAPanel.Controls.Add(SOView);
             SOAPanel.Controls.Add(SOALAbel);
-            SOAPanel.Location = new System.Drawing.Point(8, 522);
+            SOAPanel.Location = new System.Drawing.Point(7, 479);
             SOAPanel.Name = "SOAPanel";
             SOAPanel.Size = new System.Drawing.Size(867, 145);
             SOAPanel.TabIndex = 46;
@@ -2316,9 +2314,9 @@
             PIPanel.Controls.Add(label93);
             PIPanel.Controls.Add(button47);
             PIPanel.Controls.Add(label91);
-            PIPanel.Location = new System.Drawing.Point(8, 211);
+            PIPanel.Location = new System.Drawing.Point(8, 201);
             PIPanel.Name = "PIPanel";
-            PIPanel.Size = new System.Drawing.Size(867, 291);
+            PIPanel.Size = new System.Drawing.Size(867, 270);
             PIPanel.TabIndex = 38;
             // 
             // label18
@@ -2558,7 +2556,7 @@
             ServicesOfferedPanel.Controls.Add(SOTable);
             ServicesOfferedPanel.Location = new System.Drawing.Point(277, 177);
             ServicesOfferedPanel.Name = "ServicesOfferedPanel";
-            ServicesOfferedPanel.Size = new System.Drawing.Size(893, 809);
+            ServicesOfferedPanel.Size = new System.Drawing.Size(893, 792);
             ServicesOfferedPanel.TabIndex = 62;
             // 
             // EditButton2
@@ -3101,7 +3099,7 @@
             ATPanel.Controls.Add(EditButton);
             ATPanel.Location = new System.Drawing.Point(277, 177);
             ATPanel.Name = "ATPanel";
-            ATPanel.Size = new System.Drawing.Size(893, 809);
+            ATPanel.Size = new System.Drawing.Size(893, 792);
             ATPanel.TabIndex = 62;
             // 
             // tableLayoutPanel1
@@ -3341,7 +3339,7 @@
             SettingsPanel.Controls.Add(tableLayoutPanel4);
             SettingsPanel.Location = new System.Drawing.Point(277, 177);
             SettingsPanel.Name = "SettingsPanel";
-            SettingsPanel.Size = new System.Drawing.Size(893, 809);
+            SettingsPanel.Size = new System.Drawing.Size(893, 792);
             SettingsPanel.TabIndex = 63;
             // 
             // tableLayoutPanel4
@@ -3594,21 +3592,13 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
-            ClientSize = new System.Drawing.Size(1219, 1000);
-            Controls.Add(ProfilePanel);
+            ClientSize = new System.Drawing.Size(1219, 983);
             Controls.Add(NotificationPanel);
-            Controls.Add(ATPanel);
-            Controls.Add(ServicesOfferedPanel);
-            Controls.Add(ViewdetailsPanel);
-            Controls.Add(SettingsPanel);
-            Controls.Add(AnalyticPannel2);
             Controls.Add(AnalyticPannel1);
-            Controls.Add(AnalyticsMenuPanel);
             Controls.Add(panel11);
             Controls.Add(panel45);
             Controls.Add(panel44);
             Controls.Add(AppointmentPanel);
-            Controls.Add(CalendarPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(NotifyButton);
             Controls.Add(DashboardPanel2);
@@ -3618,6 +3608,14 @@
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
             Controls.Add(AppointmentsPanel);
+            Controls.Add(ProfilePanel);
+            Controls.Add(ATPanel);
+            Controls.Add(ServicesOfferedPanel);
+            Controls.Add(ViewdetailsPanel);
+            Controls.Add(SettingsPanel);
+            Controls.Add(CalendarPanel);
+            Controls.Add(AnalyticPannel2);
+            Controls.Add(AnalyticsMenuPanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "ServiceFacilitycs";

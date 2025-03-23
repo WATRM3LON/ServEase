@@ -598,7 +598,7 @@
             DashboardPanel.Controls.Add(LogoButton);
             DashboardPanel.Location = new System.Drawing.Point(0, 0);
             DashboardPanel.Name = "DashboardPanel";
-            DashboardPanel.Size = new System.Drawing.Size(252, 995);
+            DashboardPanel.Size = new System.Drawing.Size(252, 983);
             DashboardPanel.TabIndex = 7;
             DashboardPanel.Paint += DashboardPanel_Paint;
             // 
@@ -612,7 +612,7 @@
             LogoutButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             LogoutButton.Image = (System.Drawing.Image)resources.GetObject("LogoutButton.Image");
             LogoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            LogoutButton.Location = new System.Drawing.Point(32, 904);
+            LogoutButton.Location = new System.Drawing.Point(32, 892);
             LogoutButton.Name = "LogoutButton";
             LogoutButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             LogoutButton.Size = new System.Drawing.Size(187, 77);
@@ -738,7 +738,7 @@
             panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             panel1.Location = new System.Drawing.Point(-12, -2);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(64, 1000);
+            panel1.Size = new System.Drawing.Size(64, 969);
             panel1.TabIndex = 8;
             // 
             // DashboardPanel2
@@ -754,7 +754,7 @@
             DashboardPanel2.Controls.Add(LogosButton);
             DashboardPanel2.Location = new System.Drawing.Point(0, 0);
             DashboardPanel2.Name = "DashboardPanel2";
-            DashboardPanel2.Size = new System.Drawing.Size(85, 995);
+            DashboardPanel2.Size = new System.Drawing.Size(85, 983);
             DashboardPanel2.TabIndex = 23;
             DashboardPanel2.Paint += DashboardPanel2_Paint;
             // 
@@ -767,7 +767,7 @@
             LButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             LButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             LButton.Image = (System.Drawing.Image)resources.GetObject("LButton.Image");
-            LButton.Location = new System.Drawing.Point(9, 904);
+            LButton.Location = new System.Drawing.Point(9, 892);
             LButton.Name = "LButton";
             LButton.Size = new System.Drawing.Size(68, 77);
             LButton.TabIndex = 21;
@@ -984,7 +984,7 @@
             AppointmentPanel.Controls.Add(MonthPanel);
             AppointmentPanel.Location = new System.Drawing.Point(771, 175);
             AppointmentPanel.Name = "AppointmentPanel";
-            AppointmentPanel.Size = new System.Drawing.Size(399, 409);
+            AppointmentPanel.Size = new System.Drawing.Size(399, 392);
             AppointmentPanel.TabIndex = 28;
             // 
             // panel7
@@ -1399,7 +1399,7 @@
             panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             panel3.Controls.Add(tableLayoutPanel4);
             panel3.Controls.Add(label13);
-            panel3.Location = new System.Drawing.Point(277, 604);
+            panel3.Location = new System.Drawing.Point(277, 587);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(893, 363);
             panel3.TabIndex = 29;
@@ -1707,12 +1707,11 @@
             ServicesPanel.Controls.Add(tableLayoutPanel3);
             ServicesPanel.Location = new System.Drawing.Point(277, 175);
             ServicesPanel.Name = "ServicesPanel";
-            ServicesPanel.Size = new System.Drawing.Size(893, 795);
+            ServicesPanel.Size = new System.Drawing.Size(893, 778);
             ServicesPanel.TabIndex = 39;
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             tableLayoutPanel3.ColumnCount = 3;
             tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -1724,14 +1723,15 @@
             tableLayoutPanel3.Controls.Add(EduSPanel, 0, 1);
             tableLayoutPanel3.Controls.Add(RepairSPanel, 1, 1);
             tableLayoutPanel3.Controls.Add(FitnessSPanel, 2, 0);
-            tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
             tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(887, 795);
+            tableLayoutPanel3.Size = new System.Drawing.Size(893, 778);
             tableLayoutPanel3.TabIndex = 41;
             // 
             // BeautySPanel
@@ -1745,7 +1745,7 @@
             BeautySPanel.Location = new System.Drawing.Point(7, 8);
             BeautySPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
             BeautySPanel.Name = "BeautySPanel";
-            BeautySPanel.Size = new System.Drawing.Size(281, 257);
+            BeautySPanel.Size = new System.Drawing.Size(283, 251);
             BeautySPanel.TabIndex = 37;
             // 
             // button17
@@ -1757,7 +1757,7 @@
             button17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button17.Location = new System.Drawing.Point(12, 192);
             button17.Name = "button17";
-            button17.Size = new System.Drawing.Size(256, 51);
+            button17.Size = new System.Drawing.Size(258, 51);
             button17.TabIndex = 30;
             button17.Text = "View All";
             button17.UseVisualStyleBackColor = false;
@@ -1772,9 +1772,9 @@
             button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button18.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button18.Image = (System.Drawing.Image)resources.GetObject("button18.Image");
-            button18.Location = new System.Drawing.Point(299, 108);
+            button18.Location = new System.Drawing.Point(299, 105);
             button18.Name = "button18";
-            button18.Size = new System.Drawing.Size(13, 37);
+            button18.Size = new System.Drawing.Size(15, 37);
             button18.TabIndex = 33;
             button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button18.UseVisualStyleBackColor = false;
@@ -1798,7 +1798,7 @@
             panel23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             panel23.Location = new System.Drawing.Point(12, 14);
             panel23.Name = "panel23";
-            panel23.Size = new System.Drawing.Size(256, 78);
+            panel23.Size = new System.Drawing.Size(258, 78);
             panel23.TabIndex = 34;
             // 
             // MisSPanel
@@ -1809,10 +1809,10 @@
             MisSPanel.Controls.Add(label30);
             MisSPanel.Controls.Add(panel30);
             MisSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            MisSPanel.Location = new System.Drawing.Point(7, 538);
+            MisSPanel.Location = new System.Drawing.Point(7, 526);
             MisSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
             MisSPanel.Name = "MisSPanel";
-            MisSPanel.Size = new System.Drawing.Size(281, 257);
+            MisSPanel.Size = new System.Drawing.Size(283, 252);
             MisSPanel.TabIndex = 39;
             // 
             // button25
@@ -1824,7 +1824,7 @@
             button25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button25.Location = new System.Drawing.Point(12, 192);
             button25.Name = "button25";
-            button25.Size = new System.Drawing.Size(256, 51);
+            button25.Size = new System.Drawing.Size(258, 51);
             button25.TabIndex = 30;
             button25.Text = "View All";
             button25.UseVisualStyleBackColor = false;
@@ -1839,9 +1839,9 @@
             button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button26.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button26.Image = (System.Drawing.Image)resources.GetObject("button26.Image");
-            button26.Location = new System.Drawing.Point(299, 108);
+            button26.Location = new System.Drawing.Point(299, 106);
             button26.Name = "button26";
-            button26.Size = new System.Drawing.Size(13, 37);
+            button26.Size = new System.Drawing.Size(15, 37);
             button26.TabIndex = 33;
             button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button26.UseVisualStyleBackColor = false;
@@ -1864,7 +1864,7 @@
             panel30.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel30.BackgroundImage");
             panel30.Location = new System.Drawing.Point(12, 14);
             panel30.Name = "panel30";
-            panel30.Size = new System.Drawing.Size(256, 78);
+            panel30.Size = new System.Drawing.Size(258, 78);
             panel30.TabIndex = 34;
             // 
             // HealthSPanel
@@ -1875,10 +1875,10 @@
             HealthSPanel.Controls.Add(label28);
             HealthSPanel.Controls.Add(panel21);
             HealthSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            HealthSPanel.Location = new System.Drawing.Point(302, 8);
+            HealthSPanel.Location = new System.Drawing.Point(304, 8);
             HealthSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
             HealthSPanel.Name = "HealthSPanel";
-            HealthSPanel.Size = new System.Drawing.Size(281, 257);
+            HealthSPanel.Size = new System.Drawing.Size(283, 251);
             HealthSPanel.TabIndex = 40;
             // 
             // button15
@@ -1890,7 +1890,7 @@
             button15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button15.Location = new System.Drawing.Point(12, 192);
             button15.Name = "button15";
-            button15.Size = new System.Drawing.Size(256, 51);
+            button15.Size = new System.Drawing.Size(258, 51);
             button15.TabIndex = 30;
             button15.Text = "View All";
             button15.UseVisualStyleBackColor = false;
@@ -1905,9 +1905,9 @@
             button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button16.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button16.Image = (System.Drawing.Image)resources.GetObject("button16.Image");
-            button16.Location = new System.Drawing.Point(299, 108);
+            button16.Location = new System.Drawing.Point(299, 105);
             button16.Name = "button16";
-            button16.Size = new System.Drawing.Size(13, 37);
+            button16.Size = new System.Drawing.Size(15, 37);
             button16.TabIndex = 33;
             button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button16.UseVisualStyleBackColor = false;
@@ -1930,7 +1930,7 @@
             panel21.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel21.BackgroundImage");
             panel21.Location = new System.Drawing.Point(12, 14);
             panel21.Name = "panel21";
-            panel21.Size = new System.Drawing.Size(256, 78);
+            panel21.Size = new System.Drawing.Size(258, 78);
             panel21.TabIndex = 34;
             // 
             // FoodSPanel
@@ -1941,10 +1941,10 @@
             FoodSPanel.Controls.Add(label34);
             FoodSPanel.Controls.Add(panel26);
             FoodSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            FoodSPanel.Location = new System.Drawing.Point(597, 273);
+            FoodSPanel.Location = new System.Drawing.Point(601, 267);
             FoodSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
             FoodSPanel.Name = "FoodSPanel";
-            FoodSPanel.Size = new System.Drawing.Size(283, 257);
+            FoodSPanel.Size = new System.Drawing.Size(285, 251);
             FoodSPanel.TabIndex = 38;
             // 
             // button21
@@ -1956,7 +1956,7 @@
             button21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button21.Location = new System.Drawing.Point(12, 192);
             button21.Name = "button21";
-            button21.Size = new System.Drawing.Size(258, 51);
+            button21.Size = new System.Drawing.Size(260, 51);
             button21.TabIndex = 30;
             button21.Text = "View All";
             button21.UseVisualStyleBackColor = false;
@@ -1971,9 +1971,9 @@
             button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button22.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button22.Image = (System.Drawing.Image)resources.GetObject("button22.Image");
-            button22.Location = new System.Drawing.Point(299, 108);
+            button22.Location = new System.Drawing.Point(299, 105);
             button22.Name = "button22";
-            button22.Size = new System.Drawing.Size(12, 37);
+            button22.Size = new System.Drawing.Size(14, 37);
             button22.TabIndex = 33;
             button22.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button22.UseVisualStyleBackColor = false;
@@ -1996,7 +1996,7 @@
             panel26.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel26.BackgroundImage");
             panel26.Location = new System.Drawing.Point(12, 14);
             panel26.Name = "panel26";
-            panel26.Size = new System.Drawing.Size(258, 78);
+            panel26.Size = new System.Drawing.Size(260, 78);
             panel26.TabIndex = 34;
             // 
             // EduSPanel
@@ -2007,10 +2007,10 @@
             EduSPanel.Controls.Add(label29);
             EduSPanel.Controls.Add(panel28);
             EduSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            EduSPanel.Location = new System.Drawing.Point(7, 273);
+            EduSPanel.Location = new System.Drawing.Point(7, 267);
             EduSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
             EduSPanel.Name = "EduSPanel";
-            EduSPanel.Size = new System.Drawing.Size(281, 257);
+            EduSPanel.Size = new System.Drawing.Size(283, 251);
             EduSPanel.TabIndex = 38;
             // 
             // button23
@@ -2022,7 +2022,7 @@
             button23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button23.Location = new System.Drawing.Point(12, 192);
             button23.Name = "button23";
-            button23.Size = new System.Drawing.Size(256, 51);
+            button23.Size = new System.Drawing.Size(258, 51);
             button23.TabIndex = 30;
             button23.Text = "View All";
             button23.UseVisualStyleBackColor = false;
@@ -2037,9 +2037,9 @@
             button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button24.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button24.Image = (System.Drawing.Image)resources.GetObject("button24.Image");
-            button24.Location = new System.Drawing.Point(299, 108);
+            button24.Location = new System.Drawing.Point(299, 105);
             button24.Name = "button24";
-            button24.Size = new System.Drawing.Size(13, 37);
+            button24.Size = new System.Drawing.Size(15, 37);
             button24.TabIndex = 33;
             button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button24.UseVisualStyleBackColor = false;
@@ -2062,7 +2062,7 @@
             panel28.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel28.BackgroundImage");
             panel28.Location = new System.Drawing.Point(12, 14);
             panel28.Name = "panel28";
-            panel28.Size = new System.Drawing.Size(256, 78);
+            panel28.Size = new System.Drawing.Size(258, 78);
             panel28.TabIndex = 34;
             // 
             // RepairSPanel
@@ -2073,10 +2073,10 @@
             RepairSPanel.Controls.Add(label33);
             RepairSPanel.Controls.Add(panel24);
             RepairSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            RepairSPanel.Location = new System.Drawing.Point(302, 273);
+            RepairSPanel.Location = new System.Drawing.Point(304, 267);
             RepairSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
             RepairSPanel.Name = "RepairSPanel";
-            RepairSPanel.Size = new System.Drawing.Size(281, 257);
+            RepairSPanel.Size = new System.Drawing.Size(283, 251);
             RepairSPanel.TabIndex = 38;
             // 
             // button19
@@ -2088,7 +2088,7 @@
             button19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button19.Location = new System.Drawing.Point(12, 192);
             button19.Name = "button19";
-            button19.Size = new System.Drawing.Size(256, 51);
+            button19.Size = new System.Drawing.Size(258, 51);
             button19.TabIndex = 30;
             button19.Text = "View All";
             button19.UseVisualStyleBackColor = false;
@@ -2103,9 +2103,9 @@
             button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button20.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button20.Image = (System.Drawing.Image)resources.GetObject("button20.Image");
-            button20.Location = new System.Drawing.Point(299, 108);
+            button20.Location = new System.Drawing.Point(299, 105);
             button20.Name = "button20";
-            button20.Size = new System.Drawing.Size(13, 37);
+            button20.Size = new System.Drawing.Size(15, 37);
             button20.TabIndex = 33;
             button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button20.UseVisualStyleBackColor = false;
@@ -2128,7 +2128,7 @@
             panel24.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel24.BackgroundImage");
             panel24.Location = new System.Drawing.Point(12, 14);
             panel24.Name = "panel24";
-            panel24.Size = new System.Drawing.Size(256, 78);
+            panel24.Size = new System.Drawing.Size(258, 78);
             panel24.TabIndex = 34;
             // 
             // FitnessSPanel
@@ -2139,10 +2139,10 @@
             FitnessSPanel.Controls.Add(label26);
             FitnessSPanel.Controls.Add(panel19);
             FitnessSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            FitnessSPanel.Location = new System.Drawing.Point(597, 8);
+            FitnessSPanel.Location = new System.Drawing.Point(601, 8);
             FitnessSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
             FitnessSPanel.Name = "FitnessSPanel";
-            FitnessSPanel.Size = new System.Drawing.Size(283, 257);
+            FitnessSPanel.Size = new System.Drawing.Size(285, 251);
             FitnessSPanel.TabIndex = 39;
             // 
             // button13
@@ -2154,7 +2154,7 @@
             button13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button13.Location = new System.Drawing.Point(12, 192);
             button13.Name = "button13";
-            button13.Size = new System.Drawing.Size(258, 51);
+            button13.Size = new System.Drawing.Size(260, 51);
             button13.TabIndex = 30;
             button13.Text = "View All";
             button13.UseVisualStyleBackColor = false;
@@ -2169,9 +2169,9 @@
             button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button14.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button14.Image = (System.Drawing.Image)resources.GetObject("button14.Image");
-            button14.Location = new System.Drawing.Point(299, 108);
+            button14.Location = new System.Drawing.Point(299, 105);
             button14.Name = "button14";
-            button14.Size = new System.Drawing.Size(12, 37);
+            button14.Size = new System.Drawing.Size(14, 37);
             button14.TabIndex = 33;
             button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button14.UseVisualStyleBackColor = false;
@@ -2194,7 +2194,7 @@
             panel19.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel19.BackgroundImage");
             panel19.Location = new System.Drawing.Point(12, 14);
             panel19.Name = "panel19";
-            panel19.Size = new System.Drawing.Size(258, 78);
+            panel19.Size = new System.Drawing.Size(260, 78);
             panel19.TabIndex = 34;
             // 
             // SerButton
@@ -2224,12 +2224,11 @@
             SerPanel.Controls.Add(tableLayoutPanel5);
             SerPanel.Location = new System.Drawing.Point(277, 175);
             SerPanel.Name = "SerPanel";
-            SerPanel.Size = new System.Drawing.Size(893, 795);
+            SerPanel.Size = new System.Drawing.Size(893, 778);
             SerPanel.TabIndex = 41;
             // 
             // tableLayoutPanel5
             // 
-            tableLayoutPanel5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             tableLayoutPanel5.ColumnCount = 3;
             tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -2242,14 +2241,15 @@
             tableLayoutPanel5.Controls.Add(panel27, 2, 0);
             tableLayoutPanel5.Controls.Add(panel34, 0, 1);
             tableLayoutPanel5.Controls.Add(panel31, 1, 1);
-            tableLayoutPanel5.Location = new System.Drawing.Point(3, 5);
+            tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 3;
             tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanel5.Size = new System.Drawing.Size(887, 795);
+            tableLayoutPanel5.Size = new System.Drawing.Size(893, 778);
             tableLayoutPanel5.TabIndex = 49;
             // 
             // SerStore1
@@ -2264,7 +2264,7 @@
             SerStore1.Location = new System.Drawing.Point(7, 8);
             SerStore1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             SerStore1.Name = "SerStore1";
-            SerStore1.Size = new System.Drawing.Size(281, 249);
+            SerStore1.Size = new System.Drawing.Size(283, 243);
             SerStore1.TabIndex = 42;
             // 
             // label41
@@ -2296,9 +2296,9 @@
             SerStoreButton1.FlatAppearance.BorderSize = 0;
             SerStoreButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SerStoreButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            SerStoreButton1.Location = new System.Drawing.Point(12, 186);
+            SerStoreButton1.Location = new System.Drawing.Point(12, 183);
             SerStoreButton1.Name = "SerStoreButton1";
-            SerStoreButton1.Size = new System.Drawing.Size(256, 51);
+            SerStoreButton1.Size = new System.Drawing.Size(258, 51);
             SerStoreButton1.TabIndex = 37;
             SerStoreButton1.Text = "View Profile";
             SerStoreButton1.UseVisualStyleBackColor = false;
@@ -2332,10 +2332,10 @@
             panel18.Controls.Add(label54);
             panel18.Controls.Add(panel20);
             panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel18.Location = new System.Drawing.Point(302, 538);
+            panel18.Location = new System.Drawing.Point(304, 526);
             panel18.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             panel18.Name = "panel18";
-            panel18.Size = new System.Drawing.Size(281, 249);
+            panel18.Size = new System.Drawing.Size(283, 244);
             panel18.TabIndex = 48;
             // 
             // label31
@@ -2367,9 +2367,9 @@
             button27.FlatAppearance.BorderSize = 0;
             button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button27.Location = new System.Drawing.Point(12, 187);
+            button27.Location = new System.Drawing.Point(12, 185);
             button27.Name = "button27";
-            button27.Size = new System.Drawing.Size(256, 51);
+            button27.Size = new System.Drawing.Size(258, 51);
             button27.TabIndex = 37;
             button27.Text = "View Profile";
             button27.UseVisualStyleBackColor = false;
@@ -2403,10 +2403,10 @@
             panel17.Controls.Add(label44);
             panel17.Controls.Add(panel33);
             panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel17.Location = new System.Drawing.Point(302, 8);
+            panel17.Location = new System.Drawing.Point(304, 8);
             panel17.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             panel17.Name = "panel17";
-            panel17.Size = new System.Drawing.Size(281, 249);
+            panel17.Size = new System.Drawing.Size(283, 243);
             panel17.TabIndex = 43;
             // 
             // label38
@@ -2438,9 +2438,9 @@
             button35.FlatAppearance.BorderSize = 0;
             button35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button35.Location = new System.Drawing.Point(12, 186);
+            button35.Location = new System.Drawing.Point(12, 183);
             button35.Name = "button35";
-            button35.Size = new System.Drawing.Size(256, 51);
+            button35.Size = new System.Drawing.Size(258, 51);
             button35.TabIndex = 37;
             button35.Text = "View Profile";
             button35.UseVisualStyleBackColor = false;
@@ -2474,10 +2474,10 @@
             panel36.Controls.Add(label57);
             panel36.Controls.Add(panel37);
             panel36.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel36.Location = new System.Drawing.Point(7, 538);
+            panel36.Location = new System.Drawing.Point(7, 526);
             panel36.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             panel36.Name = "panel36";
-            panel36.Size = new System.Drawing.Size(281, 249);
+            panel36.Size = new System.Drawing.Size(283, 244);
             panel36.TabIndex = 47;
             // 
             // label55
@@ -2509,9 +2509,9 @@
             button39.FlatAppearance.BorderSize = 0;
             button39.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button39.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button39.Location = new System.Drawing.Point(12, 187);
+            button39.Location = new System.Drawing.Point(12, 185);
             button39.Name = "button39";
-            button39.Size = new System.Drawing.Size(256, 51);
+            button39.Size = new System.Drawing.Size(258, 51);
             button39.TabIndex = 37;
             button39.Text = "View Profile";
             button39.UseVisualStyleBackColor = false;
@@ -2545,10 +2545,10 @@
             panel22.Controls.Add(label39);
             panel22.Controls.Add(panel25);
             panel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel22.Location = new System.Drawing.Point(597, 273);
+            panel22.Location = new System.Drawing.Point(601, 267);
             panel22.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             panel22.Name = "panel22";
-            panel22.Size = new System.Drawing.Size(283, 249);
+            panel22.Size = new System.Drawing.Size(285, 243);
             panel22.TabIndex = 47;
             // 
             // label32
@@ -2580,9 +2580,9 @@
             button29.FlatAppearance.BorderSize = 0;
             button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button29.Location = new System.Drawing.Point(12, 186);
+            button29.Location = new System.Drawing.Point(12, 183);
             button29.Name = "button29";
-            button29.Size = new System.Drawing.Size(258, 51);
+            button29.Size = new System.Drawing.Size(260, 51);
             button29.TabIndex = 37;
             button29.Text = "View Profile";
             button29.UseVisualStyleBackColor = false;
@@ -2616,10 +2616,10 @@
             panel27.Controls.Add(label46);
             panel27.Controls.Add(panel29);
             panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel27.Location = new System.Drawing.Point(597, 8);
+            panel27.Location = new System.Drawing.Point(601, 8);
             panel27.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             panel27.Name = "panel27";
-            panel27.Size = new System.Drawing.Size(283, 249);
+            panel27.Size = new System.Drawing.Size(285, 243);
             panel27.TabIndex = 44;
             // 
             // label36
@@ -2651,9 +2651,9 @@
             button31.FlatAppearance.BorderSize = 0;
             button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button31.Location = new System.Drawing.Point(12, 186);
+            button31.Location = new System.Drawing.Point(12, 183);
             button31.Name = "button31";
-            button31.Size = new System.Drawing.Size(258, 51);
+            button31.Size = new System.Drawing.Size(260, 51);
             button31.TabIndex = 37;
             button31.Text = "View Profile";
             button31.UseVisualStyleBackColor = false;
@@ -2687,10 +2687,10 @@
             panel34.Controls.Add(label52);
             panel34.Controls.Add(panel35);
             panel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel34.Location = new System.Drawing.Point(7, 273);
+            panel34.Location = new System.Drawing.Point(7, 267);
             panel34.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             panel34.Name = "panel34";
-            panel34.Size = new System.Drawing.Size(281, 249);
+            panel34.Size = new System.Drawing.Size(283, 243);
             panel34.TabIndex = 45;
             // 
             // label50
@@ -2722,9 +2722,9 @@
             button37.FlatAppearance.BorderSize = 0;
             button37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button37.Location = new System.Drawing.Point(12, 186);
+            button37.Location = new System.Drawing.Point(12, 183);
             button37.Name = "button37";
-            button37.Size = new System.Drawing.Size(256, 51);
+            button37.Size = new System.Drawing.Size(258, 51);
             button37.TabIndex = 37;
             button37.Text = "View Profile";
             button37.UseVisualStyleBackColor = false;
@@ -2758,10 +2758,10 @@
             panel31.Controls.Add(label49);
             panel31.Controls.Add(panel32);
             panel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel31.Location = new System.Drawing.Point(302, 273);
+            panel31.Location = new System.Drawing.Point(304, 267);
             panel31.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             panel31.Name = "panel31";
-            panel31.Size = new System.Drawing.Size(281, 249);
+            panel31.Size = new System.Drawing.Size(283, 243);
             panel31.TabIndex = 46;
             // 
             // label47
@@ -2793,9 +2793,9 @@
             button33.FlatAppearance.BorderSize = 0;
             button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button33.Location = new System.Drawing.Point(12, 186);
+            button33.Location = new System.Drawing.Point(12, 183);
             button33.Name = "button33";
-            button33.Size = new System.Drawing.Size(256, 51);
+            button33.Size = new System.Drawing.Size(258, 51);
             button33.TabIndex = 37;
             button33.Text = "View Profile";
             button33.UseVisualStyleBackColor = false;
@@ -2882,7 +2882,7 @@
             CalendarPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             CalendarPanel.Location = new System.Drawing.Point(277, 231);
             CalendarPanel.Name = "CalendarPanel";
-            CalendarPanel.Size = new System.Drawing.Size(893, 754);
+            CalendarPanel.Size = new System.Drawing.Size(893, 737);
             CalendarPanel.TabIndex = 49;
             // 
             // CalendarAppointmentPanel
@@ -2941,7 +2941,7 @@
             AppointmentsPanel.Controls.Add(panel38);
             AppointmentsPanel.Location = new System.Drawing.Point(277, 231);
             AppointmentsPanel.Name = "AppointmentsPanel";
-            AppointmentsPanel.Size = new System.Drawing.Size(893, 754);
+            AppointmentsPanel.Size = new System.Drawing.Size(893, 737);
             AppointmentsPanel.TabIndex = 50;
             // 
             // panel42
@@ -3240,7 +3240,7 @@
             ViewdetailsPanel.Controls.Add(tableLayoutPanel2);
             ViewdetailsPanel.Location = new System.Drawing.Point(277, 231);
             ViewdetailsPanel.Name = "ViewdetailsPanel";
-            ViewdetailsPanel.Size = new System.Drawing.Size(893, 754);
+            ViewdetailsPanel.Size = new System.Drawing.Size(893, 737);
             ViewdetailsPanel.TabIndex = 53;
             // 
             // tableLayoutPanel2
@@ -3531,7 +3531,7 @@
             ProfilePanel.Controls.Add(ProPicPanel);
             ProfilePanel.Location = new System.Drawing.Point(277, 175);
             ProfilePanel.Name = "ProfilePanel";
-            ProfilePanel.Size = new System.Drawing.Size(893, 809);
+            ProfilePanel.Size = new System.Drawing.Size(893, 792);
             ProfilePanel.TabIndex = 41;
             // 
             // GPPanel
@@ -3925,7 +3925,7 @@
             SettingPanel.Controls.Add(tableLayoutPanel1);
             SettingPanel.Location = new System.Drawing.Point(277, 231);
             SettingPanel.Name = "SettingPanel";
-            SettingPanel.Size = new System.Drawing.Size(893, 754);
+            SettingPanel.Size = new System.Drawing.Size(893, 737);
             SettingPanel.TabIndex = 54;
             // 
             // tableLayoutPanel1
@@ -4181,7 +4181,7 @@
             panel44.Location = new System.Drawing.Point(100, 171);
             panel44.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             panel44.Name = "panel44";
-            panel44.Size = new System.Drawing.Size(168, 809);
+            panel44.Size = new System.Drawing.Size(168, 792);
             panel44.TabIndex = 22;
             // 
             // pictureBox2
@@ -4191,7 +4191,7 @@
             pictureBox2.Location = new System.Drawing.Point(0, 0);
             pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(168, 809);
+            pictureBox2.Size = new System.Drawing.Size(168, 792);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -4204,7 +4204,7 @@
             panel45.Location = new System.Drawing.Point(277, 177);
             panel45.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             panel45.Name = "panel45";
-            panel45.Size = new System.Drawing.Size(484, 410);
+            panel45.Size = new System.Drawing.Size(484, 393);
             panel45.TabIndex = 55;
             // 
             // FacilityProPanel
@@ -4215,7 +4215,7 @@
             FacilityProPanel.Controls.Add(tableLayoutPanel6);
             FacilityProPanel.Location = new System.Drawing.Point(277, 177);
             FacilityProPanel.Name = "FacilityProPanel";
-            FacilityProPanel.Size = new System.Drawing.Size(893, 754);
+            FacilityProPanel.Size = new System.Drawing.Size(893, 737);
             FacilityProPanel.TabIndex = 56;
             // 
             // tableLayoutPanel6
@@ -4957,7 +4957,7 @@
             FacilityProPanel2.Controls.Add(tableLayoutPanel7);
             FacilityProPanel2.Location = new System.Drawing.Point(277, 177);
             FacilityProPanel2.Name = "FacilityProPanel2";
-            FacilityProPanel2.Size = new System.Drawing.Size(893, 754);
+            FacilityProPanel2.Size = new System.Drawing.Size(893, 737);
             FacilityProPanel2.TabIndex = 57;
             // 
             // BAPanel
@@ -5591,17 +5591,17 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
-            ClientSize = new System.Drawing.Size(1219, 1000);
-            Controls.Add(AppointmentsPanel);
+            ClientSize = new System.Drawing.Size(1219, 983);
+            Controls.Add(NotificationPanel);
             Controls.Add(SerPanel);
             Controls.Add(ServicesPanel);
-            Controls.Add(NotificationPanel);
+            Controls.Add(panel3);
+            Controls.Add(AppointmentsPanel);
             Controls.Add(FacilityProPanel2);
             Controls.Add(FacilityProPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(SettingPanel);
             Controls.Add(panel45);
-            Controls.Add(panel3);
             Controls.Add(AppointmentPanel);
             Controls.Add(panel44);
             Controls.Add(CalendarPanel);
