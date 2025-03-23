@@ -6048,10 +6048,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(914, 681);
+            this.Controls.Add(this.ServicesPanel);
             this.Controls.Add(this.NotificationPanel);
             this.Controls.Add(this.FacilityProPanel2);
             this.Controls.Add(this.FacilityProPanel);
-            this.Controls.Add(this.ServicesPanel);
             this.Controls.Add(this.SerPanel);
             this.Controls.Add(this.ViewdetailsPanel);
             this.Controls.Add(this.SettingPanel);

@@ -8,11 +8,17 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace OOP2
 {
     public partial class ClientLogin : Form
     {
+        OleDbConnection myConn;
+        OleDbDataAdapter da;
+        OleDbCommand cmd;
+        DataSet ds;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
             (
@@ -133,6 +139,12 @@ namespace OOP2
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Gio Christian\\OneDrive\\ドキュメント\\PEAR\\2ND\\2SEM\\CPE262\\CODERS\\OOP2\\OOP2 Database - Copy.accdb");
+            ds = new DataSet();
+            myConn.Open();
+            System.Windows.Forms.MessageBox.Show("Connected successfully!");
+            myConn.Close();
+
             this.Hide();
             ClientDashboard clientDashboard = new ClientDashboard();
             clientDashboard.ShowDialog();
