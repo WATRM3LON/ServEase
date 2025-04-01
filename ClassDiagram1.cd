@@ -14,20 +14,27 @@
   </Class>
   <Class Name="OOP2.Admin">
     <Position X="3.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAgEKAAAACEAAAgBIACAABACMBQAMgAEBAECFQRAABE=</HashCode>
-      <FileName>Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP2.ClientDashboard">
     <Position X="8.75" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>//1/qDMUjCEE4liHMBWR3ffzsNw/9vf/5Opn9f//m7E=</HashCode>
-      <FileName>ClientDashboard.cs</FileName>
+      <HashCode>//1/qCEQgCAAoBgHMBGQ3ffzsNw/5vf/5Opi9f3/m7E=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP2.ClientLogin">
     <Position X="10.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>EgQ54FAiAKIXAiQRDSKBwKBGAIAIAsFBQIKK4AgKkKI=</HashCode>
       <FileName>ClientLogin.cs</FileName>
@@ -49,6 +56,9 @@
   </Class>
   <Class Name="OOP2.ServiceFacilitycs">
     <Position X="5.25" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>/313OzGYACBEohiXMAmRwVQDMMQ/JlLnxMEHVdz/GzE=</HashCode>
       <FileName>ServiceFacilitycs.cs</FileName>
@@ -56,9 +66,19 @@
   </Class>
   <Class Name="OOP2.ServiceFacilityLogin">
     <Position X="7" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>EgAZIBAAACAHAjARAACZYAACAIAIAkEBIICCwQBAgCY=</HashCode>
+      <HashCode>EgQ5YFAiAKAXAjQRDSKRQCBGAIAIAsFBAIKK4QhIkKY=</HashCode>
       <FileName>ServiceFacilityLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.BaseForm">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
