@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OOP2.Properties.Resources">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.Properties.Settings">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.Admin">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgEKAAAACEAAAgBIACAABACMBQAMgAEBAECFQRAABE=</HashCode>
+      <FileName>Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.ClientDashboard">
+    <Position X="8.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>//1/qDMUjCEE4liHMBWR3ffzsNw/9vf/5Opn9f//m7E=</HashCode>
+      <FileName>ClientDashboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.ClientLogin">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgQ54FAiAKIXAiQRDSKBwKBGAIAIAsFBQIKK4AgKkKI=</HashCode>
+      <FileName>ClientLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.Form1">
+    <Position X="1.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAABgCAAAgQBAACAAAACAIAYAAAAAAQCAABEAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.Program">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.ServiceFacilitycs">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/313OzGYACBEohiXMAmRwVQDMMQ/JlLnxMEHVdz/GzE=</HashCode>
+      <FileName>ServiceFacilitycs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP2.ServiceFacilityLogin">
+    <Position X="7" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAZIBAAACAHAjARAACZYAACAIAIAkEBIICCwQBAgCY=</HashCode>
+      <FileName>ServiceFacilityLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
