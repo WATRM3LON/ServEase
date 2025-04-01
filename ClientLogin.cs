@@ -31,6 +31,7 @@ namespace OOP2
             int nHeightEllipse
             );
         string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
+        int count = 0;
         public ClientLogin()
         {
             InitializeComponent();
@@ -54,7 +55,8 @@ namespace OOP2
             EmailAddLPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EmailAddLPanel.Width, EmailAddLPanel.Height, 10, 10));
             PasswordLPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PasswordLPanel.Width, PasswordLPanel.Height, 10, 10));
             SignInButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SignInButton.Width, SignInButton.Height, 10, 10));
-            NmatchLabel.Visible = false; FNameEM.Visible = false; LNameEM.Visible = false; EmailAddSEM.Visible = false; CNumberEM.Visible = false; PasswordSEM.Visible = false; CPasswordEM.Visible = false; InvalidLEP.Visible = false;
+            NmatchLabel.Visible = false; FNameEM.Visible = false; LNameEM.Visible = false; EmailAddSEM.Visible = false; CNumberEM.Visible = false; PasswordSEM.Visible = false; CPasswordEM.Visible = false; InvalidLEP.Visible = false; 
+            EmailExisted.Visible = false; CnumberExisted.Visible = false;
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -142,8 +144,6 @@ namespace OOP2
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            //string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
-
             try
             {
                 using (OleDbConnection myConn = new OleDbConnection(connection))
@@ -181,32 +181,87 @@ namespace OOP2
             }
 
         }
+        
+        public bool EmailChecker(string email, string connection)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT COUNT(*) FROM Client_Sign_In WHERE [Email Address] = @email";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@email", email);
+                    count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        EmailExisted.Visible = true;
+                        EmailSPanel.BackColor = Color.MistyRose; EmailSTextBox.BackColor = Color.MistyRose;
+                        return count == 1;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        public bool CNumberChecker(string Cnumber, string connection)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT COUNT(*) FROM Client_Sign_In WHERE [Contact Number] = @cnumber";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@cnumber", Cnumber);
+                    count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        CnumberExisted.Visible = true;
+                        CNumberPanel.BackColor = Color.MistyRose; CNumberSTextBox.BackColor = Color.MistyRose;
+                        return count == 1;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
             if (FNameTextBox.Text.Length <= 0) { FNameEM.Visible = true; FnamePanel.BackColor = Color.MistyRose; FNameTextBox.BackColor = Color.MistyRose; } if (LNameTextBox.Text.Length <= 0) { LNameEM.Visible = true; LnamePanel.BackColor = Color.MistyRose; LNameTextBox.BackColor = Color.MistyRose; } if (EmailSTextBox.Text.Length <= 0) { EmailAddSEM.Visible = true; EmailSPanel.BackColor = Color.MistyRose; EmailSTextBox.BackColor = Color.MistyRose; } if (CNumberSTextBox.Text.Length <= 0) { CNumberEM.Visible = true; CNumberPanel.BackColor = Color.MistyRose; CNumberSTextBox.BackColor = Color.MistyRose; } if (PasswordSTextBox.Text.Length <= 0) { PasswordSEM.Visible = true; PasswordSPanel.BackColor = Color.MistyRose; PasswordSTextBox.BackColor = Color.MistyRose; } if (CPasswordTextBox.Text.Length <= 0) { CPasswordEM.Visible = true; CPasswordTextBox.BackColor = Color.MistyRose; ConfirmSPanel.BackColor = Color.MistyRose; }
-            NmatchLabel.Visible = false;
-
-            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb");
-            ds = new DataSet();
-            myConn.Open();
-            myConn.Close();
-
+            
+            bool emailFound = EmailChecker(EmailSTextBox.Text, connection), cnumberFound = CNumberChecker(CNumberSTextBox.Text, connection), isValid = true;
             
             if (PasswordSTextBox.Text != CPasswordTextBox.Text)
             {
                 NmatchLabel.Visible = true;
                 PasswordSTextBox.Text = string.Empty;
                 CPasswordTextBox.Text = string.Empty;
-
-            }else if(FNameTextBox.Text.Length <= 0 || LNameTextBox.Text.Length <= 0 || EmailSTextBox.Text.Length <= 0|| CNumberSTextBox.Text.Length <= 0 || PasswordSTextBox.Text.Length <= 0 || CPasswordTextBox.Text.Length <= 0)
-            {
-                
-            }
-            else
-            {
-                using (OleDbConnection myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb"))
+                PasswordSPanel.BackColor = Color.MistyRose; PasswordSTextBox.BackColor = Color.MistyRose;
+                CPasswordTextBox.BackColor = Color.MistyRose; ConfirmSPanel.BackColor = Color.MistyRose;
+                if(PasswordSEM.Visible == true || CPasswordEM.Visible == true)
                 {
+                    PasswordSEM.Visible = false;
+                    CPasswordEM.Visible = false;
+                }
+                isValid = false;
+            }
+            if()
+            if (FNameTextBox.Text.Length <= 0 || LNameTextBox.Text.Length <= 0 || EmailSTextBox.Text.Length <= 0 || CNumberSTextBox.Text.Length <= 0 || PasswordSTextBox.Text.Length <= 0 || CPasswordTextBox.Text.Length <= 0)
+            {
+
+            }else if (isValid && !emailFound && !cnumberFound)
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {   
+                    myConn.Open();
                     string query = "INSERT INTO Client_Sign_In ([First Name], [Last Name], [Email Address], [Contact Number], [Password]) " +
                                    "VALUES (@FName, @LName, @EmailAdd, @CNumber, @Password)";
 
@@ -218,9 +273,6 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
                         cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
 
-                        
-
-                        myConn.Open();
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -242,17 +294,19 @@ namespace OOP2
 
         private void EmailSTextBox_Click(object sender, EventArgs e)
         {
-            EmailAddSEM.Visible = false; EmailSPanel.BackColor = Color.White; EmailSTextBox.BackColor = Color.White;
+            EmailAddSEM.Visible = false; EmailSPanel.BackColor = Color.White; EmailSTextBox.BackColor = Color.White;EmailExisted.Visible = false;
         }
 
         private void CNumberSTextBox_Click(object sender, EventArgs e)
         {
             CNumberEM.Visible = false; CNumberSTextBox.BackColor = Color.White; CNumberPanel.BackColor = Color.White;
+            CnumberExisted.Visible = false;
         }
 
         private void PasswordSTextBox_Click(object sender, EventArgs e)
         {
             PasswordSEM.Visible = false; PasswordSPanel.BackColor = Color.White; PasswordSTextBox.BackColor = Color.White;
+            NmatchLabel.Visible = false;
         }
 
         private void CPasswordTextBox_Click(object sender, EventArgs e)

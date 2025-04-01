@@ -35,6 +35,7 @@
             LogButton = new System.Windows.Forms.Button();
             GifBox = new System.Windows.Forms.PictureBox();
             SigninPanel = new System.Windows.Forms.Panel();
+            EmailExisted = new System.Windows.Forms.Label();
             CPasswordEM = new System.Windows.Forms.Label();
             PasswordSEM = new System.Windows.Forms.Label();
             CNumberEM = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             EmailLLabel = new System.Windows.Forms.Label();
             EmailLTextBox = new System.Windows.Forms.TextBox();
             LogInPanel = new System.Windows.Forms.Panel();
+            InvalidLEP = new System.Windows.Forms.Label();
             FPLabel = new System.Windows.Forms.Label();
             LoginButton = new System.Windows.Forms.Button();
             PasswordLLabel = new System.Windows.Forms.Label();
@@ -76,7 +78,7 @@
             ServiceFacilityButton = new System.Windows.Forms.Button();
             LogoBox = new System.Windows.Forms.PictureBox();
             ClickherLabel = new System.Windows.Forms.Label();
-            InvalidLEP = new System.Windows.Forms.Label();
+            CnumberExisted = new System.Windows.Forms.Label();
             GreenPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)GifBox).BeginInit();
             SigninPanel.SuspendLayout();
@@ -167,6 +169,9 @@
             // 
             SigninPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             SigninPanel.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            SigninPanel.Controls.Add(CnumberExisted);
+            SigninPanel.Controls.Add(PasswordSLabel);
+            SigninPanel.Controls.Add(EmailExisted);
             SigninPanel.Controls.Add(CPasswordEM);
             SigninPanel.Controls.Add(PasswordSEM);
             SigninPanel.Controls.Add(CNumberEM);
@@ -180,7 +185,6 @@
             SigninPanel.Controls.Add(FnamePanel);
             SigninPanel.Controls.Add(CPasswordLabel);
             SigninPanel.Controls.Add(ContactNumberLabel);
-            SigninPanel.Controls.Add(PasswordSLabel);
             SigninPanel.Controls.Add(FNameLabel);
             SigninPanel.Controls.Add(SignInButton);
             SigninPanel.Controls.Add(EmailSPanel);
@@ -192,6 +196,18 @@
             SigninPanel.Size = new System.Drawing.Size(520, 653);
             SigninPanel.TabIndex = 11;
             SigninPanel.Visible = false;
+            // 
+            // EmailExisted
+            // 
+            EmailExisted.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailExisted.AutoSize = true;
+            EmailExisted.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EmailExisted.ForeColor = System.Drawing.Color.Red;
+            EmailExisted.Location = new System.Drawing.Point(54, 230);
+            EmailExisted.Name = "EmailExisted";
+            EmailExisted.Size = new System.Drawing.Size(287, 17);
+            EmailExisted.TabIndex = 31;
+            EmailExisted.Text = "Email already exists. Please enter another email.";
             // 
             // CPasswordEM
             // 
@@ -283,7 +299,7 @@
             NmatchLabel.AutoSize = true;
             NmatchLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             NmatchLabel.ForeColor = System.Drawing.Color.Red;
-            NmatchLabel.Location = new System.Drawing.Point(157, 558);
+            NmatchLabel.Location = new System.Drawing.Point(157, 552);
             NmatchLabel.Name = "NmatchLabel";
             NmatchLabel.Size = new System.Drawing.Size(196, 23);
             NmatchLabel.TabIndex = 21;
@@ -574,6 +590,18 @@
             LogInPanel.Size = new System.Drawing.Size(373, 452);
             LogInPanel.TabIndex = 7;
             // 
+            // InvalidLEP
+            // 
+            InvalidLEP.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            InvalidLEP.AutoSize = true;
+            InvalidLEP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            InvalidLEP.ForeColor = System.Drawing.Color.Red;
+            InvalidLEP.Location = new System.Drawing.Point(87, 265);
+            InvalidLEP.Name = "InvalidLEP";
+            InvalidLEP.Size = new System.Drawing.Size(202, 23);
+            InvalidLEP.TabIndex = 22;
+            InvalidLEP.Text = "Invalid Email or Password";
+            // 
             // FPLabel
             // 
             FPLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -681,17 +709,19 @@
             ClickherLabel.TabIndex = 32;
             ClickherLabel.Text = "Click here if you are a Service Provider";
             // 
-            // InvalidLEP
+            // CnumberExisted
             // 
-            InvalidLEP.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            InvalidLEP.AutoSize = true;
-            InvalidLEP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            InvalidLEP.ForeColor = System.Drawing.Color.Red;
-            InvalidLEP.Location = new System.Drawing.Point(87, 265);
-            InvalidLEP.Name = "InvalidLEP";
-            InvalidLEP.Size = new System.Drawing.Size(202, 23);
-            InvalidLEP.TabIndex = 22;
-            InvalidLEP.Text = "Invalid Email or Password";
+            CnumberExisted.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CnumberExisted.AutoSize = true;
+            CnumberExisted.BackColor = System.Drawing.Color.Transparent;
+            CnumberExisted.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CnumberExisted.ForeColor = System.Drawing.Color.Red;
+            CnumberExisted.Location = new System.Drawing.Point(207, 334);
+            CnumberExisted.Name = "CnumberExisted";
+            CnumberExisted.Size = new System.Drawing.Size(268, 34);
+            CnumberExisted.TabIndex = 32;
+            CnumberExisted.Text = "Oops! This contact number is already taken. \r\nDo you have another one you can use?\r\n";
+            CnumberExisted.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ClientLogin
             // 
@@ -700,6 +730,7 @@
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             ClientSize = new System.Drawing.Size(1236, 983);
+            Controls.Add(SigninPanel);
             Controls.Add(ClickherLabel);
             Controls.Add(ServiceFacilityButton);
             Controls.Add(LogInPanel);
@@ -707,7 +738,6 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(GreenPanel);
-            Controls.Add(SigninPanel);
             Controls.Add(LogoBox);
             DoubleBuffered = true;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -791,5 +821,7 @@
         private System.Windows.Forms.Label EmailAddSEM;
         private System.Windows.Forms.Label LNameEM;
         private System.Windows.Forms.Label InvalidLEP;
+        private System.Windows.Forms.Label EmailExisted;
+        private System.Windows.Forms.Label CnumberExisted;
     }
 }
