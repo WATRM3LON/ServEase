@@ -52,7 +52,7 @@ namespace OOP2
             CNumberPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CNumberPanel.Width, CNumberPanel.Height, 10, 10));
             PasswordSPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PasswordSPanel.Width, PasswordSPanel.Height, 10, 10));
             ConfirmSPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ConfirmSPanel.Width, ConfirmSPanel.Height, 10, 10));
-            EmailLPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EmailLPanel.Width, EmailLPanel.Height, 10, 10));
+            EmailAddLPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EmailAddLPanel.Width, EmailAddLPanel.Height, 10, 10));
             PasswordLPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PasswordLPanel.Width, PasswordLPanel.Height, 10, 10));
             SignInButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SignInButton.Width, SignInButton.Height, 10, 10));
             NmatchLabel.Visible = false; FNameEM.Visible = false; LNameEM.Visible = false; EmailAddSEM.Visible = false; CNumberEM.Visible = false; PasswordSEM.Visible = false; CPasswordEM.Visible = false; InvalidLEP.Visible = false; 
@@ -148,7 +148,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT COUNT(*) FROM [Client Sign In] WHERE [Email Address] = @email AND [Password] = @password";
+                string sql = "SELECT COUNT(*) FROM Client_Sign_In WHERE [Email Address] = @email AND [Password] = @password";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@email", EmailLTextBox.Text);
@@ -174,8 +174,7 @@ namespace OOP2
                     }
                     else
                     {
-                        InvalidLEP.Visible = true;
-                        EmailLTextBox.BackColor = EmailLPanel.BackColor = PasswordLPanel.BackColor = PasswordLTextBox.BackColor = Color.MistyRose;
+                        MessageBox.Show("Invalid email or password.");
                     }
                 }
             }
@@ -187,7 +186,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT COUNT(*) FROM [Client Sign In] WHERE [Email Address] = @email";
+                string sql = "SELECT COUNT(*) FROM Client_Sign_In WHERE [Email Address] = @email";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@email", email);
@@ -213,7 +212,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT COUNT(*) FROM [Client Sign In] WHERE [Contact Number] = @cnumber";
+                string sql = "SELECT COUNT(*) FROM Client_Sign_In WHERE [Contact Number] = @cnumber";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@cnumber", Cnumber);
@@ -280,12 +279,12 @@ namespace OOP2
             if (FNameTextBox.Text.Length <= 0 || LNameTextBox.Text.Length <= 0 || EmailSTextBox.Text.Length <= 0 || CNumberSTextBox.Text.Length <= 0 || PasswordSTextBox.Text.Length <= 0 || CPasswordTextBox.Text.Length <= 0)
             {
 
-            }else if (isValid && !emailFound && !cnumberValid)
+            }else if (isValid && !emailFound && cnumberValid)
             {
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {   
                     myConn.Open();
-                    string query = "INSERT INTO [Client Sign In] ([First Name], [Last Name], [Email Address], [Contact Number], [Password]) " +
+                    string query = "INSERT INTO Client_Sign_In ([First Name], [Last Name], [Email Address], [Contact Number], [Password]) " +
                                    "VALUES (@FName, @LName, @EmailAdd, @CNumber, @Password)";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, myConn))
@@ -335,17 +334,6 @@ namespace OOP2
         private void CPasswordTextBox_Click(object sender, EventArgs e)
         {
             CPasswordEM.Visible = false; CPasswordTextBox.BackColor = Color.White; ConfirmSPanel.BackColor = Color.White;
-        }
-        private void EmailLTextBox_Click(object sender, EventArgs e)
-        {
-            InvalidLEP.Visible = false;
-            EmailLTextBox.BackColor = EmailLPanel.BackColor = Color.White;
-        }
-
-        private void PasswordLTextBox_Click(object sender, EventArgs e)
-        {
-            InvalidLEP.Visible = false;
-            PasswordLPanel.BackColor = PasswordLTextBox.BackColor = Color.White;
         }
     }
 }
