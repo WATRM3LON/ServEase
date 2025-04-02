@@ -14,6 +14,8 @@ namespace OOP2
 {
     public partial class ClientDashboard : Form
     {
+        //ClientLogin.EmailAddress;
+
         bool dbp1 = false, dbp2 = false, notify = false, dashboard, services, ser, profile, calendar;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -142,7 +144,7 @@ namespace OOP2
             ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
             PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
             GPPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GPPanel.Width, GPPanel.Height, 10, 10));
-            button47.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button47.Width, button47.Height, 10, 10));
+            PIEditButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIEditButton.Width, PIEditButton.Height, 10, 10));
             button48.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button48.Width, button48.Height, 10, 10));
             button49.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button49.Width, button49.Height, 10, 10));
             button60.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button60.Width, button60.Height, 10, 10));
@@ -790,5 +792,9 @@ namespace OOP2
             }
         }
 
+        private void HiLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

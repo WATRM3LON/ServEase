@@ -268,21 +268,20 @@
             button48 = new System.Windows.Forms.Button();
             label113 = new System.Windows.Forms.Label();
             PIPanel = new System.Windows.Forms.Panel();
-            label102 = new System.Windows.Forms.Label();
-            label103 = new System.Windows.Forms.Label();
-            label100 = new System.Windows.Forms.Label();
-            label101 = new System.Windows.Forms.Label();
-            label98 = new System.Windows.Forms.Label();
-            label99 = new System.Windows.Forms.Label();
-            label95 = new System.Windows.Forms.Label();
-            label96 = new System.Windows.Forms.Label();
-            label94 = new System.Windows.Forms.Label();
-            label93 = new System.Windows.Forms.Label();
-            button47 = new System.Windows.Forms.Button();
+            AgePI = new System.Windows.Forms.Label();
+            PIAge = new System.Windows.Forms.Label();
+            EmailAddressPI = new System.Windows.Forms.Label();
+            PIEmailAdd = new System.Windows.Forms.Label();
+            BirthDatePI = new System.Windows.Forms.Label();
+            PIDateBirth = new System.Windows.Forms.Label();
+            ContactNumberPI = new System.Windows.Forms.Label();
+            PICNumber = new System.Windows.Forms.Label();
+            ClientNamePI = new System.Windows.Forms.Label();
+            PIName = new System.Windows.Forms.Label();
+            PIEditButton = new System.Windows.Forms.Button();
             label91 = new System.Windows.Forms.Label();
             ProPicPanel = new System.Windows.Forms.Panel();
-            button60 = new System.Windows.Forms.Button();
-            label97 = new System.Windows.Forms.Label();
+            PPClientName = new System.Windows.Forms.Label();
             panel58 = new System.Windows.Forms.Panel();
             NotificationPanel = new System.Windows.Forms.Panel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -420,6 +419,25 @@
             label108 = new System.Windows.Forms.Label();
             panel72 = new System.Windows.Forms.Panel();
             label104 = new System.Windows.Forms.Label();
+            EditPIPanel = new System.Windows.Forms.Panel();
+            panel84 = new System.Windows.Forms.Panel();
+            label96 = new System.Windows.Forms.Label();
+            label98 = new System.Windows.Forms.Label();
+            label99 = new System.Windows.Forms.Label();
+            label100 = new System.Windows.Forms.Label();
+            label101 = new System.Windows.Forms.Label();
+            label102 = new System.Windows.Forms.Label();
+            label103 = new System.Windows.Forms.Label();
+            label163 = new System.Windows.Forms.Label();
+            label164 = new System.Windows.Forms.Label();
+            label165 = new System.Windows.Forms.Label();
+            button38 = new System.Windows.Forms.Button();
+            label166 = new System.Windows.Forms.Label();
+            panel85 = new System.Windows.Forms.Panel();
+            label167 = new System.Windows.Forms.Label();
+            panel91 = new System.Windows.Forms.Panel();
+            button40 = new System.Windows.Forms.Button();
+            label93 = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -538,6 +556,9 @@
             panel75.SuspendLayout();
             panel73.SuspendLayout();
             panel72.SuspendLayout();
+            EditPIPanel.SuspendLayout();
+            panel84.SuspendLayout();
+            panel85.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -880,6 +901,7 @@
             HiLabel.Size = new System.Drawing.Size(88, 25);
             HiLabel.TabIndex = 24;
             HiLabel.Text = "Hi Client,";
+            HiLabel.Click += HiLabel_Click;
             // 
             // WelcomeLabel
             // 
@@ -3563,7 +3585,6 @@
             button49.Size = new System.Drawing.Size(80, 46);
             button49.TabIndex = 39;
             button49.Text = "Enable";
-            button49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             button49.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             button49.UseVisualStyleBackColor = false;
             // 
@@ -3599,13 +3620,11 @@
             button48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button48.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button48.ForeColor = System.Drawing.Color.FromArgb(105, 227, 49);
-            button48.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button48.Location = new System.Drawing.Point(327, 77);
             button48.Name = "button48";
             button48.Size = new System.Drawing.Size(80, 46);
             button48.TabIndex = 33;
             button48.Text = "Change";
-            button48.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             button48.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             button48.UseVisualStyleBackColor = false;
             // 
@@ -3625,161 +3644,161 @@
             // 
             PIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIPanel.BackColor = System.Drawing.Color.White;
-            PIPanel.Controls.Add(label102);
-            PIPanel.Controls.Add(label103);
-            PIPanel.Controls.Add(label100);
-            PIPanel.Controls.Add(label101);
-            PIPanel.Controls.Add(label98);
-            PIPanel.Controls.Add(label99);
-            PIPanel.Controls.Add(label95);
-            PIPanel.Controls.Add(label96);
-            PIPanel.Controls.Add(label94);
-            PIPanel.Controls.Add(label93);
-            PIPanel.Controls.Add(button47);
+            PIPanel.Controls.Add(AgePI);
+            PIPanel.Controls.Add(PIAge);
+            PIPanel.Controls.Add(EmailAddressPI);
+            PIPanel.Controls.Add(PIEmailAdd);
+            PIPanel.Controls.Add(BirthDatePI);
+            PIPanel.Controls.Add(PIDateBirth);
+            PIPanel.Controls.Add(ContactNumberPI);
+            PIPanel.Controls.Add(PICNumber);
+            PIPanel.Controls.Add(ClientNamePI);
+            PIPanel.Controls.Add(PIName);
+            PIPanel.Controls.Add(PIEditButton);
             PIPanel.Controls.Add(label91);
             PIPanel.Location = new System.Drawing.Point(8, 211);
             PIPanel.Name = "PIPanel";
             PIPanel.Size = new System.Drawing.Size(867, 291);
             PIPanel.TabIndex = 38;
             // 
-            // label102
+            // AgePI
             // 
-            label102.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label102.AutoSize = true;
-            label102.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label102.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label102.Location = new System.Drawing.Point(585, 123);
-            label102.Name = "label102";
-            label102.Size = new System.Drawing.Size(89, 20);
-            label102.TabIndex = 45;
-            label102.Text = "23 years old";
+            AgePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            AgePI.AutoSize = true;
+            AgePI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            AgePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            AgePI.Location = new System.Drawing.Point(585, 123);
+            AgePI.Name = "AgePI";
+            AgePI.Size = new System.Drawing.Size(89, 20);
+            AgePI.TabIndex = 45;
+            AgePI.Text = "23 years old";
             // 
-            // label103
+            // PIAge
             // 
-            label103.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label103.AutoSize = true;
-            label103.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label103.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label103.Location = new System.Drawing.Point(579, 85);
-            label103.Name = "label103";
-            label103.Size = new System.Drawing.Size(36, 20);
-            label103.TabIndex = 44;
-            label103.Text = "Age";
+            PIAge.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIAge.AutoSize = true;
+            PIAge.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIAge.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PIAge.Location = new System.Drawing.Point(579, 85);
+            PIAge.Name = "PIAge";
+            PIAge.Size = new System.Drawing.Size(36, 20);
+            PIAge.TabIndex = 44;
+            PIAge.Text = "Age";
             // 
-            // label100
+            // EmailAddressPI
             // 
-            label100.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label100.AutoSize = true;
-            label100.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label100.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label100.Location = new System.Drawing.Point(332, 222);
-            label100.Name = "label100";
-            label100.Size = new System.Drawing.Size(177, 20);
-            label100.TabIndex = 43;
-            label100.Text = "juandelacruz@gmail.com";
+            EmailAddressPI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailAddressPI.AutoSize = true;
+            EmailAddressPI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EmailAddressPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EmailAddressPI.Location = new System.Drawing.Point(332, 222);
+            EmailAddressPI.Name = "EmailAddressPI";
+            EmailAddressPI.Size = new System.Drawing.Size(177, 20);
+            EmailAddressPI.TabIndex = 43;
+            EmailAddressPI.Text = "juandelacruz@gmail.com";
             // 
-            // label101
+            // PIEmailAdd
             // 
-            label101.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label101.AutoSize = true;
-            label101.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label101.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label101.Location = new System.Drawing.Point(325, 183);
-            label101.Name = "label101";
-            label101.Size = new System.Drawing.Size(103, 20);
-            label101.TabIndex = 42;
-            label101.Text = "Email Address";
+            PIEmailAdd.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEmailAdd.AutoSize = true;
+            PIEmailAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIEmailAdd.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PIEmailAdd.Location = new System.Drawing.Point(325, 183);
+            PIEmailAdd.Name = "PIEmailAdd";
+            PIEmailAdd.Size = new System.Drawing.Size(103, 20);
+            PIEmailAdd.TabIndex = 42;
+            PIEmailAdd.Text = "Email Address";
             // 
-            // label98
+            // BirthDatePI
             // 
-            label98.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label98.AutoSize = true;
-            label98.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label98.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label98.Location = new System.Drawing.Point(331, 123);
-            label98.Name = "label98";
-            label98.Size = new System.Drawing.Size(125, 20);
-            label98.TabIndex = 41;
-            label98.Text = "February 14, 2002";
+            BirthDatePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BirthDatePI.AutoSize = true;
+            BirthDatePI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BirthDatePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BirthDatePI.Location = new System.Drawing.Point(331, 123);
+            BirthDatePI.Name = "BirthDatePI";
+            BirthDatePI.Size = new System.Drawing.Size(125, 20);
+            BirthDatePI.TabIndex = 41;
+            BirthDatePI.Text = "February 14, 2002";
             // 
-            // label99
+            // PIDateBirth
             // 
-            label99.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label99.AutoSize = true;
-            label99.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label99.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label99.Location = new System.Drawing.Point(324, 85);
-            label99.Name = "label99";
-            label99.Size = new System.Drawing.Size(94, 20);
-            label99.TabIndex = 40;
-            label99.Text = "Date of Birth";
+            PIDateBirth.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIDateBirth.AutoSize = true;
+            PIDateBirth.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIDateBirth.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PIDateBirth.Location = new System.Drawing.Point(324, 85);
+            PIDateBirth.Name = "PIDateBirth";
+            PIDateBirth.Size = new System.Drawing.Size(94, 20);
+            PIDateBirth.TabIndex = 40;
+            PIDateBirth.Text = "Date of Birth";
             // 
-            // label95
+            // ContactNumberPI
             // 
-            label95.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label95.AutoSize = true;
-            label95.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label95.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label95.Location = new System.Drawing.Point(28, 217);
-            label95.Name = "label95";
-            label95.Size = new System.Drawing.Size(119, 20);
-            label95.TabIndex = 39;
-            label95.Text = "+63 9956226213";
+            ContactNumberPI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ContactNumberPI.AutoSize = true;
+            ContactNumberPI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ContactNumberPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ContactNumberPI.Location = new System.Drawing.Point(28, 217);
+            ContactNumberPI.Name = "ContactNumberPI";
+            ContactNumberPI.Size = new System.Drawing.Size(119, 20);
+            ContactNumberPI.TabIndex = 39;
+            ContactNumberPI.Text = "+63 9956226213";
             // 
-            // label96
+            // PICNumber
             // 
-            label96.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label96.AutoSize = true;
-            label96.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label96.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label96.Location = new System.Drawing.Point(21, 178);
-            label96.Name = "label96";
-            label96.Size = new System.Drawing.Size(118, 20);
-            label96.TabIndex = 38;
-            label96.Text = "Contact Number";
+            PICNumber.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PICNumber.AutoSize = true;
+            PICNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PICNumber.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PICNumber.Location = new System.Drawing.Point(21, 178);
+            PICNumber.Name = "PICNumber";
+            PICNumber.Size = new System.Drawing.Size(118, 20);
+            PICNumber.TabIndex = 38;
+            PICNumber.Text = "Contact Number";
             // 
-            // label94
+            // ClientNamePI
             // 
-            label94.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label94.AutoSize = true;
-            label94.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label94.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label94.Location = new System.Drawing.Point(28, 123);
-            label94.Name = "label94";
-            label94.Size = new System.Drawing.Size(106, 20);
-            label94.TabIndex = 37;
-            label94.Text = "Juan Dela Cruz";
+            ClientNamePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ClientNamePI.AutoSize = true;
+            ClientNamePI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ClientNamePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ClientNamePI.Location = new System.Drawing.Point(28, 123);
+            ClientNamePI.Name = "ClientNamePI";
+            ClientNamePI.Size = new System.Drawing.Size(106, 20);
+            ClientNamePI.TabIndex = 37;
+            ClientNamePI.Text = "Juan Dela Cruz";
             // 
-            // label93
+            // PIName
             // 
-            label93.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label93.AutoSize = true;
-            label93.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label93.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label93.Location = new System.Drawing.Point(21, 85);
-            label93.Name = "label93";
-            label93.Size = new System.Drawing.Size(49, 20);
-            label93.TabIndex = 36;
-            label93.Text = "Name";
+            PIName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIName.AutoSize = true;
+            PIName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIName.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PIName.Location = new System.Drawing.Point(21, 85);
+            PIName.Name = "PIName";
+            PIName.Size = new System.Drawing.Size(49, 20);
+            PIName.TabIndex = 36;
+            PIName.Text = "Name";
             // 
-            // button47
+            // PIEditButton
             // 
-            button47.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button47.BackColor = System.Drawing.Color.WhiteSmoke;
-            button47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button47.FlatAppearance.BorderSize = 0;
-            button47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button47.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button47.Image = (System.Drawing.Image)resources.GetObject("button47.Image");
-            button47.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button47.Location = new System.Drawing.Point(743, 11);
-            button47.Name = "button47";
-            button47.Size = new System.Drawing.Size(109, 62);
-            button47.TabIndex = 33;
-            button47.Text = "Edit";
-            button47.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            button47.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            button47.UseVisualStyleBackColor = false;
+            PIEditButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            PIEditButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIEditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            PIEditButton.FlatAppearance.BorderSize = 0;
+            PIEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            PIEditButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIEditButton.Image = (System.Drawing.Image)resources.GetObject("PIEditButton.Image");
+            PIEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            PIEditButton.Location = new System.Drawing.Point(743, 11);
+            PIEditButton.Name = "PIEditButton";
+            PIEditButton.Size = new System.Drawing.Size(109, 62);
+            PIEditButton.TabIndex = 33;
+            PIEditButton.Text = "Edit";
+            PIEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            PIEditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            PIEditButton.UseVisualStyleBackColor = false;
             // 
             // label91
             // 
@@ -3797,44 +3816,24 @@
             // 
             ProPicPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ProPicPanel.BackColor = System.Drawing.Color.White;
-            ProPicPanel.Controls.Add(button60);
-            ProPicPanel.Controls.Add(label97);
+            ProPicPanel.Controls.Add(PPClientName);
             ProPicPanel.Controls.Add(panel58);
             ProPicPanel.Location = new System.Drawing.Point(9, 18);
             ProPicPanel.Name = "ProPicPanel";
             ProPicPanel.Size = new System.Drawing.Size(867, 171);
             ProPicPanel.TabIndex = 37;
             // 
-            // button60
+            // PPClientName
             // 
-            button60.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button60.BackColor = System.Drawing.Color.WhiteSmoke;
-            button60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button60.FlatAppearance.BorderSize = 0;
-            button60.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button60.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button60.Image = (System.Drawing.Image)resources.GetObject("button60.Image");
-            button60.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button60.Location = new System.Drawing.Point(740, 43);
-            button60.Name = "button60";
-            button60.Size = new System.Drawing.Size(109, 62);
-            button60.TabIndex = 33;
-            button60.Text = "Edit";
-            button60.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            button60.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            button60.UseVisualStyleBackColor = false;
-            // 
-            // label97
-            // 
-            label97.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label97.AutoSize = true;
-            label97.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label97.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label97.Location = new System.Drawing.Point(168, 49);
-            label97.Name = "label97";
-            label97.Size = new System.Drawing.Size(134, 25);
-            label97.TabIndex = 35;
-            label97.Text = "Juan Dela Cruz";
+            PPClientName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PPClientName.AutoSize = true;
+            PPClientName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PPClientName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            PPClientName.Location = new System.Drawing.Point(168, 49);
+            PPClientName.Name = "PPClientName";
+            PPClientName.Size = new System.Drawing.Size(134, 25);
+            PPClientName.TabIndex = 35;
+            PPClientName.Text = "Juan Dela Cruz";
             // 
             // panel58
             // 
@@ -5586,12 +5585,263 @@
             label104.TabIndex = 37;
             label104.Text = "20 mins";
             // 
+            // EditPIPanel
+            // 
+            EditPIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EditPIPanel.BackColor = System.Drawing.Color.Transparent;
+            EditPIPanel.Controls.Add(panel84);
+            EditPIPanel.Controls.Add(panel85);
+            EditPIPanel.Location = new System.Drawing.Point(277, 175);
+            EditPIPanel.Name = "EditPIPanel";
+            EditPIPanel.Size = new System.Drawing.Size(893, 746);
+            EditPIPanel.TabIndex = 58;
+            // 
+            // panel84
+            // 
+            panel84.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel84.BackColor = System.Drawing.Color.White;
+            panel84.Controls.Add(label93);
+            panel84.Controls.Add(button40);
+            panel84.Controls.Add(label96);
+            panel84.Controls.Add(label98);
+            panel84.Controls.Add(label99);
+            panel84.Controls.Add(label100);
+            panel84.Controls.Add(label101);
+            panel84.Controls.Add(label102);
+            panel84.Controls.Add(label103);
+            panel84.Controls.Add(label163);
+            panel84.Controls.Add(label164);
+            panel84.Controls.Add(label165);
+            panel84.Controls.Add(button38);
+            panel84.Controls.Add(label166);
+            panel84.Location = new System.Drawing.Point(8, 211);
+            panel84.Name = "panel84";
+            panel84.Size = new System.Drawing.Size(861, 511);
+            panel84.TabIndex = 38;
+            // 
+            // label96
+            // 
+            label96.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label96.AutoSize = true;
+            label96.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label96.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label96.Location = new System.Drawing.Point(585, 123);
+            label96.Name = "label96";
+            label96.Size = new System.Drawing.Size(89, 20);
+            label96.TabIndex = 45;
+            label96.Text = "23 years old";
+            // 
+            // label98
+            // 
+            label98.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label98.AutoSize = true;
+            label98.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label98.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label98.Location = new System.Drawing.Point(579, 85);
+            label98.Name = "label98";
+            label98.Size = new System.Drawing.Size(36, 20);
+            label98.TabIndex = 44;
+            label98.Text = "Age";
+            // 
+            // label99
+            // 
+            label99.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label99.AutoSize = true;
+            label99.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label99.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label99.Location = new System.Drawing.Point(332, 222);
+            label99.Name = "label99";
+            label99.Size = new System.Drawing.Size(177, 20);
+            label99.TabIndex = 43;
+            label99.Text = "juandelacruz@gmail.com";
+            // 
+            // label100
+            // 
+            label100.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label100.AutoSize = true;
+            label100.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label100.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label100.Location = new System.Drawing.Point(325, 183);
+            label100.Name = "label100";
+            label100.Size = new System.Drawing.Size(103, 20);
+            label100.TabIndex = 42;
+            label100.Text = "Email Address";
+            // 
+            // label101
+            // 
+            label101.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label101.AutoSize = true;
+            label101.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label101.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label101.Location = new System.Drawing.Point(331, 123);
+            label101.Name = "label101";
+            label101.Size = new System.Drawing.Size(125, 20);
+            label101.TabIndex = 41;
+            label101.Text = "February 14, 2002";
+            // 
+            // label102
+            // 
+            label102.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label102.AutoSize = true;
+            label102.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label102.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label102.Location = new System.Drawing.Point(324, 85);
+            label102.Name = "label102";
+            label102.Size = new System.Drawing.Size(94, 20);
+            label102.TabIndex = 40;
+            label102.Text = "Date of Birth";
+            // 
+            // label103
+            // 
+            label103.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label103.AutoSize = true;
+            label103.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label103.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label103.Location = new System.Drawing.Point(28, 217);
+            label103.Name = "label103";
+            label103.Size = new System.Drawing.Size(119, 20);
+            label103.TabIndex = 39;
+            label103.Text = "+63 9956226213";
+            // 
+            // label163
+            // 
+            label163.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label163.AutoSize = true;
+            label163.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label163.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label163.Location = new System.Drawing.Point(21, 178);
+            label163.Name = "label163";
+            label163.Size = new System.Drawing.Size(118, 20);
+            label163.TabIndex = 38;
+            label163.Text = "Contact Number";
+            // 
+            // label164
+            // 
+            label164.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label164.AutoSize = true;
+            label164.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label164.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label164.Location = new System.Drawing.Point(28, 123);
+            label164.Name = "label164";
+            label164.Size = new System.Drawing.Size(106, 20);
+            label164.TabIndex = 37;
+            label164.Text = "Juan Dela Cruz";
+            // 
+            // label165
+            // 
+            label165.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label165.AutoSize = true;
+            label165.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label165.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label165.Location = new System.Drawing.Point(21, 85);
+            label165.Name = "label165";
+            label165.Size = new System.Drawing.Size(49, 20);
+            label165.TabIndex = 36;
+            label165.Text = "Name";
+            // 
+            // button38
+            // 
+            button38.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button38.BackColor = System.Drawing.Color.WhiteSmoke;
+            button38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button38.FlatAppearance.BorderSize = 0;
+            button38.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button38.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button38.Image = (System.Drawing.Image)resources.GetObject("button38.Image");
+            button38.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            button38.Location = new System.Drawing.Point(1404, 11);
+            button38.Name = "button38";
+            button38.Size = new System.Drawing.Size(109, 62);
+            button38.TabIndex = 33;
+            button38.Text = "Edit";
+            button38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            button38.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            button38.UseVisualStyleBackColor = false;
+            // 
+            // label166
+            // 
+            label166.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label166.AutoSize = true;
+            label166.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label166.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label166.Location = new System.Drawing.Point(19, 17);
+            label166.Name = "label166";
+            label166.Size = new System.Drawing.Size(187, 25);
+            label166.TabIndex = 35;
+            label166.Text = "Personal Information";
+            // 
+            // panel85
+            // 
+            panel85.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel85.BackColor = System.Drawing.Color.White;
+            panel85.Controls.Add(label167);
+            panel85.Controls.Add(panel91);
+            panel85.Location = new System.Drawing.Point(9, 18);
+            panel85.Name = "panel85";
+            panel85.Size = new System.Drawing.Size(861, 171);
+            panel85.TabIndex = 37;
+            // 
+            // label167
+            // 
+            label167.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label167.AutoSize = true;
+            label167.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label167.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label167.Location = new System.Drawing.Point(168, 49);
+            label167.Name = "label167";
+            label167.Size = new System.Drawing.Size(134, 25);
+            label167.TabIndex = 35;
+            label167.Text = "Juan Dela Cruz";
+            // 
+            // panel91
+            // 
+            panel91.BackColor = System.Drawing.Color.Transparent;
+            panel91.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel91.BackgroundImage");
+            panel91.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            panel91.Location = new System.Drawing.Point(21, 22);
+            panel91.Name = "panel91";
+            panel91.Size = new System.Drawing.Size(116, 115);
+            panel91.TabIndex = 34;
+            // 
+            // button40
+            // 
+            button40.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button40.BackColor = System.Drawing.Color.WhiteSmoke;
+            button40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button40.FlatAppearance.BorderSize = 0;
+            button40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button40.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button40.Image = (System.Drawing.Image)resources.GetObject("button40.Image");
+            button40.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            button40.Location = new System.Drawing.Point(739, 25);
+            button40.Name = "button40";
+            button40.Size = new System.Drawing.Size(109, 62);
+            button40.TabIndex = 59;
+            button40.Text = "Edit";
+            button40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            button40.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            button40.UseVisualStyleBackColor = false;
+            // 
+            // label93
+            // 
+            label93.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label93.AutoSize = true;
+            label93.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label93.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label93.Location = new System.Drawing.Point(30, 289);
+            label93.Name = "label93";
+            label93.Size = new System.Drawing.Size(66, 20);
+            label93.TabIndex = 60;
+            label93.Text = "Location";
+            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(EditPIPanel);
+            Controls.Add(ProfilePanel);
             Controls.Add(NotificationPanel);
             Controls.Add(SerPanel);
             Controls.Add(ServicesPanel);
@@ -5605,7 +5855,6 @@
             Controls.Add(panel44);
             Controls.Add(AppointmentsPanel);
             Controls.Add(CalendarPanel);
-            Controls.Add(ProfilePanel);
             Controls.Add(SearchPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(NotifyButton);
@@ -5822,6 +6071,11 @@
             panel73.PerformLayout();
             panel72.ResumeLayout(false);
             panel72.PerformLayout();
+            EditPIPanel.ResumeLayout(false);
+            panel84.ResumeLayout(false);
+            panel84.PerformLayout();
+            panel85.ResumeLayout(false);
+            panel85.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -6054,21 +6308,20 @@
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Panel ProfilePanel;
         private System.Windows.Forms.Panel PIPanel;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Button button47;
+        private System.Windows.Forms.Label AgePI;
+        private System.Windows.Forms.Label PIAge;
+        private System.Windows.Forms.Label EmailAddressPI;
+        private System.Windows.Forms.Label PIEmailAdd;
+        private System.Windows.Forms.Label BirthDatePI;
+        private System.Windows.Forms.Label PIDateBirth;
+        private System.Windows.Forms.Label ContactNumberPI;
+        private System.Windows.Forms.Label PICNumber;
+        private System.Windows.Forms.Label ClientNamePI;
+        private System.Windows.Forms.Label PIName;
+        private System.Windows.Forms.Button PIEditButton;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Panel ProPicPanel;
-        private System.Windows.Forms.Button button60;
-        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label PPClientName;
         private System.Windows.Forms.Panel panel58;
         private System.Windows.Forms.Panel GPPanel;
         private System.Windows.Forms.Label label92;
@@ -6217,5 +6470,24 @@
         private System.Windows.Forms.Label label162;
         private System.Windows.Forms.Label label152;
         private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Panel EditPIPanel;
+        private System.Windows.Forms.Panel panel84;
+        private System.Windows.Forms.Button button40;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.Label label163;
+        private System.Windows.Forms.Label label164;
+        private System.Windows.Forms.Label label165;
+        private System.Windows.Forms.Button button38;
+        private System.Windows.Forms.Label label166;
+        private System.Windows.Forms.Panel panel85;
+        private System.Windows.Forms.Label label167;
+        private System.Windows.Forms.Panel panel91;
+        private System.Windows.Forms.Label label93;
     }
 }

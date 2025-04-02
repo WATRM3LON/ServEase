@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Collections;
+using OOP2;
 
 namespace OOP2
 {
     public partial class ClientLogin : Form
     {
+        public string EmailAddress { get; set; }
+
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
         OleDbCommand? cmd;
@@ -166,11 +169,14 @@ namespace OOP2
                         }
                         else
                         {
+                            EmailAddress = EmailLTextBox.Text;
                             this.Hide();
                             ClientDashboard clientDashboard = new ClientDashboard();
                             clientDashboard.ShowDialog();
                         }
                         
+
+
                     }
                     else
                     {

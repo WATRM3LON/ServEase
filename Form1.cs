@@ -30,6 +30,8 @@ namespace OOP2
             int nWidthEllipse,
             int nHeightEllipse
             );
+
+        
         public Form1()
         {
             InitializeComponent();
