@@ -148,7 +148,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT COUNT(*) FROM Client_Sign_In WHERE [Email Address] = @email AND [Password] = @password";
+                string sql = "SELECT COUNT(*) FROM Clients WHERE [Email Address] = @email AND [Password] = @password";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@email", EmailLTextBox.Text);
@@ -188,7 +188,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT COUNT(*) FROM Client_Sign_In WHERE [Email Address] = @email";
+                string sql = "SELECT COUNT(*) FROM Clients WHERE [Email Address] = @email";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@email", email);
@@ -214,7 +214,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT COUNT(*) FROM Client_Sign_In WHERE [Contact Number] = @cnumber";
+                string sql = "SELECT COUNT(*) FROM Clients WHERE [Contact Number] = @cnumber";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@cnumber", Cnumber);
@@ -232,7 +232,29 @@ namespace OOP2
                     }
                 }
             }
-            if(CNumberSTextBox.Text.Length != 11)
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT COUNT(*) FROM [Service Facilities] WHERE [Contact Number] = @cnumber";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@cnumber", Cnumber);
+                    count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        CnumberExisted.Visible = true;
+                        CNumberPanel.BackColor = Color.MistyRose; CNumberSTextBox.BackColor = Color.MistyRose;
+
+                    }
+                    else
+                    {
+                        valid++;
+                    }
+                }
+            }
+            if (CNumberSTextBox.Text.Length != 11)
             {
                 CnumberExisted.Visible = false; Cnumber11digits.Visible = true;
                 CNumberPanel.BackColor = Color.MistyRose; CNumberSTextBox.BackColor = Color.MistyRose;
@@ -250,7 +272,7 @@ namespace OOP2
             {
                 valid++;
             }
-            if(valid == 2)
+            if(valid == 3)
             {
                 return true;
             }
@@ -286,15 +308,17 @@ namespace OOP2
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {   
                     myConn.Open();
-                    string query = "INSERT INTO Client_Sign_In ([First Name], [Last Name], [Email Address], [Contact Number], [Password]) " +
-                                   "VALUES (@FName, @LName, @EmailAdd, @CNumber, @Password)";
+                    string query = "INSERT INTO Clients ([First Name], [Last Name], [Birth Date], [Contact Number], Location, [Email Address], [Password]) " +
+                                   "VALUES (@FName, @LName, @birthdate, @CNumber, @location, @EmailAdd,  @Password)";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                     {
                         cmd.Parameters.AddWithValue("@FName", FNameTextBox.Text);
                         cmd.Parameters.AddWithValue("@LName", LNameTextBox.Text);
-                        cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@birthdate", DBNull.Value);
                         cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@location", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
                         cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
 
                         cmd.ExecuteNonQuery();
