@@ -174,7 +174,9 @@ namespace OOP2
                     }
                     else
                     {
-                        MessageBox.Show("Invalid email or password.");
+                        InvalidLEP.Visible = true;
+                        EmailAddLPanel.BackColor = EmailLTextBox.BackColor = Color.MistyRose;
+                        PasswordLPanel.BackColor = PasswordLTextBox.BackColor = Color.MistyRose;
                     }
                 }
             }
@@ -334,6 +336,17 @@ namespace OOP2
         private void CPasswordTextBox_Click(object sender, EventArgs e)
         {
             CPasswordEM.Visible = false; CPasswordTextBox.BackColor = Color.White; ConfirmSPanel.BackColor = Color.White;
+        }
+        private void EmailLTextBox_Click(object sender, EventArgs e)
+        {
+            InvalidLEP.Visible = false;
+            EmailAddLPanel.BackColor = EmailLTextBox.BackColor = Color.White;
+        }
+
+        private void PasswordLTextBox_Click(object sender, EventArgs e)
+        {
+            InvalidLEP.Visible = false;
+            PasswordLPanel.BackColor = PasswordLTextBox.BackColor = Color.White;
         }
     }
 }

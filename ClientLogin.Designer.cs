@@ -134,7 +134,7 @@
             SignButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SignButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             SignButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            SignButton.Location = new System.Drawing.Point(441, 505);
+            SignButton.Location = new System.Drawing.Point(442, 505);
             SignButton.Name = "SignButton";
             SignButton.Size = new System.Drawing.Size(139, 78);
             SignButton.TabIndex = 13;
@@ -149,7 +149,7 @@
             LogButton.FlatAppearance.BorderSize = 0;
             LogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             LogButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            LogButton.Location = new System.Drawing.Point(441, 400);
+            LogButton.Location = new System.Drawing.Point(442, 400);
             LogButton.Name = "LogButton";
             LogButton.Size = new System.Drawing.Size(139, 78);
             LogButton.TabIndex = 12;
@@ -635,6 +635,7 @@
             EmailLTextBox.Name = "EmailLTextBox";
             EmailLTextBox.Size = new System.Drawing.Size(269, 37);
             EmailLTextBox.TabIndex = 6;
+            EmailLTextBox.Click += EmailLTextBox_Click;
             // 
             // LogInPanel
             // 
@@ -731,6 +732,7 @@
             PasswordLTextBox.Name = "PasswordLTextBox";
             PasswordLTextBox.Size = new System.Drawing.Size(269, 37);
             PasswordLTextBox.TabIndex = 8;
+            PasswordLTextBox.Click += PasswordLTextBox_Click;
             // 
             // ServiceFacilityButton
             // 
