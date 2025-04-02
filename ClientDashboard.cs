@@ -182,6 +182,19 @@ namespace OOP2
             HelpPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HelpPanel.Width, HelpPanel.Height, 10, 10));
             panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
 
+            //INFOSETTER
+            PPClientName.Text = PIEname.Text = FName + " " + LName; PIEFnametext.Text = FName; PIELnametext.Text = LName;
+            ClientNamePI.Text = FName + LName;
+            BirthDatePI.Text = Birthdate.ToString(); PIEBirthtext.Text = Birthdate.ToString();
+            int age = DateTime.Now.Year - Birthdate.Year;
+            if (Birthdate.Date > DateTime.Now.AddYears(-age))
+            {
+                age--;
+            }
+            AgePI.Text = age.ToString(); PIEAgetext.Text = age.ToString();
+            ContactNumberPI.Text = ContactNumber; PIECnumbertext.Text = ContactNumber;
+            EmailAddressPI.Text = EmailAddress; PIEEmailtext.Text = EmailAddress;
+
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
