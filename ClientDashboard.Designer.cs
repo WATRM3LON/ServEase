@@ -5882,8 +5882,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(EditPIPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(EditPIPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);

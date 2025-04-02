@@ -16,7 +16,7 @@ namespace OOP2
 {
     public partial class ClientLogin : Form
     {
-        public string EmailAddress { get; set; }
+        public static string EmailAddress = " ";
 
         OleDbConnection? myConn;
         OleDbDataAdapter? da;

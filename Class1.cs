@@ -7,9 +7,14 @@ using System.Windows.Forms;
 
 namespace OOP2
 {
-    public abstract class BaseForm : Form
+    public interface Info
     {
-        public string EmailAddress { get; set; }
-        public abstract void Loaders();
+        string FName { get; set; }
+        string LName { get; set; }
+        DateTime Birthdate { get; set; }
+        string EmailAddress { get; set; }
+        string Password { get; set; }
+        string ContactNumber { get; set; }
+        string LocationAddress { get; set; }
     }
 }

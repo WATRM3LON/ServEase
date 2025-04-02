@@ -2,19 +2,26 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
 {
-    public partial class ClientDashboard : Form
+    public partial class ClientDashboard : Form, Info
     {
-        //ClientLogin.EmailAddress;
+        OleDbConnection? myConn;
+        OleDbDataAdapter? da;
+        OleDbCommand? cmd;
+        DataSet? ds;
+
+        string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
 
         bool dbp1 = false, dbp2 = false, notify = false, dashboard, services, ser, profile, calendar;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -27,11 +34,24 @@ namespace OOP2
             int nWidthEllipse,
             int nHeightEllipse
             );
+
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public DateTime Birthdate { get; set; }
+        public string EmailAddress { get; set; }
+        public string Password { get; set; }
+        public string ContactNumber { get; set; }
+        public string LocationAddress { get; set; }
         public ClientDashboard()
         {
             InitializeComponent();
+            InfoGetter();
             Loaders();
-            dbp1 = true;
+        }
+
+        public void Loaders()
+        {
+            dbp1 = true; HiLabel.Text = $"Hi {FName},";
             dbp2 = false;
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
@@ -54,10 +74,6 @@ namespace OOP2
             FacilityProPanel2.Visible = false;
             PIEButton.Visible = false;
             EditPIPanel.Visible = false;
-        }
-
-        public void Loaders()
-        {
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
@@ -314,6 +330,36 @@ namespace OOP2
             notify = false;
         }
 
+        public void InfoGetter()
+        {
+            EmailAddress = ClientLogin.EmailAddress;
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT [First Name], [Last Name], [Birth Date], [Contact Number], Location, Password FROM Clients WHERE [Email Address] = @Email";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", EmailAddress);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            FName = reader["First Name"].ToString();
+                            LName = reader["Last Name"].ToString();
+                            Birthdate = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Birth Date"));
+                            Password = reader["Password"].ToString();
+                            ContactNumber = reader["Contact Number"].ToString();
+                            LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? "Unknown" : reader["Location"].ToString();
+
+                        }
+                    }
+                }
+            }
+
+        }
         private void ServicesButton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
@@ -367,10 +413,11 @@ namespace OOP2
 
         private void DashboardButton_Click(object sender, EventArgs e)
         {
+            
             //DASHBOARD
             AppointmentPanel.Visible = true;
             panel3.Visible = true;
-            HiLabel.Visible = true;
+            HiLabel.Visible = true; HiLabel.Text = $"Hi {ClientLogin.EmailAddress},";
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Welcome ServEase!";
             DashboardButton.BackColor = ColorTranslator.FromHtml("#69e331");
