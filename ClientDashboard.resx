@@ -3954,6 +3954,14 @@
         sI5DiTZF6ziUOGAVn6OPJ66CJU8YoT8UAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="PIEButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAHpJREFUOE/tzCEKAlEUhtHT7AarQXC2MsWgFlcgCLYJA+7LXcw2phnMGhThabhY
+        3rwkzoFb7g8foy9mmMbnUBV6nOIwxDLFzpjEMdefxBYpdsER+4ybx9jLFg9c0WXeJsbeGtyxi0OJ34re
+        sI5DiTZF6ziUOGAVn6OPJ66CJU8YoT8UAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="FPButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -11976,13 +11984,6 @@
         N+//A9BJICRr54AqAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button40.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAEtJREFUOE9jYMAOmNEFSAETGRgYOtAFiQVcDAwMexkYGHrRJYgFowYwMIgyMDB8
-        ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="button38.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -11990,7 +11991,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel91.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PIEpp.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAaf1JREFUeF7t
         3QeUHEWWL3ztsLsz+3bWzOzumzXvfW9BeO89gxMC4b0HgQAJIwRySEIgb5H33qvlvffqlkcWeam7pXaZ

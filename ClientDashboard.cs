@@ -52,6 +52,8 @@ namespace OOP2
             FacilityProPanel.Visible = false;
             FPButton.Visible = false;
             FacilityProPanel2.Visible = false;
+            PIEButton.Visible = false;
+            EditPIPanel.Visible = false;
         }
 
         public void Loaders()
@@ -147,7 +149,12 @@ namespace OOP2
             PIEditButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIEditButton.Width, PIEditButton.Height, 10, 10));
             button48.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button48.Width, button48.Height, 10, 10));
             button49.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button49.Width, button49.Height, 10, 10));
-            button60.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button60.Width, button60.Height, 10, 10));
+            CUIButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CUIButton.Width, CUIButton.Height, 10, 10));
+            PIEprofilepanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIEprofilepanel.Width, PIEprofilepanel.Height, 10, 10));
+            PIEpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIEpanel.Width, PIEpanel.Height, 10, 10));
+
+
+            //button60.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button60.Width, button60.Height, 10, 10));
             //SETTINGS
             GeneralPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GeneralPanel.Width, GeneralPanel.Height, 10, 10));
             AppearancePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppearancePanel.Width, AppearancePanel.Height, 10, 10));
@@ -795,6 +802,18 @@ namespace OOP2
         private void HiLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PIEditButton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            PIEButton.Visible = true; ProfilePanel.Visible = false; EditPIPanel.Visible = true;
+        }
+
+        private void PIEButton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = true;
+            PIEButton.Visible = false; ProfilePanel.Visible = true; EditPIPanel.Visible = false;
         }
     }
 }

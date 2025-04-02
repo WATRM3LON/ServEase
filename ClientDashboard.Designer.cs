@@ -205,6 +205,7 @@
             label49 = new System.Windows.Forms.Label();
             panel32 = new System.Windows.Forms.Panel();
             HeaderPanel = new System.Windows.Forms.Panel();
+            PIEButton = new System.Windows.Forms.Button();
             FPButton = new System.Windows.Forms.Button();
             button41 = new System.Windows.Forms.Button();
             CalendarPanel = new System.Windows.Forms.Panel();
@@ -420,24 +421,27 @@
             panel72 = new System.Windows.Forms.Panel();
             label104 = new System.Windows.Forms.Label();
             EditPIPanel = new System.Windows.Forms.Panel();
-            panel84 = new System.Windows.Forms.Panel();
-            label96 = new System.Windows.Forms.Label();
-            label98 = new System.Windows.Forms.Label();
-            label99 = new System.Windows.Forms.Label();
-            label100 = new System.Windows.Forms.Label();
-            label101 = new System.Windows.Forms.Label();
-            label102 = new System.Windows.Forms.Label();
-            label103 = new System.Windows.Forms.Label();
-            label163 = new System.Windows.Forms.Label();
-            label164 = new System.Windows.Forms.Label();
-            label165 = new System.Windows.Forms.Label();
+            PIEpanel = new System.Windows.Forms.Panel();
+            CUIButton = new System.Windows.Forms.Button();
+            PIEEmailtext = new System.Windows.Forms.TextBox();
+            PIEEmaillabel = new System.Windows.Forms.Label();
+            PIECnumbertext = new System.Windows.Forms.TextBox();
+            PIECnumberlabel = new System.Windows.Forms.Label();
+            PIEAddresstext = new System.Windows.Forms.TextBox();
+            PIEAddresslabel = new System.Windows.Forms.Label();
+            PIEBirthtext = new System.Windows.Forms.TextBox();
+            PIEBirthlabel = new System.Windows.Forms.Label();
+            PIEAgetext = new System.Windows.Forms.TextBox();
+            PIEAgelabel = new System.Windows.Forms.Label();
+            PIELnametext = new System.Windows.Forms.TextBox();
+            PIELnamelabel = new System.Windows.Forms.Label();
+            PIEFnametext = new System.Windows.Forms.TextBox();
+            PIEFnamelabel = new System.Windows.Forms.Label();
             button38 = new System.Windows.Forms.Button();
             label166 = new System.Windows.Forms.Label();
-            panel85 = new System.Windows.Forms.Panel();
-            label167 = new System.Windows.Forms.Label();
-            panel91 = new System.Windows.Forms.Panel();
-            button40 = new System.Windows.Forms.Button();
-            label93 = new System.Windows.Forms.Label();
+            PIEprofilepanel = new System.Windows.Forms.Panel();
+            PIEname = new System.Windows.Forms.Label();
+            PIEpp = new System.Windows.Forms.Panel();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -557,8 +561,8 @@
             panel73.SuspendLayout();
             panel72.SuspendLayout();
             EditPIPanel.SuspendLayout();
-            panel84.SuspendLayout();
-            panel85.SuspendLayout();
+            PIEpanel.SuspendLayout();
+            PIEprofilepanel.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -2845,6 +2849,7 @@
             // HeaderPanel
             // 
             HeaderPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            HeaderPanel.Controls.Add(PIEButton);
             HeaderPanel.Controls.Add(FPButton);
             HeaderPanel.Controls.Add(button41);
             HeaderPanel.Controls.Add(SerButton);
@@ -2855,6 +2860,26 @@
             HeaderPanel.Name = "HeaderPanel";
             HeaderPanel.Size = new System.Drawing.Size(940, 100);
             HeaderPanel.TabIndex = 42;
+            // 
+            // PIEButton
+            // 
+            PIEButton.BackColor = System.Drawing.Color.Transparent;
+            PIEButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            PIEButton.FlatAppearance.BorderSize = 0;
+            PIEButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            PIEButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PIEButton.Image = (System.Drawing.Image)resources.GetObject("PIEButton.Image");
+            PIEButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            PIEButton.Location = new System.Drawing.Point(25, 23);
+            PIEButton.Name = "PIEButton";
+            PIEButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            PIEButton.Size = new System.Drawing.Size(436, 74);
+            PIEButton.TabIndex = 59;
+            PIEButton.Text = "  Edit Personal Information";
+            PIEButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            PIEButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            PIEButton.UseVisualStyleBackColor = false;
+            PIEButton.Click += PIEButton_Click;
             // 
             // FPButton
             // 
@@ -3799,6 +3824,7 @@
             PIEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             PIEditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             PIEditButton.UseVisualStyleBackColor = false;
+            PIEditButton.Click += PIEditButton_Click;
             // 
             // label91
             // 
@@ -5589,155 +5615,202 @@
             // 
             EditPIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EditPIPanel.BackColor = System.Drawing.Color.Transparent;
-            EditPIPanel.Controls.Add(panel84);
-            EditPIPanel.Controls.Add(panel85);
+            EditPIPanel.Controls.Add(PIEpanel);
+            EditPIPanel.Controls.Add(PIEprofilepanel);
             EditPIPanel.Location = new System.Drawing.Point(277, 175);
             EditPIPanel.Name = "EditPIPanel";
             EditPIPanel.Size = new System.Drawing.Size(893, 746);
             EditPIPanel.TabIndex = 58;
             // 
-            // panel84
+            // PIEpanel
             // 
-            panel84.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel84.BackColor = System.Drawing.Color.White;
-            panel84.Controls.Add(label93);
-            panel84.Controls.Add(button40);
-            panel84.Controls.Add(label96);
-            panel84.Controls.Add(label98);
-            panel84.Controls.Add(label99);
-            panel84.Controls.Add(label100);
-            panel84.Controls.Add(label101);
-            panel84.Controls.Add(label102);
-            panel84.Controls.Add(label103);
-            panel84.Controls.Add(label163);
-            panel84.Controls.Add(label164);
-            panel84.Controls.Add(label165);
-            panel84.Controls.Add(button38);
-            panel84.Controls.Add(label166);
-            panel84.Location = new System.Drawing.Point(8, 211);
-            panel84.Name = "panel84";
-            panel84.Size = new System.Drawing.Size(861, 511);
-            panel84.TabIndex = 38;
+            PIEpanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEpanel.BackColor = System.Drawing.Color.White;
+            PIEpanel.Controls.Add(CUIButton);
+            PIEpanel.Controls.Add(PIEEmailtext);
+            PIEpanel.Controls.Add(PIEEmaillabel);
+            PIEpanel.Controls.Add(PIECnumbertext);
+            PIEpanel.Controls.Add(PIECnumberlabel);
+            PIEpanel.Controls.Add(PIEAddresstext);
+            PIEpanel.Controls.Add(PIEAddresslabel);
+            PIEpanel.Controls.Add(PIEBirthtext);
+            PIEpanel.Controls.Add(PIEBirthlabel);
+            PIEpanel.Controls.Add(PIEAgetext);
+            PIEpanel.Controls.Add(PIEAgelabel);
+            PIEpanel.Controls.Add(PIELnametext);
+            PIEpanel.Controls.Add(PIELnamelabel);
+            PIEpanel.Controls.Add(PIEFnametext);
+            PIEpanel.Controls.Add(PIEFnamelabel);
+            PIEpanel.Controls.Add(button38);
+            PIEpanel.Controls.Add(label166);
+            PIEpanel.Location = new System.Drawing.Point(8, 211);
+            PIEpanel.Name = "PIEpanel";
+            PIEpanel.Size = new System.Drawing.Size(861, 511);
+            PIEpanel.TabIndex = 38;
             // 
-            // label96
+            // CUIButton
             // 
-            label96.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label96.AutoSize = true;
-            label96.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label96.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label96.Location = new System.Drawing.Point(585, 123);
-            label96.Name = "label96";
-            label96.Size = new System.Drawing.Size(89, 20);
-            label96.TabIndex = 45;
-            label96.Text = "23 years old";
+            CUIButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            CUIButton.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
+            CUIButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            CUIButton.FlatAppearance.BorderSize = 0;
+            CUIButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            CUIButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CUIButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            CUIButton.Location = new System.Drawing.Point(595, 445);
+            CUIButton.Name = "CUIButton";
+            CUIButton.Size = new System.Drawing.Size(248, 51);
+            CUIButton.TabIndex = 74;
+            CUIButton.Text = "Confirm and Update Informatioin";
+            CUIButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            CUIButton.UseVisualStyleBackColor = false;
             // 
-            // label98
+            // PIEEmailtext
             // 
-            label98.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label98.AutoSize = true;
-            label98.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label98.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label98.Location = new System.Drawing.Point(579, 85);
-            label98.Name = "label98";
-            label98.Size = new System.Drawing.Size(36, 20);
-            label98.TabIndex = 44;
-            label98.Text = "Age";
+            PIEEmailtext.BackColor = System.Drawing.SystemColors.Menu;
+            PIEEmailtext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEEmailtext.Location = new System.Drawing.Point(300, 313);
+            PIEEmailtext.Name = "PIEEmailtext";
+            PIEEmailtext.Size = new System.Drawing.Size(224, 31);
+            PIEEmailtext.TabIndex = 73;
             // 
-            // label99
+            // PIEEmaillabel
             // 
-            label99.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label99.AutoSize = true;
-            label99.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label99.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label99.Location = new System.Drawing.Point(332, 222);
-            label99.Name = "label99";
-            label99.Size = new System.Drawing.Size(177, 20);
-            label99.TabIndex = 43;
-            label99.Text = "juandelacruz@gmail.com";
+            PIEEmaillabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEEmaillabel.AutoSize = true;
+            PIEEmaillabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            PIEEmaillabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            PIEEmaillabel.Location = new System.Drawing.Point(296, 281);
+            PIEEmaillabel.Name = "PIEEmaillabel";
+            PIEEmaillabel.Size = new System.Drawing.Size(116, 23);
+            PIEEmaillabel.TabIndex = 72;
+            PIEEmaillabel.Text = "Email Address";
             // 
-            // label100
+            // PIECnumbertext
             // 
-            label100.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label100.AutoSize = true;
-            label100.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label100.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label100.Location = new System.Drawing.Point(325, 183);
-            label100.Name = "label100";
-            label100.Size = new System.Drawing.Size(103, 20);
-            label100.TabIndex = 42;
-            label100.Text = "Email Address";
+            PIECnumbertext.BackColor = System.Drawing.SystemColors.Menu;
+            PIECnumbertext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIECnumbertext.Location = new System.Drawing.Point(25, 313);
+            PIECnumbertext.Name = "PIECnumbertext";
+            PIECnumbertext.Size = new System.Drawing.Size(224, 31);
+            PIECnumbertext.TabIndex = 71;
             // 
-            // label101
+            // PIECnumberlabel
             // 
-            label101.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label101.AutoSize = true;
-            label101.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label101.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label101.Location = new System.Drawing.Point(331, 123);
-            label101.Name = "label101";
-            label101.Size = new System.Drawing.Size(125, 20);
-            label101.TabIndex = 41;
-            label101.Text = "February 14, 2002";
+            PIECnumberlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIECnumberlabel.AutoSize = true;
+            PIECnumberlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            PIECnumberlabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            PIECnumberlabel.Location = new System.Drawing.Point(21, 281);
+            PIECnumberlabel.Name = "PIECnumberlabel";
+            PIECnumberlabel.Size = new System.Drawing.Size(138, 23);
+            PIECnumberlabel.TabIndex = 70;
+            PIECnumberlabel.Text = "Contact Number";
             // 
-            // label102
+            // PIEAddresstext
             // 
-            label102.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label102.AutoSize = true;
-            label102.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label102.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label102.Location = new System.Drawing.Point(324, 85);
-            label102.Name = "label102";
-            label102.Size = new System.Drawing.Size(94, 20);
-            label102.TabIndex = 40;
-            label102.Text = "Date of Birth";
+            PIEAddresstext.BackColor = System.Drawing.SystemColors.Menu;
+            PIEAddresstext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEAddresstext.Location = new System.Drawing.Point(297, 203);
+            PIEAddresstext.Name = "PIEAddresstext";
+            PIEAddresstext.Size = new System.Drawing.Size(412, 31);
+            PIEAddresstext.TabIndex = 69;
             // 
-            // label103
+            // PIEAddresslabel
             // 
-            label103.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label103.AutoSize = true;
-            label103.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label103.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label103.Location = new System.Drawing.Point(28, 217);
-            label103.Name = "label103";
-            label103.Size = new System.Drawing.Size(119, 20);
-            label103.TabIndex = 39;
-            label103.Text = "+63 9956226213";
+            PIEAddresslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEAddresslabel.AutoSize = true;
+            PIEAddresslabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            PIEAddresslabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            PIEAddresslabel.Location = new System.Drawing.Point(293, 171);
+            PIEAddresslabel.Name = "PIEAddresslabel";
+            PIEAddresslabel.Size = new System.Drawing.Size(152, 23);
+            PIEAddresslabel.TabIndex = 68;
+            PIEAddresslabel.Text = "Location / Address";
             // 
-            // label163
+            // PIEBirthtext
             // 
-            label163.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label163.AutoSize = true;
-            label163.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label163.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label163.Location = new System.Drawing.Point(21, 178);
-            label163.Name = "label163";
-            label163.Size = new System.Drawing.Size(118, 20);
-            label163.TabIndex = 38;
-            label163.Text = "Contact Number";
+            PIEBirthtext.BackColor = System.Drawing.SystemColors.Menu;
+            PIEBirthtext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEBirthtext.Location = new System.Drawing.Point(26, 204);
+            PIEBirthtext.Name = "PIEBirthtext";
+            PIEBirthtext.Size = new System.Drawing.Size(224, 31);
+            PIEBirthtext.TabIndex = 67;
             // 
-            // label164
+            // PIEBirthlabel
             // 
-            label164.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label164.AutoSize = true;
-            label164.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label164.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label164.Location = new System.Drawing.Point(28, 123);
-            label164.Name = "label164";
-            label164.Size = new System.Drawing.Size(106, 20);
-            label164.TabIndex = 37;
-            label164.Text = "Juan Dela Cruz";
+            PIEBirthlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEBirthlabel.AutoSize = true;
+            PIEBirthlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            PIEBirthlabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            PIEBirthlabel.Location = new System.Drawing.Point(22, 172);
+            PIEBirthlabel.Name = "PIEBirthlabel";
+            PIEBirthlabel.Size = new System.Drawing.Size(108, 23);
+            PIEBirthlabel.TabIndex = 66;
+            PIEBirthlabel.Text = "Date of Birth";
             // 
-            // label165
+            // PIEAgetext
             // 
-            label165.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label165.AutoSize = true;
-            label165.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label165.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label165.Location = new System.Drawing.Point(21, 85);
-            label165.Name = "label165";
-            label165.Size = new System.Drawing.Size(49, 20);
-            label165.TabIndex = 36;
-            label165.Text = "Name";
+            PIEAgetext.BackColor = System.Drawing.SystemColors.Menu;
+            PIEAgetext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEAgetext.Location = new System.Drawing.Point(576, 117);
+            PIEAgetext.Name = "PIEAgetext";
+            PIEAgetext.Size = new System.Drawing.Size(133, 31);
+            PIEAgetext.TabIndex = 65;
+            // 
+            // PIEAgelabel
+            // 
+            PIEAgelabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEAgelabel.AutoSize = true;
+            PIEAgelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            PIEAgelabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            PIEAgelabel.Location = new System.Drawing.Point(572, 85);
+            PIEAgelabel.Name = "PIEAgelabel";
+            PIEAgelabel.Size = new System.Drawing.Size(40, 23);
+            PIEAgelabel.TabIndex = 64;
+            PIEAgelabel.Text = "Age";
+            // 
+            // PIELnametext
+            // 
+            PIELnametext.BackColor = System.Drawing.SystemColors.Menu;
+            PIELnametext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIELnametext.Location = new System.Drawing.Point(296, 117);
+            PIELnametext.Name = "PIELnametext";
+            PIELnametext.Size = new System.Drawing.Size(224, 31);
+            PIELnametext.TabIndex = 63;
+            // 
+            // PIELnamelabel
+            // 
+            PIELnamelabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIELnamelabel.AutoSize = true;
+            PIELnamelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            PIELnamelabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            PIELnamelabel.Location = new System.Drawing.Point(292, 85);
+            PIELnamelabel.Name = "PIELnamelabel";
+            PIELnamelabel.Size = new System.Drawing.Size(91, 23);
+            PIELnamelabel.TabIndex = 62;
+            PIELnamelabel.Text = "Last Name";
+            // 
+            // PIEFnametext
+            // 
+            PIEFnametext.BackColor = System.Drawing.SystemColors.Menu;
+            PIEFnametext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEFnametext.Location = new System.Drawing.Point(25, 117);
+            PIEFnametext.Name = "PIEFnametext";
+            PIEFnametext.Size = new System.Drawing.Size(224, 31);
+            PIEFnametext.TabIndex = 61;
+            // 
+            // PIEFnamelabel
+            // 
+            PIEFnamelabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEFnamelabel.AutoSize = true;
+            PIEFnamelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            PIEFnamelabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            PIEFnamelabel.Location = new System.Drawing.Point(21, 85);
+            PIEFnamelabel.Name = "PIEFnamelabel";
+            PIEFnamelabel.Size = new System.Drawing.Size(93, 23);
+            PIEFnamelabel.TabIndex = 36;
+            PIEFnamelabel.Text = "First Name";
             // 
             // button38
             // 
@@ -5770,69 +5843,38 @@
             label166.TabIndex = 35;
             label166.Text = "Personal Information";
             // 
-            // panel85
+            // PIEprofilepanel
             // 
-            panel85.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel85.BackColor = System.Drawing.Color.White;
-            panel85.Controls.Add(label167);
-            panel85.Controls.Add(panel91);
-            panel85.Location = new System.Drawing.Point(9, 18);
-            panel85.Name = "panel85";
-            panel85.Size = new System.Drawing.Size(861, 171);
-            panel85.TabIndex = 37;
+            PIEprofilepanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEprofilepanel.BackColor = System.Drawing.Color.White;
+            PIEprofilepanel.Controls.Add(PIEname);
+            PIEprofilepanel.Controls.Add(PIEpp);
+            PIEprofilepanel.Location = new System.Drawing.Point(9, 18);
+            PIEprofilepanel.Name = "PIEprofilepanel";
+            PIEprofilepanel.Size = new System.Drawing.Size(861, 171);
+            PIEprofilepanel.TabIndex = 37;
             // 
-            // label167
+            // PIEname
             // 
-            label167.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label167.AutoSize = true;
-            label167.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label167.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label167.Location = new System.Drawing.Point(168, 49);
-            label167.Name = "label167";
-            label167.Size = new System.Drawing.Size(134, 25);
-            label167.TabIndex = 35;
-            label167.Text = "Juan Dela Cruz";
+            PIEname.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEname.AutoSize = true;
+            PIEname.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PIEname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            PIEname.Location = new System.Drawing.Point(167, 43);
+            PIEname.Name = "PIEname";
+            PIEname.Size = new System.Drawing.Size(134, 25);
+            PIEname.TabIndex = 35;
+            PIEname.Text = "Juan Dela Cruz";
             // 
-            // panel91
+            // PIEpp
             // 
-            panel91.BackColor = System.Drawing.Color.Transparent;
-            panel91.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel91.BackgroundImage");
-            panel91.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            panel91.Location = new System.Drawing.Point(21, 22);
-            panel91.Name = "panel91";
-            panel91.Size = new System.Drawing.Size(116, 115);
-            panel91.TabIndex = 34;
-            // 
-            // button40
-            // 
-            button40.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button40.BackColor = System.Drawing.Color.WhiteSmoke;
-            button40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button40.FlatAppearance.BorderSize = 0;
-            button40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button40.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button40.Image = (System.Drawing.Image)resources.GetObject("button40.Image");
-            button40.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button40.Location = new System.Drawing.Point(739, 25);
-            button40.Name = "button40";
-            button40.Size = new System.Drawing.Size(109, 62);
-            button40.TabIndex = 59;
-            button40.Text = "Edit";
-            button40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            button40.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            button40.UseVisualStyleBackColor = false;
-            // 
-            // label93
-            // 
-            label93.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label93.AutoSize = true;
-            label93.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label93.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label93.Location = new System.Drawing.Point(30, 289);
-            label93.Name = "label93";
-            label93.Size = new System.Drawing.Size(66, 20);
-            label93.TabIndex = 60;
-            label93.Text = "Location";
+            PIEpp.BackColor = System.Drawing.Color.Transparent;
+            PIEpp.BackgroundImage = (System.Drawing.Image)resources.GetObject("PIEpp.BackgroundImage");
+            PIEpp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            PIEpp.Location = new System.Drawing.Point(21, 22);
+            PIEpp.Name = "PIEpp";
+            PIEpp.Size = new System.Drawing.Size(116, 115);
+            PIEpp.TabIndex = 34;
             // 
             // ClientDashboard
             // 
@@ -5842,18 +5884,18 @@
             ClientSize = new System.Drawing.Size(1219, 990);
             Controls.Add(EditPIPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(ViewdetailsPanel);
+            Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
             Controls.Add(SerPanel);
             Controls.Add(ServicesPanel);
             Controls.Add(FacilityProPanel2);
             Controls.Add(FacilityProPanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(SettingPanel);
             Controls.Add(panel45);
             Controls.Add(panel3);
             Controls.Add(AppointmentPanel);
             Controls.Add(panel44);
-            Controls.Add(AppointmentsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(SearchPanel);
             Controls.Add(CalendarAppointmentPanel);
@@ -6072,10 +6114,10 @@
             panel72.ResumeLayout(false);
             panel72.PerformLayout();
             EditPIPanel.ResumeLayout(false);
-            panel84.ResumeLayout(false);
-            panel84.PerformLayout();
-            panel85.ResumeLayout(false);
-            panel85.PerformLayout();
+            PIEpanel.ResumeLayout(false);
+            PIEpanel.PerformLayout();
+            PIEprofilepanel.ResumeLayout(false);
+            PIEprofilepanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -6471,23 +6513,27 @@
         private System.Windows.Forms.Label label152;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Panel EditPIPanel;
-        private System.Windows.Forms.Panel panel84;
-        private System.Windows.Forms.Button button40;
-        private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.Label label163;
-        private System.Windows.Forms.Label label164;
-        private System.Windows.Forms.Label label165;
+        private System.Windows.Forms.Panel PIEpanel;
+        private System.Windows.Forms.Label PIEFnamelabel;
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Label label166;
-        private System.Windows.Forms.Panel panel85;
-        private System.Windows.Forms.Label label167;
-        private System.Windows.Forms.Panel panel91;
-        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Panel PIEprofilepanel;
+        private System.Windows.Forms.Label PIEname;
+        private System.Windows.Forms.Panel PIEpp;
+        private System.Windows.Forms.TextBox PIEFnametext;
+        private System.Windows.Forms.TextBox PIEEmailtext;
+        private System.Windows.Forms.Label PIEEmaillabel;
+        private System.Windows.Forms.TextBox PIECnumbertext;
+        private System.Windows.Forms.Label PIECnumberlabel;
+        private System.Windows.Forms.TextBox PIEAddresstext;
+        private System.Windows.Forms.Label PIEAddresslabel;
+        private System.Windows.Forms.TextBox PIEBirthtext;
+        private System.Windows.Forms.Label PIEBirthlabel;
+        private System.Windows.Forms.TextBox PIEAgetext;
+        private System.Windows.Forms.Label PIEAgelabel;
+        private System.Windows.Forms.TextBox PIELnametext;
+        private System.Windows.Forms.Label PIELnamelabel;
+        private System.Windows.Forms.Button CUIButton;
+        private System.Windows.Forms.Button PIEButton;
     }
 }
