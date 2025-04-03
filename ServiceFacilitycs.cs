@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
 {
@@ -59,6 +60,7 @@ namespace OOP2
 
         public void Loaders()
         {
+            HiLabel.Text = $"Hi {Facname},";
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
             AppointmentsPanel.Visible = false;
@@ -166,7 +168,7 @@ namespace OOP2
             HelpPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HelpPanel.Width, HelpPanel.Height, 10, 10));
             //panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
             //INFOSETTER
-            FIFnameTitle.Text = FIEFnameTitle.Text = FIEFacnametext.Text = FIEFacnametext.Text = Facname;
+            FIFnameTitle.Text = FIEFnameTitle.Text = FIEFacnametext.Text = FIEFacnametext.Text = FIFnametext.Text = Facname;
             FIRatingstext.Text = FIERatingstext.Text = Ratings;
             FILoctext.Text = FIELoctext.Text = LocationAddress;
             FIEOFnametext.Text = FName; FIEOLnametext.Text = LName;
@@ -273,6 +275,8 @@ namespace OOP2
 
         private void DashboardButton_Click(object sender, EventArgs e)
         {
+            InfoGetter();
+            Loaders();
             //DASHBOARD
             AppointmentPanel.Visible = true;
             panel11.Visible = true;
@@ -309,6 +313,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
+            EditFIPanel.Visible = false; FIEButton.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -358,6 +363,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
+            EditFIPanel.Visible = false; FIEButton.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -408,6 +414,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
+            EditFIPanel.Visible = false; FIEButton.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -512,6 +519,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
+            EditFIPanel.Visible = false; FIEButton.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -569,6 +577,8 @@ namespace OOP2
 
         private void ProfileButton_Click(object sender, EventArgs e)
         {
+            InfoGetter();
+            Loaders();
             //DASHBOARD
             AppointmentPanel.Visible = false;
             panel11.Visible = false;
@@ -607,6 +617,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
+            EditFIPanel.Visible = false; FIEButton.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -688,6 +699,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
+            EditFIPanel.Visible = false; FIEButton.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -740,6 +752,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
+            EditFIPanel.Visible = false; FIEButton.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -792,6 +805,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
+            EditFIPanel.Visible = false; FIEButton.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = true;
             SettingsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
@@ -818,7 +832,7 @@ namespace OOP2
 
         public void InfoGetter()
         {
-            EmailAddress = ClientLogin.EmailAddress;
+            EmailAddress = ServiceFacilityLogin.EmailAddress;
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
@@ -838,8 +852,10 @@ namespace OOP2
                             Facname = reader["Facility Name"].ToString();
                             FName = reader["Owner First Name"].ToString();
                             LName = reader["Owner Last Name"].ToString();
-                            WorHours = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start" + " - " + "Working Hours End"));
-                            formattedWorHours = WorHours == DateTime.MinValue ? " " : WorHours.ToString();
+                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            //WorHours = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start" + " - " + "Working Hours End"));
+                            formattedWorHours = WorHours == DateTime.MinValue ? " " : workingstart + " - " + workingend;
                             WorDays = reader["Working Days"].ToString();
                             Password = reader["Password"].ToString();
                             ContactNumber = reader["Contact Number"].ToString();
@@ -862,7 +878,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "UPDATE [Service Facilities] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Password] = @Password, [Service Category] = @Servicecategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays, Ratings = @ratings, [Approval Status] = @appStatus WHERE [Email Address] = @Email";
+                string sql = "UPDATE [Service Facilities] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Service Category] = @Servicecategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays WHERE [Email Address] = @Email";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
@@ -871,12 +887,12 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@OFName", FIEOFnametext.Text);
                     cmd.Parameters.AddWithValue("@OLName", FIEOLnametext.Text);
                     cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
-                    cmd.Parameters.AddWithValue("@Servicecategory", FIESerCatList.GetItemText(FIESerCatList.SelectedItem));
+                    string service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Servicecategory", service);
                     cmd.Parameters.AddWithValue("@Workinghoursstart", FIEStarttext.Text);
                     cmd.Parameters.AddWithValue("@Workinghoursend", FIEEndtext.Text);
                     cmd.Parameters.AddWithValue("@Workingdays", FIEWordaystext.Text);
-                    cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Email", FIEEmailaddtext.Text);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Updated successfully!");
@@ -897,7 +913,7 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@cnumber", Cnumber);
                     count = (int)cmd.ExecuteScalar();
 
-                    if (count > 1)
+                    if (count > 0)
                     {
                         CnumberExisted.Visible = true;
                         FIECnumbertext.BackColor = Color.MistyRose;
@@ -918,7 +934,7 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@cnumber", Cnumber);
                     count = (int)cmd.ExecuteScalar();
 
-                    if (count > 0)
+                    if (count > 1)
                     {
                         CnumberExisted.Visible = true;
                         FIECnumbertext.BackColor = Color.MistyRose;
@@ -959,6 +975,18 @@ namespace OOP2
             {
                 FillEM.Visible = true;
             }
+        }
+
+        private void FIEditButton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            FIEButton.Visible = true; ProfilePanel.Visible = false; EditFIPanel.Visible = true;
+        }
+
+        private void FIEButton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = true;
+            FIEButton.Visible = false; ProfilePanel.Visible = true; EditFIPanel.Visible = false;
         }
     }
 }

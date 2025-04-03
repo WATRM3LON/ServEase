@@ -190,7 +190,7 @@
             FICnumberlabel = new System.Windows.Forms.Label();
             FIFnametext = new System.Windows.Forms.Label();
             FIFnamelabel = new System.Windows.Forms.Label();
-            button47 = new System.Windows.Forms.Button();
+            FIEditButton = new System.Windows.Forms.Button();
             label91 = new System.Windows.Forms.Label();
             ProPicPanel = new System.Windows.Forms.Panel();
             FIStatus = new System.Windows.Forms.Button();
@@ -773,6 +773,7 @@
             FIEButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             FIEButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             FIEButton.UseVisualStyleBackColor = false;
+            FIEButton.Click += FIEButton_Click;
             // 
             // ATButton
             // 
@@ -2375,7 +2376,7 @@
             PIPanel.Controls.Add(FICnumberlabel);
             PIPanel.Controls.Add(FIFnametext);
             PIPanel.Controls.Add(FIFnamelabel);
-            PIPanel.Controls.Add(button47);
+            PIPanel.Controls.Add(FIEditButton);
             PIPanel.Controls.Add(label91);
             PIPanel.Location = new System.Drawing.Point(8, 195);
             PIPanel.Name = "PIPanel";
@@ -2527,24 +2528,25 @@
             FIFnamelabel.TabIndex = 36;
             FIFnamelabel.Text = "Facility Name";
             // 
-            // button47
+            // FIEditButton
             // 
-            button47.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button47.BackColor = System.Drawing.Color.WhiteSmoke;
-            button47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button47.FlatAppearance.BorderSize = 0;
-            button47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button47.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button47.Image = (System.Drawing.Image)resources.GetObject("button47.Image");
-            button47.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button47.Location = new System.Drawing.Point(743, 11);
-            button47.Name = "button47";
-            button47.Size = new System.Drawing.Size(109, 54);
-            button47.TabIndex = 33;
-            button47.Text = "Edit";
-            button47.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            button47.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            button47.UseVisualStyleBackColor = false;
+            FIEditButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            FIEditButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            FIEditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            FIEditButton.FlatAppearance.BorderSize = 0;
+            FIEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FIEditButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            FIEditButton.Image = (System.Drawing.Image)resources.GetObject("FIEditButton.Image");
+            FIEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            FIEditButton.Location = new System.Drawing.Point(743, 11);
+            FIEditButton.Name = "FIEditButton";
+            FIEditButton.Size = new System.Drawing.Size(109, 54);
+            FIEditButton.TabIndex = 33;
+            FIEditButton.Text = "Edit";
+            FIEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            FIEditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            FIEditButton.UseVisualStyleBackColor = false;
+            FIEditButton.Click += FIEditButton_Click;
             // 
             // label91
             // 
@@ -4150,8 +4152,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(EditFIPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(EditFIPanel);
             Controls.Add(NotificationPanel);
             Controls.Add(ATPanel);
             Controls.Add(ServicesOfferedPanel);
@@ -4463,7 +4465,7 @@
         private System.Windows.Forms.Label FICnumberlabel;
         private System.Windows.Forms.Label FIFnametext;
         private System.Windows.Forms.Label FIFnamelabel;
-        private System.Windows.Forms.Button button47;
+        private System.Windows.Forms.Button FIEditButton;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Panel ProPicPanel;
         private System.Windows.Forms.Label FIFnameTitle;

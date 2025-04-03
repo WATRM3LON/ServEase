@@ -5672,7 +5672,7 @@
             FillEM.AutoSize = true;
             FillEM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FillEM.ForeColor = System.Drawing.Color.Red;
-            FillEM.Location = new System.Drawing.Point(651, 38);
+            FillEM.Location = new System.Drawing.Point(360, 458);
             FillEM.Name = "FillEM";
             FillEM.Size = new System.Drawing.Size(181, 23);
             FillEM.TabIndex = 78;
@@ -5941,8 +5941,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(EditPIPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(EditPIPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);

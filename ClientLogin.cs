@@ -174,9 +174,6 @@ namespace OOP2
                             ClientDashboard clientDashboard = new ClientDashboard();
                             clientDashboard.ShowDialog();
                         }
-                        
-
-
                     }
                     else
                     {

@@ -531,7 +531,8 @@ namespace OOP2
 
         private void DashboardButton_Click(object sender, EventArgs e)
         {
-
+            InfoGetter();
+            Loaders();
             //DASHBOARD
             AppointmentPanel.Visible = true;
             panel3.Visible = true;
@@ -867,6 +868,8 @@ namespace OOP2
 
         private void ProfileButton_Click(object sender, EventArgs e)
         {
+            InfoGetter();
+            Loaders();
             //DASHBOARD
             AppointmentPanel.Visible = false;
             panel3.Visible = false;

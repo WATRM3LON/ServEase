@@ -240,7 +240,7 @@
             Dbutton.FlatAppearance.BorderSize = 0;
             Dbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             Dbutton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Dbutton.Image = (System.Drawing.Image)resources.GetObject("Dbutton.Image");
+            Dbutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             Dbutton.Location = new System.Drawing.Point(9, 146);
             Dbutton.Name = "Dbutton";
             Dbutton.Size = new System.Drawing.Size(68, 77);
@@ -357,7 +357,7 @@
             DashboardButton.FlatAppearance.BorderSize = 0;
             DashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             DashboardButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            DashboardButton.Image = (System.Drawing.Image)resources.GetObject("DashboardButton.Image");
+            DashboardButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             DashboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             DashboardButton.Location = new System.Drawing.Point(32, 146);
             DashboardButton.Name = "DashboardButton";
@@ -401,6 +401,7 @@
             MinimizeButton.Size = new System.Drawing.Size(49, 63);
             MinimizeButton.TabIndex = 50;
             MinimizeButton.UseVisualStyleBackColor = true;
+            MinimizeButton.Click += MinimizeButton_Click;
             // 
             // MaximizeButton
             // 
@@ -413,6 +414,7 @@
             MaximizeButton.Size = new System.Drawing.Size(49, 63);
             MaximizeButton.TabIndex = 49;
             MaximizeButton.UseVisualStyleBackColor = true;
+            MaximizeButton.Click += MaximizeButton_Click;
             // 
             // CloseButton
             // 
@@ -425,6 +427,7 @@
             CloseButton.Size = new System.Drawing.Size(49, 63);
             CloseButton.TabIndex = 48;
             CloseButton.UseVisualStyleBackColor = true;
+            CloseButton.Click += CloseButton_Click;
             // 
             // HeaderPanel
             // 
