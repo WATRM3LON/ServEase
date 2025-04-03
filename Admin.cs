@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -13,6 +14,13 @@ namespace OOP2
 {
     public partial class Admin : Form
     {
+        OleDbConnection? myConn;
+        OleDbDataAdapter? da;
+        OleDbCommand? cmd;
+        DataSet? ds;
+
+        string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
             (
@@ -28,14 +36,21 @@ namespace OOP2
             InitializeComponent();
             Loaders();
         }
-
+        string Fname, Lname;
         public void Loaders()
         {
             DashboardPanel.Visible = true;
-            DashboardPanel2.Visible = false;
+            DashboardPanel2.Visible = NotificationPanel.Visible = false;
+            ManageButton.BackColor = SButton.BackColor = ColorTranslator.FromHtml("#22B0E5");
+            LoadFacilityData();
+
+
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
             DashboardPanel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel2.Width, DashboardPanel2.Height, 20, 20));
+            //MANAGE
+            ManageButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ManageButton.Width, ManageButton.Height, 10, 10));
+            SButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SButton.Width, SButton.Height, 10, 10));
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -91,5 +106,44 @@ namespace OOP2
         {
             MinimizeButton.BackColor = ColorTranslator.FromHtml("#e8f5e9");
         }
+
+        private void LoadFacilityData()
+        {
+            ProfilePanel.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT [First Name], [Last Name], [Email Address] FROM Clients WHERE [Email Address] <> 'admin12345'";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int margin = 10;
+
+                        while (reader.Read())
+                        {
+                            string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
+                            string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
+                            string fullName = fName + " " + lName;
+
+                            UsersPanel usersPanel = new UsersPanel();
+                            usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+
+                            usersPanel.SetData(fullName, reader.GetString(reader.GetOrdinal("Email Address")));
+
+                            usersPanel.Location = new Point(10, margin);
+                            margin += usersPanel.Height + 10;
+
+                            ProfilePanel.Controls.Add(usersPanel);
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }

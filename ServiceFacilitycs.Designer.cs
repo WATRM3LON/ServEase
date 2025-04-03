@@ -880,7 +880,7 @@
             // 
             CalendarAppointmentPanel.Controls.Add(appointmentsbutton);
             CalendarAppointmentPanel.Controls.Add(calendarsButton);
-            CalendarAppointmentPanel.Location = new System.Drawing.Point(263, 166);
+            CalendarAppointmentPanel.Location = new System.Drawing.Point(0, 0);
             CalendarAppointmentPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             CalendarAppointmentPanel.Name = "CalendarAppointmentPanel";
             CalendarAppointmentPanel.Size = new System.Drawing.Size(707, 69);
@@ -2094,6 +2094,7 @@
             AnalyticsMenuPanel.Controls.Add(PSButton);
             AnalyticsMenuPanel.Controls.Add(CGRButton);
             AnalyticsMenuPanel.Controls.Add(BFButton);
+            AnalyticsMenuPanel.Controls.Add(CalendarAppointmentPanel);
             AnalyticsMenuPanel.Location = new System.Drawing.Point(263, 166);
             AnalyticsMenuPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             AnalyticsMenuPanel.Name = "AnalyticsMenuPanel";
@@ -4152,6 +4153,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(AppointmentsPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(EditFIPanel);
             Controls.Add(NotificationPanel);
@@ -4167,7 +4169,6 @@
             Controls.Add(panel44);
             Controls.Add(AppointmentPanel);
             Controls.Add(CalendarPanel);
-            Controls.Add(CalendarAppointmentPanel);
             Controls.Add(NotifyButton);
             Controls.Add(DashboardPanel2);
             Controls.Add(DashboardPanel);
@@ -4175,7 +4176,6 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
-            Controls.Add(AppointmentsPanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "ServiceFacilitycs";

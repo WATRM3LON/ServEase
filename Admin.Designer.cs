@@ -60,11 +60,16 @@
             FPButton = new System.Windows.Forms.Button();
             button41 = new System.Windows.Forms.Button();
             SerButton = new System.Windows.Forms.Button();
+            ProfilePanel = new System.Windows.Forms.Panel();
+            CalendarAppointmentPanel = new System.Windows.Forms.Panel();
+            SerFacbutton = new System.Windows.Forms.Button();
+            ClientsButton = new System.Windows.Forms.Button();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
+            CalendarAppointmentPanel.SuspendLayout();
             SuspendLayout();
             // 
             // NotificationPanel
@@ -461,9 +466,9 @@
             HiLabel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             HiLabel.Location = new System.Drawing.Point(13, -5);
             HiLabel.Name = "HiLabel";
-            HiLabel.Size = new System.Drawing.Size(88, 25);
+            HiLabel.Size = new System.Drawing.Size(94, 25);
             HiLabel.TabIndex = 24;
-            HiLabel.Text = "Hi Client,";
+            HiLabel.Text = "Hi Admin,";
             // 
             // FPButton
             // 
@@ -522,12 +527,67 @@
             SerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             SerButton.UseVisualStyleBackColor = false;
             // 
+            // ProfilePanel
+            // 
+            ProfilePanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ProfilePanel.BackColor = System.Drawing.Color.Transparent;
+            ProfilePanel.Location = new System.Drawing.Point(277, 196);
+            ProfilePanel.Name = "ProfilePanel";
+            ProfilePanel.Size = new System.Drawing.Size(893, 778);
+            ProfilePanel.TabIndex = 57;
+            // 
+            // CalendarAppointmentPanel
+            // 
+            CalendarAppointmentPanel.Controls.Add(SerFacbutton);
+            CalendarAppointmentPanel.Controls.Add(ClientsButton);
+            CalendarAppointmentPanel.Location = new System.Drawing.Point(261, 129);
+            CalendarAppointmentPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            CalendarAppointmentPanel.Name = "CalendarAppointmentPanel";
+            CalendarAppointmentPanel.Size = new System.Drawing.Size(707, 69);
+            CalendarAppointmentPanel.TabIndex = 58;
+            // 
+            // SerFacbutton
+            // 
+            SerFacbutton.BackColor = System.Drawing.Color.Transparent;
+            SerFacbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            SerFacbutton.FlatAppearance.BorderSize = 0;
+            SerFacbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            SerFacbutton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            SerFacbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            SerFacbutton.Location = new System.Drawing.Point(352, 9);
+            SerFacbutton.Name = "SerFacbutton";
+            SerFacbutton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            SerFacbutton.Size = new System.Drawing.Size(335, 77);
+            SerFacbutton.TabIndex = 26;
+            SerFacbutton.Text = "Service Facilities";
+            SerFacbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            SerFacbutton.UseVisualStyleBackColor = false;
+            // 
+            // ClientsButton
+            // 
+            ClientsButton.BackColor = System.Drawing.Color.Transparent;
+            ClientsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            ClientsButton.FlatAppearance.BorderSize = 0;
+            ClientsButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            ClientsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ClientsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ClientsButton.Location = new System.Drawing.Point(15, 9);
+            ClientsButton.Name = "ClientsButton";
+            ClientsButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            ClientsButton.Size = new System.Drawing.Size(335, 77);
+            ClientsButton.TabIndex = 25;
+            ClientsButton.Text = "Clients";
+            ClientsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ClientsButton.UseVisualStyleBackColor = false;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(214, 241, 250);
             ClientSize = new System.Drawing.Size(1219, 1000);
+            Controls.Add(CalendarAppointmentPanel);
+            Controls.Add(ProfilePanel);
             Controls.Add(NotificationPanel);
             Controls.Add(NotifyButton);
             Controls.Add(DashboardPanel2);
@@ -549,6 +609,7 @@
             DashboardPanel.ResumeLayout(false);
             HeaderPanel.ResumeLayout(false);
             HeaderPanel.PerformLayout();
+            CalendarAppointmentPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -585,5 +646,9 @@
         private System.Windows.Forms.Button SerButton;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label HiLabel;
+        private System.Windows.Forms.Panel ProfilePanel;
+        private System.Windows.Forms.Panel CalendarAppointmentPanel;
+        private System.Windows.Forms.Button SerFacbutton;
+        private System.Windows.Forms.Button ClientsButton;
     }
 }
