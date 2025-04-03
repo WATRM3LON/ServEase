@@ -378,6 +378,7 @@ namespace OOP2
         public void UpdateInfo()
         {
             EmailAddress = ClientLogin.EmailAddress;
+            
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
@@ -388,13 +389,25 @@ namespace OOP2
                 {
                     cmd.Parameters.AddWithValue("@fname", PIEFnametext.Text);
                     cmd.Parameters.AddWithValue("@lname", PIELnametext.Text);
-                    cmd.Parameters.AddWithValue("@datebirth", PIEBirthtext.Text);
-                    cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
+
+                    DateTime birthdate;
+                    if (DateTime.TryParse(PIEBirthtext.Text, out birthdate))
+                    {
+                        cmd.Parameters.AddWithValue("@datebirth", birthdate);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid birthdate format.");
+                        return;
+                    }
+
                     cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
+                    cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
+                    cmd.Parameters.AddWithValue("@Email", PIEEmailtext.Text); 
 
                     cmd.ExecuteNonQuery();
 
-                    System.Windows.Forms.MessageBox.Show("Updated successfully!");
+                    MessageBox.Show("Updated successfully!");
                 }
             }
         }
@@ -973,11 +986,6 @@ namespace OOP2
         {
             FillEM.Visible = false;
             bool cnumberValid = CNumberChecker(PIECnumbertext.Text, connection);
-            cmd.Parameters.AddWithValue("@fname", PIEFnametext.Text);
-            cmd.Parameters.AddWithValue("@lname", PIELnametext.Text);
-            cmd.Parameters.AddWithValue("@datebirth", PIEBirthtext.Text);
-            cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
-            cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
 
             if (PIEFnametext.Text.Length != 0 && PIELnametext.Text.Length != 0 && PIEBirthtext.Text.Length != 0 && PIEAddresstext.Text.Length != 0 && cnumberValid)
             {
