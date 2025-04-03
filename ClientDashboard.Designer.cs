@@ -5672,11 +5672,11 @@
             FillEM.AutoSize = true;
             FillEM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FillEM.ForeColor = System.Drawing.Color.Red;
-            FillEM.Location = new System.Drawing.Point(528, 462);
+            FillEM.Location = new System.Drawing.Point(651, 38);
             FillEM.Name = "FillEM";
-            FillEM.Size = new System.Drawing.Size(54, 23);
+            FillEM.Size = new System.Drawing.Size(181, 23);
             FillEM.TabIndex = 78;
-            FillEM.Text = "Fill All";
+            FillEM.Text = "All fields must be filled";
             // 
             // CnumberInvalid
             // 

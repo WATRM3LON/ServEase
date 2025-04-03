@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
 {
-    public partial class ClientDashboard : Form, Info
+    public partial class ClientDashboard : Form, ClientInfo
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;

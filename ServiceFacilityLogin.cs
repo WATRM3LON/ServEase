@@ -14,6 +14,7 @@ namespace OOP2
 {
     public partial class ServiceFacilityLogin : Form
     {
+        public static string EmailAddress = " ";
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
         OleDbCommand? cmd;
@@ -166,6 +167,7 @@ namespace OOP2
                         }
                         else
                         {
+                            EmailAddress = EmailLTextBox.Text;
                             this.Hide();
                             ServiceFacilitycs serviceFacilitycs = new ServiceFacilitycs();
                             serviceFacilitycs.ShowDialog();
@@ -316,8 +318,8 @@ namespace OOP2
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
                     myConn.Open();
-                    string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Working Hours], [Working Days], Ratings, [Approval Status]) " +
-                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @Workinghours, @Workingdays, @Ratings, @Approvalstatus)";
+                    string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status]) " +
+                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @Ratings, @Approvalstatus)";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                     {
@@ -329,17 +331,19 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
                         cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
                         cmd.Parameters.AddWithValue("@Servicecategory", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Workinghours", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Workinghoursstart", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Workinghoursend", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
 
                         cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registration successful! You can now log in.");
                     }
                 }
                 this.Hide();
-                ServiceFacilitycs serviceFacilitycs = new ServiceFacilitycs();
-                serviceFacilitycs.ShowDialog();
+                ServiceFacilityLogin serviceFacilityLogin = new ServiceFacilityLogin();
+                serviceFacilityLogin.ShowDialog();
             }
         }
 

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace OOP2
 {
-    public interface Info
+    public interface ClientInfo
     {
         string FName { get; set; }
         string LName { get; set; }
@@ -19,6 +19,16 @@ namespace OOP2
         int count {  get; set; }
     }
 
+    public interface FacilityInfo
+    {
+        string Facname { get; set; }
+        string SerCat {  get; set; }
+        DateTime WorHours { get; set; }
+        string WorDays { get; set; }
+        string Ratings { get; set; }   
+        string AppStatus { get; set; }
+
+    }
     public abstract class Baseform
     {
         public abstract void Loaders();

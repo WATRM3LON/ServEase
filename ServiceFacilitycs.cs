@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -11,8 +12,15 @@ using System.Windows.Forms;
 
 namespace OOP2
 {
-    public partial class ServiceFacilitycs : Form
+    public partial class ServiceFacilitycs : Form, ClientInfo, FacilityInfo
     {
+        OleDbConnection? myConn;
+        OleDbDataAdapter? da;
+        OleDbCommand? cmd;
+        DataSet? ds;
+
+        string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
+
         bool status = false, notify = false;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -24,6 +32,23 @@ namespace OOP2
             int nWidthEllipse,
             int nHeightEllipse
             );
+
+        string formattedWorHours;
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public DateTime Birthdate { get; set; }
+        public string EmailAddress { get; set; }
+        public string Password { get; set; }
+        public string ContactNumber { get; set; }
+        public string LocationAddress { get; set; }
+        public int count { get; set; }
+        public string Facname { get; set; }
+        public string SerCat { get; set; }
+        public DateTime WorHours { get; set; }
+        public string WorDays { get; set; }
+        public string Ratings { get; set; }
+        public string AppStatus { get; set; }
+
         public ServiceFacilitycs()
         {
             InitializeComponent();
@@ -58,6 +83,8 @@ namespace OOP2
             ATButton.Visible = false;
             ServicesOfferedPanel.Visible = false;
             SettingsPanel.Visible = false;
+            FIEButton.Visible = false; FillEM.Visible = false;
+            EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
             //SIDEBAR
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
@@ -110,6 +137,10 @@ namespace OOP2
             //PROFILE
             ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
             FIStatus.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FIStatus.Width, FIStatus.Height, 10, 10));
+            FIEProfilepanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FIEProfilepanel.Width, FIEProfilepanel.Height, 10, 10));
+            FIEPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FIEPanel.Width, FIEPanel.Height, 10, 10));
+            FIEStatus.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FIEStatus.Width, FIEStatus.Height, 10, 10));
+            CUIButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CUIButton.Width, CUIButton.Height, 10, 10));
             PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
             SOAPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOAPanel.Width, SOAPanel.Height, 10, 10));
             ServicesOfferedPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ServicesOfferedPanel.Width, ServicesOfferedPanel.Height, 10, 10));
@@ -133,6 +164,16 @@ namespace OOP2
             AboutPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AboutPanel.Width, AboutPanel.Height, 10, 10));
             HelpPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HelpPanel.Width, HelpPanel.Height, 10, 10));
             //panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
+            //INFOSETTER
+            FIFnameTitle.Text = FIEFnameTitle.Text = FIEFacnametext.Text = FIEFacnametext.Text = Facname;
+            FIRatingstext.Text = FIERatingstext.Text = Ratings;
+            FILoctext.Text = FIELoctext.Text = LocationAddress;
+            FIEOFnametext.Text = FName; FIEOLnametext.Text = LName;
+            FISerCattext.Text = SerCat; FIWorhourstext.Text = FIEWorhourstext.Text = formattedWorHours;
+            FIWordaystext.Text = FIEWordaystext.Text = WorDays;
+            FICnumbertext.Text = FIECnumbertext.Text = ContactNumber;
+            FIEmailtext.Text = FIEEmailaddtext.Text = EmailAddress;
+            FIStatus.Text = FIEStatus.Text = AppStatus;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -227,13 +268,15 @@ namespace OOP2
             HeaderPanel.Location = new Point(190, 44);
             panel44.Visible = false;
         }
+
+
         private void DashboardButton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
             AppointmentPanel.Visible = true;
             panel11.Visible = true;
             panel45.Visible = true;
-            HiLabel.Visible = true;
+            HiLabel.Visible = true; HiLabel.Text = $"Hi {Facname},";
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Welcome ServEase!";
             DashboardButton.BackColor = ColorTranslator.FromHtml("#f0246e");
@@ -770,6 +813,164 @@ namespace OOP2
         private void ServiceFacilitycs_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void InfoGetter()
+        {
+            EmailAddress = ClientLogin.EmailAddress;
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Password], [Service Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status] FROM [Service Facilities] WHERE [Email Address] = @Email";
+                //INSERT INTO  () " +
+                //"VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @Workinghours, @Workingdays, @Ratings, @Approvalstatus)";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", EmailAddress);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Facname = reader["Facility Name"].ToString();
+                            FName = reader["Owner First Name"].ToString();
+                            LName = reader["Owner Last Name"].ToString();
+                            WorHours = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start" + " - " + "Working Hours End"));
+                            formattedWorHours = WorHours == DateTime.MinValue ? " " : WorHours.ToString();
+                            WorDays = reader["Working Days"].ToString();
+                            Password = reader["Password"].ToString();
+                            ContactNumber = reader["Contact Number"].ToString();
+                            LocationAddress = reader.IsDBNull(reader.GetOrdinal("Facility Location")) ? " " : reader["Facility Location"].ToString();
+                            SerCat = reader["Service Category"].ToString();
+                            AppStatus = reader["Approval Status"].ToString();
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        public void UpdateInfo()
+        {
+            EmailAddress = ServiceFacilityLogin.EmailAddress;
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "UPDATE [Service Facilities] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Password] = @Password, [Service Category] = @Servicecategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays, Ratings = @ratings, [Approval Status] = @appStatus WHERE [Email Address] = @Email";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    FIFnameTitle.Text = FIEFnameTitle.Text = Facname;
+                    FIRatingstext.Text = FIERatingstext.Text = Ratings;
+                    FILoctext.Text = FIELoctext.Text = LocationAddress;
+                    FIEOFnametext.Text = FName; FIEOLnametext.Text = LName;
+                    FISerCattext.Text = SerCat; FIWorhourstext.Text = FIEWorhourstext.Text = formattedWorHours;
+                    FIWordaystext.Text = FIEWordaystext.Text = WorDays;
+                    FICnumbertext.Text = FIECnumbertext.Text = ContactNumber;
+                    FIEmailtext.Text = FIEEmailaddtext.Text = EmailAddress;
+                    FIStatus.Text = FIEStatus.Text = AppStatus;
+
+                    cmd.Parameters.AddWithValue("@FacilityName", FIEFacnametext.Text);
+                    cmd.Parameters.AddWithValue("@FLocation", FIELoctext.Text);
+                    cmd.Parameters.AddWithValue("@OFName", FIEOFnametext.Text);
+                    cmd.Parameters.AddWithValue("@OLName", FIEOLnametext.Text);
+                    cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
+                    cmd.Parameters.AddWithValue("@Servicecategory", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Workinghoursstart", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Workinghoursend", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@fname", PIEFnametext.Text);
+                    cmd.Parameters.AddWithValue("@lname", PIELnametext.Text);
+
+                    DateTime birthdate;
+                    if (DateTime.TryParse(PIEBirthtext.Text, out birthdate))
+                    {
+                        cmd.Parameters.AddWithValue("@datebirth", birthdate);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid birthdate format.");
+                        return;
+                    }
+
+                    cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
+                    cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
+                    cmd.Parameters.AddWithValue("@Email", PIEEmailtext.Text);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Updated successfully!");
+                }
+            }
+        }
+
+        public bool CNumberChecker(string Cnumber, string connection)
+        {
+            int valid = 0;
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT COUNT(*) FROM Clients WHERE [Contact Number] = @cnumber";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@cnumber", Cnumber);
+                    count = (int)cmd.ExecuteScalar();
+
+                    if (count > 1)
+                    {
+                        CnumberExisted.Visible = true;
+                        PIECnumbertext.BackColor = Color.MistyRose;
+                    }
+                    else
+                    {
+                        valid++;
+                    }
+                }
+            }
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT COUNT(*) FROM [Service Facilities] WHERE [Contact Number] = @cnumber";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@cnumber", Cnumber);
+                    count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        CnumberExisted.Visible = true;
+                        PIECnumbertext.BackColor = Color.MistyRose;
+                    }
+                    else
+                    {
+                        valid++;
+                    }
+                }
+            }
+            if (PIECnumbertext.Text.Length != 11 || !PIECnumbertext.Text.StartsWith("09") || !PIECnumbertext.Text.All(char.IsDigit))
+            {
+                CnumberExisted.Visible = false; CnumberInvalid.Visible = true;
+                PIECnumbertext.BackColor = Color.MistyRose;
+            }
+            else
+            {
+                valid++;
+            }
+
+            if (valid == 3)
+            {
+                return true;
+            }
+            else { return false; }
         }
     }
 }
