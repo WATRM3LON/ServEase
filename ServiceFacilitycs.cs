@@ -52,8 +52,9 @@ namespace OOP2
         public ServiceFacilitycs()
         {
             InitializeComponent();
+            InfoGetter();
             Loaders();
-            
+
         }
 
         public void Loaders()
@@ -169,7 +170,7 @@ namespace OOP2
             FIRatingstext.Text = FIERatingstext.Text = Ratings;
             FILoctext.Text = FIELoctext.Text = LocationAddress;
             FIEOFnametext.Text = FName; FIEOLnametext.Text = LName;
-            FISerCattext.Text = SerCat; FIWorhourstext.Text = FIEWorhourstext.Text = formattedWorHours;
+            FISerCattext.Text = SerCat; FIWorhourstext.Text = FIEStarttext.Text = formattedWorHours;
             FIWordaystext.Text = FIEWordaystext.Text = WorDays;
             FICnumbertext.Text = FIECnumbertext.Text = ContactNumber;
             FIEmailtext.Text = FIEEmailaddtext.Text = EmailAddress;
@@ -430,7 +431,7 @@ namespace OOP2
 
         private void DownButton_Click(object sender, EventArgs e)
         {
-            if(status == false)
+            if (status == false)
             {
                 StatusPanel.Visible = true;
                 status = true;
@@ -865,45 +866,17 @@ namespace OOP2
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
-                    FIFnameTitle.Text = FIEFnameTitle.Text = Facname;
-                    FIRatingstext.Text = FIERatingstext.Text = Ratings;
-                    FILoctext.Text = FIELoctext.Text = LocationAddress;
-                    FIEOFnametext.Text = FName; FIEOLnametext.Text = LName;
-                    FISerCattext.Text = SerCat; FIWorhourstext.Text = FIEWorhourstext.Text = formattedWorHours;
-                    FIWordaystext.Text = FIEWordaystext.Text = WorDays;
-                    FICnumbertext.Text = FIECnumbertext.Text = ContactNumber;
-                    FIEmailtext.Text = FIEEmailaddtext.Text = EmailAddress;
-                    FIStatus.Text = FIEStatus.Text = AppStatus;
-
                     cmd.Parameters.AddWithValue("@FacilityName", FIEFacnametext.Text);
                     cmd.Parameters.AddWithValue("@FLocation", FIELoctext.Text);
                     cmd.Parameters.AddWithValue("@OFName", FIEOFnametext.Text);
                     cmd.Parameters.AddWithValue("@OLName", FIEOLnametext.Text);
                     cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
-                    cmd.Parameters.AddWithValue("@Servicecategory", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Workinghoursstart", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Workinghoursend", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Servicecategory", FIESerCatList.GetItemText(FIESerCatList.SelectedItem));
+                    cmd.Parameters.AddWithValue("@Workinghoursstart", FIEStarttext.Text);
+                    cmd.Parameters.AddWithValue("@Workinghoursend", FIEEndtext.Text);
+                    cmd.Parameters.AddWithValue("@Workingdays", FIEWordaystext.Text);
                     cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
                     cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@fname", PIEFnametext.Text);
-                    cmd.Parameters.AddWithValue("@lname", PIELnametext.Text);
-
-                    DateTime birthdate;
-                    if (DateTime.TryParse(PIEBirthtext.Text, out birthdate))
-                    {
-                        cmd.Parameters.AddWithValue("@datebirth", birthdate);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid birthdate format.");
-                        return;
-                    }
-
-                    cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
-                    cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
-                    cmd.Parameters.AddWithValue("@Email", PIEEmailtext.Text);
-
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Updated successfully!");
@@ -927,7 +900,7 @@ namespace OOP2
                     if (count > 1)
                     {
                         CnumberExisted.Visible = true;
-                        PIECnumbertext.BackColor = Color.MistyRose;
+                        FIECnumbertext.BackColor = Color.MistyRose;
                     }
                     else
                     {
@@ -948,7 +921,7 @@ namespace OOP2
                     if (count > 0)
                     {
                         CnumberExisted.Visible = true;
-                        PIECnumbertext.BackColor = Color.MistyRose;
+                        FIECnumbertext.BackColor = Color.MistyRose;
                     }
                     else
                     {
@@ -956,10 +929,10 @@ namespace OOP2
                     }
                 }
             }
-            if (PIECnumbertext.Text.Length != 11 || !PIECnumbertext.Text.StartsWith("09") || !PIECnumbertext.Text.All(char.IsDigit))
+            if (FIECnumbertext.Text.Length != 11 || !FIECnumbertext.Text.StartsWith("09") || !FIECnumbertext.Text.All(char.IsDigit))
             {
                 CnumberExisted.Visible = false; CnumberInvalid.Visible = true;
-                PIECnumbertext.BackColor = Color.MistyRose;
+                FIECnumbertext.BackColor = Color.MistyRose;
             }
             else
             {
@@ -971,6 +944,21 @@ namespace OOP2
                 return true;
             }
             else { return false; }
+        }
+
+        private void CUIButton_Click(object sender, EventArgs e)
+        {
+            FillEM.Visible = false;
+            bool cnumberValid = CNumberChecker(FIECnumbertext.Text, connection);
+
+            if (FIELoctext.Text.Length != 0 && FIEFacnametext.Text.Length != 0 && FIEWordaystext.Text.Length != 0 && FIEStarttext.Text.Length != 0 && FIEEndtext.Text.Length != 0 && cnumberValid)
+            {
+                UpdateInfo();
+            }
+            else if (FIELoctext.Text.Length == 0 && FIEFacnametext.Text.Length == 0 && FIEWordaystext.Text.Length == 0 && FIEStarttext.Text.Length == 0 && FIEEndtext.Text.Length == 0)
+            {
+                FillEM.Visible = true;
+            }
         }
     }
 }
