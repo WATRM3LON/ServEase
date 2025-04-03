@@ -16,5 +16,6 @@ namespace OOP2
         string Password { get; set; }
         string ContactNumber { get; set; }
         string LocationAddress { get; set; }
+        int count {  get; set; }
     }
 }

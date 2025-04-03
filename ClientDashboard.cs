@@ -42,6 +42,7 @@ namespace OOP2
         public string Password { get; set; }
         public string ContactNumber { get; set; }
         public string LocationAddress { get; set; }
+        public int count { get; set; }
         public ClientDashboard()
         {
             InitializeComponent();
@@ -72,8 +73,9 @@ namespace OOP2
             FacilityProPanel.Visible = false;
             FPButton.Visible = false;
             FacilityProPanel2.Visible = false;
-            PIEButton.Visible = false;
-            EditPIPanel.Visible = false;
+            PIEButton.Visible = false; FillEM.Visible = false;
+            EditPIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
+
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
@@ -194,7 +196,6 @@ namespace OOP2
             AgePI.Text = age.ToString(); PIEAgetext.Text = age.ToString();
             ContactNumberPI.Text = ContactNumber; PIECnumbertext.Text = ContactNumber;
             EmailAddressPI.Text = EmailAddress; PIEEmailtext.Text = EmailAddress;
-
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -373,6 +374,92 @@ namespace OOP2
             }
 
         }
+
+        public void UpdateInfo()
+        {
+            EmailAddress = ClientLogin.EmailAddress;
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "UPDATE Clients SET [First Name] = @fname, [Last Name] = @lname, [Birth Date] = @datebirth, [Contact Number] = @cnumber, Location = @address WHERE [Email Address] = @Email";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@fname", PIEFnametext.Text);
+                    cmd.Parameters.AddWithValue("@lname", PIELnametext.Text);
+                    cmd.Parameters.AddWithValue("@datebirth", PIEBirthtext.Text);
+                    cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
+                    cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
+
+                    cmd.ExecuteNonQuery();
+
+                    System.Windows.Forms.MessageBox.Show("Updated successfully!");
+                }
+            }
+        }
+
+        public bool CNumberChecker(string Cnumber, string connection)
+        {
+            int valid = 0;
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT COUNT(*) FROM Clients WHERE [Contact Number] = @cnumber";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@cnumber", Cnumber);
+                    count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        CnumberExisted.Visible = true;
+                        PIECnumbertext.BackColor = Color.MistyRose;
+                    }
+                    else
+                    {
+                        valid++;
+                    }
+                }
+            }
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT COUNT(*) FROM [Service Facilities] WHERE [Contact Number] = @cnumber";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@cnumber", Cnumber);
+                    count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        CnumberExisted.Visible = true;
+                        PIECnumbertext.BackColor = Color.MistyRose;
+                    }
+                    else
+                    {
+                        valid++;
+                    }
+                }
+            }
+            if (PIECnumbertext.Text.Length != 11 || !PIECnumbertext.Text.StartsWith("09") || !PIECnumbertext.Text.All(char.IsDigit))
+            {
+                CnumberExisted.Visible = false; CnumberInvalid.Visible = true;
+                PIECnumbertext.BackColor = Color.MistyRose;
+            }
+            else
+            {
+                valid++;
+            }
+
+            if (valid == 3)
+            {
+                return true;
+            }
+            else { return false; }
+        }
         private void ServicesButton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
@@ -426,7 +513,7 @@ namespace OOP2
 
         private void DashboardButton_Click(object sender, EventArgs e)
         {
-            
+
             //DASHBOARD
             AppointmentPanel.Visible = true;
             panel3.Visible = true;
@@ -874,6 +961,32 @@ namespace OOP2
         {
             WelcomeLabel.Visible = true;
             PIEButton.Visible = false; ProfilePanel.Visible = true; EditPIPanel.Visible = false;
+        }
+
+        private void PIECnumbertext_Click(object sender, EventArgs e)
+        {
+            CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
+            PIECnumbertext.BackColor = Color.WhiteSmoke;
+        }
+
+        private void CUIButton_Click(object sender, EventArgs e)
+        {
+            FillEM.Visible = false;
+            bool cnumberValid = CNumberChecker(PIECnumbertext.Text, connection);
+            cmd.Parameters.AddWithValue("@fname", PIEFnametext.Text);
+            cmd.Parameters.AddWithValue("@lname", PIELnametext.Text);
+            cmd.Parameters.AddWithValue("@datebirth", PIEBirthtext.Text);
+            cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
+            cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
+
+            if (PIEFnametext.Text.Length != 0 && PIELnametext.Text.Length != 0 && PIEBirthtext.Text.Length != 0 && PIEAddresstext.Text.Length != 0 && cnumberValid)
+            {
+                UpdateInfo();
+            }
+            else
+            {
+                FillEM.Visible = true;
+            }
         }
     }
 }

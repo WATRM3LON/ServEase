@@ -422,8 +422,10 @@
             label104 = new System.Windows.Forms.Label();
             EditPIPanel = new System.Windows.Forms.Panel();
             PIEpanel = new System.Windows.Forms.Panel();
+            CnumberInvalid = new System.Windows.Forms.Label();
+            CnumberExisted = new System.Windows.Forms.Label();
+            PIEEmailtext = new System.Windows.Forms.Label();
             CUIButton = new System.Windows.Forms.Button();
-            PIEEmailtext = new System.Windows.Forms.TextBox();
             PIEEmaillabel = new System.Windows.Forms.Label();
             PIECnumbertext = new System.Windows.Forms.TextBox();
             PIECnumberlabel = new System.Windows.Forms.Label();
@@ -442,6 +444,7 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
+            FillEM = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -5626,8 +5629,11 @@
             // 
             PIEpanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIEpanel.BackColor = System.Drawing.Color.White;
-            PIEpanel.Controls.Add(CUIButton);
+            PIEpanel.Controls.Add(FillEM);
+            PIEpanel.Controls.Add(CnumberInvalid);
+            PIEpanel.Controls.Add(CnumberExisted);
             PIEpanel.Controls.Add(PIEEmailtext);
+            PIEpanel.Controls.Add(CUIButton);
             PIEpanel.Controls.Add(PIEEmaillabel);
             PIEpanel.Controls.Add(PIECnumbertext);
             PIEpanel.Controls.Add(PIECnumberlabel);
@@ -5648,6 +5654,46 @@
             PIEpanel.Size = new System.Drawing.Size(861, 511);
             PIEpanel.TabIndex = 38;
             // 
+            // CnumberInvalid
+            // 
+            CnumberInvalid.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CnumberInvalid.AutoSize = true;
+            CnumberInvalid.BackColor = System.Drawing.Color.Transparent;
+            CnumberInvalid.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CnumberInvalid.ForeColor = System.Drawing.Color.Red;
+            CnumberInvalid.Location = new System.Drawing.Point(65, 355);
+            CnumberInvalid.Name = "CnumberInvalid";
+            CnumberInvalid.Size = new System.Drawing.Size(145, 17);
+            CnumberInvalid.TabIndex = 77;
+            CnumberInvalid.Text = "Invalid Contact Number";
+            CnumberInvalid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CnumberExisted
+            // 
+            CnumberExisted.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CnumberExisted.AutoSize = true;
+            CnumberExisted.BackColor = System.Drawing.Color.Transparent;
+            CnumberExisted.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CnumberExisted.ForeColor = System.Drawing.Color.Red;
+            CnumberExisted.Location = new System.Drawing.Point(22, 353);
+            CnumberExisted.Name = "CnumberExisted";
+            CnumberExisted.Size = new System.Drawing.Size(268, 34);
+            CnumberExisted.TabIndex = 76;
+            CnumberExisted.Text = "Oops! This contact number is already taken. \r\nDo you have another one you can use?\r\n";
+            CnumberExisted.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // PIEEmailtext
+            // 
+            PIEEmailtext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEEmailtext.AutoSize = true;
+            PIEEmailtext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIEEmailtext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            PIEEmailtext.Location = new System.Drawing.Point(309, 315);
+            PIEEmailtext.Name = "PIEEmailtext";
+            PIEEmailtext.Size = new System.Drawing.Size(134, 28);
+            PIEEmailtext.TabIndex = 75;
+            PIEEmailtext.Text = "Email Address";
+            // 
             // CUIButton
             // 
             CUIButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
@@ -5664,15 +5710,7 @@
             CUIButton.Text = "Confirm and Update Informatioin";
             CUIButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             CUIButton.UseVisualStyleBackColor = false;
-            // 
-            // PIEEmailtext
-            // 
-            PIEEmailtext.BackColor = System.Drawing.SystemColors.Menu;
-            PIEEmailtext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            PIEEmailtext.Location = new System.Drawing.Point(300, 313);
-            PIEEmailtext.Name = "PIEEmailtext";
-            PIEEmailtext.Size = new System.Drawing.Size(224, 31);
-            PIEEmailtext.TabIndex = 73;
+            CUIButton.Click += CUIButton_Click;
             // 
             // PIEEmaillabel
             // 
@@ -5688,12 +5726,13 @@
             // 
             // PIECnumbertext
             // 
-            PIECnumbertext.BackColor = System.Drawing.SystemColors.Menu;
-            PIECnumbertext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIECnumbertext.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIECnumbertext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIECnumbertext.Location = new System.Drawing.Point(25, 313);
             PIECnumbertext.Name = "PIECnumbertext";
-            PIECnumbertext.Size = new System.Drawing.Size(224, 31);
+            PIECnumbertext.Size = new System.Drawing.Size(224, 34);
             PIECnumbertext.TabIndex = 71;
+            PIECnumbertext.Click += PIECnumbertext_Click;
             // 
             // PIECnumberlabel
             // 
@@ -5709,11 +5748,11 @@
             // 
             // PIEAddresstext
             // 
-            PIEAddresstext.BackColor = System.Drawing.SystemColors.Menu;
-            PIEAddresstext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEAddresstext.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIEAddresstext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIEAddresstext.Location = new System.Drawing.Point(297, 203);
             PIEAddresstext.Name = "PIEAddresstext";
-            PIEAddresstext.Size = new System.Drawing.Size(412, 31);
+            PIEAddresstext.Size = new System.Drawing.Size(412, 34);
             PIEAddresstext.TabIndex = 69;
             // 
             // PIEAddresslabel
@@ -5730,11 +5769,11 @@
             // 
             // PIEBirthtext
             // 
-            PIEBirthtext.BackColor = System.Drawing.SystemColors.Menu;
-            PIEBirthtext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEBirthtext.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIEBirthtext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIEBirthtext.Location = new System.Drawing.Point(26, 204);
             PIEBirthtext.Name = "PIEBirthtext";
-            PIEBirthtext.Size = new System.Drawing.Size(224, 31);
+            PIEBirthtext.Size = new System.Drawing.Size(224, 34);
             PIEBirthtext.TabIndex = 67;
             // 
             // PIEBirthlabel
@@ -5751,11 +5790,11 @@
             // 
             // PIEAgetext
             // 
-            PIEAgetext.BackColor = System.Drawing.SystemColors.Menu;
-            PIEAgetext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEAgetext.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIEAgetext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIEAgetext.Location = new System.Drawing.Point(576, 117);
             PIEAgetext.Name = "PIEAgetext";
-            PIEAgetext.Size = new System.Drawing.Size(133, 31);
+            PIEAgetext.Size = new System.Drawing.Size(133, 34);
             PIEAgetext.TabIndex = 65;
             // 
             // PIEAgelabel
@@ -5772,11 +5811,11 @@
             // 
             // PIELnametext
             // 
-            PIELnametext.BackColor = System.Drawing.SystemColors.Menu;
-            PIELnametext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIELnametext.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIELnametext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIELnametext.Location = new System.Drawing.Point(296, 117);
             PIELnametext.Name = "PIELnametext";
-            PIELnametext.Size = new System.Drawing.Size(224, 31);
+            PIELnametext.Size = new System.Drawing.Size(224, 34);
             PIELnametext.TabIndex = 63;
             // 
             // PIELnamelabel
@@ -5793,11 +5832,11 @@
             // 
             // PIEFnametext
             // 
-            PIEFnametext.BackColor = System.Drawing.SystemColors.Menu;
-            PIEFnametext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            PIEFnametext.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIEFnametext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIEFnametext.Location = new System.Drawing.Point(25, 117);
             PIEFnametext.Name = "PIEFnametext";
-            PIEFnametext.Size = new System.Drawing.Size(224, 31);
+            PIEFnametext.Size = new System.Drawing.Size(224, 34);
             PIEFnametext.TabIndex = 61;
             // 
             // PIEFnamelabel
@@ -5875,6 +5914,18 @@
             PIEpp.Name = "PIEpp";
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
+            // 
+            // FillEM
+            // 
+            FillEM.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FillEM.AutoSize = true;
+            FillEM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            FillEM.ForeColor = System.Drawing.Color.Red;
+            FillEM.Location = new System.Drawing.Point(528, 462);
+            FillEM.Name = "FillEM";
+            FillEM.Size = new System.Drawing.Size(54, 23);
+            FillEM.TabIndex = 78;
+            FillEM.Text = "Fill All";
             // 
             // ClientDashboard
             // 
@@ -6521,7 +6572,6 @@
         private System.Windows.Forms.Label PIEname;
         private System.Windows.Forms.Panel PIEpp;
         private System.Windows.Forms.TextBox PIEFnametext;
-        private System.Windows.Forms.TextBox PIEEmailtext;
         private System.Windows.Forms.Label PIEEmaillabel;
         private System.Windows.Forms.TextBox PIECnumbertext;
         private System.Windows.Forms.Label PIECnumberlabel;
@@ -6535,5 +6585,9 @@
         private System.Windows.Forms.Label PIELnamelabel;
         private System.Windows.Forms.Button CUIButton;
         private System.Windows.Forms.Button PIEButton;
+        private System.Windows.Forms.Label PIEEmailtext;
+        private System.Windows.Forms.Label CnumberExisted;
+        private System.Windows.Forms.Label CnumberInvalid;
+        private System.Windows.Forms.Label FillEM;
     }
 }
