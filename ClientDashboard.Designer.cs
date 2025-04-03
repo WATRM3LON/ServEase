@@ -422,6 +422,7 @@
             label104 = new System.Windows.Forms.Label();
             EditPIPanel = new System.Windows.Forms.Panel();
             PIEpanel = new System.Windows.Forms.Panel();
+            FillEM = new System.Windows.Forms.Label();
             CnumberInvalid = new System.Windows.Forms.Label();
             CnumberExisted = new System.Windows.Forms.Label();
             PIEEmailtext = new System.Windows.Forms.Label();
@@ -433,7 +434,6 @@
             PIEAddresslabel = new System.Windows.Forms.Label();
             PIEBirthtext = new System.Windows.Forms.TextBox();
             PIEBirthlabel = new System.Windows.Forms.Label();
-            PIEAgetext = new System.Windows.Forms.TextBox();
             PIEAgelabel = new System.Windows.Forms.Label();
             PIELnametext = new System.Windows.Forms.TextBox();
             PIELnamelabel = new System.Windows.Forms.Label();
@@ -444,7 +444,7 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            FillEM = new System.Windows.Forms.Label();
+            PIEAgetext = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -3693,11 +3693,11 @@
             // 
             AgePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             AgePI.AutoSize = true;
-            AgePI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            AgePI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             AgePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             AgePI.Location = new System.Drawing.Point(585, 123);
             AgePI.Name = "AgePI";
-            AgePI.Size = new System.Drawing.Size(89, 20);
+            AgePI.Size = new System.Drawing.Size(109, 25);
             AgePI.TabIndex = 45;
             AgePI.Text = "23 years old";
             // 
@@ -3705,11 +3705,11 @@
             // 
             PIAge.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIAge.AutoSize = true;
-            PIAge.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIAge.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             PIAge.ForeColor = System.Drawing.SystemColors.ControlDark;
             PIAge.Location = new System.Drawing.Point(579, 85);
             PIAge.Name = "PIAge";
-            PIAge.Size = new System.Drawing.Size(36, 20);
+            PIAge.Size = new System.Drawing.Size(45, 25);
             PIAge.TabIndex = 44;
             PIAge.Text = "Age";
             // 
@@ -3717,11 +3717,11 @@
             // 
             EmailAddressPI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EmailAddressPI.AutoSize = true;
-            EmailAddressPI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EmailAddressPI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             EmailAddressPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            EmailAddressPI.Location = new System.Drawing.Point(332, 222);
+            EmailAddressPI.Location = new System.Drawing.Point(331, 210);
             EmailAddressPI.Name = "EmailAddressPI";
-            EmailAddressPI.Size = new System.Drawing.Size(177, 20);
+            EmailAddressPI.Size = new System.Drawing.Size(210, 25);
             EmailAddressPI.TabIndex = 43;
             EmailAddressPI.Text = "juandelacruz@gmail.com";
             // 
@@ -3729,11 +3729,11 @@
             // 
             PIEmailAdd.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIEmailAdd.AutoSize = true;
-            PIEmailAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIEmailAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             PIEmailAdd.ForeColor = System.Drawing.SystemColors.ControlDark;
-            PIEmailAdd.Location = new System.Drawing.Point(325, 183);
+            PIEmailAdd.Location = new System.Drawing.Point(324, 171);
             PIEmailAdd.Name = "PIEmailAdd";
-            PIEmailAdd.Size = new System.Drawing.Size(103, 20);
+            PIEmailAdd.Size = new System.Drawing.Size(128, 25);
             PIEmailAdd.TabIndex = 42;
             PIEmailAdd.Text = "Email Address";
             // 
@@ -3741,11 +3741,11 @@
             // 
             BirthDatePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             BirthDatePI.AutoSize = true;
-            BirthDatePI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BirthDatePI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             BirthDatePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             BirthDatePI.Location = new System.Drawing.Point(331, 123);
             BirthDatePI.Name = "BirthDatePI";
-            BirthDatePI.Size = new System.Drawing.Size(125, 20);
+            BirthDatePI.Size = new System.Drawing.Size(155, 25);
             BirthDatePI.TabIndex = 41;
             BirthDatePI.Text = "February 14, 2002";
             // 
@@ -3753,11 +3753,11 @@
             // 
             PIDateBirth.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIDateBirth.AutoSize = true;
-            PIDateBirth.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIDateBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             PIDateBirth.ForeColor = System.Drawing.SystemColors.ControlDark;
             PIDateBirth.Location = new System.Drawing.Point(324, 85);
             PIDateBirth.Name = "PIDateBirth";
-            PIDateBirth.Size = new System.Drawing.Size(94, 20);
+            PIDateBirth.Size = new System.Drawing.Size(119, 25);
             PIDateBirth.TabIndex = 40;
             PIDateBirth.Text = "Date of Birth";
             // 
@@ -3765,11 +3765,11 @@
             // 
             ContactNumberPI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ContactNumberPI.AutoSize = true;
-            ContactNumberPI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ContactNumberPI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             ContactNumberPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ContactNumberPI.Location = new System.Drawing.Point(28, 217);
             ContactNumberPI.Name = "ContactNumberPI";
-            ContactNumberPI.Size = new System.Drawing.Size(119, 20);
+            ContactNumberPI.Size = new System.Drawing.Size(149, 25);
             ContactNumberPI.TabIndex = 39;
             ContactNumberPI.Text = "+63 9956226213";
             // 
@@ -3777,11 +3777,11 @@
             // 
             PICNumber.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PICNumber.AutoSize = true;
-            PICNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PICNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             PICNumber.ForeColor = System.Drawing.SystemColors.ControlDark;
             PICNumber.Location = new System.Drawing.Point(21, 178);
             PICNumber.Name = "PICNumber";
-            PICNumber.Size = new System.Drawing.Size(118, 20);
+            PICNumber.Size = new System.Drawing.Size(150, 25);
             PICNumber.TabIndex = 38;
             PICNumber.Text = "Contact Number";
             // 
@@ -3789,11 +3789,11 @@
             // 
             ClientNamePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ClientNamePI.AutoSize = true;
-            ClientNamePI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ClientNamePI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             ClientNamePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ClientNamePI.Location = new System.Drawing.Point(28, 123);
             ClientNamePI.Name = "ClientNamePI";
-            ClientNamePI.Size = new System.Drawing.Size(106, 20);
+            ClientNamePI.Size = new System.Drawing.Size(127, 25);
             ClientNamePI.TabIndex = 37;
             ClientNamePI.Text = "Juan Dela Cruz";
             // 
@@ -3801,11 +3801,11 @@
             // 
             PIName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIName.AutoSize = true;
-            PIName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             PIName.ForeColor = System.Drawing.SystemColors.ControlDark;
             PIName.Location = new System.Drawing.Point(21, 85);
             PIName.Name = "PIName";
-            PIName.Size = new System.Drawing.Size(49, 20);
+            PIName.Size = new System.Drawing.Size(61, 25);
             PIName.TabIndex = 36;
             PIName.Text = "Name";
             // 
@@ -5629,6 +5629,7 @@
             // 
             PIEpanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIEpanel.BackColor = System.Drawing.Color.White;
+            PIEpanel.Controls.Add(PIEAgetext);
             PIEpanel.Controls.Add(FillEM);
             PIEpanel.Controls.Add(CnumberInvalid);
             PIEpanel.Controls.Add(CnumberExisted);
@@ -5641,7 +5642,6 @@
             PIEpanel.Controls.Add(PIEAddresslabel);
             PIEpanel.Controls.Add(PIEBirthtext);
             PIEpanel.Controls.Add(PIEBirthlabel);
-            PIEpanel.Controls.Add(PIEAgetext);
             PIEpanel.Controls.Add(PIEAgelabel);
             PIEpanel.Controls.Add(PIELnametext);
             PIEpanel.Controls.Add(PIELnamelabel);
@@ -5654,9 +5654,21 @@
             PIEpanel.Size = new System.Drawing.Size(861, 511);
             PIEpanel.TabIndex = 38;
             // 
+            // FillEM
+            // 
+            FillEM.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FillEM.AutoSize = true;
+            FillEM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            FillEM.ForeColor = System.Drawing.Color.Red;
+            FillEM.Location = new System.Drawing.Point(528, 462);
+            FillEM.Name = "FillEM";
+            FillEM.Size = new System.Drawing.Size(54, 23);
+            FillEM.TabIndex = 78;
+            FillEM.Text = "Fill All";
+            // 
             // CnumberInvalid
             // 
-            CnumberInvalid.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CnumberInvalid.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             CnumberInvalid.AutoSize = true;
             CnumberInvalid.BackColor = System.Drawing.Color.Transparent;
             CnumberInvalid.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
@@ -5670,7 +5682,7 @@
             // 
             // CnumberExisted
             // 
-            CnumberExisted.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CnumberExisted.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             CnumberExisted.AutoSize = true;
             CnumberExisted.BackColor = System.Drawing.Color.Transparent;
             CnumberExisted.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
@@ -5696,7 +5708,7 @@
             // 
             // CUIButton
             // 
-            CUIButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            CUIButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             CUIButton.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
             CUIButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             CUIButton.FlatAppearance.BorderSize = 0;
@@ -5726,6 +5738,7 @@
             // 
             // PIECnumbertext
             // 
+            PIECnumbertext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIECnumbertext.BackColor = System.Drawing.Color.WhiteSmoke;
             PIECnumbertext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIECnumbertext.Location = new System.Drawing.Point(25, 313);
@@ -5748,6 +5761,7 @@
             // 
             // PIEAddresstext
             // 
+            PIEAddresstext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIEAddresstext.BackColor = System.Drawing.Color.WhiteSmoke;
             PIEAddresstext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIEAddresstext.Location = new System.Drawing.Point(297, 203);
@@ -5769,6 +5783,7 @@
             // 
             // PIEBirthtext
             // 
+            PIEBirthtext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIEBirthtext.BackColor = System.Drawing.Color.WhiteSmoke;
             PIEBirthtext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIEBirthtext.Location = new System.Drawing.Point(26, 204);
@@ -5788,15 +5803,6 @@
             PIEBirthlabel.TabIndex = 66;
             PIEBirthlabel.Text = "Date of Birth";
             // 
-            // PIEAgetext
-            // 
-            PIEAgetext.BackColor = System.Drawing.Color.WhiteSmoke;
-            PIEAgetext.Font = new System.Drawing.Font("Segoe UI", 12F);
-            PIEAgetext.Location = new System.Drawing.Point(576, 117);
-            PIEAgetext.Name = "PIEAgetext";
-            PIEAgetext.Size = new System.Drawing.Size(133, 34);
-            PIEAgetext.TabIndex = 65;
-            // 
             // PIEAgelabel
             // 
             PIEAgelabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -5811,6 +5817,7 @@
             // 
             // PIELnametext
             // 
+            PIELnametext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIELnametext.BackColor = System.Drawing.Color.WhiteSmoke;
             PIELnametext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIELnametext.Location = new System.Drawing.Point(296, 117);
@@ -5832,6 +5839,7 @@
             // 
             // PIEFnametext
             // 
+            PIEFnametext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIEFnametext.BackColor = System.Drawing.Color.WhiteSmoke;
             PIEFnametext.Font = new System.Drawing.Font("Segoe UI", 12F);
             PIEFnametext.Location = new System.Drawing.Point(25, 117);
@@ -5915,17 +5923,17 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
-            // FillEM
+            // PIEAgetext
             // 
-            FillEM.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            FillEM.AutoSize = true;
-            FillEM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            FillEM.ForeColor = System.Drawing.Color.Red;
-            FillEM.Location = new System.Drawing.Point(528, 462);
-            FillEM.Name = "FillEM";
-            FillEM.Size = new System.Drawing.Size(54, 23);
-            FillEM.TabIndex = 78;
-            FillEM.Text = "Fill All";
+            PIEAgetext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEAgetext.AutoSize = true;
+            PIEAgetext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIEAgetext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            PIEAgetext.Location = new System.Drawing.Point(572, 116);
+            PIEAgetext.Name = "PIEAgetext";
+            PIEAgetext.Size = new System.Drawing.Size(134, 28);
+            PIEAgetext.TabIndex = 79;
+            PIEAgetext.Text = "Email Address";
             // 
             // ClientDashboard
             // 
@@ -5933,8 +5941,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(EditPIPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(EditPIPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
@@ -6579,7 +6587,6 @@
         private System.Windows.Forms.Label PIEAddresslabel;
         private System.Windows.Forms.TextBox PIEBirthtext;
         private System.Windows.Forms.Label PIEBirthlabel;
-        private System.Windows.Forms.TextBox PIEAgetext;
         private System.Windows.Forms.Label PIEAgelabel;
         private System.Windows.Forms.TextBox PIELnametext;
         private System.Windows.Forms.Label PIELnamelabel;
@@ -6589,5 +6596,6 @@
         private System.Windows.Forms.Label CnumberExisted;
         private System.Windows.Forms.Label CnumberInvalid;
         private System.Windows.Forms.Label FillEM;
+        private System.Windows.Forms.Label PIEAgetext;
     }
 }

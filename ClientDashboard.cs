@@ -34,7 +34,7 @@ namespace OOP2
             int nWidthEllipse,
             int nHeightEllipse
             );
-
+        string formattedBirthdate;
         public string FName { get; set; }
         public string LName { get; set; }
         public DateTime Birthdate { get; set; }
@@ -187,7 +187,7 @@ namespace OOP2
             //INFOSETTER
             PPClientName.Text = PIEname.Text = FName + " " + LName; PIEFnametext.Text = FName; PIELnametext.Text = LName;
             ClientNamePI.Text = FName + LName;
-            BirthDatePI.Text = Birthdate.ToString(); PIEBirthtext.Text = Birthdate.ToString();
+            BirthDatePI.Text = formattedBirthdate; PIEBirthtext.Text = formattedBirthdate;
             int age = DateTime.Now.Year - Birthdate.Year;
             if (Birthdate.Date > DateTime.Now.AddYears(-age))
             {
@@ -196,6 +196,7 @@ namespace OOP2
             AgePI.Text = age.ToString(); PIEAgetext.Text = age.ToString();
             ContactNumberPI.Text = ContactNumber; PIECnumbertext.Text = ContactNumber;
             EmailAddressPI.Text = EmailAddress; PIEEmailtext.Text = EmailAddress;
+            PIEAddresstext.Text = LocationAddress;
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -364,6 +365,7 @@ namespace OOP2
                             FName = reader["First Name"].ToString();
                             LName = reader["Last Name"].ToString();
                             Birthdate = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Birth Date"));
+                            formattedBirthdate = Birthdate == DateTime.MinValue ? " " : Birthdate.ToString("dd MMMM yyyy");
                             Password = reader["Password"].ToString();
                             ContactNumber = reader["Contact Number"].ToString();
                             LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? "Unknown" : reader["Location"].ToString();
