@@ -167,8 +167,8 @@ namespace OOP2
                         else
                         {
                             this.Hide();
-                            ClientDashboard clientDashboard = new ClientDashboard();
-                            clientDashboard.ShowDialog();
+                            ServiceFacilitycs serviceFacilitycs = new ServiceFacilitycs();
+                            serviceFacilitycs.ShowDialog();
                         }
 
                     }
@@ -316,8 +316,8 @@ namespace OOP2
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
                     myConn.Open();
-                    string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password]) " +
-                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password)";
+                    string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Working Hours], [Working Days], Ratings, [Approval Status]) " +
+                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @Workinghours, @Workingdays, @Ratings, @Approvalstatus)";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                     {
@@ -328,6 +328,11 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
                         cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
                         cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Servicecategory", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Workinghours", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
 
                         cmd.ExecuteNonQuery();
                     }

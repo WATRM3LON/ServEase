@@ -187,15 +187,18 @@ namespace OOP2
             //INFOSETTER
             PPClientName.Text = PIEname.Text = FName + " " + LName; PIEFnametext.Text = FName; PIELnametext.Text = LName;
             ClientNamePI.Text = FName + LName;
-            BirthDatePI.Text = formattedBirthdate; PIEBirthtext.Text = formattedBirthdate;
-            int age = DateTime.Now.Year - Birthdate.Year;
-            if (Birthdate.Date > DateTime.Now.AddYears(-age))
+            BirthDatePI.Text = PIEBirthtext.Text = formattedBirthdate;
+            int age; 
+            if (BirthDatePI.Text.Length == 1)
             {
-                age--;
+                AgePI.Text = PIEAgetext.Text = " ";
             }
-            AgePI.Text = age.ToString(); PIEAgetext.Text = age.ToString();
-            ContactNumberPI.Text = ContactNumber; PIECnumbertext.Text = ContactNumber;
-            EmailAddressPI.Text = EmailAddress; PIEEmailtext.Text = EmailAddress;
+            else
+            {
+                age = DateTime.Now.Year - Birthdate.Year; AgePI.Text = PIEAgetext.Text = age.ToString();
+            }
+            ContactNumberPI.Text = PIECnumbertext.Text = ContactNumber;
+            EmailAddressPI.Text = PIEEmailtext.Text = EmailAddress;
             PIEAddresstext.Text = LocationAddress;
         }
         private void CloseButton_Click(object sender, EventArgs e)
@@ -368,7 +371,7 @@ namespace OOP2
                             formattedBirthdate = Birthdate == DateTime.MinValue ? " " : Birthdate.ToString("dd MMMM yyyy");
                             Password = reader["Password"].ToString();
                             ContactNumber = reader["Contact Number"].ToString();
-                            LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? "Unknown" : reader["Location"].ToString();
+                            LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? " " : reader["Location"].ToString();
 
                         }
                     }
@@ -427,7 +430,7 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@cnumber", Cnumber);
                     count = (int)cmd.ExecuteScalar();
 
-                    if (count > 0)
+                    if (count > 1)
                     {
                         CnumberExisted.Visible = true;
                         PIECnumbertext.BackColor = Color.MistyRose;
@@ -513,7 +516,7 @@ namespace OOP2
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
-            PButton.BackColor = Color.White;
+            PButton.BackColor = Color.White; EditPIPanel.Visible = false; PIEButton.Visible = false;
             //SETTINGS
             SettingPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -565,7 +568,7 @@ namespace OOP2
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
-            PButton.BackColor = Color.White;
+            PButton.BackColor = Color.White; EditPIPanel.Visible = false; PIEButton.Visible = false;
             //SETTINGS
             SettingPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -682,7 +685,7 @@ namespace OOP2
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
-            PButton.BackColor = Color.White;
+            PButton.BackColor = Color.White; EditPIPanel.Visible = false; PIEButton.Visible = false;
             //SETTINGS
             SettingPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -733,7 +736,7 @@ namespace OOP2
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
-            PButton.BackColor = Color.White;
+            PButton.BackColor = Color.White; EditPIPanel.Visible = false; PIEButton.Visible = false;
             //SETTINGS
             SettingPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -783,7 +786,7 @@ namespace OOP2
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
-            PButton.BackColor = Color.White;
+            PButton.BackColor = Color.White; EditPIPanel.Visible = false; PIEButton.Visible = false;
             //SETTINGS
             SettingPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -900,6 +903,7 @@ namespace OOP2
             ProfilePanel.Visible = true;
             ProfileButton.BackColor = ColorTranslator.FromHtml("#69e331");
             PButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            EditPIPanel.Visible = false; PIEButton.Visible = false;
             //SETTINGS
             SettingPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -949,6 +953,7 @@ namespace OOP2
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
             PButton.BackColor = Color.White;
+            EditPIPanel.Visible = false; PIEButton.Visible = false;
             //SETTINGS
             SettingPanel.Visible = true;
             SettingsButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -993,7 +998,7 @@ namespace OOP2
             {
                 UpdateInfo();
             }
-            else
+            else if(PIEFnametext.Text.Length == 0 && PIELnametext.Text.Length == 0 && PIEBirthtext.Text.Length == 0 && PIEAddresstext.Text.Length == 0)
             {
                 FillEM.Visible = true;
             }

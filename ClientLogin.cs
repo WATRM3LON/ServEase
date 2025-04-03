@@ -328,11 +328,12 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
 
                         cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registration successful! You can now log in.");
                     }
                 }
                 this.Hide();
-                ClientDashboard clientDashboard = new ClientDashboard();
-                clientDashboard.ShowDialog();
+                ClientLogin clientLogin = new ClientLogin();
+                clientLogin.ShowDialog();
             }
         }
 

@@ -18,4 +18,9 @@ namespace OOP2
         string LocationAddress { get; set; }
         int count {  get; set; }
     }
+
+    public abstract class Baseform
+    {
+        public abstract void Loaders();
+    }
 }

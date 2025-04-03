@@ -422,6 +422,7 @@
             label104 = new System.Windows.Forms.Label();
             EditPIPanel = new System.Windows.Forms.Panel();
             PIEpanel = new System.Windows.Forms.Panel();
+            PIEAgetext = new System.Windows.Forms.Label();
             FillEM = new System.Windows.Forms.Label();
             CnumberInvalid = new System.Windows.Forms.Label();
             CnumberExisted = new System.Windows.Forms.Label();
@@ -444,7 +445,6 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            PIEAgetext = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -5654,6 +5654,18 @@
             PIEpanel.Size = new System.Drawing.Size(861, 511);
             PIEpanel.TabIndex = 38;
             // 
+            // PIEAgetext
+            // 
+            PIEAgetext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEAgetext.AutoSize = true;
+            PIEAgetext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIEAgetext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            PIEAgetext.Location = new System.Drawing.Point(572, 116);
+            PIEAgetext.Name = "PIEAgetext";
+            PIEAgetext.Size = new System.Drawing.Size(134, 28);
+            PIEAgetext.TabIndex = 79;
+            PIEAgetext.Text = "Email Address";
+            // 
             // FillEM
             // 
             FillEM.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -5923,26 +5935,14 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
-            // PIEAgetext
-            // 
-            PIEAgetext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            PIEAgetext.AutoSize = true;
-            PIEAgetext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            PIEAgetext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            PIEAgetext.Location = new System.Drawing.Point(572, 116);
-            PIEAgetext.Name = "PIEAgetext";
-            PIEAgetext.Size = new System.Drawing.Size(134, 28);
-            PIEAgetext.TabIndex = 79;
-            PIEAgetext.Text = "Email Address";
-            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(ProfilePanel);
             Controls.Add(EditPIPanel);
+            Controls.Add(ProfilePanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);

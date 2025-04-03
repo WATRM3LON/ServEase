@@ -28,6 +28,11 @@ namespace OOP2
         {
             InitializeComponent();
             Loaders();
+            
+        }
+
+        public void Loaders()
+        {
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
             AppointmentsPanel.Visible = false;
@@ -53,10 +58,6 @@ namespace OOP2
             ATButton.Visible = false;
             ServicesOfferedPanel.Visible = false;
             SettingsPanel.Visible = false;
-        }
-
-        public void Loaders()
-        {
             //SIDEBAR
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
@@ -108,6 +109,7 @@ namespace OOP2
             AnalyticPannel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AnalyticPannel2.Width, AnalyticPannel2.Height, 10, 10));
             //PROFILE
             ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
+            FIStatus.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FIStatus.Width, FIStatus.Height, 10, 10));
             PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
             SOAPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOAPanel.Width, SOAPanel.Height, 10, 10));
             ServicesOfferedPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ServicesOfferedPanel.Width, ServicesOfferedPanel.Height, 10, 10));
