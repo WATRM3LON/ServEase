@@ -155,7 +155,7 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@email", EmailLTextBox.Text);
                     cmd.Parameters.AddWithValue("@password", PasswordLTextBox.Text);
 
-                    int count = (int)cmd.ExecuteScalar();
+                    count = (int)cmd.ExecuteScalar();
 
                     if (count > 0)
                     {

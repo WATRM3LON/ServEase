@@ -32,5 +32,8 @@ namespace OOP2
     public abstract class Baseform
     {
         public abstract void Loaders();
+        public abstract void InfoGetter();
+        public abstract void UpdateInfo();
+        public abstract bool CNumberChecker();
     }
 }

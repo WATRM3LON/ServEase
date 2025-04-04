@@ -7,59 +7,109 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OOP2.Properties.Settings">
-    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP2.Admin">
-    <Position X="3.5" Y="3.25" Width="1.5" />
+    <Position X="3.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAgEKAAAACEAAAgBIACAABACMBQAMgAEBAECFQRAABE=</HashCode>
+      <HashCode>AAg0KBAEACEEggwBIACBQBAiNJQAMkAFBAECVQRAEBE=</HashCode>
       <FileName>Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP2.ClientDashboard">
-    <Position X="8.75" Y="3.25" Width="1.5" />
+    <Position X="8.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>//1/qDMUjCEE4liHMBWR3ffzsNw/9vf/5Opn9f//m7E=</HashCode>
+      <HashCode>//1/qPcVvGEH6lyPNBWV3f/3+Ny/9uf/7upn9///m7k=</HashCode>
       <FileName>ClientDashboard.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="OOP2.ClientLogin">
-    <Position X="10.5" Y="3.25" Width="1.5" />
+    <Position X="10.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>EgQ54FAiAKIXAiQRDSKBwKBGAIAIAsFBQIKK4AgKkKI=</HashCode>
+      <HashCode>EgQ54FAiAKIXAiQRDSKBwKBGAIAIAsFBQIKK4ggKkKI=</HashCode>
       <FileName>ClientLogin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP2.Form1">
-    <Position X="1.75" Y="3.25" Width="1.5" />
+    <Position X="1.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Interface Name="OOP2.Form1.Info" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Form1.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Interface>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAgIAABgCAAAgQBAACAAAACAIAYAAAAAAQCAABEAAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP2.Program">
-    <Position X="7.25" Y="0.5" Width="1.5" />
+    <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP2.ServiceFacilitycs">
-    <Position X="5.25" Y="3.25" Width="1.5" />
+    <Position X="5.25" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>/313OzGYACBEohiXMAmRwVQDMMQ/JlLnxMEHVdz/GzE=</HashCode>
+      <HashCode>/33/OzWYAGFfsh2XNkmdyd6XMM0/L0L35ME3V/7/2zk=</HashCode>
       <FileName>ServiceFacilitycs.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="OOP2.ServiceFacilityLogin">
-    <Position X="7" Y="3.25" Width="1.5" />
+    <Position X="7" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>EgAZIBAAACAHAjARAACZYAACAIAIAkEBIICCwQBAgCY=</HashCode>
+      <HashCode>EjQ5YFAiAKAXAjQRDSKRQKBGAIAIAsFBEIKK4ghIkKY=</HashCode>
       <FileName>ServiceFacilityLogin.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="OOP2.Baseform">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEABAgAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="OOP2.ClientInfo">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAABAABAAAAAQEAAAAAAACAAAAAgAAgAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OOP2.FacilityInfo">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAgAAANAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
