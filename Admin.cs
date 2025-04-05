@@ -20,6 +20,7 @@ namespace OOP2
         DataSet? ds;
 
         string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
+        bool Client = true, Facility = false;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -43,7 +44,6 @@ namespace OOP2
             DashboardPanel2.Visible = NotificationPanel.Visible = false;
             ManageButton.BackColor = SButton.BackColor = ColorTranslator.FromHtml("#22B0E5");
             LoadFacilityData();
-
 
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
@@ -111,22 +111,16 @@ namespace OOP2
 
         private void LogoButton_Click(object sender, EventArgs e)
         {
-            //dbp1 = false;
-            //dbp2 = true;
             DashboardPanel.Visible = false;
             DashboardPanel2.Visible = true;
             HeaderPanel.Location = new Point(75, 44);
-            //panel44.Visible = true;
         }
 
         private void LogosButton_Click(object sender, EventArgs e)
         {
-            //dbp1 = true;
-            //dbp2 = false;
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
             HeaderPanel.Location = new Point(190, 44);
-            //panel44.Visible = false;
         }
         private void LogoutButton_Click(object sender, EventArgs e)
         {
@@ -150,56 +144,123 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT Client_ID, [First Name], [Last Name], [Email Address] FROM [Admin (Clients)] WHERE [Email Address] <> 'admin12345'";
-
-                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
-                using (OleDbDataReader reader = cmd.ExecuteReader())
+                if (Client)
                 {
-                    int margin = 10;
+                    string sql = "SELECT Client_ID, [First Name], [Last Name], [Email Address] FROM [Admin (Clients)] WHERE [Email Address] <> 'admin12345'";
 
-                    while (reader.Read())
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        int clientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+                        int margin = 10;
 
-                        string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
-                        string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
-                        string fullName = fName + " " + lName;
-
-                        string email = reader.IsDBNull(reader.GetOrdinal("Email Address")) ? "" : reader.GetString(reader.GetOrdinal("Email Address"));
-
-                        UsersPanel usersPanel = new UsersPanel();
-                        usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
-
-                        usersPanel.SetData(fullName, email);
-                        usersPanel.Loaders();
-
-                        usersPanel.Location = new Point(10, margin - 7);
-                        margin += usersPanel.Height + 10;
-
-                        string adminQuery = "SELECT Status, [Date Registered] FROM [Admin (Clients)] WHERE [Client_ID] = ?";
-                        using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
+                        while (reader.Read())
                         {
-                            adminCmd.Parameters.AddWithValue("?", clientId);
+                            int clientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
 
-                            using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                            string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
+                            string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
+                            string fullName = fName + " " + lName;
+
+                            string email = reader.IsDBNull(reader.GetOrdinal("Email Address")) ? "" : reader.GetString(reader.GetOrdinal("Email Address"));
+
+                            UsersPanel usersPanel = new UsersPanel();
+                            usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+
+                            usersPanel.SetDataClient(fullName, email);
+                            usersPanel.Loaders();
+
+                            usersPanel.Location = new Point(10, margin - 7);
+                            margin += usersPanel.Height + 10;
+
+                            string adminQuery = "SELECT Status, [Date Registered] FROM [Admin (Clients)] WHERE [Client_ID] = ?";
+                            using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                             {
-                                if (adminReader.Read())
-                                {
-                                    string status = adminReader.GetString(adminReader.GetOrdinal("Status"));
-                                    string dateRegistered = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                adminCmd.Parameters.AddWithValue("?", clientId);
 
-                                    usersPanel.SetInfo(status, dateRegistered);
+                                using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                {
+                                    if (adminReader.Read())
+                                    {
+                                        string status = adminReader.GetString(adminReader.GetOrdinal("Status"));
+                                        string dateRegistered = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+
+                                        usersPanel.SetInfo(status, dateRegistered);
+                                    }
                                 }
                             }
-                        }
 
-                        ProfilePanel.Controls.Add(usersPanel);
+                            ProfilePanel.Controls.Add(usersPanel);
+                        }
+                    }
+                }
+                else
+                {
+                    string sql = "SELECT Facility_ID, [Facility Name], [Email Address] FROM [Admin (Service Facilities)] WHERE [Email Address] <> 'admin12345'";
+
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int margin = 10;
+
+                        while (reader.Read())
+                        {
+                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            string Name = reader.IsDBNull(reader.GetOrdinal("Facility Name")) ? "" : reader.GetString(reader.GetOrdinal("Facility Name"));
+                            string email = reader.IsDBNull(reader.GetOrdinal("Email Address")) ? "" : reader.GetString(reader.GetOrdinal("Email Address"));
+
+                            UsersPanel usersPanel = new UsersPanel();
+                            usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+
+                            usersPanel.SetDataFacility(Name, email);
+                            usersPanel.Loaders();
+
+                            usersPanel.Location = new Point(10, margin - 7);
+                            margin += usersPanel.Height + 10;
+
+                            string adminQuery = "SELECT Status, [Date Registered] FROM [Admin (Service Facilities)] WHERE [Facility_ID] = ?";
+                            using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
+                            {
+                                adminCmd.Parameters.AddWithValue("?", facilityId);
+
+                                using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                {
+                                    if (adminReader.Read())
+                                    {
+                                        string status = adminReader.GetString(adminReader.GetOrdinal("Status"));
+                                        string dateRegistered = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+
+                                        usersPanel.SetInfo(status, dateRegistered);
+                                    }
+                                }
+                            }
+
+                            ProfilePanel.Controls.Add(usersPanel);
+                        }
                     }
                 }
             }
         }
 
+        private void ClientsButton_Click(object sender, EventArgs e)
+        {
+            SerFacbutton.Font = new Font(SerFacbutton.Font, SerFacbutton.Font.Style & ~FontStyle.Bold);
+            SerFacbutton.FlatStyle = FlatStyle.Flat;
 
+            ClientsButton.FlatStyle = FlatStyle.System;
+            ClientsButton.Font = new Font(ClientsButton.Font, ClientsButton.Font.Style | FontStyle.Bold);
+            Client = true; Facility = false;
+            LoadFacilityData();
+        }
 
+        private void SerFacbutton_Click(object sender, EventArgs e)
+        {
+            ClientsButton.Font = new Font(ClientsButton.Font, ClientsButton.Font.Style & FontStyle.Regular);
+            ClientsButton.FlatStyle = FlatStyle.Flat;
+
+            SerFacbutton.FlatStyle = FlatStyle.System;
+            SerFacbutton.Font = new Font(SerFacbutton.Font, SerFacbutton.Font.Style | FontStyle.Bold);
+            Client = false; Facility = true;
+            LoadFacilityData();
+        }
     }
 }

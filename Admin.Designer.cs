@@ -558,6 +558,7 @@
             ClientsButton.Text = "Clients";
             ClientsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             ClientsButton.UseVisualStyleBackColor = false;
+            ClientsButton.Click += ClientsButton_Click;
             // 
             // SerFacbutton
             // 
@@ -575,6 +576,7 @@
             SerFacbutton.Text = "Service Facilities";
             SerFacbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             SerFacbutton.UseVisualStyleBackColor = false;
+            SerFacbutton.Click += SerFacbutton_Click;
             // 
             // CalendarAppointmentPanel
             // 

@@ -66,11 +66,11 @@
             UserNamelabel.AutoSize = true;
             UserNamelabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             UserNamelabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            UserNamelabel.Location = new System.Drawing.Point(92, 28);
+            UserNamelabel.Location = new System.Drawing.Point(95, 26);
             UserNamelabel.Name = "UserNamelabel";
-            UserNamelabel.Size = new System.Drawing.Size(56, 20);
+            UserNamelabel.Size = new System.Drawing.Size(52, 20);
             UserNamelabel.TabIndex = 55;
-            UserNamelabel.Text = "Name: ";
+            UserNamelabel.Text = "Name:";
             // 
             // UserEmaillabel
             // 
@@ -105,7 +105,7 @@
             UserStatuslabel.AutoSize = true;
             UserStatuslabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             UserStatuslabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            UserStatuslabel.Location = new System.Drawing.Point(494, 27);
+            UserStatuslabel.Location = new System.Drawing.Point(485, 26);
             UserStatuslabel.Name = "UserStatuslabel";
             UserStatuslabel.Size = new System.Drawing.Size(52, 20);
             UserStatuslabel.TabIndex = 59;
@@ -116,7 +116,7 @@
             UserStatustext.AutoSize = true;
             UserStatustext.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             UserStatustext.ForeColor = System.Drawing.Color.LawnGreen;
-            UserStatustext.Location = new System.Drawing.Point(552, 27);
+            UserStatustext.Location = new System.Drawing.Point(552, 26);
             UserStatustext.Name = "UserStatustext";
             UserStatustext.Size = new System.Drawing.Size(51, 20);
             UserStatustext.TabIndex = 58;
@@ -127,7 +127,7 @@
             UserRegistlabel.AutoSize = true;
             UserRegistlabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             UserRegistlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            UserRegistlabel.Location = new System.Drawing.Point(428, 59);
+            UserRegistlabel.Location = new System.Drawing.Point(428, 58);
             UserRegistlabel.Name = "UserRegistlabel";
             UserRegistlabel.Size = new System.Drawing.Size(123, 20);
             UserRegistlabel.TabIndex = 61;

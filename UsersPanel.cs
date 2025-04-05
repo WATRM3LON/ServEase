@@ -33,8 +33,10 @@ namespace OOP2
             ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));
         }
 
-        public void SetData(string Name, string Emailaddress)
+        public void SetDataClient(string Name, string Emailaddress)
         {
+            UserNamelabel.Location = new Point(79, 26);
+            UserNamelabel.Text = "Name:";
             UserNametext.Text = Name;
             UserEmailtext.Text = Emailaddress;
         }
@@ -50,6 +52,13 @@ namespace OOP2
                 UserStatustext.ForeColor = Color.Red;
             }
             UserRegisttext.Text = Regist;
+        }
+        public void SetDataFacility(string Name, string Emailaddress)
+        {
+            UserNamelabel.Location = new Point(39, 26);
+            UserNamelabel.Text = "Facility Name:";
+            UserNametext.Text = Name;
+            UserEmailtext.Text = Emailaddress;
         }
         private void button45_Click(object sender, EventArgs e)
         {
