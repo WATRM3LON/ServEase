@@ -38,6 +38,19 @@ namespace OOP2
             UserNametext.Text = Name;
             UserEmailtext.Text = Emailaddress;
         }
+        public void SetInfo(string Status, string Regist)
+        {
+            UserStatustext.Text = Status;
+            if (Status == "Active")
+            {
+                UserStatustext.ForeColor = Color.LawnGreen;
+            }
+            else
+            {
+                UserStatustext.ForeColor = Color.Red;
+            }
+            UserRegisttext.Text = Regist;
+        }
         private void button45_Click(object sender, EventArgs e)
         {
 

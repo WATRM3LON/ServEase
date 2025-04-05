@@ -61,9 +61,9 @@
             button41 = new System.Windows.Forms.Button();
             SerButton = new System.Windows.Forms.Button();
             ProfilePanel = new System.Windows.Forms.Panel();
-            CalendarAppointmentPanel = new System.Windows.Forms.Panel();
-            SerFacbutton = new System.Windows.Forms.Button();
             ClientsButton = new System.Windows.Forms.Button();
+            SerFacbutton = new System.Windows.Forms.Button();
+            CalendarAppointmentPanel = new System.Windows.Forms.Panel();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
@@ -531,20 +531,27 @@
             // 
             ProfilePanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ProfilePanel.BackColor = System.Drawing.Color.Transparent;
-            ProfilePanel.Location = new System.Drawing.Point(277, 196);
+            ProfilePanel.Location = new System.Drawing.Point(277, 208);
             ProfilePanel.Name = "ProfilePanel";
-            ProfilePanel.Size = new System.Drawing.Size(893, 778);
+            ProfilePanel.Size = new System.Drawing.Size(893, 765);
             ProfilePanel.TabIndex = 57;
             // 
-            // CalendarAppointmentPanel
+            // ClientsButton
             // 
-            CalendarAppointmentPanel.Controls.Add(SerFacbutton);
-            CalendarAppointmentPanel.Controls.Add(ClientsButton);
-            CalendarAppointmentPanel.Location = new System.Drawing.Point(261, 129);
-            CalendarAppointmentPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            CalendarAppointmentPanel.Name = "CalendarAppointmentPanel";
-            CalendarAppointmentPanel.Size = new System.Drawing.Size(707, 69);
-            CalendarAppointmentPanel.TabIndex = 58;
+            ClientsButton.BackColor = System.Drawing.Color.Transparent;
+            ClientsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            ClientsButton.FlatAppearance.BorderSize = 0;
+            ClientsButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            ClientsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ClientsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ClientsButton.Location = new System.Drawing.Point(15, 9);
+            ClientsButton.Name = "ClientsButton";
+            ClientsButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            ClientsButton.Size = new System.Drawing.Size(335, 77);
+            ClientsButton.TabIndex = 25;
+            ClientsButton.Text = "Clients";
+            ClientsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ClientsButton.UseVisualStyleBackColor = false;
             // 
             // SerFacbutton
             // 
@@ -563,22 +570,15 @@
             SerFacbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             SerFacbutton.UseVisualStyleBackColor = false;
             // 
-            // ClientsButton
+            // CalendarAppointmentPanel
             // 
-            ClientsButton.BackColor = System.Drawing.Color.Transparent;
-            ClientsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            ClientsButton.FlatAppearance.BorderSize = 0;
-            ClientsButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            ClientsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ClientsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            ClientsButton.Location = new System.Drawing.Point(15, 9);
-            ClientsButton.Name = "ClientsButton";
-            ClientsButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            ClientsButton.Size = new System.Drawing.Size(335, 77);
-            ClientsButton.TabIndex = 25;
-            ClientsButton.Text = "Clients";
-            ClientsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ClientsButton.UseVisualStyleBackColor = false;
+            CalendarAppointmentPanel.Controls.Add(SerFacbutton);
+            CalendarAppointmentPanel.Controls.Add(ClientsButton);
+            CalendarAppointmentPanel.Location = new System.Drawing.Point(274, 141);
+            CalendarAppointmentPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            CalendarAppointmentPanel.Name = "CalendarAppointmentPanel";
+            CalendarAppointmentPanel.Size = new System.Drawing.Size(707, 69);
+            CalendarAppointmentPanel.TabIndex = 58;
             // 
             // Admin
             // 
@@ -647,8 +647,8 @@
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label HiLabel;
         private System.Windows.Forms.Panel ProfilePanel;
-        private System.Windows.Forms.Panel CalendarAppointmentPanel;
-        private System.Windows.Forms.Button SerFacbutton;
         private System.Windows.Forms.Button ClientsButton;
+        private System.Windows.Forms.Button SerFacbutton;
+        private System.Windows.Forms.Panel CalendarAppointmentPanel;
     }
 }

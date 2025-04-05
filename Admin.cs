@@ -51,6 +51,8 @@ namespace OOP2
             //MANAGE
             ManageButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ManageButton.Width, ManageButton.Height, 10, 10));
             SButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SButton.Width, SButton.Height, 10, 10));
+            ClientsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ClientsButton.Width, ClientsButton.Height, 10, 10));
+            SerFacbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerFacbutton.Width, SerFacbutton.Height, 10, 10));
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -115,34 +117,55 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT [First Name], [Last Name], [Email Address] FROM Clients WHERE [Email Address] <> 'admin12345'";
+                string sql = "SELECT Client_ID, [First Name], [Last Name], [Email Address] FROM Clients WHERE [Email Address] <> 'admin12345'";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                using (OleDbDataReader reader = cmd.ExecuteReader())
                 {
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    int margin = 10;
+
+                    while (reader.Read())
                     {
-                        int margin = 10;
+                        int clientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
 
-                        while (reader.Read())
+                        string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
+                        string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
+                        string fullName = fName + " " + lName;
+
+                        string email = reader.IsDBNull(reader.GetOrdinal("Email Address")) ? "" : reader.GetString(reader.GetOrdinal("Email Address"));
+
+                        UsersPanel usersPanel = new UsersPanel();
+                        usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+
+                        usersPanel.SetData(fullName, email);
+                        usersPanel.Loaders();
+
+                        usersPanel.Location = new Point(10, margin - 7);
+                        margin += usersPanel.Height + 10;
+
+                        string adminQuery = "SELECT Status, [Date Registered] FROM [Admin (Clients)] WHERE [Client_ID] = ?";
+                        using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                         {
-                            string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
-                            string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
-                            string fullName = fName + " " + lName;
+                            adminCmd.Parameters.AddWithValue("?", clientId);
 
-                            UsersPanel usersPanel = new UsersPanel();
-                            usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                            using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                            {
+                                if (adminReader.Read())
+                                {
+                                    string status = adminReader.GetString(adminReader.GetOrdinal("Status"));
+                                    string dateRegistered = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
 
-                            usersPanel.SetData(fullName, reader.GetString(reader.GetOrdinal("Email Address")));
-
-                            usersPanel.Location = new Point(10, margin);
-                            margin += usersPanel.Height + 10;
-
-                            ProfilePanel.Controls.Add(usersPanel);
+                                    usersPanel.SetInfo(status, dateRegistered);
+                                }
+                            }
                         }
+
+                        ProfilePanel.Controls.Add(usersPanel);
                     }
                 }
             }
         }
+
 
 
     }
