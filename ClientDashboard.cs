@@ -1011,43 +1011,70 @@ namespace OOP2
 
         private void DeleteAccButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult results = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.Yes)
+            if (results == DialogResult.Yes)
             {
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
                     myConn.Open();
 
-                    string sql = "DELETE FROM Clients WHERE [Email Address] = @Email";
+                    int clientId = 0;
 
-                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    string getIdQuery = "SELECT Client_ID FROM Clients WHERE [Email Address] = ?";
+                    using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
                     {
-                        cmd.Parameters.AddWithValue("@Email", EmailAddress);
+                        getIdCmd.Parameters.AddWithValue("?", EmailAddress);
+                        object result = getIdCmd.ExecuteScalar();
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (result != null)
+                        {
+                            clientId = Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Client not found.");
+                            return;
+                        }
+                    }
+
+                    string deleteQuery = "DELETE FROM Clients WHERE [Email Address] = ?";
+                    using (OleDbCommand deleteCmd = new OleDbCommand(deleteQuery, myConn))
+                    {
+                        deleteCmd.Parameters.AddWithValue("?", EmailAddress);
+                        int rowsAffected = deleteCmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Deleted successfully!");
-                            this.Hide();
-                            ClientLogin clientLogin = new ClientLogin();
-                            clientLogin.ShowDialog();
                         }
                         else
                         {
                             MessageBox.Show("No matching email found. Deletion failed.");
+                            return;
                         }
+                    }
+
+                    string adminUpdateQuery = "UPDATE [Admin (Clients)] SET Status = ?, [Date Deleted] = ? WHERE Client_ID = ?";
+                    using (OleDbCommand updateCmd = new OleDbCommand(adminUpdateQuery, myConn))
+                    {
+                        updateCmd.Parameters.AddWithValue("?", "Deleted");
+                        updateCmd.Parameters.AddWithValue("?", DateTime.Today);
+                        updateCmd.Parameters.AddWithValue("?", clientId);
+
+                        updateCmd.ExecuteNonQuery();
                     }
                 }
 
-
+                this.Hide();
+                ClientLogin clientLogin = new ClientLogin();
+                clientLogin.ShowDialog();
             }
             else
             {
                 MessageBox.Show("You clicked No!");
             }
-
         }
+
     }
 }

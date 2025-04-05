@@ -369,14 +369,22 @@ namespace OOP2
                         newClientId = Convert.ToInt32(result);
                     }
 
-                    string AdminQuery = "INSERT INTO [Admin (Clients)] ([Client_ID], Status, [Date Registered]) " +
-                                              "VALUES (@clientid, @status, @dateregistered)";
+                    string AdminQuery = "INSERT INTO [Admin (Clients)] (Client_ID, [First Name], [Last Name], [Birth Date], [Contact Number], Location, [Email Address], [Password], Status, [Date Registered], [Date Deleted]) " +
+                                               "VALUES (@clientid, @FName, @LName, @birthdate, @CNumber, @location, @EmailAdd, @Password, @status, @regist, @delete)";
 
                     using (OleDbCommand cmd = new OleDbCommand(AdminQuery, myConn))
                     {
                         cmd.Parameters.AddWithValue("@clientid", newClientId);
+                        cmd.Parameters.AddWithValue("@FName", FNameTextBox.Text);
+                        cmd.Parameters.AddWithValue("@LName", LNameTextBox.Text);
+                        cmd.Parameters.AddWithValue("@birthdate", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@location", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
                         cmd.Parameters.AddWithValue("@status", "Active");
-                        cmd.Parameters.AddWithValue("@dateregistered", DateTime.Today);
+                        cmd.Parameters.AddWithValue("@regist", DateTime.Today);
+                        cmd.Parameters.AddWithValue("@delete", DBNull.Value);
 
                         cmd.ExecuteNonQuery();
                     }

@@ -173,7 +173,7 @@
             DashboardPanel2.Controls.Add(LogosButton);
             DashboardPanel2.Location = new System.Drawing.Point(9, 0);
             DashboardPanel2.Name = "DashboardPanel2";
-            DashboardPanel2.Size = new System.Drawing.Size(85, 1000);
+            DashboardPanel2.Size = new System.Drawing.Size(85, 990);
             DashboardPanel2.TabIndex = 53;
             // 
             // LButton
@@ -185,7 +185,7 @@
             LButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             LButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             LButton.Image = (System.Drawing.Image)resources.GetObject("LButton.Image");
-            LButton.Location = new System.Drawing.Point(9, 909);
+            LButton.Location = new System.Drawing.Point(9, 899);
             LButton.Name = "LButton";
             LButton.Size = new System.Drawing.Size(68, 77);
             LButton.TabIndex = 21;
@@ -278,7 +278,7 @@
             DashboardPanel.Controls.Add(LogoButton);
             DashboardPanel.Location = new System.Drawing.Point(9, 0);
             DashboardPanel.Name = "DashboardPanel";
-            DashboardPanel.Size = new System.Drawing.Size(252, 1000);
+            DashboardPanel.Size = new System.Drawing.Size(252, 990);
             DashboardPanel.TabIndex = 51;
             // 
             // LogoutButton
@@ -291,7 +291,7 @@
             LogoutButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             LogoutButton.Image = (System.Drawing.Image)resources.GetObject("LogoutButton.Image");
             LogoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            LogoutButton.Location = new System.Drawing.Point(32, 909);
+            LogoutButton.Location = new System.Drawing.Point(32, 899);
             LogoutButton.Name = "LogoutButton";
             LogoutButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             LogoutButton.Size = new System.Drawing.Size(187, 77);
@@ -392,7 +392,7 @@
             panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             panel1.Location = new System.Drawing.Point(-3, -2);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(64, 1000);
+            panel1.Size = new System.Drawing.Size(64, 990);
             panel1.TabIndex = 52;
             // 
             // MinimizeButton
@@ -533,7 +533,7 @@
             ProfilePanel.BackColor = System.Drawing.Color.Transparent;
             ProfilePanel.Location = new System.Drawing.Point(277, 208);
             ProfilePanel.Name = "ProfilePanel";
-            ProfilePanel.Size = new System.Drawing.Size(893, 765);
+            ProfilePanel.Size = new System.Drawing.Size(893, 755);
             ProfilePanel.TabIndex = 57;
             // 
             // ClientsButton
@@ -585,7 +585,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(214, 241, 250);
-            ClientSize = new System.Drawing.Size(1219, 1000);
+            ClientSize = new System.Drawing.Size(1219, 990);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(NotificationPanel);

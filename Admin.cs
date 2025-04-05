@@ -117,7 +117,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT Client_ID, [First Name], [Last Name], [Email Address] FROM Clients WHERE [Email Address] <> 'admin12345'";
+                string sql = "SELECT Client_ID, [First Name], [Last Name], [Email Address] FROM [Admin (Clients)] WHERE [Email Address] <> 'admin12345'";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 using (OleDbDataReader reader = cmd.ExecuteReader())
