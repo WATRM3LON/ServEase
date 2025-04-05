@@ -311,37 +311,6 @@ namespace OOP2
 
             }else if (isValid && !emailFound && cnumberValid)
             {
-                /*using (OleDbConnection myConn = new OleDbConnection(connection))
-                {   
-                    myConn.Open();
-                    string query = "INSERT INTO Clients ([First Name], [Last Name], [Birth Date], [Contact Number], Location, [Email Address], [Password]) " +
-                                   "VALUES (@FName, @LName, @birthdate, @CNumber, @location, @EmailAdd,  @Password)";
-
-                    string query1 = "INSERT INTO [Admin (Clients)] ([Client_ID], Status, [Date Registered]) VALUES (@clientid, @status, @dateregistered)";
-
-                    using (OleDbCommand cmd = new OleDbCommand(query1, myConn))
-                    {
-                        cmd.Parameters.AddWithValue("@clientid", Clients.CLient_ID);
-                        cmd.Parameters.AddWithValue("@status", "Active");
-                        cmd.Parameters.AddWithValue("@dateregistered", DateTime.Now);
-
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    using (OleDbCommand cmd = new OleDbCommand(query, myConn))
-                    {
-                        cmd.Parameters.AddWithValue("@FName", FNameTextBox.Text);
-                        cmd.Parameters.AddWithValue("@LName", LNameTextBox.Text);
-                        cmd.Parameters.AddWithValue("@birthdate", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
-                        cmd.Parameters.AddWithValue("@location", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
-                        cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registration successful! You can now log in.");
-                    }
-                }*/
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
                     myConn.Open();

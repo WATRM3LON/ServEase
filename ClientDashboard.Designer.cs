@@ -270,6 +270,8 @@
             button48 = new System.Windows.Forms.Button();
             label113 = new System.Windows.Forms.Label();
             PIPanel = new System.Windows.Forms.Panel();
+            SexPI = new System.Windows.Forms.Label();
+            PISex = new System.Windows.Forms.Label();
             AgePI = new System.Windows.Forms.Label();
             PIAge = new System.Windows.Forms.Label();
             EmailAddressPI = new System.Windows.Forms.Label();
@@ -423,6 +425,8 @@
             label104 = new System.Windows.Forms.Label();
             EditPIPanel = new System.Windows.Forms.Panel();
             PIEpanel = new System.Windows.Forms.Panel();
+            PIESextext = new System.Windows.Forms.TextBox();
+            PIESexlabel = new System.Windows.Forms.Label();
             PIEAgetext = new System.Windows.Forms.Label();
             FillEM = new System.Windows.Forms.Label();
             CnumberInvalid = new System.Windows.Forms.Label();
@@ -3692,6 +3696,8 @@
             // 
             PIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIPanel.BackColor = System.Drawing.Color.White;
+            PIPanel.Controls.Add(SexPI);
+            PIPanel.Controls.Add(PISex);
             PIPanel.Controls.Add(AgePI);
             PIPanel.Controls.Add(PIAge);
             PIPanel.Controls.Add(EmailAddressPI);
@@ -3709,13 +3715,37 @@
             PIPanel.Size = new System.Drawing.Size(867, 291);
             PIPanel.TabIndex = 38;
             // 
+            // SexPI
+            // 
+            SexPI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SexPI.AutoSize = true;
+            SexPI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            SexPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SexPI.Location = new System.Drawing.Point(746, 117);
+            SexPI.Name = "SexPI";
+            SexPI.Size = new System.Drawing.Size(50, 25);
+            SexPI.TabIndex = 47;
+            SexPI.Text = "Male";
+            // 
+            // PISex
+            // 
+            PISex.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PISex.AutoSize = true;
+            PISex.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            PISex.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PISex.Location = new System.Drawing.Point(740, 78);
+            PISex.Name = "PISex";
+            PISex.Size = new System.Drawing.Size(41, 25);
+            PISex.TabIndex = 46;
+            PISex.Text = "Sex";
+            // 
             // AgePI
             // 
             AgePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             AgePI.AutoSize = true;
             AgePI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             AgePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            AgePI.Location = new System.Drawing.Point(585, 123);
+            AgePI.Location = new System.Drawing.Point(585, 120);
             AgePI.Name = "AgePI";
             AgePI.Size = new System.Drawing.Size(109, 25);
             AgePI.TabIndex = 45;
@@ -3727,7 +3757,7 @@
             PIAge.AutoSize = true;
             PIAge.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             PIAge.ForeColor = System.Drawing.SystemColors.ControlDark;
-            PIAge.Location = new System.Drawing.Point(579, 85);
+            PIAge.Location = new System.Drawing.Point(579, 83);
             PIAge.Name = "PIAge";
             PIAge.Size = new System.Drawing.Size(45, 25);
             PIAge.TabIndex = 44;
@@ -3841,7 +3871,7 @@
             PIEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             PIEditButton.Location = new System.Drawing.Point(743, 11);
             PIEditButton.Name = "PIEditButton";
-            PIEditButton.Size = new System.Drawing.Size(109, 62);
+            PIEditButton.Size = new System.Drawing.Size(109, 52);
             PIEditButton.TabIndex = 33;
             PIEditButton.Text = "Edit";
             PIEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -5649,6 +5679,8 @@
             // 
             PIEpanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PIEpanel.BackColor = System.Drawing.Color.White;
+            PIEpanel.Controls.Add(PIESextext);
+            PIEpanel.Controls.Add(PIESexlabel);
             PIEpanel.Controls.Add(PIEAgetext);
             PIEpanel.Controls.Add(FillEM);
             PIEpanel.Controls.Add(CnumberInvalid);
@@ -5673,6 +5705,28 @@
             PIEpanel.Name = "PIEpanel";
             PIEpanel.Size = new System.Drawing.Size(861, 511);
             PIEpanel.TabIndex = 38;
+            // 
+            // PIESextext
+            // 
+            PIESextext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIESextext.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIESextext.Font = new System.Drawing.Font("Segoe UI", 12F);
+            PIESextext.Location = new System.Drawing.Point(746, 117);
+            PIESextext.Name = "PIESextext";
+            PIESextext.Size = new System.Drawing.Size(89, 34);
+            PIESextext.TabIndex = 81;
+            // 
+            // PIESexlabel
+            // 
+            PIESexlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIESexlabel.AutoSize = true;
+            PIESexlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            PIESexlabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            PIESexlabel.Location = new System.Drawing.Point(741, 81);
+            PIESexlabel.Name = "PIESexlabel";
+            PIESexlabel.Size = new System.Drawing.Size(37, 23);
+            PIESexlabel.TabIndex = 80;
+            PIESexlabel.Text = "Sex";
             // 
             // PIEAgetext
             // 
@@ -6618,5 +6672,9 @@
         private System.Windows.Forms.Label FillEM;
         private System.Windows.Forms.Label PIEAgetext;
         private System.Windows.Forms.Button DeleteAccButton;
+        private System.Windows.Forms.TextBox PIESextext;
+        private System.Windows.Forms.Label PIESexlabel;
+        private System.Windows.Forms.Label SexPI;
+        private System.Windows.Forms.Label PISex;
     }
 }

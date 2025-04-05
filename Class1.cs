@@ -27,6 +27,7 @@ namespace OOP2
         string WorDays { get; set; }
         string Ratings { get; set; }   
         string AppStatus { get; set; }
+        string Sex { get; set; }
 
     }
     public abstract class Baseform

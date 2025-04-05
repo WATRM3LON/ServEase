@@ -43,6 +43,7 @@ namespace OOP2
         public string Password { get; set; }
         public string ContactNumber { get; set; }
         public string LocationAddress { get; set; }
+        public string Sex { get; set; }
         public int count { get; set; }
         public ClientDashboard()
         {
@@ -202,6 +203,7 @@ namespace OOP2
             ContactNumberPI.Text = PIECnumbertext.Text = ContactNumber;
             EmailAddressPI.Text = PIEEmailtext.Text = EmailAddress;
             PIEAddresstext.Text = LocationAddress;
+            SexPI.Text = PIESextext.Text = Sex;
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -357,7 +359,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT [First Name], [Last Name], [Birth Date], [Contact Number], Location, Password FROM Clients WHERE [Email Address] = @Email";
+                string sql = "SELECT [First Name], [Last Name], [Birth Date], Sex, [Contact Number], Location, Password FROM Clients WHERE [Email Address] = @Email";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
@@ -371,6 +373,7 @@ namespace OOP2
                             LName = reader["Last Name"].ToString();
                             Birthdate = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Birth Date"));
                             formattedBirthdate = Birthdate == DateTime.MinValue ? " " : Birthdate.ToString("dd MMMM yyyy");
+                            Sex = reader["Sex"].ToString();
                             Password = reader["Password"].ToString();
                             ContactNumber = reader["Contact Number"].ToString();
                             LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? " " : reader["Location"].ToString();
@@ -390,7 +393,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "UPDATE Clients SET [First Name] = @fname, [Last Name] = @lname, [Birth Date] = @datebirth, [Contact Number] = @cnumber, Location = @address WHERE [Email Address] = @Email";
+                string sql = "UPDATE Clients SET [First Name] = @fname, [Last Name] = @lname, [Birth Date] = @datebirth, Sex = @sex, [Contact Number] = @cnumber, Location = @address WHERE [Email Address] = @Email";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
@@ -408,14 +411,49 @@ namespace OOP2
                         return;
                     }
 
+                    cmd.Parameters.AddWithValue("@sex", PIESextext.Text);
                     cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
                     cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
                     cmd.Parameters.AddWithValue("@Email", PIEEmailtext.Text);
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Updated successfully!");
+                    
                 }
+
+                int newClientId = 0;
+                using (OleDbCommand getIdCmd = new OleDbCommand("SELECT @@IDENTITY", myConn))
+                {
+                    object result = getIdCmd.ExecuteScalar();
+                    newClientId = Convert.ToInt32(result);
+                }
+
+                string AdminQuery = "UPDATE [Admin (Clients)] SET [First Name] = @fname, [Last Name] = @lname, [Birth Date] = @datebirth, Sex = @sex, [Contact Number] = @cnumber, Location = @address WHERE [Email Address] = @Email";
+
+                using (OleDbCommand cmd = new OleDbCommand(AdminQuery, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@fname", PIEFnametext.Text);
+                    cmd.Parameters.AddWithValue("@lname", PIELnametext.Text);
+
+                    DateTime birthdate;
+                    if (DateTime.TryParse(PIEBirthtext.Text, out birthdate))
+                    {
+                        cmd.Parameters.AddWithValue("@datebirth", birthdate);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid birthdate format.");
+                        return;
+                    }
+
+                    cmd.Parameters.AddWithValue("@sex", PIESextext.Text);
+                    cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
+                    cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
+                    cmd.Parameters.AddWithValue("@Email", PIEEmailtext.Text);
+
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Updated successfully!");
             }
         }
 
@@ -999,7 +1037,7 @@ namespace OOP2
             FillEM.Visible = false;
             bool cnumberValid = CNumberChecker(PIECnumbertext.Text, connection);
 
-            if (PIEFnametext.Text.Length != 0 && PIELnametext.Text.Length != 0 && PIEBirthtext.Text.Length != 0 && PIEAddresstext.Text.Length != 0 && cnumberValid)
+            if (PIEFnametext.Text.Length != 0 && PIELnametext.Text.Length != 0 && PIEBirthtext.Text.Length != 0 && PIEAddresstext.Text.Length != 0 && cnumberValid && PIESextext.Text.Length != 0)
             {
                 UpdateInfo();
             }

@@ -175,6 +175,7 @@
             DashboardPanel2.Name = "DashboardPanel2";
             DashboardPanel2.Size = new System.Drawing.Size(85, 990);
             DashboardPanel2.TabIndex = 53;
+            DashboardPanel2.Click += LogosButton_Click;
             // 
             // LButton
             // 
@@ -191,6 +192,7 @@
             LButton.TabIndex = 21;
             LButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             LButton.UseVisualStyleBackColor = false;
+            LButton.Click += LButton_Click;
             // 
             // SccButton
             // 
@@ -265,6 +267,7 @@
             LogosButton.Size = new System.Drawing.Size(69, 83);
             LogosButton.TabIndex = 9;
             LogosButton.UseVisualStyleBackColor = false;
+            LogosButton.Click += LogosButton_Click;
             // 
             // DashboardPanel
             // 
@@ -280,6 +283,7 @@
             DashboardPanel.Name = "DashboardPanel";
             DashboardPanel.Size = new System.Drawing.Size(252, 990);
             DashboardPanel.TabIndex = 51;
+            DashboardPanel.Click += LogoButton_Click;
             // 
             // LogoutButton
             // 
@@ -299,6 +303,7 @@
             LogoutButton.Text = "  Logout";
             LogoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             LogoutButton.UseVisualStyleBackColor = false;
+            LogoutButton.Click += LogoutButton_Click;
             // 
             // SCButton
             // 
@@ -385,6 +390,7 @@
             LogoButton.Size = new System.Drawing.Size(215, 83);
             LogoButton.TabIndex = 9;
             LogoButton.UseVisualStyleBackColor = false;
+            LogoButton.Click += LogoButton_Click;
             // 
             // panel1
             // 

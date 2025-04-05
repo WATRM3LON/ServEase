@@ -338,8 +338,42 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
 
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registration successful! You can now log in.");
+                       
                     }
+
+                    int newFacilityId = 0;
+                    using (OleDbCommand getIdCmd = new OleDbCommand("SELECT @@IDENTITY", myConn))
+                    {
+                        object result = getIdCmd.ExecuteScalar();
+                        newFacilityId = Convert.ToInt32(result);
+                    }
+
+                    string AdminQuery = "INSERT INTO [Admin (Service Facilities)] (Facility_ID, [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status], Status, [Date Registered], [Date Deleted]) " +
+                                               "VALUES (@facilityid, @FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @Ratings, @Approvalstatus, @status, @regist, @delete)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(AdminQuery, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@facilityid", newFacilityId);
+                        cmd.Parameters.AddWithValue("@FacilityName", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@FLocation", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@OFName", FNameTextBox.Text);
+                        cmd.Parameters.AddWithValue("@OLName", LNameTextBox.Text);
+                        cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Servicecategory", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Workinghoursstart", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Workinghoursend", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@status", "Active");
+                        cmd.Parameters.AddWithValue("@regist", DateTime.Today);
+                        cmd.Parameters.AddWithValue("@delete", DBNull.Value);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Registration successful! You can now log in.");
                 }
                 this.Hide();
                 ServiceFacilityLogin serviceFacilityLogin = new ServiceFacilityLogin();

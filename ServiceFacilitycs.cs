@@ -86,7 +86,7 @@ namespace OOP2
             ATButton.Visible = false;
             ServicesOfferedPanel.Visible = false;
             SettingsPanel.Visible = false;
-            FIEButton.Visible = false; FillEM.Visible = false;
+            FIEButton.Visible = false; FillEM.Visible = false; 
             EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
             //SIDEBAR
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
@@ -992,7 +992,71 @@ namespace OOP2
 
         private void DeleteAccButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult results = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (results == DialogResult.Yes)
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    int newFacilityId = 0;
+
+                    string getIdQuery = "SELECT Facility_ID FROM [Service Facilities] WHERE [Email Address] = ?";
+                    using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
+                    {
+                        getIdCmd.Parameters.AddWithValue("?", EmailAddress);
+                        object result = getIdCmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            newFacilityId = Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Facility not found.");
+                            return;
+                        }
+                    }
+
+                    string deleteQuery = "DELETE FROM [Service Facilities] WHERE [Email Address] = ?";
+                    using (OleDbCommand deleteCmd = new OleDbCommand(deleteQuery, myConn))
+                    {
+                        deleteCmd.Parameters.AddWithValue("?", EmailAddress);
+                        int rowsAffected = deleteCmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Deleted successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No matching email found. Deletion failed.");
+                            return;
+                        }
+                    }
+
+                    string adminUpdateQuery = "UPDATE [Admin (Service Facilities)] SET Status = ?, [Date Deleted] = ? WHERE Facility_ID = ?";
+                    using (OleDbCommand updateCmd = new OleDbCommand(adminUpdateQuery, myConn))
+                    {
+                        updateCmd.Parameters.AddWithValue("?", "Deleted");
+                        updateCmd.Parameters.AddWithValue("?", DateTime.Today);
+                        updateCmd.Parameters.AddWithValue("?", newFacilityId);
+
+                        updateCmd.ExecuteNonQuery();
+                    }
+                }
+
+                this.Hide();
+                ServiceFacilityLogin serviceFacilityLogin = new ServiceFacilityLogin();
+                serviceFacilityLogin.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You clicked No!");
+            }
+
+            /*DialogResult result = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -1027,7 +1091,7 @@ namespace OOP2
             else
             {
                 MessageBox.Show("You clicked No!");
-            }
+            }*/
         }
     }
 }

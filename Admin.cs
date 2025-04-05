@@ -109,6 +109,39 @@ namespace OOP2
             MinimizeButton.BackColor = ColorTranslator.FromHtml("#e8f5e9");
         }
 
+        private void LogoButton_Click(object sender, EventArgs e)
+        {
+            //dbp1 = false;
+            //dbp2 = true;
+            DashboardPanel.Visible = false;
+            DashboardPanel2.Visible = true;
+            HeaderPanel.Location = new Point(75, 44);
+            //panel44.Visible = true;
+        }
+
+        private void LogosButton_Click(object sender, EventArgs e)
+        {
+            //dbp1 = true;
+            //dbp2 = false;
+            DashboardPanel.Visible = true;
+            DashboardPanel2.Visible = false;
+            HeaderPanel.Location = new Point(190, 44);
+            //panel44.Visible = false;
+        }
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClientLogin clientLogin = new ClientLogin();
+            clientLogin.ShowDialog();
+        }
+
+        private void LButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClientLogin clientLogin = new ClientLogin();
+            clientLogin.ShowDialog();
+        }
+
         private void LoadFacilityData()
         {
             ProfilePanel.Controls.Clear();
