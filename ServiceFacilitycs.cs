@@ -82,7 +82,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false;
             ATButton.Visible = false;
-            ServicesOfferedPanel.Visible = false;
+            ServicesOfferedPanel.Visible = false; SOEerrorm.Visible = false;
             SettingsPanel.Visible = false;
             FIEButton.Visible = false; FillEM.Visible = false; ESerOffPanel.Visible = false; EditSOButton.Visible = false;
             EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
@@ -1093,13 +1093,67 @@ namespace OOP2
                 Service2.Text.Length != 0 && Description2.Text.Length != 0 && Price2.Text.Length != 0 && Duration2.Text.Length != 0 &&
                 Service3.Text.Length != 0 && Description3.Text.Length != 0 && Price3.Text.Length != 0 && Duration3.Text.Length != 0)
             {
+                if (Service1.Text != "Add Service Name" || Description1.Text != "Add Descritption" || Price1.Text != "Add Price" || Duration1.Text != "Add Duration" ||
+                      Service2.Text != "Add Service Name" || Description2.Text != "Add Descritption" || Price2.Text != "Add Price" || Duration2.Text != "Add Duration" ||
+                      Service3.Text != "Add Service Name" || Description3.Text != "Add Descritption" || Price3.Text != "Add Price" || Duration3.Text != "Add Duration")
+                {
+                    using (OleDbConnection myConn = new OleDbConnection(connection))
+                    {
+                        myConn.Open();
 
+                        int newFacilityId = 0;
 
+                        string getIdQuery = "SELECT Facility_ID FROM [Service Facilities] WHERE [Email Address] = ?";
+                        using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
+                        {
+                            getIdCmd.Parameters.AddWithValue("?", EmailAddress);
+                            object result = getIdCmd.ExecuteScalar();
+
+                            if (result != null)
+                            {
+                                newFacilityId = Convert.ToInt32(result);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Facility not found.");
+                                return;
+                            }
+                        }
+
+                        TextBox[] serviceNames = { Service1, Service2, Service3 };
+                        TextBox[] descriptions = { Description1, Description2, Description3 };
+                        TextBox[] prices = { Price1, Price2, Price3 };
+                        TextBox[] durations = { Duration1, Duration2, Duration3 };
+
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string sql = "UPDATE [Facility Services] " +
+                                         "SET [Service Name] = ?, [Description] = ?, [Price] = ?, [Duration] = ? " +
+                                         "WHERE Facility_ID = ? AND [Service Name] IS NULL";
+
+                            using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                            {
+                                cmd.Parameters.AddWithValue("?", serviceNames[i].Text);
+                                cmd.Parameters.AddWithValue("?", descriptions[i].Text);
+                                cmd.Parameters.AddWithValue("?", prices[i].Text);
+                                cmd.Parameters.AddWithValue("?", durations[i].Text);
+                                cmd.Parameters.AddWithValue("?", newFacilityId);
+
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                MessageBox.Show("Successfully updated!", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                SOEerrorm.Visible = true;
             }
         }
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-
+            ServiceOfferedUpdater();
         }
 
         private void EditButton2_Click(object sender, EventArgs e)
@@ -1112,6 +1166,21 @@ namespace OOP2
         {
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             ServicesOfferedPanel.Visible = true; SOButton.Visible = true;
+        }
+
+        private void Service1_Click(object sender, EventArgs e)
+        {
+            Service1.ForeColor = Description1.ForeColor = Price1.ForeColor = Duration1.ForeColor = Color.Black;
+        }
+
+        private void Service2_Click(object sender, EventArgs e)
+        {
+            Service2.ForeColor = Description2.ForeColor = Price2.ForeColor = Duration2.ForeColor = Color.Black;
+        }
+
+        private void Service3_Click(object sender, EventArgs e)
+        {
+            Service3.ForeColor = Description3.ForeColor = Price3.ForeColor = Duration3.ForeColor = Color.Black;
         }
     }
 }
