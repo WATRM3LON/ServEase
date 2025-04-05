@@ -169,7 +169,7 @@ namespace OOP2
                     }
                 }
 
-                string sql = "SELECT COUNT(*) FROM [Service Facilities] WHERE [Email Address] = @email AND [Password] = @password";
+                string sql = "SELECT COUNT(*) FROM [Admin (Service Facilities)] WHERE [Email Address] = @email AND [Password] = @password";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@email", EmailLTextBox.Text);

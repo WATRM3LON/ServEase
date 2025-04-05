@@ -34,7 +34,7 @@ namespace OOP2
             int nHeightEllipse
             );
 
-        string formattedWorHours;
+        string formattedWorHours = "";
         public string FName { get; set; }
         public string LName { get; set; }
         public DateTime Birthdate { get; set; }
@@ -50,6 +50,8 @@ namespace OOP2
         public string WorDays { get; set; }
         public string Ratings { get; set; }
         public string AppStatus { get; set; }
+        public DateTime workingstart;
+        public DateTime workingend;
 
         public ServiceFacilitycs()
         {
@@ -173,7 +175,8 @@ namespace OOP2
             FIRatingstext.Text = FIERatingstext.Text = Ratings;
             FILoctext.Text = FIELoctext.Text = LocationAddress;
             FIEOFnametext.Text = FName; FIEOLnametext.Text = LName;
-            FISerCattext.Text = SerCat; FIWorhourstext.Text = FIEStarttext.Text = formattedWorHours;
+            FISerCattext.Text = SerCat; FIWorhourstext.Text = formattedWorHours; FIEStarttext.Text = workingstart == DateTime.MinValue ? "" : workingstart.ToString("hh:mm tt");
+            FIEEndtext.Text = workingend == DateTime.MinValue ? "" : workingend.ToString("hh:mm tt");
             FIWordaystext.Text = FIEWordaystext.Text = WorDays;
             FICnumbertext.Text = FIECnumbertext.Text = ContactNumber;
             FIEmailtext.Text = FIEEmailaddtext.Text = EmailAddress;
@@ -851,10 +854,9 @@ namespace OOP2
                             Facname = reader["Facility Name"].ToString();
                             FName = reader["Owner First Name"].ToString();
                             LName = reader["Owner Last Name"].ToString();
-                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
-                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
-                            //WorHours = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start" + " - " + "Working Hours End"));
-                            formattedWorHours = WorHours == DateTime.MinValue ? " " : workingstart + " - " + workingend;
+                            workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
                             WorDays = reader["Working Days"].ToString();
                             Password = reader["Password"].ToString();
                             ContactNumber = reader["Contact Number"].ToString();
