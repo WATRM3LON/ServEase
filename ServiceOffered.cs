@@ -16,5 +16,18 @@ namespace OOP2
         {
             InitializeComponent();
         }
+
+        private void ServiceName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SetData(string Servicename, string Descritpion, decimal Price, string Duration)
+        {
+            ServiceName.Text = Servicename;
+            ServiceDes.Text = Descritpion;
+            ServicePrice.Text = Convert.ToString(Price);
+            Serviceduration.Text = Duration;
+        }
     }
 }

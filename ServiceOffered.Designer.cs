@@ -49,6 +49,7 @@
             ServiceName.TabIndex = 57;
             ServiceName.Text = "ServiceName";
             ServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ServiceName.Click += ServiceName_Click;
             // 
             // ServiceDes
             // 

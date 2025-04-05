@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -319,6 +320,7 @@ namespace OOP2
             ATPanel.Visible = false;
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
+            EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -369,6 +371,7 @@ namespace OOP2
             ATPanel.Visible = false;
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
+            EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -525,6 +528,7 @@ namespace OOP2
             ATPanel.Visible = false;
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
+            EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -623,6 +627,7 @@ namespace OOP2
             ATPanel.Visible = false;
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
+            EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -705,6 +710,7 @@ namespace OOP2
             ATPanel.Visible = false;
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
+            EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -758,6 +764,7 @@ namespace OOP2
             ATPanel.Visible = false;
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
+            EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -811,6 +818,7 @@ namespace OOP2
             ATPanel.Visible = false;
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
+            EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = true;
             SettingsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
@@ -1166,21 +1174,82 @@ namespace OOP2
         {
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             ServicesOfferedPanel.Visible = true; SOButton.Visible = true;
+            LoadFacilityData();
         }
 
         private void Service1_Click(object sender, EventArgs e)
         {
             Service1.ForeColor = Description1.ForeColor = Price1.ForeColor = Duration1.ForeColor = Color.Black;
+            SOEerrorm.Visible= false;
         }
 
         private void Service2_Click(object sender, EventArgs e)
         {
             Service2.ForeColor = Description2.ForeColor = Price2.ForeColor = Duration2.ForeColor = Color.Black;
+            SOEerrorm.Visible = false;
         }
 
         private void Service3_Click(object sender, EventArgs e)
         {
             Service3.ForeColor = Description3.ForeColor = Price3.ForeColor = Duration3.ForeColor = Color.Black;
+            SOEerrorm.Visible = false;
+        }
+
+        private void LoadFacilityData()
+        {
+            ProfilePanel.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                int newFacilityId = 0;
+                string getIdQuery = "SELECT Facility_ID FROM [Service Facilities] WHERE [Email Address] = ?";
+                using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
+                {
+                    getIdCmd.Parameters.AddWithValue("?", EmailAddress);
+                    object result = getIdCmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        newFacilityId = Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Facility not found.");
+                        return;
+                    }
+                }
+
+                string sql = "SELECT [Service Name], Description, Price, Duration FROM [Facility Services] WHERE Facility_ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", newFacilityId);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int margin = 10;
+
+                        while (reader.Read())
+                        {
+                            string serviceName = reader.IsDBNull(0) ? "" : reader.GetString(0);
+                            string description = reader.IsDBNull(1) ? "" : reader.GetString(1);
+                            decimal price = reader.IsDBNull(2) ? 0 : reader.GetDecimal(2);
+                            string duration = reader.IsDBNull(3) ? "" : reader.GetValue(3).ToString();
+
+                            ServiceOffered serviceOffered = new ServiceOffered();
+                            serviceOffered.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, serviceOffered.Width, serviceOffered.Height, 10, 10));
+
+                            serviceOffered.SetData(serviceName, description, price, duration);
+                            serviceOffered.Location = new Point(10, margin - 7);
+                            margin += serviceOffered.Height + 10;
+
+                            ProfilePanel.Controls.Add(serviceOffered);
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

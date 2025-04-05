@@ -282,6 +282,7 @@
             FIEFnameTitle = new System.Windows.Forms.Label();
             panel47 = new System.Windows.Forms.Panel();
             ESerOffPanel = new System.Windows.Forms.Panel();
+            SOEerrorm = new System.Windows.Forms.Label();
             ConfirmButton = new System.Windows.Forms.Button();
             SerOffEPanel = new System.Windows.Forms.Panel();
             SO3Panel = new System.Windows.Forms.TableLayoutPanel();
@@ -305,7 +306,6 @@
             SOEDuration = new System.Windows.Forms.Label();
             SOEDescription = new System.Windows.Forms.Label();
             SOEPrice = new System.Windows.Forms.Label();
-            SOEerrorm = new System.Windows.Forms.Label();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -3748,6 +3748,18 @@
             ESerOffPanel.Size = new System.Drawing.Size(911, 798);
             ESerOffPanel.TabIndex = 65;
             // 
+            // SOEerrorm
+            // 
+            SOEerrorm.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SOEerrorm.AutoSize = true;
+            SOEerrorm.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            SOEerrorm.ForeColor = System.Drawing.Color.Red;
+            SOEerrorm.Location = new System.Drawing.Point(269, 742);
+            SOEerrorm.Name = "SOEerrorm";
+            SOEerrorm.Size = new System.Drawing.Size(346, 23);
+            SOEerrorm.TabIndex = 79;
+            SOEerrorm.Text = "Please complete all fields for Service Offered";
+            // 
             // ConfirmButton
             // 
             ConfirmButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
@@ -4080,18 +4092,6 @@
             SOEPrice.TabIndex = 37;
             SOEPrice.Text = "Price";
             SOEPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SOEerrorm
-            // 
-            SOEerrorm.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            SOEerrorm.AutoSize = true;
-            SOEerrorm.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            SOEerrorm.ForeColor = System.Drawing.Color.Red;
-            SOEerrorm.Location = new System.Drawing.Point(269, 742);
-            SOEerrorm.Name = "SOEerrorm";
-            SOEerrorm.Size = new System.Drawing.Size(346, 23);
-            SOEerrorm.TabIndex = 79;
-            SOEerrorm.Text = "Please complete all fields for Service Offered";
             // 
             // ServiceFacilitycs
             // 
