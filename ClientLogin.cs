@@ -311,11 +311,22 @@ namespace OOP2
 
             }else if (isValid && !emailFound && cnumberValid)
             {
-                using (OleDbConnection myConn = new OleDbConnection(connection))
+                /*using (OleDbConnection myConn = new OleDbConnection(connection))
                 {   
                     myConn.Open();
                     string query = "INSERT INTO Clients ([First Name], [Last Name], [Birth Date], [Contact Number], Location, [Email Address], [Password]) " +
                                    "VALUES (@FName, @LName, @birthdate, @CNumber, @location, @EmailAdd,  @Password)";
+
+                    string query1 = "INSERT INTO [Admin (Clients)] ([Client_ID], Status, [Date Registered]) VALUES (@clientid, @status, @dateregistered)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query1, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@clientid", Clients.CLient_ID);
+                        cmd.Parameters.AddWithValue("@status", "Active");
+                        cmd.Parameters.AddWithValue("@dateregistered", DateTime.Now);
+
+                        cmd.ExecuteNonQuery();
+                    }
 
                     using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                     {
@@ -330,7 +341,49 @@ namespace OOP2
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Registration successful! You can now log in.");
                     }
+                }*/
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    string insertClientQuery = "INSERT INTO Clients ([First Name], [Last Name], [Birth Date], [Contact Number], Location, [Email Address], [Password]) " +
+                                               "VALUES (@FName, @LName, @birthdate, @CNumber, @location, @EmailAdd, @Password)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(insertClientQuery, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@FName", FNameTextBox.Text);
+                        cmd.Parameters.AddWithValue("@LName", LNameTextBox.Text);
+                        cmd.Parameters.AddWithValue("@birthdate", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@location", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    int newClientId = 0;
+                    using (OleDbCommand getIdCmd = new OleDbCommand("SELECT @@IDENTITY", myConn))
+                    {
+                        object result = getIdCmd.ExecuteScalar();
+                        newClientId = Convert.ToInt32(result);
+                    }
+
+                    string AdminQuery = "INSERT INTO [Admin (Clients)] ([Client_ID], Status, [Date Registered]) " +
+                                              "VALUES (@clientid, @status, @dateregistered)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(AdminQuery, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@clientid", newClientId);
+                        cmd.Parameters.AddWithValue("@status", "Active");
+                        cmd.Parameters.AddWithValue("@dateregistered", DateTime.Today);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registration successful! You can now log in.");
                 }
+
                 this.Hide();
                 ClientLogin clientLogin = new ClientLogin();
                 clientLogin.ShowDialog();
