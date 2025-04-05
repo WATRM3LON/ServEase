@@ -42,6 +42,7 @@ namespace OOP2
         public string Password { get; set; }
         public string ContactNumber { get; set; }
         public string LocationAddress { get; set; }
+        public string Sex { get; set; }
         public int count { get; set; }
         public string Facname { get; set; }
         public string SerCat { get; set; }
@@ -55,11 +56,6 @@ namespace OOP2
             InitializeComponent();
             InfoGetter();
             Loaders();
-
-        }
-
-        public void Loaders()
-        {
             HiLabel.Text = $"Hi {Facname},";
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
@@ -88,6 +84,10 @@ namespace OOP2
             SettingsPanel.Visible = false;
             FIEButton.Visible = false; FillEM.Visible = false; 
             EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
+        }
+
+        public void Loaders()
+        {
             //SIDEBAR
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
@@ -839,9 +839,7 @@ namespace OOP2
                 myConn.Open();
 
                 string sql = "SELECT [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Password], [Service Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status] FROM [Service Facilities] WHERE [Email Address] = @Email";
-                //INSERT INTO  () " +
-                //"VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @Workinghours, @Workingdays, @Ratings, @Approvalstatus)";
-
+               
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@Email", EmailAddress);
@@ -896,8 +894,35 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@Email", FIEEmailaddtext.Text);
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Updated successfully!");
                 }
+
+                int newFacilityId = 0;
+                using (OleDbCommand getIdCmd = new OleDbCommand("SELECT @@IDENTITY", myConn))
+                {
+                    object result = getIdCmd.ExecuteScalar();
+                    newFacilityId = Convert.ToInt32(result);
+                }
+
+                string AdminQuery = "UPDATE [Admin (Service Facilities)] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Service Category] = @Servicecategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays WHERE [Email Address] = @Email";
+
+                using (OleDbCommand cmd = new OleDbCommand(AdminQuery, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@FacilityName", FIEFacnametext.Text);
+                    cmd.Parameters.AddWithValue("@FLocation", FIELoctext.Text);
+                    cmd.Parameters.AddWithValue("@OFName", FIEOFnametext.Text);
+                    cmd.Parameters.AddWithValue("@OLName", FIEOLnametext.Text);
+                    cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
+                    string service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Servicecategory", service);
+                    cmd.Parameters.AddWithValue("@Workinghoursstart", FIEStarttext.Text);
+                    cmd.Parameters.AddWithValue("@Workinghoursend", FIEEndtext.Text);
+                    cmd.Parameters.AddWithValue("@Workingdays", FIEWordaystext.Text);
+                    cmd.Parameters.AddWithValue("@Email", FIEEmailaddtext.Text);
+                    cmd.ExecuteNonQuery();
+
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Updated successfully!");
             }
         }
 
@@ -988,6 +1013,8 @@ namespace OOP2
         {
             WelcomeLabel.Visible = true;
             FIEButton.Visible = false; ProfilePanel.Visible = true; EditFIPanel.Visible = false;
+            InfoGetter();
+            Loaders();
         }
 
         private void DeleteAccButton_Click(object sender, EventArgs e)
@@ -1056,42 +1083,6 @@ namespace OOP2
                 MessageBox.Show("You clicked No!");
             }
 
-            /*DialogResult result = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                using (OleDbConnection myConn = new OleDbConnection(connection))
-                {
-                    myConn.Open();
-
-                    string sql = "DELETE FROM [Service Facilities] WHERE [Email Address] = @Email";
-
-                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
-                    {
-                        cmd.Parameters.AddWithValue("@Email", EmailAddress);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Deleted successfully!");
-                            this.Hide();
-                            ServiceFacilityLogin serviceFacilityLogin = new ServiceFacilityLogin();
-                            serviceFacilityLogin.ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No matching email found. Deletion failed.");
-                        }
-                    }
-                }
-
-
-            }
-            else
-            {
-                MessageBox.Show("You clicked No!");
-            }*/
         }
     }
 }

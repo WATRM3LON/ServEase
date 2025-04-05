@@ -3721,7 +3721,7 @@
             SexPI.AutoSize = true;
             SexPI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             SexPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            SexPI.Location = new System.Drawing.Point(746, 117);
+            SexPI.Location = new System.Drawing.Point(746, 120);
             SexPI.Name = "SexPI";
             SexPI.Size = new System.Drawing.Size(50, 25);
             SexPI.TabIndex = 47;
@@ -3733,7 +3733,7 @@
             PISex.AutoSize = true;
             PISex.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             PISex.ForeColor = System.Drawing.SystemColors.ControlDark;
-            PISex.Location = new System.Drawing.Point(740, 78);
+            PISex.Location = new System.Drawing.Point(740, 83);
             PISex.Name = "PISex";
             PISex.Size = new System.Drawing.Size(41, 25);
             PISex.TabIndex = 46;
@@ -3871,7 +3871,7 @@
             PIEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             PIEditButton.Location = new System.Drawing.Point(743, 11);
             PIEditButton.Name = "PIEditButton";
-            PIEditButton.Size = new System.Drawing.Size(109, 52);
+            PIEditButton.Size = new System.Drawing.Size(109, 45);
             PIEditButton.TabIndex = 33;
             PIEditButton.Text = "Edit";
             PIEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -5722,7 +5722,7 @@
             PIESexlabel.AutoSize = true;
             PIESexlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             PIESexlabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            PIESexlabel.Location = new System.Drawing.Point(741, 81);
+            PIESexlabel.Location = new System.Drawing.Point(741, 85);
             PIESexlabel.Name = "PIESexlabel";
             PIESexlabel.Size = new System.Drawing.Size(37, 23);
             PIESexlabel.TabIndex = 80;
@@ -6015,8 +6015,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(ProfilePanel);
             Controls.Add(EditPIPanel);
+            Controls.Add(ProfilePanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);

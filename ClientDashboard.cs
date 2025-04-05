@@ -49,13 +49,7 @@ namespace OOP2
         {
             InitializeComponent();
             InfoGetter();
-            Loaders();
-        }
-
-        public void Loaders()
-        {
-            dbp1 = true; HiLabel.Text = $"Hi {FName},";
-            dbp2 = false;
+            Loaders();HiLabel.Text = $"Hi {FName},";
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
             DashboardButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -77,7 +71,10 @@ namespace OOP2
             FacilityProPanel2.Visible = false;
             PIEButton.Visible = false; FillEM.Visible = false;
             EditPIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
+        }
 
+        public void Loaders()
+        {
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
@@ -1024,6 +1021,8 @@ namespace OOP2
         {
             WelcomeLabel.Visible = true;
             PIEButton.Visible = false; ProfilePanel.Visible = true; EditPIPanel.Visible = false;
+            InfoGetter();
+            Loaders();
         }
 
         private void PIECnumbertext_Click(object sender, EventArgs e)
