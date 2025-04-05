@@ -145,9 +145,29 @@ namespace OOP2
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            EmailAddress = EmailLTextBox.Text;
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
+
+                string facilitystatus = " ";
+
+                string getIdQuery = "SELECT Status FROM [Admin (Service Facilities)] WHERE [Email Address] = ?";
+                using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
+                {
+                    getIdCmd.Parameters.AddWithValue("?", EmailAddress);
+                    object result = getIdCmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        facilitystatus = Convert.ToString(result);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Client not found.");
+                        return;
+                    }
+                }
 
                 string sql = "SELECT COUNT(*) FROM [Service Facilities] WHERE [Email Address] = @email AND [Password] = @password";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
@@ -159,18 +179,26 @@ namespace OOP2
 
                     if (count > 0)
                     {
-                        if (EmailLTextBox.Text == "admin12345")
+                        if (facilitystatus == "Deleted")
                         {
-                            this.Hide();
-                            Admin admin = new Admin();
-                            admin.ShowDialog();
+                            MessageBox.Show("This email address is no longer associated with an active account.");
+                            return;
                         }
                         else
                         {
-                            EmailAddress = EmailLTextBox.Text;
-                            this.Hide();
-                            ServiceFacilitycs serviceFacilitycs = new ServiceFacilitycs();
-                            serviceFacilitycs.ShowDialog();
+                            if (EmailLTextBox.Text == "admin12345")
+                            {
+                                this.Hide();
+                                Admin admin = new Admin();
+                                admin.ShowDialog();
+                            }
+                            else
+                            {
+                                EmailAddress = EmailLTextBox.Text;
+                                this.Hide();
+                                ServiceFacilitycs serviceFacilitycs = new ServiceFacilitycs();
+                                serviceFacilitycs.ShowDialog();
+                            }
                         }
 
                     }
