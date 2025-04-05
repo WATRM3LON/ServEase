@@ -314,6 +314,7 @@
             FIERatingstext = new System.Windows.Forms.Label();
             FIEFnameTitle = new System.Windows.Forms.Label();
             panel47 = new System.Windows.Forms.Panel();
+            DeleteAccButton = new System.Windows.Forms.Button();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -3452,6 +3453,7 @@
             // 
             SettingsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             SettingsPanel.BackColor = System.Drawing.Color.Transparent;
+            SettingsPanel.Controls.Add(DeleteAccButton);
             SettingsPanel.Controls.Add(tableLayoutPanel4);
             SettingsPanel.Location = new System.Drawing.Point(277, 177);
             SettingsPanel.Name = "SettingsPanel";
@@ -4147,20 +4149,38 @@
             panel47.Size = new System.Drawing.Size(116, 115);
             panel47.TabIndex = 34;
             // 
+            // DeleteAccButton
+            // 
+            DeleteAccButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            DeleteAccButton.BackColor = System.Drawing.Color.FromArgb(242, 61, 126);
+            DeleteAccButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            DeleteAccButton.FlatAppearance.BorderSize = 0;
+            DeleteAccButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            DeleteAccButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            DeleteAccButton.ForeColor = System.Drawing.Color.Black;
+            DeleteAccButton.Location = new System.Drawing.Point(734, 729);
+            DeleteAccButton.Name = "DeleteAccButton";
+            DeleteAccButton.Size = new System.Drawing.Size(141, 51);
+            DeleteAccButton.TabIndex = 77;
+            DeleteAccButton.Text = "Delete Account";
+            DeleteAccButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            DeleteAccButton.UseVisualStyleBackColor = false;
+            DeleteAccButton.Click += DeleteAccButton_Click;
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(AppointmentsPanel);
+            Controls.Add(SettingsPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(AppointmentsPanel);
             Controls.Add(EditFIPanel);
             Controls.Add(NotificationPanel);
             Controls.Add(ATPanel);
             Controls.Add(ServicesOfferedPanel);
             Controls.Add(ViewdetailsPanel);
-            Controls.Add(SettingsPanel);
             Controls.Add(AnalyticPannel2);
             Controls.Add(AnalyticPannel1);
             Controls.Add(AnalyticsMenuPanel);
@@ -4602,5 +4622,6 @@
         private System.Windows.Forms.Label FIEEndlabel;
         private System.Windows.Forms.TextBox FIEEndtext;
         private System.Windows.Forms.Label FIEStartlabel;
+        private System.Windows.Forms.Button DeleteAccButton;
     }
 }

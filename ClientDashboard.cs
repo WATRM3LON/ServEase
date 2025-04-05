@@ -171,6 +171,7 @@ namespace OOP2
             CUIButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CUIButton.Width, CUIButton.Height, 10, 10));
             PIEprofilepanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIEprofilepanel.Width, PIEprofilepanel.Height, 10, 10));
             PIEpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIEpanel.Width, PIEpanel.Height, 10, 10));
+            DeleteAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeleteAccButton.Width, DeleteAccButton.Height, 10, 10));
 
 
             //button60.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button60.Width, button60.Height, 10, 10));
@@ -189,7 +190,7 @@ namespace OOP2
             PPClientName.Text = PIEname.Text = FName + " " + LName; PIEFnametext.Text = FName; PIELnametext.Text = LName;
             ClientNamePI.Text = FName + LName;
             BirthDatePI.Text = PIEBirthtext.Text = formattedBirthdate;
-            int age; 
+            int age;
             if (BirthDatePI.Text.Length == 1)
             {
                 AgePI.Text = PIEAgetext.Text = " ";
@@ -384,7 +385,7 @@ namespace OOP2
         public void UpdateInfo()
         {
             EmailAddress = ClientLogin.EmailAddress;
-            
+
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
@@ -409,7 +410,7 @@ namespace OOP2
 
                     cmd.Parameters.AddWithValue("@cnumber", PIECnumbertext.Text);
                     cmd.Parameters.AddWithValue("@address", PIEAddresstext.Text);
-                    cmd.Parameters.AddWithValue("@Email", PIEEmailtext.Text); 
+                    cmd.Parameters.AddWithValue("@Email", PIEEmailtext.Text);
 
                     cmd.ExecuteNonQuery();
 
@@ -1002,10 +1003,51 @@ namespace OOP2
             {
                 UpdateInfo();
             }
-            else if(PIEFnametext.Text.Length == 0 && PIELnametext.Text.Length == 0 && PIEBirthtext.Text.Length == 0 && PIEAddresstext.Text.Length == 0)
+            else if (PIEFnametext.Text.Length == 0 && PIELnametext.Text.Length == 0 && PIEBirthtext.Text.Length == 0 && PIEAddresstext.Text.Length == 0)
             {
                 FillEM.Visible = true;
             }
+        }
+
+        private void DeleteAccButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    string sql = "DELETE FROM Clients WHERE [Email Address] = @Email";
+
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", EmailAddress);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Deleted successfully!");
+                            this.Hide();
+                            ClientLogin clientLogin = new ClientLogin();
+                            clientLogin.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No matching email found. Deletion failed.");
+                        }
+                    }
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("You clicked No!");
+            }
+
         }
     }
 }

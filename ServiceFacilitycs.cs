@@ -166,6 +166,7 @@ namespace OOP2
             AccessPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AccessPanel.Width, AccessPanel.Height, 10, 10));
             AboutPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AboutPanel.Width, AboutPanel.Height, 10, 10));
             HelpPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HelpPanel.Width, HelpPanel.Height, 10, 10));
+            DeleteAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeleteAccButton.Width, DeleteAccButton.Height, 10, 10));
             //panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
             //INFOSETTER
             FIFnameTitle.Text = FIEFnameTitle.Text = FIEFacnametext.Text = FIEFacnametext.Text = FIFnametext.Text = Facname;
@@ -987,6 +988,46 @@ namespace OOP2
         {
             WelcomeLabel.Visible = true;
             FIEButton.Visible = false; ProfilePanel.Visible = true; EditFIPanel.Visible = false;
+        }
+
+        private void DeleteAccButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    string sql = "DELETE FROM [Service Facilities] WHERE [Email Address] = @Email";
+
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", EmailAddress);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Deleted successfully!");
+                            this.Hide();
+                            ServiceFacilityLogin serviceFacilityLogin = new ServiceFacilityLogin();
+                            serviceFacilityLogin.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No matching email found. Deletion failed.");
+                        }
+                    }
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("You clicked No!");
+            }
         }
     }
 }

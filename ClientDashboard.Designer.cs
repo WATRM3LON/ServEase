@@ -262,6 +262,7 @@
             label86 = new System.Windows.Forms.Label();
             label87 = new System.Windows.Forms.Label();
             ProfilePanel = new System.Windows.Forms.Panel();
+            DeleteAccButton = new System.Windows.Forms.Button();
             GPPanel = new System.Windows.Forms.Panel();
             button49 = new System.Windows.Forms.Button();
             label92 = new System.Windows.Forms.Label();
@@ -3576,13 +3577,32 @@
             // 
             ProfilePanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ProfilePanel.BackColor = System.Drawing.Color.Transparent;
+            ProfilePanel.Controls.Add(DeleteAccButton);
             ProfilePanel.Controls.Add(GPPanel);
             ProfilePanel.Controls.Add(PIPanel);
             ProfilePanel.Controls.Add(ProPicPanel);
             ProfilePanel.Location = new System.Drawing.Point(277, 175);
             ProfilePanel.Name = "ProfilePanel";
-            ProfilePanel.Size = new System.Drawing.Size(893, 799);
+            ProfilePanel.Size = new System.Drawing.Size(893, 783);
             ProfilePanel.TabIndex = 41;
+            // 
+            // DeleteAccButton
+            // 
+            DeleteAccButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            DeleteAccButton.BackColor = System.Drawing.Color.FromArgb(194, 227, 184);
+            DeleteAccButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            DeleteAccButton.FlatAppearance.BorderSize = 0;
+            DeleteAccButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            DeleteAccButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            DeleteAccButton.ForeColor = System.Drawing.Color.Red;
+            DeleteAccButton.Location = new System.Drawing.Point(725, 723);
+            DeleteAccButton.Name = "DeleteAccButton";
+            DeleteAccButton.Size = new System.Drawing.Size(141, 51);
+            DeleteAccButton.TabIndex = 75;
+            DeleteAccButton.Text = "Delete Account";
+            DeleteAccButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            DeleteAccButton.UseVisualStyleBackColor = false;
+            DeleteAccButton.Click += DeleteAccButton_Click;
             // 
             // GPPanel
             // 
@@ -6597,5 +6617,6 @@
         private System.Windows.Forms.Label CnumberInvalid;
         private System.Windows.Forms.Label FillEM;
         private System.Windows.Forms.Label PIEAgetext;
+        private System.Windows.Forms.Button DeleteAccButton;
     }
 }
