@@ -59,6 +59,7 @@ namespace OOP2
             InitializeComponent();
             InfoGetter();
             Loaders();
+            LoadFacilityData();
             HiLabel.Text = $"Hi {Facname},";
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
@@ -1097,13 +1098,14 @@ namespace OOP2
         }
         public void ServiceOfferedUpdater()
         {
+            bool checks = Checker();
+
+
             if (Service1.Text.Length != 0 && Description1.Text.Length != 0 && Price1.Text.Length != 0 && Duration1.Text.Length != 0 &&
                 Service2.Text.Length != 0 && Description2.Text.Length != 0 && Price2.Text.Length != 0 && Duration2.Text.Length != 0 &&
                 Service3.Text.Length != 0 && Description3.Text.Length != 0 && Price3.Text.Length != 0 && Duration3.Text.Length != 0)
             {
-                if (Service1.Text != "Add Service Name" || Description1.Text != "Add Descritption" || Price1.Text != "Add Price" || Duration1.Text != "Add Duration" ||
-                      Service2.Text != "Add Service Name" || Description2.Text != "Add Descritption" || Price2.Text != "Add Price" || Duration2.Text != "Add Duration" ||
-                      Service3.Text != "Add Service Name" || Description3.Text != "Add Descritption" || Price3.Text != "Add Price" || Duration3.Text != "Add Duration")
+                if (!checks)
                 {
                     using (OleDbConnection myConn = new OleDbConnection(connection))
                     {
@@ -1128,6 +1130,26 @@ namespace OOP2
                             }
                         }
 
+                        List<int> serviceIds = new List<int>();
+
+                        string getServiceIdsQuery = "SELECT Service_ID FROM [Facility Services] WHERE Facility_ID = ?";
+
+                        using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getServiceIdsQuery, myConn))
+                        {
+                            getServiceIdsCmd.Parameters.AddWithValue("?", newFacilityId);
+
+                            using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    if (!reader.IsDBNull(0))
+                                    {
+                                        serviceIds.Add(reader.GetInt32(0));
+                                    }
+                                }
+                            }
+                        }
+
                         TextBox[] serviceNames = { Service1, Service2, Service3 };
                         TextBox[] descriptions = { Description1, Description2, Description3 };
                         TextBox[] prices = { Price1, Price2, Price3 };
@@ -1135,29 +1157,27 @@ namespace OOP2
 
                         for (int i = 0; i < 3; i++)
                         {
-                            string sql = "UPDATE [Facility Services] " +
-                                         "SET [Service Name] = ?, [Description] = ?, [Price] = ?, [Duration] = ? " +
-                                         "WHERE Facility_ID = ? AND [Service Name] IS NULL";
+                            string sql = "UPDATE [Facility Services] SET [Service Name] = ?, [Description] = ?, [Price] = ?, [Duration] = ? WHERE Service_ID = ?";
 
                             using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                             {
                                 cmd.Parameters.AddWithValue("?", serviceNames[i].Text);
                                 cmd.Parameters.AddWithValue("?", descriptions[i].Text);
-                                cmd.Parameters.AddWithValue("?", prices[i].Text);
+                                cmd.Parameters.AddWithValue("?", Convert.ToDecimal(prices[i].Text));
                                 cmd.Parameters.AddWithValue("?", durations[i].Text);
-                                cmd.Parameters.AddWithValue("?", newFacilityId);
+                                cmd.Parameters.AddWithValue("?", serviceIds[i]);
 
                                 cmd.ExecuteNonQuery();
                             }
                         }
                     }
+                    MessageBox.Show("Successfully updated!", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }else
+                {
+                    SOEerrorm.Visible = true;
                 }
-                MessageBox.Show("Successfully updated!", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-                SOEerrorm.Visible = true;
-            }
+            
         }
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
@@ -1197,7 +1217,7 @@ namespace OOP2
 
         private void LoadFacilityData()
         {
-            ProfilePanel.Controls.Clear();
+            SerOffPanel.Controls.Clear();
 
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
@@ -1244,12 +1264,31 @@ namespace OOP2
                             serviceOffered.Location = new Point(10, margin - 7);
                             margin += serviceOffered.Height + 10;
 
-                            ProfilePanel.Controls.Add(serviceOffered);
+                            SerOffPanel.Controls.Add(serviceOffered);
                         }
                     }
                 }
             }
 
+        }
+
+        public bool Checker()
+        {
+            int counter = 0;
+            if (Service2.Text == "Add Service Name") { counter++; } if (Description2.Text == "Add Descritption") { counter++; } if (Price2.Text == "Add Price") { counter++; } if (Duration1.Text == "Add Duration") { counter++; }
+            if (Service3.Text == "Add Service Name") { counter++; }
+            if (Description3.Text == "Add Descritption") { counter++; }
+            if (Price3.Text == "Add Price") { counter++; }
+            if (Duration3.Text == "Add Duration") { counter++; }
+
+            if(counter > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
