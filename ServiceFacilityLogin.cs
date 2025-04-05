@@ -401,6 +401,25 @@ namespace OOP2
 
                         cmd.ExecuteNonQuery();
                     }
+
+                    for (int i = 0; i < 3; i++)
+                    {
+                        string ServiceoffQuery = "INSERT INTO [Facility Services] " +
+                                                 "(Facility_ID, [Service Name], [Description], [Price], [Duration]) " +
+                                                 "VALUES (?, ?, ?, ?, ?)";
+
+                        using (OleDbCommand cmd = new OleDbCommand(ServiceoffQuery, myConn))
+                        {
+                            cmd.Parameters.AddWithValue("?", newFacilityId);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value); 
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
                     MessageBox.Show("Registration successful! You can now log in.");
                 }
                 this.Hide();

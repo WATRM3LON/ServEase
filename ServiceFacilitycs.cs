@@ -84,7 +84,7 @@ namespace OOP2
             ATButton.Visible = false;
             ServicesOfferedPanel.Visible = false;
             SettingsPanel.Visible = false;
-            FIEButton.Visible = false; FillEM.Visible = false;
+            FIEButton.Visible = false; FillEM.Visible = false; ESerOffPanel.Visible = false; EditSOButton.Visible = false;
             EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
         }
 
@@ -154,6 +154,7 @@ namespace OOP2
             button8.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button8.Width, button8.Height, 10, 10));
             button8.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button8.Width, button8.Height, 10, 10));
             button1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 10, 10));
+            //SERVICES OFFRED
             //SOTable.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 10, 10));
             panel32.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel32.Width, panel32.Height, 10, 10));
             panel31.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel31.Width, panel31.Height, 10, 10));
@@ -1086,13 +1087,24 @@ namespace OOP2
             }
 
         }
-        public void ServiceOfferedChecker()
+        public void ServiceOfferedUpdater()
         {
-            
+            if (Service1.Text.Length != 0 && Description1.Text.Length != 0 && Price1.Text.Length != 0 && Duration1.Text.Length != 0 &&
+                Service2.Text.Length != 0 && Description2.Text.Length != 0 && Price2.Text.Length != 0 && Duration2.Text.Length != 0 &&
+                Service3.Text.Length != 0 && Description3.Text.Length != 0 && Price3.Text.Length != 0 && Duration3.Text.Length != 0)
+            {
+
+
+            }
         }
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditButton2_Click(object sender, EventArgs e)
+        {
+            EditSOButton.Visible = true; ESerOffPanel.Visible = true;
         }
     }
 }
