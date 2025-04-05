@@ -18,7 +18,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAg0KBAEACEEggwBIACBQBAiNJQAMkAFBAECVQRAEBE=</HashCode>
+      <HashCode>ACg9KBAEACEEggwBIACBwBAiNJQAMkEFBAECVQRAGBU=</HashCode>
       <FileName>Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -29,7 +29,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>//1/qPcVvGEH6lyPNBWV3f/3+Ny/9uf/7upn9///m7k=</HashCode>
+      <HashCode>//1/qPcVvGUH7lyPNBWV3f/3+Ny/9uf/7upn9///m7k=</HashCode>
       <FileName>ClientDashboard.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -75,7 +75,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>/33/OzWYAGFfsh2XNkmdyd6XMM0/L0L35ME3V/7/2zk=</HashCode>
+      <HashCode>/33/OzWYAGVfth2XNkmdyd6XsM0/L0L35ME3V/7/2zk=</HashCode>
       <FileName>ServiceFacilitycs.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -107,7 +107,7 @@
   <Interface Name="OOP2.FacilityInfo">
     <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAAgAAANAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAACBAAAAgAAANAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Class1.cs</FileName>
     </TypeIdentifier>
   </Interface>

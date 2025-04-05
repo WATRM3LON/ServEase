@@ -84,10 +84,14 @@ namespace OOP2
             if (WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
+                UsersPanel usersPanel = new UsersPanel();
+                usersPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             }
             else
             {
                 this.WindowState = FormWindowState.Maximized;
+                UsersPanel usersPanel = new UsersPanel();
+                usersPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             }
             Loaders();
 

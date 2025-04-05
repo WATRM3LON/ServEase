@@ -84,7 +84,7 @@ namespace OOP2
             ATButton.Visible = false;
             ServicesOfferedPanel.Visible = false;
             SettingsPanel.Visible = false;
-            FIEButton.Visible = false; FillEM.Visible = false; 
+            FIEButton.Visible = false; FillEM.Visible = false;
             EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
         }
 
@@ -842,7 +842,7 @@ namespace OOP2
                 myConn.Open();
 
                 string sql = "SELECT [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Password], [Service Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status] FROM [Service Facilities] WHERE [Email Address] = @Email";
-               
+
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("@Email", EmailAddress);
@@ -1084,6 +1084,14 @@ namespace OOP2
             {
                 MessageBox.Show("You clicked No!");
             }
+
+        }
+        public void ServiceOfferedChecker()
+        {
+            
+        }
+        private void ConfirmButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

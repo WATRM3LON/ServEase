@@ -202,47 +202,11 @@
             panel58 = new System.Windows.Forms.Panel();
             ServicesOfferedPanel = new System.Windows.Forms.Panel();
             EditButton2 = new System.Windows.Forms.Button();
-            SOTable = new System.Windows.Forms.TableLayoutPanel();
-            panel27 = new System.Windows.Forms.Panel();
-            label39 = new System.Windows.Forms.Label();
-            panel23 = new System.Windows.Forms.Panel();
-            label35 = new System.Windows.Forms.Label();
-            panel28 = new System.Windows.Forms.Panel();
-            label40 = new System.Windows.Forms.Label();
-            panel19 = new System.Windows.Forms.Panel();
-            label31 = new System.Windows.Forms.Label();
-            panel29 = new System.Windows.Forms.Panel();
-            label41 = new System.Windows.Forms.Label();
-            panel24 = new System.Windows.Forms.Panel();
-            label36 = new System.Windows.Forms.Label();
-            panel30 = new System.Windows.Forms.Panel();
-            label42 = new System.Windows.Forms.Label();
-            panel18 = new System.Windows.Forms.Panel();
-            label30 = new System.Windows.Forms.Label();
-            panel25 = new System.Windows.Forms.Panel();
-            label37 = new System.Windows.Forms.Label();
-            panel20 = new System.Windows.Forms.Panel();
-            label32 = new System.Windows.Forms.Label();
-            panel26 = new System.Windows.Forms.Panel();
-            label38 = new System.Windows.Forms.Label();
-            panel17 = new System.Windows.Forms.Panel();
-            label29 = new System.Windows.Forms.Label();
-            panel21 = new System.Windows.Forms.Panel();
-            label33 = new System.Windows.Forms.Label();
-            panel16 = new System.Windows.Forms.Panel();
-            label28 = new System.Windows.Forms.Label();
-            panel22 = new System.Windows.Forms.Panel();
-            label34 = new System.Windows.Forms.Label();
-            panel14 = new System.Windows.Forms.Panel();
-            label27 = new System.Windows.Forms.Label();
-            panel13 = new System.Windows.Forms.Panel();
-            label26 = new System.Windows.Forms.Label();
-            panel12 = new System.Windows.Forms.Panel();
-            label25 = new System.Windows.Forms.Label();
-            panel15 = new System.Windows.Forms.Panel();
-            label23 = new System.Windows.Forms.Label();
-            panel3 = new System.Windows.Forms.Panel();
-            label24 = new System.Windows.Forms.Label();
+            SerOffTitlePanel = new System.Windows.Forms.TableLayoutPanel();
+            SODuration = new System.Windows.Forms.Label();
+            SOPrice = new System.Windows.Forms.Label();
+            SOServiceName = new System.Windows.Forms.Label();
+            SODescription = new System.Windows.Forms.Label();
             ATPanel = new System.Windows.Forms.Panel();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             panel31 = new System.Windows.Forms.Panel();
@@ -315,6 +279,31 @@
             FIERatingstext = new System.Windows.Forms.Label();
             FIEFnameTitle = new System.Windows.Forms.Label();
             panel47 = new System.Windows.Forms.Panel();
+            SerOffPanel = new System.Windows.Forms.Panel();
+            ESerOffPanel = new System.Windows.Forms.Panel();
+            SerOffEPanel = new System.Windows.Forms.Panel();
+            button9 = new System.Windows.Forms.Button();
+            SerOffTitleEPanel = new System.Windows.Forms.TableLayoutPanel();
+            SOEPrice = new System.Windows.Forms.Label();
+            SEEServiceName = new System.Windows.Forms.Label();
+            SOEDescription = new System.Windows.Forms.Label();
+            ConfirmButton = new System.Windows.Forms.Button();
+            SOEDuration = new System.Windows.Forms.Label();
+            SO1Panel = new System.Windows.Forms.TableLayoutPanel();
+            Service1 = new System.Windows.Forms.TextBox();
+            Description1 = new System.Windows.Forms.TextBox();
+            Price1 = new System.Windows.Forms.TextBox();
+            Duration1 = new System.Windows.Forms.TextBox();
+            SO2Panel = new System.Windows.Forms.TableLayoutPanel();
+            Duration2 = new System.Windows.Forms.TextBox();
+            Price2 = new System.Windows.Forms.TextBox();
+            Description2 = new System.Windows.Forms.TextBox();
+            Service2 = new System.Windows.Forms.TextBox();
+            SO3Panel = new System.Windows.Forms.TableLayoutPanel();
+            Duration3 = new System.Windows.Forms.TextBox();
+            Price3 = new System.Windows.Forms.TextBox();
+            Description3 = new System.Windows.Forms.TextBox();
+            Service3 = new System.Windows.Forms.TextBox();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -353,27 +342,7 @@
             PIPanel.SuspendLayout();
             ProPicPanel.SuspendLayout();
             ServicesOfferedPanel.SuspendLayout();
-            SOTable.SuspendLayout();
-            panel27.SuspendLayout();
-            panel23.SuspendLayout();
-            panel28.SuspendLayout();
-            panel19.SuspendLayout();
-            panel29.SuspendLayout();
-            panel24.SuspendLayout();
-            panel30.SuspendLayout();
-            panel18.SuspendLayout();
-            panel25.SuspendLayout();
-            panel20.SuspendLayout();
-            panel26.SuspendLayout();
-            panel17.SuspendLayout();
-            panel21.SuspendLayout();
-            panel16.SuspendLayout();
-            panel22.SuspendLayout();
-            panel14.SuspendLayout();
-            panel13.SuspendLayout();
-            panel12.SuspendLayout();
-            panel15.SuspendLayout();
-            panel3.SuspendLayout();
+            SerOffTitlePanel.SuspendLayout();
             ATPanel.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel31.SuspendLayout();
@@ -392,6 +361,12 @@
             EditFIPanel.SuspendLayout();
             FIEPanel.SuspendLayout();
             FIEProfilepanel.SuspendLayout();
+            ESerOffPanel.SuspendLayout();
+            SerOffEPanel.SuspendLayout();
+            SerOffTitleEPanel.SuspendLayout();
+            SO1Panel.SuspendLayout();
+            SO2Panel.SuspendLayout();
+            SO3Panel.SuspendLayout();
             SuspendLayout();
             // 
             // NotifyButton
@@ -2669,8 +2644,9 @@
             // 
             ServicesOfferedPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ServicesOfferedPanel.BackColor = System.Drawing.Color.Transparent;
+            ServicesOfferedPanel.Controls.Add(SerOffPanel);
             ServicesOfferedPanel.Controls.Add(EditButton2);
-            ServicesOfferedPanel.Controls.Add(SOTable);
+            ServicesOfferedPanel.Controls.Add(SerOffTitlePanel);
             ServicesOfferedPanel.Location = new System.Drawing.Point(277, 177);
             ServicesOfferedPanel.Name = "ServicesOfferedPanel";
             ServicesOfferedPanel.Size = new System.Drawing.Size(893, 799);
@@ -2683,530 +2659,90 @@
             EditButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             EditButton2.FlatAppearance.BorderSize = 0;
             EditButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            EditButton2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EditButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             EditButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            EditButton2.Location = new System.Drawing.Point(752, 535);
+            EditButton2.Location = new System.Drawing.Point(742, 705);
             EditButton2.Name = "EditButton2";
             EditButton2.Size = new System.Drawing.Size(124, 51);
             EditButton2.TabIndex = 37;
-            EditButton2.Text = "Edit";
+            EditButton2.Text = "Edit / Add";
             EditButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             EditButton2.UseVisualStyleBackColor = false;
             // 
-            // SOTable
-            // 
-            SOTable.ColumnCount = 4;
-            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            SOTable.Controls.Add(panel27, 3, 4);
-            SOTable.Controls.Add(panel23, 3, 3);
-            SOTable.Controls.Add(panel28, 2, 4);
-            SOTable.Controls.Add(panel19, 3, 2);
-            SOTable.Controls.Add(panel29, 1, 4);
-            SOTable.Controls.Add(panel24, 2, 3);
-            SOTable.Controls.Add(panel30, 0, 4);
-            SOTable.Controls.Add(panel18, 3, 1);
-            SOTable.Controls.Add(panel25, 1, 3);
-            SOTable.Controls.Add(panel20, 2, 2);
-            SOTable.Controls.Add(panel26, 0, 3);
-            SOTable.Controls.Add(panel17, 2, 1);
-            SOTable.Controls.Add(panel21, 1, 2);
-            SOTable.Controls.Add(panel16, 1, 1);
-            SOTable.Controls.Add(panel22, 0, 2);
-            SOTable.Controls.Add(panel14, 0, 1);
-            SOTable.Controls.Add(panel13, 3, 0);
-            SOTable.Controls.Add(panel12, 2, 0);
-            SOTable.Controls.Add(panel15, 0, 0);
-            SOTable.Controls.Add(panel3, 1, 0);
-            SOTable.Location = new System.Drawing.Point(13, 29);
-            SOTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            SOTable.Name = "SOTable";
-            SOTable.RowCount = 5;
-            SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            SOTable.Size = new System.Drawing.Size(865, 478);
-            SOTable.TabIndex = 36;
-            // 
-            // panel27
-            // 
-            panel27.BackColor = System.Drawing.Color.Transparent;
-            panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel27.Controls.Add(label39);
-            panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel27.Location = new System.Drawing.Point(651, 383);
-            panel27.Name = "panel27";
-            panel27.Size = new System.Drawing.Size(211, 92);
-            panel27.TabIndex = 42;
-            panel27.Tag = "";
-            // 
-            // label39
-            // 
-            label39.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label39.AutoSize = true;
-            label39.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label39.Location = new System.Drawing.Point(57, 23);
-            label39.Name = "label39";
-            label39.Size = new System.Drawing.Size(60, 20);
-            label39.TabIndex = 37;
-            label39.Text = "20 mins";
-            // 
-            // panel23
-            // 
-            panel23.BackColor = System.Drawing.Color.Transparent;
-            panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel23.Controls.Add(label35);
-            panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel23.Location = new System.Drawing.Point(651, 288);
-            panel23.Name = "panel23";
-            panel23.Size = new System.Drawing.Size(211, 89);
-            panel23.TabIndex = 42;
-            panel23.Tag = "";
-            // 
-            // label35
-            // 
-            label35.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label35.AutoSize = true;
-            label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label35.Location = new System.Drawing.Point(57, 23);
-            label35.Name = "label35";
-            label35.Size = new System.Drawing.Size(60, 20);
-            label35.TabIndex = 37;
-            label35.Text = "60 mins";
-            // 
-            // panel28
-            // 
-            panel28.BackColor = System.Drawing.Color.Transparent;
-            panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel28.Controls.Add(label40);
-            panel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel28.Location = new System.Drawing.Point(435, 383);
-            panel28.Name = "panel28";
-            panel28.Size = new System.Drawing.Size(210, 92);
-            panel28.TabIndex = 43;
-            panel28.Tag = "";
-            // 
-            // label40
-            // 
-            label40.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label40.AutoSize = true;
-            label40.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label40.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label40.Location = new System.Drawing.Point(20, 26);
-            label40.Name = "label40";
-            label40.Size = new System.Drawing.Size(83, 20);
-            label40.TabIndex = 37;
-            label40.Text = "PHP 100.00";
-            // 
-            // panel19
-            // 
-            panel19.BackColor = System.Drawing.Color.Transparent;
-            panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel19.Controls.Add(label31);
-            panel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel19.Location = new System.Drawing.Point(651, 193);
-            panel19.Name = "panel19";
-            panel19.Size = new System.Drawing.Size(211, 89);
-            panel19.TabIndex = 42;
-            panel19.Tag = "";
-            // 
-            // label31
-            // 
-            label31.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label31.AutoSize = true;
-            label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label31.Location = new System.Drawing.Point(57, 23);
-            label31.Name = "label31";
-            label31.Size = new System.Drawing.Size(60, 20);
-            label31.TabIndex = 37;
-            label31.Text = "30 mins";
-            // 
-            // panel29
-            // 
-            panel29.BackColor = System.Drawing.Color.Transparent;
-            panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel29.Controls.Add(label41);
-            panel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel29.Location = new System.Drawing.Point(219, 383);
-            panel29.Name = "panel29";
-            panel29.Size = new System.Drawing.Size(210, 92);
-            panel29.TabIndex = 44;
-            panel29.Tag = "";
-            // 
-            // label41
-            // 
-            label41.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label41.AutoSize = true;
-            label41.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label41.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label41.Location = new System.Drawing.Point(20, 26);
-            label41.Name = "label41";
-            label41.Size = new System.Drawing.Size(97, 20);
-            label41.TabIndex = 37;
-            label41.Text = "Description 4";
-            // 
-            // panel24
-            // 
-            panel24.BackColor = System.Drawing.Color.Transparent;
-            panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel24.Controls.Add(label36);
-            panel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel24.Location = new System.Drawing.Point(435, 288);
-            panel24.Name = "panel24";
-            panel24.Size = new System.Drawing.Size(210, 89);
-            panel24.TabIndex = 43;
-            panel24.Tag = "";
-            // 
-            // label36
-            // 
-            label36.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label36.AutoSize = true;
-            label36.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label36.Location = new System.Drawing.Point(20, 26);
-            label36.Name = "label36";
-            label36.Size = new System.Drawing.Size(94, 20);
-            label36.TabIndex = 37;
-            label36.Text = "PHP 1,800.00";
-            // 
-            // panel30
-            // 
-            panel30.BackColor = System.Drawing.Color.Transparent;
-            panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel30.Controls.Add(label42);
-            panel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel30.Location = new System.Drawing.Point(3, 383);
-            panel30.Name = "panel30";
-            panel30.Size = new System.Drawing.Size(210, 92);
-            panel30.TabIndex = 41;
-            panel30.Tag = "";
-            // 
-            // label42
-            // 
-            label42.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label42.AutoSize = true;
-            label42.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label42.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label42.Location = new System.Drawing.Point(20, 26);
-            label42.Name = "label42";
-            label42.Size = new System.Drawing.Size(112, 20);
-            label42.TabIndex = 37;
-            label42.Text = "Service Name 4";
-            // 
-            // panel18
-            // 
-            panel18.BackColor = System.Drawing.Color.Transparent;
-            panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel18.Controls.Add(label30);
-            panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel18.Location = new System.Drawing.Point(651, 98);
-            panel18.Name = "panel18";
-            panel18.Size = new System.Drawing.Size(211, 89);
-            panel18.TabIndex = 40;
-            panel18.Tag = "";
-            // 
-            // label30
-            // 
-            label30.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label30.AutoSize = true;
-            label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label30.Location = new System.Drawing.Point(57, 23);
-            label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(60, 20);
-            label30.TabIndex = 37;
-            label30.Text = "60 mins";
-            // 
-            // panel25
-            // 
-            panel25.BackColor = System.Drawing.Color.Transparent;
-            panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel25.Controls.Add(label37);
-            panel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel25.Location = new System.Drawing.Point(219, 288);
-            panel25.Name = "panel25";
-            panel25.Size = new System.Drawing.Size(210, 89);
-            panel25.TabIndex = 44;
-            panel25.Tag = "";
-            // 
-            // label37
-            // 
-            label37.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label37.AutoSize = true;
-            label37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label37.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label37.Location = new System.Drawing.Point(20, 26);
-            label37.Name = "label37";
-            label37.Size = new System.Drawing.Size(97, 20);
-            label37.TabIndex = 37;
-            label37.Text = "Description 3";
-            // 
-            // panel20
-            // 
-            panel20.BackColor = System.Drawing.Color.Transparent;
-            panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel20.Controls.Add(label32);
-            panel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel20.Location = new System.Drawing.Point(435, 193);
-            panel20.Name = "panel20";
-            panel20.Size = new System.Drawing.Size(210, 89);
-            panel20.TabIndex = 43;
-            panel20.Tag = "";
-            // 
-            // label32
-            // 
-            label32.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label32.AutoSize = true;
-            label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label32.Location = new System.Drawing.Point(20, 26);
-            label32.Name = "label32";
-            label32.Size = new System.Drawing.Size(83, 20);
-            label32.TabIndex = 37;
-            label32.Text = "PHP 500.00";
-            // 
-            // panel26
-            // 
-            panel26.BackColor = System.Drawing.Color.Transparent;
-            panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel26.Controls.Add(label38);
-            panel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel26.Location = new System.Drawing.Point(3, 288);
-            panel26.Name = "panel26";
-            panel26.Size = new System.Drawing.Size(210, 89);
-            panel26.TabIndex = 41;
-            panel26.Tag = "";
-            // 
-            // label38
-            // 
-            label38.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label38.AutoSize = true;
-            label38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label38.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label38.Location = new System.Drawing.Point(20, 26);
-            label38.Name = "label38";
-            label38.Size = new System.Drawing.Size(112, 20);
-            label38.TabIndex = 37;
-            label38.Text = "Service Name 3";
-            // 
-            // panel17
-            // 
-            panel17.BackColor = System.Drawing.Color.Transparent;
-            panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel17.Controls.Add(label29);
-            panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel17.Location = new System.Drawing.Point(435, 98);
-            panel17.Name = "panel17";
-            panel17.Size = new System.Drawing.Size(210, 89);
-            panel17.TabIndex = 40;
-            panel17.Tag = "";
-            // 
-            // label29
-            // 
-            label29.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label29.AutoSize = true;
-            label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label29.Location = new System.Drawing.Point(20, 26);
-            label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(94, 20);
-            label29.TabIndex = 37;
-            label29.Text = "PHP 1,000.00";
-            // 
-            // panel21
-            // 
-            panel21.BackColor = System.Drawing.Color.Transparent;
-            panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel21.Controls.Add(label33);
-            panel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel21.Location = new System.Drawing.Point(219, 193);
-            panel21.Name = "panel21";
-            panel21.Size = new System.Drawing.Size(210, 89);
-            panel21.TabIndex = 44;
-            panel21.Tag = "";
-            // 
-            // label33
-            // 
-            label33.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label33.AutoSize = true;
-            label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label33.Location = new System.Drawing.Point(20, 26);
-            label33.Name = "label33";
-            label33.Size = new System.Drawing.Size(97, 20);
-            label33.TabIndex = 37;
-            label33.Text = "Description 2";
-            // 
-            // panel16
-            // 
-            panel16.BackColor = System.Drawing.Color.Transparent;
-            panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel16.Controls.Add(label28);
-            panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel16.Location = new System.Drawing.Point(219, 98);
-            panel16.Name = "panel16";
-            panel16.Size = new System.Drawing.Size(210, 89);
-            panel16.TabIndex = 40;
-            panel16.Tag = "";
-            // 
-            // label28
-            // 
-            label28.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label28.AutoSize = true;
-            label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label28.Location = new System.Drawing.Point(20, 26);
-            label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(97, 20);
-            label28.TabIndex = 37;
-            label28.Text = "Description 1";
-            // 
-            // panel22
-            // 
-            panel22.BackColor = System.Drawing.Color.Transparent;
-            panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel22.Controls.Add(label34);
-            panel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel22.Location = new System.Drawing.Point(3, 193);
-            panel22.Name = "panel22";
-            panel22.Size = new System.Drawing.Size(210, 89);
-            panel22.TabIndex = 41;
-            panel22.Tag = "";
-            // 
-            // label34
-            // 
-            label34.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label34.AutoSize = true;
-            label34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label34.Location = new System.Drawing.Point(20, 26);
-            label34.Name = "label34";
-            label34.Size = new System.Drawing.Size(112, 20);
-            label34.TabIndex = 37;
-            label34.Text = "Service Name 2";
-            // 
-            // panel14
-            // 
-            panel14.BackColor = System.Drawing.Color.Transparent;
-            panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel14.Controls.Add(label27);
-            panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel14.Location = new System.Drawing.Point(3, 98);
-            panel14.Name = "panel14";
-            panel14.Size = new System.Drawing.Size(210, 89);
-            panel14.TabIndex = 39;
-            panel14.Tag = "";
-            // 
-            // label27
-            // 
-            label27.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label27.AutoSize = true;
-            label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label27.Location = new System.Drawing.Point(20, 26);
-            label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(112, 20);
-            label27.TabIndex = 37;
-            label27.Text = "Service Name 1";
-            // 
-            // panel13
-            // 
-            panel13.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
-            panel13.Controls.Add(label26);
-            panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel13.Location = new System.Drawing.Point(651, 3);
-            panel13.Name = "panel13";
-            panel13.Size = new System.Drawing.Size(211, 89);
-            panel13.TabIndex = 39;
-            panel13.Tag = "";
-            // 
-            // label26
-            // 
-            label26.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label26.AutoSize = true;
-            label26.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label26.Location = new System.Drawing.Point(47, 28);
-            label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(77, 23);
-            label26.TabIndex = 37;
-            label26.Text = "Duration";
-            // 
-            // panel12
-            // 
-            panel12.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
-            panel12.Controls.Add(label25);
-            panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel12.Location = new System.Drawing.Point(435, 3);
-            panel12.Name = "panel12";
-            panel12.Size = new System.Drawing.Size(210, 89);
-            panel12.TabIndex = 39;
-            panel12.Tag = "";
-            // 
-            // label25
-            // 
-            label25.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label25.AutoSize = true;
-            label25.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label25.Location = new System.Drawing.Point(63, 28);
-            label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(47, 23);
-            label25.TabIndex = 37;
-            label25.Text = "Price";
-            // 
-            // panel15
-            // 
-            panel15.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
-            panel15.Controls.Add(label23);
-            panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel15.Location = new System.Drawing.Point(3, 3);
-            panel15.Name = "panel15";
-            panel15.Size = new System.Drawing.Size(210, 89);
-            panel15.TabIndex = 37;
-            panel15.Tag = "";
-            // 
-            // label23
-            // 
-            label23.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label23.AutoSize = true;
-            label23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label23.Location = new System.Drawing.Point(21, 28);
-            label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(116, 23);
-            label23.TabIndex = 37;
-            label23.Text = "Service Name";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
-            panel3.Controls.Add(label24);
-            panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel3.Location = new System.Drawing.Point(219, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(210, 89);
-            panel3.TabIndex = 38;
-            panel3.Tag = "";
-            // 
-            // label24
-            // 
-            label24.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label24.AutoSize = true;
-            label24.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label24.Location = new System.Drawing.Point(36, 26);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(96, 23);
-            label24.TabIndex = 37;
-            label24.Text = "Description";
+            // SerOffTitlePanel
+            // 
+            SerOffTitlePanel.ColumnCount = 4;
+            SerOffTitlePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            SerOffTitlePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            SerOffTitlePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SerOffTitlePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SerOffTitlePanel.Controls.Add(SODuration, 3, 0);
+            SerOffTitlePanel.Controls.Add(SOServiceName, 0, 0);
+            SerOffTitlePanel.Controls.Add(SOPrice, 2, 0);
+            SerOffTitlePanel.Controls.Add(SODescription, 1, 0);
+            SerOffTitlePanel.Location = new System.Drawing.Point(13, 29);
+            SerOffTitlePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            SerOffTitlePanel.Name = "SerOffTitlePanel";
+            SerOffTitlePanel.RowCount = 1;
+            SerOffTitlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            SerOffTitlePanel.Size = new System.Drawing.Size(865, 82);
+            SerOffTitlePanel.TabIndex = 36;
+            // 
+            // SODuration
+            // 
+            SODuration.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SODuration.AutoSize = true;
+            SODuration.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            SODuration.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SODuration.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SODuration.Location = new System.Drawing.Point(737, 0);
+            SODuration.Name = "SODuration";
+            SODuration.Size = new System.Drawing.Size(125, 82);
+            SODuration.TabIndex = 37;
+            SODuration.Text = "Duration";
+            SODuration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SOPrice
+            // 
+            SOPrice.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SOPrice.AutoSize = true;
+            SOPrice.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            SOPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SOPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SOPrice.Location = new System.Drawing.Point(608, 0);
+            SOPrice.Name = "SOPrice";
+            SOPrice.Size = new System.Drawing.Size(123, 82);
+            SOPrice.TabIndex = 37;
+            SOPrice.Text = "Price";
+            SOPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SOServiceName
+            // 
+            SOServiceName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SOServiceName.AutoSize = true;
+            SOServiceName.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            SOServiceName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SOServiceName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SOServiceName.Location = new System.Drawing.Point(3, 0);
+            SOServiceName.Name = "SOServiceName";
+            SOServiceName.Size = new System.Drawing.Size(167, 82);
+            SOServiceName.TabIndex = 37;
+            SOServiceName.Text = "Service Name";
+            SOServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SODescription
+            // 
+            SODescription.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SODescription.AutoSize = true;
+            SODescription.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            SODescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SODescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SODescription.Location = new System.Drawing.Point(176, 0);
+            SODescription.Name = "SODescription";
+            SODescription.Size = new System.Drawing.Size(426, 82);
+            SODescription.TabIndex = 37;
+            SODescription.Text = "Description";
+            SODescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ATPanel
             // 
@@ -4167,19 +3703,349 @@
             panel47.Size = new System.Drawing.Size(116, 115);
             panel47.TabIndex = 34;
             // 
+            // SerOffPanel
+            // 
+            SerOffPanel.Location = new System.Drawing.Point(15, 114);
+            SerOffPanel.Name = "SerOffPanel";
+            SerOffPanel.Size = new System.Drawing.Size(863, 566);
+            SerOffPanel.TabIndex = 38;
+            // 
+            // ESerOffPanel
+            // 
+            ESerOffPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ESerOffPanel.BackColor = System.Drawing.Color.Transparent;
+            ESerOffPanel.Controls.Add(ConfirmButton);
+            ESerOffPanel.Controls.Add(SerOffEPanel);
+            ESerOffPanel.Controls.Add(button9);
+            ESerOffPanel.Controls.Add(SerOffTitleEPanel);
+            ESerOffPanel.Location = new System.Drawing.Point(277, 177);
+            ESerOffPanel.Name = "ESerOffPanel";
+            ESerOffPanel.Size = new System.Drawing.Size(911, 780);
+            ESerOffPanel.TabIndex = 65;
+            // 
+            // SerOffEPanel
+            // 
+            SerOffEPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SerOffEPanel.Controls.Add(SO3Panel);
+            SerOffEPanel.Controls.Add(SO2Panel);
+            SerOffEPanel.Controls.Add(SO1Panel);
+            SerOffEPanel.Location = new System.Drawing.Point(15, 114);
+            SerOffEPanel.Name = "SerOffEPanel";
+            SerOffEPanel.Size = new System.Drawing.Size(863, 566);
+            SerOffEPanel.TabIndex = 38;
+            // 
+            // button9
+            // 
+            button9.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button9.BackColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            button9.Location = new System.Drawing.Point(1453, 705);
+            button9.Name = "button9";
+            button9.Size = new System.Drawing.Size(124, 51);
+            button9.TabIndex = 37;
+            button9.Text = "Edit / Add";
+            button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // SerOffTitleEPanel
+            // 
+            SerOffTitleEPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SerOffTitleEPanel.ColumnCount = 4;
+            SerOffTitleEPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            SerOffTitleEPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            SerOffTitleEPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SerOffTitleEPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SerOffTitleEPanel.Controls.Add(SEEServiceName, 0, 0);
+            SerOffTitleEPanel.Controls.Add(SOEDuration, 3, 0);
+            SerOffTitleEPanel.Controls.Add(SOEDescription, 1, 0);
+            SerOffTitleEPanel.Controls.Add(SOEPrice, 2, 0);
+            SerOffTitleEPanel.Location = new System.Drawing.Point(13, 29);
+            SerOffTitleEPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            SerOffTitleEPanel.Name = "SerOffTitleEPanel";
+            SerOffTitleEPanel.RowCount = 1;
+            SerOffTitleEPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            SerOffTitleEPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            SerOffTitleEPanel.Size = new System.Drawing.Size(865, 82);
+            SerOffTitleEPanel.TabIndex = 36;
+            // 
+            // SOEPrice
+            // 
+            SOEPrice.AutoSize = true;
+            SOEPrice.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            SOEPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            SOEPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SOEPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SOEPrice.Location = new System.Drawing.Point(608, 0);
+            SOEPrice.Name = "SOEPrice";
+            SOEPrice.Size = new System.Drawing.Size(123, 82);
+            SOEPrice.TabIndex = 37;
+            SOEPrice.Text = "Price";
+            SOEPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SEEServiceName
+            // 
+            SEEServiceName.AutoSize = true;
+            SEEServiceName.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            SEEServiceName.Dock = System.Windows.Forms.DockStyle.Fill;
+            SEEServiceName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SEEServiceName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SEEServiceName.Location = new System.Drawing.Point(3, 0);
+            SEEServiceName.Name = "SEEServiceName";
+            SEEServiceName.Size = new System.Drawing.Size(167, 82);
+            SEEServiceName.TabIndex = 37;
+            SEEServiceName.Text = "Service Name";
+            SEEServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SOEDescription
+            // 
+            SOEDescription.AutoSize = true;
+            SOEDescription.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            SOEDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            SOEDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SOEDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SOEDescription.Location = new System.Drawing.Point(176, 0);
+            SOEDescription.Name = "SOEDescription";
+            SOEDescription.Size = new System.Drawing.Size(426, 82);
+            SOEDescription.TabIndex = 37;
+            SOEDescription.Text = "Description";
+            SOEDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ConfirmButton
+            // 
+            ConfirmButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            ConfirmButton.BackColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            ConfirmButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ConfirmButton.FlatAppearance.BorderSize = 0;
+            ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ConfirmButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ConfirmButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ConfirmButton.Location = new System.Drawing.Point(729, 720);
+            ConfirmButton.Name = "ConfirmButton";
+            ConfirmButton.Size = new System.Drawing.Size(151, 51);
+            ConfirmButton.TabIndex = 39;
+            ConfirmButton.Text = "Confirm Changes";
+            ConfirmButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ConfirmButton.UseVisualStyleBackColor = false;
+            ConfirmButton.Click += ConfirmButton_Click;
+            // 
+            // SOEDuration
+            // 
+            SOEDuration.AutoSize = true;
+            SOEDuration.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            SOEDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            SOEDuration.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SOEDuration.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SOEDuration.Location = new System.Drawing.Point(737, 0);
+            SOEDuration.Name = "SOEDuration";
+            SOEDuration.Size = new System.Drawing.Size(125, 82);
+            SOEDuration.TabIndex = 37;
+            SOEDuration.Text = "Duration";
+            SOEDuration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SO1Panel
+            // 
+            SO1Panel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SO1Panel.BackColor = System.Drawing.Color.White;
+            SO1Panel.ColumnCount = 4;
+            SO1Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            SO1Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            SO1Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SO1Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SO1Panel.Controls.Add(Duration1, 3, 0);
+            SO1Panel.Controls.Add(Price1, 2, 0);
+            SO1Panel.Controls.Add(Description1, 1, 0);
+            SO1Panel.Controls.Add(Service1, 0, 0);
+            SO1Panel.Location = new System.Drawing.Point(0, 5);
+            SO1Panel.Margin = new System.Windows.Forms.Padding(5);
+            SO1Panel.Name = "SO1Panel";
+            SO1Panel.RowCount = 1;
+            SO1Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            SO1Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            SO1Panel.Size = new System.Drawing.Size(862, 82);
+            SO1Panel.TabIndex = 37;
+            // 
+            // Service1
+            // 
+            Service1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Service1.Location = new System.Drawing.Point(5, 25);
+            Service1.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Service1.Name = "Service1";
+            Service1.Size = new System.Drawing.Size(162, 27);
+            Service1.TabIndex = 38;
+            Service1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Description1
+            // 
+            Description1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Description1.Location = new System.Drawing.Point(177, 25);
+            Description1.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Description1.Multiline = true;
+            Description1.Name = "Description1";
+            Description1.Size = new System.Drawing.Size(421, 37);
+            Description1.TabIndex = 39;
+            // 
+            // Price1
+            // 
+            Price1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Price1.Location = new System.Drawing.Point(608, 25);
+            Price1.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Price1.Name = "Price1";
+            Price1.Size = new System.Drawing.Size(119, 27);
+            Price1.TabIndex = 40;
+            Price1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Duration1
+            // 
+            Duration1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Duration1.Location = new System.Drawing.Point(737, 25);
+            Duration1.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Duration1.Name = "Duration1";
+            Duration1.Size = new System.Drawing.Size(120, 27);
+            Duration1.TabIndex = 41;
+            Duration1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // SO2Panel
+            // 
+            SO2Panel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SO2Panel.BackColor = System.Drawing.Color.White;
+            SO2Panel.ColumnCount = 4;
+            SO2Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            SO2Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            SO2Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SO2Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SO2Panel.Controls.Add(Duration2, 3, 0);
+            SO2Panel.Controls.Add(Price2, 2, 0);
+            SO2Panel.Controls.Add(Description2, 1, 0);
+            SO2Panel.Controls.Add(Service2, 0, 0);
+            SO2Panel.Location = new System.Drawing.Point(0, 96);
+            SO2Panel.Margin = new System.Windows.Forms.Padding(5);
+            SO2Panel.Name = "SO2Panel";
+            SO2Panel.RowCount = 1;
+            SO2Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            SO2Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            SO2Panel.Size = new System.Drawing.Size(862, 82);
+            SO2Panel.TabIndex = 38;
+            // 
+            // Duration2
+            // 
+            Duration2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Duration2.Location = new System.Drawing.Point(737, 25);
+            Duration2.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Duration2.Name = "Duration2";
+            Duration2.Size = new System.Drawing.Size(120, 27);
+            Duration2.TabIndex = 41;
+            Duration2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Price2
+            // 
+            Price2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Price2.Location = new System.Drawing.Point(608, 25);
+            Price2.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Price2.Name = "Price2";
+            Price2.Size = new System.Drawing.Size(119, 27);
+            Price2.TabIndex = 40;
+            Price2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Description2
+            // 
+            Description2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Description2.Location = new System.Drawing.Point(177, 25);
+            Description2.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Description2.Multiline = true;
+            Description2.Name = "Description2";
+            Description2.Size = new System.Drawing.Size(421, 37);
+            Description2.TabIndex = 39;
+            // 
+            // Service2
+            // 
+            Service2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Service2.Location = new System.Drawing.Point(5, 25);
+            Service2.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Service2.Name = "Service2";
+            Service2.Size = new System.Drawing.Size(162, 27);
+            Service2.TabIndex = 38;
+            Service2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // SO3Panel
+            // 
+            SO3Panel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SO3Panel.BackColor = System.Drawing.Color.White;
+            SO3Panel.ColumnCount = 4;
+            SO3Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            SO3Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            SO3Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SO3Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SO3Panel.Controls.Add(Duration3, 3, 0);
+            SO3Panel.Controls.Add(Price3, 2, 0);
+            SO3Panel.Controls.Add(Description3, 1, 0);
+            SO3Panel.Controls.Add(Service3, 0, 0);
+            SO3Panel.Location = new System.Drawing.Point(1, 189);
+            SO3Panel.Margin = new System.Windows.Forms.Padding(5);
+            SO3Panel.Name = "SO3Panel";
+            SO3Panel.RowCount = 1;
+            SO3Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            SO3Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            SO3Panel.Size = new System.Drawing.Size(862, 82);
+            SO3Panel.TabIndex = 39;
+            // 
+            // Duration3
+            // 
+            Duration3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Duration3.Location = new System.Drawing.Point(737, 25);
+            Duration3.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Duration3.Name = "Duration3";
+            Duration3.Size = new System.Drawing.Size(120, 27);
+            Duration3.TabIndex = 41;
+            Duration3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Price3
+            // 
+            Price3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Price3.Location = new System.Drawing.Point(608, 25);
+            Price3.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Price3.Name = "Price3";
+            Price3.Size = new System.Drawing.Size(119, 27);
+            Price3.TabIndex = 40;
+            Price3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Description3
+            // 
+            Description3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Description3.Location = new System.Drawing.Point(177, 25);
+            Description3.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Description3.Multiline = true;
+            Description3.Name = "Description3";
+            Description3.Size = new System.Drawing.Size(421, 37);
+            Description3.TabIndex = 39;
+            // 
+            // Service3
+            // 
+            Service3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Service3.Location = new System.Drawing.Point(5, 25);
+            Service3.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
+            Service3.Name = "Service3";
+            Service3.Size = new System.Drawing.Size(162, 27);
+            Service3.TabIndex = 38;
+            Service3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ESerOffPanel);
+            Controls.Add(ServicesOfferedPanel);
             Controls.Add(EditFIPanel);
             Controls.Add(SettingsPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
             Controls.Add(ATPanel);
-            Controls.Add(ServicesOfferedPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AnalyticPannel2);
             Controls.Add(AnalyticPannel1);
@@ -4266,47 +4132,8 @@
             ProPicPanel.ResumeLayout(false);
             ProPicPanel.PerformLayout();
             ServicesOfferedPanel.ResumeLayout(false);
-            SOTable.ResumeLayout(false);
-            panel27.ResumeLayout(false);
-            panel27.PerformLayout();
-            panel23.ResumeLayout(false);
-            panel23.PerformLayout();
-            panel28.ResumeLayout(false);
-            panel28.PerformLayout();
-            panel19.ResumeLayout(false);
-            panel19.PerformLayout();
-            panel29.ResumeLayout(false);
-            panel29.PerformLayout();
-            panel24.ResumeLayout(false);
-            panel24.PerformLayout();
-            panel30.ResumeLayout(false);
-            panel30.PerformLayout();
-            panel18.ResumeLayout(false);
-            panel18.PerformLayout();
-            panel25.ResumeLayout(false);
-            panel25.PerformLayout();
-            panel20.ResumeLayout(false);
-            panel20.PerformLayout();
-            panel26.ResumeLayout(false);
-            panel26.PerformLayout();
-            panel17.ResumeLayout(false);
-            panel17.PerformLayout();
-            panel21.ResumeLayout(false);
-            panel21.PerformLayout();
-            panel16.ResumeLayout(false);
-            panel16.PerformLayout();
-            panel22.ResumeLayout(false);
-            panel22.PerformLayout();
-            panel14.ResumeLayout(false);
-            panel14.PerformLayout();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
-            panel12.ResumeLayout(false);
-            panel12.PerformLayout();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            SerOffTitlePanel.ResumeLayout(false);
+            SerOffTitlePanel.PerformLayout();
             ATPanel.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             panel31.ResumeLayout(false);
@@ -4330,6 +4157,16 @@
             FIEPanel.PerformLayout();
             FIEProfilepanel.ResumeLayout(false);
             FIEProfilepanel.PerformLayout();
+            ESerOffPanel.ResumeLayout(false);
+            SerOffEPanel.ResumeLayout(false);
+            SerOffTitleEPanel.ResumeLayout(false);
+            SerOffTitleEPanel.PerformLayout();
+            SO1Panel.ResumeLayout(false);
+            SO1Panel.PerformLayout();
+            SO2Panel.ResumeLayout(false);
+            SO2Panel.PerformLayout();
+            SO3Panel.ResumeLayout(false);
+            SO3Panel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -4499,47 +4336,11 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel ServicesOfferedPanel;
-        private System.Windows.Forms.TableLayoutPanel SOTable;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Panel panel30;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TableLayoutPanel SerOffTitlePanel;
+        private System.Windows.Forms.Label SOServiceName;
+        private System.Windows.Forms.Label SODuration;
+        private System.Windows.Forms.Label SOPrice;
+        private System.Windows.Forms.Label SODescription;
         private System.Windows.Forms.Button SOButton;
         private System.Windows.Forms.Panel ATPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -4623,5 +4424,30 @@
         private System.Windows.Forms.TextBox FIEEndtext;
         private System.Windows.Forms.Label FIEStartlabel;
         private System.Windows.Forms.Button DeleteAccButton;
+        private System.Windows.Forms.Panel SerOffPanel;
+        private System.Windows.Forms.Panel ESerOffPanel;
+        private System.Windows.Forms.Button ConfirmButton;
+        private System.Windows.Forms.Panel SerOffEPanel;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TableLayoutPanel SerOffTitleEPanel;
+        private System.Windows.Forms.Label SOEPrice;
+        private System.Windows.Forms.Label SEEServiceName;
+        private System.Windows.Forms.Label SOEDescription;
+        private System.Windows.Forms.Label SOEDuration;
+        private System.Windows.Forms.TableLayoutPanel SO1Panel;
+        private System.Windows.Forms.TextBox Service1;
+        private System.Windows.Forms.TextBox Duration1;
+        private System.Windows.Forms.TextBox Price1;
+        private System.Windows.Forms.TextBox Description1;
+        private System.Windows.Forms.TableLayoutPanel SO2Panel;
+        private System.Windows.Forms.TextBox Duration2;
+        private System.Windows.Forms.TextBox Price2;
+        private System.Windows.Forms.TextBox Description2;
+        private System.Windows.Forms.TextBox Service2;
+        private System.Windows.Forms.TableLayoutPanel SO3Panel;
+        private System.Windows.Forms.TextBox Duration3;
+        private System.Windows.Forms.TextBox Price3;
+        private System.Windows.Forms.TextBox Description3;
+        private System.Windows.Forms.TextBox Service3;
     }
 }

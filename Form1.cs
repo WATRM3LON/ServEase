@@ -30,15 +30,6 @@ namespace OOP2
             int nWidthEllipse,
             int nHeightEllipse
             );
-        interface Info
-        {
-            string Name { get; set; }
-            string EmailAddress { get; set; }
-            string Password { get; set; }
-            string ContactInfo { get; set; }
-            string Location { get; set; }
-        }
-
         public Form1()
         {
             InitializeComponent();
