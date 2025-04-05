@@ -1105,6 +1105,13 @@ namespace OOP2
         private void EditButton2_Click(object sender, EventArgs e)
         {
             EditSOButton.Visible = true; ESerOffPanel.Visible = true;
+            ServicesOfferedPanel.Visible = false; SOButton.Visible = false;
+        }
+
+        private void EditSOButton_Click(object sender, EventArgs e)
+        {
+            EditSOButton.Visible = false; ESerOffPanel.Visible = false;
+            ServicesOfferedPanel.Visible = true; SOButton.Visible = true;
         }
     }
 }

@@ -751,6 +751,7 @@
             EditSOButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             EditSOButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             EditSOButton.UseVisualStyleBackColor = false;
+            EditSOButton.Click += EditSOButton_Click;
             // 
             // FIEButton
             // 
@@ -3742,7 +3743,7 @@
             ESerOffPanel.Controls.Add(SerOffTitleEPanel);
             ESerOffPanel.Location = new System.Drawing.Point(277, 177);
             ESerOffPanel.Name = "ESerOffPanel";
-            ESerOffPanel.Size = new System.Drawing.Size(911, 723);
+            ESerOffPanel.Size = new System.Drawing.Size(911, 798);
             ESerOffPanel.TabIndex = 65;
             // 
             // ConfirmButton
@@ -3754,7 +3755,7 @@
             ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ConfirmButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             ConfirmButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ConfirmButton.Location = new System.Drawing.Point(729, 663);
+            ConfirmButton.Location = new System.Drawing.Point(729, 738);
             ConfirmButton.Name = "ConfirmButton";
             ConfirmButton.Size = new System.Drawing.Size(151, 51);
             ConfirmButton.TabIndex = 39;
@@ -3777,7 +3778,7 @@
             // SO3Panel
             // 
             SO3Panel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            SO3Panel.BackColor = System.Drawing.Color.White;
+            SO3Panel.BackColor = System.Drawing.Color.WhiteSmoke;
             SO3Panel.ColumnCount = 4;
             SO3Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             SO3Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -3799,47 +3800,54 @@
             // Duration3
             // 
             Duration3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Duration3.ForeColor = System.Drawing.Color.Gray;
             Duration3.Location = new System.Drawing.Point(737, 25);
             Duration3.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Duration3.Name = "Duration3";
             Duration3.Size = new System.Drawing.Size(120, 27);
             Duration3.TabIndex = 41;
+            Duration3.Text = "Add Duration";
             Duration3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Price3
             // 
             Price3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Price3.ForeColor = System.Drawing.Color.Gray;
             Price3.Location = new System.Drawing.Point(608, 25);
             Price3.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Price3.Name = "Price3";
             Price3.Size = new System.Drawing.Size(119, 27);
             Price3.TabIndex = 40;
+            Price3.Text = "Add Price";
             Price3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Description3
             // 
             Description3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Description3.ForeColor = System.Drawing.Color.Gray;
             Description3.Location = new System.Drawing.Point(177, 25);
             Description3.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
-            Description3.Multiline = true;
             Description3.Name = "Description3";
-            Description3.Size = new System.Drawing.Size(421, 37);
+            Description3.Size = new System.Drawing.Size(421, 27);
             Description3.TabIndex = 39;
+            Description3.Text = "Add Description";
             // 
             // Service3
             // 
             Service3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Service3.ForeColor = System.Drawing.Color.Gray;
             Service3.Location = new System.Drawing.Point(5, 25);
             Service3.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Service3.Name = "Service3";
             Service3.Size = new System.Drawing.Size(162, 27);
             Service3.TabIndex = 38;
+            Service3.Text = "Add Service Name";
             Service3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SO2Panel
             // 
             SO2Panel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            SO2Panel.BackColor = System.Drawing.Color.White;
+            SO2Panel.BackColor = System.Drawing.Color.WhiteSmoke;
             SO2Panel.ColumnCount = 4;
             SO2Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             SO2Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -3861,47 +3869,54 @@
             // Duration2
             // 
             Duration2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Duration2.ForeColor = System.Drawing.Color.Gray;
             Duration2.Location = new System.Drawing.Point(737, 25);
             Duration2.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Duration2.Name = "Duration2";
             Duration2.Size = new System.Drawing.Size(120, 27);
             Duration2.TabIndex = 41;
+            Duration2.Text = "Add Duration";
             Duration2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Price2
             // 
             Price2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Price2.ForeColor = System.Drawing.Color.Gray;
             Price2.Location = new System.Drawing.Point(608, 25);
             Price2.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Price2.Name = "Price2";
             Price2.Size = new System.Drawing.Size(119, 27);
             Price2.TabIndex = 40;
+            Price2.Text = "Add Price";
             Price2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Description2
             // 
             Description2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Description2.ForeColor = System.Drawing.Color.Gray;
             Description2.Location = new System.Drawing.Point(177, 25);
             Description2.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
-            Description2.Multiline = true;
             Description2.Name = "Description2";
-            Description2.Size = new System.Drawing.Size(421, 37);
+            Description2.Size = new System.Drawing.Size(421, 27);
             Description2.TabIndex = 39;
+            Description2.Text = "Add Description";
             // 
             // Service2
             // 
             Service2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Service2.ForeColor = System.Drawing.Color.Gray;
             Service2.Location = new System.Drawing.Point(5, 25);
             Service2.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Service2.Name = "Service2";
             Service2.Size = new System.Drawing.Size(162, 27);
             Service2.TabIndex = 38;
+            Service2.Text = "Add Service Name";
             Service2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SO1Panel
             // 
             SO1Panel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            SO1Panel.BackColor = System.Drawing.Color.White;
+            SO1Panel.BackColor = System.Drawing.Color.WhiteSmoke;
             SO1Panel.ColumnCount = 4;
             SO1Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             SO1Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -3923,41 +3938,48 @@
             // Duration1
             // 
             Duration1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Duration1.ForeColor = System.Drawing.Color.Gray;
             Duration1.Location = new System.Drawing.Point(737, 25);
             Duration1.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Duration1.Name = "Duration1";
             Duration1.Size = new System.Drawing.Size(120, 27);
             Duration1.TabIndex = 41;
+            Duration1.Text = "Add Duration";
             Duration1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Price1
             // 
             Price1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Price1.ForeColor = System.Drawing.Color.Gray;
             Price1.Location = new System.Drawing.Point(608, 25);
             Price1.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Price1.Name = "Price1";
             Price1.Size = new System.Drawing.Size(119, 27);
             Price1.TabIndex = 40;
+            Price1.Text = "Add Price";
             Price1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Description1
             // 
             Description1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Description1.ForeColor = System.Drawing.Color.Gray;
             Description1.Location = new System.Drawing.Point(177, 25);
             Description1.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
-            Description1.Multiline = true;
             Description1.Name = "Description1";
-            Description1.Size = new System.Drawing.Size(421, 37);
+            Description1.Size = new System.Drawing.Size(421, 27);
             Description1.TabIndex = 39;
+            Description1.Text = "Add Description";
             // 
             // Service1
             // 
             Service1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Service1.ForeColor = System.Drawing.Color.Gray;
             Service1.Location = new System.Drawing.Point(5, 25);
             Service1.Margin = new System.Windows.Forms.Padding(5, 25, 5, 20);
             Service1.Name = "Service1";
             Service1.Size = new System.Drawing.Size(162, 27);
             Service1.TabIndex = 38;
+            Service1.Text = "Add Service Name";
             Service1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button9
@@ -4064,7 +4086,6 @@
             Controls.Add(ServicesOfferedPanel);
             Controls.Add(EditFIPanel);
             Controls.Add(SettingsPanel);
-            Controls.Add(ProfilePanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
             Controls.Add(ATPanel);
@@ -4084,6 +4105,7 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
+            Controls.Add(ProfilePanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "ServiceFacilitycs";
