@@ -23,7 +23,7 @@ namespace OOP2
 
         string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
         bool Client = true, Facility = false;
-        int clientId, facilityId = 0;
+        int clientId, facilityId;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -168,7 +168,7 @@ namespace OOP2
 
                         while (reader.Read())
                         {
-                            clientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+                            int actualClientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
 
                             string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
                             string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
@@ -182,10 +182,11 @@ namespace OOP2
                             usersPanel.SetDataClient(fullName, email);
                             usersPanel.Loaders();
 
-                            usersPanel.ClientId = clientId;
+                            usersPanel.ClientId = actualClientId;
                             usersPanel.ViewDetailsClicked += (s, e) =>
                             {
-                                ViewDets(clientId);
+                                clientId = actualClientId;
+                                ViewDets(actualClientId);
                             };
 
 
@@ -195,7 +196,7 @@ namespace OOP2
                             string adminQuery = "SELECT Status, [Date Registered] FROM [Admin (Clients)] WHERE [Client_ID] = ?";
                             using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                             {
-                                adminCmd.Parameters.AddWithValue("?", clientId);
+                                adminCmd.Parameters.AddWithValue("?", actualClientId);
 
                                 using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
                                 {
@@ -289,7 +290,8 @@ namespace OOP2
                                 string ContactNumber = reader["Contact Number"].ToString();
                                 string LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? " " : reader["Location"].ToString();
                                 string Status = reader["Status"].ToString();
-                                DateTime dateregist = reader.GetDateTime(reader.GetOrdinal("Date Registered")); string regist = dateregist.ToString("dd MMMM yyyy");
+                                DateTime dateregist = reader.IsDBNull(reader.GetOrdinal("Date Registered")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Registered")); 
+                                string regist = dateregist == DateTime.MinValue ? " " : dateregist.ToString("dd MMMM yyyy");
                                 DateTime datedelete = reader.IsDBNull(reader.GetOrdinal("Date Deleted")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Deleted"));
                                 string deleted = datedelete == DateTime.MinValue ? " " :  datedelete.ToString("dd MMMM yyyy");
 
@@ -352,7 +354,7 @@ namespace OOP2
             LoadFacilityData();
         }
 
-        public void ViewDets(int clientId)
+        public void ViewDets(int IdClient)
         {
             CalendarAppointmentPanel.Visible = false; ProfilePanel.Visible = false; HiLabel.Visible = false; WelcomeLabel.Visible = false;
             ViewDetpanel.Visible = true; ViewDetailspanel.Visible = true; AccountButton.Visible = true;
