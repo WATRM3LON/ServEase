@@ -35,6 +35,7 @@ namespace OOP2
         public Admin()
         {
             InitializeComponent();
+            ViewDetpanel.Visible = false; ViewDetailspanel.Visible = false;
             Loaders();
         }
         string Fname, Lname;
@@ -53,6 +54,10 @@ namespace OOP2
             SButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SButton.Width, SButton.Height, 10, 10));
             ClientsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ClientsButton.Width, ClientsButton.Height, 10, 10));
             SerFacbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerFacbutton.Width, SerFacbutton.Height, 10, 10));
+            //PROFILE
+            ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
+            PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
+            DeAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeAccButton.Width, DeAccButton.Height, 10, 10));
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -265,6 +270,16 @@ namespace OOP2
             SerFacbutton.Font = new Font(SerFacbutton.Font, SerFacbutton.Font.Style | FontStyle.Bold);
             Client = false; Facility = true;
             LoadFacilityData();
+        }
+
+        public void ViewDets()
+        {
+            CalendarAppointmentPanel.Visible = false; ProfilePanel.Visible = false;
+            ViewDetpanel.Visible = true; ViewDetailspanel.Visible = true;
+        }
+        private void StatusText_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -64,12 +64,41 @@
             ClientsButton = new System.Windows.Forms.Button();
             SerFacbutton = new System.Windows.Forms.Button();
             CalendarAppointmentPanel = new System.Windows.Forms.Panel();
+            ViewDetailspanel = new System.Windows.Forms.Panel();
+            DeAccButton = new System.Windows.Forms.Button();
+            PIPanel = new System.Windows.Forms.Panel();
+            SexPI = new System.Windows.Forms.Label();
+            PISex = new System.Windows.Forms.Label();
+            AgePI = new System.Windows.Forms.Label();
+            PIAge = new System.Windows.Forms.Label();
+            EmailAddressPI = new System.Windows.Forms.Label();
+            PIEmailAdd = new System.Windows.Forms.Label();
+            BirthDatePI = new System.Windows.Forms.Label();
+            PIDateBirth = new System.Windows.Forms.Label();
+            ContactNumberPI = new System.Windows.Forms.Label();
+            PICNumber = new System.Windows.Forms.Label();
+            ClientNamePI = new System.Windows.Forms.Label();
+            PIName = new System.Windows.Forms.Label();
+            PIEditButton = new System.Windows.Forms.Button();
+            label91 = new System.Windows.Forms.Label();
+            ProPicPanel = new System.Windows.Forms.Panel();
+            StatusLabel = new System.Windows.Forms.Label();
+            StatusText = new System.Windows.Forms.Button();
+            PPClientName = new System.Windows.Forms.Label();
+            panel58 = new System.Windows.Forms.Panel();
+            ViewDetpanel = new System.Windows.Forms.Panel();
+            ApphisButton = new System.Windows.Forms.Button();
+            Personalbutton = new System.Windows.Forms.Button();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
             CalendarAppointmentPanel.SuspendLayout();
+            ViewDetailspanel.SuspendLayout();
+            PIPanel.SuspendLayout();
+            ProPicPanel.SuspendLayout();
+            ViewDetpanel.SuspendLayout();
             SuspendLayout();
             // 
             // NotificationPanel
@@ -588,12 +617,351 @@
             CalendarAppointmentPanel.Size = new System.Drawing.Size(707, 69);
             CalendarAppointmentPanel.TabIndex = 58;
             // 
+            // ViewDetailspanel
+            // 
+            ViewDetailspanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ViewDetailspanel.BackColor = System.Drawing.Color.Transparent;
+            ViewDetailspanel.Controls.Add(DeAccButton);
+            ViewDetailspanel.Controls.Add(PIPanel);
+            ViewDetailspanel.Controls.Add(ProPicPanel);
+            ViewDetailspanel.Location = new System.Drawing.Point(277, 208);
+            ViewDetailspanel.Name = "ViewDetailspanel";
+            ViewDetailspanel.Size = new System.Drawing.Size(893, 708);
+            ViewDetailspanel.TabIndex = 59;
+            // 
+            // DeAccButton
+            // 
+            DeAccButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            DeAccButton.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
+            DeAccButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            DeAccButton.FlatAppearance.BorderSize = 0;
+            DeAccButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            DeAccButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            DeAccButton.ForeColor = System.Drawing.Color.LightYellow;
+            DeAccButton.Location = new System.Drawing.Point(703, 634);
+            DeAccButton.Name = "DeAccButton";
+            DeAccButton.Size = new System.Drawing.Size(165, 51);
+            DeAccButton.TabIndex = 78;
+            DeAccButton.Text = "Deactivate Account";
+            DeAccButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            DeAccButton.UseVisualStyleBackColor = false;
+            // 
+            // PIPanel
+            // 
+            PIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIPanel.BackColor = System.Drawing.Color.White;
+            PIPanel.Controls.Add(SexPI);
+            PIPanel.Controls.Add(PISex);
+            PIPanel.Controls.Add(AgePI);
+            PIPanel.Controls.Add(PIAge);
+            PIPanel.Controls.Add(EmailAddressPI);
+            PIPanel.Controls.Add(PIEmailAdd);
+            PIPanel.Controls.Add(BirthDatePI);
+            PIPanel.Controls.Add(PIDateBirth);
+            PIPanel.Controls.Add(ContactNumberPI);
+            PIPanel.Controls.Add(PICNumber);
+            PIPanel.Controls.Add(ClientNamePI);
+            PIPanel.Controls.Add(PIName);
+            PIPanel.Controls.Add(PIEditButton);
+            PIPanel.Controls.Add(label91);
+            PIPanel.Location = new System.Drawing.Point(12, 194);
+            PIPanel.Name = "PIPanel";
+            PIPanel.Size = new System.Drawing.Size(867, 291);
+            PIPanel.TabIndex = 77;
+            // 
+            // SexPI
+            // 
+            SexPI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SexPI.AutoSize = true;
+            SexPI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            SexPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            SexPI.Location = new System.Drawing.Point(746, 120);
+            SexPI.Name = "SexPI";
+            SexPI.Size = new System.Drawing.Size(50, 25);
+            SexPI.TabIndex = 47;
+            SexPI.Text = "Male";
+            // 
+            // PISex
+            // 
+            PISex.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PISex.AutoSize = true;
+            PISex.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            PISex.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PISex.Location = new System.Drawing.Point(740, 83);
+            PISex.Name = "PISex";
+            PISex.Size = new System.Drawing.Size(41, 25);
+            PISex.TabIndex = 46;
+            PISex.Text = "Sex";
+            // 
+            // AgePI
+            // 
+            AgePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            AgePI.AutoSize = true;
+            AgePI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            AgePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            AgePI.Location = new System.Drawing.Point(585, 120);
+            AgePI.Name = "AgePI";
+            AgePI.Size = new System.Drawing.Size(109, 25);
+            AgePI.TabIndex = 45;
+            AgePI.Text = "23 years old";
+            // 
+            // PIAge
+            // 
+            PIAge.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIAge.AutoSize = true;
+            PIAge.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            PIAge.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PIAge.Location = new System.Drawing.Point(579, 83);
+            PIAge.Name = "PIAge";
+            PIAge.Size = new System.Drawing.Size(45, 25);
+            PIAge.TabIndex = 44;
+            PIAge.Text = "Age";
+            // 
+            // EmailAddressPI
+            // 
+            EmailAddressPI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EmailAddressPI.AutoSize = true;
+            EmailAddressPI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            EmailAddressPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EmailAddressPI.Location = new System.Drawing.Point(331, 210);
+            EmailAddressPI.Name = "EmailAddressPI";
+            EmailAddressPI.Size = new System.Drawing.Size(210, 25);
+            EmailAddressPI.TabIndex = 43;
+            EmailAddressPI.Text = "juandelacruz@gmail.com";
+            // 
+            // PIEmailAdd
+            // 
+            PIEmailAdd.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIEmailAdd.AutoSize = true;
+            PIEmailAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            PIEmailAdd.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PIEmailAdd.Location = new System.Drawing.Point(324, 171);
+            PIEmailAdd.Name = "PIEmailAdd";
+            PIEmailAdd.Size = new System.Drawing.Size(128, 25);
+            PIEmailAdd.TabIndex = 42;
+            PIEmailAdd.Text = "Email Address";
+            // 
+            // BirthDatePI
+            // 
+            BirthDatePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BirthDatePI.AutoSize = true;
+            BirthDatePI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            BirthDatePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BirthDatePI.Location = new System.Drawing.Point(331, 123);
+            BirthDatePI.Name = "BirthDatePI";
+            BirthDatePI.Size = new System.Drawing.Size(155, 25);
+            BirthDatePI.TabIndex = 41;
+            BirthDatePI.Text = "February 14, 2002";
+            // 
+            // PIDateBirth
+            // 
+            PIDateBirth.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIDateBirth.AutoSize = true;
+            PIDateBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            PIDateBirth.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PIDateBirth.Location = new System.Drawing.Point(324, 85);
+            PIDateBirth.Name = "PIDateBirth";
+            PIDateBirth.Size = new System.Drawing.Size(119, 25);
+            PIDateBirth.TabIndex = 40;
+            PIDateBirth.Text = "Date of Birth";
+            // 
+            // ContactNumberPI
+            // 
+            ContactNumberPI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ContactNumberPI.AutoSize = true;
+            ContactNumberPI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            ContactNumberPI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ContactNumberPI.Location = new System.Drawing.Point(28, 217);
+            ContactNumberPI.Name = "ContactNumberPI";
+            ContactNumberPI.Size = new System.Drawing.Size(149, 25);
+            ContactNumberPI.TabIndex = 39;
+            ContactNumberPI.Text = "+63 9956226213";
+            // 
+            // PICNumber
+            // 
+            PICNumber.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PICNumber.AutoSize = true;
+            PICNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            PICNumber.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PICNumber.Location = new System.Drawing.Point(21, 178);
+            PICNumber.Name = "PICNumber";
+            PICNumber.Size = new System.Drawing.Size(150, 25);
+            PICNumber.TabIndex = 38;
+            PICNumber.Text = "Contact Number";
+            // 
+            // ClientNamePI
+            // 
+            ClientNamePI.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ClientNamePI.AutoSize = true;
+            ClientNamePI.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            ClientNamePI.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ClientNamePI.Location = new System.Drawing.Point(28, 123);
+            ClientNamePI.Name = "ClientNamePI";
+            ClientNamePI.Size = new System.Drawing.Size(127, 25);
+            ClientNamePI.TabIndex = 37;
+            ClientNamePI.Text = "Juan Dela Cruz";
+            // 
+            // PIName
+            // 
+            PIName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PIName.AutoSize = true;
+            PIName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            PIName.ForeColor = System.Drawing.SystemColors.ControlDark;
+            PIName.Location = new System.Drawing.Point(21, 85);
+            PIName.Name = "PIName";
+            PIName.Size = new System.Drawing.Size(61, 25);
+            PIName.TabIndex = 36;
+            PIName.Text = "Name";
+            // 
+            // PIEditButton
+            // 
+            PIEditButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            PIEditButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            PIEditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            PIEditButton.FlatAppearance.BorderSize = 0;
+            PIEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            PIEditButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PIEditButton.Image = (System.Drawing.Image)resources.GetObject("PIEditButton.Image");
+            PIEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            PIEditButton.Location = new System.Drawing.Point(1410, 11);
+            PIEditButton.Name = "PIEditButton";
+            PIEditButton.Size = new System.Drawing.Size(109, 45);
+            PIEditButton.TabIndex = 33;
+            PIEditButton.Text = "Edit";
+            PIEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            PIEditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            PIEditButton.UseVisualStyleBackColor = false;
+            // 
+            // label91
+            // 
+            label91.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label91.AutoSize = true;
+            label91.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label91.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label91.Location = new System.Drawing.Point(19, 17);
+            label91.Name = "label91";
+            label91.Size = new System.Drawing.Size(187, 25);
+            label91.TabIndex = 35;
+            label91.Text = "Personal Information";
+            // 
+            // ProPicPanel
+            // 
+            ProPicPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ProPicPanel.BackColor = System.Drawing.Color.White;
+            ProPicPanel.Controls.Add(StatusLabel);
+            ProPicPanel.Controls.Add(StatusText);
+            ProPicPanel.Controls.Add(PPClientName);
+            ProPicPanel.Controls.Add(panel58);
+            ProPicPanel.Location = new System.Drawing.Point(13, 1);
+            ProPicPanel.Name = "ProPicPanel";
+            ProPicPanel.Size = new System.Drawing.Size(867, 171);
+            ProPicPanel.TabIndex = 76;
+            // 
+            // StatusLabel
+            // 
+            StatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            StatusLabel.AutoSize = true;
+            StatusLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            StatusLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            StatusLabel.Location = new System.Drawing.Point(643, 44);
+            StatusLabel.Name = "StatusLabel";
+            StatusLabel.Size = new System.Drawing.Size(50, 20);
+            StatusLabel.TabIndex = 45;
+            StatusLabel.Text = "Status";
+            // 
+            // StatusText
+            // 
+            StatusText.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            StatusText.BackColor = System.Drawing.Color.WhiteSmoke;
+            StatusText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            StatusText.FlatAppearance.BorderSize = 0;
+            StatusText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            StatusText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            StatusText.ForeColor = System.Drawing.Color.FromArgb(105, 227, 49);
+            StatusText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            StatusText.Location = new System.Drawing.Point(717, 28);
+            StatusText.Name = "StatusText";
+            StatusText.Size = new System.Drawing.Size(109, 46);
+            StatusText.TabIndex = 40;
+            StatusText.Text = "Active";
+            StatusText.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            StatusText.UseVisualStyleBackColor = false;
+            StatusText.Click += StatusText_Click;
+            // 
+            // PPClientName
+            // 
+            PPClientName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PPClientName.AutoSize = true;
+            PPClientName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PPClientName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            PPClientName.Location = new System.Drawing.Point(168, 49);
+            PPClientName.Name = "PPClientName";
+            PPClientName.Size = new System.Drawing.Size(134, 25);
+            PPClientName.TabIndex = 35;
+            PPClientName.Text = "Juan Dela Cruz";
+            // 
+            // panel58
+            // 
+            panel58.BackColor = System.Drawing.Color.Transparent;
+            panel58.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel58.BackgroundImage");
+            panel58.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            panel58.Location = new System.Drawing.Point(21, 22);
+            panel58.Name = "panel58";
+            panel58.Size = new System.Drawing.Size(116, 115);
+            panel58.TabIndex = 34;
+            // 
+            // ViewDetpanel
+            // 
+            ViewDetpanel.Controls.Add(ApphisButton);
+            ViewDetpanel.Controls.Add(Personalbutton);
+            ViewDetpanel.Location = new System.Drawing.Point(274, 141);
+            ViewDetpanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ViewDetpanel.Name = "ViewDetpanel";
+            ViewDetpanel.Size = new System.Drawing.Size(687, 69);
+            ViewDetpanel.TabIndex = 59;
+            // 
+            // ApphisButton
+            // 
+            ApphisButton.BackColor = System.Drawing.Color.Transparent;
+            ApphisButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            ApphisButton.FlatAppearance.BorderSize = 0;
+            ApphisButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ApphisButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ApphisButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ApphisButton.Location = new System.Drawing.Point(352, 9);
+            ApphisButton.Name = "ApphisButton";
+            ApphisButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            ApphisButton.Size = new System.Drawing.Size(335, 77);
+            ApphisButton.TabIndex = 26;
+            ApphisButton.Text = "Appointment History";
+            ApphisButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ApphisButton.UseVisualStyleBackColor = false;
+            // 
+            // Personalbutton
+            // 
+            Personalbutton.BackColor = System.Drawing.Color.Transparent;
+            Personalbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            Personalbutton.FlatAppearance.BorderSize = 0;
+            Personalbutton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            Personalbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Personalbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Personalbutton.Location = new System.Drawing.Point(15, 9);
+            Personalbutton.Name = "Personalbutton";
+            Personalbutton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            Personalbutton.Size = new System.Drawing.Size(335, 77);
+            Personalbutton.TabIndex = 25;
+            Personalbutton.Text = "Personal Information";
+            Personalbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            Personalbutton.UseVisualStyleBackColor = false;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(214, 241, 250);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ViewDetpanel);
+            Controls.Add(ViewDetailspanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(NotificationPanel);
@@ -618,6 +986,12 @@
             HeaderPanel.ResumeLayout(false);
             HeaderPanel.PerformLayout();
             CalendarAppointmentPanel.ResumeLayout(false);
+            ViewDetailspanel.ResumeLayout(false);
+            PIPanel.ResumeLayout(false);
+            PIPanel.PerformLayout();
+            ProPicPanel.ResumeLayout(false);
+            ProPicPanel.PerformLayout();
+            ViewDetpanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -658,5 +1032,30 @@
         private System.Windows.Forms.Button ClientsButton;
         private System.Windows.Forms.Button SerFacbutton;
         private System.Windows.Forms.Panel CalendarAppointmentPanel;
+        private System.Windows.Forms.Panel ViewDetailspanel;
+        private System.Windows.Forms.Button DeAccButton;
+        private System.Windows.Forms.Panel PIPanel;
+        private System.Windows.Forms.Label SexPI;
+        private System.Windows.Forms.Label PISex;
+        private System.Windows.Forms.Label AgePI;
+        private System.Windows.Forms.Label PIAge;
+        private System.Windows.Forms.Label EmailAddressPI;
+        private System.Windows.Forms.Label PIEmailAdd;
+        private System.Windows.Forms.Label BirthDatePI;
+        private System.Windows.Forms.Label PIDateBirth;
+        private System.Windows.Forms.Label ContactNumberPI;
+        private System.Windows.Forms.Label PICNumber;
+        private System.Windows.Forms.Label ClientNamePI;
+        private System.Windows.Forms.Label PIName;
+        private System.Windows.Forms.Button PIEditButton;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Panel ProPicPanel;
+        private System.Windows.Forms.Label PPClientName;
+        private System.Windows.Forms.Panel panel58;
+        private System.Windows.Forms.Panel ViewDetpanel;
+        private System.Windows.Forms.Button ApphisButton;
+        private System.Windows.Forms.Button Personalbutton;
+        private System.Windows.Forms.Button StatusText;
+        private System.Windows.Forms.Label StatusLabel;
     }
 }

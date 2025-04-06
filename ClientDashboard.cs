@@ -1090,7 +1090,7 @@ namespace OOP2
         {
             sercat = "Personal Care & Beauty Services";
             WelcomeLabel.Visible = false;
-            SerButton.Visible = true; SerButton.Text = " " + sercat;
+            SerButton.Visible = true; SerButton.Text = "  Personal Care and Beauty Services";
             SerPanel.Visible = true;
             ServicesPanel.Visible = false;
             if (notify == true)
@@ -1113,7 +1113,7 @@ namespace OOP2
                 notify = false;
             }
             sercat = "Health & Medical Services";
-            SerButton.Text = " " + sercat;
+            SerButton.Text = "  Health and Medical Services";
         }
 
         private void FitnessSbutton_Click(object sender, EventArgs e)
@@ -1129,7 +1129,7 @@ namespace OOP2
                 notify = false;
             }
             sercat = "Fitness & Sports Services";
-            SerButton.Text = " " + sercat;
+            SerButton.Text = "  Fitness and Sports Services";
         }
 
         private void EduSbutton_Click(object sender, EventArgs e)
@@ -1145,7 +1145,7 @@ namespace OOP2
                 notify = false;
             }
             sercat = "Education & Tutoring Services";
-            SerButton.Text = " " + sercat;
+            SerButton.Text = "  Education and Tutoring Services";
         }
 
         private void RepairSbutton_Click(object sender, EventArgs e)
@@ -1161,7 +1161,7 @@ namespace OOP2
                 notify = false;
             }
             sercat = "Repair & Technical Services";
-            SerButton.Text = " " + sercat;
+            SerButton.Text = "  Repair and Technical Services";
         }
 
         private void FoodSbutton_Click(object sender, EventArgs e)
@@ -1177,7 +1177,7 @@ namespace OOP2
                 notify = false;
             }
             sercat = "Food & Beverages Services";
-            SerButton.Text = " " + sercat;
+            SerButton.Text = "  Food and Beverages Services";
         }
 
         private void MisSbutton_Click(object sender, EventArgs e)
@@ -1192,8 +1192,98 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
-            sercat = "Miscellaneous Services";
+            sercat = "  Miscellaneous Services";
             SerButton.Text = " " + sercat;
+        }
+
+        public void LoadFacilities()
+        {
+            ProfilePanel.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                int newFacilityId = 0;
+                using (OleDbCommand getIdCmd = new OleDbCommand("SELECT @@IDENTITY", myConn))
+                {
+                    object result = getIdCmd.ExecuteScalar();
+                    newFacilityId = Convert.ToInt32(result);
+                }
+
+                decimal minPrice = 0;
+                decimal maxPrice = 0;
+
+                using (OleDbConnection conn = new OleDbConnection(connection))
+                {
+                    conn.Open();
+
+                    string sql = "SELECT MIN(Price) AS MinPrice, MAX(Price) AS MaxPrice FROM [Facility Services] WHERE Facility_ID = ?";
+                    using (OleDbCommand cmd = new OleDbCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?", newFacilityId); // replace with your facility ID
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                minPrice = reader.IsDBNull(reader.GetOrdinal("MinPrice")) ? 0 : reader.GetDecimal(reader.GetOrdinal("MinPrice"));
+                                maxPrice = reader.IsDBNull(reader.GetOrdinal("MaxPrice")) ? 0 : reader.GetDecimal(reader.GetOrdinal("MaxPrice"));
+                            }
+                        }
+                    }
+                }
+
+                // Then you can display it like:
+                string priceRange = $"₱{minPrice} - ₱{maxPrice}";
+
+                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours], [Ratings] FROM [Service Facilities] WHERE [Email Address] <> 'admin12345'";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    int margin = 10;
+
+                    while (reader.Read())
+                    {
+                        int clientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+
+                        string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
+                        string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
+                        string fullName = fName + " " + lName;
+
+                        string email = reader.IsDBNull(reader.GetOrdinal("Email Address")) ? "" : reader.GetString(reader.GetOrdinal("Email Address"));
+
+                        UsersPanel usersPanel = new UsersPanel();
+                        usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+
+                        usersPanel.SetDataClient(fullName, email);
+                        usersPanel.Loaders();
+
+                        usersPanel.Location = new Point(10, margin - 7);
+                        margin += usersPanel.Height + 10;
+
+                        string adminQuery = "SELECT Status, [Date Registered] FROM [Admin (Clients)] WHERE [Client_ID] = ?";
+                        using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
+                        {
+                            adminCmd.Parameters.AddWithValue("?", clientId);
+
+                            using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                            {
+                                if (adminReader.Read())
+                                {
+                                    string status = adminReader.GetString(adminReader.GetOrdinal("Status"));
+                                    string dateRegistered = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+
+                                    usersPanel.SetInfo(status, dateRegistered);
+                                }
+                            }
+                        }
+
+                        ProfilePanel.Controls.Add(usersPanel);
+                    }
+                } 
+            }
         }
     }
 }

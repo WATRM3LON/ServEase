@@ -60,9 +60,10 @@ namespace OOP2
             UserNametext.Text = Name;
             UserEmailtext.Text = Emailaddress;
         }
-        private void button45_Click(object sender, EventArgs e)
+        private void ViewDetailsButton_Click(object sender, EventArgs e)
         {
-
+            Admin admin = new Admin();
+            admin.ViewDets();
         }
     }
 }

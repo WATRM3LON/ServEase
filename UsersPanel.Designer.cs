@@ -98,7 +98,7 @@
             ViewDetailsButton.Text = "View Details";
             ViewDetailsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             ViewDetailsButton.UseVisualStyleBackColor = false;
-            ViewDetailsButton.Click += button45_Click;
+            ViewDetailsButton.Click += ViewDetailsButton_Click;
             // 
             // UserStatuslabel
             // 
