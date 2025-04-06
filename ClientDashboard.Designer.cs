@@ -6015,12 +6015,12 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(SerPanel);
             Controls.Add(EditPIPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
-            Controls.Add(SerPanel);
             Controls.Add(ServicesPanel);
             Controls.Add(FacilityProPanel2);
             Controls.Add(FacilityProPanel);

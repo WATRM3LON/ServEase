@@ -1096,6 +1096,80 @@ namespace OOP2
             }
 
         }
+
+        public void ServiceGetter()
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                int newFacilityId = 0;
+
+                string getIdQuery = "SELECT Facility_ID FROM [Service Facilities] WHERE [Email Address] = ?";
+                using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
+                {
+                    getIdCmd.Parameters.AddWithValue("?", EmailAddress);
+                    object result = getIdCmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        newFacilityId = Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Facility not found.");
+                        return;
+                    }
+                }
+
+                List<int> serviceIds = new List<int>();
+
+                string getServiceIdsQuery = "SELECT Service_ID FROM [Facility Services] WHERE Facility_ID = ?";
+
+                using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getServiceIdsQuery, myConn))
+                {
+                    getServiceIdsCmd.Parameters.AddWithValue("?", newFacilityId);
+
+                    using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                serviceIds.Add(reader.GetInt32(0));
+                            }
+                        }
+                    }
+                }
+
+                TextBox[] serviceNames = { Service1, Service2, Service3 };
+                TextBox[] descriptions = { Description1, Description2, Description3 };
+                TextBox[] prices = { Price1, Price2, Price3 };
+                TextBox[] durations = { Duration1, Duration2, Duration3 };
+
+                for (int i = 0; i < 3; i++)
+                {
+                    string sql = "SELECT [Service Name] , [Description], [Price], [Duration] FROM [Facility Services] WHERE Service_ID = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", serviceIds[i]);
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                serviceNames[i].Text = reader.IsDBNull(reader.GetOrdinal("Service Name")) ? "Add Service Name" : reader["Service Name"].ToString();
+                                descriptions[i].Text = reader.IsDBNull(reader.GetOrdinal("Description")) ? "Add Description" : reader["Description"].ToString();
+                                prices[i].Text = reader.IsDBNull(reader.GetOrdinal("Price")) ? "Price" : reader["Price"].ToString();
+                                durations[i].Text = reader.IsDBNull(reader.GetOrdinal("Duration")) ? "Add Duration" : reader["Duration"].ToString();
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
         public void ServiceOfferedUpdater()
         {
             bool checks = Checker();
@@ -1188,6 +1262,7 @@ namespace OOP2
         {
             EditSOButton.Visible = true; ESerOffPanel.Visible = true;
             ServicesOfferedPanel.Visible = false; SOButton.Visible = false;
+            ServiceGetter();
         }
 
         private void EditSOButton_Click(object sender, EventArgs e)

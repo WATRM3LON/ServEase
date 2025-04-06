@@ -2672,7 +2672,7 @@
             ServicesOfferedPanel.Controls.Add(SerOffTitlePanel);
             ServicesOfferedPanel.Location = new System.Drawing.Point(277, 177);
             ServicesOfferedPanel.Name = "ServicesOfferedPanel";
-            ServicesOfferedPanel.Size = new System.Drawing.Size(893, 799);
+            ServicesOfferedPanel.Size = new System.Drawing.Size(893, 775);
             ServicesOfferedPanel.TabIndex = 62;
             // 
             // SerOffPanel
@@ -4099,8 +4099,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(ServicesOfferedPanel);
             Controls.Add(ESerOffPanel);
+            Controls.Add(ServicesOfferedPanel);
             Controls.Add(EditFIPanel);
             Controls.Add(SettingsPanel);
             Controls.Add(AppointmentsPanel);

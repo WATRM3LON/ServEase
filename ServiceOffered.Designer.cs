@@ -42,10 +42,10 @@
             ServiceName.AutoSize = true;
             ServiceName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ServiceName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ServiceName.Location = new System.Drawing.Point(10, 0);
-            ServiceName.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            ServiceName.Location = new System.Drawing.Point(5, 0);
+            ServiceName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             ServiceName.Name = "ServiceName";
-            ServiceName.Size = new System.Drawing.Size(154, 45);
+            ServiceName.Size = new System.Drawing.Size(157, 100);
             ServiceName.TabIndex = 57;
             ServiceName.Text = "ServiceName";
             ServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -57,10 +57,10 @@
             ServiceDes.Dock = System.Windows.Forms.DockStyle.Fill;
             ServiceDes.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ServiceDes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ServiceDes.Location = new System.Drawing.Point(177, 0);
-            ServiceDes.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            ServiceDes.Location = new System.Drawing.Point(172, 0);
+            ServiceDes.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             ServiceDes.Name = "ServiceDes";
-            ServiceDes.Size = new System.Drawing.Size(405, 45);
+            ServiceDes.Size = new System.Drawing.Size(408, 100);
             ServiceDes.TabIndex = 58;
             ServiceDes.Text = "Service Description";
             ServiceDes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -71,9 +71,10 @@
             ServicePrice.Dock = System.Windows.Forms.DockStyle.Fill;
             ServicePrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ServicePrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ServicePrice.Location = new System.Drawing.Point(588, 0);
+            ServicePrice.Location = new System.Drawing.Point(590, 0);
+            ServicePrice.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             ServicePrice.Name = "ServicePrice";
-            ServicePrice.Size = new System.Drawing.Size(119, 45);
+            ServicePrice.Size = new System.Drawing.Size(115, 100);
             ServicePrice.TabIndex = 59;
             ServicePrice.Text = "PHP 1,000.00";
             ServicePrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,15 +85,17 @@
             Serviceduration.Dock = System.Windows.Forms.DockStyle.Fill;
             Serviceduration.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             Serviceduration.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            Serviceduration.Location = new System.Drawing.Point(713, 0);
+            Serviceduration.Location = new System.Drawing.Point(715, 0);
+            Serviceduration.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             Serviceduration.Name = "Serviceduration";
-            Serviceduration.Size = new System.Drawing.Size(121, 45);
+            Serviceduration.Size = new System.Drawing.Size(117, 100);
             Serviceduration.TabIndex = 60;
             Serviceduration.Text = "60 mins";
             Serviceduration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(245, 208, 220);
             tableLayoutPanel1.ColumnCount = 4;
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -102,12 +105,12 @@
             tableLayoutPanel1.Controls.Add(ServicePrice, 2, 0);
             tableLayoutPanel1.Controls.Add(ServiceName, 0, 0);
             tableLayoutPanel1.Controls.Add(ServiceDes, 1, 0);
-            tableLayoutPanel1.Location = new System.Drawing.Point(3, 28);
+            tableLayoutPanel1.Location = new System.Drawing.Point(3, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(837, 45);
+            tableLayoutPanel1.Size = new System.Drawing.Size(837, 100);
             tableLayoutPanel1.TabIndex = 61;
             // 
             // ServiceOffered
