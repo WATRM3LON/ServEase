@@ -3738,9 +3738,9 @@
             // 
             ESerOffPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ESerOffPanel.BackColor = System.Drawing.Color.Transparent;
+            ESerOffPanel.Controls.Add(SerOffEPanel);
             ESerOffPanel.Controls.Add(SOEerrorm);
             ESerOffPanel.Controls.Add(ConfirmButton);
-            ESerOffPanel.Controls.Add(SerOffEPanel);
             ESerOffPanel.Controls.Add(button9);
             ESerOffPanel.Controls.Add(SerOffTitleEPanel);
             ESerOffPanel.Location = new System.Drawing.Point(277, 177);

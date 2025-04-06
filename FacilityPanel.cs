@@ -16,5 +16,12 @@ namespace OOP2
         {
             InitializeComponent();
         }
+
+        public void SetData(string Servicename, string ratings, string workinghours, string pricerange)
+        { 
+            Ratings.Text = ratings;
+            WorkingHoursText.Text = workinghours;
+            Pricerangetext.Text = pricerange;
+        }
     }
 }
