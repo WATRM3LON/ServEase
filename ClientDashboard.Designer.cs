@@ -1793,6 +1793,7 @@
             BeautySbutton.TabIndex = 30;
             BeautySbutton.Text = "View All";
             BeautySbutton.UseVisualStyleBackColor = false;
+            BeautySbutton.Click += BeautySbutton_Click;
             // 
             // button18
             // 
@@ -1859,6 +1860,7 @@
             MisSbutton.TabIndex = 30;
             MisSbutton.Text = "View All";
             MisSbutton.UseVisualStyleBackColor = false;
+            MisSbutton.Click += MisSbutton_Click;
             // 
             // button26
             // 
@@ -1924,6 +1926,7 @@
             HealthSbutton.TabIndex = 30;
             HealthSbutton.Text = "View All";
             HealthSbutton.UseVisualStyleBackColor = false;
+            HealthSbutton.Click += HealthSbutton_Click;
             // 
             // button16
             // 
@@ -1989,6 +1992,7 @@
             FoodSbutton.TabIndex = 30;
             FoodSbutton.Text = "View All";
             FoodSbutton.UseVisualStyleBackColor = false;
+            FoodSbutton.Click += FoodSbutton_Click;
             // 
             // button22
             // 
@@ -2054,6 +2058,7 @@
             EduSbutton.TabIndex = 30;
             EduSbutton.Text = "View All";
             EduSbutton.UseVisualStyleBackColor = false;
+            EduSbutton.Click += EduSbutton_Click;
             // 
             // button24
             // 
@@ -2119,6 +2124,7 @@
             RepairSbutton.TabIndex = 30;
             RepairSbutton.Text = "View All";
             RepairSbutton.UseVisualStyleBackColor = false;
+            RepairSbutton.Click += RepairSbutton_Click;
             // 
             // button20
             // 
@@ -2184,6 +2190,7 @@
             FitnessSbutton.TabIndex = 30;
             FitnessSbutton.Text = "View All";
             FitnessSbutton.UseVisualStyleBackColor = false;
+            FitnessSbutton.Click += FitnessSbutton_Click;
             // 
             // button14
             // 
@@ -2848,12 +2855,12 @@
             // HeaderPanel
             // 
             HeaderPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            HeaderPanel.Controls.Add(PIEButton);
-            HeaderPanel.Controls.Add(FPButton);
-            HeaderPanel.Controls.Add(button41);
             HeaderPanel.Controls.Add(SerButton);
             HeaderPanel.Controls.Add(WelcomeLabel);
             HeaderPanel.Controls.Add(HiLabel);
+            HeaderPanel.Controls.Add(PIEButton);
+            HeaderPanel.Controls.Add(FPButton);
+            HeaderPanel.Controls.Add(button41);
             HeaderPanel.Location = new System.Drawing.Point(257, 68);
             HeaderPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             HeaderPanel.Name = "HeaderPanel";
@@ -6333,43 +6340,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel ServicesPanel;
-        private System.Windows.Forms.Panel MisSPanel;
-        private System.Windows.Forms.Button MisSbutton;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Panel panel30;
-        private System.Windows.Forms.Panel EduSPanel;
-        private System.Windows.Forms.Button EduSbutton;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Panel FitnessSPanel;
-        private System.Windows.Forms.Button FitnessSbutton;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel FoodSPanel;
-        private System.Windows.Forms.Button FoodSbutton;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Panel HealthSPanel;
-        private System.Windows.Forms.Button HealthSbutton;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Panel RepairSPanel;
-        private System.Windows.Forms.Button RepairSbutton;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Button SerButton;
         private System.Windows.Forms.Panel SerPanel;
-        private System.Windows.Forms.Panel BeautySPanel;
-        private System.Windows.Forms.Button BeautySbutton;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Panel SerStore1;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
@@ -6520,7 +6492,6 @@
         private System.Windows.Forms.Button PrivacyPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Panel panel44;
@@ -6667,5 +6638,41 @@
         private System.Windows.Forms.Label PIESexlabel;
         private System.Windows.Forms.Label SexPI;
         private System.Windows.Forms.Label PISex;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel BeautySPanel;
+        private System.Windows.Forms.Button BeautySbutton;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel MisSPanel;
+        private System.Windows.Forms.Button MisSbutton;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Panel HealthSPanel;
+        private System.Windows.Forms.Button HealthSbutton;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel FoodSPanel;
+        private System.Windows.Forms.Button FoodSbutton;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Panel EduSPanel;
+        private System.Windows.Forms.Button EduSbutton;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Panel RepairSPanel;
+        private System.Windows.Forms.Button RepairSbutton;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel FitnessSPanel;
+        private System.Windows.Forms.Button FitnessSbutton;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel19;
     }
 }

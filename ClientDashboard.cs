@@ -49,7 +49,7 @@ namespace OOP2
         {
             InitializeComponent();
             InfoGetter();
-            Loaders();HiLabel.Text = $"Hi {FName},";
+            Loaders(); HiLabel.Text = $"Hi {FName},";
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
             DashboardButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -415,7 +415,7 @@ namespace OOP2
 
                     cmd.ExecuteNonQuery();
 
-                    
+
                 }
 
                 int newClientId = 0;
@@ -619,20 +619,7 @@ namespace OOP2
             }
         }
 
-        private void BeautySbutton_Click(object sender, EventArgs e)
-        {
-            WelcomeLabel.Visible = false;
-            SerButton.Visible = true;
-            SerPanel.Visible = true;
-            ServicesPanel.Visible = false;
-            if (notify == true)
-            {
-                NotificationPanel.Visible = false;
-                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
-                notify = false;
-            }
-            sercat = "Personal Care & Beauty Services";
-        }
+
 
         private void SerStoreButton1_Click(object sender, EventArgs e)
         {
@@ -720,6 +707,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            sercat = null;
         }
 
         private void CalendarButton_Click(object sender, EventArgs e)
@@ -1098,6 +1086,114 @@ namespace OOP2
                 MessageBox.Show("You clicked No!");
             }
         }
+        private void BeautySbutton_Click(object sender, EventArgs e)
+        {
+            sercat = "Personal Care & Beauty Services";
+            WelcomeLabel.Visible = false;
+            SerButton.Visible = true; SerButton.Text = " " + sercat;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+        private void HealthSbutton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            sercat = "Health & Medical Services";
+            SerButton.Text = " " + sercat;
+        }
 
+        private void FitnessSbutton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            sercat = "Fitness & Sports Services";
+            SerButton.Text = " " + sercat;
+        }
+
+        private void EduSbutton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            sercat = "Education & Tutoring Services";
+            SerButton.Text = " " + sercat;
+        }
+
+        private void RepairSbutton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            sercat = "Repair & Technical Services";
+            SerButton.Text = " " + sercat;
+        }
+
+        private void FoodSbutton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            sercat = "Food & Beverages Services";
+            SerButton.Text = " " + sercat;
+        }
+
+        private void MisSbutton_Click(object sender, EventArgs e)
+        {
+            WelcomeLabel.Visible = false;
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            sercat = "Miscellaneous Services";
+            SerButton.Text = " " + sercat;
+        }
     }
 }
