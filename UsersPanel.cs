@@ -60,10 +60,13 @@ namespace OOP2
             UserNametext.Text = Name;
             UserEmailtext.Text = Emailaddress;
         }
+        public event EventHandler ViewDetailsClicked;
+
         private void ViewDetailsButton_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
-            admin.ViewDets();
+            ViewDetailsClicked?.Invoke(this, EventArgs.Empty);
         }
+        public int ClientId { get; set; }
+        public int FacilityId { get; set; }
     }
 }

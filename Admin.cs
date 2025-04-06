@@ -178,6 +178,9 @@ namespace OOP2
                             usersPanel.SetDataClient(fullName, email);
                             usersPanel.Loaders();
 
+                            usersPanel.ClientId = clientId;
+                            
+
                             usersPanel.Location = new Point(10, margin - 7);
                             margin += usersPanel.Height + 10;
 
@@ -199,6 +202,10 @@ namespace OOP2
                             }
 
                             ProfilePanel.Controls.Add(usersPanel);
+                            usersPanel.ViewDetailsClicked += (s, e) =>
+                            {
+                                ViewDets();
+                            };
                         }
                     }
                 }
