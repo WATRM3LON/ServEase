@@ -5,10 +5,12 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace OOP2
 {
@@ -21,6 +23,7 @@ namespace OOP2
 
         string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
         bool Client = true, Facility = false;
+        int clientId, facilityId = 0;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -58,6 +61,7 @@ namespace OOP2
             ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
             PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
             DeAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeAccButton.Width, DeAccButton.Height, 10, 10));
+            StatusText.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, StatusText.Width, StatusText.Height, 10, 10));
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -164,7 +168,7 @@ namespace OOP2
 
                         while (reader.Read())
                         {
-                            int clientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+                            clientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
 
                             string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
                             string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
@@ -179,7 +183,11 @@ namespace OOP2
                             usersPanel.Loaders();
 
                             usersPanel.ClientId = clientId;
-                            
+                            usersPanel.ViewDetailsClicked += (s, e) =>
+                            {
+                                ViewDets(clientId);
+                            };
+
 
                             usersPanel.Location = new Point(10, margin - 7);
                             margin += usersPanel.Height + 10;
@@ -202,10 +210,7 @@ namespace OOP2
                             }
 
                             ProfilePanel.Controls.Add(usersPanel);
-                            usersPanel.ViewDetailsClicked += (s, e) =>
-                            {
-                                ViewDets();
-                            };
+
                         }
                     }
                 }
@@ -256,6 +261,74 @@ namespace OOP2
                 }
             }
         }
+        public void InfoGetter()
+        {
+            if (Client)
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    string sql = "SELECT [First Name], [Last Name], [Birth Date], Sex, [Contact Number], Location, [Email Address], Password, Status, [Date Registered], [Date Deleted] FROM [Admin (Clients)] WHERE Client_ID = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", clientId);
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string FName = reader["First Name"].ToString();
+                                string LName = reader["Last Name"].ToString();
+                                string emailaddress = reader["Email Address"].ToString();
+                                DateTime Birthdate = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Birth Date"));
+                                string formattedBirthdate = Birthdate == DateTime.MinValue ? " " : Birthdate.ToString("dd MMMM yyyy");
+                                string Sex = reader["Sex"].ToString();
+                                string Password = reader["Password"].ToString();
+                                string ContactNumber = reader["Contact Number"].ToString();
+                                string LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? " " : reader["Location"].ToString();
+                                string Status = reader["Status"].ToString();
+                                DateTime dateregist = reader.GetDateTime(reader.GetOrdinal("Date Registered")); string regist = dateregist.ToString("dd MMMM yyyy");
+                                DateTime datedelete = reader.IsDBNull(reader.GetOrdinal("Date Deleted")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Deleted"));
+                                string deleted = datedelete == DateTime.MinValue ? " " :  datedelete.ToString("dd MMMM yyyy");
+
+                                PPClientName.Text = ClientNamePI.Text = Fname + Lname;
+                                BirthDatePI.Text = formattedBirthdate; SexPI.Text = Sex; ContactNumberPI.Text = ContactNumber;EmailAddressPI.Text = emailaddress;
+                                LocText.Text = LocationAddress; dateregisttext.Text = regist; datedeletetext.Text = deleted;
+
+
+                                int age;
+                                if (BirthDatePI.Text.Length == 1)
+                                {
+                                    AgePI.Text = " ";
+                                }
+                                else
+                                {
+                                    age = DateTime.Now.Year - Birthdate.Year; AgePI.Text = age.ToString();
+                                }
+
+                                if (Status == "Active")
+                                {
+                                    StatusText.ForeColor = ColorTranslator.FromHtml("#69e331") ; StatusText.Text = Status;
+                                }else if(Status == "Deactivated")
+                                {
+                                    StatusText.ForeColor = Color.Gold; StatusText.Text = Status;
+                                }
+                                else
+                                {
+                                    StatusText.ForeColor = Color.Red; StatusText.Text = Status;
+                                }
+                                
+
+                            }
+                        }
+                        
+
+                    }
+                }
+            }
+        }
 
         private void ClientsButton_Click(object sender, EventArgs e)
         {
@@ -279,14 +352,25 @@ namespace OOP2
             LoadFacilityData();
         }
 
-        public void ViewDets()
+        public void ViewDets(int clientId)
         {
-            CalendarAppointmentPanel.Visible = false; ProfilePanel.Visible = false;
-            ViewDetpanel.Visible = true; ViewDetailspanel.Visible = true;
+            CalendarAppointmentPanel.Visible = false; ProfilePanel.Visible = false; HiLabel.Visible = false; WelcomeLabel.Visible = false;
+            ViewDetpanel.Visible = true; ViewDetailspanel.Visible = true; AccountButton.Visible = true;
+            if (Client)
+            {
+                AccountButton.Text = " Client's Account";
+                InfoGetter();
+            }
         }
         private void StatusText_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AccountButton_Click(object sender, EventArgs e)
+        {
+            CalendarAppointmentPanel.Visible = true; ProfilePanel.Visible = true; HiLabel.Visible = true; WelcomeLabel.Visible = true;
+            ViewDetpanel.Visible = false; ViewDetailspanel.Visible = false; AccountButton.Visible = false;
         }
     }
 }

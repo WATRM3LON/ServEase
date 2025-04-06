@@ -1218,8 +1218,8 @@ namespace OOP2
                 {
                     conn.Open();
 
-                    string sql = "SELECT MIN(Price) AS MinPrice, MAX(Price) AS MaxPrice FROM [Facility Services] WHERE Facility_ID = ?";
-                    using (OleDbCommand cmd = new OleDbCommand(sql, conn))
+                    string sqls = "SELECT MIN(Price) AS MinPrice, MAX(Price) AS MaxPrice FROM [Facility Services] WHERE Facility_ID = ?";
+                    using (OleDbCommand cmd = new OleDbCommand(sqls, conn))
                     {
                         cmd.Parameters.AddWithValue("?", newFacilityId); // replace with your facility ID
 
