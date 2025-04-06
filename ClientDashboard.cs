@@ -35,7 +35,7 @@ namespace OOP2
             int nWidthEllipse,
             int nHeightEllipse
             );
-        string formattedBirthdate;
+        string formattedBirthdate, sercat = "";
         public string FName { get; set; }
         public string LName { get; set; }
         public DateTime Birthdate { get; set; }
@@ -123,13 +123,13 @@ namespace OOP2
             RepairSPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, RepairSPanel.Width, RepairSPanel.Height, 10, 10));
             FoodSPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FoodSPanel.Width, FoodSPanel.Height, 10, 10));
             MisSPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MisSPanel.Width, MisSPanel.Height, 10, 10));
-            button13.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button13.Width, button13.Height, 10, 10));
-            button15.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button15.Width, button15.Height, 10, 10));
-            button17.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button17.Width, button17.Height, 10, 10));
-            button19.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button19.Width, button19.Height, 10, 10));
-            button23.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button23.Width, button23.Height, 10, 10));
-            button21.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button21.Width, button21.Height, 10, 10));
-            button25.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button25.Width, button25.Height, 10, 10));
+            FitnessSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FitnessSbutton.Width, FitnessSbutton.Height, 10, 10));
+            HealthSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HealthSbutton.Width, HealthSbutton.Height, 10, 10));
+            BeautySbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BeautySbutton.Width, BeautySbutton.Height, 10, 10));
+            RepairSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, RepairSbutton.Width, RepairSbutton.Height, 10, 10));
+            EduSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EduSbutton.Width, EduSbutton.Height, 10, 10));
+            FoodSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FoodSbutton.Width, FoodSbutton.Height, 10, 10));
+            MisSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MisSbutton.Width, MisSbutton.Height, 10, 10));
             //SERVICES 2
             SerPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerPanel.Width, SerPanel.Height, 10, 10));
             panel48.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel48.Width, panel48.Height, 10, 10));
@@ -619,7 +619,7 @@ namespace OOP2
             }
         }
 
-        private void button17_Click(object sender, EventArgs e)
+        private void BeautySbutton_Click(object sender, EventArgs e)
         {
             WelcomeLabel.Visible = false;
             SerButton.Visible = true;
@@ -631,16 +631,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
-        }
-
-        private void DashboardPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void DashboardPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            sercat = "Personal Care & Beauty Services";
         }
 
         private void SerStoreButton1_Click(object sender, EventArgs e)
@@ -673,11 +664,6 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
-        }
-
-        private void label152_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button28_Click(object sender, EventArgs e)

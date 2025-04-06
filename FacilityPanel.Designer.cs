@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             WorkingHoursText = new System.Windows.Forms.Label();
-            SerStoreButton1 = new System.Windows.Forms.Button();
+            SerStoreButton = new System.Windows.Forms.Button();
             FacilityName = new System.Windows.Forms.Label();
             SerStorePP1 = new System.Windows.Forms.Panel();
             Workinhourslabel = new System.Windows.Forms.Label();
@@ -49,19 +49,19 @@
             WorkingHoursText.TabIndex = 43;
             WorkingHoursText.Text = "10:00 - 12:00";
             // 
-            // SerStoreButton1
+            // SerStoreButton
             // 
-            SerStoreButton1.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            SerStoreButton1.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
-            SerStoreButton1.FlatAppearance.BorderSize = 0;
-            SerStoreButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            SerStoreButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            SerStoreButton1.Location = new System.Drawing.Point(13, 183);
-            SerStoreButton1.Name = "SerStoreButton1";
-            SerStoreButton1.Size = new System.Drawing.Size(258, 51);
-            SerStoreButton1.TabIndex = 42;
-            SerStoreButton1.Text = "View Profile";
-            SerStoreButton1.UseVisualStyleBackColor = false;
+            SerStoreButton.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SerStoreButton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            SerStoreButton.FlatAppearance.BorderSize = 0;
+            SerStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            SerStoreButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            SerStoreButton.Location = new System.Drawing.Point(13, 183);
+            SerStoreButton.Name = "SerStoreButton";
+            SerStoreButton.Size = new System.Drawing.Size(258, 51);
+            SerStoreButton.TabIndex = 42;
+            SerStoreButton.Text = "View Profile";
+            SerStoreButton.UseVisualStyleBackColor = false;
             // 
             // FacilityName
             // 
@@ -136,7 +136,7 @@
             Controls.Add(Workinhourslabel);
             Controls.Add(Pricerangetext);
             Controls.Add(WorkingHoursText);
-            Controls.Add(SerStoreButton1);
+            Controls.Add(SerStoreButton);
             Controls.Add(FacilityName);
             Controls.Add(SerStorePP1);
             Name = "FacilityPanel";
@@ -147,7 +147,7 @@
 
         #endregion
         private System.Windows.Forms.Label WorkingHoursText;
-        private System.Windows.Forms.Button SerStoreButton1;
+        private System.Windows.Forms.Button SerStoreButton;
         private System.Windows.Forms.Label FacilityName;
         private System.Windows.Forms.Panel SerStorePP1;
         private System.Windows.Forms.Label Workinhourslabel;

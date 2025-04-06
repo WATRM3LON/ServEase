@@ -282,8 +282,6 @@
             FIEFnameTitle = new System.Windows.Forms.Label();
             panel47 = new System.Windows.Forms.Panel();
             ESerOffPanel = new System.Windows.Forms.Panel();
-            SOEerrorm = new System.Windows.Forms.Label();
-            ConfirmButton = new System.Windows.Forms.Button();
             SerOffEPanel = new System.Windows.Forms.Panel();
             SO3Panel = new System.Windows.Forms.TableLayoutPanel();
             Duration3 = new System.Windows.Forms.TextBox();
@@ -300,6 +298,8 @@
             Price1 = new System.Windows.Forms.TextBox();
             Description1 = new System.Windows.Forms.TextBox();
             Service1 = new System.Windows.Forms.TextBox();
+            SOEerrorm = new System.Windows.Forms.Label();
+            ConfirmButton = new System.Windows.Forms.Button();
             button9 = new System.Windows.Forms.Button();
             SerOffTitleEPanel = new System.Windows.Forms.TableLayoutPanel();
             SEEServiceName = new System.Windows.Forms.Label();
@@ -3748,36 +3748,6 @@
             ESerOffPanel.Size = new System.Drawing.Size(893, 780);
             ESerOffPanel.TabIndex = 65;
             // 
-            // SOEerrorm
-            // 
-            SOEerrorm.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            SOEerrorm.AutoSize = true;
-            SOEerrorm.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            SOEerrorm.ForeColor = System.Drawing.Color.Red;
-            SOEerrorm.Location = new System.Drawing.Point(272, 732);
-            SOEerrorm.Name = "SOEerrorm";
-            SOEerrorm.Size = new System.Drawing.Size(346, 23);
-            SOEerrorm.TabIndex = 79;
-            SOEerrorm.Text = "Please complete all fields for Service Offered";
-            // 
-            // ConfirmButton
-            // 
-            ConfirmButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            ConfirmButton.BackColor = System.Drawing.Color.FromArgb(240, 36, 110);
-            ConfirmButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ConfirmButton.FlatAppearance.BorderSize = 0;
-            ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ConfirmButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ConfirmButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ConfirmButton.Location = new System.Drawing.Point(711, 720);
-            ConfirmButton.Name = "ConfirmButton";
-            ConfirmButton.Size = new System.Drawing.Size(151, 51);
-            ConfirmButton.TabIndex = 39;
-            ConfirmButton.Text = "Confirm Changes";
-            ConfirmButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ConfirmButton.UseVisualStyleBackColor = false;
-            ConfirmButton.Click += ConfirmButton_Click;
-            // 
             // SerOffEPanel
             // 
             SerOffEPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -3998,6 +3968,36 @@
             Service1.Text = "Add Service Name";
             Service1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             Service1.Click += Service1_Click;
+            // 
+            // SOEerrorm
+            // 
+            SOEerrorm.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SOEerrorm.AutoSize = true;
+            SOEerrorm.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            SOEerrorm.ForeColor = System.Drawing.Color.Red;
+            SOEerrorm.Location = new System.Drawing.Point(272, 732);
+            SOEerrorm.Name = "SOEerrorm";
+            SOEerrorm.Size = new System.Drawing.Size(346, 23);
+            SOEerrorm.TabIndex = 79;
+            SOEerrorm.Text = "Please complete all fields for Service Offered";
+            // 
+            // ConfirmButton
+            // 
+            ConfirmButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            ConfirmButton.BackColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            ConfirmButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ConfirmButton.FlatAppearance.BorderSize = 0;
+            ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ConfirmButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ConfirmButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ConfirmButton.Location = new System.Drawing.Point(711, 720);
+            ConfirmButton.Name = "ConfirmButton";
+            ConfirmButton.Size = new System.Drawing.Size(151, 51);
+            ConfirmButton.TabIndex = 39;
+            ConfirmButton.Text = "Confirm Changes";
+            ConfirmButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ConfirmButton.UseVisualStyleBackColor = false;
+            ConfirmButton.Click += ConfirmButton_Click;
             // 
             // button9
             // 

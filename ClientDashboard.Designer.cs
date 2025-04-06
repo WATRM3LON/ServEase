@@ -119,37 +119,37 @@
             ServicesPanel = new System.Windows.Forms.Panel();
             tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             BeautySPanel = new System.Windows.Forms.Panel();
-            button17 = new System.Windows.Forms.Button();
+            BeautySbutton = new System.Windows.Forms.Button();
             button18 = new System.Windows.Forms.Button();
             label35 = new System.Windows.Forms.Label();
             panel23 = new System.Windows.Forms.Panel();
             MisSPanel = new System.Windows.Forms.Panel();
-            button25 = new System.Windows.Forms.Button();
+            MisSbutton = new System.Windows.Forms.Button();
             button26 = new System.Windows.Forms.Button();
             label30 = new System.Windows.Forms.Label();
             panel30 = new System.Windows.Forms.Panel();
             HealthSPanel = new System.Windows.Forms.Panel();
-            button15 = new System.Windows.Forms.Button();
+            HealthSbutton = new System.Windows.Forms.Button();
             button16 = new System.Windows.Forms.Button();
             label28 = new System.Windows.Forms.Label();
             panel21 = new System.Windows.Forms.Panel();
             FoodSPanel = new System.Windows.Forms.Panel();
-            button21 = new System.Windows.Forms.Button();
+            FoodSbutton = new System.Windows.Forms.Button();
             button22 = new System.Windows.Forms.Button();
             label34 = new System.Windows.Forms.Label();
             panel26 = new System.Windows.Forms.Panel();
             EduSPanel = new System.Windows.Forms.Panel();
-            button23 = new System.Windows.Forms.Button();
+            EduSbutton = new System.Windows.Forms.Button();
             button24 = new System.Windows.Forms.Button();
             label29 = new System.Windows.Forms.Label();
             panel28 = new System.Windows.Forms.Panel();
             RepairSPanel = new System.Windows.Forms.Panel();
-            button19 = new System.Windows.Forms.Button();
+            RepairSbutton = new System.Windows.Forms.Button();
             button20 = new System.Windows.Forms.Button();
             label33 = new System.Windows.Forms.Label();
             panel24 = new System.Windows.Forms.Panel();
             FitnessSPanel = new System.Windows.Forms.Panel();
-            button13 = new System.Windows.Forms.Button();
+            FitnessSbutton = new System.Windows.Forms.Button();
             button14 = new System.Windows.Forms.Button();
             label26 = new System.Windows.Forms.Label();
             panel19 = new System.Windows.Forms.Panel();
@@ -633,7 +633,6 @@
             DashboardPanel.Name = "DashboardPanel";
             DashboardPanel.Size = new System.Drawing.Size(252, 990);
             DashboardPanel.TabIndex = 7;
-            DashboardPanel.Paint += DashboardPanel_Paint;
             // 
             // LogoutButton
             // 
@@ -789,7 +788,6 @@
             DashboardPanel2.Name = "DashboardPanel2";
             DashboardPanel2.Size = new System.Drawing.Size(85, 990);
             DashboardPanel2.TabIndex = 23;
-            DashboardPanel2.Paint += DashboardPanel2_Paint;
             // 
             // LButton
             // 
@@ -1771,7 +1769,7 @@
             // BeautySPanel
             // 
             BeautySPanel.BackColor = System.Drawing.Color.White;
-            BeautySPanel.Controls.Add(button17);
+            BeautySPanel.Controls.Add(BeautySbutton);
             BeautySPanel.Controls.Add(button18);
             BeautySPanel.Controls.Add(label35);
             BeautySPanel.Controls.Add(panel23);
@@ -1782,20 +1780,19 @@
             BeautySPanel.Size = new System.Drawing.Size(283, 258);
             BeautySPanel.TabIndex = 37;
             // 
-            // button17
+            // BeautySbutton
             // 
-            button17.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button17.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
-            button17.FlatAppearance.BorderSize = 0;
-            button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button17.Location = new System.Drawing.Point(12, 192);
-            button17.Name = "button17";
-            button17.Size = new System.Drawing.Size(258, 51);
-            button17.TabIndex = 30;
-            button17.Text = "View All";
-            button17.UseVisualStyleBackColor = false;
-            button17.Click += button17_Click;
+            BeautySbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BeautySbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            BeautySbutton.FlatAppearance.BorderSize = 0;
+            BeautySbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BeautySbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BeautySbutton.Location = new System.Drawing.Point(12, 192);
+            BeautySbutton.Name = "BeautySbutton";
+            BeautySbutton.Size = new System.Drawing.Size(258, 51);
+            BeautySbutton.TabIndex = 30;
+            BeautySbutton.Text = "View All";
+            BeautySbutton.UseVisualStyleBackColor = false;
             // 
             // button18
             // 
@@ -1838,7 +1835,7 @@
             // MisSPanel
             // 
             MisSPanel.BackColor = System.Drawing.Color.White;
-            MisSPanel.Controls.Add(button25);
+            MisSPanel.Controls.Add(MisSbutton);
             MisSPanel.Controls.Add(button26);
             MisSPanel.Controls.Add(label30);
             MisSPanel.Controls.Add(panel30);
@@ -1849,20 +1846,19 @@
             MisSPanel.Size = new System.Drawing.Size(283, 259);
             MisSPanel.TabIndex = 39;
             // 
-            // button25
+            // MisSbutton
             // 
-            button25.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button25.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
-            button25.FlatAppearance.BorderSize = 0;
-            button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button25.Location = new System.Drawing.Point(12, 192);
-            button25.Name = "button25";
-            button25.Size = new System.Drawing.Size(258, 51);
-            button25.TabIndex = 30;
-            button25.Text = "View All";
-            button25.UseVisualStyleBackColor = false;
-            button25.Click += button17_Click;
+            MisSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            MisSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            MisSbutton.FlatAppearance.BorderSize = 0;
+            MisSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            MisSbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            MisSbutton.Location = new System.Drawing.Point(12, 192);
+            MisSbutton.Name = "MisSbutton";
+            MisSbutton.Size = new System.Drawing.Size(258, 51);
+            MisSbutton.TabIndex = 30;
+            MisSbutton.Text = "View All";
+            MisSbutton.UseVisualStyleBackColor = false;
             // 
             // button26
             // 
@@ -1904,7 +1900,7 @@
             // HealthSPanel
             // 
             HealthSPanel.BackColor = System.Drawing.Color.White;
-            HealthSPanel.Controls.Add(button15);
+            HealthSPanel.Controls.Add(HealthSbutton);
             HealthSPanel.Controls.Add(button16);
             HealthSPanel.Controls.Add(label28);
             HealthSPanel.Controls.Add(panel21);
@@ -1915,20 +1911,19 @@
             HealthSPanel.Size = new System.Drawing.Size(283, 258);
             HealthSPanel.TabIndex = 40;
             // 
-            // button15
+            // HealthSbutton
             // 
-            button15.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button15.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
-            button15.FlatAppearance.BorderSize = 0;
-            button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button15.Location = new System.Drawing.Point(12, 192);
-            button15.Name = "button15";
-            button15.Size = new System.Drawing.Size(258, 51);
-            button15.TabIndex = 30;
-            button15.Text = "View All";
-            button15.UseVisualStyleBackColor = false;
-            button15.Click += button17_Click;
+            HealthSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            HealthSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            HealthSbutton.FlatAppearance.BorderSize = 0;
+            HealthSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            HealthSbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            HealthSbutton.Location = new System.Drawing.Point(12, 192);
+            HealthSbutton.Name = "HealthSbutton";
+            HealthSbutton.Size = new System.Drawing.Size(258, 51);
+            HealthSbutton.TabIndex = 30;
+            HealthSbutton.Text = "View All";
+            HealthSbutton.UseVisualStyleBackColor = false;
             // 
             // button16
             // 
@@ -1970,7 +1965,7 @@
             // FoodSPanel
             // 
             FoodSPanel.BackColor = System.Drawing.Color.White;
-            FoodSPanel.Controls.Add(button21);
+            FoodSPanel.Controls.Add(FoodSbutton);
             FoodSPanel.Controls.Add(button22);
             FoodSPanel.Controls.Add(label34);
             FoodSPanel.Controls.Add(panel26);
@@ -1981,20 +1976,19 @@
             FoodSPanel.Size = new System.Drawing.Size(285, 258);
             FoodSPanel.TabIndex = 38;
             // 
-            // button21
+            // FoodSbutton
             // 
-            button21.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button21.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
-            button21.FlatAppearance.BorderSize = 0;
-            button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button21.Location = new System.Drawing.Point(12, 192);
-            button21.Name = "button21";
-            button21.Size = new System.Drawing.Size(260, 51);
-            button21.TabIndex = 30;
-            button21.Text = "View All";
-            button21.UseVisualStyleBackColor = false;
-            button21.Click += button17_Click;
+            FoodSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FoodSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            FoodSbutton.FlatAppearance.BorderSize = 0;
+            FoodSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FoodSbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            FoodSbutton.Location = new System.Drawing.Point(12, 192);
+            FoodSbutton.Name = "FoodSbutton";
+            FoodSbutton.Size = new System.Drawing.Size(260, 51);
+            FoodSbutton.TabIndex = 30;
+            FoodSbutton.Text = "View All";
+            FoodSbutton.UseVisualStyleBackColor = false;
             // 
             // button22
             // 
@@ -2036,7 +2030,7 @@
             // EduSPanel
             // 
             EduSPanel.BackColor = System.Drawing.Color.White;
-            EduSPanel.Controls.Add(button23);
+            EduSPanel.Controls.Add(EduSbutton);
             EduSPanel.Controls.Add(button24);
             EduSPanel.Controls.Add(label29);
             EduSPanel.Controls.Add(panel28);
@@ -2047,20 +2041,19 @@
             EduSPanel.Size = new System.Drawing.Size(283, 258);
             EduSPanel.TabIndex = 38;
             // 
-            // button23
+            // EduSbutton
             // 
-            button23.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button23.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
-            button23.FlatAppearance.BorderSize = 0;
-            button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button23.Location = new System.Drawing.Point(12, 192);
-            button23.Name = "button23";
-            button23.Size = new System.Drawing.Size(258, 51);
-            button23.TabIndex = 30;
-            button23.Text = "View All";
-            button23.UseVisualStyleBackColor = false;
-            button23.Click += button17_Click;
+            EduSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EduSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            EduSbutton.FlatAppearance.BorderSize = 0;
+            EduSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            EduSbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EduSbutton.Location = new System.Drawing.Point(12, 192);
+            EduSbutton.Name = "EduSbutton";
+            EduSbutton.Size = new System.Drawing.Size(258, 51);
+            EduSbutton.TabIndex = 30;
+            EduSbutton.Text = "View All";
+            EduSbutton.UseVisualStyleBackColor = false;
             // 
             // button24
             // 
@@ -2102,7 +2095,7 @@
             // RepairSPanel
             // 
             RepairSPanel.BackColor = System.Drawing.Color.White;
-            RepairSPanel.Controls.Add(button19);
+            RepairSPanel.Controls.Add(RepairSbutton);
             RepairSPanel.Controls.Add(button20);
             RepairSPanel.Controls.Add(label33);
             RepairSPanel.Controls.Add(panel24);
@@ -2113,20 +2106,19 @@
             RepairSPanel.Size = new System.Drawing.Size(283, 258);
             RepairSPanel.TabIndex = 38;
             // 
-            // button19
+            // RepairSbutton
             // 
-            button19.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button19.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
-            button19.FlatAppearance.BorderSize = 0;
-            button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button19.Location = new System.Drawing.Point(12, 192);
-            button19.Name = "button19";
-            button19.Size = new System.Drawing.Size(258, 51);
-            button19.TabIndex = 30;
-            button19.Text = "View All";
-            button19.UseVisualStyleBackColor = false;
-            button19.Click += button17_Click;
+            RepairSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            RepairSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            RepairSbutton.FlatAppearance.BorderSize = 0;
+            RepairSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            RepairSbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            RepairSbutton.Location = new System.Drawing.Point(12, 192);
+            RepairSbutton.Name = "RepairSbutton";
+            RepairSbutton.Size = new System.Drawing.Size(258, 51);
+            RepairSbutton.TabIndex = 30;
+            RepairSbutton.Text = "View All";
+            RepairSbutton.UseVisualStyleBackColor = false;
             // 
             // button20
             // 
@@ -2168,7 +2160,7 @@
             // FitnessSPanel
             // 
             FitnessSPanel.BackColor = System.Drawing.Color.White;
-            FitnessSPanel.Controls.Add(button13);
+            FitnessSPanel.Controls.Add(FitnessSbutton);
             FitnessSPanel.Controls.Add(button14);
             FitnessSPanel.Controls.Add(label26);
             FitnessSPanel.Controls.Add(panel19);
@@ -2179,20 +2171,19 @@
             FitnessSPanel.Size = new System.Drawing.Size(285, 258);
             FitnessSPanel.TabIndex = 39;
             // 
-            // button13
+            // FitnessSbutton
             // 
-            button13.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button13.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
-            button13.FlatAppearance.BorderSize = 0;
-            button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button13.Location = new System.Drawing.Point(12, 192);
-            button13.Name = "button13";
-            button13.Size = new System.Drawing.Size(260, 51);
-            button13.TabIndex = 30;
-            button13.Text = "View All";
-            button13.UseVisualStyleBackColor = false;
-            button13.Click += button17_Click;
+            FitnessSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FitnessSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
+            FitnessSbutton.FlatAppearance.BorderSize = 0;
+            FitnessSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FitnessSbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            FitnessSbutton.Location = new System.Drawing.Point(12, 192);
+            FitnessSbutton.Name = "FitnessSbutton";
+            FitnessSbutton.Size = new System.Drawing.Size(260, 51);
+            FitnessSbutton.TabIndex = 30;
+            FitnessSbutton.Text = "View All";
+            FitnessSbutton.UseVisualStyleBackColor = false;
             // 
             // button14
             // 
@@ -6015,13 +6006,13 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ServicesPanel);
             Controls.Add(SerPanel);
             Controls.Add(EditPIPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
-            Controls.Add(ServicesPanel);
             Controls.Add(FacilityProPanel2);
             Controls.Add(FacilityProPanel);
             Controls.Add(SettingPanel);
@@ -6343,39 +6334,39 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel ServicesPanel;
         private System.Windows.Forms.Panel MisSPanel;
-        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button MisSbutton;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Panel EduSPanel;
-        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button EduSbutton;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Panel FitnessSPanel;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button FitnessSbutton;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel FoodSPanel;
-        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button FoodSbutton;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Panel HealthSPanel;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button HealthSbutton;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel RepairSPanel;
-        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button RepairSbutton;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Button SerButton;
         private System.Windows.Forms.Panel SerPanel;
         private System.Windows.Forms.Panel BeautySPanel;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button BeautySbutton;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Panel panel23;
