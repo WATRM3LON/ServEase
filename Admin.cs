@@ -63,6 +63,11 @@ namespace OOP2
             DeAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeAccButton.Width, DeAccButton.Height, 10, 10));
             StatusText.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, StatusText.Width, StatusText.Height, 10, 10));
         }
+        public override void UpdateInfo() { }
+        public override bool CNumberChecker(string cNumber, string connection) { 
+        
+            return false;
+        }
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -473,48 +478,7 @@ namespace OOP2
                 }
                 else
                 {
-                    string sql = "SELECT Facility_ID, [Facility Name], [Email Address] FROM [Admin (Service Facilities)] WHERE [Email Address] <> 'admin12345'";
-
-                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
-                    {
-                        int margin = 10;
-
-                        while (reader.Read())
-                        {
-                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
-                            string Name = reader.IsDBNull(reader.GetOrdinal("Facility Name")) ? "" : reader.GetString(reader.GetOrdinal("Facility Name"));
-                            string email = reader.IsDBNull(reader.GetOrdinal("Email Address")) ? "" : reader.GetString(reader.GetOrdinal("Email Address"));
-
-                            UsersPanel usersPanel = new UsersPanel();
-                            usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
-
-                            usersPanel.SetDataFacility(Name, email);
-                            usersPanel.Loaders();
-
-                            usersPanel.Location = new Point(10, margin - 7);
-                            margin += usersPanel.Height + 10;
-
-                            string adminQuery = "SELECT Status, [Date Registered] FROM [Admin (Service Facilities)] WHERE [Facility_ID] = ?";
-                            using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
-                            {
-                                adminCmd.Parameters.AddWithValue("?", facilityId);
-
-                                using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
-                                {
-                                    if (adminReader.Read())
-                                    {
-                                        string status = adminReader.GetString(adminReader.GetOrdinal("Status"));
-                                        string dateRegistered = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
-
-                                        usersPanel.SetInfo(status, dateRegistered);
-                                    }
-                                }
-                            }
-
-                            ProfilePanel.Controls.Add(usersPanel);
-                        }
-                    }
+                    
                 }
             }
         }
