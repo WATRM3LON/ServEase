@@ -37,8 +37,10 @@ namespace OOP2
         {
             UserNamelabel.Location = new Point(79, 26);
             UserNamelabel.Text = "Name:";
+            UserEmaillabel.Text = "Email Addres:";
             UserNametext.Text = Name;
             UserEmailtext.Text = Emailaddress;
+            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#69e331");
         }
         public void SetInfo(string Status, string Regist)
         {
@@ -46,6 +48,10 @@ namespace OOP2
             if (Status == "Active")
             {
                 UserStatustext.ForeColor = Color.LawnGreen;
+            }
+            else if(Status == "Pending")
+            {
+                UserStatustext.ForeColor = Color.Gold;
             }
             else
             {
@@ -57,9 +63,21 @@ namespace OOP2
         {
             UserNamelabel.Location = new Point(39, 26);
             UserNamelabel.Text = "Facility Name:";
+            UserEmaillabel.Text = "Email Addres:";
             UserNametext.Text = Name;
             UserEmailtext.Text = Emailaddress;
+            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#f3508b");
         }
+        public void SetAppHistory(string Name, string FLocation)
+        {
+            UserNamelabel.Location = new Point(39, 26);
+            UserNamelabel.Text = "Facility Name:";
+            UserNametext.Text = Name;
+            UserEmaillabel.Text = "Location: ";
+            UserEmailtext.Text = FLocation;
+            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#22b0e5");
+        }
+
         public event EventHandler ViewDetailsClicked;
 
         private void ViewDetailsButton_Click(object sender, EventArgs e)

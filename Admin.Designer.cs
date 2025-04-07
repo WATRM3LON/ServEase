@@ -93,6 +93,8 @@
             ViewDetpanel = new System.Windows.Forms.Panel();
             ApphisButton = new System.Windows.Forms.Button();
             Personalbutton = new System.Windows.Forms.Button();
+            AppHistPanel = new System.Windows.Forms.Panel();
+            button1 = new System.Windows.Forms.Button();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
@@ -103,6 +105,7 @@
             PIPanel.SuspendLayout();
             ProPicPanel.SuspendLayout();
             ViewDetpanel.SuspendLayout();
+            AppHistPanel.SuspendLayout();
             SuspendLayout();
             // 
             // NotificationPanel
@@ -542,7 +545,7 @@
             ClientsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             ClientsButton.FlatAppearance.BorderSize = 0;
             ClientsButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            ClientsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ClientsButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             ClientsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             ClientsButton.Location = new System.Drawing.Point(15, 9);
             ClientsButton.Name = "ClientsButton";
@@ -979,6 +982,7 @@
             ApphisButton.Text = "Appointment History";
             ApphisButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             ApphisButton.UseVisualStyleBackColor = false;
+            ApphisButton.Click += ApphisButton_Click;
             // 
             // Personalbutton
             // 
@@ -986,7 +990,7 @@
             Personalbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             Personalbutton.FlatAppearance.BorderSize = 0;
             Personalbutton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            Personalbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Personalbutton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             Personalbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             Personalbutton.Location = new System.Drawing.Point(15, 9);
             Personalbutton.Name = "Personalbutton";
@@ -996,6 +1000,34 @@
             Personalbutton.Text = "Personal Information";
             Personalbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             Personalbutton.UseVisualStyleBackColor = false;
+            Personalbutton.Click += Personalbutton_Click;
+            // 
+            // AppHistPanel
+            // 
+            AppHistPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            AppHistPanel.BackColor = System.Drawing.Color.Transparent;
+            AppHistPanel.Controls.Add(button1);
+            AppHistPanel.Location = new System.Drawing.Point(277, 208);
+            AppHistPanel.Name = "AppHistPanel";
+            AppHistPanel.Size = new System.Drawing.Size(903, 593);
+            AppHistPanel.TabIndex = 60;
+            // 
+            // button1
+            // 
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button1.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button1.ForeColor = System.Drawing.Color.White;
+            button1.Location = new System.Drawing.Point(1406, 1127);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(165, 51);
+            button1.TabIndex = 78;
+            button1.Text = "Deactivate Account";
+            button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
             // 
             // Admin
             // 
@@ -1003,9 +1035,10 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(214, 241, 250);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(AppHistPanel);
+            Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ViewDetpanel);
             Controls.Add(ViewDetailspanel);
-            Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(NotificationPanel);
             Controls.Add(NotifyButton);
@@ -1035,6 +1068,7 @@
             ProPicPanel.ResumeLayout(false);
             ProPicPanel.PerformLayout();
             ViewDetpanel.ResumeLayout(false);
+            AppHistPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1104,5 +1138,7 @@
         private System.Windows.Forms.Label dateregistlabel;
         private System.Windows.Forms.Label LocText;
         private System.Windows.Forms.Label LocLabel;
+        private System.Windows.Forms.Panel AppHistPanel;
+        private System.Windows.Forms.Button button1;
     }
 }
