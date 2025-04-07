@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
 {
-    public partial class ServiceFacilitycs : Baseform, ClientInfo, FacilityInfo
+    public partial class ServiceFacilitycs : Updates, ClientInfo, FacilityInfo
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;

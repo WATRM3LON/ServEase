@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 namespace OOP2
 {
-    public partial class Admin : Baseform
+    public partial class Admin : Updates
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;

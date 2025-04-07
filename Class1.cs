@@ -30,7 +30,7 @@ namespace OOP2
         string Sex { get; set; }
 
     }
-    public abstract class Baseform : Form
+    public abstract class Updates : Form
     {
         public abstract void Loaders();
         public abstract void InfoGetter();

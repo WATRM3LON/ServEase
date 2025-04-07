@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace OOP2
 {
-    public partial class ServiceFacilityLogin : Form
+    public partial class ServiceFacilityLogin : Updates
     {
         public static string EmailAddress = " ";
         OleDbConnection? myConn;
@@ -38,7 +38,7 @@ namespace OOP2
             InitializeComponent();
             Loaders();
         }
-        public void Loaders()
+        public override void Loaders()
         {
             LogInPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogInPanel.Width, LogInPanel.Height, 20, 20));
             LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 10, 10));
@@ -57,8 +57,9 @@ namespace OOP2
             SignInButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SignInButton.Width, SignInButton.Height, 10, 10));
             NmatchLabel.Visible = false; FNameEM.Visible = false; LNameEM.Visible = false; EmailAddSEM.Visible = false; CNumberEM.Visible = false; PasswordSEM.Visible = false; CPasswordEM.Visible = false; InvalidLEP.Visible = false;
             EmailExisted.Visible = false; CnumberExisted.Visible = false; Cnumber09.Visible = false; Cnumberdigits.Visible = false; Cnumber11digits.Visible = false;
-
         }
+        public override void InfoGetter() { }
+        public override void UpdateInfo() { }
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -237,7 +238,7 @@ namespace OOP2
                 }
             }
         }
-        public bool CNumberChecker(string Cnumber, string connection)
+        public override bool CNumberChecker(string Cnumber, string connection)
         {
             int valid = 0;
             using (OleDbConnection myConn = new OleDbConnection(connection))
