@@ -1035,10 +1035,10 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(214, 241, 250);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ViewDetailspanel);
             Controls.Add(AppHistPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ViewDetpanel);
-            Controls.Add(ViewDetailspanel);
             Controls.Add(ProfilePanel);
             Controls.Add(NotificationPanel);
             Controls.Add(NotifyButton);

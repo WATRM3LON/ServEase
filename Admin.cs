@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 namespace OOP2
 {
-    public partial class Admin : Updates
+    public partial class Admin : Form
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
@@ -42,7 +42,7 @@ namespace OOP2
             Loaders();
         }
         string Fname, Lname;
-        public override void Loaders()
+        public void Loaders()
         {
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = NotificationPanel.Visible = false;
@@ -63,10 +63,10 @@ namespace OOP2
             DeAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeAccButton.Width, DeAccButton.Height, 10, 10));
             StatusText.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, StatusText.Width, StatusText.Height, 10, 10));
         }
-        public override void UpdateInfo() { }
-        public override bool CNumberChecker(string cNumber, string connection) { 
+        public void UpdateInfo() { }
+        public bool CNumberChecker(string cNumber, string connection) { 
         
-            return false;
+            return true;
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -270,7 +270,7 @@ namespace OOP2
                 }
             }
         }
-        public override void InfoGetter()
+        public void InfoGetter()
         {
             if (Client)
             {
@@ -288,8 +288,8 @@ namespace OOP2
                         {
                             if (reader.Read())
                             {
-                                string FName = reader["First Name"].ToString();
-                                string LName = reader["Last Name"].ToString();
+                                string CFName = reader["First Name"].ToString();
+                                string CLName = reader["Last Name"].ToString();
                                 string emailaddress = reader["Email Address"].ToString();
                                 DateTime Birthdate = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Birth Date"));
                                 string formattedBirthdate = Birthdate == DateTime.MinValue ? " " : Birthdate.ToString("dd MMMM yyyy");
@@ -303,7 +303,7 @@ namespace OOP2
                                 DateTime datedelete = reader.IsDBNull(reader.GetOrdinal("Date Deleted")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Deleted"));
                                 string deleted = datedelete == DateTime.MinValue ? " " : datedelete.ToString("dd MMMM yyyy");
 
-                                PPClientName.Text = ClientNamePI.Text = Fname + Lname;
+                                PPClientName.Text = ClientNamePI.Text = CFName + CLName;
                                 BirthDatePI.Text = formattedBirthdate; SexPI.Text = Sex; ContactNumberPI.Text = ContactNumber; EmailAddressPI.Text = emailaddress;
                                 LocText.Text = LocationAddress; dateregisttext.Text = regist; datedeletetext.Text = deleted;
 
@@ -382,6 +382,11 @@ namespace OOP2
         {
             CalendarAppointmentPanel.Visible = true; ProfilePanel.Visible = true; HiLabel.Visible = true; WelcomeLabel.Visible = true;
             ViewDetpanel.Visible = false; ViewDetailspanel.Visible = false; AccountButton.Visible = false; AppHistPanel.Visible = false;
+            ApphisButton.Font = new Font(ApphisButton.Font, ApphisButton.Font.Style & ~FontStyle.Bold);
+            ApphisButton.FlatStyle = FlatStyle.Flat; 
+
+            Personalbutton.FlatStyle = FlatStyle.System;
+            Personalbutton.Font = new Font(Personalbutton.Font, Personalbutton.Font.Style | FontStyle.Bold);
         }
 
         private void Personalbutton_Click(object sender, EventArgs e)
