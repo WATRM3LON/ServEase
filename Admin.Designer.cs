@@ -923,7 +923,7 @@
             StatusText.FlatAppearance.BorderSize = 0;
             StatusText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             StatusText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            StatusText.ForeColor = System.Drawing.Color.Gold;
+            StatusText.ForeColor = System.Drawing.Color.LimeGreen;
             StatusText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             StatusText.Location = new System.Drawing.Point(717, 28);
             StatusText.Name = "StatusText";
@@ -1009,7 +1009,7 @@
             AppHistPanel.Controls.Add(button1);
             AppHistPanel.Location = new System.Drawing.Point(277, 208);
             AppHistPanel.Name = "AppHistPanel";
-            AppHistPanel.Size = new System.Drawing.Size(903, 593);
+            AppHistPanel.Size = new System.Drawing.Size(893, 593);
             AppHistPanel.TabIndex = 60;
             // 
             // button1
@@ -1021,7 +1021,7 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             button1.ForeColor = System.Drawing.Color.White;
-            button1.Location = new System.Drawing.Point(1406, 1127);
+            button1.Location = new System.Drawing.Point(1396, 1127);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(165, 51);
             button1.TabIndex = 78;

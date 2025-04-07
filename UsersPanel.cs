@@ -53,6 +53,14 @@ namespace OOP2
             {
                 UserStatustext.ForeColor = Color.Gold;
             }
+            else if (Status == "Completed")
+            {
+                UserStatustext.ForeColor = ColorTranslator.FromHtml("#69e331");
+            }
+            else if (Status == "Cancelled")
+            {
+                UserStatustext.ForeColor = Color.Red;
+            }
             else
             {
                 UserStatustext.ForeColor = Color.Red;
