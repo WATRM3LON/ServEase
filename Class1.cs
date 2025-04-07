@@ -30,11 +30,11 @@ namespace OOP2
         string Sex { get; set; }
 
     }
-    public abstract class Baseform
+    public abstract class Baseform : Form
     {
         public abstract void Loaders();
         public abstract void InfoGetter();
         public abstract void UpdateInfo();
-        public abstract bool CNumberChecker();
+        public abstract bool CNumberChecker(string cNumber, string connection);
     }
 }

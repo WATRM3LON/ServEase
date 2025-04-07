@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
 {
-    public partial class ServiceFacilitycs : Form, ClientInfo, FacilityInfo
+    public partial class ServiceFacilitycs : Baseform, ClientInfo, FacilityInfo
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
@@ -90,7 +90,7 @@ namespace OOP2
             EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
         }
 
-        public void Loaders()
+        public override void Loaders()
         {
             //SIDEBAR
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
@@ -844,7 +844,7 @@ namespace OOP2
 
         }
 
-        public void InfoGetter()
+        public override void InfoGetter()
         {
             EmailAddress = ServiceFacilityLogin.EmailAddress;
             using (OleDbConnection myConn = new OleDbConnection(connection))
@@ -881,7 +881,7 @@ namespace OOP2
 
         }
 
-        public void UpdateInfo()
+        public override void UpdateInfo()
         {
             EmailAddress = ServiceFacilityLogin.EmailAddress;
 
@@ -938,7 +938,7 @@ namespace OOP2
             }
         }
 
-        public bool CNumberChecker(string Cnumber, string connection)
+        public override bool CNumberChecker(string Cnumber, string connection)
         {
             int valid = 0;
             using (OleDbConnection myConn = new OleDbConnection(connection))
