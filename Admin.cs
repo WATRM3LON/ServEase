@@ -95,12 +95,14 @@ namespace OOP2
                 this.WindowState = FormWindowState.Normal;
                 UsersPanel usersPanel = new UsersPanel();
                 usersPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                LoadFacilityData();
             }
             else
             {
                 this.WindowState = FormWindowState.Maximized;
                 UsersPanel usersPanel = new UsersPanel();
                 usersPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                LoadFacilityData();
             }
             Loaders();
 
@@ -178,6 +180,7 @@ namespace OOP2
 
                             UsersPanel usersPanel = new UsersPanel();
                             usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                            usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 
                             usersPanel.SetDataClient(fullName, email);
                             usersPanel.Loaders();
@@ -436,7 +439,7 @@ namespace OOP2
 
                             UsersPanel usersPanel = new UsersPanel();
                             usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
-
+                            usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
                             usersPanel.SetAppHistory(FacName, FLocation);
                             usersPanel.Loaders();
 
