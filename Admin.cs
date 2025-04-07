@@ -404,7 +404,7 @@ namespace OOP2
 
                 if (Client)
                 {
-                    string sql = "SELECT Client_ID, [First Name], [Last Name], [Email Address] FROM [Admin (Clients)] WHERE [Email Address] <> 'admin12345'";
+                    string sql = "SELECT Facility_ID FROM Appoitments WHERE Client_ID";
 
                     using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                     using (OleDbDataReader reader = cmd.ExecuteReader())
@@ -414,31 +414,44 @@ namespace OOP2
                         while (reader.Read())
                         {
                             int actualClientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+                            int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            string FacName = "", FLocation = "";
 
-                            string fName = reader.IsDBNull(reader.GetOrdinal("First Name")) ? "" : reader.GetString(reader.GetOrdinal("First Name"));
-                            string lName = reader.IsDBNull(reader.GetOrdinal("Last Name")) ? "" : reader.GetString(reader.GetOrdinal("Last Name"));
-                            string fullName = fName + " " + lName;
+                            string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [newFacilityId] = ?";
 
-                            string email = reader.IsDBNull(reader.GetOrdinal("Email Address")) ? "" : reader.GetString(reader.GetOrdinal("Email Address"));
+                            using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
+                            {
+                                cmd.Parameters.AddWithValue("?", newFacilityId);
+
+                                using (OleDbDataReader readers = cmd.ExecuteReader())
+                                {
+                                    if (readers.Read())
+                                    {
+                                        FacName = reader.IsDBNull(reader.GetOrdinal("Facility Name")) ? "" : reader["Facility Name"].ToString();
+                                        FLocation = reader.IsDBNull(reader.GetOrdinal("Facility Location")) ? "" : reader["Facility Location"].ToString();
+
+                                    }
+                                }
+                            }
 
                             UsersPanel usersPanel = new UsersPanel();
                             usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
 
-                            usersPanel.SetDataClient(fullName, email);
+                            usersPanel.SetAppHistory(FacName, FLocation);
                             usersPanel.Loaders();
 
-                            usersPanel.ClientId = actualClientId;
+                            /*usersPanel.ClientId = actualClientId;
                             usersPanel.ViewDetailsClicked += (s, e) =>
                             {
                                 clientId = actualClientId;
                                 ViewDets(actualClientId);
-                            };
+                            };*/
 
 
                             usersPanel.Location = new Point(10, margin - 7);
                             margin += usersPanel.Height + 10;
 
-                            string adminQuery = "SELECT Status, [Date Registered] FROM [Admin (Clients)] WHERE [Client_ID] = ?";
+                            string adminQuery = "SELECT [Appointment Status], [Date and Time] FROM Appointments WHERE [Client_ID] = ?";
                             using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                             {
                                 adminCmd.Parameters.AddWithValue("?", actualClientId);
@@ -447,10 +460,10 @@ namespace OOP2
                                 {
                                     if (adminReader.Read())
                                     {
-                                        string status = adminReader.GetString(adminReader.GetOrdinal("Status"));
-                                        string dateRegistered = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                        string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                                        string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
 
-                                        usersPanel.SetInfo(status, dateRegistered);
+                                        usersPanel.SetInfo(status, dateapp);
                                     }
                                 }
                             }
