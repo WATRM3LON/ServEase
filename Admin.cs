@@ -38,7 +38,7 @@ namespace OOP2
         public Admin()
         {
             InitializeComponent();
-            ViewDetpanel.Visible = false; ViewDetailspanel.Visible = false; AppHistPanel.Visible = false;
+            ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AppHistPanel.Visible = false; FViewDetailspanel.Visible=false;
             Loaders();
         }
         string Fname, Lname;
@@ -58,8 +58,8 @@ namespace OOP2
             ClientsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ClientsButton.Width, ClientsButton.Height, 10, 10));
             SerFacbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerFacbutton.Width, SerFacbutton.Height, 10, 10));
             //PROFILE
-            ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
-            PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
+            CProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CProPicPanel.Width, CProPicPanel.Height, 10, 10));
+            CPIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CPIPanel.Width, CPIPanel.Height, 10, 10));
             DeAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeAccButton.Width, DeAccButton.Height, 10, 10));
             StatusText.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, StatusText.Width, StatusText.Height, 10, 10));
         }
@@ -339,6 +339,73 @@ namespace OOP2
                     }
                 }
             }
+            else
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    string sql = "SELECT [First Name], [Last Name], [Birth Date], Sex, [Contact Number], Location, [Email Address], Password, Status, [Date Registered], [Date Deleted] FROM [Admin (Service Facilities)] WHERE Facility_ID = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", clientId);
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string CFName = reader["First Name"].ToString();
+                                string CLName = reader["Last Name"].ToString();
+                                string emailaddress = reader["Email Address"].ToString();
+                                DateTime Birthdate = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Birth Date"));
+                                string formattedBirthdate = Birthdate == DateTime.MinValue ? " " : Birthdate.ToString("dd MMMM yyyy");
+                                string Sex = reader["Sex"].ToString();
+                                string Password = reader["Password"].ToString();
+                                string ContactNumber = reader["Contact Number"].ToString();
+                                string LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? " " : reader["Location"].ToString();
+                                string Status = reader["Status"].ToString();
+                                DateTime dateregist = reader.IsDBNull(reader.GetOrdinal("Date Registered")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Registered"));
+                                string regist = dateregist == DateTime.MinValue ? " " : dateregist.ToString("dd MMMM yyyy");
+                                DateTime datedelete = reader.IsDBNull(reader.GetOrdinal("Date Deleted")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Deleted"));
+                                string deleted = datedelete == DateTime.MinValue ? " " : datedelete.ToString("dd MMMM yyyy");
+
+                                PPClientName.Text = ClientNamePI.Text = CFName + CLName;
+                                BirthDatePI.Text = formattedBirthdate; SexPI.Text = Sex; ContactNumberPI.Text = ContactNumber; EmailAddressPI.Text = emailaddress;
+                                LocText.Text = LocationAddress; dateregisttext.Text = regist; datedeletetext.Text = deleted;
+
+
+                                int age;
+                                if (BirthDatePI.Text.Length == 1)
+                                {
+                                    AgePI.Text = " ";
+                                }
+                                else
+                                {
+                                    age = DateTime.Now.Year - Birthdate.Year; AgePI.Text = age.ToString();
+                                }
+
+                                if (Status == "Active")
+                                {
+                                    StatusText.ForeColor = ColorTranslator.FromHtml("#69e331"); StatusText.Text = Status;
+                                }
+                                else if (Status == "Deactivated")
+                                {
+                                    StatusText.ForeColor = Color.Gold; StatusText.Text = Status;
+                                }
+                                else
+                                {
+                                    StatusText.ForeColor = Color.Red; StatusText.Text = Status;
+                                }
+
+
+                            }
+                        }
+
+
+                    }
+                }
+            }
         }
 
         private void ClientsButton_Click(object sender, EventArgs e)
@@ -366,7 +433,7 @@ namespace OOP2
         public void ViewDets(int IdClient)
         {
             CalendarAppointmentPanel.Visible = false; ProfilePanel.Visible = false; HiLabel.Visible = false; WelcomeLabel.Visible = false;
-            ViewDetpanel.Visible = true; ViewDetailspanel.Visible = true; AccountButton.Visible = true;
+            ViewDetpanel.Visible = true; CViewDetailspanel.Visible = true; AccountButton.Visible = true;
             if (Client)
             {
                 AccountButton.Text = " Client's Account";
@@ -381,7 +448,7 @@ namespace OOP2
         private void AccountButton_Click(object sender, EventArgs e)
         {
             CalendarAppointmentPanel.Visible = true; ProfilePanel.Visible = true; HiLabel.Visible = true; WelcomeLabel.Visible = true;
-            ViewDetpanel.Visible = false; ViewDetailspanel.Visible = false; AccountButton.Visible = false; AppHistPanel.Visible = false;
+            ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AccountButton.Visible = false; AppHistPanel.Visible = false;
             ApphisButton.Font = new Font(ApphisButton.Font, ApphisButton.Font.Style & ~FontStyle.Bold);
             ApphisButton.FlatStyle = FlatStyle.Flat; 
 
@@ -392,7 +459,7 @@ namespace OOP2
         private void Personalbutton_Click(object sender, EventArgs e)
         {
             ApphisButton.Font = new Font(ApphisButton.Font, ApphisButton.Font.Style & ~FontStyle.Bold);
-            ApphisButton.FlatStyle = FlatStyle.Flat; ViewDetailspanel.Visible = true;
+            ApphisButton.FlatStyle = FlatStyle.Flat; CViewDetailspanel.Visible = true;
 
             Personalbutton.FlatStyle = FlatStyle.System; AppHistPanel.Visible = false;
             Personalbutton.Font = new Font(Personalbutton.Font, Personalbutton.Font.Style | FontStyle.Bold);
@@ -401,7 +468,7 @@ namespace OOP2
         private void ApphisButton_Click(object sender, EventArgs e)
         {
             Personalbutton.Font = new Font(Personalbutton.Font, Personalbutton.Font.Style & ~FontStyle.Bold);
-            Personalbutton.FlatStyle = FlatStyle.Flat; ViewDetailspanel.Visible= false;
+            Personalbutton.FlatStyle = FlatStyle.Flat; CViewDetailspanel.Visible= false;
 
             ApphisButton.FlatStyle = FlatStyle.System; AppHistPanel.Visible = true;
             ApphisButton.Font = new Font(ApphisButton.Font, ApphisButton.Font.Style | FontStyle.Bold);
@@ -424,60 +491,70 @@ namespace OOP2
                     {
                         cmd.Parameters.AddWithValue("?", clientId);
 
-                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        int count = (int)cmd.ExecuteScalar();
+
+                        if (count > 0)
                         {
-                            int margin = 10;
-
-                            while (reader.Read())
+                            using (OleDbDataReader reader = cmd.ExecuteReader())
                             {
-                                int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
-                                string FacName = "", FLocation = "";
+                                int margin = 10;
 
-                                string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
-                                using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
+                                while (reader.Read())
                                 {
-                                    facility.Parameters.AddWithValue("?", newFacilityId);
+                                    int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                                    string FacName = "", FLocation = "";
 
-                                    using (OleDbDataReader readers = facility.ExecuteReader())
+                                    string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+                                    using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
                                     {
-                                        if (readers.Read())
+                                        facility.Parameters.AddWithValue("?", newFacilityId);
+
+                                        using (OleDbDataReader readers = facility.ExecuteReader())
                                         {
-                                            FacName = readers.IsDBNull(readers.GetOrdinal("Facility Name")) ? "" : readers["Facility Name"].ToString();
-                                            FLocation = readers.IsDBNull(readers.GetOrdinal("Facility Location")) ? "" : readers["Facility Location"].ToString();
+                                            if (readers.Read())
+                                            {
+                                                FacName = readers.IsDBNull(readers.GetOrdinal("Facility Name")) ? "" : readers["Facility Name"].ToString();
+                                                FLocation = readers.IsDBNull(readers.GetOrdinal("Facility Location")) ? "" : readers["Facility Location"].ToString();
+                                            }
                                         }
                                     }
-                                }
 
-                                UsersPanel usersPanel = new UsersPanel();
-                                usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
-                                usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                                usersPanel.SetAppHistory(FacName, FLocation);
-                                usersPanel.Loaders();
+                                    UsersPanel usersPanel = new UsersPanel();
+                                    usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                                    usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                                    usersPanel.SetAppHistory(FacName, FLocation);
+                                    usersPanel.Loaders();
 
-                                usersPanel.Location = new Point(10, margin - 7);
-                                margin += usersPanel.Height + 10;
+                                    usersPanel.Location = new Point(10, margin - 7);
+                                    margin += usersPanel.Height + 10;
 
-                                string adminQuery = "SELECT [Appointment Status], [Date and Time] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ?";
-                                using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
-                                {
-                                    adminCmd.Parameters.AddWithValue("?", clientId);
-                                    adminCmd.Parameters.AddWithValue("?", newFacilityId);
-
-                                    using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                    string adminQuery = "SELECT [Appointment Status], [Date and Time] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ?";
+                                    using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                                     {
-                                        if (adminReader.Read())
-                                        {
-                                            string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
-                                            string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                        adminCmd.Parameters.AddWithValue("?", clientId);
+                                        adminCmd.Parameters.AddWithValue("?", newFacilityId);
 
-                                            usersPanel.SetInfo(status, dateapp);
+                                        using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                        {
+                                            if (adminReader.Read())
+                                            {
+                                                string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                                                string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+
+                                                usersPanel.SetInfo(status, dateapp);
+                                            }
                                         }
                                     }
-                                }
 
-                                AppHistPanel.Controls.Add(usersPanel);
+                                    AppHistPanel.Controls.Add(usersPanel);
+                                }
                             }
                         }
+                        else
+                        {
+                            
+                        }
+                        
                     }
 
                 }

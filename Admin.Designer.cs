@@ -62,9 +62,9 @@
             ClientsButton = new System.Windows.Forms.Button();
             SerFacbutton = new System.Windows.Forms.Button();
             CalendarAppointmentPanel = new System.Windows.Forms.Panel();
-            ViewDetailspanel = new System.Windows.Forms.Panel();
+            CViewDetailspanel = new System.Windows.Forms.Panel();
             DeAccButton = new System.Windows.Forms.Button();
-            PIPanel = new System.Windows.Forms.Panel();
+            CPIPanel = new System.Windows.Forms.Panel();
             datedeletetext = new System.Windows.Forms.Label();
             datedeletelabel = new System.Windows.Forms.Label();
             dateregisttext = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             PIName = new System.Windows.Forms.Label();
             PIEditButton = new System.Windows.Forms.Button();
             label91 = new System.Windows.Forms.Label();
-            ProPicPanel = new System.Windows.Forms.Panel();
+            CProPicPanel = new System.Windows.Forms.Panel();
             LocText = new System.Windows.Forms.Label();
             StatusLabel = new System.Windows.Forms.Label();
             LocLabel = new System.Windows.Forms.Label();
@@ -95,17 +95,51 @@
             Personalbutton = new System.Windows.Forms.Button();
             AppHistPanel = new System.Windows.Forms.Panel();
             button1 = new System.Windows.Forms.Button();
+            FViewDetailspanel = new System.Windows.Forms.Panel();
+            button2 = new System.Windows.Forms.Button();
+            FPIPanel = new System.Windows.Forms.Panel();
+            FIWordaystext = new System.Windows.Forms.Label();
+            FIWordayslabel = new System.Windows.Forms.Label();
+            FIWorhourstext = new System.Windows.Forms.Label();
+            FIWorhourslabel = new System.Windows.Forms.Label();
+            FIEmailtext = new System.Windows.Forms.Label();
+            FIEmaillabel = new System.Windows.Forms.Label();
+            FISerCattext = new System.Windows.Forms.Label();
+            FISerCatlabel = new System.Windows.Forms.Label();
+            FICnumbertext = new System.Windows.Forms.Label();
+            FICnumberlabel = new System.Windows.Forms.Label();
+            FIFnametext = new System.Windows.Forms.Label();
+            FIFnamelabel = new System.Windows.Forms.Label();
+            FIEditButton = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            FProPicPanel = new System.Windows.Forms.Panel();
+            FILoclabel = new System.Windows.Forms.Label();
+            FILoctext = new System.Windows.Forms.Label();
+            FIRatingslabel = new System.Windows.Forms.Label();
+            FIRatingstext = new System.Windows.Forms.Label();
+            FIFnameTitle = new System.Windows.Forms.Label();
+            panel4 = new System.Windows.Forms.Panel();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            button3 = new System.Windows.Forms.Button();
+            label6 = new System.Windows.Forms.Label();
+            button4 = new System.Windows.Forms.Button();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
             CalendarAppointmentPanel.SuspendLayout();
-            ViewDetailspanel.SuspendLayout();
-            PIPanel.SuspendLayout();
-            ProPicPanel.SuspendLayout();
+            CViewDetailspanel.SuspendLayout();
+            CPIPanel.SuspendLayout();
+            CProPicPanel.SuspendLayout();
             ViewDetpanel.SuspendLayout();
             AppHistPanel.SuspendLayout();
+            FViewDetailspanel.SuspendLayout();
+            FPIPanel.SuspendLayout();
+            FProPicPanel.SuspendLayout();
             SuspendLayout();
             // 
             // NotificationPanel
@@ -585,17 +619,17 @@
             CalendarAppointmentPanel.Size = new System.Drawing.Size(707, 69);
             CalendarAppointmentPanel.TabIndex = 58;
             // 
-            // ViewDetailspanel
+            // CViewDetailspanel
             // 
-            ViewDetailspanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            ViewDetailspanel.BackColor = System.Drawing.Color.Transparent;
-            ViewDetailspanel.Controls.Add(DeAccButton);
-            ViewDetailspanel.Controls.Add(PIPanel);
-            ViewDetailspanel.Controls.Add(ProPicPanel);
-            ViewDetailspanel.Location = new System.Drawing.Point(277, 208);
-            ViewDetailspanel.Name = "ViewDetailspanel";
-            ViewDetailspanel.Size = new System.Drawing.Size(893, 708);
-            ViewDetailspanel.TabIndex = 59;
+            CViewDetailspanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CViewDetailspanel.BackColor = System.Drawing.Color.Transparent;
+            CViewDetailspanel.Controls.Add(DeAccButton);
+            CViewDetailspanel.Controls.Add(CPIPanel);
+            CViewDetailspanel.Controls.Add(CProPicPanel);
+            CViewDetailspanel.Location = new System.Drawing.Point(277, 208);
+            CViewDetailspanel.Name = "CViewDetailspanel";
+            CViewDetailspanel.Size = new System.Drawing.Size(893, 708);
+            CViewDetailspanel.TabIndex = 59;
             // 
             // DeAccButton
             // 
@@ -614,32 +648,32 @@
             DeAccButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             DeAccButton.UseVisualStyleBackColor = false;
             // 
-            // PIPanel
+            // CPIPanel
             // 
-            PIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            PIPanel.BackColor = System.Drawing.Color.White;
-            PIPanel.Controls.Add(datedeletetext);
-            PIPanel.Controls.Add(datedeletelabel);
-            PIPanel.Controls.Add(dateregisttext);
-            PIPanel.Controls.Add(dateregistlabel);
-            PIPanel.Controls.Add(SexPI);
-            PIPanel.Controls.Add(PISex);
-            PIPanel.Controls.Add(AgePI);
-            PIPanel.Controls.Add(PIAge);
-            PIPanel.Controls.Add(EmailAddressPI);
-            PIPanel.Controls.Add(PIEmailAdd);
-            PIPanel.Controls.Add(BirthDatePI);
-            PIPanel.Controls.Add(PIDateBirth);
-            PIPanel.Controls.Add(ContactNumberPI);
-            PIPanel.Controls.Add(PICNumber);
-            PIPanel.Controls.Add(ClientNamePI);
-            PIPanel.Controls.Add(PIName);
-            PIPanel.Controls.Add(PIEditButton);
-            PIPanel.Controls.Add(label91);
-            PIPanel.Location = new System.Drawing.Point(12, 194);
-            PIPanel.Name = "PIPanel";
-            PIPanel.Size = new System.Drawing.Size(867, 399);
-            PIPanel.TabIndex = 77;
+            CPIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CPIPanel.BackColor = System.Drawing.Color.White;
+            CPIPanel.Controls.Add(datedeletetext);
+            CPIPanel.Controls.Add(datedeletelabel);
+            CPIPanel.Controls.Add(dateregisttext);
+            CPIPanel.Controls.Add(dateregistlabel);
+            CPIPanel.Controls.Add(SexPI);
+            CPIPanel.Controls.Add(PISex);
+            CPIPanel.Controls.Add(AgePI);
+            CPIPanel.Controls.Add(PIAge);
+            CPIPanel.Controls.Add(EmailAddressPI);
+            CPIPanel.Controls.Add(PIEmailAdd);
+            CPIPanel.Controls.Add(BirthDatePI);
+            CPIPanel.Controls.Add(PIDateBirth);
+            CPIPanel.Controls.Add(ContactNumberPI);
+            CPIPanel.Controls.Add(PICNumber);
+            CPIPanel.Controls.Add(ClientNamePI);
+            CPIPanel.Controls.Add(PIName);
+            CPIPanel.Controls.Add(PIEditButton);
+            CPIPanel.Controls.Add(label91);
+            CPIPanel.Location = new System.Drawing.Point(12, 194);
+            CPIPanel.Name = "CPIPanel";
+            CPIPanel.Size = new System.Drawing.Size(867, 399);
+            CPIPanel.TabIndex = 77;
             // 
             // datedeletetext
             // 
@@ -864,20 +898,20 @@
             label91.TabIndex = 35;
             label91.Text = "Personal Information";
             // 
-            // ProPicPanel
+            // CProPicPanel
             // 
-            ProPicPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            ProPicPanel.BackColor = System.Drawing.Color.White;
-            ProPicPanel.Controls.Add(LocText);
-            ProPicPanel.Controls.Add(StatusLabel);
-            ProPicPanel.Controls.Add(LocLabel);
-            ProPicPanel.Controls.Add(StatusText);
-            ProPicPanel.Controls.Add(PPClientName);
-            ProPicPanel.Controls.Add(panel58);
-            ProPicPanel.Location = new System.Drawing.Point(13, 1);
-            ProPicPanel.Name = "ProPicPanel";
-            ProPicPanel.Size = new System.Drawing.Size(867, 171);
-            ProPicPanel.TabIndex = 76;
+            CProPicPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CProPicPanel.BackColor = System.Drawing.Color.White;
+            CProPicPanel.Controls.Add(LocText);
+            CProPicPanel.Controls.Add(StatusLabel);
+            CProPicPanel.Controls.Add(LocLabel);
+            CProPicPanel.Controls.Add(StatusText);
+            CProPicPanel.Controls.Add(PPClientName);
+            CProPicPanel.Controls.Add(panel58);
+            CProPicPanel.Location = new System.Drawing.Point(13, 1);
+            CProPicPanel.Name = "CProPicPanel";
+            CProPicPanel.Size = new System.Drawing.Size(867, 171);
+            CProPicPanel.TabIndex = 76;
             // 
             // LocText
             // 
@@ -1029,13 +1063,429 @@
             button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
             // 
+            // FViewDetailspanel
+            // 
+            FViewDetailspanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FViewDetailspanel.BackColor = System.Drawing.Color.Transparent;
+            FViewDetailspanel.Controls.Add(FPIPanel);
+            FViewDetailspanel.Controls.Add(FProPicPanel);
+            FViewDetailspanel.Controls.Add(button2);
+            FViewDetailspanel.Controls.Add(button3);
+            FViewDetailspanel.Location = new System.Drawing.Point(277, 208);
+            FViewDetailspanel.Name = "FViewDetailspanel";
+            FViewDetailspanel.Size = new System.Drawing.Size(914, 655);
+            FViewDetailspanel.TabIndex = 61;
+            // 
+            // button2
+            // 
+            button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button2.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
+            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button2.ForeColor = System.Drawing.Color.White;
+            button2.Location = new System.Drawing.Point(1417, 1189);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(165, 51);
+            button2.TabIndex = 78;
+            button2.Text = "Deactivate Account";
+            button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // FPIPanel
+            // 
+            FPIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FPIPanel.BackColor = System.Drawing.Color.White;
+            FPIPanel.Controls.Add(label2);
+            FPIPanel.Controls.Add(label3);
+            FPIPanel.Controls.Add(label4);
+            FPIPanel.Controls.Add(label5);
+            FPIPanel.Controls.Add(FIWordaystext);
+            FPIPanel.Controls.Add(FIWordayslabel);
+            FPIPanel.Controls.Add(FIWorhourstext);
+            FPIPanel.Controls.Add(FIWorhourslabel);
+            FPIPanel.Controls.Add(FIEmailtext);
+            FPIPanel.Controls.Add(FIEmaillabel);
+            FPIPanel.Controls.Add(FISerCattext);
+            FPIPanel.Controls.Add(FISerCatlabel);
+            FPIPanel.Controls.Add(FICnumbertext);
+            FPIPanel.Controls.Add(FICnumberlabel);
+            FPIPanel.Controls.Add(FIFnametext);
+            FPIPanel.Controls.Add(FIFnamelabel);
+            FPIPanel.Controls.Add(FIEditButton);
+            FPIPanel.Controls.Add(label1);
+            FPIPanel.Location = new System.Drawing.Point(13, 200);
+            FPIPanel.Name = "FPIPanel";
+            FPIPanel.Size = new System.Drawing.Size(888, 378);
+            FPIPanel.TabIndex = 80;
+            // 
+            // FIWordaystext
+            // 
+            FIWordaystext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIWordaystext.AutoSize = true;
+            FIWordaystext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FIWordaystext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FIWordaystext.Location = new System.Drawing.Point(684, 216);
+            FIWordaystext.Name = "FIWordaystext";
+            FIWordaystext.Size = new System.Drawing.Size(85, 25);
+            FIWordaystext.TabIndex = 47;
+            FIWordaystext.Text = "Mon - Fri";
+            // 
+            // FIWordayslabel
+            // 
+            FIWordayslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIWordayslabel.AutoSize = true;
+            FIWordayslabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FIWordayslabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIWordayslabel.Location = new System.Drawing.Point(681, 178);
+            FIWordayslabel.Name = "FIWordayslabel";
+            FIWordayslabel.Size = new System.Drawing.Size(127, 25);
+            FIWordayslabel.TabIndex = 46;
+            FIWordayslabel.Text = "Working Days";
+            FIWordayslabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // FIWorhourstext
+            // 
+            FIWorhourstext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIWorhourstext.AutoSize = true;
+            FIWorhourstext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FIWorhourstext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FIWorhourstext.Location = new System.Drawing.Point(681, 123);
+            FIWorhourstext.Name = "FIWorhourstext";
+            FIWorhourstext.Size = new System.Drawing.Size(161, 25);
+            FIWorhourstext.TabIndex = 45;
+            FIWorhourstext.Text = "8:00 AM - 5:00 PM";
+            // 
+            // FIWorhourslabel
+            // 
+            FIWorhourslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIWorhourslabel.AutoSize = true;
+            FIWorhourslabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FIWorhourslabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIWorhourslabel.Location = new System.Drawing.Point(679, 85);
+            FIWorhourslabel.Name = "FIWorhourslabel";
+            FIWorhourslabel.Size = new System.Drawing.Size(138, 25);
+            FIWorhourslabel.TabIndex = 44;
+            FIWorhourslabel.Text = "Working Hours";
+            // 
+            // FIEmailtext
+            // 
+            FIEmailtext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIEmailtext.AutoSize = true;
+            FIEmailtext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FIEmailtext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FIEmailtext.Location = new System.Drawing.Point(334, 217);
+            FIEmailtext.Name = "FIEmailtext";
+            FIEmailtext.Size = new System.Drawing.Size(208, 25);
+            FIEmailtext.TabIndex = 43;
+            FIEmailtext.Text = "salonderose@gmail.com";
+            // 
+            // FIEmaillabel
+            // 
+            FIEmaillabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIEmaillabel.AutoSize = true;
+            FIEmaillabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FIEmaillabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIEmaillabel.Location = new System.Drawing.Point(327, 178);
+            FIEmaillabel.Name = "FIEmaillabel";
+            FIEmaillabel.Size = new System.Drawing.Size(128, 25);
+            FIEmaillabel.TabIndex = 42;
+            FIEmaillabel.Text = "Email Address";
+            // 
+            // FISerCattext
+            // 
+            FISerCattext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FISerCattext.AutoSize = true;
+            FISerCattext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FISerCattext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FISerCattext.Location = new System.Drawing.Point(331, 123);
+            FISerCattext.Name = "FISerCattext";
+            FISerCattext.Size = new System.Drawing.Size(279, 25);
+            FISerCattext.TabIndex = 41;
+            FISerCattext.Text = "Personal and Beauty Care Services";
+            // 
+            // FISerCatlabel
+            // 
+            FISerCatlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FISerCatlabel.AutoSize = true;
+            FISerCatlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FISerCatlabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FISerCatlabel.Location = new System.Drawing.Point(324, 85);
+            FISerCatlabel.Name = "FISerCatlabel";
+            FISerCatlabel.Size = new System.Drawing.Size(153, 25);
+            FISerCatlabel.TabIndex = 40;
+            FISerCatlabel.Text = "Service Category";
+            // 
+            // FICnumbertext
+            // 
+            FICnumbertext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FICnumbertext.AutoSize = true;
+            FICnumbertext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FICnumbertext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FICnumbertext.Location = new System.Drawing.Point(28, 217);
+            FICnumbertext.Name = "FICnumbertext";
+            FICnumbertext.Size = new System.Drawing.Size(149, 25);
+            FICnumbertext.TabIndex = 39;
+            FICnumbertext.Text = "+63 9956226213";
+            // 
+            // FICnumberlabel
+            // 
+            FICnumberlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FICnumberlabel.AutoSize = true;
+            FICnumberlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FICnumberlabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FICnumberlabel.Location = new System.Drawing.Point(21, 178);
+            FICnumberlabel.Name = "FICnumberlabel";
+            FICnumberlabel.Size = new System.Drawing.Size(150, 25);
+            FICnumberlabel.TabIndex = 38;
+            FICnumberlabel.Text = "Contact Number";
+            // 
+            // FIFnametext
+            // 
+            FIFnametext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIFnametext.AutoSize = true;
+            FIFnametext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FIFnametext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FIFnametext.Location = new System.Drawing.Point(28, 123);
+            FIFnametext.Name = "FIFnametext";
+            FIFnametext.Size = new System.Drawing.Size(124, 25);
+            FIFnametext.TabIndex = 37;
+            FIFnametext.Text = "Salon de Rose";
+            // 
+            // FIFnamelabel
+            // 
+            FIFnamelabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIFnamelabel.AutoSize = true;
+            FIFnamelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FIFnamelabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIFnamelabel.Location = new System.Drawing.Point(21, 85);
+            FIFnamelabel.Name = "FIFnamelabel";
+            FIFnamelabel.Size = new System.Drawing.Size(122, 25);
+            FIFnamelabel.TabIndex = 36;
+            FIFnamelabel.Text = "Facility Name";
+            // 
+            // FIEditButton
+            // 
+            FIEditButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            FIEditButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            FIEditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            FIEditButton.FlatAppearance.BorderSize = 0;
+            FIEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FIEditButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            FIEditButton.Image = (System.Drawing.Image)resources.GetObject("FIEditButton.Image");
+            FIEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            FIEditButton.Location = new System.Drawing.Point(1431, 11);
+            FIEditButton.Name = "FIEditButton";
+            FIEditButton.Size = new System.Drawing.Size(109, 54);
+            FIEditButton.TabIndex = 33;
+            FIEditButton.Text = "Edit";
+            FIEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            FIEditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            FIEditButton.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label1.Location = new System.Drawing.Point(19, 17);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(172, 25);
+            label1.TabIndex = 35;
+            label1.Text = "Facility Information";
+            // 
+            // FProPicPanel
+            // 
+            FProPicPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FProPicPanel.BackColor = System.Drawing.Color.White;
+            FProPicPanel.Controls.Add(label6);
+            FProPicPanel.Controls.Add(button4);
+            FProPicPanel.Controls.Add(FILoclabel);
+            FProPicPanel.Controls.Add(FILoctext);
+            FProPicPanel.Controls.Add(FIRatingslabel);
+            FProPicPanel.Controls.Add(FIRatingstext);
+            FProPicPanel.Controls.Add(FIFnameTitle);
+            FProPicPanel.Controls.Add(panel4);
+            FProPicPanel.Location = new System.Drawing.Point(13, 18);
+            FProPicPanel.Name = "FProPicPanel";
+            FProPicPanel.Size = new System.Drawing.Size(888, 165);
+            FProPicPanel.TabIndex = 79;
+            // 
+            // FILoclabel
+            // 
+            FILoclabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FILoclabel.AutoSize = true;
+            FILoclabel.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            FILoclabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FILoclabel.Location = new System.Drawing.Point(181, 108);
+            FILoclabel.Name = "FILoclabel";
+            FILoclabel.Size = new System.Drawing.Size(84, 23);
+            FILoclabel.TabIndex = 49;
+            FILoclabel.Text = "Location: ";
+            // 
+            // FILoctext
+            // 
+            FILoctext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FILoctext.AutoSize = true;
+            FILoctext.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            FILoctext.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            FILoctext.Location = new System.Drawing.Point(270, 110);
+            FILoctext.Name = "FILoctext";
+            FILoctext.Size = new System.Drawing.Size(84, 23);
+            FILoctext.TabIndex = 50;
+            FILoctext.Text = "Cebu City";
+            // 
+            // FIRatingslabel
+            // 
+            FIRatingslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIRatingslabel.AutoSize = true;
+            FIRatingslabel.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            FIRatingslabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIRatingslabel.Location = new System.Drawing.Point(181, 78);
+            FIRatingslabel.Name = "FIRatingslabel";
+            FIRatingslabel.Size = new System.Drawing.Size(75, 23);
+            FIRatingslabel.TabIndex = 48;
+            FIRatingslabel.Text = "Ratings: ";
+            // 
+            // FIRatingstext
+            // 
+            FIRatingstext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIRatingstext.AutoSize = true;
+            FIRatingstext.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            FIRatingstext.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            FIRatingstext.Location = new System.Drawing.Point(259, 78);
+            FIRatingstext.Name = "FIRatingstext";
+            FIRatingstext.Size = new System.Drawing.Size(270, 23);
+            FIRatingstext.TabIndex = 48;
+            FIRatingstext.Text = "Personal and Beauty Care Services";
+            // 
+            // FIFnameTitle
+            // 
+            FIFnameTitle.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIFnameTitle.AutoSize = true;
+            FIFnameTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FIFnameTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FIFnameTitle.Location = new System.Drawing.Point(165, 36);
+            FIFnameTitle.Name = "FIFnameTitle";
+            FIFnameTitle.Size = new System.Drawing.Size(162, 31);
+            FIFnameTitle.TabIndex = 35;
+            FIFnameTitle.Text = "Salon de Rose";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = System.Drawing.Color.Transparent;
+            panel4.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel4.BackgroundImage");
+            panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            panel4.Location = new System.Drawing.Point(21, 22);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(116, 115);
+            panel4.TabIndex = 34;
+            // 
+            // label2
+            // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label2.Location = new System.Drawing.Point(330, 327);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(210, 25);
+            label2.TabIndex = 82;
+            label2.Text = "juandelacruz@gmail.com";
+            // 
+            // label3
+            // 
+            label3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            label3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label3.Location = new System.Drawing.Point(323, 288);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(122, 25);
+            label3.TabIndex = 81;
+            label3.Text = "Date Deleted";
+            // 
+            // label4
+            // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label4.Location = new System.Drawing.Point(27, 327);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(149, 25);
+            label4.TabIndex = 80;
+            label4.Text = "+63 9956226213";
+            // 
+            // label5
+            // 
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            label5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label5.Location = new System.Drawing.Point(20, 288);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(146, 25);
+            label5.TabIndex = 79;
+            label5.Text = "Date Registered";
+            // 
+            // button3
+            // 
+            button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button3.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
+            button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button3.ForeColor = System.Drawing.Color.White;
+            button3.Location = new System.Drawing.Point(724, 593);
+            button3.Name = "button3";
+            button3.Size = new System.Drawing.Size(165, 51);
+            button3.TabIndex = 83;
+            button3.Text = "Deactivate Account";
+            button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            label6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label6.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label6.Location = new System.Drawing.Point(669, 38);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(50, 20);
+            label6.TabIndex = 52;
+            label6.Text = "Status";
+            // 
+            // button4
+            // 
+            button4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button4.BackColor = System.Drawing.Color.WhiteSmoke;
+            button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button4.ForeColor = System.Drawing.Color.LimeGreen;
+            button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            button4.Location = new System.Drawing.Point(743, 22);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(109, 46);
+            button4.TabIndex = 51;
+            button4.Text = "Active";
+            button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            button4.UseVisualStyleBackColor = false;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(214, 241, 250);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(ViewDetailspanel);
+            Controls.Add(FViewDetailspanel);
+            Controls.Add(CViewDetailspanel);
             Controls.Add(AppHistPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ViewDetpanel);
@@ -1062,13 +1512,18 @@
             HeaderPanel.ResumeLayout(false);
             HeaderPanel.PerformLayout();
             CalendarAppointmentPanel.ResumeLayout(false);
-            ViewDetailspanel.ResumeLayout(false);
-            PIPanel.ResumeLayout(false);
-            PIPanel.PerformLayout();
-            ProPicPanel.ResumeLayout(false);
-            ProPicPanel.PerformLayout();
+            CViewDetailspanel.ResumeLayout(false);
+            CPIPanel.ResumeLayout(false);
+            CPIPanel.PerformLayout();
+            CProPicPanel.ResumeLayout(false);
+            CProPicPanel.PerformLayout();
             ViewDetpanel.ResumeLayout(false);
             AppHistPanel.ResumeLayout(false);
+            FViewDetailspanel.ResumeLayout(false);
+            FPIPanel.ResumeLayout(false);
+            FPIPanel.PerformLayout();
+            FProPicPanel.ResumeLayout(false);
+            FProPicPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1107,9 +1562,9 @@
         private System.Windows.Forms.Button ClientsButton;
         private System.Windows.Forms.Button SerFacbutton;
         private System.Windows.Forms.Panel CalendarAppointmentPanel;
-        private System.Windows.Forms.Panel ViewDetailspanel;
+        private System.Windows.Forms.Panel CViewDetailspanel;
         private System.Windows.Forms.Button DeAccButton;
-        private System.Windows.Forms.Panel PIPanel;
+        private System.Windows.Forms.Panel CPIPanel;
         private System.Windows.Forms.Label SexPI;
         private System.Windows.Forms.Label PISex;
         private System.Windows.Forms.Label AgePI;
@@ -1124,7 +1579,7 @@
         private System.Windows.Forms.Label PIName;
         private System.Windows.Forms.Button PIEditButton;
         private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.Panel ProPicPanel;
+        private System.Windows.Forms.Panel CProPicPanel;
         private System.Windows.Forms.Label PPClientName;
         private System.Windows.Forms.Panel panel58;
         private System.Windows.Forms.Panel ViewDetpanel;
@@ -1140,5 +1595,36 @@
         private System.Windows.Forms.Label LocLabel;
         private System.Windows.Forms.Panel AppHistPanel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel FViewDetailspanel;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel FPIPanel;
+        private System.Windows.Forms.Label FIWordaystext;
+        private System.Windows.Forms.Label FIWordayslabel;
+        private System.Windows.Forms.Label FIWorhourstext;
+        private System.Windows.Forms.Label FIWorhourslabel;
+        private System.Windows.Forms.Label FIEmailtext;
+        private System.Windows.Forms.Label FIEmaillabel;
+        private System.Windows.Forms.Label FISerCattext;
+        private System.Windows.Forms.Label FISerCatlabel;
+        private System.Windows.Forms.Label FICnumbertext;
+        private System.Windows.Forms.Label FICnumberlabel;
+        private System.Windows.Forms.Label FIFnametext;
+        private System.Windows.Forms.Label FIFnamelabel;
+        private System.Windows.Forms.Button FIEditButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel FProPicPanel;
+        private System.Windows.Forms.Label FILoclabel;
+        private System.Windows.Forms.Label FILoctext;
+        private System.Windows.Forms.Label FIRatingslabel;
+        private System.Windows.Forms.Label FIRatingstext;
+        private System.Windows.Forms.Label FIFnameTitle;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
     }
 }

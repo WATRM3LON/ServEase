@@ -39,7 +39,7 @@ namespace OOP2
             UserNamelabel.Text = "Name:";
             UserEmaillabel.Text = "Email Addres:";
             UserNametext.Text = Name;
-            UserEmailtext.Text = Emailaddress;
+            UserEmailtext.Text = Emailaddress; ViewDetailsButton.Visible = true;
             ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#69e331");
         }
         public void SetInfo(string Status, string Regist)
@@ -73,7 +73,7 @@ namespace OOP2
             UserNamelabel.Text = "Facility Name:";
             UserEmaillabel.Text = "Email Addres:";
             UserNametext.Text = Name;
-            UserEmailtext.Text = Emailaddress;
+            UserEmailtext.Text = Emailaddress; ViewDetailsButton.Visible = true;
             ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#f3508b");
         }
         public void SetAppHistory(string Name, string FLocation)
@@ -82,7 +82,7 @@ namespace OOP2
             UserNamelabel.Text = "Facility Name:";
             UserNametext.Text = Name;
             UserEmaillabel.Text = "Location: ";
-            UserEmailtext.Text = FLocation;
+            UserEmailtext.Text = FLocation; ViewDetailsButton.Visible = false;
             ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#22b0e5");
         }
 

@@ -14,7 +14,7 @@ using OOP2;
 
 namespace OOP2
 {
-    public partial class ClientLogin : Updates
+    public partial class ClientLogin : Form
     {
         public static string EmailAddress = " ";
 
@@ -41,7 +41,7 @@ namespace OOP2
             Loaders();
 
         }
-        public override void Loaders()
+        public void Loaders()
         {
             LogInPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogInPanel.Width, LogInPanel.Height, 20, 20));
             LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 10, 10));
@@ -61,8 +61,6 @@ namespace OOP2
             NmatchLabel.Visible = false; FNameEM.Visible = false; LNameEM.Visible = false; EmailAddSEM.Visible = false; CNumberEM.Visible = false; PasswordSEM.Visible = false; CPasswordEM.Visible = false; InvalidLEP.Visible = false; 
             EmailExisted.Visible = false; CnumberExisted.Visible = false; Cnumber09.Visible = false; Cnumberdigits.Visible = false; Cnumber11digits.Visible = false;
         }
-        public override void InfoGetter() { }
-        public override void UpdateInfo() { }
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -240,7 +238,7 @@ namespace OOP2
                 }
             }
         }
-        public override bool CNumberChecker(string Cnumber, string connection)
+        public bool CNumberChecker(string Cnumber, string connection)
         {
             int valid = 0;
             using (OleDbConnection myConn = new OleDbConnection(connection))

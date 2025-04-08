@@ -2377,7 +2377,7 @@
             PIPanel.Controls.Add(FIFnamelabel);
             PIPanel.Controls.Add(FIEditButton);
             PIPanel.Controls.Add(label91);
-            PIPanel.Location = new System.Drawing.Point(8, 195);
+            PIPanel.Location = new System.Drawing.Point(9, 195);
             PIPanel.Name = "PIPanel";
             PIPanel.Size = new System.Drawing.Size(867, 273);
             PIPanel.TabIndex = 38;
@@ -4098,6 +4098,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ProfilePanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ESerOffPanel);
             Controls.Add(ServicesOfferedPanel);
@@ -4122,7 +4123,6 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
-            Controls.Add(ProfilePanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "ServiceFacilitycs";

@@ -15,7 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 namespace OOP2
 {
 
-    public partial class ClientDashboard : Updates, ClientInfo
+    public partial class ClientDashboard : Form, ClientInfo
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
@@ -73,7 +73,7 @@ namespace OOP2
             EditPIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
         }
 
-        public override void Loaders()
+        public void Loaders()
         {
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             //DASHBOARD
@@ -349,7 +349,7 @@ namespace OOP2
             notify = false;
         }
 
-        public override void InfoGetter()
+        public void InfoGetter()
         {
             EmailAddress = ClientLogin.EmailAddress;
             using (OleDbConnection myConn = new OleDbConnection(connection))
@@ -382,7 +382,7 @@ namespace OOP2
 
         }
 
-        public override void UpdateInfo()
+        public void UpdateInfo()
         {
             EmailAddress = ClientLogin.EmailAddress;
 
@@ -454,7 +454,7 @@ namespace OOP2
             }
         }
 
-        public override bool CNumberChecker(string Cnumber, string connection)
+        public bool CNumberChecker(string Cnumber, string connection)
         {
             int valid = 0;
             using (OleDbConnection myConn = new OleDbConnection(connection))
