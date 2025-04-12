@@ -43,11 +43,11 @@
             WorkingHoursText.AutoSize = true;
             WorkingHoursText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             WorkingHoursText.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            WorkingHoursText.Location = new System.Drawing.Point(32, 136);
+            WorkingHoursText.Location = new System.Drawing.Point(23, 136);
             WorkingHoursText.Name = "WorkingHoursText";
-            WorkingHoursText.Size = new System.Drawing.Size(93, 20);
+            WorkingHoursText.Size = new System.Drawing.Size(144, 20);
             WorkingHoursText.TabIndex = 43;
-            WorkingHoursText.Text = "10:00 - 12:00";
+            WorkingHoursText.Text = "10:00 am - 12:00 pm";
             // 
             // SerStoreButton
             // 
@@ -62,6 +62,7 @@
             SerStoreButton.TabIndex = 42;
             SerStoreButton.Text = "View Profile";
             SerStoreButton.UseVisualStyleBackColor = false;
+            SerStoreButton.Click += SerStoreButton_Click;
             // 
             // FacilityName
             // 
@@ -98,7 +99,7 @@
             Pricerangetext.AutoSize = true;
             Pricerangetext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             Pricerangetext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            Pricerangetext.Location = new System.Drawing.Point(164, 136);
+            Pricerangetext.Location = new System.Drawing.Point(173, 136);
             Pricerangetext.Name = "Pricerangetext";
             Pricerangetext.Size = new System.Drawing.Size(95, 20);
             Pricerangetext.TabIndex = 44;
@@ -109,7 +110,7 @@
             PricerangeLabel.AutoSize = true;
             PricerangeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             PricerangeLabel.ForeColor = System.Drawing.Color.Gray;
-            PricerangeLabel.Location = new System.Drawing.Point(152, 114);
+            PricerangeLabel.Location = new System.Drawing.Point(161, 114);
             PricerangeLabel.Name = "PricerangeLabel";
             PricerangeLabel.Size = new System.Drawing.Size(79, 17);
             PricerangeLabel.TabIndex = 46;

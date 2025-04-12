@@ -36,5 +36,10 @@ namespace OOP2
             WorkingHoursText.Text = workinghours;
             Pricerangetext.Text = pricerange;
         }
+
+        private void SerStoreButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
