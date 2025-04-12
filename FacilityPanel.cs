@@ -23,6 +23,8 @@ namespace OOP2
             int nWidthEllipse,
             int nHeightEllipse
         );
+
+        public event EventHandler ViewProfileClicked;
         public FacilityPanel()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace OOP2
 
         private void SerStoreButton_Click(object sender, EventArgs e)
         {
-
+            ViewProfileClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

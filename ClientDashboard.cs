@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
@@ -132,8 +133,8 @@ namespace OOP2
             MisSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MisSbutton.Width, MisSbutton.Height, 10, 10));
             //SERVICES 2
             SerPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerPanel.Width, SerPanel.Height, 10, 10));
-            panel48.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel48.Width, panel48.Height, 10, 10));
-            panel47.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel47.Width, panel47.Height, 10, 10));
+            FacProPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FacProPanel.Width, FacProPanel.Height, 10, 10));
+            FacSerOPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FacSerOPanel.Width, FacSerOPanel.Height, 10, 10));
             EditButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton.Width, EditButton.Height, 10, 10));
             BAPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BAPanel.Width, BAPanel.Height, 10, 10));
             panel93.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel93.Width, panel93.Height, 10, 10));
@@ -1211,6 +1212,7 @@ namespace OOP2
 
             int currentRow = 0;
             int currentCol = 0;
+            
 
             SerPanel.Controls.Clear();
 
@@ -1233,9 +1235,8 @@ namespace OOP2
                             DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
                             DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
                             string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
-                            //string hours = Shours + Ehours;
                             string ratings = reader["Ratings"].ToString();
-                            
+
                             decimal minPrice = 0, maxPrice = 0;
                             using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
                             {
@@ -1253,10 +1254,6 @@ namespace OOP2
                             string priceRange = $"₱{minPrice} - ₱{maxPrice}";
 
                             FacilityPanel facilityPanel = new FacilityPanel();
-                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, facilityPanel.Width, facilityPanel.Height, 10, 10));
-                            //facilityPanel.Location = new Point(10, margin);
-                            //margin += facilityPanel.Height + 10;
-
                             facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
                             //facilityPanel.Loaders();
                             facilityPanel.Width = panelWidth;
@@ -1267,6 +1264,11 @@ namespace OOP2
                             int y = margin + currentRow * (panelHeight + padding);
                             facilityPanel.Location = new Point(x, y);
 
+                            facilityPanel.ViewProfileClicked += (s, e) =>
+                            {
+                                ViewFacDets(facilityId);
+                            };
+
                             SerPanel.Controls.Add(facilityPanel);
 
                             currentCol++;
@@ -1275,13 +1277,19 @@ namespace OOP2
                                 currentCol = 0;
                                 currentRow++;
                             }
-
-                            //SerPanel.Controls.Add(facilityPanel);
                         }
                     }
                 }
             }
         }
 
+        private void SOTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void ViewFacDets(int ID)
+        {
+        }
     }
 }
