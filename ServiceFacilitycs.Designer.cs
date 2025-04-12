@@ -4098,10 +4098,10 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ServicesOfferedPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ESerOffPanel);
-            Controls.Add(ServicesOfferedPanel);
             Controls.Add(EditFIPanel);
             Controls.Add(SettingsPanel);
             Controls.Add(AppointmentsPanel);

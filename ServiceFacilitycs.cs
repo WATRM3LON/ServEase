@@ -640,8 +640,6 @@ namespace OOP2
                 notify = false;
             }
         }
-
-
         private void SOView_Click(object sender, EventArgs e)
         {
             //PROFILE
@@ -1336,7 +1334,7 @@ namespace OOP2
                             serviceOffered.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, serviceOffered.Width, serviceOffered.Height, 10, 10));
 
                             serviceOffered.SetData(serviceName, description, price, duration);
-                            serviceOffered.Location = new Point(10, margin - 7);
+                            serviceOffered.Location = new Point(0, margin - 7);
                             margin += serviceOffered.Height + 10;
 
                             SerOffPanel.Controls.Add(serviceOffered);

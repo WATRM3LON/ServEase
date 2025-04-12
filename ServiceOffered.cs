@@ -29,5 +29,10 @@ namespace OOP2
             ServicePrice.Text = Convert.ToString(Price);
             Serviceduration.Text = Duration;
         }
+
+        private void Serviceduration_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
