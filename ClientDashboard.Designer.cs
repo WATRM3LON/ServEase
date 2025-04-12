@@ -270,11 +270,28 @@
             FacSerOPanel = new System.Windows.Forms.Panel();
             SOTable = new System.Windows.Forms.TableLayoutPanel();
             FPDuration = new System.Windows.Forms.Label();
+            FPDescription = new System.Windows.Forms.Label();
             FPPrice = new System.Windows.Forms.Label();
+            FPServiceName = new System.Windows.Forms.Label();
             SBPanel = new System.Windows.Forms.Panel();
             FPBookAppButton = new System.Windows.Forms.Button();
             SOButton = new System.Windows.Forms.Button();
             FacProPanel = new System.Windows.Forms.Panel();
+            MailPic = new System.Windows.Forms.PictureBox();
+            EMSlabel = new System.Windows.Forms.Label();
+            EMStext = new System.Windows.Forms.Label();
+            PhonePic = new System.Windows.Forms.PictureBox();
+            Conumlabel = new System.Windows.Forms.Label();
+            Conumtext = new System.Windows.Forms.Label();
+            LocationPic = new System.Windows.Forms.PictureBox();
+            Loclabel = new System.Windows.Forms.Label();
+            Loctext = new System.Windows.Forms.Label();
+            DayPic = new System.Windows.Forms.PictureBox();
+            WorDayslabel = new System.Windows.Forms.Label();
+            WorDaystext = new System.Windows.Forms.Label();
+            ClockPic = new System.Windows.Forms.PictureBox();
+            Workinhourslabel = new System.Windows.Forms.Label();
+            WorkingHoursText = new System.Windows.Forms.Label();
             FaciName = new System.Windows.Forms.Label();
             panel49 = new System.Windows.Forms.Panel();
             label125 = new System.Windows.Forms.Label();
@@ -355,23 +372,6 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            FPServiceName = new System.Windows.Forms.Label();
-            FPDescription = new System.Windows.Forms.Label();
-            ClockPic = new System.Windows.Forms.PictureBox();
-            Workinhourslabel = new System.Windows.Forms.Label();
-            WorkingHoursText = new System.Windows.Forms.Label();
-            DayPic = new System.Windows.Forms.PictureBox();
-            WorDayslabel = new System.Windows.Forms.Label();
-            WorDaystext = new System.Windows.Forms.Label();
-            LocationPic = new System.Windows.Forms.PictureBox();
-            Loclabel = new System.Windows.Forms.Label();
-            Loctext = new System.Windows.Forms.Label();
-            PhonePic = new System.Windows.Forms.PictureBox();
-            Conumlabel = new System.Windows.Forms.Label();
-            Conumtext = new System.Windows.Forms.Label();
-            MailPic = new System.Windows.Forms.PictureBox();
-            EMSlabel = new System.Windows.Forms.Label();
-            EMStext = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -437,6 +437,11 @@
             SOTable.SuspendLayout();
             SBPanel.SuspendLayout();
             FacProPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MailPic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PhonePic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LocationPic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DayPic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ClockPic).BeginInit();
             panel49.SuspendLayout();
             FacilityProPanel2.SuspendLayout();
             BAPanel.SuspendLayout();
@@ -463,11 +468,6 @@
             EditPIPanel.SuspendLayout();
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ClockPic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DayPic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)LocationPic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PhonePic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)MailPic).BeginInit();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -3663,6 +3663,20 @@
             FPDuration.Text = "Duration";
             FPDuration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // FPDescription
+            // 
+            FPDescription.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FPDescription.AutoSize = true;
+            FPDescription.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            FPDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FPDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FPDescription.Location = new System.Drawing.Point(149, 0);
+            FPDescription.Name = "FPDescription";
+            FPDescription.Size = new System.Drawing.Size(140, 73);
+            FPDescription.TabIndex = 37;
+            FPDescription.Text = "Description";
+            FPDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FPPrice
             // 
             FPPrice.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -3676,6 +3690,21 @@
             FPPrice.TabIndex = 37;
             FPPrice.Text = "Price";
             FPPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FPServiceName
+            // 
+            FPServiceName.AutoSize = true;
+            FPServiceName.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            FPServiceName.Dock = System.Windows.Forms.DockStyle.Fill;
+            FPServiceName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FPServiceName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FPServiceName.Location = new System.Drawing.Point(0, 0);
+            FPServiceName.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            FPServiceName.Name = "FPServiceName";
+            FPServiceName.Size = new System.Drawing.Size(143, 73);
+            FPServiceName.TabIndex = 37;
+            FPServiceName.Text = "Service Name";
+            FPServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SBPanel
             // 
@@ -3745,20 +3774,186 @@
             FacProPanel.Controls.Add(FaciName);
             FacProPanel.Controls.Add(panel49);
             FacProPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            FacProPanel.Location = new System.Drawing.Point(13, 15);
-            FacProPanel.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
+            FacProPanel.Location = new System.Drawing.Point(0, 15);
+            FacProPanel.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             FacProPanel.Name = "FacProPanel";
-            FacProPanel.Size = new System.Drawing.Size(235, 599);
+            FacProPanel.Size = new System.Drawing.Size(261, 599);
             FacProPanel.TabIndex = 51;
+            // 
+            // MailPic
+            // 
+            MailPic.Image = (System.Drawing.Image)resources.GetObject("MailPic.Image");
+            MailPic.Location = new System.Drawing.Point(23, 486);
+            MailPic.Name = "MailPic";
+            MailPic.Size = new System.Drawing.Size(25, 25);
+            MailPic.TabIndex = 71;
+            MailPic.TabStop = false;
+            // 
+            // EMSlabel
+            // 
+            EMSlabel.AutoSize = true;
+            EMSlabel.BackColor = System.Drawing.Color.Transparent;
+            EMSlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            EMSlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            EMSlabel.Location = new System.Drawing.Point(53, 488);
+            EMSlabel.Name = "EMSlabel";
+            EMSlabel.Size = new System.Drawing.Size(118, 20);
+            EMSlabel.TabIndex = 70;
+            EMSlabel.Text = "Email Address";
+            // 
+            // EMStext
+            // 
+            EMStext.AutoSize = true;
+            EMStext.BackColor = System.Drawing.Color.Transparent;
+            EMStext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            EMStext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            EMStext.Location = new System.Drawing.Point(43, 521);
+            EMStext.Name = "EMStext";
+            EMStext.Size = new System.Drawing.Size(163, 20);
+            EMStext.TabIndex = 69;
+            EMStext.Text = "10:00 am - 12:00 pm";
+            // 
+            // PhonePic
+            // 
+            PhonePic.Image = (System.Drawing.Image)resources.GetObject("PhonePic.Image");
+            PhonePic.Location = new System.Drawing.Point(23, 401);
+            PhonePic.Name = "PhonePic";
+            PhonePic.Size = new System.Drawing.Size(25, 25);
+            PhonePic.TabIndex = 68;
+            PhonePic.TabStop = false;
+            // 
+            // Conumlabel
+            // 
+            Conumlabel.AutoSize = true;
+            Conumlabel.BackColor = System.Drawing.Color.Transparent;
+            Conumlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Conumlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            Conumlabel.Location = new System.Drawing.Point(53, 403);
+            Conumlabel.Name = "Conumlabel";
+            Conumlabel.Size = new System.Drawing.Size(131, 20);
+            Conumlabel.TabIndex = 67;
+            Conumlabel.Text = "Contact Number";
+            // 
+            // Conumtext
+            // 
+            Conumtext.AutoSize = true;
+            Conumtext.BackColor = System.Drawing.Color.Transparent;
+            Conumtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Conumtext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            Conumtext.Location = new System.Drawing.Point(43, 436);
+            Conumtext.Name = "Conumtext";
+            Conumtext.Size = new System.Drawing.Size(163, 20);
+            Conumtext.TabIndex = 66;
+            Conumtext.Text = "10:00 am - 12:00 pm";
+            // 
+            // LocationPic
+            // 
+            LocationPic.Image = (System.Drawing.Image)resources.GetObject("LocationPic.Image");
+            LocationPic.Location = new System.Drawing.Point(23, 311);
+            LocationPic.Name = "LocationPic";
+            LocationPic.Size = new System.Drawing.Size(25, 25);
+            LocationPic.TabIndex = 65;
+            LocationPic.TabStop = false;
+            // 
+            // Loclabel
+            // 
+            Loclabel.AutoSize = true;
+            Loclabel.BackColor = System.Drawing.Color.Transparent;
+            Loclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Loclabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            Loclabel.Location = new System.Drawing.Point(53, 313);
+            Loclabel.Name = "Loclabel";
+            Loclabel.Size = new System.Drawing.Size(73, 20);
+            Loclabel.TabIndex = 64;
+            Loclabel.Text = "Location";
+            // 
+            // Loctext
+            // 
+            Loctext.AutoSize = true;
+            Loctext.BackColor = System.Drawing.Color.Transparent;
+            Loctext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Loctext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            Loctext.Location = new System.Drawing.Point(43, 346);
+            Loctext.Name = "Loctext";
+            Loctext.Size = new System.Drawing.Size(163, 20);
+            Loctext.TabIndex = 63;
+            Loctext.Text = "10:00 am - 12:00 pm";
+            // 
+            // DayPic
+            // 
+            DayPic.Image = (System.Drawing.Image)resources.GetObject("DayPic.Image");
+            DayPic.Location = new System.Drawing.Point(23, 224);
+            DayPic.Name = "DayPic";
+            DayPic.Size = new System.Drawing.Size(25, 25);
+            DayPic.TabIndex = 59;
+            DayPic.TabStop = false;
+            // 
+            // WorDayslabel
+            // 
+            WorDayslabel.AutoSize = true;
+            WorDayslabel.BackColor = System.Drawing.Color.Transparent;
+            WorDayslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            WorDayslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            WorDayslabel.Location = new System.Drawing.Point(53, 226);
+            WorDayslabel.Name = "WorDayslabel";
+            WorDayslabel.Size = new System.Drawing.Size(114, 20);
+            WorDayslabel.TabIndex = 58;
+            WorDayslabel.Text = "Working Days";
+            // 
+            // WorDaystext
+            // 
+            WorDaystext.AutoSize = true;
+            WorDaystext.BackColor = System.Drawing.Color.Transparent;
+            WorDaystext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            WorDaystext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            WorDaystext.Location = new System.Drawing.Point(43, 259);
+            WorDaystext.Name = "WorDaystext";
+            WorDaystext.Size = new System.Drawing.Size(163, 20);
+            WorDaystext.TabIndex = 57;
+            WorDaystext.Text = "10:00 am - 12:00 pm";
+            // 
+            // ClockPic
+            // 
+            ClockPic.Image = (System.Drawing.Image)resources.GetObject("ClockPic.Image");
+            ClockPic.Location = new System.Drawing.Point(23, 141);
+            ClockPic.Name = "ClockPic";
+            ClockPic.Size = new System.Drawing.Size(25, 25);
+            ClockPic.TabIndex = 56;
+            ClockPic.TabStop = false;
+            // 
+            // Workinhourslabel
+            // 
+            Workinhourslabel.AutoSize = true;
+            Workinhourslabel.BackColor = System.Drawing.Color.Transparent;
+            Workinhourslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Workinhourslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            Workinhourslabel.Location = new System.Drawing.Point(53, 143);
+            Workinhourslabel.Name = "Workinhourslabel";
+            Workinhourslabel.Size = new System.Drawing.Size(121, 20);
+            Workinhourslabel.TabIndex = 55;
+            Workinhourslabel.Text = "Working Hours";
+            Workinhourslabel.Click += Workinhourslabel_Click;
+            // 
+            // WorkingHoursText
+            // 
+            WorkingHoursText.AutoSize = true;
+            WorkingHoursText.BackColor = System.Drawing.Color.Transparent;
+            WorkingHoursText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            WorkingHoursText.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            WorkingHoursText.Location = new System.Drawing.Point(43, 176);
+            WorkingHoursText.Name = "WorkingHoursText";
+            WorkingHoursText.Size = new System.Drawing.Size(163, 20);
+            WorkingHoursText.TabIndex = 54;
+            WorkingHoursText.Text = "10:00 am - 12:00 pm";
             // 
             // FaciName
             // 
             FaciName.AutoSize = true;
-            FaciName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FaciName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FaciName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FaciName.Location = new System.Drawing.Point(40, 111);
+            FaciName.Location = new System.Drawing.Point(99, 46);
             FaciName.Name = "FaciName";
-            FaciName.Size = new System.Drawing.Size(120, 23);
+            FaciName.Size = new System.Drawing.Size(131, 25);
             FaciName.TabIndex = 35;
             FaciName.Text = "Salon De Rose";
             // 
@@ -4777,200 +4972,6 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
-            // FPServiceName
-            // 
-            FPServiceName.AutoSize = true;
-            FPServiceName.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
-            FPServiceName.Dock = System.Windows.Forms.DockStyle.Fill;
-            FPServiceName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            FPServiceName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FPServiceName.Location = new System.Drawing.Point(0, 0);
-            FPServiceName.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            FPServiceName.Name = "FPServiceName";
-            FPServiceName.Size = new System.Drawing.Size(143, 73);
-            FPServiceName.TabIndex = 37;
-            FPServiceName.Text = "Service Name";
-            FPServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FPDescription
-            // 
-            FPDescription.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            FPDescription.AutoSize = true;
-            FPDescription.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
-            FPDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            FPDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FPDescription.Location = new System.Drawing.Point(149, 0);
-            FPDescription.Name = "FPDescription";
-            FPDescription.Size = new System.Drawing.Size(140, 73);
-            FPDescription.TabIndex = 37;
-            FPDescription.Text = "Description";
-            FPDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ClockPic
-            // 
-            ClockPic.Image = (System.Drawing.Image)resources.GetObject("ClockPic.Image");
-            ClockPic.Location = new System.Drawing.Point(18, 157);
-            ClockPic.Name = "ClockPic";
-            ClockPic.Size = new System.Drawing.Size(25, 25);
-            ClockPic.TabIndex = 56;
-            ClockPic.TabStop = false;
-            // 
-            // Workinhourslabel
-            // 
-            Workinhourslabel.AutoSize = true;
-            Workinhourslabel.BackColor = System.Drawing.Color.Transparent;
-            Workinhourslabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Workinhourslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Workinhourslabel.Location = new System.Drawing.Point(40, 159);
-            Workinhourslabel.Name = "Workinhourslabel";
-            Workinhourslabel.Size = new System.Drawing.Size(113, 20);
-            Workinhourslabel.TabIndex = 55;
-            Workinhourslabel.Text = "Working Hours";
-            // 
-            // WorkingHoursText
-            // 
-            WorkingHoursText.AutoSize = true;
-            WorkingHoursText.BackColor = System.Drawing.Color.Transparent;
-            WorkingHoursText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            WorkingHoursText.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            WorkingHoursText.Location = new System.Drawing.Point(27, 188);
-            WorkingHoursText.Name = "WorkingHoursText";
-            WorkingHoursText.Size = new System.Drawing.Size(144, 20);
-            WorkingHoursText.TabIndex = 54;
-            WorkingHoursText.Text = "10:00 am - 12:00 pm";
-            // 
-            // DayPic
-            // 
-            DayPic.Image = (System.Drawing.Image)resources.GetObject("DayPic.Image");
-            DayPic.Location = new System.Drawing.Point(18, 236);
-            DayPic.Name = "DayPic";
-            DayPic.Size = new System.Drawing.Size(25, 25);
-            DayPic.TabIndex = 59;
-            DayPic.TabStop = false;
-            // 
-            // WorDayslabel
-            // 
-            WorDayslabel.AutoSize = true;
-            WorDayslabel.BackColor = System.Drawing.Color.Transparent;
-            WorDayslabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            WorDayslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            WorDayslabel.Location = new System.Drawing.Point(40, 238);
-            WorDayslabel.Name = "WorDayslabel";
-            WorDayslabel.Size = new System.Drawing.Size(105, 20);
-            WorDayslabel.TabIndex = 58;
-            WorDayslabel.Text = "Working Days";
-            // 
-            // WorDaystext
-            // 
-            WorDaystext.AutoSize = true;
-            WorDaystext.BackColor = System.Drawing.Color.Transparent;
-            WorDaystext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            WorDaystext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            WorDaystext.Location = new System.Drawing.Point(27, 267);
-            WorDaystext.Name = "WorDaystext";
-            WorDaystext.Size = new System.Drawing.Size(144, 20);
-            WorDaystext.TabIndex = 57;
-            WorDaystext.Text = "10:00 am - 12:00 pm";
-            // 
-            // LocationPic
-            // 
-            LocationPic.Image = (System.Drawing.Image)resources.GetObject("LocationPic.Image");
-            LocationPic.Location = new System.Drawing.Point(18, 321);
-            LocationPic.Name = "LocationPic";
-            LocationPic.Size = new System.Drawing.Size(25, 25);
-            LocationPic.TabIndex = 65;
-            LocationPic.TabStop = false;
-            // 
-            // Loclabel
-            // 
-            Loclabel.AutoSize = true;
-            Loclabel.BackColor = System.Drawing.Color.Transparent;
-            Loclabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Loclabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Loclabel.Location = new System.Drawing.Point(40, 323);
-            Loclabel.Name = "Loclabel";
-            Loclabel.Size = new System.Drawing.Size(67, 20);
-            Loclabel.TabIndex = 64;
-            Loclabel.Text = "Location";
-            // 
-            // Loctext
-            // 
-            Loctext.AutoSize = true;
-            Loctext.BackColor = System.Drawing.Color.Transparent;
-            Loctext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Loctext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            Loctext.Location = new System.Drawing.Point(27, 352);
-            Loctext.Name = "Loctext";
-            Loctext.Size = new System.Drawing.Size(144, 20);
-            Loctext.TabIndex = 63;
-            Loctext.Text = "10:00 am - 12:00 pm";
-            // 
-            // PhonePic
-            // 
-            PhonePic.Image = (System.Drawing.Image)resources.GetObject("PhonePic.Image");
-            PhonePic.Location = new System.Drawing.Point(18, 413);
-            PhonePic.Name = "PhonePic";
-            PhonePic.Size = new System.Drawing.Size(25, 25);
-            PhonePic.TabIndex = 68;
-            PhonePic.TabStop = false;
-            // 
-            // Conumlabel
-            // 
-            Conumlabel.AutoSize = true;
-            Conumlabel.BackColor = System.Drawing.Color.Transparent;
-            Conumlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Conumlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Conumlabel.Location = new System.Drawing.Point(40, 415);
-            Conumlabel.Name = "Conumlabel";
-            Conumlabel.Size = new System.Drawing.Size(122, 20);
-            Conumlabel.TabIndex = 67;
-            Conumlabel.Text = "Contact Number";
-            // 
-            // Conumtext
-            // 
-            Conumtext.AutoSize = true;
-            Conumtext.BackColor = System.Drawing.Color.Transparent;
-            Conumtext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Conumtext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            Conumtext.Location = new System.Drawing.Point(27, 444);
-            Conumtext.Name = "Conumtext";
-            Conumtext.Size = new System.Drawing.Size(144, 20);
-            Conumtext.TabIndex = 66;
-            Conumtext.Text = "10:00 am - 12:00 pm";
-            // 
-            // MailPic
-            // 
-            MailPic.Image = (System.Drawing.Image)resources.GetObject("MailPic.Image");
-            MailPic.Location = new System.Drawing.Point(18, 496);
-            MailPic.Name = "MailPic";
-            MailPic.Size = new System.Drawing.Size(25, 25);
-            MailPic.TabIndex = 71;
-            MailPic.TabStop = false;
-            // 
-            // EMSlabel
-            // 
-            EMSlabel.AutoSize = true;
-            EMSlabel.BackColor = System.Drawing.Color.Transparent;
-            EMSlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            EMSlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            EMSlabel.Location = new System.Drawing.Point(40, 498);
-            EMSlabel.Name = "EMSlabel";
-            EMSlabel.Size = new System.Drawing.Size(104, 20);
-            EMSlabel.TabIndex = 70;
-            EMSlabel.Text = "Email Address";
-            // 
-            // EMStext
-            // 
-            EMStext.AutoSize = true;
-            EMStext.BackColor = System.Drawing.Color.Transparent;
-            EMStext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            EMStext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            EMStext.Location = new System.Drawing.Point(27, 527);
-            EMStext.Name = "EMStext";
-            EMStext.Size = new System.Drawing.Size(144, 20);
-            EMStext.TabIndex = 69;
-            EMStext.Text = "10:00 am - 12:00 pm";
-            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -5109,6 +5110,11 @@
             SBPanel.ResumeLayout(false);
             FacProPanel.ResumeLayout(false);
             FacProPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MailPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PhonePic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LocationPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DayPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ClockPic).EndInit();
             panel49.ResumeLayout(false);
             panel49.PerformLayout();
             FacilityProPanel2.ResumeLayout(false);
@@ -5156,11 +5162,6 @@
             PIEpanel.PerformLayout();
             PIEprofilepanel.ResumeLayout(false);
             PIEprofilepanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ClockPic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DayPic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)LocationPic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PhonePic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)MailPic).EndInit();
             ResumeLayout(false);
         }
 

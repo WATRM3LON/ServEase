@@ -1212,7 +1212,7 @@ namespace OOP2
 
             int currentRow = 0;
             int currentCol = 0;
-            
+
 
             SerPanel.Controls.Clear();
 
@@ -1290,6 +1290,57 @@ namespace OOP2
 
         public void ViewFacDets(int ID)
         {
+            //PROFILE
+            FacilityProPanel.Visible = true;
+            FPButton.Visible = true;
+            FacilityProPanel2.Visible = false;
+            SerButton.Visible = false;
+            SerPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT [Facility Location], [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Working Days], [Contact Number] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            //int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            string fName = reader["Facility Name"].ToString();
+                            string locs = reader["Facility Location"].ToString();
+                            string Ems = reader["Email Address"].ToString();
+                            string contnumb = reader["Contact Number"].ToString();
+                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
+                            string workdays = reader.IsDBNull(reader.GetOrdinal("Working Days")) ? "" : reader.GetString(reader.GetOrdinal("Working Days"));
+                            string ratings = reader["Ratings"].ToString();
+
+                            FaciName.Text = fName; WorkingHoursText.Text = formattedWorHours; WorDaystext.Text = workdays; Loctext.Text = locs; Conumtext.Text = contnumb; EMStext.Text = Ems;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        private void Workinhourslabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
