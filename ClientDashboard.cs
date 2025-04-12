@@ -1203,6 +1203,15 @@ namespace OOP2
 
         public void LoadFacilities()
         {
+            int margin = 10;
+            int padding = 5;
+            int panelWidth = 250;
+            int panelHeight = 190;
+            int columns = 3;
+
+            int currentRow = 0;
+            int currentCol = 0;
+
             SerPanel.Controls.Clear();
 
             using (OleDbConnection myConn = new OleDbConnection(connection))
@@ -1216,7 +1225,6 @@ namespace OOP2
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        int margin = 10;
 
                         while (reader.Read())
                         {
@@ -1224,7 +1232,7 @@ namespace OOP2
                             string fName = reader["Facility Name"].ToString();
                             DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
                             DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
-                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mmtt} - {workingend:hh\\:mmtt}";
+                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
                             //string hours = Shours + Ehours;
                             string ratings = reader["Ratings"].ToString();
                             
@@ -1246,13 +1254,29 @@ namespace OOP2
 
                             FacilityPanel facilityPanel = new FacilityPanel();
                             facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, facilityPanel.Width, facilityPanel.Height, 10, 10));
-                            facilityPanel.Location = new Point(10, margin);
-                            margin += facilityPanel.Height + 10;
+                            //facilityPanel.Location = new Point(10, margin);
+                            //margin += facilityPanel.Height + 10;
 
                             facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
                             //facilityPanel.Loaders();
+                            facilityPanel.Width = panelWidth;
+                            facilityPanel.Height = panelHeight;
+                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelWidth, panelHeight, 10, 10));
+
+                            int x = margin + currentCol * (panelWidth + padding);
+                            int y = margin + currentRow * (panelHeight + padding);
+                            facilityPanel.Location = new Point(x, y);
 
                             SerPanel.Controls.Add(facilityPanel);
+
+                            currentCol++;
+                            if (currentCol >= columns)
+                            {
+                                currentCol = 0;
+                                currentRow++;
+                            }
+
+                            //SerPanel.Controls.Add(facilityPanel);
                         }
                     }
                 }

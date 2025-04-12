@@ -2193,6 +2193,7 @@
             // SerPanel
             // 
             SerPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            SerPanel.AutoScroll = true;
             SerPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             SerPanel.Location = new System.Drawing.Point(277, 175);
             SerPanel.Name = "SerPanel";
@@ -4179,7 +4180,7 @@
             SBPanel.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
             SBPanel.Controls.Add(button28);
             SBPanel.Controls.Add(SOButton);
-            SBPanel.Location = new System.Drawing.Point(1, 3);
+            SBPanel.Location = new System.Drawing.Point(0, 0);
             SBPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             SBPanel.Name = "SBPanel";
             SBPanel.Size = new System.Drawing.Size(580, 69);
@@ -5360,15 +5361,14 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(FacilityProPanel);
             Controls.Add(ServicesPanel);
-            Controls.Add(SerPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(EditPIPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
             Controls.Add(FacilityProPanel2);
-            Controls.Add(FacilityProPanel);
             Controls.Add(SettingPanel);
             Controls.Add(panel45);
             Controls.Add(panel3);
@@ -5385,6 +5385,7 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
+            Controls.Add(SerPanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
