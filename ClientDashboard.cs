@@ -139,6 +139,7 @@ namespace OOP2
             BAPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BAPanel.Width, BAPanel.Height, 10, 10));
             panel93.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel93.Width, panel93.Height, 10, 10));
             panel71.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel71.Width, panel71.Height, 10, 10));
+            SOTable.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOTable.Width, SOTable.Height, 10, 10));
             //Calendar
             CalendarPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CalendarPanel.Width, CalendarPanel.Height, 10, 10));
             calendarsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, calendarsButton.Width, calendarsButton.Height, 10, 10));
@@ -1318,7 +1319,6 @@ namespace OOP2
                     {
                         if (reader.Read())
                         {
-                            //int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
                             string fName = reader["Facility Name"].ToString();
                             string locs = reader["Facility Location"].ToString();
                             string Ems = reader["Email Address"].ToString();
@@ -1336,6 +1336,46 @@ namespace OOP2
 
                 }
             }
+            LoadFacilityData(ID);
+        }
+
+        private void LoadFacilityData(int ID)
+        {
+            ClientSopanel.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT [Service Name], Description, Price, Duration FROM [Facility Services] WHERE Facility_ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int margin = 3;
+
+                        while (reader.Read())
+                        {
+                            string serviceName = reader.IsDBNull(0) ? "" : reader.GetString(0);
+                            string description = reader.IsDBNull(1) ? "" : reader.GetString(1);
+                            decimal price = reader.IsDBNull(2) ? 0 : reader.GetDecimal(2);
+                            string duration = reader.IsDBNull(3) ? "" : reader.GetValue(3).ToString();
+
+                            ClientSO clientSO = new ClientSO();
+                            clientSO.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, clientSO.Width, clientSO.Height, 10, 10));
+
+                            clientSO.SetData(serviceName, description, price, duration);
+                            clientSO.Location = new Point(0, margin);
+                            margin += clientSO.Height + 3;
+
+                            ClientSopanel.Controls.Add(clientSO);
+                        }
+                    }
+                }
+            }
+
         }
 
         private void Workinhourslabel_Click(object sender, EventArgs e)

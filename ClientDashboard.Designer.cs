@@ -267,15 +267,6 @@
             panel45 = new System.Windows.Forms.Panel();
             FacilityProPanel = new System.Windows.Forms.Panel();
             FacilityProTable = new System.Windows.Forms.TableLayoutPanel();
-            FacSerOPanel = new System.Windows.Forms.Panel();
-            SOTable = new System.Windows.Forms.TableLayoutPanel();
-            FPDuration = new System.Windows.Forms.Label();
-            FPDescription = new System.Windows.Forms.Label();
-            FPPrice = new System.Windows.Forms.Label();
-            FPServiceName = new System.Windows.Forms.Label();
-            SBPanel = new System.Windows.Forms.Panel();
-            FPBookAppButton = new System.Windows.Forms.Button();
-            SOButton = new System.Windows.Forms.Button();
             FacProPanel = new System.Windows.Forms.Panel();
             MailPic = new System.Windows.Forms.PictureBox();
             EMSlabel = new System.Windows.Forms.Label();
@@ -294,6 +285,16 @@
             WorkingHoursText = new System.Windows.Forms.Label();
             FaciName = new System.Windows.Forms.Label();
             panel49 = new System.Windows.Forms.Panel();
+            FacSerOPanel = new System.Windows.Forms.Panel();
+            ClientSopanel = new System.Windows.Forms.Panel();
+            SOTable = new System.Windows.Forms.TableLayoutPanel();
+            FPDuration = new System.Windows.Forms.Label();
+            FPDescription = new System.Windows.Forms.Label();
+            FPPrice = new System.Windows.Forms.Label();
+            FPServiceName = new System.Windows.Forms.Label();
+            SBPanel = new System.Windows.Forms.Panel();
+            FPBookAppButton = new System.Windows.Forms.Button();
+            SOButton = new System.Windows.Forms.Button();
             FacilityProPanel2 = new System.Windows.Forms.Panel();
             BAPanel = new System.Windows.Forms.Panel();
             button30 = new System.Windows.Forms.Button();
@@ -370,7 +371,6 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            ClientSopanel = new System.Windows.Forms.Panel();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -432,15 +432,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             FacilityProPanel.SuspendLayout();
             FacilityProTable.SuspendLayout();
-            FacSerOPanel.SuspendLayout();
-            SOTable.SuspendLayout();
-            SBPanel.SuspendLayout();
             FacProPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MailPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PhonePic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LocationPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DayPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ClockPic).BeginInit();
+            FacSerOPanel.SuspendLayout();
+            SOTable.SuspendLayout();
+            SBPanel.SuspendLayout();
             FacilityProPanel2.SuspendLayout();
             BAPanel.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
@@ -3612,11 +3612,239 @@
             FacilityProTable.Size = new System.Drawing.Size(871, 776);
             FacilityProTable.TabIndex = 53;
             // 
+            // FacProPanel
+            // 
+            FacProPanel.BackColor = System.Drawing.Color.White;
+            FacProPanel.Controls.Add(MailPic);
+            FacProPanel.Controls.Add(EMSlabel);
+            FacProPanel.Controls.Add(EMStext);
+            FacProPanel.Controls.Add(PhonePic);
+            FacProPanel.Controls.Add(Conumlabel);
+            FacProPanel.Controls.Add(Conumtext);
+            FacProPanel.Controls.Add(LocationPic);
+            FacProPanel.Controls.Add(Loclabel);
+            FacProPanel.Controls.Add(Loctext);
+            FacProPanel.Controls.Add(DayPic);
+            FacProPanel.Controls.Add(WorDayslabel);
+            FacProPanel.Controls.Add(WorDaystext);
+            FacProPanel.Controls.Add(ClockPic);
+            FacProPanel.Controls.Add(Workinhourslabel);
+            FacProPanel.Controls.Add(WorkingHoursText);
+            FacProPanel.Controls.Add(FaciName);
+            FacProPanel.Controls.Add(panel49);
+            FacProPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            FacProPanel.Location = new System.Drawing.Point(0, 0);
+            FacProPanel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            FacProPanel.Name = "FacProPanel";
+            FacProPanel.Size = new System.Drawing.Size(871, 202);
+            FacProPanel.TabIndex = 51;
+            // 
+            // MailPic
+            // 
+            MailPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            MailPic.Image = (System.Drawing.Image)resources.GetObject("MailPic.Image");
+            MailPic.Location = new System.Drawing.Point(441, 116);
+            MailPic.Name = "MailPic";
+            MailPic.Size = new System.Drawing.Size(24, 25);
+            MailPic.TabIndex = 71;
+            MailPic.TabStop = false;
+            // 
+            // EMSlabel
+            // 
+            EMSlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EMSlabel.AutoSize = true;
+            EMSlabel.BackColor = System.Drawing.Color.Transparent;
+            EMSlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            EMSlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            EMSlabel.Location = new System.Drawing.Point(471, 118);
+            EMSlabel.Name = "EMSlabel";
+            EMSlabel.Size = new System.Drawing.Size(118, 20);
+            EMSlabel.TabIndex = 70;
+            EMSlabel.Text = "Email Address";
+            // 
+            // EMStext
+            // 
+            EMStext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EMStext.AutoSize = true;
+            EMStext.BackColor = System.Drawing.Color.Transparent;
+            EMStext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            EMStext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            EMStext.Location = new System.Drawing.Point(463, 153);
+            EMStext.Name = "EMStext";
+            EMStext.Size = new System.Drawing.Size(163, 20);
+            EMStext.TabIndex = 69;
+            EMStext.Text = "10:00 am - 12:00 pm";
+            // 
+            // PhonePic
+            // 
+            PhonePic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PhonePic.Image = (System.Drawing.Image)resources.GetObject("PhonePic.Image");
+            PhonePic.Location = new System.Drawing.Point(657, 115);
+            PhonePic.Name = "PhonePic";
+            PhonePic.Size = new System.Drawing.Size(24, 25);
+            PhonePic.TabIndex = 68;
+            PhonePic.TabStop = false;
+            // 
+            // Conumlabel
+            // 
+            Conumlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            Conumlabel.AutoSize = true;
+            Conumlabel.BackColor = System.Drawing.Color.Transparent;
+            Conumlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Conumlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            Conumlabel.Location = new System.Drawing.Point(687, 117);
+            Conumlabel.Name = "Conumlabel";
+            Conumlabel.Size = new System.Drawing.Size(131, 20);
+            Conumlabel.TabIndex = 67;
+            Conumlabel.Text = "Contact Number";
+            // 
+            // Conumtext
+            // 
+            Conumtext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            Conumtext.AutoSize = true;
+            Conumtext.BackColor = System.Drawing.Color.Transparent;
+            Conumtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Conumtext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            Conumtext.Location = new System.Drawing.Point(679, 152);
+            Conumtext.Name = "Conumtext";
+            Conumtext.Size = new System.Drawing.Size(163, 20);
+            Conumtext.TabIndex = 66;
+            Conumtext.Text = "10:00 am - 12:00 pm";
+            // 
+            // LocationPic
+            // 
+            LocationPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            LocationPic.Image = (System.Drawing.Image)resources.GetObject("LocationPic.Image");
+            LocationPic.Location = new System.Drawing.Point(441, 37);
+            LocationPic.Name = "LocationPic";
+            LocationPic.Size = new System.Drawing.Size(24, 25);
+            LocationPic.TabIndex = 65;
+            LocationPic.TabStop = false;
+            LocationPic.Click += LocationPic_Click;
+            // 
+            // Loclabel
+            // 
+            Loclabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            Loclabel.AutoSize = true;
+            Loclabel.BackColor = System.Drawing.Color.Transparent;
+            Loclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Loclabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            Loclabel.Location = new System.Drawing.Point(471, 39);
+            Loclabel.Name = "Loclabel";
+            Loclabel.Size = new System.Drawing.Size(73, 20);
+            Loclabel.TabIndex = 64;
+            Loclabel.Text = "Location";
+            // 
+            // Loctext
+            // 
+            Loctext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            Loctext.AutoSize = true;
+            Loctext.BackColor = System.Drawing.Color.Transparent;
+            Loctext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Loctext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            Loctext.Location = new System.Drawing.Point(463, 74);
+            Loctext.Name = "Loctext";
+            Loctext.Size = new System.Drawing.Size(163, 20);
+            Loctext.TabIndex = 63;
+            Loctext.Text = "10:00 am - 12:00 pm";
+            // 
+            // DayPic
+            // 
+            DayPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            DayPic.Image = (System.Drawing.Image)resources.GetObject("DayPic.Image");
+            DayPic.Location = new System.Drawing.Point(229, 118);
+            DayPic.Name = "DayPic";
+            DayPic.Size = new System.Drawing.Size(24, 25);
+            DayPic.TabIndex = 59;
+            DayPic.TabStop = false;
+            // 
+            // WorDayslabel
+            // 
+            WorDayslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            WorDayslabel.AutoSize = true;
+            WorDayslabel.BackColor = System.Drawing.Color.Transparent;
+            WorDayslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            WorDayslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            WorDayslabel.Location = new System.Drawing.Point(259, 120);
+            WorDayslabel.Name = "WorDayslabel";
+            WorDayslabel.Size = new System.Drawing.Size(114, 20);
+            WorDayslabel.TabIndex = 58;
+            WorDayslabel.Text = "Working Days";
+            // 
+            // WorDaystext
+            // 
+            WorDaystext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            WorDaystext.AutoSize = true;
+            WorDaystext.BackColor = System.Drawing.Color.Transparent;
+            WorDaystext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            WorDaystext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            WorDaystext.Location = new System.Drawing.Point(251, 155);
+            WorDaystext.Name = "WorDaystext";
+            WorDaystext.Size = new System.Drawing.Size(163, 20);
+            WorDaystext.TabIndex = 57;
+            WorDaystext.Text = "10:00 am - 12:00 pm";
+            // 
+            // ClockPic
+            // 
+            ClockPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ClockPic.Image = (System.Drawing.Image)resources.GetObject("ClockPic.Image");
+            ClockPic.Location = new System.Drawing.Point(36, 118);
+            ClockPic.Name = "ClockPic";
+            ClockPic.Size = new System.Drawing.Size(24, 25);
+            ClockPic.TabIndex = 56;
+            ClockPic.TabStop = false;
+            // 
+            // Workinhourslabel
+            // 
+            Workinhourslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            Workinhourslabel.AutoSize = true;
+            Workinhourslabel.BackColor = System.Drawing.Color.Transparent;
+            Workinhourslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            Workinhourslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            Workinhourslabel.Location = new System.Drawing.Point(66, 120);
+            Workinhourslabel.Name = "Workinhourslabel";
+            Workinhourslabel.Size = new System.Drawing.Size(121, 20);
+            Workinhourslabel.TabIndex = 55;
+            Workinhourslabel.Text = "Working Hours";
+            Workinhourslabel.Click += Workinhourslabel_Click;
+            // 
+            // WorkingHoursText
+            // 
+            WorkingHoursText.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            WorkingHoursText.AutoSize = true;
+            WorkingHoursText.BackColor = System.Drawing.Color.Transparent;
+            WorkingHoursText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            WorkingHoursText.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            WorkingHoursText.Location = new System.Drawing.Point(58, 155);
+            WorkingHoursText.Name = "WorkingHoursText";
+            WorkingHoursText.Size = new System.Drawing.Size(163, 20);
+            WorkingHoursText.TabIndex = 54;
+            WorkingHoursText.Text = "10:00 am - 12:00 pm";
+            // 
+            // FaciName
+            // 
+            FaciName.AutoSize = true;
+            FaciName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FaciName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FaciName.Location = new System.Drawing.Point(124, 37);
+            FaciName.Name = "FaciName";
+            FaciName.Size = new System.Drawing.Size(131, 25);
+            FaciName.TabIndex = 35;
+            FaciName.Text = "Salon De Rose";
+            // 
+            // panel49
+            // 
+            panel49.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
+            panel49.Location = new System.Drawing.Point(28, 21);
+            panel49.Name = "panel49";
+            panel49.Size = new System.Drawing.Size(78, 78);
+            panel49.TabIndex = 34;
+            // 
             // FacSerOPanel
             // 
-            FacSerOPanel.BackColor = System.Drawing.Color.White;
-            FacSerOPanel.Controls.Add(ClientSopanel);
+            FacSerOPanel.BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             FacSerOPanel.Controls.Add(SOTable);
+            FacSerOPanel.Controls.Add(ClientSopanel);
             FacSerOPanel.Controls.Add(SBPanel);
             FacSerOPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             FacSerOPanel.Location = new System.Drawing.Point(0, 217);
@@ -3624,6 +3852,14 @@
             FacSerOPanel.Name = "FacSerOPanel";
             FacSerOPanel.Size = new System.Drawing.Size(871, 554);
             FacSerOPanel.TabIndex = 52;
+            // 
+            // ClientSopanel
+            // 
+            ClientSopanel.BackColor = System.Drawing.Color.White;
+            ClientSopanel.Location = new System.Drawing.Point(1, 141);
+            ClientSopanel.Name = "ClientSopanel";
+            ClientSopanel.Size = new System.Drawing.Size(871, 413);
+            ClientSopanel.TabIndex = 58;
             // 
             // SOTable
             // 
@@ -3638,8 +3874,8 @@
             SOTable.Controls.Add(FPDescription, 1, 0);
             SOTable.Controls.Add(FPPrice, 2, 0);
             SOTable.Controls.Add(FPServiceName, 0, 0);
-            SOTable.Location = new System.Drawing.Point(1, 74);
-            SOTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            SOTable.Location = new System.Drawing.Point(0, 71);
+            SOTable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 5);
             SOTable.Name = "SOTable";
             SOTable.RowCount = 1;
             SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3708,7 +3944,7 @@
             // SBPanel
             // 
             SBPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            SBPanel.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            SBPanel.BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             SBPanel.Controls.Add(FPBookAppButton);
             SBPanel.Controls.Add(SOButton);
             SBPanel.Location = new System.Drawing.Point(0, 0);
@@ -3728,7 +3964,7 @@
             FPBookAppButton.Location = new System.Drawing.Point(407, 10);
             FPBookAppButton.Name = "FPBookAppButton";
             FPBookAppButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            FPBookAppButton.Size = new System.Drawing.Size(404, 77);
+            FPBookAppButton.Size = new System.Drawing.Size(397, 77);
             FPBookAppButton.TabIndex = 26;
             FPBookAppButton.Text = "Book an Appointment";
             FPBookAppButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3743,242 +3979,14 @@
             SOButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             SOButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             SOButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            SOButton.Location = new System.Drawing.Point(1, 9);
+            SOButton.Location = new System.Drawing.Point(8, 9);
             SOButton.Name = "SOButton";
             SOButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            SOButton.Size = new System.Drawing.Size(404, 77);
+            SOButton.Size = new System.Drawing.Size(397, 77);
             SOButton.TabIndex = 25;
             SOButton.Text = "Services Offered";
             SOButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             SOButton.UseVisualStyleBackColor = false;
-            // 
-            // FacProPanel
-            // 
-            FacProPanel.BackColor = System.Drawing.Color.White;
-            FacProPanel.Controls.Add(MailPic);
-            FacProPanel.Controls.Add(EMSlabel);
-            FacProPanel.Controls.Add(EMStext);
-            FacProPanel.Controls.Add(PhonePic);
-            FacProPanel.Controls.Add(Conumlabel);
-            FacProPanel.Controls.Add(Conumtext);
-            FacProPanel.Controls.Add(LocationPic);
-            FacProPanel.Controls.Add(Loclabel);
-            FacProPanel.Controls.Add(Loctext);
-            FacProPanel.Controls.Add(DayPic);
-            FacProPanel.Controls.Add(WorDayslabel);
-            FacProPanel.Controls.Add(WorDaystext);
-            FacProPanel.Controls.Add(ClockPic);
-            FacProPanel.Controls.Add(Workinhourslabel);
-            FacProPanel.Controls.Add(WorkingHoursText);
-            FacProPanel.Controls.Add(FaciName);
-            FacProPanel.Controls.Add(panel49);
-            FacProPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            FacProPanel.Location = new System.Drawing.Point(0, 0);
-            FacProPanel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            FacProPanel.Name = "FacProPanel";
-            FacProPanel.Size = new System.Drawing.Size(871, 202);
-            FacProPanel.TabIndex = 51;
-            // 
-            // MailPic
-            // 
-            MailPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            MailPic.Image = (System.Drawing.Image)resources.GetObject("MailPic.Image");
-            MailPic.Location = new System.Drawing.Point(661, 118);
-            MailPic.Name = "MailPic";
-            MailPic.Size = new System.Drawing.Size(24, 25);
-            MailPic.TabIndex = 71;
-            MailPic.TabStop = false;
-            // 
-            // EMSlabel
-            // 
-            EMSlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            EMSlabel.AutoSize = true;
-            EMSlabel.BackColor = System.Drawing.Color.Transparent;
-            EMSlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            EMSlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            EMSlabel.Location = new System.Drawing.Point(691, 120);
-            EMSlabel.Name = "EMSlabel";
-            EMSlabel.Size = new System.Drawing.Size(118, 20);
-            EMSlabel.TabIndex = 70;
-            EMSlabel.Text = "Email Address";
-            // 
-            // EMStext
-            // 
-            EMStext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            EMStext.AutoSize = true;
-            EMStext.BackColor = System.Drawing.Color.Transparent;
-            EMStext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            EMStext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            EMStext.Location = new System.Drawing.Point(683, 155);
-            EMStext.Name = "EMStext";
-            EMStext.Size = new System.Drawing.Size(163, 20);
-            EMStext.TabIndex = 69;
-            EMStext.Text = "10:00 am - 12:00 pm";
-            // 
-            // PhonePic
-            // 
-            PhonePic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            PhonePic.Image = (System.Drawing.Image)resources.GetObject("PhonePic.Image");
-            PhonePic.Location = new System.Drawing.Point(449, 118);
-            PhonePic.Name = "PhonePic";
-            PhonePic.Size = new System.Drawing.Size(24, 25);
-            PhonePic.TabIndex = 68;
-            PhonePic.TabStop = false;
-            // 
-            // Conumlabel
-            // 
-            Conumlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            Conumlabel.AutoSize = true;
-            Conumlabel.BackColor = System.Drawing.Color.Transparent;
-            Conumlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            Conumlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Conumlabel.Location = new System.Drawing.Point(479, 120);
-            Conumlabel.Name = "Conumlabel";
-            Conumlabel.Size = new System.Drawing.Size(131, 20);
-            Conumlabel.TabIndex = 67;
-            Conumlabel.Text = "Contact Number";
-            // 
-            // Conumtext
-            // 
-            Conumtext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            Conumtext.AutoSize = true;
-            Conumtext.BackColor = System.Drawing.Color.Transparent;
-            Conumtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            Conumtext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            Conumtext.Location = new System.Drawing.Point(471, 155);
-            Conumtext.Name = "Conumtext";
-            Conumtext.Size = new System.Drawing.Size(163, 20);
-            Conumtext.TabIndex = 66;
-            Conumtext.Text = "10:00 am - 12:00 pm";
-            // 
-            // LocationPic
-            // 
-            LocationPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            LocationPic.Image = (System.Drawing.Image)resources.GetObject("LocationPic.Image");
-            LocationPic.Location = new System.Drawing.Point(449, 37);
-            LocationPic.Name = "LocationPic";
-            LocationPic.Size = new System.Drawing.Size(24, 25);
-            LocationPic.TabIndex = 65;
-            LocationPic.TabStop = false;
-            LocationPic.Click += LocationPic_Click;
-            // 
-            // Loclabel
-            // 
-            Loclabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            Loclabel.AutoSize = true;
-            Loclabel.BackColor = System.Drawing.Color.Transparent;
-            Loclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            Loclabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Loclabel.Location = new System.Drawing.Point(479, 39);
-            Loclabel.Name = "Loclabel";
-            Loclabel.Size = new System.Drawing.Size(73, 20);
-            Loclabel.TabIndex = 64;
-            Loclabel.Text = "Location";
-            // 
-            // Loctext
-            // 
-            Loctext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            Loctext.AutoSize = true;
-            Loctext.BackColor = System.Drawing.Color.Transparent;
-            Loctext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            Loctext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            Loctext.Location = new System.Drawing.Point(471, 74);
-            Loctext.Name = "Loctext";
-            Loctext.Size = new System.Drawing.Size(163, 20);
-            Loctext.TabIndex = 63;
-            Loctext.Text = "10:00 am - 12:00 pm";
-            // 
-            // DayPic
-            // 
-            DayPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            DayPic.Image = (System.Drawing.Image)resources.GetObject("DayPic.Image");
-            DayPic.Location = new System.Drawing.Point(220, 118);
-            DayPic.Name = "DayPic";
-            DayPic.Size = new System.Drawing.Size(24, 25);
-            DayPic.TabIndex = 59;
-            DayPic.TabStop = false;
-            // 
-            // WorDayslabel
-            // 
-            WorDayslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            WorDayslabel.AutoSize = true;
-            WorDayslabel.BackColor = System.Drawing.Color.Transparent;
-            WorDayslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            WorDayslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            WorDayslabel.Location = new System.Drawing.Point(250, 120);
-            WorDayslabel.Name = "WorDayslabel";
-            WorDayslabel.Size = new System.Drawing.Size(114, 20);
-            WorDayslabel.TabIndex = 58;
-            WorDayslabel.Text = "Working Days";
-            // 
-            // WorDaystext
-            // 
-            WorDaystext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            WorDaystext.AutoSize = true;
-            WorDaystext.BackColor = System.Drawing.Color.Transparent;
-            WorDaystext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            WorDaystext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            WorDaystext.Location = new System.Drawing.Point(242, 155);
-            WorDaystext.Name = "WorDaystext";
-            WorDaystext.Size = new System.Drawing.Size(163, 20);
-            WorDaystext.TabIndex = 57;
-            WorDaystext.Text = "10:00 am - 12:00 pm";
-            // 
-            // ClockPic
-            // 
-            ClockPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            ClockPic.Image = (System.Drawing.Image)resources.GetObject("ClockPic.Image");
-            ClockPic.Location = new System.Drawing.Point(33, 118);
-            ClockPic.Name = "ClockPic";
-            ClockPic.Size = new System.Drawing.Size(24, 25);
-            ClockPic.TabIndex = 56;
-            ClockPic.TabStop = false;
-            // 
-            // Workinhourslabel
-            // 
-            Workinhourslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            Workinhourslabel.AutoSize = true;
-            Workinhourslabel.BackColor = System.Drawing.Color.Transparent;
-            Workinhourslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            Workinhourslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Workinhourslabel.Location = new System.Drawing.Point(63, 120);
-            Workinhourslabel.Name = "Workinhourslabel";
-            Workinhourslabel.Size = new System.Drawing.Size(121, 20);
-            Workinhourslabel.TabIndex = 55;
-            Workinhourslabel.Text = "Working Hours";
-            Workinhourslabel.Click += Workinhourslabel_Click;
-            // 
-            // WorkingHoursText
-            // 
-            WorkingHoursText.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            WorkingHoursText.AutoSize = true;
-            WorkingHoursText.BackColor = System.Drawing.Color.Transparent;
-            WorkingHoursText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            WorkingHoursText.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            WorkingHoursText.Location = new System.Drawing.Point(55, 155);
-            WorkingHoursText.Name = "WorkingHoursText";
-            WorkingHoursText.Size = new System.Drawing.Size(163, 20);
-            WorkingHoursText.TabIndex = 54;
-            WorkingHoursText.Text = "10:00 am - 12:00 pm";
-            // 
-            // FaciName
-            // 
-            FaciName.AutoSize = true;
-            FaciName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            FaciName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FaciName.Location = new System.Drawing.Point(137, 32);
-            FaciName.Name = "FaciName";
-            FaciName.Size = new System.Drawing.Size(131, 25);
-            FaciName.TabIndex = 35;
-            FaciName.Text = "Salon De Rose";
-            // 
-            // panel49
-            // 
-            panel49.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            panel49.Location = new System.Drawing.Point(16, 20);
-            panel49.Name = "panel49";
-            panel49.Size = new System.Drawing.Size(78, 78);
-            panel49.TabIndex = 34;
             // 
             // FacilityProPanel2
             // 
@@ -4963,13 +4971,6 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
-            // ClientSopanel
-            // 
-            ClientSopanel.Location = new System.Drawing.Point(1, 151);
-            ClientSopanel.Name = "ClientSopanel";
-            ClientSopanel.Size = new System.Drawing.Size(871, 403);
-            ClientSopanel.TabIndex = 58;
-            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -5102,10 +5103,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             FacilityProPanel.ResumeLayout(false);
             FacilityProTable.ResumeLayout(false);
-            FacSerOPanel.ResumeLayout(false);
-            SOTable.ResumeLayout(false);
-            SOTable.PerformLayout();
-            SBPanel.ResumeLayout(false);
             FacProPanel.ResumeLayout(false);
             FacProPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)MailPic).EndInit();
@@ -5113,6 +5110,10 @@
             ((System.ComponentModel.ISupportInitialize)LocationPic).EndInit();
             ((System.ComponentModel.ISupportInitialize)DayPic).EndInit();
             ((System.ComponentModel.ISupportInitialize)ClockPic).EndInit();
+            FacSerOPanel.ResumeLayout(false);
+            SOTable.ResumeLayout(false);
+            SOTable.PerformLayout();
+            SBPanel.ResumeLayout(false);
             FacilityProPanel2.ResumeLayout(false);
             BAPanel.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
