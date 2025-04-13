@@ -286,12 +286,12 @@
             FaciName = new System.Windows.Forms.Label();
             panel49 = new System.Windows.Forms.Panel();
             FacSerOPanel = new System.Windows.Forms.Panel();
-            ClientSopanel = new System.Windows.Forms.Panel();
             SOTable = new System.Windows.Forms.TableLayoutPanel();
             FPDuration = new System.Windows.Forms.Label();
             FPDescription = new System.Windows.Forms.Label();
             FPPrice = new System.Windows.Forms.Label();
             FPServiceName = new System.Windows.Forms.Label();
+            ClientSopanel = new System.Windows.Forms.Panel();
             SBPanel = new System.Windows.Forms.Panel();
             FPBookAppButton = new System.Windows.Forms.Button();
             SOButton = new System.Windows.Forms.Button();
@@ -3853,14 +3853,6 @@
             FacSerOPanel.Size = new System.Drawing.Size(871, 554);
             FacSerOPanel.TabIndex = 52;
             // 
-            // ClientSopanel
-            // 
-            ClientSopanel.BackColor = System.Drawing.Color.White;
-            ClientSopanel.Location = new System.Drawing.Point(1, 141);
-            ClientSopanel.Name = "ClientSopanel";
-            ClientSopanel.Size = new System.Drawing.Size(871, 413);
-            ClientSopanel.TabIndex = 58;
-            // 
             // SOTable
             // 
             SOTable.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -3940,6 +3932,15 @@
             FPServiceName.TabIndex = 37;
             FPServiceName.Text = "Service Name";
             FPServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ClientSopanel
+            // 
+            ClientSopanel.AutoScroll = true;
+            ClientSopanel.BackColor = System.Drawing.Color.White;
+            ClientSopanel.Location = new System.Drawing.Point(1, 141);
+            ClientSopanel.Name = "ClientSopanel";
+            ClientSopanel.Size = new System.Drawing.Size(871, 413);
+            ClientSopanel.TabIndex = 58;
             // 
             // SBPanel
             // 
