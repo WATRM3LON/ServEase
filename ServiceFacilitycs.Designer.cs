@@ -248,6 +248,7 @@
             PrivacyPanel = new System.Windows.Forms.Button();
             EditFIPanel = new System.Windows.Forms.Panel();
             FIEPanel = new System.Windows.Forms.Panel();
+            FIESerCatList = new System.Windows.Forms.ComboBox();
             FIEEndlabel = new System.Windows.Forms.Label();
             FIEEndtext = new System.Windows.Forms.TextBox();
             FIEStartlabel = new System.Windows.Forms.Label();
@@ -262,7 +263,6 @@
             FIEWordaystext = new System.Windows.Forms.TextBox();
             FIEStarttext = new System.Windows.Forms.TextBox();
             FIECnumbertext = new System.Windows.Forms.TextBox();
-            FIESerCatList = new System.Windows.Forms.ListBox();
             FIEFacnametext = new System.Windows.Forms.TextBox();
             FIEWordayslabel = new System.Windows.Forms.Label();
             FIEWorhourslabel = new System.Windows.Forms.Label();
@@ -3304,6 +3304,7 @@
             // 
             FIEPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FIEPanel.BackColor = System.Drawing.Color.White;
+            FIEPanel.Controls.Add(FIESerCatList);
             FIEPanel.Controls.Add(FIEEndlabel);
             FIEPanel.Controls.Add(FIEEndtext);
             FIEPanel.Controls.Add(FIEStartlabel);
@@ -3318,7 +3319,6 @@
             FIEPanel.Controls.Add(FIEWordaystext);
             FIEPanel.Controls.Add(FIEStarttext);
             FIEPanel.Controls.Add(FIECnumbertext);
-            FIEPanel.Controls.Add(FIESerCatList);
             FIEPanel.Controls.Add(FIEFacnametext);
             FIEPanel.Controls.Add(FIEWordayslabel);
             FIEPanel.Controls.Add(FIEWorhourslabel);
@@ -3333,6 +3333,16 @@
             FIEPanel.Name = "FIEPanel";
             FIEPanel.Size = new System.Drawing.Size(867, 480);
             FIEPanel.TabIndex = 38;
+            // 
+            // FIESerCatList
+            // 
+            FIESerCatList.Font = new System.Drawing.Font("Segoe UI", 12F);
+            FIESerCatList.FormattingEnabled = true;
+            FIESerCatList.Items.AddRange(new object[] { "Personal Care & Beauty Services", "Health & Medical Services", "Fitness & Sports Services", "Education & Tutoring Services", "Repair & Technical Services", "Food & Beverages Services", "Miscellaneous Services" });
+            FIESerCatList.Location = new System.Drawing.Point(325, 201);
+            FIESerCatList.Name = "FIESerCatList";
+            FIESerCatList.Size = new System.Drawing.Size(314, 36);
+            FIESerCatList.TabIndex = 86;
             // 
             // FIEEndlabel
             // 
@@ -3493,19 +3503,6 @@
             FIECnumbertext.Name = "FIECnumbertext";
             FIECnumbertext.Size = new System.Drawing.Size(236, 34);
             FIECnumbertext.TabIndex = 51;
-            // 
-            // FIESerCatList
-            // 
-            FIESerCatList.BackColor = System.Drawing.Color.WhiteSmoke;
-            FIESerCatList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            FIESerCatList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            FIESerCatList.FormattingEnabled = true;
-            FIESerCatList.ItemHeight = 28;
-            FIESerCatList.Items.AddRange(new object[] { "Personal Care & Beauty Services", "Health & Medical Services", "Fitness & Sports Services", "Education & Tutoring Services", "Repair & Technical Services", "Food & Beverages Services", "Miscellaneous Services" });
-            FIESerCatList.Location = new System.Drawing.Point(333, 202);
-            FIESerCatList.Name = "FIESerCatList";
-            FIESerCatList.Size = new System.Drawing.Size(313, 28);
-            FIESerCatList.TabIndex = 50;
             // 
             // FIEFacnametext
             // 
@@ -4098,11 +4095,11 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(ServicesOfferedPanel);
+            Controls.Add(EditFIPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(ServicesOfferedPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ESerOffPanel);
-            Controls.Add(EditFIPanel);
             Controls.Add(SettingsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
@@ -4468,7 +4465,6 @@
         private System.Windows.Forms.Label FIEFnameTitle;
         private System.Windows.Forms.Panel panel47;
         private System.Windows.Forms.TextBox FIEFacnametext;
-        private System.Windows.Forms.ListBox FIESerCatList;
         private System.Windows.Forms.TextBox FIEWordaystext;
         private System.Windows.Forms.TextBox FIEStarttext;
         private System.Windows.Forms.TextBox FIECnumbertext;
@@ -4513,5 +4509,6 @@
         private System.Windows.Forms.TextBox Service3;
         private System.Windows.Forms.Button EditSOButton;
         private System.Windows.Forms.Label SOEerrorm;
+        private System.Windows.Forms.ComboBox FIESerCatList;
     }
 }
