@@ -294,8 +294,6 @@
             WorkingHoursText = new System.Windows.Forms.Label();
             FaciName = new System.Windows.Forms.Label();
             panel49 = new System.Windows.Forms.Panel();
-            label125 = new System.Windows.Forms.Label();
-            label126 = new System.Windows.Forms.Label();
             FacilityProPanel2 = new System.Windows.Forms.Panel();
             BAPanel = new System.Windows.Forms.Panel();
             button30 = new System.Windows.Forms.Button();
@@ -372,6 +370,7 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
+            ClientSopanel = new System.Windows.Forms.Panel();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -442,7 +441,6 @@
             ((System.ComponentModel.ISupportInitialize)LocationPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DayPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ClockPic).BeginInit();
-            panel49.SuspendLayout();
             FacilityProPanel2.SuspendLayout();
             BAPanel.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
@@ -1679,7 +1677,7 @@
             // 
             // BeautySbutton
             // 
-            BeautySbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BeautySbutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             BeautySbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
             BeautySbutton.FlatAppearance.BorderSize = 0;
             BeautySbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1746,7 +1744,7 @@
             // 
             // MisSbutton
             // 
-            MisSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            MisSbutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             MisSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
             MisSbutton.FlatAppearance.BorderSize = 0;
             MisSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1812,7 +1810,7 @@
             // 
             // HealthSbutton
             // 
-            HealthSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            HealthSbutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             HealthSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
             HealthSbutton.FlatAppearance.BorderSize = 0;
             HealthSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1878,7 +1876,7 @@
             // 
             // FoodSbutton
             // 
-            FoodSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FoodSbutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FoodSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
             FoodSbutton.FlatAppearance.BorderSize = 0;
             FoodSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1944,7 +1942,7 @@
             // 
             // EduSbutton
             // 
-            EduSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EduSbutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EduSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
             EduSbutton.FlatAppearance.BorderSize = 0;
             EduSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2010,7 +2008,7 @@
             // 
             // RepairSbutton
             // 
-            RepairSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            RepairSbutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             RepairSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
             RepairSbutton.FlatAppearance.BorderSize = 0;
             RepairSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2076,7 +2074,7 @@
             // 
             // FitnessSbutton
             // 
-            FitnessSbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FitnessSbutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FitnessSbutton.BackColor = System.Drawing.Color.FromArgb(129, 238, 223);
             FitnessSbutton.FlatAppearance.BorderSize = 0;
             FitnessSbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3595,35 +3593,36 @@
             FacilityProPanel.Controls.Add(FacilityProTable);
             FacilityProPanel.Location = new System.Drawing.Point(277, 177);
             FacilityProPanel.Name = "FacilityProPanel";
-            FacilityProPanel.Size = new System.Drawing.Size(893, 744);
+            FacilityProPanel.Size = new System.Drawing.Size(893, 793);
             FacilityProPanel.TabIndex = 56;
             // 
             // FacilityProTable
             // 
-            FacilityProTable.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            FacilityProTable.ColumnCount = 2;
-            FacilityProTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            FacilityProTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            FacilityProTable.Controls.Add(FacSerOPanel, 1, 0);
+            FacilityProTable.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FacilityProTable.ColumnCount = 1;
+            FacilityProTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             FacilityProTable.Controls.Add(FacProPanel, 0, 0);
+            FacilityProTable.Controls.Add(FacSerOPanel, 0, 1);
             FacilityProTable.Location = new System.Drawing.Point(11, 12);
             FacilityProTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             FacilityProTable.Name = "FacilityProTable";
-            FacilityProTable.RowCount = 1;
-            FacilityProTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            FacilityProTable.Size = new System.Drawing.Size(871, 629);
+            FacilityProTable.RowCount = 2;
+            FacilityProTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
+            FacilityProTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72F));
+            FacilityProTable.Size = new System.Drawing.Size(871, 776);
             FacilityProTable.TabIndex = 53;
             // 
             // FacSerOPanel
             // 
             FacSerOPanel.BackColor = System.Drawing.Color.White;
+            FacSerOPanel.Controls.Add(ClientSopanel);
             FacSerOPanel.Controls.Add(SOTable);
             FacSerOPanel.Controls.Add(SBPanel);
             FacSerOPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            FacSerOPanel.Location = new System.Drawing.Point(274, 15);
-            FacSerOPanel.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
+            FacSerOPanel.Location = new System.Drawing.Point(0, 217);
+            FacSerOPanel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             FacSerOPanel.Name = "FacSerOPanel";
-            FacSerOPanel.Size = new System.Drawing.Size(584, 599);
+            FacSerOPanel.Size = new System.Drawing.Size(871, 554);
             FacSerOPanel.TabIndex = 52;
             // 
             // SOTable
@@ -3632,9 +3631,9 @@
             SOTable.BackColor = System.Drawing.Color.White;
             SOTable.ColumnCount = 4;
             SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            SOTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             SOTable.Controls.Add(FPDuration, 3, 0);
             SOTable.Controls.Add(FPDescription, 1, 0);
             SOTable.Controls.Add(FPPrice, 2, 0);
@@ -3643,8 +3642,8 @@
             SOTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             SOTable.Name = "SOTable";
             SOTable.RowCount = 1;
-            SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            SOTable.Size = new System.Drawing.Size(584, 73);
+            SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            SOTable.Size = new System.Drawing.Size(871, 73);
             SOTable.TabIndex = 57;
             SOTable.Paint += SOTable_Paint;
             // 
@@ -3655,10 +3654,10 @@
             FPDuration.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
             FPDuration.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             FPDuration.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FPDuration.Location = new System.Drawing.Point(441, 0);
+            FPDuration.Location = new System.Drawing.Point(741, 0);
             FPDuration.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             FPDuration.Name = "FPDuration";
-            FPDuration.Size = new System.Drawing.Size(143, 73);
+            FPDuration.Size = new System.Drawing.Size(130, 73);
             FPDuration.TabIndex = 37;
             FPDuration.Text = "Duration";
             FPDuration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3670,9 +3669,9 @@
             FPDescription.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
             FPDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FPDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FPDescription.Location = new System.Drawing.Point(149, 0);
+            FPDescription.Location = new System.Drawing.Point(220, 0);
             FPDescription.Name = "FPDescription";
-            FPDescription.Size = new System.Drawing.Size(140, 73);
+            FPDescription.Size = new System.Drawing.Size(385, 73);
             FPDescription.TabIndex = 37;
             FPDescription.Text = "Description";
             FPDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3684,9 +3683,9 @@
             FPPrice.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
             FPPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             FPPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FPPrice.Location = new System.Drawing.Point(295, 0);
+            FPPrice.Location = new System.Drawing.Point(611, 0);
             FPPrice.Name = "FPPrice";
-            FPPrice.Size = new System.Drawing.Size(140, 73);
+            FPPrice.Size = new System.Drawing.Size(124, 73);
             FPPrice.TabIndex = 37;
             FPPrice.Text = "Price";
             FPPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3701,7 +3700,7 @@
             FPServiceName.Location = new System.Drawing.Point(0, 0);
             FPServiceName.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             FPServiceName.Name = "FPServiceName";
-            FPServiceName.Size = new System.Drawing.Size(143, 73);
+            FPServiceName.Size = new System.Drawing.Size(214, 73);
             FPServiceName.TabIndex = 37;
             FPServiceName.Text = "Service Name";
             FPServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3715,7 +3714,7 @@
             SBPanel.Location = new System.Drawing.Point(0, 0);
             SBPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             SBPanel.Name = "SBPanel";
-            SBPanel.Size = new System.Drawing.Size(584, 69);
+            SBPanel.Size = new System.Drawing.Size(871, 69);
             SBPanel.TabIndex = 57;
             // 
             // FPBookAppButton
@@ -3726,10 +3725,10 @@
             FPBookAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             FPBookAppButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FPBookAppButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            FPBookAppButton.Location = new System.Drawing.Point(291, 12);
+            FPBookAppButton.Location = new System.Drawing.Point(407, 10);
             FPBookAppButton.Name = "FPBookAppButton";
             FPBookAppButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            FPBookAppButton.Size = new System.Drawing.Size(273, 77);
+            FPBookAppButton.Size = new System.Drawing.Size(404, 77);
             FPBookAppButton.TabIndex = 26;
             FPBookAppButton.Text = "Book an Appointment";
             FPBookAppButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3744,10 +3743,10 @@
             SOButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             SOButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             SOButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            SOButton.Location = new System.Drawing.Point(15, 9);
+            SOButton.Location = new System.Drawing.Point(1, 9);
             SOButton.Name = "SOButton";
             SOButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            SOButton.Size = new System.Drawing.Size(273, 77);
+            SOButton.Size = new System.Drawing.Size(404, 77);
             SOButton.TabIndex = 25;
             SOButton.Text = "Services Offered";
             SOButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3774,28 +3773,30 @@
             FacProPanel.Controls.Add(FaciName);
             FacProPanel.Controls.Add(panel49);
             FacProPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            FacProPanel.Location = new System.Drawing.Point(0, 15);
-            FacProPanel.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            FacProPanel.Location = new System.Drawing.Point(0, 0);
+            FacProPanel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 15);
             FacProPanel.Name = "FacProPanel";
-            FacProPanel.Size = new System.Drawing.Size(261, 599);
+            FacProPanel.Size = new System.Drawing.Size(871, 202);
             FacProPanel.TabIndex = 51;
             // 
             // MailPic
             // 
+            MailPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             MailPic.Image = (System.Drawing.Image)resources.GetObject("MailPic.Image");
-            MailPic.Location = new System.Drawing.Point(23, 486);
+            MailPic.Location = new System.Drawing.Point(661, 118);
             MailPic.Name = "MailPic";
-            MailPic.Size = new System.Drawing.Size(25, 25);
+            MailPic.Size = new System.Drawing.Size(24, 25);
             MailPic.TabIndex = 71;
             MailPic.TabStop = false;
             // 
             // EMSlabel
             // 
+            EMSlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EMSlabel.AutoSize = true;
             EMSlabel.BackColor = System.Drawing.Color.Transparent;
             EMSlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             EMSlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            EMSlabel.Location = new System.Drawing.Point(53, 488);
+            EMSlabel.Location = new System.Drawing.Point(691, 120);
             EMSlabel.Name = "EMSlabel";
             EMSlabel.Size = new System.Drawing.Size(118, 20);
             EMSlabel.TabIndex = 70;
@@ -3803,11 +3804,12 @@
             // 
             // EMStext
             // 
+            EMStext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EMStext.AutoSize = true;
             EMStext.BackColor = System.Drawing.Color.Transparent;
             EMStext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             EMStext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            EMStext.Location = new System.Drawing.Point(43, 521);
+            EMStext.Location = new System.Drawing.Point(683, 155);
             EMStext.Name = "EMStext";
             EMStext.Size = new System.Drawing.Size(163, 20);
             EMStext.TabIndex = 69;
@@ -3815,20 +3817,22 @@
             // 
             // PhonePic
             // 
+            PhonePic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PhonePic.Image = (System.Drawing.Image)resources.GetObject("PhonePic.Image");
-            PhonePic.Location = new System.Drawing.Point(23, 401);
+            PhonePic.Location = new System.Drawing.Point(449, 118);
             PhonePic.Name = "PhonePic";
-            PhonePic.Size = new System.Drawing.Size(25, 25);
+            PhonePic.Size = new System.Drawing.Size(24, 25);
             PhonePic.TabIndex = 68;
             PhonePic.TabStop = false;
             // 
             // Conumlabel
             // 
+            Conumlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             Conumlabel.AutoSize = true;
             Conumlabel.BackColor = System.Drawing.Color.Transparent;
             Conumlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Conumlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Conumlabel.Location = new System.Drawing.Point(53, 403);
+            Conumlabel.Location = new System.Drawing.Point(479, 120);
             Conumlabel.Name = "Conumlabel";
             Conumlabel.Size = new System.Drawing.Size(131, 20);
             Conumlabel.TabIndex = 67;
@@ -3836,11 +3840,12 @@
             // 
             // Conumtext
             // 
+            Conumtext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             Conumtext.AutoSize = true;
             Conumtext.BackColor = System.Drawing.Color.Transparent;
             Conumtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Conumtext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            Conumtext.Location = new System.Drawing.Point(43, 436);
+            Conumtext.Location = new System.Drawing.Point(471, 155);
             Conumtext.Name = "Conumtext";
             Conumtext.Size = new System.Drawing.Size(163, 20);
             Conumtext.TabIndex = 66;
@@ -3848,20 +3853,23 @@
             // 
             // LocationPic
             // 
+            LocationPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             LocationPic.Image = (System.Drawing.Image)resources.GetObject("LocationPic.Image");
-            LocationPic.Location = new System.Drawing.Point(23, 311);
+            LocationPic.Location = new System.Drawing.Point(449, 37);
             LocationPic.Name = "LocationPic";
-            LocationPic.Size = new System.Drawing.Size(25, 25);
+            LocationPic.Size = new System.Drawing.Size(24, 25);
             LocationPic.TabIndex = 65;
             LocationPic.TabStop = false;
+            LocationPic.Click += LocationPic_Click;
             // 
             // Loclabel
             // 
+            Loclabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             Loclabel.AutoSize = true;
             Loclabel.BackColor = System.Drawing.Color.Transparent;
             Loclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Loclabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Loclabel.Location = new System.Drawing.Point(53, 313);
+            Loclabel.Location = new System.Drawing.Point(479, 39);
             Loclabel.Name = "Loclabel";
             Loclabel.Size = new System.Drawing.Size(73, 20);
             Loclabel.TabIndex = 64;
@@ -3869,11 +3877,12 @@
             // 
             // Loctext
             // 
+            Loctext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             Loctext.AutoSize = true;
             Loctext.BackColor = System.Drawing.Color.Transparent;
             Loctext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Loctext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            Loctext.Location = new System.Drawing.Point(43, 346);
+            Loctext.Location = new System.Drawing.Point(471, 74);
             Loctext.Name = "Loctext";
             Loctext.Size = new System.Drawing.Size(163, 20);
             Loctext.TabIndex = 63;
@@ -3881,20 +3890,22 @@
             // 
             // DayPic
             // 
+            DayPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             DayPic.Image = (System.Drawing.Image)resources.GetObject("DayPic.Image");
-            DayPic.Location = new System.Drawing.Point(23, 224);
+            DayPic.Location = new System.Drawing.Point(220, 118);
             DayPic.Name = "DayPic";
-            DayPic.Size = new System.Drawing.Size(25, 25);
+            DayPic.Size = new System.Drawing.Size(24, 25);
             DayPic.TabIndex = 59;
             DayPic.TabStop = false;
             // 
             // WorDayslabel
             // 
+            WorDayslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             WorDayslabel.AutoSize = true;
             WorDayslabel.BackColor = System.Drawing.Color.Transparent;
             WorDayslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             WorDayslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            WorDayslabel.Location = new System.Drawing.Point(53, 226);
+            WorDayslabel.Location = new System.Drawing.Point(250, 120);
             WorDayslabel.Name = "WorDayslabel";
             WorDayslabel.Size = new System.Drawing.Size(114, 20);
             WorDayslabel.TabIndex = 58;
@@ -3902,11 +3913,12 @@
             // 
             // WorDaystext
             // 
+            WorDaystext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             WorDaystext.AutoSize = true;
             WorDaystext.BackColor = System.Drawing.Color.Transparent;
             WorDaystext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             WorDaystext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            WorDaystext.Location = new System.Drawing.Point(43, 259);
+            WorDaystext.Location = new System.Drawing.Point(242, 155);
             WorDaystext.Name = "WorDaystext";
             WorDaystext.Size = new System.Drawing.Size(163, 20);
             WorDaystext.TabIndex = 57;
@@ -3914,20 +3926,22 @@
             // 
             // ClockPic
             // 
+            ClockPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ClockPic.Image = (System.Drawing.Image)resources.GetObject("ClockPic.Image");
-            ClockPic.Location = new System.Drawing.Point(23, 141);
+            ClockPic.Location = new System.Drawing.Point(33, 118);
             ClockPic.Name = "ClockPic";
-            ClockPic.Size = new System.Drawing.Size(25, 25);
+            ClockPic.Size = new System.Drawing.Size(24, 25);
             ClockPic.TabIndex = 56;
             ClockPic.TabStop = false;
             // 
             // Workinhourslabel
             // 
+            Workinhourslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             Workinhourslabel.AutoSize = true;
             Workinhourslabel.BackColor = System.Drawing.Color.Transparent;
             Workinhourslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Workinhourslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Workinhourslabel.Location = new System.Drawing.Point(53, 143);
+            Workinhourslabel.Location = new System.Drawing.Point(63, 120);
             Workinhourslabel.Name = "Workinhourslabel";
             Workinhourslabel.Size = new System.Drawing.Size(121, 20);
             Workinhourslabel.TabIndex = 55;
@@ -3936,11 +3950,12 @@
             // 
             // WorkingHoursText
             // 
+            WorkingHoursText.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             WorkingHoursText.AutoSize = true;
             WorkingHoursText.BackColor = System.Drawing.Color.Transparent;
             WorkingHoursText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             WorkingHoursText.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            WorkingHoursText.Location = new System.Drawing.Point(43, 176);
+            WorkingHoursText.Location = new System.Drawing.Point(55, 155);
             WorkingHoursText.Name = "WorkingHoursText";
             WorkingHoursText.Size = new System.Drawing.Size(163, 20);
             WorkingHoursText.TabIndex = 54;
@@ -3951,7 +3966,7 @@
             FaciName.AutoSize = true;
             FaciName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FaciName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FaciName.Location = new System.Drawing.Point(99, 46);
+            FaciName.Location = new System.Drawing.Point(137, 32);
             FaciName.Name = "FaciName";
             FaciName.Size = new System.Drawing.Size(131, 25);
             FaciName.TabIndex = 35;
@@ -3960,34 +3975,10 @@
             // panel49
             // 
             panel49.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            panel49.Controls.Add(label125);
-            panel49.Controls.Add(label126);
             panel49.Location = new System.Drawing.Point(16, 20);
             panel49.Name = "panel49";
-            panel49.Size = new System.Drawing.Size(67, 78);
+            panel49.Size = new System.Drawing.Size(78, 78);
             panel49.TabIndex = 34;
-            // 
-            // label125
-            // 
-            label125.AutoSize = true;
-            label125.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label125.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label125.Location = new System.Drawing.Point(13, 28);
-            label125.Name = "label125";
-            label125.Size = new System.Drawing.Size(36, 31);
-            label125.TabIndex = 34;
-            label125.Text = "14";
-            // 
-            // label126
-            // 
-            label126.AutoSize = true;
-            label126.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label126.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label126.Location = new System.Drawing.Point(20, 6);
-            label126.Name = "label126";
-            label126.Size = new System.Drawing.Size(25, 20);
-            label126.TabIndex = 33;
-            label126.Text = "Fri";
             // 
             // FacilityProPanel2
             // 
@@ -4972,6 +4963,13 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
+            // ClientSopanel
+            // 
+            ClientSopanel.Location = new System.Drawing.Point(1, 151);
+            ClientSopanel.Name = "ClientSopanel";
+            ClientSopanel.Size = new System.Drawing.Size(871, 403);
+            ClientSopanel.TabIndex = 58;
+            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -4979,6 +4977,7 @@
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
             Controls.Add(FacilityProPanel);
+            Controls.Add(SerPanel);
             Controls.Add(ServicesPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(EditPIPanel);
@@ -5002,7 +5001,6 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
-            Controls.Add(SerPanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -5115,8 +5113,6 @@
             ((System.ComponentModel.ISupportInitialize)LocationPic).EndInit();
             ((System.ComponentModel.ISupportInitialize)DayPic).EndInit();
             ((System.ComponentModel.ISupportInitialize)ClockPic).EndInit();
-            panel49.ResumeLayout(false);
-            panel49.PerformLayout();
             FacilityProPanel2.ResumeLayout(false);
             BAPanel.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
@@ -5367,8 +5363,6 @@
         private System.Windows.Forms.Panel FacProPanel;
         private System.Windows.Forms.Label FaciName;
         private System.Windows.Forms.Panel panel49;
-        private System.Windows.Forms.Label label125;
-        private System.Windows.Forms.Label label126;
         private System.Windows.Forms.TableLayoutPanel SOTable;
         private System.Windows.Forms.Label FPDuration;
         private System.Windows.Forms.Label FPPrice;
@@ -5509,5 +5503,6 @@
         private System.Windows.Forms.PictureBox ClockPic;
         private System.Windows.Forms.Label Workinhourslabel;
         private System.Windows.Forms.Label WorkingHoursText;
+        private System.Windows.Forms.Panel ClientSopanel;
     }
 }

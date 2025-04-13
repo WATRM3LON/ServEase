@@ -1342,5 +1342,10 @@ namespace OOP2
         {
 
         }
+
+        private void LocationPic_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
