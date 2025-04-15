@@ -212,15 +212,6 @@
             ATPanel = new System.Windows.Forms.Panel();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             panel31 = new System.Windows.Forms.Panel();
-            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            label52 = new System.Windows.Forms.Label();
-            label51 = new System.Windows.Forms.Label();
-            label50 = new System.Windows.Forms.Label();
-            label47 = new System.Windows.Forms.Label();
-            label46 = new System.Windows.Forms.Label();
-            label44 = new System.Windows.Forms.Label();
-            label43 = new System.Windows.Forms.Label();
-            label48 = new System.Windows.Forms.Label();
             label45 = new System.Windows.Forms.Label();
             label49 = new System.Windows.Forms.Label();
             panel32 = new System.Windows.Forms.Panel();
@@ -306,6 +297,9 @@
             SOEDuration = new System.Windows.Forms.Label();
             SOEDescription = new System.Windows.Forms.Label();
             SOEPrice = new System.Windows.Forms.Label();
+            Starttime = new System.Windows.Forms.Label();
+            this.Endtime = new System.Windows.Forms.Label();
+            panel3 = new System.Windows.Forms.Panel();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -348,7 +342,6 @@
             ATPanel.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel31.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             panel32.SuspendLayout();
             SettingsPanel.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
@@ -2805,7 +2798,9 @@
             // 
             panel31.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel31.BackColor = System.Drawing.Color.White;
-            panel31.Controls.Add(tableLayoutPanel3);
+            panel31.Controls.Add(panel3);
+            panel31.Controls.Add(this.Endtime);
+            panel31.Controls.Add(Starttime);
             panel31.Controls.Add(label45);
             panel31.Controls.Add(label49);
             panel31.Location = new System.Drawing.Point(535, 15);
@@ -2813,135 +2808,6 @@
             panel31.Name = "panel31";
             panel31.Size = new System.Drawing.Size(323, 598);
             panel31.TabIndex = 52;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(label52, 1, 3);
-            tableLayoutPanel3.Controls.Add(label51, 0, 3);
-            tableLayoutPanel3.Controls.Add(label50, 1, 2);
-            tableLayoutPanel3.Controls.Add(label47, 0, 2);
-            tableLayoutPanel3.Controls.Add(label46, 1, 1);
-            tableLayoutPanel3.Controls.Add(label44, 0, 1);
-            tableLayoutPanel3.Controls.Add(label43, 1, 0);
-            tableLayoutPanel3.Controls.Add(label48, 0, 0);
-            tableLayoutPanel3.Location = new System.Drawing.Point(23, 137);
-            tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 4;
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(285, 248);
-            tableLayoutPanel3.TabIndex = 48;
-            // 
-            // label52
-            // 
-            label52.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label52.AutoSize = true;
-            label52.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label52.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label52.Location = new System.Drawing.Point(149, 194);
-            label52.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            label52.Name = "label52";
-            label52.Size = new System.Drawing.Size(129, 20);
-            label52.TabIndex = 51;
-            label52.Text = "5:00 - 6:00";
-            // 
-            // label51
-            // 
-            label51.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label51.AutoSize = true;
-            label51.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label51.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label51.Location = new System.Drawing.Point(7, 194);
-            label51.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            label51.Name = "label51";
-            label51.Size = new System.Drawing.Size(128, 20);
-            label51.TabIndex = 50;
-            label51.Text = "4:00 - 5:00";
-            // 
-            // label50
-            // 
-            label50.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label50.AutoSize = true;
-            label50.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label50.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label50.Location = new System.Drawing.Point(149, 132);
-            label50.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            label50.Name = "label50";
-            label50.Size = new System.Drawing.Size(129, 20);
-            label50.TabIndex = 49;
-            label50.Text = "2:00 - 3:00";
-            // 
-            // label47
-            // 
-            label47.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label47.AutoSize = true;
-            label47.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label47.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label47.Location = new System.Drawing.Point(7, 132);
-            label47.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            label47.Name = "label47";
-            label47.Size = new System.Drawing.Size(128, 20);
-            label47.TabIndex = 48;
-            label47.Text = "3:00 - 4:00";
-            // 
-            // label46
-            // 
-            label46.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label46.AutoSize = true;
-            label46.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label46.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label46.Location = new System.Drawing.Point(149, 70);
-            label46.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            label46.Name = "label46";
-            label46.Size = new System.Drawing.Size(129, 20);
-            label46.TabIndex = 47;
-            label46.Text = "9:00 - 10:00";
-            // 
-            // label44
-            // 
-            label44.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label44.AutoSize = true;
-            label44.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label44.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label44.Location = new System.Drawing.Point(7, 70);
-            label44.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            label44.Name = "label44";
-            label44.Size = new System.Drawing.Size(128, 20);
-            label44.TabIndex = 46;
-            label44.Text = "8:00 - 9:00";
-            // 
-            // label43
-            // 
-            label43.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label43.AutoSize = true;
-            label43.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label43.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label43.Location = new System.Drawing.Point(149, 8);
-            label43.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            label43.Name = "label43";
-            label43.Size = new System.Drawing.Size(129, 20);
-            label43.TabIndex = 45;
-            label43.Text = "11:00 - 01:00";
-            // 
-            // label48
-            // 
-            label48.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label48.AutoSize = true;
-            label48.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label48.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label48.Location = new System.Drawing.Point(7, 8);
-            label48.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            label48.Name = "label48";
-            label48.Size = new System.Drawing.Size(128, 20);
-            label48.TabIndex = 44;
-            label48.Text = "10:00 - 12:00";
             // 
             // label45
             // 
@@ -4089,21 +3955,50 @@
             SOEPrice.Text = "Price";
             SOEPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Starttime
+            // 
+            Starttime.AutoSize = true;
+            Starttime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            Starttime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            Starttime.Location = new System.Drawing.Point(54, 103);
+            Starttime.Name = "Starttime";
+            Starttime.Size = new System.Drawing.Size(87, 23);
+            Starttime.TabIndex = 49;
+            Starttime.Text = "Start Time";
+            // 
+            // Endtime
+            // 
+            this.Endtime.AutoSize = true;
+            this.Endtime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            this.Endtime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Endtime.Location = new System.Drawing.Point(194, 103);
+            this.Endtime.Name = "Endtime";
+            this.Endtime.Size = new System.Drawing.Size(81, 23);
+            this.Endtime.TabIndex = 50;
+            this.Endtime.Text = "End Time";
+            // 
+            // panel3
+            // 
+            panel3.Location = new System.Drawing.Point(26, 131);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(270, 433);
+            panel3.TabIndex = 51;
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(EditFIPanel);
+            Controls.Add(ATPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(EditFIPanel);
             Controls.Add(ServicesOfferedPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ESerOffPanel);
             Controls.Add(SettingsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
-            Controls.Add(ATPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AnalyticPannel2);
             Controls.Add(AnalyticPannel1);
@@ -4196,8 +4091,6 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel31.ResumeLayout(false);
             panel31.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
             panel32.ResumeLayout(false);
             panel32.PerformLayout();
             SettingsPanel.ResumeLayout(false);
@@ -4510,5 +4403,8 @@
         private System.Windows.Forms.Button EditSOButton;
         private System.Windows.Forms.Label SOEerrorm;
         private System.Windows.Forms.ComboBox FIESerCatList;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label Starttime;
+        private System.Windows.Forms.Panel panel3;
     }
 }

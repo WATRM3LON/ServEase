@@ -100,7 +100,7 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(245, 193, 210);
+            tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             tableLayoutPanel1.ColumnCount = 4;
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
