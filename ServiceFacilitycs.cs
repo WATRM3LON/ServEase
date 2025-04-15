@@ -88,6 +88,8 @@ namespace OOP2
             SettingsPanel.Visible = false;
             FIEButton.Visible = false; FillEM.Visible = false; ESerOffPanel.Visible = false; EditSOButton.Visible = false;
             EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
+            Startime1.ForeColor = Startime2.ForeColor = Startime3.ForeColor = Startime4.ForeColor = Startime5.ForeColor = SystemColors.InactiveCaption;
+            Endtime1.ForeColor = Endtime2.ForeColor = Endtime3.ForeColor = Endtime4.ForeColor = Endtime5.ForeColor = SystemColors.InactiveCaption;
         }
 
         public void Loaders()
@@ -110,6 +112,8 @@ namespace OOP2
             LButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LButton.Width, LButton.Height, 20, 20));
             LogoButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogoButton.Width, LogoButton.Height, 10, 10));
             LogosButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogosButton.Width, LogosButton.Height, 10, 10));
+            Startime1.ForeColor = Startime2.ForeColor = Startime3.ForeColor = Startime4.ForeColor = Startime5.ForeColor = SystemColors.InactiveCaption;
+            Endtime1.ForeColor = Endtime2.ForeColor = Endtime3.ForeColor = Endtime4.ForeColor = Endtime5.ForeColor = SystemColors.InactiveCaption;
             //DASHBOARD
             AppointmentPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentPanel.Width, AppointmentPanel.Height, 10, 10));
             MonthPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MonthPanel.Width, MonthPanel.Height, 10, 10));
@@ -162,6 +166,9 @@ namespace OOP2
             ATtimeslot.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATtimeslot.Width, ATtimeslot.Height, 10, 10));
             EditButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton.Width, EditButton.Height, 10, 10));
             EditButton2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton2.Width, EditButton2.Height, 10, 10));
+            EATdate.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATdate.Width, EATdate.Height, 10, 10));
+            EATtimeslot.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATtimeslot.Width, EATtimeslot.Height, 10, 10));
+            EATConfrimbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATConfrimbutton.Width, EATConfrimbutton.Height, 10, 10));
             //SETTINGS
             GeneralPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GeneralPanel.Width, GeneralPanel.Height, 10, 10));
             AppearancePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppearancePanel.Width, AppearancePanel.Height, 10, 10));
@@ -671,6 +678,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = true;
             ATButton.Visible = true;
+            LoadFacilityData();
         }
 
         private void SOButton_Click(object sender, EventArgs e)
@@ -1300,6 +1308,7 @@ namespace OOP2
         private void LoadFacilityData()
         {
             SerOffPanel.Controls.Clear();
+            ATtimeslots.Controls.Clear();
 
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
@@ -1347,6 +1356,33 @@ namespace OOP2
                             margin += serviceOffered.Height + 10;
 
                             SerOffPanel.Controls.Add(serviceOffered);
+                        }
+                    }
+                }
+
+                string timeslots = "SELECT [Start Time], [End Time], Status FROM [Facility Timeslots] WHERE Facility_ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(timeslots, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", newFacilityId);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int margin = 10;
+
+                        while (reader.Read())
+                        {
+                            DateTime startime = reader.IsDBNull(reader.GetOrdinal("Start Time")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Start Time"));
+                            DateTime endtime = reader.IsDBNull(reader.GetOrdinal("End Time")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("End Time"));
+                            string startm = startime == DateTime.MinValue ? " " : $"{startime:hh\\:mm tt}";
+                            string endtm = endtime == DateTime.MinValue ? " " : $"{endtime:hh\\:mm tt}";
+                            string status = reader.IsDBNull(reader.GetOrdinal("Status")) ? " " : reader["Status"].ToString();
+
+                            TimeSlots timeSlots = new TimeSlots();
+                            timeSlots.SetData(startm, endtm);
+                            timeSlots.Location = new Point(0, margin - 7);
+                            margin += timeSlots.Height + 10;
+
+                            ATtimeslots.Controls.Add(timeSlots);
                         }
                     }
                 }
@@ -1405,7 +1441,7 @@ namespace OOP2
 
                 List<int> timeslotids = new List<int>();
 
-                string getServiceIdsQuery = "SELECT Service_ID FROM [Facility Services] WHERE Facility_ID = ?";
+                string getServiceIdsQuery = "SELECT Timeslot_ID FROM [Facility Timeslots] WHERE Facility_ID = ?";
 
                 using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getServiceIdsQuery, myConn))
                 {
@@ -1428,13 +1464,24 @@ namespace OOP2
 
                 for (int i = 0; i < 5; i++)
                 {
-                    string sql = "UPDATE [Facility Timeslots] SET [Start Time] = ?, [End Time] = ?, [Status] = ? WHERE Service_ID = ?";
+                    string sql = "UPDATE [Facility Timeslots] SET [Start Time] = ?, [End Time] = ?, [Status] = ? WHERE Timeslot_ID = ?";
 
                     using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                     {
-                        cmd.Parameters.AddWithValue("?", Convert.ToDateTime(stratimes[i].Text));
-                        cmd.Parameters.AddWithValue("?", Convert.ToDateTime(endtimes[i].Text));
-                        cmd.Parameters.AddWithValue("?", "Available");
+                        if (stratimes[i].Text == "Add Time" || endtimes[i].Text == "Add Time")
+                        {
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", timeslotids[i]);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("?", stratimes[i].Text);
+                            cmd.Parameters.AddWithValue("?", endtimes[i].Text);
+                            cmd.Parameters.AddWithValue("?", "Available");
+                            cmd.Parameters.AddWithValue("?", timeslotids[i]);
+                        }
 
                         cmd.ExecuteNonQuery();
                     }
@@ -1443,16 +1490,127 @@ namespace OOP2
             MessageBox.Show("Successfully updated!", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public void TimeslotGetter()
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                int newFacilityId = 0;
+
+                string getIdQuery = "SELECT Facility_ID FROM [Service Facilities] WHERE [Email Address] = ?";
+                using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
+                {
+                    getIdCmd.Parameters.AddWithValue("?", EmailAddress);
+                    object result = getIdCmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        newFacilityId = Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Facility not found.");
+                        return;
+                    }
+                }
+                
+                List<int> timeslotids = new List<int>();
+
+                string getServiceIdsQuery = "SELECT Timeslot_ID FROM [Facility Timeslots] WHERE Facility_ID = ?";
+
+                using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getServiceIdsQuery, myConn))
+                {
+                    getServiceIdsCmd.Parameters.AddWithValue("?", newFacilityId);
+
+                    using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                timeslotids.Add(reader.GetInt32(0));
+                            }
+                        }
+                    }
+                }
+
+                TextBox[] stratimes = { Startime1, Startime2, Startime3, Startime4, Startime5 };
+                TextBox[] endtimes = { Endtime1, Endtime2, Endtime3, Endtime4, Endtime5 };
+
+                for (int i = 0; i < 5; i++)
+                {
+                    string sql = "SELECT [Start Time], [End Time] FROM [Facility Timeslots] WHERE Timeslot_ID = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", timeslotids[i]);
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                DateTime startime = reader.IsDBNull(reader.GetOrdinal("Start Time")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Start Time"));
+                                DateTime endtime = reader.IsDBNull(reader.GetOrdinal("End Time")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("End Time"));
+                                string startm = startime == DateTime.MinValue ? "Add Time" : $"{startime:hh\\:mm tt}";
+                                string endtm = endtime == DateTime.MinValue ? "Add Time" : $"{endtime:hh\\:mm tt}";
+                                stratimes[i].Text = startm; stratimes[i].ForeColor = SystemColors.InactiveCaption;
+                                endtimes[i].Text = endtm; endtimes[i].ForeColor = SystemColors.InactiveCaption;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         private void EditButton_Click(object sender, EventArgs e)
         {
             ATPanel.Visible = false; ATButton.Visible = false;
             EATButton.Visible = true; EATPanel.Visible = true;
+            Loaders();
+            TimeslotGetter();
         }
 
         private void EATButton_Click(object sender, EventArgs e)
         {
             ATPanel.Visible = true; ATButton.Visible = true;
             EATButton.Visible = false; EATPanel.Visible = false;
+            LoadFacilityData();
+        }
+
+        private void Startime1_TextChanged(object sender, EventArgs e)
+        {
+            Startime1.ForeColor = Color.Black; Endtime1.ForeColor = Color.Black;
+        }
+
+        private void Startime2_TextChanged(object sender, EventArgs e)
+        {
+            Startime2.ForeColor = Color.Black; Endtime2.ForeColor = Color.Black;
+        }
+
+        private void Startime3_TextChanged(object sender, EventArgs e)
+        {
+            Startime3.ForeColor = Color.Black; Endtime3.ForeColor = Color.Black;
+        }
+
+        private void Startime4_TextChanged(object sender, EventArgs e)
+        {
+            Startime4.ForeColor = Color.Black; Endtime4.ForeColor = Color.Black;
+        }
+
+        private void Startime5_TextChanged(object sender, EventArgs e)
+        {
+            Startime5.ForeColor = Color.Black; Endtime5.ForeColor = Color.Black;
+        }
+
+        private void Endtime1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EATConfrimbutton_Click(object sender, EventArgs e)
+        {
+            TimeslotUpdater();
         }
     }
 }

@@ -2967,7 +2967,7 @@
             EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             EditButton.FlatAppearance.BorderSize = 0;
             EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            EditButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EditButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             EditButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             EditButton.Location = new System.Drawing.Point(751, 672);
             EditButton.Name = "EditButton";
@@ -4080,6 +4080,7 @@
             EATConfrimbutton.Text = "Confirm";
             EATConfrimbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             EATConfrimbutton.UseVisualStyleBackColor = false;
+            EATConfrimbutton.Click += EATConfrimbutton_Click;
             // 
             // EATtable
             // 
@@ -4194,6 +4195,8 @@
             Startime5.TabIndex = 4;
             Startime5.Text = "Add Time";
             Startime5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            Startime5.Click += Startime5_TextChanged;
+            Startime5.TextChanged += Startime5_TextChanged;
             // 
             // tableLayoutPanel6
             // 
@@ -4253,6 +4256,8 @@
             Startime4.TabIndex = 4;
             Startime4.Text = "Add Time";
             Startime4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            Startime4.Click += Startime4_TextChanged;
+            Startime4.TextChanged += Startime4_TextChanged;
             // 
             // tableLayoutPanel5
             // 
@@ -4311,6 +4316,8 @@
             Startime3.TabIndex = 4;
             Startime3.Text = "Add Time";
             Startime3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            Startime3.Click += Startime3_TextChanged;
+            Startime3.TextChanged += Startime3_TextChanged;
             // 
             // tableLayoutPanel3
             // 
@@ -4369,6 +4376,8 @@
             Startime2.TabIndex = 4;
             Startime2.Text = "Add Time";
             Startime2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            Startime2.Click += Startime2_TextChanged;
+            Startime2.TextChanged += Startime2_TextChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -4401,6 +4410,7 @@
             Endtime1.TabIndex = 5;
             Endtime1.Text = "Add Time";
             Endtime1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            Endtime1.TextChanged += Endtime1_TextChanged;
             // 
             // label26
             // 
@@ -4428,6 +4438,8 @@
             Startime1.TabIndex = 4;
             Startime1.Text = "Add Time";
             Startime1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            Startime1.Click += Startime1_TextChanged;
+            Startime1.TextChanged += Startime1_TextChanged;
             // 
             // EATStartime
             // 
@@ -4518,8 +4530,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(ATPanel);
             Controls.Add(EATPanel);
+            Controls.Add(ATPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(EditFIPanel);
             Controls.Add(ServicesOfferedPanel);
