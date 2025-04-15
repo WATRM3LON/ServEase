@@ -966,7 +966,6 @@
             StatusText.Text = "Active";
             StatusText.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             StatusText.UseVisualStyleBackColor = false;
-            StatusText.Click += StatusText_Click;
             // 
             // PPClientName
             // 

@@ -28,14 +28,10 @@ namespace OOP2
             InitializeComponent();
         }
 
-        public void SetData(string ServiceName, string Descritpion, decimal Price, string Duration)
+        public void SetData(string startime, string endtime)
         {
-            Startime.Text = ServiceName; Startime.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Startime.Width, Startime.Height, 10, 10));
-            Endtime.Text = Descritpion; Endtime.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Endtime.Width, Endtime.Height, 10, 10));
-        }
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            Startime.Text = startime; Startime.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Startime.Width, Startime.Height, 10, 10));
+            Endtime.Text = endtime; Endtime.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Endtime.Width, Endtime.Height, 10, 10));
         }
     }
 }

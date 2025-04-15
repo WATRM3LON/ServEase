@@ -672,7 +672,6 @@
             EmailLTextBox.Size = new System.Drawing.Size(269, 37);
             EmailLTextBox.TabIndex = 6;
             EmailLTextBox.Click += EmailLTextBox_Click;
-            EmailLTextBox.TextChanged += EmailLTextBox_TextChanged;
             // 
             // PasswordLPanel
             // 

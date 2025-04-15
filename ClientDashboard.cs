@@ -980,11 +980,6 @@ namespace OOP2
             }
         }
 
-        private void HiLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PIEditButton_Click(object sender, EventArgs e)
         {
             WelcomeLabel.Visible = false;
@@ -1284,11 +1279,6 @@ namespace OOP2
             }
         }
 
-        private void SOTable_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         public void ViewFacDets(int ID)
         {
             //PROFILE
@@ -1375,16 +1365,6 @@ namespace OOP2
                     }
                 }
             }
-
-        }
-
-        private void Workinhourslabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LocationPic_Click(object sender, EventArgs e)
-        {
 
         }
     }

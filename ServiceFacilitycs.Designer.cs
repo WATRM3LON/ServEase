@@ -298,7 +298,7 @@
             SOEDescription = new System.Windows.Forms.Label();
             SOEPrice = new System.Windows.Forms.Label();
             Starttime = new System.Windows.Forms.Label();
-            this.Endtime = new System.Windows.Forms.Label();
+            //Endtime = new System.Windows.Forms.Label();
             panel3 = new System.Windows.Forms.Panel();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
@@ -2799,7 +2799,7 @@
             panel31.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel31.BackColor = System.Drawing.Color.White;
             panel31.Controls.Add(panel3);
-            panel31.Controls.Add(this.Endtime);
+            //panel31.Controls.Add(this.Endtime);
             panel31.Controls.Add(Starttime);
             panel31.Controls.Add(label45);
             panel31.Controls.Add(label49);
@@ -3968,14 +3968,14 @@
             // 
             // Endtime
             // 
-            this.Endtime.AutoSize = true;
+            /*this.Endtime.AutoSize = true;
             this.Endtime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             this.Endtime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Endtime.Location = new System.Drawing.Point(194, 103);
             this.Endtime.Name = "Endtime";
             this.Endtime.Size = new System.Drawing.Size(81, 23);
             this.Endtime.TabIndex = 50;
-            this.Endtime.Text = "End Time";
+            this.Endtime.Text = "End Time";*/
             // 
             // panel3
             // 

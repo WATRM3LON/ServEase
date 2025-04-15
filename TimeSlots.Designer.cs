@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            Startime = new System.Windows.Forms.Label();
             Endtime = new System.Windows.Forms.Label();
+            Startime = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.1111107F));
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel1.Controls.Add(label1, 1, 0);
             tableLayoutPanel1.Controls.Add(Endtime, 2, 0);
             tableLayoutPanel1.Controls.Add(Startime, 0, 0);
             tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -50,35 +52,48 @@
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new System.Drawing.Size(257, 50);
             tableLayoutPanel1.TabIndex = 0;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
-            // 
-            // Startime
-            // 
-            Startime.AutoSize = true;
-            Startime.BackColor = System.Drawing.SystemColors.ControlLight;
-            Startime.Dock = System.Windows.Forms.DockStyle.Fill;
-            Startime.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Startime.Location = new System.Drawing.Point(8, 13);
-            Startime.Margin = new System.Windows.Forms.Padding(8, 13, 8, 13);
-            Startime.Name = "Startime";
-            Startime.Size = new System.Drawing.Size(98, 24);
-            Startime.TabIndex = 0;
-            Startime.Text = "12:00 am";
-            Startime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Endtime
             // 
             Endtime.AutoSize = true;
-            Endtime.BackColor = System.Drawing.SystemColors.ControlLight;
+            Endtime.BackColor = System.Drawing.Color.WhiteSmoke;
             Endtime.Dock = System.Windows.Forms.DockStyle.Fill;
             Endtime.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Endtime.Location = new System.Drawing.Point(150, 13);
-            Endtime.Margin = new System.Windows.Forms.Padding(8, 13, 8, 13);
+            Endtime.Location = new System.Drawing.Point(150, 8);
+            Endtime.Margin = new System.Windows.Forms.Padding(8);
             Endtime.Name = "Endtime";
-            Endtime.Size = new System.Drawing.Size(99, 24);
+            Endtime.Size = new System.Drawing.Size(99, 34);
             Endtime.TabIndex = 2;
             Endtime.Text = "12:00 am";
             Endtime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Startime
+            // 
+            Startime.AutoSize = true;
+            Startime.BackColor = System.Drawing.Color.WhiteSmoke;
+            Startime.Dock = System.Windows.Forms.DockStyle.Fill;
+            Startime.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Startime.Location = new System.Drawing.Point(8, 8);
+            Startime.Margin = new System.Windows.Forms.Padding(8);
+            Startime.Name = "Startime";
+            Startime.Size = new System.Drawing.Size(98, 34);
+            Startime.TabIndex = 0;
+            Startime.Text = "12:00 am";
+            Startime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.White;
+            label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Location = new System.Drawing.Point(114, 0);
+            label1.Margin = new System.Windows.Forms.Padding(0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(28, 50);
+            label1.TabIndex = 3;
+            label1.Text = "-";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TimeSlots
             // 
@@ -97,5 +112,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label Startime;
         private System.Windows.Forms.Label Endtime;
+        private System.Windows.Forms.Label label1;
     }
 }

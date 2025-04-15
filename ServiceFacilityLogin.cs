@@ -459,11 +459,6 @@ namespace OOP2
             CPasswordEM.Visible = false; CPasswordTextBox.BackColor = Color.White; ConfirmSPanel.BackColor = Color.White;
         }
 
-        private void EmailLTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void EmailLTextBox_Click(object sender, EventArgs e)
         {
             InvalidLEP.Visible = false;

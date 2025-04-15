@@ -806,7 +806,6 @@
             HiLabel.Size = new System.Drawing.Size(88, 25);
             HiLabel.TabIndex = 24;
             HiLabel.Text = "Hi Client,";
-            HiLabel.Click += HiLabel_Click;
             // 
             // WelcomeLabel
             // 
@@ -3720,7 +3719,6 @@
             LocationPic.Size = new System.Drawing.Size(24, 25);
             LocationPic.TabIndex = 65;
             LocationPic.TabStop = false;
-            LocationPic.Click += LocationPic_Click;
             // 
             // Loclabel
             // 
@@ -3806,7 +3804,6 @@
             Workinhourslabel.Size = new System.Drawing.Size(121, 20);
             Workinhourslabel.TabIndex = 55;
             Workinhourslabel.Text = "Working Hours";
-            Workinhourslabel.Click += Workinhourslabel_Click;
             // 
             // WorkingHoursText
             // 
@@ -3873,7 +3870,6 @@
             SOTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             SOTable.Size = new System.Drawing.Size(871, 73);
             SOTable.TabIndex = 57;
-            SOTable.Paint += SOTable_Paint;
             // 
             // FPDuration
             // 

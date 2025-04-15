@@ -440,11 +440,6 @@ namespace OOP2
                 InfoGetter();
             }
         }
-        private void StatusText_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AccountButton_Click(object sender, EventArgs e)
         {
             CalendarAppointmentPanel.Visible = true; ProfilePanel.Visible = true; HiLabel.Visible = true; WelcomeLabel.Visible = true;
