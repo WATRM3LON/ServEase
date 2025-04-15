@@ -82,7 +82,7 @@ namespace OOP2
             AnalyticPannel1.Visible = false;
             ProfilePanel.Visible = false;
             SOButton.Visible = false;
-            ATPanel.Visible = false;
+            ATPanel.Visible = false; EATPanel.Visible = false; EATButton.Visible = false;
             ATButton.Visible = false;
             ServicesOfferedPanel.Visible = false; SOEerrorm.Visible = false;
             SettingsPanel.Visible = false;
@@ -158,8 +158,8 @@ namespace OOP2
             button1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 10, 10));
             //SERVICES OFFRED
             //SOTable.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 10, 10));
-            panel32.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel32.Width, panel32.Height, 10, 10));
-            panel31.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel31.Width, panel31.Height, 10, 10));
+            ATdatetime.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATdatetime.Width, ATdatetime.Height, 10, 10));
+            ATtimeslot.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATtimeslot.Width, ATtimeslot.Height, 10, 10));
             EditButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton.Width, EditButton.Height, 10, 10));
             EditButton2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton2.Width, EditButton2.Height, 10, 10));
             //SETTINGS
@@ -172,6 +172,7 @@ namespace OOP2
             AboutPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AboutPanel.Width, AboutPanel.Height, 10, 10));
             HelpPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HelpPanel.Width, HelpPanel.Height, 10, 10));
             DeleteAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeleteAccButton.Width, DeleteAccButton.Height, 10, 10));
+            EATConfrimbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATConfrimbutton.Width, EATConfrimbutton.Height, 10, 10));
             //panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
             //INFOSETTER
             FIFnameTitle.Text = FIEFnameTitle.Text = FIEFacnametext.Text = FIEFacnametext.Text = FIFnametext.Text = Facname;
@@ -322,6 +323,7 @@ namespace OOP2
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
+            EATButton.Visible = false; EATPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -373,6 +375,7 @@ namespace OOP2
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
+            EATButton.Visible = false; EATPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -530,6 +533,7 @@ namespace OOP2
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
+            EATButton.Visible = false; EATPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -629,6 +633,7 @@ namespace OOP2
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
+            EATButton.Visible = false; EATPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -710,6 +715,7 @@ namespace OOP2
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
+            EATButton.Visible = false; EATPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -818,6 +824,7 @@ namespace OOP2
             ATButton.Visible = false;
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
+            EATButton.Visible = false; EATPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = true;
             SettingsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
@@ -1161,7 +1168,7 @@ namespace OOP2
                                 descriptions[i].Text = reader.IsDBNull(reader.GetOrdinal("Description")) ? "Add Description" : reader["Description"].ToString();
                                 prices[i].Text = reader.IsDBNull(reader.GetOrdinal("Price")) ? "Price" : reader["Price"].ToString();
                                 durations[i].Text = reader.IsDBNull(reader.GetOrdinal("Duration")) ? "Add Duration" : reader["Duration"].ToString();
-                                
+
                             }
                         }
                     }
@@ -1244,13 +1251,15 @@ namespace OOP2
                         }
                     }
                     MessageBox.Show("Successfully updated!", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }else
+                }
+                else
                 {
                     SOEerrorm.Visible = true;
                 }
             }
-            
+
         }
+
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
             ServiceOfferedUpdater();
@@ -1273,7 +1282,7 @@ namespace OOP2
         private void Service1_Click(object sender, EventArgs e)
         {
             Service1.ForeColor = Description1.ForeColor = Price1.ForeColor = Duration1.ForeColor = Color.Black;
-            SOEerrorm.Visible= false;
+            SOEerrorm.Visible = false;
         }
 
         private void Service2_Click(object sender, EventArgs e)
@@ -1349,13 +1358,16 @@ namespace OOP2
         public bool Checker()
         {
             int counter = 0;
-            if (Service2.Text == "Add Service Name") { counter++; } if (Description2.Text == "Add Descritption") { counter++; } if (Price2.Text == "Add Price") { counter++; } if (Duration1.Text == "Add Duration") { counter++; }
+            if (Service2.Text == "Add Service Name") { counter++; }
+            if (Description2.Text == "Add Descritption") { counter++; }
+            if (Price2.Text == "Add Price") { counter++; }
+            if (Duration1.Text == "Add Duration") { counter++; }
             if (Service3.Text == "Add Service Name") { counter++; }
             if (Description3.Text == "Add Descritption") { counter++; }
             if (Price3.Text == "Add Price") { counter++; }
             if (Duration3.Text == "Add Duration") { counter++; }
 
-            if(counter > 0)
+            if (counter > 0)
             {
                 return true;
             }
@@ -1363,6 +1375,84 @@ namespace OOP2
             {
                 return false;
             }
+        }
+
+        public void TimeslotUpdater()
+        {
+            bool checks = Checker();
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                int newFacilityId = 0;
+
+                string getIdQuery = "SELECT Facility_ID FROM [Service Facilities] WHERE [Email Address] = ?";
+                using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
+                {
+                    getIdCmd.Parameters.AddWithValue("?", EmailAddress);
+                    object result = getIdCmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        newFacilityId = Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Facility not found.");
+                        return;
+                    }
+                }
+
+                List<int> timeslotids = new List<int>();
+
+                string getServiceIdsQuery = "SELECT Service_ID FROM [Facility Services] WHERE Facility_ID = ?";
+
+                using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getServiceIdsQuery, myConn))
+                {
+                    getServiceIdsCmd.Parameters.AddWithValue("?", newFacilityId);
+
+                    using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                timeslotids.Add(reader.GetInt32(0));
+                            }
+                        }
+                    }
+                }
+
+                TextBox[] stratimes = { Startime1, Startime2, Startime3, Startime4, Startime5 };
+                TextBox[] endtimes = { Endtime1, Endtime2, Endtime3, Endtime4, Endtime5 };
+
+                for (int i = 0; i < 5; i++)
+                {
+                    string sql = "UPDATE [Facility Timeslots] SET [Start Time] = ?, [End Time] = ?, [Status] = ? WHERE Service_ID = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", Convert.ToDateTime(stratimes[i].Text));
+                        cmd.Parameters.AddWithValue("?", Convert.ToDateTime(endtimes[i].Text));
+                        cmd.Parameters.AddWithValue("?", "Available");
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            MessageBox.Show("Successfully updated!", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            ATPanel.Visible = false; ATButton.Visible = false;
+            EATButton.Visible = true; EATPanel.Visible = true;
+        }
+
+        private void EATButton_Click(object sender, EventArgs e)
+        {
+            ATPanel.Visible = true; ATButton.Visible = true;
+            EATButton.Visible = false; EATPanel.Visible = false;
         }
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            label1 = new System.Windows.Forms.Label();
             Endtime = new System.Windows.Forms.Label();
             Startime = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,8 +50,22 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(257, 50);
+            tableLayoutPanel1.Size = new System.Drawing.Size(260, 50);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.White;
+            label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Location = new System.Drawing.Point(115, 0);
+            label1.Margin = new System.Windows.Forms.Padding(0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(28, 50);
+            label1.TabIndex = 3;
+            label1.Text = "-";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Endtime
             // 
@@ -59,10 +73,10 @@
             Endtime.BackColor = System.Drawing.Color.WhiteSmoke;
             Endtime.Dock = System.Windows.Forms.DockStyle.Fill;
             Endtime.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Endtime.Location = new System.Drawing.Point(150, 8);
+            Endtime.Location = new System.Drawing.Point(151, 8);
             Endtime.Margin = new System.Windows.Forms.Padding(8);
             Endtime.Name = "Endtime";
-            Endtime.Size = new System.Drawing.Size(99, 34);
+            Endtime.Size = new System.Drawing.Size(101, 34);
             Endtime.TabIndex = 2;
             Endtime.Text = "12:00 am";
             Endtime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,24 +90,10 @@
             Startime.Location = new System.Drawing.Point(8, 8);
             Startime.Margin = new System.Windows.Forms.Padding(8);
             Startime.Name = "Startime";
-            Startime.Size = new System.Drawing.Size(98, 34);
+            Startime.Size = new System.Drawing.Size(99, 34);
             Startime.TabIndex = 0;
             Startime.Text = "12:00 am";
             Startime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = System.Drawing.Color.White;
-            label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.Location = new System.Drawing.Point(114, 0);
-            label1.Margin = new System.Windows.Forms.Padding(0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(28, 50);
-            label1.TabIndex = 3;
-            label1.Text = "-";
-            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TimeSlots
             // 

@@ -401,7 +401,7 @@ namespace OOP2
                         cmd.ExecuteNonQuery();
                     }
 
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         string ServiceoffQuery = "INSERT INTO [Facility Services] " +
                                                  "(Facility_ID, [Service Name], [Description], [Price], [Duration]) " +
@@ -414,6 +414,24 @@ namespace OOP2
                             cmd.Parameters.AddWithValue("?", DBNull.Value);
                             cmd.Parameters.AddWithValue("?", DBNull.Value);
                             cmd.Parameters.AddWithValue("?", DBNull.Value); 
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        string ServiceoffQuery = "INSERT INTO [Facility Timeslots] " +
+                                                 "(Facility_ID, [Date of Slot], [Start Time], [End Time], [Status]) " +
+                                                 "VALUES (?, ?, ?, ?, ?)";
+
+                        using (OleDbCommand cmd = new OleDbCommand(ServiceoffQuery, myConn))
+                        {
+                            cmd.Parameters.AddWithValue("?", newFacilityId);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
 
                             cmd.ExecuteNonQuery();
                         }

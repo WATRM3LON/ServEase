@@ -51,9 +51,10 @@
             MaximizeButton = new System.Windows.Forms.Button();
             CloseButton = new System.Windows.Forms.Button();
             HeaderPanel = new System.Windows.Forms.Panel();
+            EATButton = new System.Windows.Forms.Button();
+            ATButton = new System.Windows.Forms.Button();
             EditSOButton = new System.Windows.Forms.Button();
             FIEButton = new System.Windows.Forms.Button();
-            ATButton = new System.Windows.Forms.Button();
             SOButton = new System.Windows.Forms.Button();
             button41 = new System.Windows.Forms.Button();
             SerButton = new System.Windows.Forms.Button();
@@ -210,12 +211,15 @@
             SOPrice = new System.Windows.Forms.Label();
             SODescription = new System.Windows.Forms.Label();
             ATPanel = new System.Windows.Forms.Panel();
-            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            panel31 = new System.Windows.Forms.Panel();
+            ATtable = new System.Windows.Forms.TableLayoutPanel();
+            ATtimeslot = new System.Windows.Forms.Panel();
+            EndTimeTs = new System.Windows.Forms.Label();
+            ATtimeslots = new System.Windows.Forms.Panel();
+            Starttime = new System.Windows.Forms.Label();
             label45 = new System.Windows.Forms.Label();
-            label49 = new System.Windows.Forms.Label();
-            panel32 = new System.Windows.Forms.Panel();
-            label104 = new System.Windows.Forms.Label();
+            ATselcttime = new System.Windows.Forms.Label();
+            ATdatetime = new System.Windows.Forms.Panel();
+            ATselctdt = new System.Windows.Forms.Label();
             panel33 = new System.Windows.Forms.Panel();
             EditButton = new System.Windows.Forms.Button();
             SettingsPanel = new System.Windows.Forms.Panel();
@@ -297,9 +301,39 @@
             SOEDuration = new System.Windows.Forms.Label();
             SOEDescription = new System.Windows.Forms.Label();
             SOEPrice = new System.Windows.Forms.Label();
-            Starttime = new System.Windows.Forms.Label();
-            //Endtime = new System.Windows.Forms.Label();
-            panel3 = new System.Windows.Forms.Panel();
+            EATPanel = new System.Windows.Forms.Panel();
+            EATConfrimbutton = new System.Windows.Forms.Button();
+            EATtable = new System.Windows.Forms.TableLayoutPanel();
+            EATtimeslot = new System.Windows.Forms.Panel();
+            EATendtime = new System.Windows.Forms.Label();
+            EATtimeslots = new System.Windows.Forms.Panel();
+            tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            Endtime5 = new System.Windows.Forms.TextBox();
+            label25 = new System.Windows.Forms.Label();
+            Startime5 = new System.Windows.Forms.TextBox();
+            tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            Endtime4 = new System.Windows.Forms.TextBox();
+            label24 = new System.Windows.Forms.Label();
+            Startime4 = new System.Windows.Forms.TextBox();
+            tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            Endtime3 = new System.Windows.Forms.TextBox();
+            label19 = new System.Windows.Forms.Label();
+            Startime3 = new System.Windows.Forms.TextBox();
+            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            Endtime2 = new System.Windows.Forms.TextBox();
+            label18 = new System.Windows.Forms.Label();
+            Startime2 = new System.Windows.Forms.TextBox();
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            Endtime1 = new System.Windows.Forms.TextBox();
+            label26 = new System.Windows.Forms.Label();
+            Startime1 = new System.Windows.Forms.TextBox();
+            EATStartime = new System.Windows.Forms.Label();
+            label23 = new System.Windows.Forms.Label();
+            EATselctime = new System.Windows.Forms.Label();
+            EATdate = new System.Windows.Forms.Panel();
+            EATselctdt = new System.Windows.Forms.Label();
+            panel15 = new System.Windows.Forms.Panel();
+            button10 = new System.Windows.Forms.Button();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -340,9 +374,9 @@
             ServicesOfferedPanel.SuspendLayout();
             SerOffTitlePanel.SuspendLayout();
             ATPanel.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            panel31.SuspendLayout();
-            panel32.SuspendLayout();
+            ATtable.SuspendLayout();
+            ATtimeslot.SuspendLayout();
+            ATdatetime.SuspendLayout();
             SettingsPanel.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             GeneralPanel.SuspendLayout();
@@ -362,6 +396,16 @@
             SO2Panel.SuspendLayout();
             SO1Panel.SuspendLayout();
             SerOffTitleEPanel.SuspendLayout();
+            EATPanel.SuspendLayout();
+            EATtable.SuspendLayout();
+            EATtimeslot.SuspendLayout();
+            EATtimeslots.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            EATdate.SuspendLayout();
             SuspendLayout();
             // 
             // NotifyButton
@@ -713,9 +757,10 @@
             // HeaderPanel
             // 
             HeaderPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            HeaderPanel.Controls.Add(EATButton);
+            HeaderPanel.Controls.Add(ATButton);
             HeaderPanel.Controls.Add(EditSOButton);
             HeaderPanel.Controls.Add(FIEButton);
-            HeaderPanel.Controls.Add(ATButton);
             HeaderPanel.Controls.Add(SOButton);
             HeaderPanel.Controls.Add(button41);
             HeaderPanel.Controls.Add(SerButton);
@@ -727,6 +772,46 @@
             HeaderPanel.Size = new System.Drawing.Size(964, 100);
             HeaderPanel.TabIndex = 49;
             // 
+            // EATButton
+            // 
+            EATButton.BackColor = System.Drawing.Color.Transparent;
+            EATButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            EATButton.FlatAppearance.BorderSize = 0;
+            EATButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            EATButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            EATButton.Image = (System.Drawing.Image)resources.GetObject("EATButton.Image");
+            EATButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            EATButton.Location = new System.Drawing.Point(25, 23);
+            EATButton.Name = "EATButton";
+            EATButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            EATButton.Size = new System.Drawing.Size(436, 74);
+            EATButton.TabIndex = 33;
+            EATButton.Text = " Edit Appointment Time Slots";
+            EATButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            EATButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            EATButton.UseVisualStyleBackColor = false;
+            EATButton.Click += EATButton_Click;
+            // 
+            // ATButton
+            // 
+            ATButton.BackColor = System.Drawing.Color.Transparent;
+            ATButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            ATButton.FlatAppearance.BorderSize = 0;
+            ATButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ATButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ATButton.Image = (System.Drawing.Image)resources.GetObject("ATButton.Image");
+            ATButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ATButton.Location = new System.Drawing.Point(25, 23);
+            ATButton.Name = "ATButton";
+            ATButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            ATButton.Size = new System.Drawing.Size(436, 74);
+            ATButton.TabIndex = 30;
+            ATButton.Text = " Appointment Time Slots";
+            ATButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            ATButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ATButton.UseVisualStyleBackColor = false;
+            ATButton.Click += ATButton_Click;
+            // 
             // EditSOButton
             // 
             EditSOButton.BackColor = System.Drawing.Color.Transparent;
@@ -736,7 +821,7 @@
             EditSOButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             EditSOButton.Image = (System.Drawing.Image)resources.GetObject("EditSOButton.Image");
             EditSOButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            EditSOButton.Location = new System.Drawing.Point(25, 23);
+            EditSOButton.Location = new System.Drawing.Point(23, 23);
             EditSOButton.Name = "EditSOButton";
             EditSOButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             EditSOButton.Size = new System.Drawing.Size(436, 74);
@@ -766,26 +851,6 @@
             FIEButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             FIEButton.UseVisualStyleBackColor = false;
             FIEButton.Click += FIEButton_Click;
-            // 
-            // ATButton
-            // 
-            ATButton.BackColor = System.Drawing.Color.Transparent;
-            ATButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            ATButton.FlatAppearance.BorderSize = 0;
-            ATButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ATButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ATButton.Image = (System.Drawing.Image)resources.GetObject("ATButton.Image");
-            ATButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            ATButton.Location = new System.Drawing.Point(25, 23);
-            ATButton.Name = "ATButton";
-            ATButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            ATButton.Size = new System.Drawing.Size(436, 74);
-            ATButton.TabIndex = 30;
-            ATButton.Text = " Appointment Time Slots";
-            ATButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            ATButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ATButton.UseVisualStyleBackColor = false;
-            ATButton.Click += ATButton_Click;
             // 
             // SOButton
             // 
@@ -2771,43 +2836,74 @@
             // 
             ATPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ATPanel.BackColor = System.Drawing.Color.Transparent;
-            ATPanel.Controls.Add(tableLayoutPanel1);
+            ATPanel.Controls.Add(ATtable);
             ATPanel.Controls.Add(EditButton);
             ATPanel.Location = new System.Drawing.Point(277, 177);
             ATPanel.Name = "ATPanel";
             ATPanel.Size = new System.Drawing.Size(893, 799);
             ATPanel.TabIndex = 62;
             // 
-            // tableLayoutPanel1
+            // ATtable
             // 
-            tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            tableLayoutPanel1.Controls.Add(panel31, 1, 0);
-            tableLayoutPanel1.Controls.Add(panel32, 0, 0);
-            tableLayoutPanel1.Location = new System.Drawing.Point(8, 12);
-            tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(871, 629);
-            tableLayoutPanel1.TabIndex = 54;
+            ATtable.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ATtable.ColumnCount = 2;
+            ATtable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            ATtable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            ATtable.Controls.Add(ATtimeslot, 1, 0);
+            ATtable.Controls.Add(ATdatetime, 0, 0);
+            ATtable.Location = new System.Drawing.Point(8, 12);
+            ATtable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ATtable.Name = "ATtable";
+            ATtable.RowCount = 1;
+            ATtable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATtable.Size = new System.Drawing.Size(871, 629);
+            ATtable.TabIndex = 54;
             // 
-            // panel31
+            // ATtimeslot
             // 
-            panel31.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel31.BackColor = System.Drawing.Color.White;
-            panel31.Controls.Add(panel3);
-            //panel31.Controls.Add(this.Endtime);
-            panel31.Controls.Add(Starttime);
-            panel31.Controls.Add(label45);
-            panel31.Controls.Add(label49);
-            panel31.Location = new System.Drawing.Point(535, 15);
-            panel31.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
-            panel31.Name = "panel31";
-            panel31.Size = new System.Drawing.Size(323, 598);
-            panel31.TabIndex = 52;
+            ATtimeslot.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ATtimeslot.BackColor = System.Drawing.Color.White;
+            ATtimeslot.Controls.Add(EndTimeTs);
+            ATtimeslot.Controls.Add(ATtimeslots);
+            ATtimeslot.Controls.Add(Starttime);
+            ATtimeslot.Controls.Add(label45);
+            ATtimeslot.Controls.Add(ATselcttime);
+            ATtimeslot.Location = new System.Drawing.Point(535, 15);
+            ATtimeslot.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
+            ATtimeslot.Name = "ATtimeslot";
+            ATtimeslot.Size = new System.Drawing.Size(323, 598);
+            ATtimeslot.TabIndex = 52;
+            // 
+            // EndTimeTs
+            // 
+            EndTimeTs.AutoSize = true;
+            EndTimeTs.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EndTimeTs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EndTimeTs.Location = new System.Drawing.Point(186, 103);
+            EndTimeTs.Name = "EndTimeTs";
+            EndTimeTs.Size = new System.Drawing.Size(81, 23);
+            EndTimeTs.TabIndex = 52;
+            EndTimeTs.Text = "End Time";
+            // 
+            // ATtimeslots
+            // 
+            ATtimeslots.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ATtimeslots.AutoScroll = true;
+            ATtimeslots.Location = new System.Drawing.Point(26, 131);
+            ATtimeslots.Name = "ATtimeslots";
+            ATtimeslots.Size = new System.Drawing.Size(270, 433);
+            ATtimeslots.TabIndex = 51;
+            // 
+            // Starttime
+            // 
+            Starttime.AutoSize = true;
+            Starttime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            Starttime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            Starttime.Location = new System.Drawing.Point(54, 103);
+            Starttime.Name = "Starttime";
+            Starttime.Size = new System.Drawing.Size(87, 23);
+            Starttime.TabIndex = 49;
+            Starttime.Text = "Start Time";
             // 
             // label45
             // 
@@ -2819,39 +2915,39 @@
             label45.Size = new System.Drawing.Size(0, 20);
             label45.TabIndex = 47;
             // 
-            // label49
+            // ATselcttime
             // 
-            label49.AutoSize = true;
-            label49.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label49.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label49.Location = new System.Drawing.Point(24, 43);
-            label49.Name = "label49";
-            label49.Size = new System.Drawing.Size(107, 28);
-            label49.TabIndex = 37;
-            label49.Text = "Time Slots";
+            ATselcttime.AutoSize = true;
+            ATselcttime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ATselcttime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATselcttime.Location = new System.Drawing.Point(24, 35);
+            ATselcttime.Name = "ATselcttime";
+            ATselcttime.Size = new System.Drawing.Size(107, 28);
+            ATselcttime.TabIndex = 37;
+            ATselcttime.Text = "Time Slots";
             // 
-            // panel32
+            // ATdatetime
             // 
-            panel32.BackColor = System.Drawing.Color.White;
-            panel32.Controls.Add(label104);
-            panel32.Controls.Add(panel33);
-            panel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel32.Location = new System.Drawing.Point(13, 15);
-            panel32.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
-            panel32.Name = "panel32";
-            panel32.Size = new System.Drawing.Size(496, 599);
-            panel32.TabIndex = 51;
+            ATdatetime.BackColor = System.Drawing.Color.White;
+            ATdatetime.Controls.Add(ATselctdt);
+            ATdatetime.Controls.Add(panel33);
+            ATdatetime.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATdatetime.Location = new System.Drawing.Point(13, 15);
+            ATdatetime.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
+            ATdatetime.Name = "ATdatetime";
+            ATdatetime.Size = new System.Drawing.Size(496, 599);
+            ATdatetime.TabIndex = 51;
             // 
-            // label104
+            // ATselctdt
             // 
-            label104.AutoSize = true;
-            label104.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label104.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label104.Location = new System.Drawing.Point(19, 35);
-            label104.Name = "label104";
-            label104.Size = new System.Drawing.Size(205, 28);
-            label104.TabIndex = 35;
-            label104.Text = "Select Date and Time";
+            ATselctdt.AutoSize = true;
+            ATselctdt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ATselctdt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATselctdt.Location = new System.Drawing.Point(19, 35);
+            ATselctdt.Name = "ATselctdt";
+            ATselctdt.Size = new System.Drawing.Size(205, 28);
+            ATselctdt.TabIndex = 35;
+            ATselctdt.Text = "Select Date and Time";
             // 
             // panel33
             // 
@@ -2880,6 +2976,7 @@
             EditButton.Text = "Edit";
             EditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             EditButton.UseVisualStyleBackColor = false;
+            EditButton.Click += EditButton_Click;
             // 
             // SettingsPanel
             // 
@@ -3955,34 +4052,465 @@
             SOEPrice.Text = "Price";
             SOEPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Starttime
+            // EATPanel
             // 
-            Starttime.AutoSize = true;
-            Starttime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Starttime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            Starttime.Location = new System.Drawing.Point(54, 103);
-            Starttime.Name = "Starttime";
-            Starttime.Size = new System.Drawing.Size(87, 23);
-            Starttime.TabIndex = 49;
-            Starttime.Text = "Start Time";
+            EATPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EATPanel.BackColor = System.Drawing.Color.Transparent;
+            EATPanel.Controls.Add(EATConfrimbutton);
+            EATPanel.Controls.Add(EATtable);
+            EATPanel.Controls.Add(button10);
+            EATPanel.Location = new System.Drawing.Point(277, 177);
+            EATPanel.Name = "EATPanel";
+            EATPanel.Size = new System.Drawing.Size(913, 756);
+            EATPanel.TabIndex = 66;
             // 
-            // Endtime
+            // EATConfrimbutton
             // 
-            /*this.Endtime.AutoSize = true;
-            this.Endtime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            this.Endtime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Endtime.Location = new System.Drawing.Point(194, 103);
-            this.Endtime.Name = "Endtime";
-            this.Endtime.Size = new System.Drawing.Size(81, 23);
-            this.Endtime.TabIndex = 50;
-            this.Endtime.Text = "End Time";*/
+            EATConfrimbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            EATConfrimbutton.BackColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            EATConfrimbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            EATConfrimbutton.FlatAppearance.BorderSize = 0;
+            EATConfrimbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            EATConfrimbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            EATConfrimbutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATConfrimbutton.Location = new System.Drawing.Point(762, 685);
+            EATConfrimbutton.Name = "EATConfrimbutton";
+            EATConfrimbutton.Size = new System.Drawing.Size(124, 51);
+            EATConfrimbutton.TabIndex = 55;
+            EATConfrimbutton.Text = "Confirm";
+            EATConfrimbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            EATConfrimbutton.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // EATtable
             // 
-            panel3.Location = new System.Drawing.Point(26, 131);
-            panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(270, 433);
-            panel3.TabIndex = 51;
+            EATtable.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EATtable.ColumnCount = 2;
+            EATtable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            EATtable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            EATtable.Controls.Add(EATtimeslot, 1, 0);
+            EATtable.Controls.Add(EATdate, 0, 0);
+            EATtable.Location = new System.Drawing.Point(8, 12);
+            EATtable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            EATtable.Name = "EATtable";
+            EATtable.RowCount = 1;
+            EATtable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            EATtable.Size = new System.Drawing.Size(891, 629);
+            EATtable.TabIndex = 54;
+            // 
+            // EATtimeslot
+            // 
+            EATtimeslot.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EATtimeslot.BackColor = System.Drawing.Color.White;
+            EATtimeslot.Controls.Add(EATendtime);
+            EATtimeslot.Controls.Add(EATtimeslots);
+            EATtimeslot.Controls.Add(EATStartime);
+            EATtimeslot.Controls.Add(label23);
+            EATtimeslot.Controls.Add(EATselctime);
+            EATtimeslot.Location = new System.Drawing.Point(547, 15);
+            EATtimeslot.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
+            EATtimeslot.Name = "EATtimeslot";
+            EATtimeslot.Size = new System.Drawing.Size(331, 598);
+            EATtimeslot.TabIndex = 52;
+            // 
+            // EATendtime
+            // 
+            EATendtime.AutoSize = true;
+            EATendtime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EATendtime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATendtime.Location = new System.Drawing.Point(186, 103);
+            EATendtime.Name = "EATendtime";
+            EATendtime.Size = new System.Drawing.Size(81, 23);
+            EATendtime.TabIndex = 52;
+            EATendtime.Text = "End Time";
+            // 
+            // EATtimeslots
+            // 
+            EATtimeslots.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EATtimeslots.AutoScroll = true;
+            EATtimeslots.Controls.Add(tableLayoutPanel7);
+            EATtimeslots.Controls.Add(tableLayoutPanel6);
+            EATtimeslots.Controls.Add(tableLayoutPanel5);
+            EATtimeslots.Controls.Add(tableLayoutPanel3);
+            EATtimeslots.Controls.Add(tableLayoutPanel1);
+            EATtimeslots.Location = new System.Drawing.Point(26, 131);
+            EATtimeslots.Name = "EATtimeslots";
+            EATtimeslots.Size = new System.Drawing.Size(278, 433);
+            EATtimeslots.TabIndex = 51;
+            // 
+            // tableLayoutPanel7
+            // 
+            tableLayoutPanel7.BackColor = System.Drawing.Color.White;
+            tableLayoutPanel7.ColumnCount = 3;
+            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.1111107F));
+            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel7.Controls.Add(Endtime5, 2, 0);
+            tableLayoutPanel7.Controls.Add(label25, 1, 0);
+            tableLayoutPanel7.Controls.Add(Startime5, 0, 0);
+            tableLayoutPanel7.Location = new System.Drawing.Point(9, 270);
+            tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 1;
+            tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel7.Size = new System.Drawing.Size(260, 50);
+            tableLayoutPanel7.TabIndex = 57;
+            // 
+            // Endtime5
+            // 
+            Endtime5.Dock = System.Windows.Forms.DockStyle.Fill;
+            Endtime5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Endtime5.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Endtime5.Location = new System.Drawing.Point(151, 8);
+            Endtime5.Margin = new System.Windows.Forms.Padding(8);
+            Endtime5.Name = "Endtime5";
+            Endtime5.Size = new System.Drawing.Size(101, 31);
+            Endtime5.TabIndex = 5;
+            Endtime5.Text = "Add Time";
+            Endtime5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.BackColor = System.Drawing.Color.White;
+            label25.Dock = System.Windows.Forms.DockStyle.Fill;
+            label25.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label25.Location = new System.Drawing.Point(115, 0);
+            label25.Margin = new System.Windows.Forms.Padding(0);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(28, 50);
+            label25.TabIndex = 3;
+            label25.Text = "-";
+            label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Startime5
+            // 
+            Startime5.Dock = System.Windows.Forms.DockStyle.Fill;
+            Startime5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Startime5.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Startime5.Location = new System.Drawing.Point(8, 8);
+            Startime5.Margin = new System.Windows.Forms.Padding(8);
+            Startime5.Name = "Startime5";
+            Startime5.Size = new System.Drawing.Size(99, 31);
+            Startime5.TabIndex = 4;
+            Startime5.Text = "Add Time";
+            Startime5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.BackColor = System.Drawing.Color.White;
+            tableLayoutPanel6.ColumnCount = 3;
+            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.1111107F));
+            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel6.Controls.Add(Endtime4, 2, 0);
+            tableLayoutPanel6.Controls.Add(label24, 1, 0);
+            tableLayoutPanel6.Controls.Add(Startime4, 0, 0);
+            tableLayoutPanel6.Location = new System.Drawing.Point(6, 205);
+            tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 1;
+            tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel6.Size = new System.Drawing.Size(260, 50);
+            tableLayoutPanel6.TabIndex = 56;
+            // 
+            // Endtime4
+            // 
+            Endtime4.Dock = System.Windows.Forms.DockStyle.Fill;
+            Endtime4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Endtime4.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Endtime4.Location = new System.Drawing.Point(151, 8);
+            Endtime4.Margin = new System.Windows.Forms.Padding(8);
+            Endtime4.Name = "Endtime4";
+            Endtime4.Size = new System.Drawing.Size(101, 31);
+            Endtime4.TabIndex = 5;
+            Endtime4.Text = "Add Time";
+            Endtime4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.BackColor = System.Drawing.Color.White;
+            label24.Dock = System.Windows.Forms.DockStyle.Fill;
+            label24.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label24.Location = new System.Drawing.Point(115, 0);
+            label24.Margin = new System.Windows.Forms.Padding(0);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(28, 50);
+            label24.TabIndex = 3;
+            label24.Text = "-";
+            label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Startime4
+            // 
+            Startime4.Dock = System.Windows.Forms.DockStyle.Fill;
+            Startime4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Startime4.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Startime4.Location = new System.Drawing.Point(8, 8);
+            Startime4.Margin = new System.Windows.Forms.Padding(8);
+            Startime4.Name = "Startime4";
+            Startime4.Size = new System.Drawing.Size(99, 31);
+            Startime4.TabIndex = 4;
+            Startime4.Text = "Add Time";
+            Startime4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tableLayoutPanel5
+            // 
+            tableLayoutPanel5.BackColor = System.Drawing.Color.White;
+            tableLayoutPanel5.ColumnCount = 3;
+            tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel5.Controls.Add(Endtime3, 2, 0);
+            tableLayoutPanel5.Controls.Add(label19, 1, 0);
+            tableLayoutPanel5.Controls.Add(Startime3, 0, 0);
+            tableLayoutPanel5.Location = new System.Drawing.Point(6, 140);
+            tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 1;
+            tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel5.Size = new System.Drawing.Size(260, 50);
+            tableLayoutPanel5.TabIndex = 55;
+            // 
+            // Endtime3
+            // 
+            Endtime3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Endtime3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Endtime3.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Endtime3.Location = new System.Drawing.Point(151, 8);
+            Endtime3.Margin = new System.Windows.Forms.Padding(8);
+            Endtime3.Name = "Endtime3";
+            Endtime3.Size = new System.Drawing.Size(101, 31);
+            Endtime3.TabIndex = 5;
+            Endtime3.Text = "Add Time";
+            Endtime3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.BackColor = System.Drawing.Color.White;
+            label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            label19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label19.Location = new System.Drawing.Point(115, 0);
+            label19.Margin = new System.Windows.Forms.Padding(0);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(28, 50);
+            label19.TabIndex = 3;
+            label19.Text = "-";
+            label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Startime3
+            // 
+            Startime3.Dock = System.Windows.Forms.DockStyle.Fill;
+            Startime3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Startime3.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Startime3.Location = new System.Drawing.Point(8, 8);
+            Startime3.Margin = new System.Windows.Forms.Padding(8);
+            Startime3.Name = "Startime3";
+            Startime3.Size = new System.Drawing.Size(99, 31);
+            Startime3.TabIndex = 4;
+            Startime3.Text = "Add Time";
+            Startime3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.BackColor = System.Drawing.Color.White;
+            tableLayoutPanel3.ColumnCount = 3;
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.1111107F));
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel3.Controls.Add(Endtime2, 2, 0);
+            tableLayoutPanel3.Controls.Add(label18, 1, 0);
+            tableLayoutPanel3.Controls.Add(Startime2, 0, 0);
+            tableLayoutPanel3.Location = new System.Drawing.Point(6, 74);
+            tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new System.Drawing.Size(260, 50);
+            tableLayoutPanel3.TabIndex = 54;
+            // 
+            // Endtime2
+            // 
+            Endtime2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Endtime2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Endtime2.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Endtime2.Location = new System.Drawing.Point(151, 8);
+            Endtime2.Margin = new System.Windows.Forms.Padding(8);
+            Endtime2.Name = "Endtime2";
+            Endtime2.Size = new System.Drawing.Size(101, 31);
+            Endtime2.TabIndex = 5;
+            Endtime2.Text = "Add Time";
+            Endtime2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.BackColor = System.Drawing.Color.White;
+            label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            label18.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label18.Location = new System.Drawing.Point(115, 0);
+            label18.Margin = new System.Windows.Forms.Padding(0);
+            label18.Name = "label18";
+            label18.Size = new System.Drawing.Size(28, 50);
+            label18.TabIndex = 3;
+            label18.Text = "-";
+            label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Startime2
+            // 
+            Startime2.Dock = System.Windows.Forms.DockStyle.Fill;
+            Startime2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Startime2.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Startime2.Location = new System.Drawing.Point(8, 8);
+            Startime2.Margin = new System.Windows.Forms.Padding(8);
+            Startime2.Name = "Startime2";
+            Startime2.Size = new System.Drawing.Size(99, 31);
+            Startime2.TabIndex = 4;
+            Startime2.Text = "Add Time";
+            Startime2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = System.Drawing.Color.White;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.1111107F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.4444427F));
+            tableLayoutPanel1.Controls.Add(Endtime1, 2, 0);
+            tableLayoutPanel1.Controls.Add(label26, 1, 0);
+            tableLayoutPanel1.Controls.Add(Startime1, 0, 0);
+            tableLayoutPanel1.Location = new System.Drawing.Point(6, 9);
+            tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(260, 50);
+            tableLayoutPanel1.TabIndex = 53;
+            // 
+            // Endtime1
+            // 
+            Endtime1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Endtime1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Endtime1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Endtime1.Location = new System.Drawing.Point(151, 8);
+            Endtime1.Margin = new System.Windows.Forms.Padding(8);
+            Endtime1.Name = "Endtime1";
+            Endtime1.Size = new System.Drawing.Size(101, 31);
+            Endtime1.TabIndex = 5;
+            Endtime1.Text = "Add Time";
+            Endtime1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.BackColor = System.Drawing.Color.White;
+            label26.Dock = System.Windows.Forms.DockStyle.Fill;
+            label26.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label26.Location = new System.Drawing.Point(115, 0);
+            label26.Margin = new System.Windows.Forms.Padding(0);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(28, 50);
+            label26.TabIndex = 3;
+            label26.Text = "-";
+            label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Startime1
+            // 
+            Startime1.Dock = System.Windows.Forms.DockStyle.Fill;
+            Startime1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Startime1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            Startime1.Location = new System.Drawing.Point(8, 8);
+            Startime1.Margin = new System.Windows.Forms.Padding(8);
+            Startime1.Name = "Startime1";
+            Startime1.Size = new System.Drawing.Size(99, 31);
+            Startime1.TabIndex = 4;
+            Startime1.Text = "Add Time";
+            Startime1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // EATStartime
+            // 
+            EATStartime.AutoSize = true;
+            EATStartime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EATStartime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATStartime.Location = new System.Drawing.Point(54, 103);
+            EATStartime.Name = "EATStartime";
+            EATStartime.Size = new System.Drawing.Size(87, 23);
+            EATStartime.TabIndex = 49;
+            EATStartime.Text = "Start Time";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            label23.Location = new System.Drawing.Point(35, 208);
+            label23.Name = "label23";
+            label23.Size = new System.Drawing.Size(0, 20);
+            label23.TabIndex = 47;
+            // 
+            // EATselctime
+            // 
+            EATselctime.AutoSize = true;
+            EATselctime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            EATselctime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATselctime.Location = new System.Drawing.Point(24, 35);
+            EATselctime.Name = "EATselctime";
+            EATselctime.Size = new System.Drawing.Size(107, 28);
+            EATselctime.TabIndex = 37;
+            EATselctime.Text = "Time Slots";
+            // 
+            // EATdate
+            // 
+            EATdate.BackColor = System.Drawing.Color.White;
+            EATdate.Controls.Add(EATselctdt);
+            EATdate.Controls.Add(panel15);
+            EATdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            EATdate.Location = new System.Drawing.Point(13, 15);
+            EATdate.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
+            EATdate.Name = "EATdate";
+            EATdate.Size = new System.Drawing.Size(508, 599);
+            EATdate.TabIndex = 51;
+            // 
+            // EATselctdt
+            // 
+            EATselctdt.AutoSize = true;
+            EATselctdt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            EATselctdt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATselctdt.Location = new System.Drawing.Point(19, 35);
+            EATselctdt.Name = "EATselctdt";
+            EATselctdt.Size = new System.Drawing.Size(205, 28);
+            EATselctdt.TabIndex = 35;
+            EATselctdt.Text = "Select Date and Time";
+            // 
+            // panel15
+            // 
+            panel15.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel15.BackColor = System.Drawing.Color.Transparent;
+            panel15.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel15.BackgroundImage");
+            panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            panel15.Location = new System.Drawing.Point(25, 135);
+            panel15.Name = "panel15";
+            panel15.Size = new System.Drawing.Size(459, 429);
+            panel15.TabIndex = 34;
+            // 
+            // button10
+            // 
+            button10.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button10.BackColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button10.FlatAppearance.BorderSize = 0;
+            button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            button10.Location = new System.Drawing.Point(1464, 672);
+            button10.Name = "button10";
+            button10.Size = new System.Drawing.Size(124, 51);
+            button10.TabIndex = 33;
+            button10.Text = "Edit";
+            button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button10.UseVisualStyleBackColor = false;
             // 
             // ServiceFacilitycs
             // 
@@ -3991,6 +4519,7 @@
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
             Controls.Add(ATPanel);
+            Controls.Add(EATPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(EditFIPanel);
             Controls.Add(ServicesOfferedPanel);
@@ -4088,11 +4617,11 @@
             SerOffTitlePanel.ResumeLayout(false);
             SerOffTitlePanel.PerformLayout();
             ATPanel.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            panel31.ResumeLayout(false);
-            panel31.PerformLayout();
-            panel32.ResumeLayout(false);
-            panel32.PerformLayout();
+            ATtable.ResumeLayout(false);
+            ATtimeslot.ResumeLayout(false);
+            ATtimeslot.PerformLayout();
+            ATdatetime.ResumeLayout(false);
+            ATdatetime.PerformLayout();
             SettingsPanel.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             GeneralPanel.ResumeLayout(false);
@@ -4119,6 +4648,23 @@
             SO1Panel.PerformLayout();
             SerOffTitleEPanel.ResumeLayout(false);
             SerOffTitleEPanel.PerformLayout();
+            EATPanel.ResumeLayout(false);
+            EATtable.ResumeLayout(false);
+            EATtimeslot.ResumeLayout(false);
+            EATtimeslot.PerformLayout();
+            EATtimeslots.ResumeLayout(false);
+            tableLayoutPanel7.ResumeLayout(false);
+            tableLayoutPanel7.PerformLayout();
+            tableLayoutPanel6.ResumeLayout(false);
+            tableLayoutPanel6.PerformLayout();
+            tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel5.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            EATdate.ResumeLayout(false);
+            EATdate.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -4295,16 +4841,15 @@
         private System.Windows.Forms.Label SODescription;
         private System.Windows.Forms.Button SOButton;
         private System.Windows.Forms.Panel ATPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.TableLayoutPanel ATtable;
+        private System.Windows.Forms.Panel ATdatetime;
+        private System.Windows.Forms.Label ATselctdt;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.Panel panel31;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel ATtimeslot;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label ATselcttime;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
@@ -4403,8 +4948,42 @@
         private System.Windows.Forms.Button EditSOButton;
         private System.Windows.Forms.Label SOEerrorm;
         private System.Windows.Forms.ComboBox FIESerCatList;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label EATStartime;
         private System.Windows.Forms.Label Starttime;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel ATtimeslots;
+        private System.Windows.Forms.Label EndTimeTs;
+        private System.Windows.Forms.Panel EATPanel;
+        private System.Windows.Forms.Button EATConfrimbutton;
+        private System.Windows.Forms.TableLayoutPanel EATtable;
+        private System.Windows.Forms.Panel EATtimeslot;
+        private System.Windows.Forms.Label EATendtime;
+        private System.Windows.Forms.Panel EATtimeslots;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label EATselctime;
+        private System.Windows.Forms.Panel EATdate;
+        private System.Windows.Forms.Label EATselctdt;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox Startime1;
+        private System.Windows.Forms.TextBox Endtime1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TextBox Endtime5;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox Startime5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TextBox Endtime4;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox Startime4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TextBox Endtime3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox Startime3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TextBox Endtime2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox Startime2;
+        private System.Windows.Forms.Button EATButton;
     }
 }
