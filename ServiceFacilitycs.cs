@@ -681,6 +681,7 @@ namespace OOP2
             ATPanel.Visible = true;
             ATButton.Visible = true;
             LoadFacilityData();
+            PopulateCalendar(DateTime.Today);
         }
 
         private void SOButton_Click(object sender, EventArgs e)
@@ -1678,6 +1679,50 @@ namespace OOP2
             {
                 FIESpeCattext.Items.AddRange(subCategories[service]);
             }
+        }
+        void PopulateCalendar(DateTime monthDate)
+        {
+            ATC3.Controls.Clear();
+            ATC3.SuspendLayout();
+           
+
+            DateTime firstDayOfMonth = new DateTime(monthDate.Year, monthDate.Month, 1);
+            int daysInMonth = DateTime.DaysInMonth(monthDate.Year, monthDate.Month);
+            int startCol = (int)firstDayOfMonth.DayOfWeek;
+            ATCmonth.Text = monthDate.ToString("MMMM yyyy");
+            int row = 0;
+            int col = startCol;
+
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                Label dayLabel = new Label
+                {
+                    Text = day.ToString(),
+                    Dock = DockStyle.Fill,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    BorderStyle = BorderStyle.None,
+                    Padding = new Padding(5),
+                    Font = new Font("Segoe UI", 9)
+                };
+
+                if (monthDate.Year == DateTime.Today.Year &&
+                    monthDate.Month == DateTime.Today.Month &&
+                    day == DateTime.Today.Day)
+                {
+                    dayLabel.BackColor = Color.LightBlue;
+                }
+
+                ATC3.Controls.Add(dayLabel, col, row);
+
+                col++;
+                if (col == 7)
+                {
+                    col = 0;
+                    row++;
+                }
+            }
+
+            ATC3.ResumeLayout();
         }
     }
 }
