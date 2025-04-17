@@ -906,26 +906,29 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "UPDATE [Service Facilities] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Service Category] = @Servicecategory, [Specific Category] = @Specificcategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays, [Tags] = @tags WHERE [Email Address] = @Email";
+                string sql = "UPDATE [Service Facilities] SET [Facility Name] = ?, [Facility Location] = ?, [Owner First Name] = ?, [Owner Last Name] = ?, [Contact Number] = ?, [Service Category] = ?, [Specific Category] = ?, [Working Hours Start] = ?, [Working Hours End] = ?, [Working Days] = ?, [Tags] = ? WHERE [Email Address] = EmailAddress";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
-                    cmd.Parameters.AddWithValue("@FacilityName", FIEFacnametext.Text);
-                    cmd.Parameters.AddWithValue("@FLocation", FIELoctext.Text);
-                    cmd.Parameters.AddWithValue("@OFName", FIEOFnametext.Text);
-                    cmd.Parameters.AddWithValue("@OLName", FIEOLnametext.Text);
-                    cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
-                    service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
-                    cmd.Parameters.AddWithValue("@Servicecategory", service);
-                    SpeCat = FIESpeCattext.GetItemText(FIESpeCattext.SelectedItem);
-                    cmd.Parameters.AddWithValue("@Specificcategory", SpeCat);
-                    cmd.Parameters.AddWithValue("@Workinghoursstart", FIEStarttext.Text);
-                    cmd.Parameters.AddWithValue("@Workinghoursend", FIEEndtext.Text);
-                    cmd.Parameters.AddWithValue("@Workingdays", FIEWordaystext.Text);
-                    cmd.Parameters.AddWithValue("@Email", FIEEmailaddtext.Text);
-                    cmd.Parameters.AddWithValue("@tags", FIETagstext.Text);
-                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("?", FIEFacnametext.Text);
+                    cmd.Parameters.AddWithValue("?", FIELoctext.Text);
+                    cmd.Parameters.AddWithValue("?", FIEOFnametext.Text);
+                    cmd.Parameters.AddWithValue("?", FIEOLnametext.Text);
+                    cmd.Parameters.AddWithValue("?", FIECnumbertext.Text);
 
+                    service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
+                    cmd.Parameters.AddWithValue("?", service);
+
+                    SpeCat = FIESpeCattext.GetItemText(FIESpeCattext.SelectedItem);
+                    cmd.Parameters.AddWithValue("?", SpeCat);
+
+                    cmd.Parameters.AddWithValue("?", FIEStarttext.Text);
+                    cmd.Parameters.AddWithValue("?", FIEEndtext.Text);
+                    cmd.Parameters.AddWithValue("?", FIEWordaystext.Text);
+                    cmd.Parameters.AddWithValue("?", FIETagstext.Text);
+                    cmd.Parameters.AddWithValue($"{EmailAddress}", FIEEmailaddtext.Text);
+
+                    cmd.ExecuteNonQuery();
                 }
 
                 int newFacilityId = 0;
@@ -1027,7 +1030,7 @@ namespace OOP2
             FillEM.Visible = false;
             bool cnumberValid = CNumberChecker(FIECnumbertext.Text, connection);
 
-            if (FIELoctext.Text.Length != 0 && FIEFacnametext.Text.Length != 0 && FIEWordaystext.Text.Length != 0 && FIEStarttext.Text.Length != 0 && FIEEndtext.Text.Length != 0 && cnumberValid)
+            if (FIELoctext.Text.Length != 0 && FIEFacnametext.Text.Length != 0 && FIEWordaystext.Text.Length != 0 && FIEStarttext.Text.Length != 0 && FIEEndtext.Text.Length != 0 && cnumberValid && FIETagstext.Text.Length != 0 && FIESpeCattext.Text.Length != 0)
             {
                 UpdateInfo();
             }
@@ -1611,52 +1614,69 @@ namespace OOP2
             Startime5.ForeColor = Color.Black; Endtime5.ForeColor = Color.Black;
         }
 
-        private void Endtime1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void EATConfrimbutton_Click(object sender, EventArgs e)
         {
             TimeslotUpdater();
         }
 
-        private void Cconfirmbutton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void FIESerCatList_SelectedIndexChanged(object sender, EventArgs e)
         {
             FIESpeCatlabel.Visible = true; FIESpeCattext.Visible = true;
-            service = FIESpeCattext.SelectedItem.ToString();
-            if (service == "Personal Care & Beauty Services")
+            service = FIESerCatList.SelectedItem.ToString();
+            FIESpeCattext.Items.Clear();
+
+            Dictionary<string, string[]> subCategories = new Dictionary<string, string[]>
             {
-                FIESpeCattext.Items.Add("Barbershops\r\nHair Salons\r\nNail Salons\r\nSpa & Massage Centers\r\nTattoo and Piercing Parlors\r\n");
-            }
-            else if (service == "Health & Medical Services")
+                { "Personal Care & Beauty Services", new[] {
+                    "Barbershops",
+                    "Hair Salons",
+                    "Nail Salons",
+                    "Spa & Massage Centers",
+                    "Tattoo and Piercing Parlors"
+                }},
+                { "Health & Medical Services", new[] {
+                    "Animal Clinics",
+                    "Dentists",
+                    "Dermatologists",
+                    "Hospitals",
+                    "Laboratories",
+                    "Pharmacies",
+                    "Psychologists"
+                }},
+                { "Fitness & Sports Services", new[] {
+                    "Dance Studios",
+                    "Gyms",
+                    "Sports Centers"
+                }},
+                { "Education & Tutoring Services", new[] {
+                    "Schools",
+                    "Tutoring Centers"
+                }},
+                { "Repair & Technical Services", new[] {
+                    "Appliance Repair",
+                    "Car Wash",
+                    "Car / Motorcycle Repair Shops",
+                    "Electronics Repair"
+                }},
+                { "Food & Beverages Services", new[] {
+                    "Bakeries",
+                    "Bars",
+                    "Cafes & Coffee Shops",
+                    "Mini Mart",
+                    "Restaurants",
+                    "Supermarkets / Grocery Stores"
+                }},
+                { "Miscellaneous Services", new[] {
+                    "Funeral Homes",
+                    "Hotels",
+                    "Laundry Shops",
+                    "Tailoring Services"
+                }},
+            };
+
+            if (subCategories.ContainsKey(service))
             {
-                FIESpeCattext.Items.Add("Animal Clinics\r\nDentists\r\nDermatologists\r\nHospitals\r\nLaboratories\r\nPharmacies\r\nPsychologists\r\n");
-            }
-            else if (service == "Fitness & Sports Services")
-            {
-                FIESpeCattext.Items.Add("Dance Studios\r\nGyms\r\nSports Centers\r\n");
-            }
-            else if (service == "Education & Tutoring Services")
-            {
-                FIESpeCattext.Items.Add("Schools\r\nTutoring Centers\r\n");
-            }
-            else if (service == "Repair & Technical Services")
-            {
-                FIESpeCattext.Items.Add("Appliance Repair\r\nCar Wash\r\nCar / Motorcycle Repair Shops\r\nElectronics Repair\r\n");
-            }
-            else if (service == "Food & Beverages Services")
-            {
-                FIESpeCattext.Items.Add("Bakeries\t\r\nBars\r\nCafes & Coffee Shops\r\nMini Mart\r\nRestaurants\r\nSupermarkets / Grocery Stores\r\n");
-            }
-            else if (service == "Miscellaneous Services")
-            {
-                FIESpeCattext.Items.Add("Funeral Homes\r\nHotels\r\nLaundry Shops\t\r\nTailoring Services\r\n");
+                FIESpeCattext.Items.AddRange(subCategories[service]);
             }
         }
     }

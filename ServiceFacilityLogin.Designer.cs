@@ -628,6 +628,7 @@
             LoginButton.Text = "Log In";
             LoginButton.UseVisualStyleBackColor = false;
             LoginButton.Click += LoginButton_Click;
+            LoginButton.Enter += LoginButton_Click;
             // 
             // PasswordLLabel
             // 
@@ -691,7 +692,6 @@
             PasswordLTextBox.Location = new System.Drawing.Point(3, 8);
             PasswordLTextBox.Multiline = true;
             PasswordLTextBox.Name = "PasswordLTextBox";
-            PasswordLTextBox.PasswordChar = '*';
             PasswordLTextBox.Size = new System.Drawing.Size(269, 37);
             PasswordLTextBox.TabIndex = 8;
             PasswordLTextBox.Click += PasswordLTextBox_Click;

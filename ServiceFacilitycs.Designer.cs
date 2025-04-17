@@ -3235,6 +3235,7 @@
             // 
             FIEPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FIEPanel.BackColor = System.Drawing.Color.White;
+            FIEPanel.Controls.Add(FIEWorhourslabel);
             FIEPanel.Controls.Add(Cconfirmbutton);
             FIEPanel.Controls.Add(FIETagstext);
             FIEPanel.Controls.Add(FIETagslabel);
@@ -3257,7 +3258,6 @@
             FIEPanel.Controls.Add(FIECnumbertext);
             FIEPanel.Controls.Add(FIEFacnametext);
             FIEPanel.Controls.Add(FIEWordayslabel);
-            FIEPanel.Controls.Add(FIEWorhourslabel);
             FIEPanel.Controls.Add(FIEEmailaddtext);
             FIEPanel.Controls.Add(FIEEmailaddlabel);
             FIEPanel.Controls.Add(FIESerCatlabel);
@@ -3286,7 +3286,6 @@
             Cconfirmbutton.Text = "Confirm";
             Cconfirmbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             Cconfirmbutton.UseVisualStyleBackColor = false;
-            Cconfirmbutton.Click += Cconfirmbutton_Click;
             // 
             // FIETagstext
             // 
@@ -3348,7 +3347,7 @@
             FIEEndlabel.AutoSize = true;
             FIEEndlabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FIEEndlabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            FIEEndlabel.Location = new System.Drawing.Point(484, 187);
+            FIEEndlabel.Location = new System.Drawing.Point(479, 176);
             FIEEndlabel.Name = "FIEEndlabel";
             FIEEndlabel.Size = new System.Drawing.Size(39, 23);
             FIEEndlabel.TabIndex = 85;
@@ -3369,7 +3368,7 @@
             FIEStartlabel.AutoSize = true;
             FIEStartlabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FIEStartlabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            FIEStartlabel.Location = new System.Drawing.Point(333, 186);
+            FIEStartlabel.Location = new System.Drawing.Point(332, 176);
             FIEStartlabel.Name = "FIEStartlabel";
             FIEStartlabel.Size = new System.Drawing.Size(45, 23);
             FIEStartlabel.TabIndex = 83;
@@ -3530,7 +3529,7 @@
             FIEWorhourslabel.AutoSize = true;
             FIEWorhourslabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             FIEWorhourslabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            FIEWorhourslabel.Location = new System.Drawing.Point(322, 160);
+            FIEWorhourslabel.Location = new System.Drawing.Point(322, 155);
             FIEWorhourslabel.Name = "FIEWorhourslabel";
             FIEWorhourslabel.Size = new System.Drawing.Size(138, 25);
             FIEWorhourslabel.TabIndex = 44;
@@ -4445,7 +4444,6 @@
             Endtime1.TabIndex = 5;
             Endtime1.Text = "Add Time";
             Endtime1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            Endtime1.TextChanged += Endtime1_TextChanged;
             // 
             // label26
             // 
