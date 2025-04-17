@@ -219,7 +219,9 @@
             ATdatetime = new System.Windows.Forms.Panel();
             ATCaledar = new System.Windows.Forms.TableLayoutPanel();
             ATC1 = new System.Windows.Forms.TableLayoutPanel();
+            ATCNext = new System.Windows.Forms.Button();
             ATCmonth = new System.Windows.Forms.Label();
+            ATCPrev = new System.Windows.Forms.Button();
             ATC2 = new System.Windows.Forms.TableLayoutPanel();
             ATCSat = new System.Windows.Forms.Label();
             ATCFri = new System.Windows.Forms.Label();
@@ -2945,7 +2947,9 @@
             ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
             ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
+            ATC1.Controls.Add(ATCNext, 2, 0);
             ATC1.Controls.Add(ATCmonth, 1, 0);
+            ATC1.Controls.Add(ATCPrev, 0, 0);
             ATC1.Dock = System.Windows.Forms.DockStyle.Fill;
             ATC1.Location = new System.Drawing.Point(0, 0);
             ATC1.Margin = new System.Windows.Forms.Padding(0);
@@ -2955,6 +2959,21 @@
             ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             ATC1.Size = new System.Drawing.Size(446, 42);
             ATC1.TabIndex = 0;
+            // 
+            // ATCNext
+            // 
+            ATCNext.BackColor = System.Drawing.Color.WhiteSmoke;
+            ATCNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ATCNext.ForeColor = System.Drawing.Color.White;
+            ATCNext.Image = (System.Drawing.Image)resources.GetObject("ATCNext.Image");
+            ATCNext.Location = new System.Drawing.Point(387, 0);
+            ATCNext.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            ATCNext.Name = "ATCNext";
+            ATCNext.Size = new System.Drawing.Size(43, 42);
+            ATCNext.TabIndex = 40;
+            ATCNext.UseVisualStyleBackColor = false;
+            ATCNext.Click += ATCNext_Click;
             // 
             // ATCmonth
             // 
@@ -2969,6 +2988,21 @@
             ATCmonth.TabIndex = 38;
             ATCmonth.Text = "Time Slots";
             ATCmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATCPrev
+            // 
+            ATCPrev.BackColor = System.Drawing.Color.WhiteSmoke;
+            ATCPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ATCPrev.ForeColor = System.Drawing.Color.White;
+            ATCPrev.Image = (System.Drawing.Image)resources.GetObject("ATCPrev.Image");
+            ATCPrev.Location = new System.Drawing.Point(16, 0);
+            ATCPrev.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            ATCPrev.Name = "ATCPrev";
+            ATCPrev.Size = new System.Drawing.Size(42, 42);
+            ATCPrev.TabIndex = 39;
+            ATCPrev.UseVisualStyleBackColor = false;
+            ATCPrev.Click += ATCPrev_Click;
             // 
             // ATC2
             // 
@@ -5241,5 +5275,7 @@
         private System.Windows.Forms.Label ATCMon;
         private System.Windows.Forms.Label ATCSun;
         private System.Windows.Forms.TableLayoutPanel ATC3;
+        private System.Windows.Forms.Button ATCPrev;
+        private System.Windows.Forms.Button ATCNext;
     }
 }

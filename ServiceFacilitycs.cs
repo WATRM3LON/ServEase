@@ -55,7 +55,7 @@ namespace OOP2
         public string Tags { get; set; }
         public DateTime workingstart;
         public DateTime workingend;
-
+        DateTime currentMonth = DateTime.Today;
         public ServiceFacilitycs()
         {
             InitializeComponent();
@@ -168,7 +168,8 @@ namespace OOP2
             EditButton2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton2.Width, EditButton2.Height, 10, 10));
             EATdate.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATdate.Width, EATdate.Height, 10, 10));
             EATtimeslot.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATtimeslot.Width, EATtimeslot.Height, 10, 10));
-            EATConfrimbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATConfrimbutton.Width, EATConfrimbutton.Height, 10, 10));
+            ATCPrev.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCPrev.Width, ATCPrev.Height, 10, 10));
+            ATCNext.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCNext.Width, ATCNext.Height, 10, 10));
             //SETTINGS
             GeneralPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GeneralPanel.Width, GeneralPanel.Height, 10, 10));
             AppearancePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppearancePanel.Width, AppearancePanel.Height, 10, 10));
@@ -681,7 +682,7 @@ namespace OOP2
             ATPanel.Visible = true;
             ATButton.Visible = true;
             LoadFacilityData();
-            PopulateCalendar(DateTime.Today);
+            PopulateCalendar();
         }
 
         private void SOButton_Click(object sender, EventArgs e)
@@ -1680,16 +1681,15 @@ namespace OOP2
                 FIESpeCattext.Items.AddRange(subCategories[service]);
             }
         }
-        void PopulateCalendar(DateTime monthDate)
+        void PopulateCalendar()
         {
             ATC3.Controls.Clear();
             ATC3.SuspendLayout();
-           
 
-            DateTime firstDayOfMonth = new DateTime(monthDate.Year, monthDate.Month, 1);
-            int daysInMonth = DateTime.DaysInMonth(monthDate.Year, monthDate.Month);
+            DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+            int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
             int startCol = (int)firstDayOfMonth.DayOfWeek;
-            ATCmonth.Text = monthDate.ToString("MMMM yyyy");
+            ATCmonth.Text = currentMonth.ToString("MMMM yyyy");
             int row = 0;
             int col = startCol;
 
@@ -1705,8 +1705,8 @@ namespace OOP2
                     Font = new Font("Segoe UI", 9)
                 };
 
-                if (monthDate.Year == DateTime.Today.Year &&
-                    monthDate.Month == DateTime.Today.Month &&
+                if (currentMonth.Year == DateTime.Today.Year &&
+                    currentMonth.Month == DateTime.Today.Month &&
                     day == DateTime.Today.Day)
                 {
                     dayLabel.BackColor = Color.LightBlue;
@@ -1723,6 +1723,18 @@ namespace OOP2
             }
 
             ATC3.ResumeLayout();
+        }
+
+        private void ATCPrev_Click(object sender, EventArgs e)
+        {
+            currentMonth = currentMonth.AddMonths(-1);
+            PopulateCalendar();
+        }
+
+        private void ATCNext_Click(object sender, EventArgs e)
+        {
+            currentMonth = currentMonth.AddMonths(+1);
+            PopulateCalendar();
         }
     }
 }
