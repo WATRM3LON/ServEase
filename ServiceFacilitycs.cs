@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
@@ -36,7 +35,7 @@ namespace OOP2
             int nHeightEllipse
             );
 
-        string formattedWorHours = "", service="";
+        string formattedWorHours = "", service = "";
         public string FName { get; set; }
         public string LName { get; set; }
         public DateTime Birthdate { get; set; }
@@ -48,10 +47,12 @@ namespace OOP2
         public int count { get; set; }
         public string Facname { get; set; }
         public string SerCat { get; set; }
+        public string SpeCat { get; set; }
         public DateTime WorHours { get; set; }
         public string WorDays { get; set; }
         public string Ratings { get; set; }
         public string AppStatus { get; set; }
+        public string Tags { get; set; }
         public DateTime workingstart;
         public DateTime workingend;
 
@@ -81,7 +82,7 @@ namespace OOP2
             AnalyticsMenuPanel.Visible = false;
             AnalyticPannel2.Visible = false;
             AnalyticPannel1.Visible = false;
-            ProfilePanel.Visible = false;
+            ProfilePanel.Visible = false; FIESpeCatlabel.Visible = false; FIESpeCattext.Visible = false;
             SOButton.Visible = false;
             ATPanel.Visible = false; EATPanel.Visible = false; EATButton.Visible = false;
             ATButton.Visible = false;
@@ -191,6 +192,8 @@ namespace OOP2
             FICnumbertext.Text = FIECnumbertext.Text = ContactNumber;
             FIEmailtext.Text = FIEEmailaddtext.Text = EmailAddress;
             FIStatus.Text = FIEStatus.Text = AppStatus;
+            FISpeCattext.Text = FIESpeCattext.Text = SpeCat;
+            FITagstext.Text = FIETagstext.Text = Tags;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -863,7 +866,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Password], [Service Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status] FROM [Service Facilities] WHERE [Email Address] = @Email";
+                string sql = "SELECT [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Password], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status], Tags FROM [Service Facilities] WHERE [Email Address] = @Email";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
@@ -884,7 +887,9 @@ namespace OOP2
                             ContactNumber = reader["Contact Number"].ToString();
                             LocationAddress = reader.IsDBNull(reader.GetOrdinal("Facility Location")) ? " " : reader["Facility Location"].ToString();
                             SerCat = reader["Service Category"].ToString();
+                            SpeCat = reader["Specific Category"].ToString();
                             AppStatus = reader["Approval Status"].ToString();
+                            Tags = reader["Tags"].ToString();
 
                         }
                     }
@@ -901,7 +906,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "UPDATE [Service Facilities] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Service Category] = @Servicecategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays WHERE [Email Address] = @Email";
+                string sql = "UPDATE [Service Facilities] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Service Category] = @Servicecategory, [Specific Category] = @Specificcategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays, [Tags] = @tags WHERE [Email Address] = @Email";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
@@ -912,10 +917,13 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
                     service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
                     cmd.Parameters.AddWithValue("@Servicecategory", service);
+                    SpeCat = FIESpeCattext.GetItemText(FIESpeCattext.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Specificcategory", SpeCat);
                     cmd.Parameters.AddWithValue("@Workinghoursstart", FIEStarttext.Text);
                     cmd.Parameters.AddWithValue("@Workinghoursend", FIEEndtext.Text);
                     cmd.Parameters.AddWithValue("@Workingdays", FIEWordaystext.Text);
                     cmd.Parameters.AddWithValue("@Email", FIEEmailaddtext.Text);
+                    cmd.Parameters.AddWithValue("@tags", FIETagstext.Text);
                     cmd.ExecuteNonQuery();
 
                 }
@@ -927,7 +935,7 @@ namespace OOP2
                     newFacilityId = Convert.ToInt32(result);
                 }
 
-                string AdminQuery = "UPDATE [Admin (Service Facilities)] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Service Category] = @Servicecategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays WHERE [Email Address] = @Email";
+                string AdminQuery = "UPDATE [Admin (Service Facilities)] SET [Facility Name] = @FacilityName, [Facility Location] = @FLocation, [Owner First Name] = @OFName, [Owner Last Name] = @OLName, [Contact Number] = @CNumber, [Service Category] = @Servicecategory, [Specific Category] = @Specificcategory, [Working Hours Start] = @Workinghoursstart, [Working Hours End] = @Workinghoursend, [Working Days] = @Workingdays WHERE [Email Address] = @Email";
 
                 using (OleDbCommand cmd = new OleDbCommand(AdminQuery, myConn))
                 {
@@ -938,6 +946,8 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
                     service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
                     cmd.Parameters.AddWithValue("@Servicecategory", service);
+                    SpeCat = FIESpeCattext.GetItemText(FIESpeCattext.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Specificcategory", SpeCat);
                     cmd.Parameters.AddWithValue("@Workinghoursstart", FIEStarttext.Text);
                     cmd.Parameters.AddWithValue("@Workinghoursend", FIEEndtext.Text);
                     cmd.Parameters.AddWithValue("@Workingdays", FIEWordaystext.Text);
@@ -1614,22 +1624,39 @@ namespace OOP2
         private void Cconfirmbutton_Click(object sender, EventArgs e)
         {
             
+        }
 
-
-Education & Tutoring Services
-Repair & Technical Services
-Food & Beverages Services
-Miscellaneous Services
+        private void FIESerCatList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FIESpeCatlabel.Visible = true; FIESpeCattext.Visible = true;
+            service = FIESpeCattext.SelectedItem.ToString();
             if (service == "Personal Care & Beauty Services")
             {
                 FIESpeCattext.Items.Add("Barbershops\r\nHair Salons\r\nNail Salons\r\nSpa & Massage Centers\r\nTattoo and Piercing Parlors\r\n");
-            }else if(service == "Health & Medical Services")
+            }
+            else if (service == "Health & Medical Services")
             {
                 FIESpeCattext.Items.Add("Animal Clinics\r\nDentists\r\nDermatologists\r\nHospitals\r\nLaboratories\r\nPharmacies\r\nPsychologists\r\n");
             }
             else if (service == "Fitness & Sports Services")
             {
-                FIESpeCattext.Items.Add("Animal Clinics\r\nDentists\r\nDermatologists\r\nHospitals\r\nLaboratories\r\nPharmacies\r\nPsychologists\r\n");
+                FIESpeCattext.Items.Add("Dance Studios\r\nGyms\r\nSports Centers\r\n");
+            }
+            else if (service == "Education & Tutoring Services")
+            {
+                FIESpeCattext.Items.Add("Schools\r\nTutoring Centers\r\n");
+            }
+            else if (service == "Repair & Technical Services")
+            {
+                FIESpeCattext.Items.Add("Appliance Repair\r\nCar Wash\r\nCar / Motorcycle Repair Shops\r\nElectronics Repair\r\n");
+            }
+            else if (service == "Food & Beverages Services")
+            {
+                FIESpeCattext.Items.Add("Bakeries\t\r\nBars\r\nCafes & Coffee Shops\r\nMini Mart\r\nRestaurants\r\nSupermarkets / Grocery Stores\r\n");
+            }
+            else if (service == "Miscellaneous Services")
+            {
+                FIESpeCattext.Items.Add("Funeral Homes\r\nHotels\r\nLaundry Shops\t\r\nTailoring Services\r\n");
             }
         }
     }

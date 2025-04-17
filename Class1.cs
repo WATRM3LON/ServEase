@@ -17,17 +17,20 @@ namespace OOP2
         string ContactNumber { get; set; }
         string LocationAddress { get; set; }
         int count {  get; set; }
+        string Sex { get; set; }
     }
 
     public interface FacilityInfo
     {
         string Facname { get; set; }
         string SerCat {  get; set; }
+        string SpeCat { get; set; }
         DateTime WorHours { get; set; }
         string WorDays { get; set; }
         string Ratings { get; set; }   
         string AppStatus { get; set; }
-        string Sex { get; set; }
+        string Tags {  get; set; }
+        
 
     }
     public abstract class Updates : Form

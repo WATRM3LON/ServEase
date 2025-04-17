@@ -3340,6 +3340,7 @@
             FIESerCatList.Name = "FIESerCatList";
             FIESerCatList.Size = new System.Drawing.Size(314, 36);
             FIESerCatList.TabIndex = 86;
+            FIESerCatList.SelectedIndexChanged += FIESerCatList_SelectedIndexChanged;
             // 
             // FIEEndlabel
             // 
