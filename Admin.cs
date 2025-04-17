@@ -397,12 +397,8 @@ namespace OOP2
                                 {
                                     StatusText.ForeColor = Color.Red; StatusText.Text = Status;
                                 }
-
-
                             }
                         }
-
-
                     }
                 }
             }

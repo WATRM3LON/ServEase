@@ -345,8 +345,8 @@ namespace OOP2
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
                     myConn.Open();
-                    string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status]) " +
-                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @Ratings, @Approvalstatus)";
+                    string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status], [Tags]) " +
+                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @specificcategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @Ratings, @Approvalstatus, @tags)";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                     {
@@ -363,6 +363,7 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@tags", DBNull.Value);
 
                         cmd.ExecuteNonQuery();
                        
@@ -375,8 +376,8 @@ namespace OOP2
                         newFacilityId = Convert.ToInt32(result);
                     }
 
-                    string AdminQuery = "INSERT INTO [Admin (Service Facilities)] (Facility_ID, [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status], Status, [Date Registered], [Date Deleted]) " +
-                                               "VALUES (@facilityid, @FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @Ratings, @Approvalstatus, @status, @regist, @delete)";
+                    string AdminQuery = "INSERT INTO [Admin (Service Facilities)] (Facility_ID, [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status], Status, [Date Registered], [Date Deleted]) " +
+                                               "VALUES (@facilityid, @FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @specificcategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @Ratings, @Approvalstatus, @status, @regist, @delete)";
 
                     using (OleDbCommand cmd = new OleDbCommand(AdminQuery, myConn))
                     {
@@ -389,6 +390,7 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
                         cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
                         cmd.Parameters.AddWithValue("@Servicecategory", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@specificcategory", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workinghoursstart", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workinghoursend", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
@@ -422,13 +424,12 @@ namespace OOP2
                     for (int i = 0; i < 5; i++)
                     {
                         string ServiceoffQuery = "INSERT INTO [Facility Timeslots] " +
-                                                 "(Facility_ID, [Date of Slot], [Start Time], [End Time], [Status]) " +
+                                                 "(Facility_ID, [Start Time], [End Time], [Status]) " +
                                                  "VALUES (?, ?, ?, ?, ?)";
 
                         using (OleDbCommand cmd = new OleDbCommand(ServiceoffQuery, myConn))
                         {
                             cmd.Parameters.AddWithValue("?", newFacilityId);
-                            cmd.Parameters.AddWithValue("?", DBNull.Value);
                             cmd.Parameters.AddWithValue("?", DBNull.Value);
                             cmd.Parameters.AddWithValue("?", DBNull.Value);
                             cmd.Parameters.AddWithValue("?", DBNull.Value);

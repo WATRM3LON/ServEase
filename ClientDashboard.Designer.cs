@@ -3642,7 +3642,7 @@
             // 
             MailPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             MailPic.Image = (System.Drawing.Image)resources.GetObject("MailPic.Image");
-            MailPic.Location = new System.Drawing.Point(441, 116);
+            MailPic.Location = new System.Drawing.Point(443, 116);
             MailPic.Name = "MailPic";
             MailPic.Size = new System.Drawing.Size(24, 25);
             MailPic.TabIndex = 71;
@@ -3655,7 +3655,7 @@
             EMSlabel.BackColor = System.Drawing.Color.Transparent;
             EMSlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             EMSlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            EMSlabel.Location = new System.Drawing.Point(471, 118);
+            EMSlabel.Location = new System.Drawing.Point(473, 118);
             EMSlabel.Name = "EMSlabel";
             EMSlabel.Size = new System.Drawing.Size(118, 20);
             EMSlabel.TabIndex = 70;
@@ -3668,7 +3668,7 @@
             EMStext.BackColor = System.Drawing.Color.Transparent;
             EMStext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             EMStext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            EMStext.Location = new System.Drawing.Point(463, 153);
+            EMStext.Location = new System.Drawing.Point(465, 153);
             EMStext.Name = "EMStext";
             EMStext.Size = new System.Drawing.Size(163, 20);
             EMStext.TabIndex = 69;
@@ -3678,7 +3678,7 @@
             // 
             PhonePic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PhonePic.Image = (System.Drawing.Image)resources.GetObject("PhonePic.Image");
-            PhonePic.Location = new System.Drawing.Point(657, 115);
+            PhonePic.Location = new System.Drawing.Point(659, 115);
             PhonePic.Name = "PhonePic";
             PhonePic.Size = new System.Drawing.Size(24, 25);
             PhonePic.TabIndex = 68;
@@ -3691,7 +3691,7 @@
             Conumlabel.BackColor = System.Drawing.Color.Transparent;
             Conumlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Conumlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Conumlabel.Location = new System.Drawing.Point(687, 117);
+            Conumlabel.Location = new System.Drawing.Point(689, 117);
             Conumlabel.Name = "Conumlabel";
             Conumlabel.Size = new System.Drawing.Size(131, 20);
             Conumlabel.TabIndex = 67;
@@ -3704,7 +3704,7 @@
             Conumtext.BackColor = System.Drawing.Color.Transparent;
             Conumtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Conumtext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            Conumtext.Location = new System.Drawing.Point(679, 152);
+            Conumtext.Location = new System.Drawing.Point(681, 152);
             Conumtext.Name = "Conumtext";
             Conumtext.Size = new System.Drawing.Size(163, 20);
             Conumtext.TabIndex = 66;
@@ -3714,7 +3714,7 @@
             // 
             LocationPic.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             LocationPic.Image = (System.Drawing.Image)resources.GetObject("LocationPic.Image");
-            LocationPic.Location = new System.Drawing.Point(441, 37);
+            LocationPic.Location = new System.Drawing.Point(443, 37);
             LocationPic.Name = "LocationPic";
             LocationPic.Size = new System.Drawing.Size(24, 25);
             LocationPic.TabIndex = 65;
@@ -3727,7 +3727,7 @@
             Loclabel.BackColor = System.Drawing.Color.Transparent;
             Loclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Loclabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
-            Loclabel.Location = new System.Drawing.Point(471, 39);
+            Loclabel.Location = new System.Drawing.Point(473, 39);
             Loclabel.Name = "Loclabel";
             Loclabel.Size = new System.Drawing.Size(73, 20);
             Loclabel.TabIndex = 64;
@@ -3740,7 +3740,7 @@
             Loctext.BackColor = System.Drawing.Color.Transparent;
             Loctext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             Loctext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            Loctext.Location = new System.Drawing.Point(463, 74);
+            Loctext.Location = new System.Drawing.Point(465, 74);
             Loctext.Name = "Loctext";
             Loctext.Size = new System.Drawing.Size(163, 20);
             Loctext.TabIndex = 63;
@@ -3863,7 +3863,7 @@
             SOTable.Controls.Add(FPDescription, 1, 0);
             SOTable.Controls.Add(FPPrice, 2, 0);
             SOTable.Controls.Add(FPServiceName, 0, 0);
-            SOTable.Location = new System.Drawing.Point(0, 71);
+            SOTable.Location = new System.Drawing.Point(0, 58);
             SOTable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 5);
             SOTable.Name = "SOTable";
             SOTable.RowCount = 1;
@@ -3933,9 +3933,9 @@
             // 
             ClientSopanel.AutoScroll = true;
             ClientSopanel.BackColor = System.Drawing.Color.White;
-            ClientSopanel.Location = new System.Drawing.Point(1, 141);
+            ClientSopanel.Location = new System.Drawing.Point(1, 128);
             ClientSopanel.Name = "ClientSopanel";
-            ClientSopanel.Size = new System.Drawing.Size(871, 413);
+            ClientSopanel.Size = new System.Drawing.Size(871, 426);
             ClientSopanel.TabIndex = 58;
             // 
             // SBPanel
@@ -3944,7 +3944,7 @@
             SBPanel.BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             SBPanel.Controls.Add(FPBookAppButton);
             SBPanel.Controls.Add(SOButton);
-            SBPanel.Location = new System.Drawing.Point(0, 0);
+            SBPanel.Location = new System.Drawing.Point(0, -12);
             SBPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             SBPanel.Name = "SBPanel";
             SBPanel.Size = new System.Drawing.Size(871, 69);
@@ -4974,10 +4974,10 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ProfilePanel);
             Controls.Add(FacilityProPanel);
             Controls.Add(SerPanel);
             Controls.Add(ServicesPanel);
-            Controls.Add(ProfilePanel);
             Controls.Add(EditPIPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);

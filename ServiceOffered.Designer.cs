@@ -95,7 +95,6 @@
             Serviceduration.TabIndex = 60;
             Serviceduration.Text = "60 mins";
             Serviceduration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            Serviceduration.Click += Serviceduration_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -121,7 +120,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.FromArgb(245, 198, 213);
+            BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             Controls.Add(tableLayoutPanel1);
             Name = "ServiceOffered";
             Size = new System.Drawing.Size(865, 103);

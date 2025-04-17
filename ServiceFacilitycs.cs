@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
@@ -35,7 +36,7 @@ namespace OOP2
             int nHeightEllipse
             );
 
-        string formattedWorHours = "";
+        string formattedWorHours = "", service="";
         public string FName { get; set; }
         public string LName { get; set; }
         public DateTime Birthdate { get; set; }
@@ -157,9 +158,7 @@ namespace OOP2
             ServicesOfferedPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ServicesOfferedPanel.Width, ServicesOfferedPanel.Height, 10, 10));
             SOView.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOView.Width, SOView.Height, 10, 10));
             ATView.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATView.Width, ATView.Height, 10, 10));
-            button8.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button8.Width, button8.Height, 10, 10));
-            button8.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button8.Width, button8.Height, 10, 10));
-            button1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 10, 10));
+            Cconfirmbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Cconfirmbutton.Width, Cconfirmbutton.Height, 10, 10));
             //SERVICES OFFRED
             //SOTable.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 10, 10));
             ATdatetime.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATdatetime.Width, ATdatetime.Height, 10, 10));
@@ -911,7 +910,7 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@OFName", FIEOFnametext.Text);
                     cmd.Parameters.AddWithValue("@OLName", FIEOLnametext.Text);
                     cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
-                    string service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
+                    service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
                     cmd.Parameters.AddWithValue("@Servicecategory", service);
                     cmd.Parameters.AddWithValue("@Workinghoursstart", FIEStarttext.Text);
                     cmd.Parameters.AddWithValue("@Workinghoursend", FIEEndtext.Text);
@@ -937,7 +936,7 @@ namespace OOP2
                     cmd.Parameters.AddWithValue("@OFName", FIEOFnametext.Text);
                     cmd.Parameters.AddWithValue("@OLName", FIEOLnametext.Text);
                     cmd.Parameters.AddWithValue("@CNumber", FIECnumbertext.Text);
-                    string service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
+                    service = FIESerCatList.GetItemText(FIESerCatList.SelectedItem);
                     cmd.Parameters.AddWithValue("@Servicecategory", service);
                     cmd.Parameters.AddWithValue("@Workinghoursstart", FIEStarttext.Text);
                     cmd.Parameters.AddWithValue("@Workinghoursend", FIEEndtext.Text);
@@ -1390,7 +1389,6 @@ namespace OOP2
             }
 
         }
-
         public bool Checker()
         {
             int counter = 0;
@@ -1514,7 +1512,7 @@ namespace OOP2
                         return;
                     }
                 }
-                
+
                 List<int> timeslotids = new List<int>();
 
                 string getServiceIdsQuery = "SELECT Timeslot_ID FROM [Facility Timeslots] WHERE Facility_ID = ?";
@@ -1611,6 +1609,28 @@ namespace OOP2
         private void EATConfrimbutton_Click(object sender, EventArgs e)
         {
             TimeslotUpdater();
+        }
+
+        private void Cconfirmbutton_Click(object sender, EventArgs e)
+        {
+            
+
+
+Education & Tutoring Services
+Repair & Technical Services
+Food & Beverages Services
+Miscellaneous Services
+            if (service == "Personal Care & Beauty Services")
+            {
+                FIESpeCattext.Items.Add("Barbershops\r\nHair Salons\r\nNail Salons\r\nSpa & Massage Centers\r\nTattoo and Piercing Parlors\r\n");
+            }else if(service == "Health & Medical Services")
+            {
+                FIESpeCattext.Items.Add("Animal Clinics\r\nDentists\r\nDermatologists\r\nHospitals\r\nLaboratories\r\nPharmacies\r\nPsychologists\r\n");
+            }
+            else if (service == "Fitness & Sports Services")
+            {
+                FIESpeCattext.Items.Add("Animal Clinics\r\nDentists\r\nDermatologists\r\nHospitals\r\nLaboratories\r\nPharmacies\r\nPsychologists\r\n");
+            }
         }
     }
 }

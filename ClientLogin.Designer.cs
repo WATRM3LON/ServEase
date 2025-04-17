@@ -630,7 +630,7 @@
             EmailLTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EmailLTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             EmailLTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            EmailLTextBox.Location = new System.Drawing.Point(3, 8);
+            EmailLTextBox.Location = new System.Drawing.Point(3, 7);
             EmailLTextBox.Multiline = true;
             EmailLTextBox.Name = "EmailLTextBox";
             EmailLTextBox.Size = new System.Drawing.Size(269, 37);
@@ -727,7 +727,7 @@
             PasswordLTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             PasswordLTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             PasswordLTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            PasswordLTextBox.Location = new System.Drawing.Point(3, 8);
+            PasswordLTextBox.Location = new System.Drawing.Point(3, 7);
             PasswordLTextBox.Multiline = true;
             PasswordLTextBox.Name = "PasswordLTextBox";
             PasswordLTextBox.Size = new System.Drawing.Size(269, 37);
@@ -765,13 +765,14 @@
             // 
             ClickherLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ClickherLabel.AutoSize = true;
-            ClickherLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ClickherLabel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ClickherLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            ClickherLabel.Location = new System.Drawing.Point(688, 900);
+            ClickherLabel.Location = new System.Drawing.Point(638, 896);
             ClickherLabel.Name = "ClickherLabel";
-            ClickherLabel.Size = new System.Drawing.Size(261, 20);
+            ClickherLabel.Size = new System.Drawing.Size(311, 25);
             ClickherLabel.TabIndex = 32;
             ClickherLabel.Text = "Click here if you are a Service Provider";
+            ClickherLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ClientLogin
             // 
