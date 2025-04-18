@@ -330,6 +330,9 @@
             BaASerpanel = new System.Windows.Forms.Panel();
             BookingSumlabel = new System.Windows.Forms.Label();
             BookingSumpanel = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            BSdatetime1 = new System.Windows.Forms.Label();
+            BSdatetime = new System.Windows.Forms.Label();
             BSdurationicon = new System.Windows.Forms.Button();
             BStotalpriceicon = new System.Windows.Forms.Button();
             BSdatetimeicon = new System.Windows.Forms.Button();
@@ -371,9 +374,6 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            BSdatetime = new System.Windows.Forms.Label();
-            BSdatetime1 = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -457,12 +457,12 @@
             ATC2.SuspendLayout();
             BaASerpanel.SuspendLayout();
             BookingSumpanel.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             FPropanel.SuspendLayout();
             BaASer1.SuspendLayout();
             EditPIPanel.SuspendLayout();
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -4003,7 +4003,7 @@
             BAPanel.Location = new System.Drawing.Point(22, 27);
             BAPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             BAPanel.Name = "BAPanel";
-            BAPanel.Size = new System.Drawing.Size(880, 69);
+            BAPanel.Size = new System.Drawing.Size(871, 69);
             BAPanel.TabIndex = 57;
             // 
             // button30
@@ -4522,6 +4522,49 @@
             BookingSumpanel.Size = new System.Drawing.Size(399, 242);
             BookingSumpanel.TabIndex = 32;
             // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(BSdatetime1, 0, 1);
+            tableLayoutPanel3.Controls.Add(BSdatetime, 0, 0);
+            tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel3.Location = new System.Drawing.Point(59, 60);
+            tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 2;
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel3.Size = new System.Drawing.Size(340, 60);
+            tableLayoutPanel3.TabIndex = 34;
+            // 
+            // BSdatetime1
+            // 
+            BSdatetime1.AutoSize = true;
+            BSdatetime1.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSdatetime1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSdatetime1.ForeColor = System.Drawing.SystemColors.ControlText;
+            BSdatetime1.Location = new System.Drawing.Point(60, 30);
+            BSdatetime1.Margin = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            BSdatetime1.Name = "BSdatetime1";
+            BSdatetime1.Size = new System.Drawing.Size(280, 30);
+            BSdatetime1.TabIndex = 74;
+            BSdatetime1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BSdatetime
+            // 
+            BSdatetime.AutoSize = true;
+            BSdatetime.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSdatetime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSdatetime.ForeColor = System.Drawing.SystemColors.ControlText;
+            BSdatetime.Location = new System.Drawing.Point(3, 0);
+            BSdatetime.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            BSdatetime.Name = "BSdatetime";
+            BSdatetime.Size = new System.Drawing.Size(337, 30);
+            BSdatetime.TabIndex = 73;
+            BSdatetime.Text = "Select Timeslot";
+            BSdatetime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // BSdurationicon
             // 
             BSdurationicon.BackColor = System.Drawing.Color.Transparent;
@@ -4618,7 +4661,7 @@
             // 
             // BSservices
             // 
-            BSservices.AutoSize = true;
+            BSservices.AutoEllipsis = true;
             BSservices.Dock = System.Windows.Forms.DockStyle.Fill;
             BSservices.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             BSservices.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -5072,50 +5115,6 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 1;
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(this.BSdatetime1, 0, 1);
-            tableLayoutPanel3.Controls.Add(BSdatetime, 0, 0);
-            tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel3.Location = new System.Drawing.Point(59, 60);
-            tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 2;
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(340, 60);
-            tableLayoutPanel3.TabIndex = 34;
-            // 
-            // BSdatetime
-            // 
-            BSdatetime.AutoSize = true;
-            BSdatetime.Dock = System.Windows.Forms.DockStyle.Fill;
-            BSdatetime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BSdatetime.ForeColor = System.Drawing.SystemColors.ControlText;
-            BSdatetime.Location = new System.Drawing.Point(3, 0);
-            BSdatetime.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            BSdatetime.Name = "BSdatetime";
-            BSdatetime.Size = new System.Drawing.Size(337, 30);
-            BSdatetime.TabIndex = 73;
-            BSdatetime.Text = "Select Timeslot";
-            BSdatetime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // BSdatetime1
-            // 
-            BSdatetime1.AutoSize = true;
-            BSdatetime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            BSdatetime1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BSdatetime1.ForeColor = System.Drawing.SystemColors.ControlText;
-            BSdatetime1.Location = new System.Drawing.Point(0, 30);
-            BSdatetime1.Margin = new System.Windows.Forms.Padding(0);
-            BSdatetime1.Name = "BSdatetime1";
-            BSdatetime1.Size = new System.Drawing.Size(340, 30);
-            BSdatetime1.TabIndex = 74;
-            BSdatetime1.Text = "Select Timeslot";
-            BSdatetime1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -5280,6 +5279,8 @@
             BaASerpanel.PerformLayout();
             BookingSumpanel.ResumeLayout(false);
             BookingSumpanel.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
             FPropanel.ResumeLayout(false);
             BaASer1.ResumeLayout(false);
             BaASer1.PerformLayout();
@@ -5288,8 +5289,6 @@
             PIEpanel.PerformLayout();
             PIEprofilepanel.ResumeLayout(false);
             PIEprofilepanel.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
             ResumeLayout(false);
         }
 

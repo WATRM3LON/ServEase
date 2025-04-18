@@ -61,7 +61,7 @@ namespace OOP2
         public DateTime workingend;
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
-        string locs = "", Ems = "";
+        string locs = "", Ems = "", selectedTime = "";
         int facid;
         public ClientDashboard()
         {
@@ -1414,13 +1414,15 @@ namespace OOP2
                             clientAppointment.Location = new Point(0, marginbottom);
                             marginbottom += clientAppointment.Height + 5;
 
+                            clientAppointment.ServiceClicked += (s, e) => UpdateBookingSummary();
+
                             BaASer2.Controls.Add(clientAppointment);
                         }
                     }
                 }
             }
-            PopulateCalendar();
-            BSservices.Text = null; BSdatetime.Text = null; BStotalprice.Text = null; BSduration.Text = null;
+            PopulateCalendar(); BaADTlabel1.Visible = false; BookingSumlabel.Visible = false; BookingSumpanel.Visible = false;
+            BSservices.Text = null; BSdatetime.Text = null; BStotalprice.Text = null; BSduration.Text = null; BSdatetime1.Text = null;
         }
 
         List<DayOfWeek> ParseWorkingDays(string dayRange)
@@ -1542,6 +1544,7 @@ namespace OOP2
 
         private void DayLabel_Click(object sender, EventArgs e)
         {
+            BookingSumlabel.Visible = true; BookingSumpanel.Visible = true;
             Label clickedLabel = sender as Label;
 
             if (clickedLabel?.Tag is DateTime selectedDate)
@@ -1550,7 +1553,7 @@ namespace OOP2
 
                 PopulateCalendar();
 
-                BSdatetime.Text = "Date and Time: " + selectedAppointmentDate?.ToString("dddd, dd MMMM yyyy");
+                BSdatetime.Text = "Date and Time:  " + selectedAppointmentDate?.ToString("dddd, dd MMMM yyyy") + ",";
             }
             
         }
@@ -1569,6 +1572,7 @@ namespace OOP2
 
         void LoadTimeSlotsFromDatabase(int facilityId, DateTime selectedDate)
         {
+            BaADTlabel1.Visible = true;
             TimeslotPanel.Controls.Clear();
             TimeslotPanel.SuspendLayout();
 
@@ -1658,10 +1662,34 @@ namespace OOP2
             {
                 selectedTimeSlotLabel.BackColor = Color.FromArgb(105, 227, 49);
                 selectedTimeSlotLabel.ForeColor = Color.White;
+
+                selectedTime = selectedTimeSlotLabel.Text;
             }
-            BSdatetime1.Text = ", " + selectedTimeSlotLabel;
+            BSdatetime1.Text = selectedTime;
         }
+        private List<ClientAppointment> SelectedServices => BaASer2.Controls.OfType<ClientAppointment>().Where(c => c.IsSelected).ToList();
 
+        private void UpdateBookingSummary()
+        {
+            BookingSumlabel.Visible = true; BookingSumpanel.Visible = true;
+            var selected = SelectedServices;
 
+            if (selected.Any() && selectedAppointmentDate != null && selectedTimeSlotLabel != null)
+            {
+                var totalPrice = selected.Sum(s => s.Price);
+                var totalDuration = selected.Sum(s => s.DurationMinutes);
+
+                BSservices.Text = "Services: " + string.Join(", ", selected.Select(s => s.ServiceName));
+                BStotalprice.Text = "Estimated Price: ₱" + totalPrice;
+                BSduration.Text = "Estimated Duration: " + totalDuration + " mins";
+            }
+            else
+            {
+                BSservices.Text = "Select services to see summary.";
+                BSdatetime.Text = "";
+                BStotalprice.Text = "";
+                BSduration.Text = "";
+            }
+        }
     }
 }
