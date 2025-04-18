@@ -52,10 +52,12 @@ namespace OOP2
         public string WorDays { get; set; }
         public string Ratings { get; set; }
         public string AppStatus { get; set; }
+        public string ExceptionDay { get; set; }
         public string Tags { get; set; }
         public DateTime workingstart;
         public DateTime workingend;
         DateTime currentMonth = DateTime.Today;
+        List<DateTime> exceptionDays = new List<DateTime>();
         public ServiceFacilitycs()
         {
             InitializeComponent();
@@ -86,7 +88,7 @@ namespace OOP2
             SOButton.Visible = false;
             ATPanel.Visible = false; EATPanel.Visible = false; EATButton.Visible = false;
             ATButton.Visible = false;
-            ServicesOfferedPanel.Visible = false; SOEerrorm.Visible = false;
+            ServicesOfferedPanel.Visible = false; SOEerrorm.Visible = false; Exceptionpanel.Visible = false;
             SettingsPanel.Visible = false;
             FIEButton.Visible = false; FillEM.Visible = false; ESerOffPanel.Visible = false; EditSOButton.Visible = false;
             EditFIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
@@ -170,6 +172,7 @@ namespace OOP2
             EATtimeslot.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATtimeslot.Width, EATtimeslot.Height, 10, 10));
             ATCPrev.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCPrev.Width, ATCPrev.Height, 10, 10));
             ATCNext.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCNext.Width, ATCNext.Height, 10, 10));
+            Exceptionpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Exceptionpanel.Width, Exceptionpanel.Height, 10, 10));
             //SETTINGS
             GeneralPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GeneralPanel.Width, GeneralPanel.Height, 10, 10));
             AppearancePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppearancePanel.Width, AppearancePanel.Height, 10, 10));
@@ -672,6 +675,7 @@ namespace OOP2
 
         private void ATView_Click(object sender, EventArgs e)
         {
+            InfoGetter();
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = ColorTranslator.FromHtml("#f0246e");
@@ -869,7 +873,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Password], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status], Tags FROM [Service Facilities] WHERE [Email Address] = @Email";
+                string sql = "SELECT [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Password], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], [Exception Day (Closed)], Ratings, [Approval Status], Tags FROM [Service Facilities] WHERE [Email Address] = @Email";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
@@ -891,6 +895,7 @@ namespace OOP2
                             LocationAddress = reader.IsDBNull(reader.GetOrdinal("Facility Location")) ? " " : reader["Facility Location"].ToString();
                             SerCat = reader["Service Category"].ToString();
                             SpeCat = reader["Specific Category"].ToString();
+                            ExceptionDay = reader["Exception Day (Closed)"].ToString();
                             AppStatus = reader["Approval Status"].ToString();
                             Tags = reader["Tags"].ToString();
 
@@ -1475,6 +1480,7 @@ namespace OOP2
 
                 TextBox[] stratimes = { Startime1, Startime2, Startime3, Startime4, Startime5 };
                 TextBox[] endtimes = { Endtime1, Endtime2, Endtime3, Endtime4, Endtime5 };
+                
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -1499,6 +1505,18 @@ namespace OOP2
 
                         cmd.ExecuteNonQuery();
                     }
+                }
+
+                string exceptionDaysCsv = string.Join(",", exceptionDays.Select(d => d.ToString("yyyy-MM-dd")));
+
+                string updateFacilitySql = "UPDATE [Service Facilities] SET [Exception Day (Closed)] = ? WHERE Facility_ID = ?";
+
+                using (OleDbCommand exceptionCmd = new OleDbCommand(updateFacilitySql, myConn))
+                {
+                    exceptionCmd.Parameters.AddWithValue("?", exceptionDaysCsv);
+                    exceptionCmd.Parameters.AddWithValue("?", newFacilityId);
+
+                    exceptionCmd.ExecuteNonQuery();
                 }
             }
             MessageBox.Show("Successfully updated!", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1579,6 +1597,7 @@ namespace OOP2
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            InfoGetter();
             ATPanel.Visible = false; ATButton.Visible = false;
             EATButton.Visible = true; EATPanel.Visible = true;
             Loaders();
@@ -1588,9 +1607,11 @@ namespace OOP2
 
         private void EATButton_Click(object sender, EventArgs e)
         {
+            InfoGetter();
             ATPanel.Visible = true; ATButton.Visible = true;
             EATButton.Visible = false; EATPanel.Visible = false;
             LoadFacilityData();
+            PopulateCalendar();
         }
 
         private void Startime1_TextChanged(object sender, EventArgs e)
@@ -1689,8 +1710,7 @@ namespace OOP2
 
             if (string.IsNullOrWhiteSpace(dayRange)) return workingDays;
 
-            string[] part = dayRange.Split('-');
-            string[] parts = dayRange.Split(',');
+            string[] parts = dayRange.Split('-');
             if (parts.Length != 2) return workingDays;
 
             if (Enum.TryParse(parts[0], true, out DayOfWeek startDay) &&
@@ -1708,64 +1728,142 @@ namespace OOP2
 
             return workingDays;
         }
+        List<DateTime> ParseWorkDays(string exceptionclosed)
+        {
+            var exceptionDates = new List<DateTime>();
+
+            if (string.IsNullOrWhiteSpace(exceptionclosed)) return exceptionDates;
+
+            string[] parts = exceptionclosed.Split(',');
+
+            foreach (var dateStr in parts)
+            {
+                if (DateTime.TryParse(dateStr.Trim(), out DateTime parsedDate))
+                {
+                    exceptionDates.Add(parsedDate.Date);
+                }
+            }
+
+            return exceptionDates;
+        }
+
         void PopulateCalendar()
         {
-            ATC3.Controls.Clear();
-            ATC3.SuspendLayout();
-
-            List<DayOfWeek> workingDays = ParseWorkingDays(WorDays);
-
-            DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
-            int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
-            int startCol = (int)firstDayOfMonth.DayOfWeek;
-
-            int row = 0;
-            int col = startCol;
-
-            for (int day = 1; day <= daysInMonth; day++)
+            if(ATPanel.Visible == true)
             {
-                DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
-                DayOfWeek dayOfWeek = thisDate.DayOfWeek;
+                ATC3.Controls.Clear();
+                ATC3.SuspendLayout();
 
-                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate};
-                
-                if (!workingDays.Contains(dayOfWeek))
-                {
-                    dayLabel.ForeColor = Color.DimGray;
-                    dayLabel.BackColor = Color.WhiteSmoke;
-                }
-                else
-                {
-                    dayLabel.Cursor = Cursors.Hand;
-                    dayLabel.Click += DayLabel_Click;
+                List<DayOfWeek> workingDays = ParseWorkingDays(WorDays);
+                List<DateTime> workDays = ParseWorkDays(ExceptionDay);
 
-                    if (exceptionDays.Contains(thisDate.Date))
+                DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+                int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+                int startCol = (int)firstDayOfMonth.DayOfWeek;
+
+                int row = 0;
+                int col = startCol;
+
+                for (int day = 1; day <= daysInMonth; day++)
+                {
+                    DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
+                    DayOfWeek dayOfWeek = thisDate.DayOfWeek;
+
+                    Label dayLabel = new Label{Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate};
+                    
+                    if (!workingDays.Contains(dayOfWeek))
                     {
-                        dayLabel.BackColor = Color.IndianRed;
+                        dayLabel.ForeColor = Color.DimGray;
+                        dayLabel.BackColor = Color.WhiteSmoke;
+                    }
+
+                    if (workDays.Any(d => d.Date == thisDate.Date))
+                    {
+                        dayLabel.ForeColor = Color.DimGray;
+                        dayLabel.BackColor = Color.WhiteSmoke;
+                    }
+                    if (thisDate.Date == DateTime.Today)
+                    {
+                        dayLabel.BackColor = ColorTranslator.FromHtml("#f0246e");
                         dayLabel.ForeColor = Color.White;
+                        dayLabel.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                    }
+
+                    ATC3.Controls.Add(dayLabel, col, row);
+
+                    col++;
+                    if (col == 7)
+                    {
+                        col = 0;
+                        row++;
                     }
                 }
 
-                if (thisDate.Date == DateTime.Today.Date)
-                {
-                    dayLabel.BackColor = ColorTranslator.FromHtml("#f0246e");
-                }
-                ATC3.Controls.Add(dayLabel, col, row);
+                ATCmonth.Text = currentMonth.ToString("MMMM yyyy");
+                ATC3.ResumeLayout();
 
-                col++;
-                if (col == 7)
-                {
-                    col = 0;
-                    row++;
-                }
             }
-            ATCmonth.Text = currentMonth.ToString("MMMM yyyy");
+            else
+            {
+                EATC3.Controls.Clear(); EATC3.SuspendLayout();
 
-            ATC3.ResumeLayout();
+                List<DayOfWeek> workingDays = ParseWorkingDays(WorDays);
+                List<DateTime> workDays = ParseWorkDays(ExceptionDay);
+
+                DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+                int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+                int startCol = (int)firstDayOfMonth.DayOfWeek;
+
+                int row = 0;
+                int col = startCol;
+
+                for (int day = 1; day <= daysInMonth; day++)
+                {
+                    DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
+                    DayOfWeek dayOfWeek = thisDate.DayOfWeek;
+
+                    Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate };
+
+                    if (!workingDays.Contains(dayOfWeek))
+                    {
+                        dayLabel.ForeColor = Color.DimGray;
+                        dayLabel.BackColor = Color.WhiteSmoke;
+                    }
+                    else
+                    {
+                        if (workDays.Any(d => d.Date == thisDate.Date))
+                        {
+                            dayLabel.ForeColor = Color.DimGray;
+                            dayLabel.BackColor = Color.WhiteSmoke;
+                        }
+                        if (exceptionDays.Contains(thisDate.Date))
+                        {
+                            dayLabel.BackColor = Color.IndianRed;
+                            dayLabel.ForeColor = Color.White;
+                        }
+                        dayLabel.Cursor = Cursors.Hand;
+                        dayLabel.Click += DayLabel_Click;
+                    }
+
+                    if (thisDate.Date == DateTime.Today.Date)
+                    {
+                        dayLabel.BackColor = ColorTranslator.FromHtml("#f0246e");
+                    }
+                    EATC3.Controls.Add(dayLabel, col, row);
+
+                    col++;
+                    if (col == 7)
+                    {
+                        col = 0;
+                        row++;
+                    }
+                }
+                EATCmonth.Text = currentMonth.ToString("MMMM yyyy"); EATC3.ResumeLayout();
+            }
         }
-        List<DateTime> exceptionDays = new List<DateTime>();
         private void DayLabel_Click(object sender, EventArgs e)
         {
+            Exceptionpanel.Visible = true;
             Label clickedLabel = sender as Label;
 
             if (clickedLabel != null && clickedLabel.Tag is DateTime selectedDate)
@@ -1783,8 +1881,8 @@ namespace OOP2
 
                 PopulateCalendar();
 
-                EATException.Text = "Exception Days:\n" +
-                    string.Join("\n", exceptionDays.Select(d => d.ToString("dddd, dd MMMM yyyy")));
+                EATException.Text = "Exception Days: " +
+                    string.Join(", ", exceptionDays.Select(d => d.ToString("dddd, dd MMMM yyyy")));
             }
         }
         private void ATCPrev_Click(object sender, EventArgs e)

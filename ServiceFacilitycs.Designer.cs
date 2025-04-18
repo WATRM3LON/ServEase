@@ -327,6 +327,8 @@
             SOEDescription = new System.Windows.Forms.Label();
             SOEPrice = new System.Windows.Forms.Label();
             EATPanel = new System.Windows.Forms.Panel();
+            Exceptionpanel = new System.Windows.Forms.Panel();
+            EATException = new System.Windows.Forms.Label();
             EATConfrimbutton = new System.Windows.Forms.Button();
             EATtable = new System.Windows.Forms.TableLayoutPanel();
             EATtimeslot = new System.Windows.Forms.Panel();
@@ -356,13 +358,12 @@
             label23 = new System.Windows.Forms.Label();
             EATselctime = new System.Windows.Forms.Label();
             EATdate = new System.Windows.Forms.Panel();
-            EATException = new System.Windows.Forms.Label();
             EATCPanel = new System.Windows.Forms.TableLayoutPanel();
-            tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            button1 = new System.Windows.Forms.Button();
-            label20 = new System.Windows.Forms.Label();
-            button8 = new System.Windows.Forms.Button();
-            tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            EATC1 = new System.Windows.Forms.TableLayoutPanel();
+            EATCnext = new System.Windows.Forms.Button();
+            EATCmonth = new System.Windows.Forms.Label();
+            EATCprev = new System.Windows.Forms.Button();
+            EATC2 = new System.Windows.Forms.TableLayoutPanel();
             label21 = new System.Windows.Forms.Label();
             label22 = new System.Windows.Forms.Label();
             label27 = new System.Windows.Forms.Label();
@@ -370,7 +371,7 @@
             label29 = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
             label31 = new System.Windows.Forms.Label();
-            tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            EATC3 = new System.Windows.Forms.TableLayoutPanel();
             EATselctdt = new System.Windows.Forms.Label();
             button10 = new System.Windows.Forms.Button();
             DashboardPanel2.SuspendLayout();
@@ -442,6 +443,7 @@
             SO1Panel.SuspendLayout();
             SerOffTitleEPanel.SuspendLayout();
             EATPanel.SuspendLayout();
+            Exceptionpanel.SuspendLayout();
             EATtable.SuspendLayout();
             EATtimeslot.SuspendLayout();
             EATtimeslots.SuspendLayout();
@@ -452,8 +454,8 @@
             tableLayoutPanel1.SuspendLayout();
             EATdate.SuspendLayout();
             EATCPanel.SuspendLayout();
-            tableLayoutPanel9.SuspendLayout();
-            tableLayoutPanel10.SuspendLayout();
+            EATC1.SuspendLayout();
+            EATC2.SuspendLayout();
             SuspendLayout();
             // 
             // NotifyButton
@@ -4486,6 +4488,7 @@
             // 
             EATPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EATPanel.BackColor = System.Drawing.Color.Transparent;
+            EATPanel.Controls.Add(Exceptionpanel);
             EATPanel.Controls.Add(EATConfrimbutton);
             EATPanel.Controls.Add(EATtable);
             EATPanel.Controls.Add(button10);
@@ -4493,6 +4496,26 @@
             EATPanel.Name = "EATPanel";
             EATPanel.Size = new System.Drawing.Size(893, 799);
             EATPanel.TabIndex = 66;
+            // 
+            // Exceptionpanel
+            // 
+            Exceptionpanel.BackColor = System.Drawing.Color.White;
+            Exceptionpanel.Controls.Add(EATException);
+            Exceptionpanel.Location = new System.Drawing.Point(22, 652);
+            Exceptionpanel.Name = "Exceptionpanel";
+            Exceptionpanel.Size = new System.Drawing.Size(652, 125);
+            Exceptionpanel.TabIndex = 56;
+            // 
+            // EATException
+            // 
+            EATException.AutoSize = true;
+            EATException.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EATException.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATException.Location = new System.Drawing.Point(15, 15);
+            EATException.Name = "EATException";
+            EATException.Size = new System.Drawing.Size(77, 20);
+            EATException.TabIndex = 50;
+            EATException.Text = "Start Time";
             // 
             // EATConfrimbutton
             // 
@@ -4905,7 +4928,6 @@
             // EATdate
             // 
             EATdate.BackColor = System.Drawing.Color.White;
-            EATdate.Controls.Add(EATException);
             EATdate.Controls.Add(EATCPanel);
             EATdate.Controls.Add(EATselctdt);
             EATdate.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4915,26 +4937,15 @@
             EATdate.Size = new System.Drawing.Size(496, 599);
             EATdate.TabIndex = 51;
             // 
-            // EATException
-            // 
-            EATException.AutoSize = true;
-            EATException.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            EATException.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            EATException.Location = new System.Drawing.Point(28, 81);
-            EATException.Name = "EATException";
-            EATException.Size = new System.Drawing.Size(87, 23);
-            EATException.TabIndex = 50;
-            EATException.Text = "Start Time";
-            // 
             // EATCPanel
             // 
             EATCPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             EATCPanel.ColumnCount = 1;
             EATCPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             EATCPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            EATCPanel.Controls.Add(tableLayoutPanel9, 0, 0);
-            EATCPanel.Controls.Add(tableLayoutPanel10, 0, 1);
-            EATCPanel.Controls.Add(tableLayoutPanel11, 0, 2);
+            EATCPanel.Controls.Add(EATC1, 0, 0);
+            EATCPanel.Controls.Add(EATC2, 0, 1);
+            EATCPanel.Controls.Add(EATC3, 0, 2);
             EATCPanel.Location = new System.Drawing.Point(25, 131);
             EATCPanel.Margin = new System.Windows.Forms.Padding(0);
             EATCPanel.Name = "EATCPanel";
@@ -4945,93 +4956,95 @@
             EATCPanel.Size = new System.Drawing.Size(446, 445);
             EATCPanel.TabIndex = 37;
             // 
-            // tableLayoutPanel9
+            // EATC1
             // 
-            tableLayoutPanel9.ColumnCount = 3;
-            tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
-            tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
-            tableLayoutPanel9.Controls.Add(button1, 2, 0);
-            tableLayoutPanel9.Controls.Add(label20, 1, 0);
-            tableLayoutPanel9.Controls.Add(button8, 0, 0);
-            tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
-            tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
-            tableLayoutPanel9.Name = "tableLayoutPanel9";
-            tableLayoutPanel9.RowCount = 1;
-            tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel9.Size = new System.Drawing.Size(446, 44);
-            tableLayoutPanel9.TabIndex = 0;
+            EATC1.ColumnCount = 3;
+            EATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            EATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
+            EATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
+            EATC1.Controls.Add(EATCnext, 2, 0);
+            EATC1.Controls.Add(EATCmonth, 1, 0);
+            EATC1.Controls.Add(EATCprev, 0, 0);
+            EATC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            EATC1.Location = new System.Drawing.Point(0, 0);
+            EATC1.Margin = new System.Windows.Forms.Padding(0);
+            EATC1.Name = "EATC1";
+            EATC1.RowCount = 1;
+            EATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            EATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            EATC1.Size = new System.Drawing.Size(446, 44);
+            EATC1.TabIndex = 0;
             // 
-            // button1
+            // EATCnext
             // 
-            button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.ForeColor = System.Drawing.Color.White;
-            button1.Image = (System.Drawing.Image)resources.GetObject("button1.Image");
-            button1.Location = new System.Drawing.Point(387, 0);
-            button1.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(43, 44);
-            button1.TabIndex = 40;
-            button1.UseVisualStyleBackColor = false;
+            EATCnext.BackColor = System.Drawing.Color.WhiteSmoke;
+            EATCnext.Dock = System.Windows.Forms.DockStyle.Fill;
+            EATCnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            EATCnext.ForeColor = System.Drawing.Color.White;
+            EATCnext.Image = (System.Drawing.Image)resources.GetObject("EATCnext.Image");
+            EATCnext.Location = new System.Drawing.Point(387, 0);
+            EATCnext.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            EATCnext.Name = "EATCnext";
+            EATCnext.Size = new System.Drawing.Size(43, 44);
+            EATCnext.TabIndex = 40;
+            EATCnext.UseVisualStyleBackColor = false;
+            EATCnext.Click += ATCNext_Click;
             // 
-            // label20
+            // EATCmonth
             // 
-            label20.AutoSize = true;
-            label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            label20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label20.Location = new System.Drawing.Point(74, 0);
-            label20.Margin = new System.Windows.Forms.Padding(0);
-            label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(297, 44);
-            label20.TabIndex = 38;
-            label20.Text = "Time Slots";
-            label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            EATCmonth.AutoSize = true;
+            EATCmonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            EATCmonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            EATCmonth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATCmonth.Location = new System.Drawing.Point(74, 0);
+            EATCmonth.Margin = new System.Windows.Forms.Padding(0);
+            EATCmonth.Name = "EATCmonth";
+            EATCmonth.Size = new System.Drawing.Size(297, 44);
+            EATCmonth.TabIndex = 38;
+            EATCmonth.Text = "Time Slots";
+            EATCmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button8
+            // EATCprev
             // 
-            button8.BackColor = System.Drawing.Color.WhiteSmoke;
-            button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button8.ForeColor = System.Drawing.Color.White;
-            button8.Image = (System.Drawing.Image)resources.GetObject("button8.Image");
-            button8.Location = new System.Drawing.Point(16, 0);
-            button8.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            button8.Name = "button8";
-            button8.Size = new System.Drawing.Size(42, 44);
-            button8.TabIndex = 39;
-            button8.UseVisualStyleBackColor = false;
+            EATCprev.BackColor = System.Drawing.Color.WhiteSmoke;
+            EATCprev.Dock = System.Windows.Forms.DockStyle.Fill;
+            EATCprev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            EATCprev.ForeColor = System.Drawing.Color.White;
+            EATCprev.Image = (System.Drawing.Image)resources.GetObject("EATCprev.Image");
+            EATCprev.Location = new System.Drawing.Point(16, 0);
+            EATCprev.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            EATCprev.Name = "EATCprev";
+            EATCprev.Size = new System.Drawing.Size(42, 44);
+            EATCprev.TabIndex = 39;
+            EATCprev.UseVisualStyleBackColor = false;
+            EATCprev.Click += ATCPrev_Click;
             // 
-            // tableLayoutPanel10
+            // EATC2
             // 
-            tableLayoutPanel10.ColumnCount = 7;
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel10.Controls.Add(label21, 6, 0);
-            tableLayoutPanel10.Controls.Add(label22, 5, 0);
-            tableLayoutPanel10.Controls.Add(label27, 4, 0);
-            tableLayoutPanel10.Controls.Add(label28, 3, 0);
-            tableLayoutPanel10.Controls.Add(label29, 2, 0);
-            tableLayoutPanel10.Controls.Add(label30, 1, 0);
-            tableLayoutPanel10.Controls.Add(label31, 0, 0);
-            tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel10.Location = new System.Drawing.Point(0, 47);
-            tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            tableLayoutPanel10.Name = "tableLayoutPanel10";
-            tableLayoutPanel10.RowCount = 1;
-            tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel10.Size = new System.Drawing.Size(446, 38);
-            tableLayoutPanel10.TabIndex = 1;
+            EATC2.ColumnCount = 7;
+            EATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC2.Controls.Add(label21, 6, 0);
+            EATC2.Controls.Add(label22, 5, 0);
+            EATC2.Controls.Add(label27, 4, 0);
+            EATC2.Controls.Add(label28, 3, 0);
+            EATC2.Controls.Add(label29, 2, 0);
+            EATC2.Controls.Add(label30, 1, 0);
+            EATC2.Controls.Add(label31, 0, 0);
+            EATC2.Dock = System.Windows.Forms.DockStyle.Fill;
+            EATC2.Location = new System.Drawing.Point(0, 47);
+            EATC2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            EATC2.Name = "EATC2";
+            EATC2.RowCount = 1;
+            EATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            EATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            EATC2.Size = new System.Drawing.Size(446, 38);
+            EATC2.TabIndex = 1;
             // 
             // label21
             // 
@@ -5124,29 +5137,29 @@
             label31.Text = "Sun";
             label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel11
+            // EATC3
             // 
-            tableLayoutPanel11.ColumnCount = 7;
-            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel11.Location = new System.Drawing.Point(0, 88);
-            tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
-            tableLayoutPanel11.Name = "tableLayoutPanel11";
-            tableLayoutPanel11.RowCount = 6;
-            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel11.Size = new System.Drawing.Size(446, 357);
-            tableLayoutPanel11.TabIndex = 2;
+            EATC3.ColumnCount = 7;
+            EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            EATC3.Dock = System.Windows.Forms.DockStyle.Fill;
+            EATC3.Location = new System.Drawing.Point(0, 88);
+            EATC3.Margin = new System.Windows.Forms.Padding(0);
+            EATC3.Name = "EATC3";
+            EATC3.RowCount = 6;
+            EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            EATC3.Size = new System.Drawing.Size(446, 357);
+            EATC3.TabIndex = 2;
             // 
             // EATselctdt
             // 
@@ -5324,6 +5337,8 @@
             SerOffTitleEPanel.ResumeLayout(false);
             SerOffTitleEPanel.PerformLayout();
             EATPanel.ResumeLayout(false);
+            Exceptionpanel.ResumeLayout(false);
+            Exceptionpanel.PerformLayout();
             EATtable.ResumeLayout(false);
             EATtimeslot.ResumeLayout(false);
             EATtimeslot.PerformLayout();
@@ -5341,10 +5356,10 @@
             EATdate.ResumeLayout(false);
             EATdate.PerformLayout();
             EATCPanel.ResumeLayout(false);
-            tableLayoutPanel9.ResumeLayout(false);
-            tableLayoutPanel9.PerformLayout();
-            tableLayoutPanel10.ResumeLayout(false);
-            tableLayoutPanel10.PerformLayout();
+            EATC1.ResumeLayout(false);
+            EATC1.PerformLayout();
+            EATC2.ResumeLayout(false);
+            EATC2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5690,11 +5705,11 @@
         private System.Windows.Forms.TableLayoutPanel ATCworpanel;
         private System.Windows.Forms.Label ATCwor;
         private System.Windows.Forms.TableLayoutPanel EATCPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.TableLayoutPanel EATC1;
+        private System.Windows.Forms.Button EATCnext;
+        private System.Windows.Forms.Label EATCmonth;
+        private System.Windows.Forms.Button EATCprev;
+        private System.Windows.Forms.TableLayoutPanel EATC2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label27;
@@ -5702,7 +5717,8 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.TableLayoutPanel EATC3;
         private System.Windows.Forms.Label EATException;
+        private System.Windows.Forms.Panel Exceptionpanel;
     }
 }

@@ -7488,14 +7488,14 @@
         8H8qScojtMICsQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="EATCnext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAEtJREFUOE9jYMAOmNEFSAETGRgYOtAFiQVcDAwMexkYGHrRJYgFowYwMIgyMDB8
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="EATCprev.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAEdJREFUOE9jYCAeMKMLEAtkGRgYbjIwMKigSxACMI1x6BKEwEjQCAIrGRgYZqIL
