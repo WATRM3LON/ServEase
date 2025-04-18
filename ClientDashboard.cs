@@ -1400,7 +1400,7 @@ namespace OOP2
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        int marginbottom = 2;
+                        int marginbottom = 5;
 
                         while (reader.Read())
                         {
@@ -1412,7 +1412,7 @@ namespace OOP2
 
                             clientAppointment.SetData(serviceName, price, duration);
                             clientAppointment.Location = new Point(0, marginbottom);
-                            marginbottom += clientAppointment.Height + 2;
+                            marginbottom += clientAppointment.Height + 5;
 
                             BaASer2.Controls.Add(clientAppointment);
                         }
@@ -1621,10 +1621,11 @@ namespace OOP2
                 Label slotLabel = new Label
                 {
                     Text = slotText,
-                    TextAlign = ContentAlignment.MiddleLeft,
+                    TextAlign = ContentAlignment.MiddleCenter,
                     Dock = DockStyle.Fill,
                     BorderStyle = BorderStyle.FixedSingle,
-                    Font = new Font("Segoe UI", 9),
+                    Font = new Font("Segoe UI", 8),
+                    Margin = new (0,0,0,5),
                     Cursor = slots[i].isAvailable ? Cursors.Hand : Cursors.Default,
                     BackColor = slots[i].isAvailable ? Color.White : Color.LightGray,
                     ForeColor = slots[i].isAvailable ? Color.Black : Color.DarkGray,
@@ -1658,6 +1659,7 @@ namespace OOP2
                 selectedTimeSlotLabel.BackColor = Color.FromArgb(105, 227, 49);
                 selectedTimeSlotLabel.ForeColor = Color.White;
             }
+            BSdatetime1.Text = ", " + selectedTimeSlotLabel;
         }
 
 
