@@ -4461,6 +4461,7 @@
             EditButton.Text = "Confirm Booking";
             EditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             EditButton.UseVisualStyleBackColor = false;
+            EditButton.Click += EditButton_Click;
             // 
             // BaADTlabel
             // 

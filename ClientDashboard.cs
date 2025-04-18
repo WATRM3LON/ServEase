@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,7 +63,8 @@ namespace OOP2
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
         string locs = "", Ems = "", selectedTime = "";
-        int facid;
+        int facid, newClientId;
+        int clientId ;
         public ClientDashboard()
         {
             InitializeComponent();
@@ -441,7 +443,6 @@ namespace OOP2
 
                 }
 
-                int newClientId = 0;
                 using (OleDbCommand getIdCmd = new OleDbCommand("SELECT @@IDENTITY", myConn))
                 {
                     object result = getIdCmd.ExecuteScalar();
@@ -1046,7 +1047,6 @@ namespace OOP2
                 {
                     myConn.Open();
 
-                    int clientId = 0;
 
                     string getIdQuery = "SELECT Client_ID FROM Clients WHERE [Email Address] = ?";
                     using (OleDbCommand getIdCmd = new OleDbCommand(getIdQuery, myConn))
@@ -1393,7 +1393,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT [Service Name], Price, Duration FROM [Facility Services] WHERE Facility_ID = ?";
+                string sql = "SELECT Service_ID, [Service Name], Price, Duration FROM [Facility Services] WHERE Facility_ID = ?";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("?", ID);
@@ -1404,13 +1404,14 @@ namespace OOP2
 
                         while (reader.Read())
                         {
-                            string serviceName = reader.IsDBNull(0) ? "" : reader.GetString(0);
-                            decimal price = reader.IsDBNull(1) ? 0 : reader.GetDecimal(1);
-                            string duration = reader.IsDBNull(2) ? "" : reader.GetString(2);
+                            int serviceId = Convert.ToInt32(reader["Service_ID"]);
+                            string serviceName = reader.IsDBNull("Service Name") ? "" : reader.GetString("Service Name");
+                            decimal price = reader.IsDBNull("Price") ? 0 : reader.GetDecimal("Price");
+                            string duration = reader.IsDBNull("Duration") ? "" : reader.GetString("Duration");
 
                             ClientAppointment clientAppointment = new ClientAppointment();
 
-                            clientAppointment.SetData(serviceName, price, duration);
+                            clientAppointment.SetData(serviceId, serviceName, price, duration);
                             clientAppointment.Location = new Point(0, marginbottom);
                             marginbottom += clientAppointment.Height + 5;
 
@@ -1539,7 +1540,7 @@ namespace OOP2
 
             ATCmonth.Text = currentMonth.ToString("MMMM yyyy");
             ATC3.ResumeLayout();
-            
+
         }
 
         private void DayLabel_Click(object sender, EventArgs e)
@@ -1555,7 +1556,7 @@ namespace OOP2
 
                 BSdatetime.Text = "Date and Time:  " + selectedAppointmentDate?.ToString("dddd, dd MMMM yyyy") + ",";
             }
-            
+
         }
 
         private void ATCPrev_Click(object sender, EventArgs e)
@@ -1629,7 +1630,7 @@ namespace OOP2
                     Dock = DockStyle.Fill,
                     BorderStyle = BorderStyle.FixedSingle,
                     Font = new Font("Segoe UI", 8),
-                    Margin = new (0,0,0,5),
+                    Margin = new(0, 0, 0, 5),
                     Cursor = slots[i].isAvailable ? Cursors.Hand : Cursors.Default,
                     BackColor = slots[i].isAvailable ? Color.White : Color.LightGray,
                     ForeColor = slots[i].isAvailable ? Color.Black : Color.DarkGray,
@@ -1668,7 +1669,9 @@ namespace OOP2
             BSdatetime1.Text = selectedTime;
         }
         private List<ClientAppointment> SelectedServices => BaASer2.Controls.OfType<ClientAppointment>().Where(c => c.IsSelected).ToList();
+        public List<int> SelectedServiceIds { get; private set; } = new List<int>();
 
+        int EPrice, EDuration; 
         private void UpdateBookingSummary()
         {
             BookingSumlabel.Visible = true; BookingSumpanel.Visible = true;
@@ -1678,10 +1681,14 @@ namespace OOP2
             {
                 var totalPrice = selected.Sum(s => s.Price);
                 var totalDuration = selected.Sum(s => s.DurationMinutes);
+                var selectedIds = selected.Select(s => s.ServiceId).ToList();
+                SelectedServiceIds = selected.Select(s => s.ServiceId).ToList();
 
                 BSservices.Text = "Services: " + string.Join(", ", selected.Select(s => s.ServiceName));
                 BStotalprice.Text = "Estimated Price: ₱" + totalPrice;
                 BSduration.Text = "Estimated Duration: " + totalDuration + " mins";
+                EPrice = (int)totalPrice; EDuration = totalDuration;
+                SelectedServiceIds = selectedIds;
             }
             else
             {
@@ -1690,6 +1697,89 @@ namespace OOP2
                 BStotalprice.Text = "";
                 BSduration.Text = "";
             }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (!SelectedServices.Any())
+            {
+                MessageBox.Show("Please select at least one service.");
+                return;
+            }
+
+            if (selectedAppointmentDate == null || selectedTimeSlotLabel == null)
+            {
+                MessageBox.Show("Please select a date and timeslot.");
+                return;
+            }
+
+            EmailAddress = ClientLogin.EmailAddress;
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+                string getclientid = "SELECT Client_ID FROM [Clients] WHERE [Email Address] = ?";
+
+                using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getclientid, myConn))
+                {
+                    getServiceIdsCmd.Parameters.AddWithValue("?", EmailAddress);
+
+                    using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                    {
+                        if (reader.Read() && !reader.IsDBNull(0))
+                        {
+                            newClientId = reader.GetInt32(0);
+                        }
+                    }
+                }
+
+                string insertAppointment = "INSERT INTO Appointments ([Client_ID], [Facility_ID], [Appointment Status], [Date and Time], [Estimated Price], [Estimated Duration]) " +
+                                           "VALUES (@clientid, @facilityid, @appointmentstatus, @datentime, @price, @duration)";
+
+                using (OleDbCommand cmd = new OleDbCommand(insertAppointment, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@clientid", newClientId);
+                    cmd.Parameters.AddWithValue("@facilityid", facid);
+                    cmd.Parameters.AddWithValue("@appointmentstatus", "Pending");
+                    string startTimeText = selectedTimeSlotLabel.Text.Split('-')[0].Trim();
+                    string dateTimeString = $"{selectedAppointmentDate:dd MM yyyy} {startTimeText}";
+                    DateTime dateTime = DateTime.Parse(dateTimeString);
+                    string formattedWorHours = $"{dateTime:dd MMMM yyyy hh:mm tt}";
+                    cmd.Parameters.AddWithValue("@datentime", formattedWorHours);
+                    cmd.Parameters.AddWithValue("@price", EPrice);
+                    cmd.Parameters.AddWithValue("@duration", EDuration);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                int AppointmentId = 0;
+                string getAppointmentIdQuery = "SELECT MAX(Appointment_ID) FROM [Appointments] WHERE Facility_ID = ?";
+
+                using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getAppointmentIdQuery, myConn))
+                {
+                    getServiceIdsCmd.Parameters.AddWithValue("?", facid);
+
+                    using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                    {
+                        if (reader.Read() && !reader.IsDBNull(0))
+                        {
+                            AppointmentId = reader.GetInt32(0);
+                        }
+                    }
+                }
+                foreach (var service in SelectedServices)
+                {
+                    string insertServiceQuery = "INSERT INTO [Appointment Services] ([Appointment_ID], [Service_ID]) " +
+                                                "VALUES (@appid, @serviceid)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(insertServiceQuery, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@appid", AppointmentId);
+                        cmd.Parameters.AddWithValue("@serviceid", service.ServiceId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            MessageBox.Show("Updated successfully!");
         }
     }
 }

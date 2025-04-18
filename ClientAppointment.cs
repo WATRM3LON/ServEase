@@ -32,15 +32,15 @@ namespace OOP2
             SODuration.Click += (s, e) => this.OnClick(e);
         }
 
-        public void SetData(string name, decimal price, string duration)
+        public void SetData(int serviceId, string name, decimal price, string duration)
         {
             SOService.Text = "  " + name; SOService.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOService.Width, SOService.Height, 10, 10));
             SOPrice.Text = Convert.ToString(price); SOPrice.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOPrice.Width, SOPrice.Height, 10, 10));
             SODuration.Text = duration; SODuration.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SODuration.Width, SODuration.Height, 10, 10));
-            ServiceName = name; Price = price; DurationMinutes = int.TryParse(duration.Replace(" mins", "").Trim(), out int d) ? d : 0;
+            ServiceName = name; Price = price; DurationMinutes = int.TryParse(duration.Replace(" mins", "").Trim(), out int d) ? d : 0; ServiceId = serviceId;
         }
         public bool IsSelected { get; private set; } = false;
-
+        public int ServiceId { get; private set; }
         public string ServiceName { get; private set; }
         public decimal Price { get; private set; }
         public int DurationMinutes { get; private set; }
