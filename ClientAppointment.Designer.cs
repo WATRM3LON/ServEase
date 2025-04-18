@@ -49,7 +49,7 @@
             ClientSO.Name = "ClientSO";
             ClientSO.RowCount = 1;
             ClientSO.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ClientSO.Size = new System.Drawing.Size(380, 56);
+            ClientSO.Size = new System.Drawing.Size(385, 56);
             ClientSO.TabIndex = 0;
             // 
             // SODuration
@@ -59,10 +59,10 @@
             SODuration.BackColor = System.Drawing.Color.WhiteSmoke;
             SODuration.Font = new System.Drawing.Font("Segoe UI", 9F);
             SODuration.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            SODuration.Location = new System.Drawing.Point(269, 0);
+            SODuration.Location = new System.Drawing.Point(272, 0);
             SODuration.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             SODuration.Name = "SODuration";
-            SODuration.Size = new System.Drawing.Size(111, 56);
+            SODuration.Size = new System.Drawing.Size(113, 56);
             SODuration.TabIndex = 41;
             SODuration.Text = "60 mins";
             SODuration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,9 +74,9 @@
             SOPrice.BackColor = System.Drawing.Color.WhiteSmoke;
             SOPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             SOPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            SOPrice.Location = new System.Drawing.Point(155, 0);
+            SOPrice.Location = new System.Drawing.Point(157, 0);
             SOPrice.Name = "SOPrice";
-            SOPrice.Size = new System.Drawing.Size(108, 56);
+            SOPrice.Size = new System.Drawing.Size(109, 56);
             SOPrice.TabIndex = 40;
             SOPrice.Text = "P500.00";
             SOPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,7 +91,7 @@
             SOService.Location = new System.Drawing.Point(0, 0);
             SOService.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             SOService.Name = "SOService";
-            SOService.Size = new System.Drawing.Size(149, 56);
+            SOService.Size = new System.Drawing.Size(151, 56);
             SOService.TabIndex = 39;
             SOService.Text = " Service Name";
             SOService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,7 +103,7 @@
             BackColor = System.Drawing.Color.White;
             Controls.Add(ClientSO);
             Name = "ClientAppointment";
-            Size = new System.Drawing.Size(380, 56);
+            Size = new System.Drawing.Size(385, 56);
             ClientSO.ResumeLayout(false);
             ClientSO.PerformLayout();
             ResumeLayout(false);

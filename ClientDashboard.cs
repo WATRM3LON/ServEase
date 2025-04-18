@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -17,7 +18,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 namespace OOP2
 {
 
-    public partial class ClientDashboard : Form, ClientInfo
+    public partial class ClientDashboard : Form, ClientInfo, FacilityInfo
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
@@ -47,6 +48,20 @@ namespace OOP2
         public string LocationAddress { get; set; }
         public string Sex { get; set; }
         public int count { get; set; }
+        public string Facname { get; set; }
+        public string SerCat { get; set; }
+        public string SpeCat { get; set; }
+        public DateTime WorHours { get; set; }
+        public string WorDays { get; set; }
+        public string Ratings { get; set; }
+        public string AppStatus { get; set; }
+        public string ExceptionDay { get; set; }
+        public string Tags { get; set; }
+        public DateTime workingstart;
+        public DateTime workingend;
+        DateTime currentMonth = DateTime.Today;
+        List<DateTime> exceptionDays = new List<DateTime>();
+        string locs = "", Ems = "";
         public ClientDashboard()
         {
             InitializeComponent();
@@ -162,6 +177,8 @@ namespace OOP2
             AstatPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AstatPanel.Width, AstatPanel.Height, 10, 10));
             ReschedButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ReschedButton.Width, ReschedButton.Height, 10, 10));
             AproPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AproPanel.Width, AproPanel.Height, 10, 10));
+            BaASerpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaASerpanel.Width, BaASerpanel.Height, 10, 10));
+            BaADTPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaADTPanel.Width, BaADTPanel.Height, 10, 10));
             //PROFILE
             ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
             PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
@@ -1300,7 +1317,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT [Facility Location], [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Working Days], [Contact Number] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+                string sql = "SELECT [Facility Location], [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Working Days], [Contact Number], [Exception Day (Closed)] FROM [Service Facilities] WHERE [Facility_ID] = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
@@ -1310,21 +1327,20 @@ namespace OOP2
                     {
                         if (reader.Read())
                         {
-                            string fName = reader["Facility Name"].ToString();
-                            string locs = reader["Facility Location"].ToString();
-                            string Ems = reader["Email Address"].ToString();
+                            Facname = reader["Facility Name"].ToString();
+                            locs = reader["Facility Location"].ToString();
+                            Ems = reader["Email Address"].ToString();
                             string contnumb = reader["Contact Number"].ToString();
                             DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
                             DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
                             string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
-                            string workdays = reader.IsDBNull(reader.GetOrdinal("Working Days")) ? "" : reader.GetString(reader.GetOrdinal("Working Days"));
-                            string ratings = reader["Ratings"].ToString();
+                            WorDays = reader.IsDBNull(reader.GetOrdinal("Working Days")) ? "" : reader.GetString(reader.GetOrdinal("Working Days"));
+                            Ratings = reader["Ratings"].ToString();
+                            ExceptionDay = reader["Exception Day (Closed)"].ToString();
 
-                            FaciName.Text = fName; WorkingHoursText.Text = formattedWorHours; WorDaystext.Text = workdays; Loctext.Text = locs; Conumtext.Text = contnumb; EMStext.Text = Ems;
+                            FaciName.Text = Facname; WorkingHoursText.Text = formattedWorHours; WorDaystext.Text = WorDays; Loctext.Text = locs; Conumtext.Text = contnumb; EMStext.Text = Ems;
                         }
                     }
-
-
                 }
             }
             LoadFacilityData(ID);
@@ -1380,26 +1396,179 @@ namespace OOP2
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        int marginbottom = 3;
+                        int marginbottom = 2;
 
                         while (reader.Read())
                         {
-                            string serviceName = reader.IsDBNull("Service Name") ? "" : reader.GetString("Service Name");
-                            decimal price = reader.IsDBNull("Price") ? 0 : reader.GetDecimal("Price");
-                            string duration = reader.IsDBNull("Duration") ? "" : reader.GetValue("Duration").ToString();
+                            string serviceName = reader.IsDBNull(0) ? "" : reader.GetString(0);
+                            decimal price = reader.IsDBNull(1) ? 0 : reader.GetDecimal(1);
+                            string duration = reader.IsDBNull(2) ? "" : reader.GetString(2);
 
                             ClientAppointment clientAppointment = new ClientAppointment();
 
                             clientAppointment.SetData(serviceName, price, duration);
                             clientAppointment.Location = new Point(0, marginbottom);
-                            marginbottom += clientAppointment.Height + 3;
+                            marginbottom += clientAppointment.Height + 2;
 
                             BaASer2.Controls.Add(clientAppointment);
                         }
                     }
                 }
             }
+            PopulateCalendar();
+        }
 
+        List<DayOfWeek> ParseWorkingDays(string dayRange)
+        {
+            var workingDays = new List<DayOfWeek>();
+
+            if (string.IsNullOrWhiteSpace(dayRange)) return workingDays;
+
+            string[] parts = dayRange.Split('-');
+            if (parts.Length != 2) return workingDays;
+
+            if (Enum.TryParse(parts[0], true, out DayOfWeek startDay) &&
+                Enum.TryParse(parts[1], true, out DayOfWeek endDay))
+            {
+                int start = (int)startDay;
+                int end = (int)endDay;
+
+                for (int i = start; ; i = (i + 1) % 7)
+                {
+                    workingDays.Add((DayOfWeek)i);
+                    if (i == end) break;
+                }
+            }
+
+            return workingDays;
+        }
+        List<DateTime> ParseWorkDays(string exceptionclosed)
+        {
+            var exceptionDates = new List<DateTime>();
+
+            if (string.IsNullOrWhiteSpace(exceptionclosed)) return exceptionDates;
+
+            string[] parts = exceptionclosed.Split(',');
+
+            foreach (var dateStr in parts)
+            {
+                if (DateTime.TryParse(dateStr.Trim(), out DateTime parsedDate))
+                {
+                    exceptionDates.Add(parsedDate.Date);
+                }
+            }
+
+            return exceptionDates;
+        }
+
+        void PopulateCalendar()
+        {
+            ATC3.Controls.Clear(); ATC3.SuspendLayout();
+
+            List<DayOfWeek> workingDays = ParseWorkingDays(WorDays);
+            List<DateTime> workDays = ParseWorkDays(ExceptionDay);
+
+            DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+            int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+            int startCol = (int)firstDayOfMonth.DayOfWeek;
+
+            int row = 0;
+            int col = startCol;
+
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
+                DayOfWeek dayOfWeek = thisDate.DayOfWeek;
+
+                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate };
+
+                if (!workingDays.Contains(dayOfWeek))
+                {
+                    dayLabel.ForeColor = Color.DimGray;
+                    dayLabel.BackColor = Color.WhiteSmoke;
+                }
+                else
+                {
+                    if (workDays.Any(d => d.Date == thisDate.Date))
+                    {
+                        dayLabel.ForeColor = Color.DimGray;
+                        dayLabel.BackColor = Color.WhiteSmoke;
+                    }
+                    if (exceptionDays.Contains(thisDate.Date))
+                    {
+                        dayLabel.BackColor = Color.IndianRed;
+                        dayLabel.ForeColor = Color.White;
+                    }
+                    DateTime Date = (DateTime)dayLabel.Tag;
+
+                    if (Date.Date >= DateTime.Today)
+                    {
+                        dayLabel.Cursor = Cursors.Hand;
+                        dayLabel.Click += DayLabel_Click;
+                    }
+
+                }
+
+                if (thisDate.Date == DateTime.Today.Date)
+                {
+                    dayLabel.BackColor = ColorTranslator.FromHtml("#69e331");
+                }
+                ATC3.Controls.Add(dayLabel, col, row);
+
+                col++;
+                if (col == 7)
+                {
+                    col = 0;
+                    row++;
+                }
+            }
+            ATCmonth.Text = currentMonth.ToString("MMMM yyyy"); ATC3.ResumeLayout();
+
+        }
+        private void DayLabel_Click(object sender, EventArgs e)
+        {
+            //Exceptionpanel.Visible = true;
+            Label clickedLabel = sender as Label;
+
+            if (clickedLabel != null && clickedLabel.Tag is DateTime selectedDate)
+            {
+                selectedDate = selectedDate.Date;
+
+                if (exceptionDays.Contains(selectedDate))
+                {
+                    exceptionDays.Remove(selectedDate);
+                }
+                else
+                {
+                    exceptionDays.Add(selectedDate);
+                }
+
+                PopulateCalendar();
+
+                if (exceptionDays.Count > 0)
+                {
+                    //Exceptionpanel.Visible = true;
+                    //EATException.Text = "Exception Days: " +
+                        string.Join(", ", exceptionDays.Select(d => d.ToString("dddd, dd MMMM yyyy")));
+                }
+                else
+                {
+                    //Exceptionpanel.Visible = false;
+                    //EATException.Text = string.Empty;
+                }
+
+            }
+        }
+        private void ATCPrev_Click(object sender, EventArgs e)
+        {
+            currentMonth = currentMonth.AddMonths(-1);
+            PopulateCalendar();
+        }
+
+        private void ATCNext_Click(object sender, EventArgs e)
+        {
+            currentMonth = currentMonth.AddMonths(+1);
+            PopulateCalendar();
         }
     }
 }
