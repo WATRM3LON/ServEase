@@ -301,6 +301,30 @@
             button32 = new System.Windows.Forms.Button();
             BaAPanel = new System.Windows.Forms.TableLayoutPanel();
             BaADTPanel = new System.Windows.Forms.Panel();
+            ATC0 = new System.Windows.Forms.TableLayoutPanel();
+            ATC01 = new System.Windows.Forms.TableLayoutPanel();
+            ATCnwpanel = new System.Windows.Forms.TableLayoutPanel();
+            ATCnw = new System.Windows.Forms.Label();
+            ATCnoworking = new System.Windows.Forms.Label();
+            ATCworking = new System.Windows.Forms.Label();
+            ATCworpanel = new System.Windows.Forms.TableLayoutPanel();
+            ATCwor = new System.Windows.Forms.Label();
+            BaADTlabel1 = new System.Windows.Forms.Label();
+            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            ATCaledar = new System.Windows.Forms.TableLayoutPanel();
+            ATC1 = new System.Windows.Forms.TableLayoutPanel();
+            ATCNext = new System.Windows.Forms.Button();
+            ATCmonth = new System.Windows.Forms.Label();
+            ATCPrev = new System.Windows.Forms.Button();
+            ATC2 = new System.Windows.Forms.TableLayoutPanel();
+            ATCSat = new System.Windows.Forms.Label();
+            ATCFri = new System.Windows.Forms.Label();
+            ATCThu = new System.Windows.Forms.Label();
+            ATCWed = new System.Windows.Forms.Label();
+            ATCTue = new System.Windows.Forms.Label();
+            ATCMon = new System.Windows.Forms.Label();
+            ATCSun = new System.Windows.Forms.Label();
+            ATC3 = new System.Windows.Forms.TableLayoutPanel();
             EditButton = new System.Windows.Forms.Button();
             BaADTlabel = new System.Windows.Forms.Label();
             BaASerpanel = new System.Windows.Forms.Panel();
@@ -338,30 +362,16 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            ATCaledar = new System.Windows.Forms.TableLayoutPanel();
-            ATC1 = new System.Windows.Forms.TableLayoutPanel();
-            ATCNext = new System.Windows.Forms.Button();
-            ATCmonth = new System.Windows.Forms.Label();
-            ATCPrev = new System.Windows.Forms.Button();
-            ATC2 = new System.Windows.Forms.TableLayoutPanel();
-            ATCSat = new System.Windows.Forms.Label();
-            ATCFri = new System.Windows.Forms.Label();
-            ATCThu = new System.Windows.Forms.Label();
-            ATCWed = new System.Windows.Forms.Label();
-            ATCTue = new System.Windows.Forms.Label();
-            ATCMon = new System.Windows.Forms.Label();
-            ATCSun = new System.Windows.Forms.Label();
-            ATC3 = new System.Windows.Forms.TableLayoutPanel();
-            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            BaADTlabel1 = new System.Windows.Forms.Label();
-            ATC0 = new System.Windows.Forms.TableLayoutPanel();
-            ATC01 = new System.Windows.Forms.TableLayoutPanel();
-            ATCnwpanel = new System.Windows.Forms.TableLayoutPanel();
-            ATCnw = new System.Windows.Forms.Label();
-            ATCnoworking = new System.Windows.Forms.Label();
-            ATCworking = new System.Windows.Forms.Label();
-            ATCworpanel = new System.Windows.Forms.TableLayoutPanel();
-            ATCwor = new System.Windows.Forms.Label();
+            BookingSumpanel = new System.Windows.Forms.TableLayoutPanel();
+            BookingSumlabel = new System.Windows.Forms.Label();
+            BSservices = new System.Windows.Forms.Label();
+            BSdatetime = new System.Windows.Forms.Label();
+            BStotalprice = new System.Windows.Forms.Label();
+            BSduration = new System.Windows.Forms.Label();
+            BSservicesicon = new System.Windows.Forms.Button();
+            BSdatetimeicon = new System.Windows.Forms.Button();
+            BStotalpriceicon = new System.Windows.Forms.Button();
+            BSdurationicon = new System.Windows.Forms.Button();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -436,19 +446,20 @@
             BAPanel.SuspendLayout();
             BaAPanel.SuspendLayout();
             BaADTPanel.SuspendLayout();
+            ATC0.SuspendLayout();
+            ATC01.SuspendLayout();
+            ATCnwpanel.SuspendLayout();
+            ATCworpanel.SuspendLayout();
+            ATCaledar.SuspendLayout();
+            ATC1.SuspendLayout();
+            ATC2.SuspendLayout();
             BaASerpanel.SuspendLayout();
             FPropanel.SuspendLayout();
             BaASer1.SuspendLayout();
             EditPIPanel.SuspendLayout();
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
-            ATCaledar.SuspendLayout();
-            ATC1.SuspendLayout();
-            ATC2.SuspendLayout();
-            ATC0.SuspendLayout();
-            ATC01.SuspendLayout();
-            ATCnwpanel.SuspendLayout();
-            ATCworpanel.SuspendLayout();
+            BookingSumpanel.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -4060,6 +4071,373 @@
             BaADTPanel.Size = new System.Drawing.Size(433, 746);
             BaADTPanel.TabIndex = 52;
             // 
+            // ATC0
+            // 
+            ATC0.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ATC0.ColumnCount = 1;
+            ATC0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATC0.Controls.Add(ATC01, 0, 0);
+            ATC0.Location = new System.Drawing.Point(10, 126);
+            ATC0.Margin = new System.Windows.Forms.Padding(0);
+            ATC0.Name = "ATC0";
+            ATC0.RowCount = 1;
+            ATC0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.77778F));
+            ATC0.Size = new System.Drawing.Size(412, 44);
+            ATC0.TabIndex = 64;
+            // 
+            // ATC01
+            // 
+            ATC01.ColumnCount = 4;
+            ATC01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            ATC01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            ATC01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            ATC01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            ATC01.Controls.Add(ATCnwpanel, 2, 0);
+            ATC01.Controls.Add(ATCnoworking, 3, 0);
+            ATC01.Controls.Add(ATCworking, 1, 0);
+            ATC01.Controls.Add(ATCworpanel, 0, 0);
+            ATC01.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATC01.Location = new System.Drawing.Point(0, 0);
+            ATC01.Margin = new System.Windows.Forms.Padding(0);
+            ATC01.Name = "ATC01";
+            ATC01.RowCount = 1;
+            ATC01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATC01.Size = new System.Drawing.Size(412, 44);
+            ATC01.TabIndex = 0;
+            // 
+            // ATCnwpanel
+            // 
+            ATCnwpanel.BackColor = System.Drawing.Color.DimGray;
+            ATCnwpanel.ColumnCount = 1;
+            ATCnwpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATCnwpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            ATCnwpanel.Controls.Add(ATCnw, 0, 0);
+            ATCnwpanel.Location = new System.Drawing.Point(215, 10);
+            ATCnwpanel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
+            ATCnwpanel.Name = "ATCnwpanel";
+            ATCnwpanel.RowCount = 1;
+            ATCnwpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATCnwpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            ATCnwpanel.Size = new System.Drawing.Size(41, 20);
+            ATCnwpanel.TabIndex = 56;
+            // 
+            // ATCnw
+            // 
+            ATCnw.AutoSize = true;
+            ATCnw.BackColor = System.Drawing.Color.WhiteSmoke;
+            ATCnw.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCnw.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCnw.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCnw.Location = new System.Drawing.Point(1, 1);
+            ATCnw.Margin = new System.Windows.Forms.Padding(1);
+            ATCnw.Name = "ATCnw";
+            ATCnw.Size = new System.Drawing.Size(39, 18);
+            ATCnw.TabIndex = 52;
+            ATCnw.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ATCnoworking
+            // 
+            ATCnoworking.AutoSize = true;
+            ATCnoworking.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCnoworking.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCnoworking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCnoworking.Location = new System.Drawing.Point(269, 0);
+            ATCnoworking.Name = "ATCnoworking";
+            ATCnoworking.Size = new System.Drawing.Size(140, 44);
+            ATCnoworking.TabIndex = 53;
+            ATCnoworking.Text = "- Non-Working Days";
+            ATCnoworking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ATCworking
+            // 
+            ATCworking.AutoSize = true;
+            ATCworking.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCworking.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCworking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCworking.Location = new System.Drawing.Point(85, 0);
+            ATCworking.Name = "ATCworking";
+            ATCworking.Size = new System.Drawing.Size(117, 44);
+            ATCworking.TabIndex = 50;
+            ATCworking.Text = "- Working Days";
+            ATCworking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ATCworpanel
+            // 
+            ATCworpanel.BackColor = System.Drawing.Color.DimGray;
+            ATCworpanel.ColumnCount = 1;
+            ATCworpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATCworpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            ATCworpanel.Controls.Add(ATCwor, 0, 0);
+            ATCworpanel.Location = new System.Drawing.Point(20, 10);
+            ATCworpanel.Margin = new System.Windows.Forms.Padding(20, 10, 20, 5);
+            ATCworpanel.Name = "ATCworpanel";
+            ATCworpanel.RowCount = 1;
+            ATCworpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATCworpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            ATCworpanel.Size = new System.Drawing.Size(42, 20);
+            ATCworpanel.TabIndex = 55;
+            // 
+            // ATCwor
+            // 
+            ATCwor.AutoSize = true;
+            ATCwor.BackColor = System.Drawing.Color.White;
+            ATCwor.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCwor.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCwor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCwor.Location = new System.Drawing.Point(1, 1);
+            ATCwor.Margin = new System.Windows.Forms.Padding(1);
+            ATCwor.Name = "ATCwor";
+            ATCwor.Size = new System.Drawing.Size(40, 18);
+            ATCwor.TabIndex = 52;
+            ATCwor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // BaADTlabel1
+            // 
+            BaADTlabel1.AutoSize = true;
+            BaADTlabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            BaADTlabel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            BaADTlabel1.Location = new System.Drawing.Point(13, 493);
+            BaADTlabel1.Name = "BaADTlabel1";
+            BaADTlabel1.Size = new System.Drawing.Size(124, 23);
+            BaADTlabel1.TabIndex = 63;
+            BaADTlabel1.Text = "Select Timeslot";
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 3;
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.Location = new System.Drawing.Point(21, 526);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 2;
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel3.Size = new System.Drawing.Size(393, 125);
+            tableLayoutPanel3.TabIndex = 62;
+            // 
+            // ATCaledar
+            // 
+            ATCaledar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ATCaledar.ColumnCount = 1;
+            ATCaledar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATCaledar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            ATCaledar.Controls.Add(ATC1, 0, 0);
+            ATCaledar.Controls.Add(ATC2, 0, 1);
+            ATCaledar.Controls.Add(ATC3, 0, 2);
+            ATCaledar.Location = new System.Drawing.Point(19, 186);
+            ATCaledar.Margin = new System.Windows.Forms.Padding(0);
+            ATCaledar.Name = "ATCaledar";
+            ATCaledar.RowCount = 3;
+            ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            ATCaledar.Size = new System.Drawing.Size(393, 284);
+            ATCaledar.TabIndex = 61;
+            // 
+            // ATC1
+            // 
+            ATC1.ColumnCount = 3;
+            ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
+            ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
+            ATC1.Controls.Add(ATCNext, 2, 0);
+            ATC1.Controls.Add(ATCmonth, 1, 0);
+            ATC1.Controls.Add(ATCPrev, 0, 0);
+            ATC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATC1.Location = new System.Drawing.Point(0, 0);
+            ATC1.Margin = new System.Windows.Forms.Padding(0);
+            ATC1.Name = "ATC1";
+            ATC1.RowCount = 1;
+            ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            ATC1.Size = new System.Drawing.Size(393, 28);
+            ATC1.TabIndex = 0;
+            // 
+            // ATCNext
+            // 
+            ATCNext.BackColor = System.Drawing.Color.WhiteSmoke;
+            ATCNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ATCNext.ForeColor = System.Drawing.Color.White;
+            ATCNext.Image = (System.Drawing.Image)resources.GetObject("ATCNext.Image");
+            ATCNext.Location = new System.Drawing.Point(342, 0);
+            ATCNext.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            ATCNext.Name = "ATCNext";
+            ATCNext.Size = new System.Drawing.Size(35, 28);
+            ATCNext.TabIndex = 40;
+            ATCNext.UseVisualStyleBackColor = false;
+            // 
+            // ATCmonth
+            // 
+            ATCmonth.AutoSize = true;
+            ATCmonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCmonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ATCmonth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCmonth.Location = new System.Drawing.Point(65, 0);
+            ATCmonth.Margin = new System.Windows.Forms.Padding(0);
+            ATCmonth.Name = "ATCmonth";
+            ATCmonth.Size = new System.Drawing.Size(261, 28);
+            ATCmonth.TabIndex = 38;
+            ATCmonth.Text = "Time Slots";
+            ATCmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATCPrev
+            // 
+            ATCPrev.BackColor = System.Drawing.Color.WhiteSmoke;
+            ATCPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ATCPrev.ForeColor = System.Drawing.Color.White;
+            ATCPrev.Image = (System.Drawing.Image)resources.GetObject("ATCPrev.Image");
+            ATCPrev.Location = new System.Drawing.Point(16, 0);
+            ATCPrev.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            ATCPrev.Name = "ATCPrev";
+            ATCPrev.Size = new System.Drawing.Size(33, 28);
+            ATCPrev.TabIndex = 39;
+            ATCPrev.UseVisualStyleBackColor = false;
+            // 
+            // ATC2
+            // 
+            ATC2.ColumnCount = 7;
+            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC2.Controls.Add(ATCSat, 6, 0);
+            ATC2.Controls.Add(ATCFri, 5, 0);
+            ATC2.Controls.Add(ATCThu, 4, 0);
+            ATC2.Controls.Add(ATCWed, 3, 0);
+            ATC2.Controls.Add(ATCTue, 2, 0);
+            ATC2.Controls.Add(ATCMon, 1, 0);
+            ATC2.Controls.Add(ATCSun, 0, 0);
+            ATC2.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATC2.Location = new System.Drawing.Point(0, 31);
+            ATC2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            ATC2.Name = "ATC2";
+            ATC2.RowCount = 1;
+            ATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            ATC2.Size = new System.Drawing.Size(393, 22);
+            ATC2.TabIndex = 1;
+            // 
+            // ATCSat
+            // 
+            ATCSat.AutoSize = true;
+            ATCSat.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCSat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCSat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCSat.Location = new System.Drawing.Point(339, 0);
+            ATCSat.Name = "ATCSat";
+            ATCSat.Size = new System.Drawing.Size(51, 22);
+            ATCSat.TabIndex = 56;
+            ATCSat.Text = "Sat";
+            ATCSat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATCFri
+            // 
+            ATCFri.AutoSize = true;
+            ATCFri.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCFri.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCFri.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCFri.Location = new System.Drawing.Point(283, 0);
+            ATCFri.Name = "ATCFri";
+            ATCFri.Size = new System.Drawing.Size(50, 22);
+            ATCFri.TabIndex = 55;
+            ATCFri.Text = "Fri";
+            ATCFri.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATCThu
+            // 
+            ATCThu.AutoSize = true;
+            ATCThu.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCThu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCThu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCThu.Location = new System.Drawing.Point(227, 0);
+            ATCThu.Name = "ATCThu";
+            ATCThu.Size = new System.Drawing.Size(50, 22);
+            ATCThu.TabIndex = 54;
+            ATCThu.Text = "Thu";
+            ATCThu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATCWed
+            // 
+            ATCWed.AutoSize = true;
+            ATCWed.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCWed.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCWed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCWed.Location = new System.Drawing.Point(171, 0);
+            ATCWed.Name = "ATCWed";
+            ATCWed.Size = new System.Drawing.Size(50, 22);
+            ATCWed.TabIndex = 53;
+            ATCWed.Text = "Wed";
+            ATCWed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATCTue
+            // 
+            ATCTue.AutoSize = true;
+            ATCTue.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCTue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCTue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCTue.Location = new System.Drawing.Point(115, 0);
+            ATCTue.Name = "ATCTue";
+            ATCTue.Size = new System.Drawing.Size(50, 22);
+            ATCTue.TabIndex = 52;
+            ATCTue.Text = "Tue";
+            ATCTue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATCMon
+            // 
+            ATCMon.AutoSize = true;
+            ATCMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCMon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCMon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCMon.Location = new System.Drawing.Point(59, 0);
+            ATCMon.Name = "ATCMon";
+            ATCMon.Size = new System.Drawing.Size(50, 22);
+            ATCMon.TabIndex = 51;
+            ATCMon.Text = "Mon";
+            ATCMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATCSun
+            // 
+            ATCSun.AutoSize = true;
+            ATCSun.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATCSun.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ATCSun.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCSun.Location = new System.Drawing.Point(3, 0);
+            ATCSun.Name = "ATCSun";
+            ATCSun.Size = new System.Drawing.Size(50, 22);
+            ATCSun.TabIndex = 50;
+            ATCSun.Text = "Sun";
+            ATCSun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ATC3
+            // 
+            ATC3.ColumnCount = 7;
+            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            ATC3.Dock = System.Windows.Forms.DockStyle.Fill;
+            ATC3.Location = new System.Drawing.Point(0, 56);
+            ATC3.Margin = new System.Windows.Forms.Padding(0);
+            ATC3.Name = "ATC3";
+            ATC3.RowCount = 6;
+            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            ATC3.Size = new System.Drawing.Size(393, 228);
+            ATC3.TabIndex = 2;
+            // 
             // EditButton
             // 
             EditButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
@@ -4091,6 +4469,8 @@
             // BaASerpanel
             // 
             BaASerpanel.BackColor = System.Drawing.Color.White;
+            BaASerpanel.Controls.Add(BookingSumlabel);
+            BaASerpanel.Controls.Add(BookingSumpanel);
             BaASerpanel.Controls.Add(FPropanel);
             BaASerpanel.Controls.Add(BaASerlabel);
             BaASerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4543,372 +4923,159 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
-            // ATCaledar
+            // BookingSumpanel
             // 
-            ATCaledar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            ATCaledar.ColumnCount = 1;
-            ATCaledar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATCaledar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATCaledar.Controls.Add(ATC1, 0, 0);
-            ATCaledar.Controls.Add(ATC2, 0, 1);
-            ATCaledar.Controls.Add(ATC3, 0, 2);
-            ATCaledar.Location = new System.Drawing.Point(19, 186);
-            ATCaledar.Margin = new System.Windows.Forms.Padding(0);
-            ATCaledar.Name = "ATCaledar";
-            ATCaledar.RowCount = 3;
-            ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            ATCaledar.Size = new System.Drawing.Size(393, 284);
-            ATCaledar.TabIndex = 61;
+            BookingSumpanel.ColumnCount = 2;
+            BookingSumpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            BookingSumpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            BookingSumpanel.Controls.Add(BSdurationicon, 0, 3);
+            BookingSumpanel.Controls.Add(BStotalpriceicon, 0, 2);
+            BookingSumpanel.Controls.Add(BSdatetimeicon, 0, 1);
+            BookingSumpanel.Controls.Add(BSservicesicon, 0, 0);
+            BookingSumpanel.Controls.Add(BSduration, 1, 3);
+            BookingSumpanel.Controls.Add(BStotalprice, 1, 2);
+            BookingSumpanel.Controls.Add(BSdatetime, 1, 1);
+            BookingSumpanel.Controls.Add(BSservices, 1, 0);
+            BookingSumpanel.Location = new System.Drawing.Point(15, 492);
+            BookingSumpanel.Name = "BookingSumpanel";
+            BookingSumpanel.RowCount = 4;
+            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            BookingSumpanel.Size = new System.Drawing.Size(399, 242);
+            BookingSumpanel.TabIndex = 32;
             // 
-            // ATC1
+            // BookingSumlabel
             // 
-            ATC1.ColumnCount = 3;
-            ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
-            ATC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
-            ATC1.Controls.Add(ATCNext, 2, 0);
-            ATC1.Controls.Add(ATCmonth, 1, 0);
-            ATC1.Controls.Add(ATCPrev, 0, 0);
-            ATC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATC1.Location = new System.Drawing.Point(0, 0);
-            ATC1.Margin = new System.Windows.Forms.Padding(0);
-            ATC1.Name = "ATC1";
-            ATC1.RowCount = 1;
-            ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATC1.Size = new System.Drawing.Size(393, 28);
-            ATC1.TabIndex = 0;
+            BookingSumlabel.AutoSize = true;
+            BookingSumlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            BookingSumlabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            BookingSumlabel.Location = new System.Drawing.Point(14, 456);
+            BookingSumlabel.Name = "BookingSumlabel";
+            BookingSumlabel.Size = new System.Drawing.Size(152, 23);
+            BookingSumlabel.TabIndex = 33;
+            BookingSumlabel.Text = "Booking Summary";
             // 
-            // ATCNext
+            // BSservices
             // 
-            ATCNext.BackColor = System.Drawing.Color.WhiteSmoke;
-            ATCNext.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ATCNext.ForeColor = System.Drawing.Color.White;
-            ATCNext.Image = (System.Drawing.Image)resources.GetObject("ATCNext.Image");
-            ATCNext.Location = new System.Drawing.Point(342, 0);
-            ATCNext.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            ATCNext.Name = "ATCNext";
-            ATCNext.Size = new System.Drawing.Size(35, 28);
-            ATCNext.TabIndex = 40;
-            ATCNext.UseVisualStyleBackColor = false;
+            BSservices.AutoSize = true;
+            BSservices.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSservices.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSservices.ForeColor = System.Drawing.SystemColors.ControlText;
+            BSservices.Location = new System.Drawing.Point(62, 10);
+            BSservices.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            BSservices.Name = "BSservices";
+            BSservices.Size = new System.Drawing.Size(334, 50);
+            BSservices.TabIndex = 65;
+            BSservices.Text = "Select Timeslot";
             // 
-            // ATCmonth
+            // BSdatetime
             // 
-            ATCmonth.AutoSize = true;
-            ATCmonth.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCmonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ATCmonth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCmonth.Location = new System.Drawing.Point(65, 0);
-            ATCmonth.Margin = new System.Windows.Forms.Padding(0);
-            ATCmonth.Name = "ATCmonth";
-            ATCmonth.Size = new System.Drawing.Size(261, 28);
-            ATCmonth.TabIndex = 38;
-            ATCmonth.Text = "Time Slots";
-            ATCmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            BSdatetime.AutoSize = true;
+            BSdatetime.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSdatetime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSdatetime.ForeColor = System.Drawing.SystemColors.ControlText;
+            BSdatetime.Location = new System.Drawing.Point(62, 70);
+            BSdatetime.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            BSdatetime.Name = "BSdatetime";
+            BSdatetime.Size = new System.Drawing.Size(334, 50);
+            BSdatetime.TabIndex = 72;
+            BSdatetime.Text = "Select Timeslot";
             // 
-            // ATCPrev
+            // BStotalprice
             // 
-            ATCPrev.BackColor = System.Drawing.Color.WhiteSmoke;
-            ATCPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ATCPrev.ForeColor = System.Drawing.Color.White;
-            ATCPrev.Image = (System.Drawing.Image)resources.GetObject("ATCPrev.Image");
-            ATCPrev.Location = new System.Drawing.Point(16, 0);
-            ATCPrev.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            ATCPrev.Name = "ATCPrev";
-            ATCPrev.Size = new System.Drawing.Size(33, 28);
-            ATCPrev.TabIndex = 39;
-            ATCPrev.UseVisualStyleBackColor = false;
+            BStotalprice.AutoSize = true;
+            BStotalprice.Dock = System.Windows.Forms.DockStyle.Fill;
+            BStotalprice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BStotalprice.ForeColor = System.Drawing.SystemColors.ControlText;
+            BStotalprice.Location = new System.Drawing.Point(62, 130);
+            BStotalprice.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            BStotalprice.Name = "BStotalprice";
+            BStotalprice.Size = new System.Drawing.Size(334, 50);
+            BStotalprice.TabIndex = 73;
+            BStotalprice.Text = "Select Timeslot";
             // 
-            // ATC2
+            // BSduration
             // 
-            ATC2.ColumnCount = 7;
-            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC2.Controls.Add(ATCSat, 6, 0);
-            ATC2.Controls.Add(ATCFri, 5, 0);
-            ATC2.Controls.Add(ATCThu, 4, 0);
-            ATC2.Controls.Add(ATCWed, 3, 0);
-            ATC2.Controls.Add(ATCTue, 2, 0);
-            ATC2.Controls.Add(ATCMon, 1, 0);
-            ATC2.Controls.Add(ATCSun, 0, 0);
-            ATC2.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATC2.Location = new System.Drawing.Point(0, 31);
-            ATC2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            ATC2.Name = "ATC2";
-            ATC2.RowCount = 1;
-            ATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATC2.Size = new System.Drawing.Size(393, 22);
-            ATC2.TabIndex = 1;
+            BSduration.AutoSize = true;
+            BSduration.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSduration.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSduration.ForeColor = System.Drawing.SystemColors.ControlText;
+            BSduration.Location = new System.Drawing.Point(62, 190);
+            BSduration.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            BSduration.Name = "BSduration";
+            BSduration.Size = new System.Drawing.Size(334, 52);
+            BSduration.TabIndex = 74;
+            BSduration.Text = "Select Timeslot";
             // 
-            // ATCSat
+            // BSservicesicon
             // 
-            ATCSat.AutoSize = true;
-            ATCSat.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCSat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCSat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCSat.Location = new System.Drawing.Point(339, 0);
-            ATCSat.Name = "ATCSat";
-            ATCSat.Size = new System.Drawing.Size(51, 22);
-            ATCSat.TabIndex = 56;
-            ATCSat.Text = "Sat";
-            ATCSat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            BSservicesicon.BackColor = System.Drawing.Color.Transparent;
+            BSservicesicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BSservicesicon.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSservicesicon.FlatAppearance.BorderSize = 0;
+            BSservicesicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BSservicesicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSservicesicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BSservicesicon.Image = (System.Drawing.Image)resources.GetObject("BSservicesicon.Image");
+            BSservicesicon.Location = new System.Drawing.Point(3, 3);
+            BSservicesicon.Name = "BSservicesicon";
+            BSservicesicon.Size = new System.Drawing.Size(53, 54);
+            BSservicesicon.TabIndex = 75;
+            BSservicesicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BSservicesicon.UseVisualStyleBackColor = false;
             // 
-            // ATCFri
+            // BSdatetimeicon
             // 
-            ATCFri.AutoSize = true;
-            ATCFri.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCFri.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCFri.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCFri.Location = new System.Drawing.Point(283, 0);
-            ATCFri.Name = "ATCFri";
-            ATCFri.Size = new System.Drawing.Size(50, 22);
-            ATCFri.TabIndex = 55;
-            ATCFri.Text = "Fri";
-            ATCFri.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            BSdatetimeicon.BackColor = System.Drawing.Color.Transparent;
+            BSdatetimeicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BSdatetimeicon.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSdatetimeicon.FlatAppearance.BorderSize = 0;
+            BSdatetimeicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BSdatetimeicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSdatetimeicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BSdatetimeicon.Image = (System.Drawing.Image)resources.GetObject("BSdatetimeicon.Image");
+            BSdatetimeicon.Location = new System.Drawing.Point(3, 63);
+            BSdatetimeicon.Name = "BSdatetimeicon";
+            BSdatetimeicon.Size = new System.Drawing.Size(53, 54);
+            BSdatetimeicon.TabIndex = 76;
+            BSdatetimeicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BSdatetimeicon.UseVisualStyleBackColor = false;
             // 
-            // ATCThu
+            // BStotalpriceicon
             // 
-            ATCThu.AutoSize = true;
-            ATCThu.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCThu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCThu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCThu.Location = new System.Drawing.Point(227, 0);
-            ATCThu.Name = "ATCThu";
-            ATCThu.Size = new System.Drawing.Size(50, 22);
-            ATCThu.TabIndex = 54;
-            ATCThu.Text = "Thu";
-            ATCThu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            BStotalpriceicon.BackColor = System.Drawing.Color.Transparent;
+            BStotalpriceicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BStotalpriceicon.Dock = System.Windows.Forms.DockStyle.Fill;
+            BStotalpriceicon.FlatAppearance.BorderSize = 0;
+            BStotalpriceicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BStotalpriceicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BStotalpriceicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BStotalpriceicon.Image = (System.Drawing.Image)resources.GetObject("BStotalpriceicon.Image");
+            BStotalpriceicon.Location = new System.Drawing.Point(3, 123);
+            BStotalpriceicon.Name = "BStotalpriceicon";
+            BStotalpriceicon.Size = new System.Drawing.Size(53, 54);
+            BStotalpriceicon.TabIndex = 77;
+            BStotalpriceicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BStotalpriceicon.UseVisualStyleBackColor = false;
             // 
-            // ATCWed
+            // BSdurationicon
             // 
-            ATCWed.AutoSize = true;
-            ATCWed.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCWed.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCWed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCWed.Location = new System.Drawing.Point(171, 0);
-            ATCWed.Name = "ATCWed";
-            ATCWed.Size = new System.Drawing.Size(50, 22);
-            ATCWed.TabIndex = 53;
-            ATCWed.Text = "Wed";
-            ATCWed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ATCTue
-            // 
-            ATCTue.AutoSize = true;
-            ATCTue.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCTue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCTue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCTue.Location = new System.Drawing.Point(115, 0);
-            ATCTue.Name = "ATCTue";
-            ATCTue.Size = new System.Drawing.Size(50, 22);
-            ATCTue.TabIndex = 52;
-            ATCTue.Text = "Tue";
-            ATCTue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ATCMon
-            // 
-            ATCMon.AutoSize = true;
-            ATCMon.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCMon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCMon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCMon.Location = new System.Drawing.Point(59, 0);
-            ATCMon.Name = "ATCMon";
-            ATCMon.Size = new System.Drawing.Size(50, 22);
-            ATCMon.TabIndex = 51;
-            ATCMon.Text = "Mon";
-            ATCMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ATCSun
-            // 
-            ATCSun.AutoSize = true;
-            ATCSun.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCSun.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCSun.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCSun.Location = new System.Drawing.Point(3, 0);
-            ATCSun.Name = "ATCSun";
-            ATCSun.Size = new System.Drawing.Size(50, 22);
-            ATCSun.TabIndex = 50;
-            ATCSun.Text = "Sun";
-            ATCSun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ATC3
-            // 
-            ATC3.ColumnCount = 7;
-            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            ATC3.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATC3.Location = new System.Drawing.Point(0, 56);
-            ATC3.Margin = new System.Windows.Forms.Padding(0);
-            ATC3.Name = "ATC3";
-            ATC3.RowCount = 6;
-            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            ATC3.Size = new System.Drawing.Size(393, 228);
-            ATC3.TabIndex = 2;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 3;
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.Location = new System.Drawing.Point(21, 526);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 2;
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(393, 125);
-            tableLayoutPanel3.TabIndex = 62;
-            // 
-            // BaADTlabel1
-            // 
-            BaADTlabel1.AutoSize = true;
-            BaADTlabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            BaADTlabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            BaADTlabel1.Location = new System.Drawing.Point(13, 493);
-            BaADTlabel1.Name = "BaADTlabel1";
-            BaADTlabel1.Size = new System.Drawing.Size(124, 23);
-            BaADTlabel1.TabIndex = 63;
-            BaADTlabel1.Text = "Select Timeslot";
-            // 
-            // ATC0
-            // 
-            ATC0.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            ATC0.ColumnCount = 1;
-            ATC0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATC0.Controls.Add(ATC01, 0, 0);
-            ATC0.Location = new System.Drawing.Point(10, 126);
-            ATC0.Margin = new System.Windows.Forms.Padding(0);
-            ATC0.Name = "ATC0";
-            ATC0.RowCount = 1;
-            ATC0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.77778F));
-            ATC0.Size = new System.Drawing.Size(412, 44);
-            ATC0.TabIndex = 64;
-            // 
-            // ATC01
-            // 
-            ATC01.ColumnCount = 4;
-            ATC01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            ATC01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            ATC01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            ATC01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            ATC01.Controls.Add(ATCnwpanel, 2, 0);
-            ATC01.Controls.Add(ATCnoworking, 3, 0);
-            ATC01.Controls.Add(ATCworking, 1, 0);
-            ATC01.Controls.Add(ATCworpanel, 0, 0);
-            ATC01.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATC01.Location = new System.Drawing.Point(0, 0);
-            ATC01.Margin = new System.Windows.Forms.Padding(0);
-            ATC01.Name = "ATC01";
-            ATC01.RowCount = 1;
-            ATC01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATC01.Size = new System.Drawing.Size(412, 44);
-            ATC01.TabIndex = 0;
-            // 
-            // ATCnwpanel
-            // 
-            ATCnwpanel.BackColor = System.Drawing.Color.DimGray;
-            ATCnwpanel.ColumnCount = 1;
-            ATCnwpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATCnwpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATCnwpanel.Controls.Add(ATCnw, 0, 0);
-            ATCnwpanel.Location = new System.Drawing.Point(215, 10);
-            ATCnwpanel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
-            ATCnwpanel.Name = "ATCnwpanel";
-            ATCnwpanel.RowCount = 1;
-            ATCnwpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATCnwpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATCnwpanel.Size = new System.Drawing.Size(41, 20);
-            ATCnwpanel.TabIndex = 56;
-            // 
-            // ATCnw
-            // 
-            ATCnw.AutoSize = true;
-            ATCnw.BackColor = System.Drawing.Color.WhiteSmoke;
-            ATCnw.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCnw.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCnw.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCnw.Location = new System.Drawing.Point(1, 1);
-            ATCnw.Margin = new System.Windows.Forms.Padding(1);
-            ATCnw.Name = "ATCnw";
-            ATCnw.Size = new System.Drawing.Size(39, 18);
-            ATCnw.TabIndex = 52;
-            ATCnw.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ATCnoworking
-            // 
-            ATCnoworking.AutoSize = true;
-            ATCnoworking.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCnoworking.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCnoworking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCnoworking.Location = new System.Drawing.Point(269, 0);
-            ATCnoworking.Name = "ATCnoworking";
-            ATCnoworking.Size = new System.Drawing.Size(140, 44);
-            ATCnoworking.TabIndex = 53;
-            ATCnoworking.Text = "- Non-Working Days";
-            ATCnoworking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ATCworking
-            // 
-            ATCworking.AutoSize = true;
-            ATCworking.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCworking.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCworking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCworking.Location = new System.Drawing.Point(85, 0);
-            ATCworking.Name = "ATCworking";
-            ATCworking.Size = new System.Drawing.Size(117, 44);
-            ATCworking.TabIndex = 50;
-            ATCworking.Text = "- Working Days";
-            ATCworking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ATCworpanel
-            // 
-            ATCworpanel.BackColor = System.Drawing.Color.DimGray;
-            ATCworpanel.ColumnCount = 1;
-            ATCworpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATCworpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATCworpanel.Controls.Add(ATCwor, 0, 0);
-            ATCworpanel.Location = new System.Drawing.Point(20, 10);
-            ATCworpanel.Margin = new System.Windows.Forms.Padding(20, 10, 20, 5);
-            ATCworpanel.Name = "ATCworpanel";
-            ATCworpanel.RowCount = 1;
-            ATCworpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATCworpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATCworpanel.Size = new System.Drawing.Size(42, 20);
-            ATCworpanel.TabIndex = 55;
-            // 
-            // ATCwor
-            // 
-            ATCwor.AutoSize = true;
-            ATCwor.BackColor = System.Drawing.Color.White;
-            ATCwor.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCwor.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ATCwor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCwor.Location = new System.Drawing.Point(1, 1);
-            ATCwor.Margin = new System.Windows.Forms.Padding(1);
-            ATCwor.Name = "ATCwor";
-            ATCwor.Size = new System.Drawing.Size(40, 18);
-            ATCwor.TabIndex = 52;
-            ATCwor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            BSdurationicon.BackColor = System.Drawing.Color.Transparent;
+            BSdurationicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BSdurationicon.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSdurationicon.FlatAppearance.BorderSize = 0;
+            BSdurationicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BSdurationicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSdurationicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BSdurationicon.Image = (System.Drawing.Image)resources.GetObject("BSdurationicon.Image");
+            BSdurationicon.Location = new System.Drawing.Point(3, 183);
+            BSdurationicon.Name = "BSdurationicon";
+            BSdurationicon.Size = new System.Drawing.Size(53, 56);
+            BSdurationicon.TabIndex = 78;
+            BSdurationicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BSdurationicon.UseVisualStyleBackColor = false;
             // 
             // ClientDashboard
             // 
@@ -5058,6 +5225,18 @@
             BaAPanel.ResumeLayout(false);
             BaADTPanel.ResumeLayout(false);
             BaADTPanel.PerformLayout();
+            ATC0.ResumeLayout(false);
+            ATC01.ResumeLayout(false);
+            ATC01.PerformLayout();
+            ATCnwpanel.ResumeLayout(false);
+            ATCnwpanel.PerformLayout();
+            ATCworpanel.ResumeLayout(false);
+            ATCworpanel.PerformLayout();
+            ATCaledar.ResumeLayout(false);
+            ATC1.ResumeLayout(false);
+            ATC1.PerformLayout();
+            ATC2.ResumeLayout(false);
+            ATC2.PerformLayout();
             BaASerpanel.ResumeLayout(false);
             BaASerpanel.PerformLayout();
             FPropanel.ResumeLayout(false);
@@ -5068,18 +5247,8 @@
             PIEpanel.PerformLayout();
             PIEprofilepanel.ResumeLayout(false);
             PIEprofilepanel.PerformLayout();
-            ATCaledar.ResumeLayout(false);
-            ATC1.ResumeLayout(false);
-            ATC1.PerformLayout();
-            ATC2.ResumeLayout(false);
-            ATC2.PerformLayout();
-            ATC0.ResumeLayout(false);
-            ATC01.ResumeLayout(false);
-            ATC01.PerformLayout();
-            ATCnwpanel.ResumeLayout(false);
-            ATCnwpanel.PerformLayout();
-            ATCworpanel.ResumeLayout(false);
-            ATCworpanel.PerformLayout();
+            BookingSumpanel.ResumeLayout(false);
+            BookingSumpanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5417,5 +5586,15 @@
         private System.Windows.Forms.Label ATCworking;
         private System.Windows.Forms.TableLayoutPanel ATCworpanel;
         private System.Windows.Forms.Label ATCwor;
+        private System.Windows.Forms.TableLayoutPanel BookingSumpanel;
+        private System.Windows.Forms.Label BookingSumlabel;
+        private System.Windows.Forms.Button BSdurationicon;
+        private System.Windows.Forms.Button BStotalpriceicon;
+        private System.Windows.Forms.Button BSdatetimeicon;
+        private System.Windows.Forms.Button BSservicesicon;
+        private System.Windows.Forms.Label BSduration;
+        private System.Windows.Forms.Label BStotalprice;
+        private System.Windows.Forms.Label BSdatetime;
+        private System.Windows.Forms.Label BSservices;
     }
 }
