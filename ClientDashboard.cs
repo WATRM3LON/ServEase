@@ -62,6 +62,7 @@ namespace OOP2
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
         string locs = "", Ems = "";
+        int facid;
         public ClientDashboard()
         {
             InitializeComponent();
@@ -179,6 +180,8 @@ namespace OOP2
             AproPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AproPanel.Width, AproPanel.Height, 10, 10));
             BaASerpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaASerpanel.Width, BaASerpanel.Height, 10, 10));
             BaADTPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaADTPanel.Width, BaADTPanel.Height, 10, 10));
+            ATCPrev.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCPrev.Width, ATCPrev.Height, 10, 10));
+            ATCNext.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCNext.Width, ATCNext.Height, 10, 10));
             //PROFILE
             ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
             PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
@@ -1343,6 +1346,7 @@ namespace OOP2
                     }
                 }
             }
+            facid = ID;
             LoadFacilityData(ID);
         }
 
@@ -1416,6 +1420,7 @@ namespace OOP2
                 }
             }
             PopulateCalendar();
+            BSservices.Text = null; BSdatetime.Text = null; BStotalprice.Text = null; BSduration.Text = null;
         }
 
         List<DayOfWeek> ParseWorkingDays(string dayRange)
@@ -1460,17 +1465,19 @@ namespace OOP2
 
             return exceptionDates;
         }
+        private DateTime? selectedAppointmentDate = null;
 
         void PopulateCalendar()
         {
-            ATC3.Controls.Clear(); ATC3.SuspendLayout();
+            ATC3.Controls.Clear();
+            ATC3.SuspendLayout();
 
             List<DayOfWeek> workingDays = ParseWorkingDays(WorDays);
-            List<DateTime> workDays = ParseWorkDays(ExceptionDay);
+            List<DateTime> exceptionDates = ParseWorkDays(ExceptionDay);
 
-            DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+            DateTime firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
             int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
-            int startCol = (int)firstDayOfMonth.DayOfWeek;
+            int startCol = (int)firstDay.DayOfWeek;
 
             int row = 0;
             int col = startCol;
@@ -1489,30 +1496,35 @@ namespace OOP2
                 }
                 else
                 {
-                    if (workDays.Any(d => d.Date == thisDate.Date))
+                    if (exceptionDates.Any(d => d.Date == thisDate.Date))
                     {
                         dayLabel.ForeColor = Color.DimGray;
                         dayLabel.BackColor = Color.WhiteSmoke;
                     }
-                    if (exceptionDays.Contains(thisDate.Date))
+                    else
                     {
-                        dayLabel.BackColor = Color.IndianRed;
+                        if (thisDate.Date > DateTime.Today.Date)
+                        {
+                            dayLabel.Cursor = Cursors.Hand;
+                            dayLabel.Click += DayLabel_Click;
+                        }
+                    }
+                    if (selectedAppointmentDate.HasValue && thisDate.Date == selectedAppointmentDate.Value)
+                    {
+                        dayLabel.BackColor = ColorTranslator.FromHtml("#69e331");
                         dayLabel.ForeColor = Color.White;
+                        LoadTimeSlotsFromDatabase(facid, selectedAppointmentDate.Value);
                     }
-                    DateTime Date = (DateTime)dayLabel.Tag;
-
-                    if (Date.Date >= DateTime.Today)
+                    if (thisDate.Date < DateTime.Today.Date)
                     {
-                        dayLabel.Cursor = Cursors.Hand;
-                        dayLabel.Click += DayLabel_Click;
+                        dayLabel.ForeColor = Color.DimGray;
                     }
-
                 }
-
                 if (thisDate.Date == DateTime.Today.Date)
                 {
-                    dayLabel.BackColor = ColorTranslator.FromHtml("#69e331");
+                    dayLabel.BackColor = ColorTranslator.FromHtml("#d9faf5");
                 }
+
                 ATC3.Controls.Add(dayLabel, col, row);
 
                 col++;
@@ -1522,43 +1534,27 @@ namespace OOP2
                     row++;
                 }
             }
-            ATCmonth.Text = currentMonth.ToString("MMMM yyyy"); ATC3.ResumeLayout();
 
+            ATCmonth.Text = currentMonth.ToString("MMMM yyyy");
+            ATC3.ResumeLayout();
+            
         }
+
         private void DayLabel_Click(object sender, EventArgs e)
         {
-            //Exceptionpanel.Visible = true;
             Label clickedLabel = sender as Label;
 
-            if (clickedLabel != null && clickedLabel.Tag is DateTime selectedDate)
+            if (clickedLabel?.Tag is DateTime selectedDate)
             {
-                selectedDate = selectedDate.Date;
-
-                if (exceptionDays.Contains(selectedDate))
-                {
-                    exceptionDays.Remove(selectedDate);
-                }
-                else
-                {
-                    exceptionDays.Add(selectedDate);
-                }
+                selectedAppointmentDate = selectedDate.Date;
 
                 PopulateCalendar();
 
-                if (exceptionDays.Count > 0)
-                {
-                    //Exceptionpanel.Visible = true;
-                    //EATException.Text = "Exception Days: " +
-                        string.Join(", ", exceptionDays.Select(d => d.ToString("dddd, dd MMMM yyyy")));
-                }
-                else
-                {
-                    //Exceptionpanel.Visible = false;
-                    //EATException.Text = string.Empty;
-                }
-
+                BSdatetime.Text = "Date and Time: " + selectedAppointmentDate?.ToString("dddd, dd MMMM yyyy");
             }
+            
         }
+
         private void ATCPrev_Click(object sender, EventArgs e)
         {
             currentMonth = currentMonth.AddMonths(-1);
@@ -1570,5 +1566,100 @@ namespace OOP2
             currentMonth = currentMonth.AddMonths(+1);
             PopulateCalendar();
         }
+
+        void LoadTimeSlotsFromDatabase(int facilityId, DateTime selectedDate)
+        {
+            TimeslotPanel.Controls.Clear();
+            TimeslotPanel.SuspendLayout();
+
+            int rows = 2, cols = 3;
+            TimeslotPanel.RowCount = rows;
+            TimeslotPanel.ColumnCount = cols;
+
+            List<(string start, string end, bool isAvailable)> slots = new List<(string, string, bool)>();
+
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                string sql = @"SELECT [Start Time], [End Time], [Status]
+                       FROM [Facility Timeslots]
+                       WHERE Facility_ID = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", facilityId);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string start = reader.IsDBNull(0) ? "" : reader.GetDateTime(0).ToString("hh:mm tt");
+                            string end = reader.IsDBNull(1) ? "" : reader.GetDateTime(1).ToString("hh:mm tt");
+                            string status = reader.IsDBNull(2) ? "" : reader.GetString(2);
+
+                            if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                            {
+                                bool available = status.Equals("Available", StringComparison.OrdinalIgnoreCase);
+                                slots.Add((start, end, available));
+                            }
+
+                            if (slots.Count >= 6) break;
+                        }
+                    }
+                }
+            }
+
+            while (slots.Count < 6)
+            {
+                slots.Add(("", "", false));
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                string slotText = string.IsNullOrEmpty(slots[i].start) ? "Unavailable" : $"{slots[i].start} - {slots[i].end}";
+
+                Label slotLabel = new Label
+                {
+                    Text = slotText,
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Fill,
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Font = new Font("Segoe UI", 9),
+                    Cursor = slots[i].isAvailable ? Cursors.Hand : Cursors.Default,
+                    BackColor = slots[i].isAvailable ? Color.White : Color.LightGray,
+                    ForeColor = slots[i].isAvailable ? Color.Black : Color.DarkGray,
+                    Tag = slots[i]
+                };
+
+                if (slots[i].isAvailable)
+                    slotLabel.Click += TimeSlotLabel_Click;
+
+                int row = i / cols;
+                int col = i % cols;
+                TimeslotPanel.Controls.Add(slotLabel, col, row);
+            }
+
+            TimeslotPanel.ResumeLayout();
+        }
+
+        Label selectedTimeSlotLabel = null;
+
+        private void TimeSlotLabel_Click(object sender, EventArgs e)
+        {
+            if (selectedTimeSlotLabel != null)
+            {
+                selectedTimeSlotLabel.BackColor = Color.White;
+                selectedTimeSlotLabel.ForeColor = Color.Black;
+            }
+
+            selectedTimeSlotLabel = sender as Label;
+            if (selectedTimeSlotLabel != null)
+            {
+                selectedTimeSlotLabel.BackColor = Color.FromArgb(105, 227, 49);
+                selectedTimeSlotLabel.ForeColor = Color.White;
+            }
+        }
+
+
     }
 }

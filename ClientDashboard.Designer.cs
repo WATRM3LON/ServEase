@@ -310,7 +310,7 @@
             ATCworpanel = new System.Windows.Forms.TableLayoutPanel();
             ATCwor = new System.Windows.Forms.Label();
             BaADTlabel1 = new System.Windows.Forms.Label();
-            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            TimeslotPanel = new System.Windows.Forms.TableLayoutPanel();
             ATCaledar = new System.Windows.Forms.TableLayoutPanel();
             ATC1 = new System.Windows.Forms.TableLayoutPanel();
             ATCNext = new System.Windows.Forms.Button();
@@ -328,6 +328,16 @@
             EditButton = new System.Windows.Forms.Button();
             BaADTlabel = new System.Windows.Forms.Label();
             BaASerpanel = new System.Windows.Forms.Panel();
+            BookingSumlabel = new System.Windows.Forms.Label();
+            BookingSumpanel = new System.Windows.Forms.TableLayoutPanel();
+            BSdurationicon = new System.Windows.Forms.Button();
+            BStotalpriceicon = new System.Windows.Forms.Button();
+            BSdatetimeicon = new System.Windows.Forms.Button();
+            BSservicesicon = new System.Windows.Forms.Button();
+            BSduration = new System.Windows.Forms.Label();
+            BStotalprice = new System.Windows.Forms.Label();
+            BSdatetime = new System.Windows.Forms.Label();
+            BSservices = new System.Windows.Forms.Label();
             FPropanel = new System.Windows.Forms.TableLayoutPanel();
             BaASer2 = new System.Windows.Forms.Panel();
             BaASer1 = new System.Windows.Forms.TableLayoutPanel();
@@ -362,16 +372,6 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            BookingSumpanel = new System.Windows.Forms.TableLayoutPanel();
-            BookingSumlabel = new System.Windows.Forms.Label();
-            BSservices = new System.Windows.Forms.Label();
-            BSdatetime = new System.Windows.Forms.Label();
-            BStotalprice = new System.Windows.Forms.Label();
-            BSduration = new System.Windows.Forms.Label();
-            BSservicesicon = new System.Windows.Forms.Button();
-            BSdatetimeicon = new System.Windows.Forms.Button();
-            BStotalpriceicon = new System.Windows.Forms.Button();
-            BSdurationicon = new System.Windows.Forms.Button();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -454,12 +454,12 @@
             ATC1.SuspendLayout();
             ATC2.SuspendLayout();
             BaASerpanel.SuspendLayout();
+            BookingSumpanel.SuspendLayout();
             FPropanel.SuspendLayout();
             BaASer1.SuspendLayout();
             EditPIPanel.SuspendLayout();
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
-            BookingSumpanel.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -4000,7 +4000,7 @@
             BAPanel.Location = new System.Drawing.Point(22, 27);
             BAPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             BAPanel.Name = "BAPanel";
-            BAPanel.Size = new System.Drawing.Size(867, 69);
+            BAPanel.Size = new System.Drawing.Size(880, 69);
             BAPanel.TabIndex = 57;
             // 
             // button30
@@ -4060,7 +4060,7 @@
             BaADTPanel.BackColor = System.Drawing.Color.White;
             BaADTPanel.Controls.Add(ATC0);
             BaADTPanel.Controls.Add(BaADTlabel1);
-            BaADTPanel.Controls.Add(tableLayoutPanel3);
+            BaADTPanel.Controls.Add(TimeslotPanel);
             BaADTPanel.Controls.Add(ATCaledar);
             BaADTPanel.Controls.Add(EditButton);
             BaADTPanel.Controls.Add(BaADTlabel);
@@ -4196,25 +4196,25 @@
             BaADTlabel1.AutoSize = true;
             BaADTlabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             BaADTlabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            BaADTlabel1.Location = new System.Drawing.Point(13, 493);
+            BaADTlabel1.Location = new System.Drawing.Point(13, 502);
             BaADTlabel1.Name = "BaADTlabel1";
             BaADTlabel1.Size = new System.Drawing.Size(124, 23);
             BaADTlabel1.TabIndex = 63;
             BaADTlabel1.Text = "Select Timeslot";
             // 
-            // tableLayoutPanel3
+            // TimeslotPanel
             // 
-            tableLayoutPanel3.ColumnCount = 3;
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.Location = new System.Drawing.Point(21, 526);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 2;
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(393, 125);
-            tableLayoutPanel3.TabIndex = 62;
+            TimeslotPanel.ColumnCount = 3;
+            TimeslotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            TimeslotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            TimeslotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            TimeslotPanel.Location = new System.Drawing.Point(21, 535);
+            TimeslotPanel.Name = "TimeslotPanel";
+            TimeslotPanel.RowCount = 2;
+            TimeslotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            TimeslotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            TimeslotPanel.Size = new System.Drawing.Size(393, 125);
+            TimeslotPanel.TabIndex = 62;
             // 
             // ATCaledar
             // 
@@ -4225,14 +4225,14 @@
             ATCaledar.Controls.Add(ATC1, 0, 0);
             ATCaledar.Controls.Add(ATC2, 0, 1);
             ATCaledar.Controls.Add(ATC3, 0, 2);
-            ATCaledar.Location = new System.Drawing.Point(19, 186);
+            ATCaledar.Location = new System.Drawing.Point(19, 184);
             ATCaledar.Margin = new System.Windows.Forms.Padding(0);
             ATCaledar.Name = "ATCaledar";
             ATCaledar.RowCount = 3;
             ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            ATCaledar.Size = new System.Drawing.Size(393, 284);
+            ATCaledar.Size = new System.Drawing.Size(393, 304);
             ATCaledar.TabIndex = 61;
             // 
             // ATC1
@@ -4251,12 +4251,12 @@
             ATC1.RowCount = 1;
             ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATC1.Size = new System.Drawing.Size(393, 28);
+            ATC1.Size = new System.Drawing.Size(393, 30);
             ATC1.TabIndex = 0;
             // 
             // ATCNext
             // 
-            ATCNext.BackColor = System.Drawing.Color.WhiteSmoke;
+            ATCNext.BackColor = System.Drawing.Color.White;
             ATCNext.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ATCNext.ForeColor = System.Drawing.Color.White;
@@ -4264,9 +4264,10 @@
             ATCNext.Location = new System.Drawing.Point(342, 0);
             ATCNext.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
             ATCNext.Name = "ATCNext";
-            ATCNext.Size = new System.Drawing.Size(35, 28);
+            ATCNext.Size = new System.Drawing.Size(35, 30);
             ATCNext.TabIndex = 40;
             ATCNext.UseVisualStyleBackColor = false;
+            ATCNext.Click += ATCNext_Click;
             // 
             // ATCmonth
             // 
@@ -4277,14 +4278,14 @@
             ATCmonth.Location = new System.Drawing.Point(65, 0);
             ATCmonth.Margin = new System.Windows.Forms.Padding(0);
             ATCmonth.Name = "ATCmonth";
-            ATCmonth.Size = new System.Drawing.Size(261, 28);
+            ATCmonth.Size = new System.Drawing.Size(261, 30);
             ATCmonth.TabIndex = 38;
             ATCmonth.Text = "Time Slots";
             ATCmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ATCPrev
             // 
-            ATCPrev.BackColor = System.Drawing.Color.WhiteSmoke;
+            ATCPrev.BackColor = System.Drawing.Color.White;
             ATCPrev.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ATCPrev.ForeColor = System.Drawing.Color.White;
@@ -4292,9 +4293,10 @@
             ATCPrev.Location = new System.Drawing.Point(16, 0);
             ATCPrev.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
             ATCPrev.Name = "ATCPrev";
-            ATCPrev.Size = new System.Drawing.Size(33, 28);
+            ATCPrev.Size = new System.Drawing.Size(33, 30);
             ATCPrev.TabIndex = 39;
             ATCPrev.UseVisualStyleBackColor = false;
+            ATCPrev.Click += ATCPrev_Click;
             // 
             // ATC2
             // 
@@ -4314,13 +4316,13 @@
             ATC2.Controls.Add(ATCMon, 1, 0);
             ATC2.Controls.Add(ATCSun, 0, 0);
             ATC2.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATC2.Location = new System.Drawing.Point(0, 31);
+            ATC2.Location = new System.Drawing.Point(0, 33);
             ATC2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             ATC2.Name = "ATC2";
             ATC2.RowCount = 1;
             ATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATC2.Size = new System.Drawing.Size(393, 22);
+            ATC2.Size = new System.Drawing.Size(393, 24);
             ATC2.TabIndex = 1;
             // 
             // ATCSat
@@ -4331,7 +4333,7 @@
             ATCSat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCSat.Location = new System.Drawing.Point(339, 0);
             ATCSat.Name = "ATCSat";
-            ATCSat.Size = new System.Drawing.Size(51, 22);
+            ATCSat.Size = new System.Drawing.Size(51, 24);
             ATCSat.TabIndex = 56;
             ATCSat.Text = "Sat";
             ATCSat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4344,7 +4346,7 @@
             ATCFri.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCFri.Location = new System.Drawing.Point(283, 0);
             ATCFri.Name = "ATCFri";
-            ATCFri.Size = new System.Drawing.Size(50, 22);
+            ATCFri.Size = new System.Drawing.Size(50, 24);
             ATCFri.TabIndex = 55;
             ATCFri.Text = "Fri";
             ATCFri.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4357,7 +4359,7 @@
             ATCThu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCThu.Location = new System.Drawing.Point(227, 0);
             ATCThu.Name = "ATCThu";
-            ATCThu.Size = new System.Drawing.Size(50, 22);
+            ATCThu.Size = new System.Drawing.Size(50, 24);
             ATCThu.TabIndex = 54;
             ATCThu.Text = "Thu";
             ATCThu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4370,7 +4372,7 @@
             ATCWed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCWed.Location = new System.Drawing.Point(171, 0);
             ATCWed.Name = "ATCWed";
-            ATCWed.Size = new System.Drawing.Size(50, 22);
+            ATCWed.Size = new System.Drawing.Size(50, 24);
             ATCWed.TabIndex = 53;
             ATCWed.Text = "Wed";
             ATCWed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4383,7 +4385,7 @@
             ATCTue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCTue.Location = new System.Drawing.Point(115, 0);
             ATCTue.Name = "ATCTue";
-            ATCTue.Size = new System.Drawing.Size(50, 22);
+            ATCTue.Size = new System.Drawing.Size(50, 24);
             ATCTue.TabIndex = 52;
             ATCTue.Text = "Tue";
             ATCTue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4396,7 +4398,7 @@
             ATCMon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCMon.Location = new System.Drawing.Point(59, 0);
             ATCMon.Name = "ATCMon";
-            ATCMon.Size = new System.Drawing.Size(50, 22);
+            ATCMon.Size = new System.Drawing.Size(50, 24);
             ATCMon.TabIndex = 51;
             ATCMon.Text = "Mon";
             ATCMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4409,7 +4411,7 @@
             ATCSun.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCSun.Location = new System.Drawing.Point(3, 0);
             ATCSun.Name = "ATCSun";
-            ATCSun.Size = new System.Drawing.Size(50, 22);
+            ATCSun.Size = new System.Drawing.Size(50, 24);
             ATCSun.TabIndex = 50;
             ATCSun.Text = "Sun";
             ATCSun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4425,7 +4427,7 @@
             ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
             ATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
             ATC3.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATC3.Location = new System.Drawing.Point(0, 56);
+            ATC3.Location = new System.Drawing.Point(0, 60);
             ATC3.Margin = new System.Windows.Forms.Padding(0);
             ATC3.Name = "ATC3";
             ATC3.RowCount = 6;
@@ -4435,7 +4437,7 @@
             ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
             ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
             ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            ATC3.Size = new System.Drawing.Size(393, 228);
+            ATC3.Size = new System.Drawing.Size(393, 244);
             ATC3.TabIndex = 2;
             // 
             // EditButton
@@ -4479,6 +4481,160 @@
             BaASerpanel.Name = "BaASerpanel";
             BaASerpanel.Size = new System.Drawing.Size(431, 746);
             BaASerpanel.TabIndex = 51;
+            // 
+            // BookingSumlabel
+            // 
+            BookingSumlabel.AutoSize = true;
+            BookingSumlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            BookingSumlabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            BookingSumlabel.Location = new System.Drawing.Point(14, 456);
+            BookingSumlabel.Name = "BookingSumlabel";
+            BookingSumlabel.Size = new System.Drawing.Size(152, 23);
+            BookingSumlabel.TabIndex = 33;
+            BookingSumlabel.Text = "Booking Summary";
+            // 
+            // BookingSumpanel
+            // 
+            BookingSumpanel.ColumnCount = 2;
+            BookingSumpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            BookingSumpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            BookingSumpanel.Controls.Add(BSdurationicon, 0, 3);
+            BookingSumpanel.Controls.Add(BStotalpriceicon, 0, 2);
+            BookingSumpanel.Controls.Add(BSdatetimeicon, 0, 1);
+            BookingSumpanel.Controls.Add(BSservicesicon, 0, 0);
+            BookingSumpanel.Controls.Add(BSduration, 1, 3);
+            BookingSumpanel.Controls.Add(BStotalprice, 1, 2);
+            BookingSumpanel.Controls.Add(BSdatetime, 1, 1);
+            BookingSumpanel.Controls.Add(BSservices, 1, 0);
+            BookingSumpanel.Location = new System.Drawing.Point(15, 492);
+            BookingSumpanel.Name = "BookingSumpanel";
+            BookingSumpanel.RowCount = 4;
+            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            BookingSumpanel.Size = new System.Drawing.Size(399, 242);
+            BookingSumpanel.TabIndex = 32;
+            // 
+            // BSdurationicon
+            // 
+            BSdurationicon.BackColor = System.Drawing.Color.Transparent;
+            BSdurationicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BSdurationicon.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSdurationicon.FlatAppearance.BorderSize = 0;
+            BSdurationicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BSdurationicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSdurationicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BSdurationicon.Image = (System.Drawing.Image)resources.GetObject("BSdurationicon.Image");
+            BSdurationicon.Location = new System.Drawing.Point(3, 183);
+            BSdurationicon.Name = "BSdurationicon";
+            BSdurationicon.Size = new System.Drawing.Size(53, 56);
+            BSdurationicon.TabIndex = 78;
+            BSdurationicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BSdurationicon.UseVisualStyleBackColor = false;
+            // 
+            // BStotalpriceicon
+            // 
+            BStotalpriceicon.BackColor = System.Drawing.Color.Transparent;
+            BStotalpriceicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BStotalpriceicon.Dock = System.Windows.Forms.DockStyle.Fill;
+            BStotalpriceicon.FlatAppearance.BorderSize = 0;
+            BStotalpriceicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BStotalpriceicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BStotalpriceicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BStotalpriceicon.Image = (System.Drawing.Image)resources.GetObject("BStotalpriceicon.Image");
+            BStotalpriceicon.Location = new System.Drawing.Point(3, 123);
+            BStotalpriceicon.Name = "BStotalpriceicon";
+            BStotalpriceicon.Size = new System.Drawing.Size(53, 54);
+            BStotalpriceicon.TabIndex = 77;
+            BStotalpriceicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BStotalpriceicon.UseVisualStyleBackColor = false;
+            // 
+            // BSdatetimeicon
+            // 
+            BSdatetimeicon.BackColor = System.Drawing.Color.Transparent;
+            BSdatetimeicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BSdatetimeicon.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSdatetimeicon.FlatAppearance.BorderSize = 0;
+            BSdatetimeicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BSdatetimeicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSdatetimeicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BSdatetimeicon.Image = (System.Drawing.Image)resources.GetObject("BSdatetimeicon.Image");
+            BSdatetimeicon.Location = new System.Drawing.Point(3, 63);
+            BSdatetimeicon.Name = "BSdatetimeicon";
+            BSdatetimeicon.Size = new System.Drawing.Size(53, 54);
+            BSdatetimeicon.TabIndex = 76;
+            BSdatetimeicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BSdatetimeicon.UseVisualStyleBackColor = false;
+            // 
+            // BSservicesicon
+            // 
+            BSservicesicon.BackColor = System.Drawing.Color.Transparent;
+            BSservicesicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BSservicesicon.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSservicesicon.FlatAppearance.BorderSize = 0;
+            BSservicesicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BSservicesicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSservicesicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BSservicesicon.Image = (System.Drawing.Image)resources.GetObject("BSservicesicon.Image");
+            BSservicesicon.Location = new System.Drawing.Point(3, 3);
+            BSservicesicon.Name = "BSservicesicon";
+            BSservicesicon.Size = new System.Drawing.Size(53, 54);
+            BSservicesicon.TabIndex = 75;
+            BSservicesicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BSservicesicon.UseVisualStyleBackColor = false;
+            // 
+            // BSduration
+            // 
+            BSduration.AutoSize = true;
+            BSduration.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSduration.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSduration.ForeColor = System.Drawing.SystemColors.ControlText;
+            BSduration.Location = new System.Drawing.Point(62, 190);
+            BSduration.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            BSduration.Name = "BSduration";
+            BSduration.Size = new System.Drawing.Size(334, 52);
+            BSduration.TabIndex = 74;
+            BSduration.Text = "Select Timeslot";
+            // 
+            // BStotalprice
+            // 
+            BStotalprice.AutoSize = true;
+            BStotalprice.Dock = System.Windows.Forms.DockStyle.Fill;
+            BStotalprice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BStotalprice.ForeColor = System.Drawing.SystemColors.ControlText;
+            BStotalprice.Location = new System.Drawing.Point(62, 130);
+            BStotalprice.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            BStotalprice.Name = "BStotalprice";
+            BStotalprice.Size = new System.Drawing.Size(334, 50);
+            BStotalprice.TabIndex = 73;
+            BStotalprice.Text = "Select Timeslot";
+            // 
+            // BSdatetime
+            // 
+            BSdatetime.AutoSize = true;
+            BSdatetime.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSdatetime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSdatetime.ForeColor = System.Drawing.SystemColors.ControlText;
+            BSdatetime.Location = new System.Drawing.Point(62, 70);
+            BSdatetime.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            BSdatetime.Name = "BSdatetime";
+            BSdatetime.Size = new System.Drawing.Size(334, 50);
+            BSdatetime.TabIndex = 72;
+            BSdatetime.Text = "Select Timeslot";
+            // 
+            // BSservices
+            // 
+            BSservices.AutoSize = true;
+            BSservices.Dock = System.Windows.Forms.DockStyle.Fill;
+            BSservices.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSservices.ForeColor = System.Drawing.SystemColors.ControlText;
+            BSservices.Location = new System.Drawing.Point(62, 10);
+            BSservices.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            BSservices.Name = "BSservices";
+            BSservices.Size = new System.Drawing.Size(334, 50);
+            BSservices.TabIndex = 65;
+            BSservices.Text = "Select Timeslot";
             // 
             // FPropanel
             // 
@@ -4923,160 +5079,6 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
-            // BookingSumpanel
-            // 
-            BookingSumpanel.ColumnCount = 2;
-            BookingSumpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            BookingSumpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            BookingSumpanel.Controls.Add(BSdurationicon, 0, 3);
-            BookingSumpanel.Controls.Add(BStotalpriceicon, 0, 2);
-            BookingSumpanel.Controls.Add(BSdatetimeicon, 0, 1);
-            BookingSumpanel.Controls.Add(BSservicesicon, 0, 0);
-            BookingSumpanel.Controls.Add(BSduration, 1, 3);
-            BookingSumpanel.Controls.Add(BStotalprice, 1, 2);
-            BookingSumpanel.Controls.Add(BSdatetime, 1, 1);
-            BookingSumpanel.Controls.Add(BSservices, 1, 0);
-            BookingSumpanel.Location = new System.Drawing.Point(15, 492);
-            BookingSumpanel.Name = "BookingSumpanel";
-            BookingSumpanel.RowCount = 4;
-            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            BookingSumpanel.Size = new System.Drawing.Size(399, 242);
-            BookingSumpanel.TabIndex = 32;
-            // 
-            // BookingSumlabel
-            // 
-            BookingSumlabel.AutoSize = true;
-            BookingSumlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            BookingSumlabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            BookingSumlabel.Location = new System.Drawing.Point(14, 456);
-            BookingSumlabel.Name = "BookingSumlabel";
-            BookingSumlabel.Size = new System.Drawing.Size(152, 23);
-            BookingSumlabel.TabIndex = 33;
-            BookingSumlabel.Text = "Booking Summary";
-            // 
-            // BSservices
-            // 
-            BSservices.AutoSize = true;
-            BSservices.Dock = System.Windows.Forms.DockStyle.Fill;
-            BSservices.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BSservices.ForeColor = System.Drawing.SystemColors.ControlText;
-            BSservices.Location = new System.Drawing.Point(62, 10);
-            BSservices.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            BSservices.Name = "BSservices";
-            BSservices.Size = new System.Drawing.Size(334, 50);
-            BSservices.TabIndex = 65;
-            BSservices.Text = "Select Timeslot";
-            // 
-            // BSdatetime
-            // 
-            BSdatetime.AutoSize = true;
-            BSdatetime.Dock = System.Windows.Forms.DockStyle.Fill;
-            BSdatetime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BSdatetime.ForeColor = System.Drawing.SystemColors.ControlText;
-            BSdatetime.Location = new System.Drawing.Point(62, 70);
-            BSdatetime.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            BSdatetime.Name = "BSdatetime";
-            BSdatetime.Size = new System.Drawing.Size(334, 50);
-            BSdatetime.TabIndex = 72;
-            BSdatetime.Text = "Select Timeslot";
-            // 
-            // BStotalprice
-            // 
-            BStotalprice.AutoSize = true;
-            BStotalprice.Dock = System.Windows.Forms.DockStyle.Fill;
-            BStotalprice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BStotalprice.ForeColor = System.Drawing.SystemColors.ControlText;
-            BStotalprice.Location = new System.Drawing.Point(62, 130);
-            BStotalprice.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            BStotalprice.Name = "BStotalprice";
-            BStotalprice.Size = new System.Drawing.Size(334, 50);
-            BStotalprice.TabIndex = 73;
-            BStotalprice.Text = "Select Timeslot";
-            // 
-            // BSduration
-            // 
-            BSduration.AutoSize = true;
-            BSduration.Dock = System.Windows.Forms.DockStyle.Fill;
-            BSduration.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BSduration.ForeColor = System.Drawing.SystemColors.ControlText;
-            BSduration.Location = new System.Drawing.Point(62, 190);
-            BSduration.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            BSduration.Name = "BSduration";
-            BSduration.Size = new System.Drawing.Size(334, 52);
-            BSduration.TabIndex = 74;
-            BSduration.Text = "Select Timeslot";
-            // 
-            // BSservicesicon
-            // 
-            BSservicesicon.BackColor = System.Drawing.Color.Transparent;
-            BSservicesicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            BSservicesicon.Dock = System.Windows.Forms.DockStyle.Fill;
-            BSservicesicon.FlatAppearance.BorderSize = 0;
-            BSservicesicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            BSservicesicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BSservicesicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            BSservicesicon.Image = (System.Drawing.Image)resources.GetObject("BSservicesicon.Image");
-            BSservicesicon.Location = new System.Drawing.Point(3, 3);
-            BSservicesicon.Name = "BSservicesicon";
-            BSservicesicon.Size = new System.Drawing.Size(53, 54);
-            BSservicesicon.TabIndex = 75;
-            BSservicesicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            BSservicesicon.UseVisualStyleBackColor = false;
-            // 
-            // BSdatetimeicon
-            // 
-            BSdatetimeicon.BackColor = System.Drawing.Color.Transparent;
-            BSdatetimeicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            BSdatetimeicon.Dock = System.Windows.Forms.DockStyle.Fill;
-            BSdatetimeicon.FlatAppearance.BorderSize = 0;
-            BSdatetimeicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            BSdatetimeicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BSdatetimeicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            BSdatetimeicon.Image = (System.Drawing.Image)resources.GetObject("BSdatetimeicon.Image");
-            BSdatetimeicon.Location = new System.Drawing.Point(3, 63);
-            BSdatetimeicon.Name = "BSdatetimeicon";
-            BSdatetimeicon.Size = new System.Drawing.Size(53, 54);
-            BSdatetimeicon.TabIndex = 76;
-            BSdatetimeicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            BSdatetimeicon.UseVisualStyleBackColor = false;
-            // 
-            // BStotalpriceicon
-            // 
-            BStotalpriceicon.BackColor = System.Drawing.Color.Transparent;
-            BStotalpriceicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            BStotalpriceicon.Dock = System.Windows.Forms.DockStyle.Fill;
-            BStotalpriceicon.FlatAppearance.BorderSize = 0;
-            BStotalpriceicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            BStotalpriceicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BStotalpriceicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            BStotalpriceicon.Image = (System.Drawing.Image)resources.GetObject("BStotalpriceicon.Image");
-            BStotalpriceicon.Location = new System.Drawing.Point(3, 123);
-            BStotalpriceicon.Name = "BStotalpriceicon";
-            BStotalpriceicon.Size = new System.Drawing.Size(53, 54);
-            BStotalpriceicon.TabIndex = 77;
-            BStotalpriceicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            BStotalpriceicon.UseVisualStyleBackColor = false;
-            // 
-            // BSdurationicon
-            // 
-            BSdurationicon.BackColor = System.Drawing.Color.Transparent;
-            BSdurationicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            BSdurationicon.Dock = System.Windows.Forms.DockStyle.Fill;
-            BSdurationicon.FlatAppearance.BorderSize = 0;
-            BSdurationicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            BSdurationicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            BSdurationicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            BSdurationicon.Image = (System.Drawing.Image)resources.GetObject("BSdurationicon.Image");
-            BSdurationicon.Location = new System.Drawing.Point(3, 183);
-            BSdurationicon.Name = "BSdurationicon";
-            BSdurationicon.Size = new System.Drawing.Size(53, 56);
-            BSdurationicon.TabIndex = 78;
-            BSdurationicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            BSdurationicon.UseVisualStyleBackColor = false;
-            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -5239,6 +5241,8 @@
             ATC2.PerformLayout();
             BaASerpanel.ResumeLayout(false);
             BaASerpanel.PerformLayout();
+            BookingSumpanel.ResumeLayout(false);
+            BookingSumpanel.PerformLayout();
             FPropanel.ResumeLayout(false);
             BaASer1.ResumeLayout(false);
             BaASer1.PerformLayout();
@@ -5247,8 +5251,6 @@
             PIEpanel.PerformLayout();
             PIEprofilepanel.ResumeLayout(false);
             PIEprofilepanel.PerformLayout();
-            BookingSumpanel.ResumeLayout(false);
-            BookingSumpanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5576,7 +5578,7 @@
         private System.Windows.Forms.Label ATCMon;
         private System.Windows.Forms.Label ATCSun;
         private System.Windows.Forms.TableLayoutPanel ATC3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel TimeslotPanel;
         private System.Windows.Forms.Label BaADTlabel1;
         private System.Windows.Forms.TableLayoutPanel ATC0;
         private System.Windows.Forms.TableLayoutPanel ATC01;
