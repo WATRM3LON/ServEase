@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -137,8 +138,8 @@ namespace OOP2
             FacSerOPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FacSerOPanel.Width, FacSerOPanel.Height, 10, 10));
             EditButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton.Width, EditButton.Height, 10, 10));
             BAPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BAPanel.Width, BAPanel.Height, 10, 10));
-            panel93.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel93.Width, panel93.Height, 10, 10));
-            panel71.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel71.Width, panel71.Height, 10, 10));
+            BaASerpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaASerpanel.Width, BaASerpanel.Height, 10, 10));
+            BaADTPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaADTPanel.Width, BaADTPanel.Height, 10, 10));
             SOTable.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOTable.Width, SOTable.Height, 10, 10));
             //Calendar
             CalendarPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CalendarPanel.Width, CalendarPanel.Height, 10, 10));
@@ -653,7 +654,7 @@ namespace OOP2
             }
         }
 
-        private void button28_Click(object sender, EventArgs e)
+        private void FPBookAppButton_Click(object sender, EventArgs e)
         {
             FacilityProPanel.Visible = false;
             FacilityProPanel2.Visible = true;
@@ -1361,6 +1362,39 @@ namespace OOP2
                             margin += clientSO.Height + 3;
 
                             ClientSopanel.Controls.Add(clientSO);
+                        }
+                    }
+                }
+            }
+
+            BaASer2.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT [Service Name], Price, Duration FROM [Facility Services] WHERE Facility_ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int marginbottom = 3;
+
+                        while (reader.Read())
+                        {
+                            string serviceName = reader.IsDBNull("Service Name") ? "" : reader.GetString("Service Name");
+                            decimal price = reader.IsDBNull("Price") ? 0 : reader.GetDecimal("Price");
+                            string duration = reader.IsDBNull("Duration") ? "" : reader.GetValue("Duration").ToString();
+
+                            ClientAppointment clientAppointment = new ClientAppointment();
+
+                            clientAppointment.SetData(serviceName, price, duration);
+                            clientAppointment.Location = new Point(0, marginbottom);
+                            marginbottom += clientAppointment.Height + 3;
+
+                            BaASer2.Controls.Add(clientAppointment);
                         }
                     }
                 }

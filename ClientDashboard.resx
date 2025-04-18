@@ -881,7 +881,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel23.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BeautySpanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMMAAAAzCAYAAAAq7byzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAQ69JREFUeF6tfXd0W/eV5s7Z/Wdix3YSO4knM5mdMzslmTjZye4mJzMpTrHjXiVZ
@@ -1183,7 +1183,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel30.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="MisSpanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMMAAAAzCAYAAAAq7byzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAZx9JREFUeF6l/edXlmm29Q3vL/fe3VVlTmUOoKAiKkhWJChZJOcMkiWKoIgIKmAk
@@ -1636,7 +1636,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="HealthSpanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMMAAAAzCAYAAAAq7byzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAXqlJREFUeF6tvWdUVOnSNowiQYLkLDkKgigoJgyomHOOYxzj6JhzDpgVFBOgIDnn
@@ -2053,7 +2053,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel26.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FoodSpanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMMAAAAzCAYAAAAq7byzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAbIBJREFUeF59/WV0XFmarou6zxjduxiTK8HMzMy2bMu2zCyZJFnMzMzMUoSYmZmZ
@@ -2529,7 +2529,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel28.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="EduSpanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMMAAAAzCAYAAAAq7byzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAefBJREFUeF5U/fV3m1nW/Ys61d3FmEoFHHBsx8wsWRYzW2RmZmbm2E5MsePEiROH
@@ -3062,7 +3062,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel24.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="RepairSpanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMMAAAAzCAYAAAAq7byzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAdUxJREFUeF51vQV01lfW9v2t95mZGhT3AAlxd/eECHF3d3d3I8SVEAgkhAQL7u4U
@@ -3576,7 +3576,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel19.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FitnessSpanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMMAAAAzCAYAAAAq7byzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAVU9JREFUeF6tvXV8FOf6/02oURe0tFhbKO5OILi7FStOoVhbSp06tMVqOMUtgRDi

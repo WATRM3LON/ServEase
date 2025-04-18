@@ -117,42 +117,42 @@
             label13 = new System.Windows.Forms.Label();
             timer1 = new System.Windows.Forms.Timer(components);
             ServicesPanel = new System.Windows.Forms.Panel();
-            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            ServiceTPanel = new System.Windows.Forms.TableLayoutPanel();
             BeautySPanel = new System.Windows.Forms.Panel();
             BeautySbutton = new System.Windows.Forms.Button();
             button18 = new System.Windows.Forms.Button();
-            label35 = new System.Windows.Forms.Label();
-            panel23 = new System.Windows.Forms.Panel();
+            BeautySlabel = new System.Windows.Forms.Label();
+            BeautySpanel1 = new System.Windows.Forms.Panel();
             MisSPanel = new System.Windows.Forms.Panel();
             MisSbutton = new System.Windows.Forms.Button();
             button26 = new System.Windows.Forms.Button();
-            label30 = new System.Windows.Forms.Label();
-            panel30 = new System.Windows.Forms.Panel();
+            MisSlabel = new System.Windows.Forms.Label();
+            MisSpanel1 = new System.Windows.Forms.Panel();
             HealthSPanel = new System.Windows.Forms.Panel();
             HealthSbutton = new System.Windows.Forms.Button();
             button16 = new System.Windows.Forms.Button();
-            label28 = new System.Windows.Forms.Label();
-            panel21 = new System.Windows.Forms.Panel();
+            HealthSlabel = new System.Windows.Forms.Label();
+            HealthSpanel1 = new System.Windows.Forms.Panel();
             FoodSPanel = new System.Windows.Forms.Panel();
             FoodSbutton = new System.Windows.Forms.Button();
             button22 = new System.Windows.Forms.Button();
-            label34 = new System.Windows.Forms.Label();
-            panel26 = new System.Windows.Forms.Panel();
+            FoodSlabel = new System.Windows.Forms.Label();
+            FoodSpanel1 = new System.Windows.Forms.Panel();
             EduSPanel = new System.Windows.Forms.Panel();
             EduSbutton = new System.Windows.Forms.Button();
             button24 = new System.Windows.Forms.Button();
-            label29 = new System.Windows.Forms.Label();
-            panel28 = new System.Windows.Forms.Panel();
+            EduSlabel = new System.Windows.Forms.Label();
+            EduSpanel1 = new System.Windows.Forms.Panel();
             RepairSPanel = new System.Windows.Forms.Panel();
             RepairSbutton = new System.Windows.Forms.Button();
             button20 = new System.Windows.Forms.Button();
-            label33 = new System.Windows.Forms.Label();
-            panel24 = new System.Windows.Forms.Panel();
+            RepairSlabel = new System.Windows.Forms.Label();
+            RepairSpanel1 = new System.Windows.Forms.Panel();
             FitnessSPanel = new System.Windows.Forms.Panel();
             FitnessSbutton = new System.Windows.Forms.Button();
             button14 = new System.Windows.Forms.Button();
-            label26 = new System.Windows.Forms.Label();
-            panel19 = new System.Windows.Forms.Panel();
+            FitnessSlabel = new System.Windows.Forms.Label();
+            FitnessSpanel1 = new System.Windows.Forms.Panel();
             SerButton = new System.Windows.Forms.Button();
             SerPanel = new System.Windows.Forms.Panel();
             HeaderPanel = new System.Windows.Forms.Panel();
@@ -299,8 +299,8 @@
             BAPanel = new System.Windows.Forms.Panel();
             button30 = new System.Windows.Forms.Button();
             button32 = new System.Windows.Forms.Button();
-            tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            panel71 = new System.Windows.Forms.Panel();
+            BaAPanel = new System.Windows.Forms.TableLayoutPanel();
+            BaADTPanel = new System.Windows.Forms.Panel();
             EditButton = new System.Windows.Forms.Button();
             tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             label152 = new System.Windows.Forms.Label();
@@ -311,39 +311,14 @@
             label162 = new System.Windows.Forms.Label();
             label148 = new System.Windows.Forms.Label();
             panel70 = new System.Windows.Forms.Panel();
-            panel93 = new System.Windows.Forms.Panel();
+            BaASerpanel = new System.Windows.Forms.Panel();
+            FPropanel = new System.Windows.Forms.TableLayoutPanel();
+            BaASer1 = new System.Windows.Forms.TableLayoutPanel();
+            BADuration = new System.Windows.Forms.Label();
+            BAPrice = new System.Windows.Forms.Label();
+            BAService = new System.Windows.Forms.Label();
+            BaASer2 = new System.Windows.Forms.TableLayoutPanel();
             label112 = new System.Windows.Forms.Label();
-            tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            panel78 = new System.Windows.Forms.Panel();
-            label115 = new System.Windows.Forms.Label();
-            panel82 = new System.Windows.Forms.Panel();
-            label150 = new System.Windows.Forms.Label();
-            panel86 = new System.Windows.Forms.Panel();
-            label154 = new System.Windows.Forms.Label();
-            panel87 = new System.Windows.Forms.Panel();
-            label155 = new System.Windows.Forms.Label();
-            panel90 = new System.Windows.Forms.Panel();
-            label158 = new System.Windows.Forms.Label();
-            panel89 = new System.Windows.Forms.Panel();
-            label157 = new System.Windows.Forms.Label();
-            panel83 = new System.Windows.Forms.Panel();
-            label151 = new System.Windows.Forms.Label();
-            panel81 = new System.Windows.Forms.Panel();
-            label149 = new System.Windows.Forms.Label();
-            panel77 = new System.Windows.Forms.Panel();
-            label114 = new System.Windows.Forms.Label();
-            panel74 = new System.Windows.Forms.Panel();
-            label109 = new System.Windows.Forms.Label();
-            panel88 = new System.Windows.Forms.Panel();
-            label156 = new System.Windows.Forms.Label();
-            panel79 = new System.Windows.Forms.Panel();
-            label147 = new System.Windows.Forms.Label();
-            panel75 = new System.Windows.Forms.Panel();
-            label110 = new System.Windows.Forms.Label();
-            panel73 = new System.Windows.Forms.Panel();
-            label108 = new System.Windows.Forms.Label();
-            panel72 = new System.Windows.Forms.Panel();
-            label104 = new System.Windows.Forms.Label();
             EditPIPanel = new System.Windows.Forms.Panel();
             PIEpanel = new System.Windows.Forms.Panel();
             PIESextext = new System.Windows.Forms.TextBox();
@@ -390,7 +365,7 @@
             panel15.SuspendLayout();
             panel13.SuspendLayout();
             ServicesPanel.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
+            ServiceTPanel.SuspendLayout();
             BeautySPanel.SuspendLayout();
             MisSPanel.SuspendLayout();
             HealthSPanel.SuspendLayout();
@@ -443,26 +418,12 @@
             SBPanel.SuspendLayout();
             FacilityProPanel2.SuspendLayout();
             BAPanel.SuspendLayout();
-            tableLayoutPanel7.SuspendLayout();
-            panel71.SuspendLayout();
+            BaAPanel.SuspendLayout();
+            BaADTPanel.SuspendLayout();
             tableLayoutPanel9.SuspendLayout();
-            panel93.SuspendLayout();
-            tableLayoutPanel8.SuspendLayout();
-            panel78.SuspendLayout();
-            panel82.SuspendLayout();
-            panel86.SuspendLayout();
-            panel87.SuspendLayout();
-            panel90.SuspendLayout();
-            panel89.SuspendLayout();
-            panel83.SuspendLayout();
-            panel81.SuspendLayout();
-            panel77.SuspendLayout();
-            panel74.SuspendLayout();
-            panel88.SuspendLayout();
-            panel79.SuspendLayout();
-            panel75.SuspendLayout();
-            panel73.SuspendLayout();
-            panel72.SuspendLayout();
+            BaASerpanel.SuspendLayout();
+            FPropanel.SuspendLayout();
+            BaASer1.SuspendLayout();
             EditPIPanel.SuspendLayout();
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
@@ -1630,43 +1591,43 @@
             // 
             ServicesPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ServicesPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            ServicesPanel.Controls.Add(tableLayoutPanel3);
+            ServicesPanel.Controls.Add(ServiceTPanel);
             ServicesPanel.Location = new System.Drawing.Point(277, 175);
             ServicesPanel.Name = "ServicesPanel";
             ServicesPanel.Size = new System.Drawing.Size(893, 799);
             ServicesPanel.TabIndex = 39;
             // 
-            // tableLayoutPanel3
+            // ServiceTPanel
             // 
-            tableLayoutPanel3.ColumnCount = 3;
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanel3.Controls.Add(BeautySPanel, 0, 0);
-            tableLayoutPanel3.Controls.Add(MisSPanel, 0, 2);
-            tableLayoutPanel3.Controls.Add(HealthSPanel, 1, 0);
-            tableLayoutPanel3.Controls.Add(FoodSPanel, 2, 1);
-            tableLayoutPanel3.Controls.Add(EduSPanel, 0, 1);
-            tableLayoutPanel3.Controls.Add(RepairSPanel, 1, 1);
-            tableLayoutPanel3.Controls.Add(FitnessSPanel, 2, 0);
-            tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 3;
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(893, 799);
-            tableLayoutPanel3.TabIndex = 41;
+            ServiceTPanel.ColumnCount = 3;
+            ServiceTPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            ServiceTPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            ServiceTPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            ServiceTPanel.Controls.Add(BeautySPanel, 0, 0);
+            ServiceTPanel.Controls.Add(MisSPanel, 0, 2);
+            ServiceTPanel.Controls.Add(HealthSPanel, 1, 0);
+            ServiceTPanel.Controls.Add(FoodSPanel, 2, 1);
+            ServiceTPanel.Controls.Add(EduSPanel, 0, 1);
+            ServiceTPanel.Controls.Add(RepairSPanel, 1, 1);
+            ServiceTPanel.Controls.Add(FitnessSPanel, 2, 0);
+            ServiceTPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            ServiceTPanel.Location = new System.Drawing.Point(0, 0);
+            ServiceTPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ServiceTPanel.Name = "ServiceTPanel";
+            ServiceTPanel.RowCount = 3;
+            ServiceTPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            ServiceTPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            ServiceTPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            ServiceTPanel.Size = new System.Drawing.Size(893, 799);
+            ServiceTPanel.TabIndex = 41;
             // 
             // BeautySPanel
             // 
             BeautySPanel.BackColor = System.Drawing.Color.White;
             BeautySPanel.Controls.Add(BeautySbutton);
             BeautySPanel.Controls.Add(button18);
-            BeautySPanel.Controls.Add(label35);
-            BeautySPanel.Controls.Add(panel23);
+            BeautySPanel.Controls.Add(BeautySlabel);
+            BeautySPanel.Controls.Add(BeautySpanel1);
             BeautySPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             BeautySPanel.Location = new System.Drawing.Point(7, 8);
             BeautySPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
@@ -1705,35 +1666,35 @@
             button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button18.UseVisualStyleBackColor = false;
             // 
-            // label35
+            // BeautySlabel
             // 
-            label35.AutoSize = true;
-            label35.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label35.Location = new System.Drawing.Point(15, 103);
-            label35.Name = "label35";
-            label35.Size = new System.Drawing.Size(166, 50);
-            label35.TabIndex = 35;
-            label35.Text = "Personal Care and \r\nBeauty Services";
+            BeautySlabel.AutoSize = true;
+            BeautySlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            BeautySlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BeautySlabel.Location = new System.Drawing.Point(15, 103);
+            BeautySlabel.Name = "BeautySlabel";
+            BeautySlabel.Size = new System.Drawing.Size(166, 50);
+            BeautySlabel.TabIndex = 35;
+            BeautySlabel.Text = "Personal Care and \r\nBeauty Services";
             // 
-            // panel23
+            // BeautySpanel1
             // 
-            panel23.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel23.BackColor = System.Drawing.Color.LightGray;
-            panel23.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel23.BackgroundImage");
-            panel23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            panel23.Location = new System.Drawing.Point(12, 14);
-            panel23.Name = "panel23";
-            panel23.Size = new System.Drawing.Size(258, 78);
-            panel23.TabIndex = 34;
+            BeautySpanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BeautySpanel1.BackColor = System.Drawing.Color.LightGray;
+            BeautySpanel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("BeautySpanel1.BackgroundImage");
+            BeautySpanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            BeautySpanel1.Location = new System.Drawing.Point(12, 14);
+            BeautySpanel1.Name = "BeautySpanel1";
+            BeautySpanel1.Size = new System.Drawing.Size(258, 78);
+            BeautySpanel1.TabIndex = 34;
             // 
             // MisSPanel
             // 
             MisSPanel.BackColor = System.Drawing.Color.White;
             MisSPanel.Controls.Add(MisSbutton);
             MisSPanel.Controls.Add(button26);
-            MisSPanel.Controls.Add(label30);
-            MisSPanel.Controls.Add(panel30);
+            MisSPanel.Controls.Add(MisSlabel);
+            MisSPanel.Controls.Add(MisSpanel1);
             MisSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             MisSPanel.Location = new System.Drawing.Point(7, 540);
             MisSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
@@ -1772,34 +1733,34 @@
             button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button26.UseVisualStyleBackColor = false;
             // 
-            // label30
+            // MisSlabel
             // 
-            label30.AutoSize = true;
-            label30.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label30.Location = new System.Drawing.Point(8, 103);
-            label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(203, 25);
-            label30.TabIndex = 35;
-            label30.Text = "Miscellaneous Services";
+            MisSlabel.AutoSize = true;
+            MisSlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            MisSlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            MisSlabel.Location = new System.Drawing.Point(8, 103);
+            MisSlabel.Name = "MisSlabel";
+            MisSlabel.Size = new System.Drawing.Size(203, 25);
+            MisSlabel.TabIndex = 35;
+            MisSlabel.Text = "Miscellaneous Services";
             // 
-            // panel30
+            // MisSpanel1
             // 
-            panel30.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel30.BackColor = System.Drawing.Color.LightGray;
-            panel30.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel30.BackgroundImage");
-            panel30.Location = new System.Drawing.Point(12, 14);
-            panel30.Name = "panel30";
-            panel30.Size = new System.Drawing.Size(258, 78);
-            panel30.TabIndex = 34;
+            MisSpanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            MisSpanel1.BackColor = System.Drawing.Color.LightGray;
+            MisSpanel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("MisSpanel1.BackgroundImage");
+            MisSpanel1.Location = new System.Drawing.Point(12, 14);
+            MisSpanel1.Name = "MisSpanel1";
+            MisSpanel1.Size = new System.Drawing.Size(258, 78);
+            MisSpanel1.TabIndex = 34;
             // 
             // HealthSPanel
             // 
             HealthSPanel.BackColor = System.Drawing.Color.White;
             HealthSPanel.Controls.Add(HealthSbutton);
             HealthSPanel.Controls.Add(button16);
-            HealthSPanel.Controls.Add(label28);
-            HealthSPanel.Controls.Add(panel21);
+            HealthSPanel.Controls.Add(HealthSlabel);
+            HealthSPanel.Controls.Add(HealthSpanel1);
             HealthSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             HealthSPanel.Location = new System.Drawing.Point(304, 8);
             HealthSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
@@ -1838,34 +1799,34 @@
             button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button16.UseVisualStyleBackColor = false;
             // 
-            // label28
+            // HealthSlabel
             // 
-            label28.AutoSize = true;
-            label28.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label28.Location = new System.Drawing.Point(15, 103);
-            label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(177, 50);
-            label28.TabIndex = 35;
-            label28.Text = "Health and Medical \r\nServices";
+            HealthSlabel.AutoSize = true;
+            HealthSlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            HealthSlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            HealthSlabel.Location = new System.Drawing.Point(15, 103);
+            HealthSlabel.Name = "HealthSlabel";
+            HealthSlabel.Size = new System.Drawing.Size(177, 50);
+            HealthSlabel.TabIndex = 35;
+            HealthSlabel.Text = "Health and Medical \r\nServices";
             // 
-            // panel21
+            // HealthSpanel1
             // 
-            panel21.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel21.BackColor = System.Drawing.Color.LightGray;
-            panel21.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel21.BackgroundImage");
-            panel21.Location = new System.Drawing.Point(12, 14);
-            panel21.Name = "panel21";
-            panel21.Size = new System.Drawing.Size(258, 78);
-            panel21.TabIndex = 34;
+            HealthSpanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            HealthSpanel1.BackColor = System.Drawing.Color.LightGray;
+            HealthSpanel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("HealthSpanel1.BackgroundImage");
+            HealthSpanel1.Location = new System.Drawing.Point(12, 14);
+            HealthSpanel1.Name = "HealthSpanel1";
+            HealthSpanel1.Size = new System.Drawing.Size(258, 78);
+            HealthSpanel1.TabIndex = 34;
             // 
             // FoodSPanel
             // 
             FoodSPanel.BackColor = System.Drawing.Color.White;
             FoodSPanel.Controls.Add(FoodSbutton);
             FoodSPanel.Controls.Add(button22);
-            FoodSPanel.Controls.Add(label34);
-            FoodSPanel.Controls.Add(panel26);
+            FoodSPanel.Controls.Add(FoodSlabel);
+            FoodSPanel.Controls.Add(FoodSpanel1);
             FoodSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             FoodSPanel.Location = new System.Drawing.Point(601, 274);
             FoodSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
@@ -1904,34 +1865,34 @@
             button22.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button22.UseVisualStyleBackColor = false;
             // 
-            // label34
+            // FoodSlabel
             // 
-            label34.AutoSize = true;
-            label34.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label34.Location = new System.Drawing.Point(15, 103);
-            label34.Name = "label34";
-            label34.Size = new System.Drawing.Size(185, 50);
-            label34.TabIndex = 35;
-            label34.Text = "Food and Beverages \r\nServices";
+            FoodSlabel.AutoSize = true;
+            FoodSlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FoodSlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FoodSlabel.Location = new System.Drawing.Point(15, 103);
+            FoodSlabel.Name = "FoodSlabel";
+            FoodSlabel.Size = new System.Drawing.Size(185, 50);
+            FoodSlabel.TabIndex = 35;
+            FoodSlabel.Text = "Food and Beverages \r\nServices";
             // 
-            // panel26
+            // FoodSpanel1
             // 
-            panel26.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel26.BackColor = System.Drawing.Color.LightGray;
-            panel26.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel26.BackgroundImage");
-            panel26.Location = new System.Drawing.Point(12, 14);
-            panel26.Name = "panel26";
-            panel26.Size = new System.Drawing.Size(260, 78);
-            panel26.TabIndex = 34;
+            FoodSpanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FoodSpanel1.BackColor = System.Drawing.Color.LightGray;
+            FoodSpanel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("FoodSpanel1.BackgroundImage");
+            FoodSpanel1.Location = new System.Drawing.Point(12, 14);
+            FoodSpanel1.Name = "FoodSpanel1";
+            FoodSpanel1.Size = new System.Drawing.Size(260, 78);
+            FoodSpanel1.TabIndex = 34;
             // 
             // EduSPanel
             // 
             EduSPanel.BackColor = System.Drawing.Color.White;
             EduSPanel.Controls.Add(EduSbutton);
             EduSPanel.Controls.Add(button24);
-            EduSPanel.Controls.Add(label29);
-            EduSPanel.Controls.Add(panel28);
+            EduSPanel.Controls.Add(EduSlabel);
+            EduSPanel.Controls.Add(EduSpanel1);
             EduSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             EduSPanel.Location = new System.Drawing.Point(7, 274);
             EduSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
@@ -1970,34 +1931,34 @@
             button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button24.UseVisualStyleBackColor = false;
             // 
-            // label29
+            // EduSlabel
             // 
-            label29.AutoSize = true;
-            label29.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label29.Location = new System.Drawing.Point(15, 103);
-            label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(212, 50);
-            label29.TabIndex = 35;
-            label29.Text = "Education and Tutoring \r\nServices";
+            EduSlabel.AutoSize = true;
+            EduSlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            EduSlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EduSlabel.Location = new System.Drawing.Point(15, 103);
+            EduSlabel.Name = "EduSlabel";
+            EduSlabel.Size = new System.Drawing.Size(212, 50);
+            EduSlabel.TabIndex = 35;
+            EduSlabel.Text = "Education and Tutoring \r\nServices";
             // 
-            // panel28
+            // EduSpanel1
             // 
-            panel28.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel28.BackColor = System.Drawing.Color.LightGray;
-            panel28.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel28.BackgroundImage");
-            panel28.Location = new System.Drawing.Point(12, 14);
-            panel28.Name = "panel28";
-            panel28.Size = new System.Drawing.Size(258, 78);
-            panel28.TabIndex = 34;
+            EduSpanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EduSpanel1.BackColor = System.Drawing.Color.LightGray;
+            EduSpanel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("EduSpanel1.BackgroundImage");
+            EduSpanel1.Location = new System.Drawing.Point(12, 14);
+            EduSpanel1.Name = "EduSpanel1";
+            EduSpanel1.Size = new System.Drawing.Size(258, 78);
+            EduSpanel1.TabIndex = 34;
             // 
             // RepairSPanel
             // 
             RepairSPanel.BackColor = System.Drawing.Color.White;
             RepairSPanel.Controls.Add(RepairSbutton);
             RepairSPanel.Controls.Add(button20);
-            RepairSPanel.Controls.Add(label33);
-            RepairSPanel.Controls.Add(panel24);
+            RepairSPanel.Controls.Add(RepairSlabel);
+            RepairSPanel.Controls.Add(RepairSpanel1);
             RepairSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             RepairSPanel.Location = new System.Drawing.Point(304, 274);
             RepairSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
@@ -2036,34 +1997,34 @@
             button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button20.UseVisualStyleBackColor = false;
             // 
-            // label33
+            // RepairSlabel
             // 
-            label33.AutoSize = true;
-            label33.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label33.Location = new System.Drawing.Point(15, 103);
-            label33.Name = "label33";
-            label33.Size = new System.Drawing.Size(185, 50);
-            label33.TabIndex = 35;
-            label33.Text = "Repair and Technical \r\nServices";
+            RepairSlabel.AutoSize = true;
+            RepairSlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            RepairSlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            RepairSlabel.Location = new System.Drawing.Point(15, 103);
+            RepairSlabel.Name = "RepairSlabel";
+            RepairSlabel.Size = new System.Drawing.Size(185, 50);
+            RepairSlabel.TabIndex = 35;
+            RepairSlabel.Text = "Repair and Technical \r\nServices";
             // 
-            // panel24
+            // RepairSpanel1
             // 
-            panel24.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel24.BackColor = System.Drawing.Color.LightGray;
-            panel24.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel24.BackgroundImage");
-            panel24.Location = new System.Drawing.Point(12, 14);
-            panel24.Name = "panel24";
-            panel24.Size = new System.Drawing.Size(258, 78);
-            panel24.TabIndex = 34;
+            RepairSpanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            RepairSpanel1.BackColor = System.Drawing.Color.LightGray;
+            RepairSpanel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("RepairSpanel1.BackgroundImage");
+            RepairSpanel1.Location = new System.Drawing.Point(12, 14);
+            RepairSpanel1.Name = "RepairSpanel1";
+            RepairSpanel1.Size = new System.Drawing.Size(258, 78);
+            RepairSpanel1.TabIndex = 34;
             // 
             // FitnessSPanel
             // 
             FitnessSPanel.BackColor = System.Drawing.Color.White;
             FitnessSPanel.Controls.Add(FitnessSbutton);
             FitnessSPanel.Controls.Add(button14);
-            FitnessSPanel.Controls.Add(label26);
-            FitnessSPanel.Controls.Add(panel19);
+            FitnessSPanel.Controls.Add(FitnessSlabel);
+            FitnessSPanel.Controls.Add(FitnessSpanel1);
             FitnessSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             FitnessSPanel.Location = new System.Drawing.Point(601, 8);
             FitnessSPanel.Margin = new System.Windows.Forms.Padding(7, 8, 7, 0);
@@ -2102,26 +2063,26 @@
             button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button14.UseVisualStyleBackColor = false;
             // 
-            // label26
+            // FitnessSlabel
             // 
-            label26.AutoSize = true;
-            label26.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label26.Location = new System.Drawing.Point(15, 103);
-            label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(171, 50);
-            label26.TabIndex = 35;
-            label26.Text = "Fitness and Sports \r\nServices";
+            FitnessSlabel.AutoSize = true;
+            FitnessSlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FitnessSlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FitnessSlabel.Location = new System.Drawing.Point(15, 103);
+            FitnessSlabel.Name = "FitnessSlabel";
+            FitnessSlabel.Size = new System.Drawing.Size(171, 50);
+            FitnessSlabel.TabIndex = 35;
+            FitnessSlabel.Text = "Fitness and Sports \r\nServices";
             // 
-            // panel19
+            // FitnessSpanel1
             // 
-            panel19.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel19.BackColor = System.Drawing.Color.LightGray;
-            panel19.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel19.BackgroundImage");
-            panel19.Location = new System.Drawing.Point(12, 14);
-            panel19.Name = "panel19";
-            panel19.Size = new System.Drawing.Size(260, 78);
-            panel19.TabIndex = 34;
+            FitnessSpanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FitnessSpanel1.BackColor = System.Drawing.Color.LightGray;
+            FitnessSpanel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("FitnessSpanel1.BackgroundImage");
+            FitnessSpanel1.Location = new System.Drawing.Point(12, 14);
+            FitnessSpanel1.Name = "FitnessSpanel1";
+            FitnessSpanel1.Size = new System.Drawing.Size(260, 78);
+            FitnessSpanel1.TabIndex = 34;
             // 
             // SerButton
             // 
@@ -3933,9 +3894,9 @@
             // 
             ClientSopanel.AutoScroll = true;
             ClientSopanel.BackColor = System.Drawing.Color.White;
-            ClientSopanel.Location = new System.Drawing.Point(1, 128);
+            ClientSopanel.Location = new System.Drawing.Point(1, 134);
             ClientSopanel.Name = "ClientSopanel";
-            ClientSopanel.Size = new System.Drawing.Size(871, 426);
+            ClientSopanel.Size = new System.Drawing.Size(871, 420);
             ClientSopanel.TabIndex = 58;
             // 
             // SBPanel
@@ -3966,7 +3927,7 @@
             FPBookAppButton.Text = "Book an Appointment";
             FPBookAppButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             FPBookAppButton.UseVisualStyleBackColor = false;
-            FPBookAppButton.Click += button28_Click;
+            FPBookAppButton.Click += FPBookAppButton_Click;
             // 
             // SOButton
             // 
@@ -3991,10 +3952,10 @@
             FacilityProPanel2.BackColor = System.Drawing.Color.Transparent;
             FacilityProPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             FacilityProPanel2.Controls.Add(BAPanel);
-            FacilityProPanel2.Controls.Add(tableLayoutPanel7);
+            FacilityProPanel2.Controls.Add(BaAPanel);
             FacilityProPanel2.Location = new System.Drawing.Point(277, 177);
             FacilityProPanel2.Name = "FacilityProPanel2";
-            FacilityProPanel2.Size = new System.Drawing.Size(893, 744);
+            FacilityProPanel2.Size = new System.Drawing.Size(913, 744);
             FacilityProPanel2.TabIndex = 57;
             // 
             // BAPanel
@@ -4003,10 +3964,10 @@
             BAPanel.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
             BAPanel.Controls.Add(button30);
             BAPanel.Controls.Add(button32);
-            BAPanel.Location = new System.Drawing.Point(25, 29);
+            BAPanel.Location = new System.Drawing.Point(22, 27);
             BAPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             BAPanel.Name = "BAPanel";
-            BAPanel.Size = new System.Drawing.Size(841, 69);
+            BAPanel.Size = new System.Drawing.Size(867, 69);
             BAPanel.TabIndex = 57;
             // 
             // button30
@@ -4017,15 +3978,15 @@
             button30.FlatStyle = System.Windows.Forms.FlatStyle.System;
             button30.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button30.Location = new System.Drawing.Point(291, 12);
+            button30.Location = new System.Drawing.Point(364, 12);
             button30.Name = "button30";
             button30.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            button30.Size = new System.Drawing.Size(273, 77);
+            button30.Size = new System.Drawing.Size(347, 77);
             button30.TabIndex = 26;
             button30.Text = "Book an Appointment";
             button30.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button30.UseVisualStyleBackColor = false;
-            button30.Click += button28_Click;
+            button30.Click += FPBookAppButton_Click;
             // 
             // button32
             // 
@@ -4038,42 +3999,42 @@
             button32.Location = new System.Drawing.Point(15, 9);
             button32.Name = "button32";
             button32.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            button32.Size = new System.Drawing.Size(273, 77);
+            button32.Size = new System.Drawing.Size(347, 77);
             button32.TabIndex = 25;
             button32.Text = "Services Offered";
             button32.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button32.UseVisualStyleBackColor = false;
             button32.Click += SerStoreButton1_Click;
             // 
-            // tableLayoutPanel7
+            // BaAPanel
             // 
-            tableLayoutPanel7.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            tableLayoutPanel7.ColumnCount = 2;
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel7.Controls.Add(panel71, 1, 0);
-            tableLayoutPanel7.Controls.Add(panel93, 0, 0);
-            tableLayoutPanel7.Location = new System.Drawing.Point(11, 12);
-            tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 1;
-            tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel7.Size = new System.Drawing.Size(871, 668);
-            tableLayoutPanel7.TabIndex = 53;
+            BaAPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BaAPanel.ColumnCount = 2;
+            BaAPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            BaAPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            BaAPanel.Controls.Add(BaADTPanel, 1, 0);
+            BaAPanel.Controls.Add(BaASerpanel, 0, 0);
+            BaAPanel.Location = new System.Drawing.Point(11, 12);
+            BaAPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            BaAPanel.Name = "BaAPanel";
+            BaAPanel.RowCount = 1;
+            BaAPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            BaAPanel.Size = new System.Drawing.Size(891, 668);
+            BaAPanel.TabIndex = 53;
             // 
-            // panel71
+            // BaADTPanel
             // 
-            panel71.BackColor = System.Drawing.Color.White;
-            panel71.Controls.Add(EditButton);
-            panel71.Controls.Add(tableLayoutPanel9);
-            panel71.Controls.Add(label148);
-            panel71.Controls.Add(panel70);
-            panel71.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel71.Location = new System.Drawing.Point(442, 15);
-            panel71.Margin = new System.Windows.Forms.Padding(7, 15, 13, 15);
-            panel71.Name = "panel71";
-            panel71.Size = new System.Drawing.Size(416, 638);
-            panel71.TabIndex = 52;
+            BaADTPanel.BackColor = System.Drawing.Color.White;
+            BaADTPanel.Controls.Add(EditButton);
+            BaADTPanel.Controls.Add(tableLayoutPanel9);
+            BaADTPanel.Controls.Add(label148);
+            BaADTPanel.Controls.Add(panel70);
+            BaADTPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            BaADTPanel.Location = new System.Drawing.Point(452, 15);
+            BaADTPanel.Margin = new System.Windows.Forms.Padding(7, 15, 13, 15);
+            BaADTPanel.Name = "BaADTPanel";
+            BaADTPanel.Size = new System.Drawing.Size(426, 638);
+            BaADTPanel.TabIndex = 52;
             // 
             // EditButton
             // 
@@ -4084,7 +4045,7 @@
             EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             EditButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             EditButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            EditButton.Location = new System.Drawing.Point(203, 577);
+            EditButton.Location = new System.Drawing.Point(213, 577);
             EditButton.Name = "EditButton";
             EditButton.Size = new System.Drawing.Size(199, 51);
             EditButton.TabIndex = 60;
@@ -4113,7 +4074,7 @@
             tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            tableLayoutPanel9.Size = new System.Drawing.Size(391, 149);
+            tableLayoutPanel9.Size = new System.Drawing.Size(401, 149);
             tableLayoutPanel9.TabIndex = 59;
             // 
             // label152
@@ -4122,10 +4083,10 @@
             label152.AutoSize = true;
             label152.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label152.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label152.Location = new System.Drawing.Point(267, 8);
+            label152.Location = new System.Drawing.Point(273, 8);
             label152.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             label152.Name = "label152";
-            label152.Size = new System.Drawing.Size(117, 20);
+            label152.Size = new System.Drawing.Size(121, 20);
             label152.TabIndex = 52;
             label152.Text = "7:00 - 8:00";
             // 
@@ -4135,10 +4096,10 @@
             label153.AutoSize = true;
             label153.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label153.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label153.Location = new System.Drawing.Point(267, 82);
+            label153.Location = new System.Drawing.Point(273, 82);
             label153.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             label153.Name = "label153";
-            label153.Size = new System.Drawing.Size(117, 20);
+            label153.Size = new System.Drawing.Size(121, 20);
             label153.TabIndex = 51;
             label153.Text = "4:00 - 5:00";
             // 
@@ -4148,10 +4109,10 @@
             label159.AutoSize = true;
             label159.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label159.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label159.Location = new System.Drawing.Point(137, 82);
+            label159.Location = new System.Drawing.Point(140, 82);
             label159.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             label159.Name = "label159";
-            label159.Size = new System.Drawing.Size(116, 20);
+            label159.Size = new System.Drawing.Size(119, 20);
             label159.TabIndex = 49;
             label159.Text = "3:00 - 4:00";
             // 
@@ -4164,7 +4125,7 @@
             label160.Location = new System.Drawing.Point(7, 82);
             label160.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             label160.Name = "label160";
-            label160.Size = new System.Drawing.Size(116, 20);
+            label160.Size = new System.Drawing.Size(119, 20);
             label160.TabIndex = 48;
             label160.Text = "2:00 - 3:00";
             // 
@@ -4174,10 +4135,10 @@
             label161.AutoSize = true;
             label161.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label161.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label161.Location = new System.Drawing.Point(137, 8);
+            label161.Location = new System.Drawing.Point(140, 8);
             label161.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             label161.Name = "label161";
-            label161.Size = new System.Drawing.Size(116, 20);
+            label161.Size = new System.Drawing.Size(119, 20);
             label161.TabIndex = 47;
             label161.Text = "9:00 - 10:00";
             // 
@@ -4190,7 +4151,7 @@
             label162.Location = new System.Drawing.Point(7, 8);
             label162.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             label162.Name = "label162";
-            label162.Size = new System.Drawing.Size(116, 20);
+            label162.Size = new System.Drawing.Size(119, 20);
             label162.TabIndex = 46;
             label162.Text = "8:00 - 9:00";
             // 
@@ -4213,20 +4174,110 @@
             panel70.Location = new System.Drawing.Point(4, 135);
             panel70.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             panel70.Name = "panel70";
-            panel70.Size = new System.Drawing.Size(409, 253);
+            panel70.Size = new System.Drawing.Size(419, 253);
             panel70.TabIndex = 58;
             // 
-            // panel93
+            // BaASerpanel
             // 
-            panel93.BackColor = System.Drawing.Color.White;
-            panel93.Controls.Add(label112);
-            panel93.Controls.Add(tableLayoutPanel8);
-            panel93.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel93.Location = new System.Drawing.Point(13, 15);
-            panel93.Margin = new System.Windows.Forms.Padding(13, 15, 7, 15);
-            panel93.Name = "panel93";
-            panel93.Size = new System.Drawing.Size(415, 638);
-            panel93.TabIndex = 51;
+            BaASerpanel.BackColor = System.Drawing.Color.White;
+            BaASerpanel.Controls.Add(FPropanel);
+            BaASerpanel.Controls.Add(label112);
+            BaASerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            BaASerpanel.Location = new System.Drawing.Point(13, 15);
+            BaASerpanel.Margin = new System.Windows.Forms.Padding(13, 15, 7, 15);
+            BaASerpanel.Name = "BaASerpanel";
+            BaASerpanel.Size = new System.Drawing.Size(425, 638);
+            BaASerpanel.TabIndex = 51;
+            // 
+            // FPropanel
+            // 
+            FPropanel.ColumnCount = 1;
+            FPropanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            FPropanel.Controls.Add(BaASer1, 0, 0);
+            FPropanel.Controls.Add(BaASer2, 0, 1);
+            FPropanel.Location = new System.Drawing.Point(16, 138);
+            FPropanel.Margin = new System.Windows.Forms.Padding(0);
+            FPropanel.Name = "FPropanel";
+            FPropanel.RowCount = 2;
+            FPropanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            FPropanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            FPropanel.Size = new System.Drawing.Size(385, 379);
+            FPropanel.TabIndex = 31;
+            // 
+            // BaASer1
+            // 
+            BaASer1.ColumnCount = 3;
+            BaASer1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            BaASer1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            BaASer1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            BaASer1.Controls.Add(BADuration, 2, 0);
+            BaASer1.Controls.Add(BAPrice, 1, 0);
+            BaASer1.Controls.Add(BAService, 0, 0);
+            BaASer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            BaASer1.Location = new System.Drawing.Point(0, 0);
+            BaASer1.Margin = new System.Windows.Forms.Padding(0);
+            BaASer1.Name = "BaASer1";
+            BaASer1.RowCount = 1;
+            BaASer1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            BaASer1.Size = new System.Drawing.Size(385, 56);
+            BaASer1.TabIndex = 0;
+            // 
+            // BADuration
+            // 
+            BADuration.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BADuration.AutoSize = true;
+            BADuration.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            BADuration.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            BADuration.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BADuration.Location = new System.Drawing.Point(272, 0);
+            BADuration.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            BADuration.Name = "BADuration";
+            BADuration.Size = new System.Drawing.Size(113, 56);
+            BADuration.TabIndex = 40;
+            BADuration.Text = "Duration";
+            BADuration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BAPrice
+            // 
+            BAPrice.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BAPrice.AutoSize = true;
+            BAPrice.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            BAPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            BAPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BAPrice.Location = new System.Drawing.Point(157, 0);
+            BAPrice.Name = "BAPrice";
+            BAPrice.Size = new System.Drawing.Size(109, 56);
+            BAPrice.TabIndex = 39;
+            BAPrice.Text = "Price";
+            BAPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BAService
+            // 
+            BAService.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            BAService.AutoSize = true;
+            BAService.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
+            BAService.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            BAService.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BAService.Location = new System.Drawing.Point(0, 0);
+            BAService.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            BAService.Name = "BAService";
+            BAService.Size = new System.Drawing.Size(151, 56);
+            BAService.TabIndex = 38;
+            BAService.Text = "Service Name";
+            BAService.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BaASer2
+            // 
+            BaASer2.ColumnCount = 1;
+            BaASer2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            BaASer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            BaASer2.Location = new System.Drawing.Point(0, 61);
+            BaASer2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            BaASer2.Name = "BaASer2";
+            BaASer2.RowCount = 1;
+            BaASer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            BaASer2.Size = new System.Drawing.Size(385, 318);
+            BaASer2.TabIndex = 1;
             // 
             // label112
             // 
@@ -4238,390 +4289,6 @@
             label112.Size = new System.Drawing.Size(122, 23);
             label112.TabIndex = 30;
             label112.Text = "Select Services";
-            // 
-            // tableLayoutPanel8
-            // 
-            tableLayoutPanel8.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            tableLayoutPanel8.ColumnCount = 3;
-            tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel8.Controls.Add(panel78, 0, 4);
-            tableLayoutPanel8.Controls.Add(panel82, 0, 3);
-            tableLayoutPanel8.Controls.Add(panel86, 0, 2);
-            tableLayoutPanel8.Controls.Add(panel87, 0, 1);
-            tableLayoutPanel8.Controls.Add(panel90, 0, 0);
-            tableLayoutPanel8.Controls.Add(panel89, 1, 0);
-            tableLayoutPanel8.Controls.Add(panel83, 1, 1);
-            tableLayoutPanel8.Controls.Add(panel81, 1, 2);
-            tableLayoutPanel8.Controls.Add(panel77, 1, 3);
-            tableLayoutPanel8.Controls.Add(panel74, 1, 4);
-            tableLayoutPanel8.Controls.Add(panel88, 2, 0);
-            tableLayoutPanel8.Controls.Add(panel79, 2, 1);
-            tableLayoutPanel8.Controls.Add(panel75, 2, 2);
-            tableLayoutPanel8.Controls.Add(panel73, 2, 3);
-            tableLayoutPanel8.Controls.Add(panel72, 2, 4);
-            tableLayoutPanel8.Location = new System.Drawing.Point(1, 132);
-            tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 5;
-            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            tableLayoutPanel8.Size = new System.Drawing.Size(415, 502);
-            tableLayoutPanel8.TabIndex = 57;
-            // 
-            // panel78
-            // 
-            panel78.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel78.Controls.Add(label115);
-            panel78.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel78.Location = new System.Drawing.Point(3, 403);
-            panel78.Name = "panel78";
-            panel78.Size = new System.Drawing.Size(132, 96);
-            panel78.TabIndex = 41;
-            panel78.Tag = "";
-            // 
-            // label115
-            // 
-            label115.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label115.AutoSize = true;
-            label115.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label115.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label115.Location = new System.Drawing.Point(5, 26);
-            label115.Name = "label115";
-            label115.Size = new System.Drawing.Size(88, 15);
-            label115.TabIndex = 37;
-            label115.Text = "Service Name 4";
-            // 
-            // panel82
-            // 
-            panel82.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel82.Controls.Add(label150);
-            panel82.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel82.Location = new System.Drawing.Point(3, 303);
-            panel82.Name = "panel82";
-            panel82.Size = new System.Drawing.Size(132, 94);
-            panel82.TabIndex = 41;
-            panel82.Tag = "";
-            // 
-            // label150
-            // 
-            label150.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label150.AutoSize = true;
-            label150.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label150.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label150.Location = new System.Drawing.Point(5, 26);
-            label150.Name = "label150";
-            label150.Size = new System.Drawing.Size(88, 15);
-            label150.TabIndex = 37;
-            label150.Text = "Service Name 3";
-            // 
-            // panel86
-            // 
-            panel86.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel86.Controls.Add(label154);
-            panel86.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel86.Location = new System.Drawing.Point(3, 203);
-            panel86.Name = "panel86";
-            panel86.Size = new System.Drawing.Size(132, 94);
-            panel86.TabIndex = 41;
-            panel86.Tag = "";
-            // 
-            // label154
-            // 
-            label154.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label154.AutoSize = true;
-            label154.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label154.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label154.Location = new System.Drawing.Point(5, 26);
-            label154.Name = "label154";
-            label154.Size = new System.Drawing.Size(88, 15);
-            label154.TabIndex = 37;
-            label154.Text = "Service Name 2";
-            // 
-            // panel87
-            // 
-            panel87.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel87.Controls.Add(label155);
-            panel87.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel87.Location = new System.Drawing.Point(3, 103);
-            panel87.Name = "panel87";
-            panel87.Size = new System.Drawing.Size(132, 94);
-            panel87.TabIndex = 39;
-            panel87.Tag = "";
-            // 
-            // label155
-            // 
-            label155.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label155.AutoSize = true;
-            label155.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label155.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label155.Location = new System.Drawing.Point(5, 26);
-            label155.Name = "label155";
-            label155.Size = new System.Drawing.Size(88, 15);
-            label155.TabIndex = 37;
-            label155.Text = "Service Name 1";
-            // 
-            // panel90
-            // 
-            panel90.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
-            panel90.Controls.Add(label158);
-            panel90.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel90.Location = new System.Drawing.Point(3, 0);
-            panel90.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            panel90.Name = "panel90";
-            panel90.Size = new System.Drawing.Size(132, 97);
-            panel90.TabIndex = 37;
-            panel90.Tag = "";
-            // 
-            // label158
-            // 
-            label158.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label158.AutoSize = true;
-            label158.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label158.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label158.Location = new System.Drawing.Point(12, 28);
-            label158.Name = "label158";
-            label158.Size = new System.Drawing.Size(80, 15);
-            label158.TabIndex = 37;
-            label158.Text = "Service Name";
-            // 
-            // panel89
-            // 
-            panel89.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
-            panel89.Controls.Add(label157);
-            panel89.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel89.Location = new System.Drawing.Point(141, 0);
-            panel89.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            panel89.Name = "panel89";
-            panel89.Size = new System.Drawing.Size(132, 97);
-            panel89.TabIndex = 39;
-            panel89.Tag = "";
-            // 
-            // label157
-            // 
-            label157.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label157.AutoSize = true;
-            label157.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label157.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label157.Location = new System.Drawing.Point(53, 28);
-            label157.Name = "label157";
-            label157.Size = new System.Drawing.Size(33, 15);
-            label157.TabIndex = 37;
-            label157.Text = "Price";
-            // 
-            // panel83
-            // 
-            panel83.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel83.Controls.Add(label151);
-            panel83.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel83.Location = new System.Drawing.Point(141, 103);
-            panel83.Name = "panel83";
-            panel83.Size = new System.Drawing.Size(132, 94);
-            panel83.TabIndex = 40;
-            panel83.Tag = "";
-            // 
-            // label151
-            // 
-            label151.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label151.AutoSize = true;
-            label151.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label151.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label151.Location = new System.Drawing.Point(20, 26);
-            label151.Name = "label151";
-            label151.Size = new System.Drawing.Size(75, 15);
-            label151.TabIndex = 37;
-            label151.Text = "PHP 1,000.00";
-            // 
-            // panel81
-            // 
-            panel81.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel81.Controls.Add(label149);
-            panel81.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel81.Location = new System.Drawing.Point(141, 203);
-            panel81.Name = "panel81";
-            panel81.Size = new System.Drawing.Size(132, 94);
-            panel81.TabIndex = 43;
-            panel81.Tag = "";
-            // 
-            // label149
-            // 
-            label149.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label149.AutoSize = true;
-            label149.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label149.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label149.Location = new System.Drawing.Point(20, 26);
-            label149.Name = "label149";
-            label149.Size = new System.Drawing.Size(66, 15);
-            label149.TabIndex = 37;
-            label149.Text = "PHP 500.00";
-            // 
-            // panel77
-            // 
-            panel77.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel77.Controls.Add(label114);
-            panel77.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel77.Location = new System.Drawing.Point(141, 303);
-            panel77.Name = "panel77";
-            panel77.Size = new System.Drawing.Size(132, 94);
-            panel77.TabIndex = 43;
-            panel77.Tag = "";
-            // 
-            // label114
-            // 
-            label114.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label114.AutoSize = true;
-            label114.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label114.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label114.Location = new System.Drawing.Point(20, 26);
-            label114.Name = "label114";
-            label114.Size = new System.Drawing.Size(75, 15);
-            label114.TabIndex = 37;
-            label114.Text = "PHP 1,800.00";
-            // 
-            // panel74
-            // 
-            panel74.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel74.Controls.Add(label109);
-            panel74.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel74.Location = new System.Drawing.Point(141, 403);
-            panel74.Name = "panel74";
-            panel74.Size = new System.Drawing.Size(132, 96);
-            panel74.TabIndex = 43;
-            panel74.Tag = "";
-            // 
-            // label109
-            // 
-            label109.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label109.AutoSize = true;
-            label109.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label109.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label109.Location = new System.Drawing.Point(20, 26);
-            label109.Name = "label109";
-            label109.Size = new System.Drawing.Size(66, 15);
-            label109.TabIndex = 37;
-            label109.Text = "PHP 100.00";
-            // 
-            // panel88
-            // 
-            panel88.BackColor = System.Drawing.Color.FromArgb(217, 250, 245);
-            panel88.Controls.Add(label156);
-            panel88.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel88.Location = new System.Drawing.Point(279, 0);
-            panel88.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            panel88.Name = "panel88";
-            panel88.Size = new System.Drawing.Size(133, 97);
-            panel88.TabIndex = 39;
-            panel88.Tag = "";
-            // 
-            // label156
-            // 
-            label156.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label156.AutoSize = true;
-            label156.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label156.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label156.Location = new System.Drawing.Point(37, 28);
-            label156.Name = "label156";
-            label156.Size = new System.Drawing.Size(54, 15);
-            label156.TabIndex = 37;
-            label156.Text = "Duration";
-            // 
-            // panel79
-            // 
-            panel79.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel79.Controls.Add(label147);
-            panel79.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel79.Location = new System.Drawing.Point(279, 103);
-            panel79.Name = "panel79";
-            panel79.Size = new System.Drawing.Size(133, 94);
-            panel79.TabIndex = 40;
-            panel79.Tag = "";
-            // 
-            // label147
-            // 
-            label147.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label147.AutoSize = true;
-            label147.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label147.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label147.Location = new System.Drawing.Point(44, 23);
-            label147.Name = "label147";
-            label147.Size = new System.Drawing.Size(48, 15);
-            label147.TabIndex = 37;
-            label147.Text = "60 mins";
-            // 
-            // panel75
-            // 
-            panel75.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel75.Controls.Add(label110);
-            panel75.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel75.Location = new System.Drawing.Point(279, 203);
-            panel75.Name = "panel75";
-            panel75.Size = new System.Drawing.Size(133, 94);
-            panel75.TabIndex = 42;
-            panel75.Tag = "";
-            // 
-            // label110
-            // 
-            label110.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label110.AutoSize = true;
-            label110.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label110.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label110.Location = new System.Drawing.Point(44, 23);
-            label110.Name = "label110";
-            label110.Size = new System.Drawing.Size(48, 15);
-            label110.TabIndex = 37;
-            label110.Text = "30 mins";
-            // 
-            // panel73
-            // 
-            panel73.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel73.Controls.Add(label108);
-            panel73.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel73.Location = new System.Drawing.Point(279, 303);
-            panel73.Name = "panel73";
-            panel73.Size = new System.Drawing.Size(133, 94);
-            panel73.TabIndex = 42;
-            panel73.Tag = "";
-            // 
-            // label108
-            // 
-            label108.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label108.AutoSize = true;
-            label108.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label108.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label108.Location = new System.Drawing.Point(44, 23);
-            label108.Name = "label108";
-            label108.Size = new System.Drawing.Size(48, 15);
-            label108.TabIndex = 37;
-            label108.Text = "60 mins";
-            // 
-            // panel72
-            // 
-            panel72.BackColor = System.Drawing.Color.WhiteSmoke;
-            panel72.Controls.Add(label104);
-            panel72.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel72.Location = new System.Drawing.Point(279, 403);
-            panel72.Name = "panel72";
-            panel72.Size = new System.Drawing.Size(133, 96);
-            panel72.TabIndex = 42;
-            panel72.Tag = "";
-            // 
-            // label104
-            // 
-            label104.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label104.AutoSize = true;
-            label104.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label104.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label104.Location = new System.Drawing.Point(44, 23);
-            label104.Name = "label104";
-            label104.Size = new System.Drawing.Size(48, 15);
-            label104.TabIndex = 37;
-            label104.Text = "20 mins";
             // 
             // EditPIPanel
             // 
@@ -4974,15 +4641,12 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(ProfilePanel);
+            Controls.Add(FacilityProPanel2);
             Controls.Add(FacilityProPanel);
             Controls.Add(SerPanel);
-            Controls.Add(ServicesPanel);
             Controls.Add(EditPIPanel);
             Controls.Add(ViewdetailsPanel);
-            Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
-            Controls.Add(FacilityProPanel2);
             Controls.Add(SettingPanel);
             Controls.Add(panel45);
             Controls.Add(panel3);
@@ -4999,6 +4663,9 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
+            Controls.Add(AppointmentsPanel);
+            Controls.Add(ServicesPanel);
+            Controls.Add(ProfilePanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -5037,7 +4704,7 @@
             panel13.ResumeLayout(false);
             panel13.PerformLayout();
             ServicesPanel.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
+            ServiceTPanel.ResumeLayout(false);
             BeautySPanel.ResumeLayout(false);
             BeautySPanel.PerformLayout();
             MisSPanel.ResumeLayout(false);
@@ -5113,44 +4780,16 @@
             SBPanel.ResumeLayout(false);
             FacilityProPanel2.ResumeLayout(false);
             BAPanel.ResumeLayout(false);
-            tableLayoutPanel7.ResumeLayout(false);
-            panel71.ResumeLayout(false);
-            panel71.PerformLayout();
+            BaAPanel.ResumeLayout(false);
+            BaADTPanel.ResumeLayout(false);
+            BaADTPanel.PerformLayout();
             tableLayoutPanel9.ResumeLayout(false);
             tableLayoutPanel9.PerformLayout();
-            panel93.ResumeLayout(false);
-            panel93.PerformLayout();
-            tableLayoutPanel8.ResumeLayout(false);
-            panel78.ResumeLayout(false);
-            panel78.PerformLayout();
-            panel82.ResumeLayout(false);
-            panel82.PerformLayout();
-            panel86.ResumeLayout(false);
-            panel86.PerformLayout();
-            panel87.ResumeLayout(false);
-            panel87.PerformLayout();
-            panel90.ResumeLayout(false);
-            panel90.PerformLayout();
-            panel89.ResumeLayout(false);
-            panel89.PerformLayout();
-            panel83.ResumeLayout(false);
-            panel83.PerformLayout();
-            panel81.ResumeLayout(false);
-            panel81.PerformLayout();
-            panel77.ResumeLayout(false);
-            panel77.PerformLayout();
-            panel74.ResumeLayout(false);
-            panel74.PerformLayout();
-            panel88.ResumeLayout(false);
-            panel88.PerformLayout();
-            panel79.ResumeLayout(false);
-            panel79.PerformLayout();
-            panel75.ResumeLayout(false);
-            panel75.PerformLayout();
-            panel73.ResumeLayout(false);
-            panel73.PerformLayout();
-            panel72.ResumeLayout(false);
-            panel72.PerformLayout();
+            BaASerpanel.ResumeLayout(false);
+            BaASerpanel.PerformLayout();
+            FPropanel.ResumeLayout(false);
+            BaASer1.ResumeLayout(false);
+            BaASer1.PerformLayout();
             EditPIPanel.ResumeLayout(false);
             PIEpanel.ResumeLayout(false);
             PIEpanel.PerformLayout();
@@ -5369,43 +5008,12 @@
         private System.Windows.Forms.Button SOButton;
         private System.Windows.Forms.Button FPButton;
         private System.Windows.Forms.Panel FacilityProPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Panel panel71;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Panel panel72;
-        private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.Panel panel73;
-        private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.Panel panel74;
-        private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.Panel panel75;
-        private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.Panel panel77;
-        private System.Windows.Forms.Label label114;
-        private System.Windows.Forms.Panel panel78;
-        private System.Windows.Forms.Label label115;
-        private System.Windows.Forms.Panel panel79;
-        private System.Windows.Forms.Label label147;
-        private System.Windows.Forms.Panel panel81;
-        private System.Windows.Forms.Label label149;
-        private System.Windows.Forms.Panel panel82;
-        private System.Windows.Forms.Label label150;
-        private System.Windows.Forms.Panel panel83;
-        private System.Windows.Forms.Label label151;
-        private System.Windows.Forms.Panel panel86;
-        private System.Windows.Forms.Label label154;
-        private System.Windows.Forms.Panel panel87;
-        private System.Windows.Forms.Label label155;
-        private System.Windows.Forms.Panel panel88;
-        private System.Windows.Forms.Label label156;
-        private System.Windows.Forms.Panel panel89;
-        private System.Windows.Forms.Label label157;
-        private System.Windows.Forms.Panel panel90;
-        private System.Windows.Forms.Label label158;
+        private System.Windows.Forms.TableLayoutPanel BaAPanel;
+        private System.Windows.Forms.Panel BaADTPanel;
         private System.Windows.Forms.Panel BAPanel;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Panel panel93;
+        private System.Windows.Forms.Panel BaASerpanel;
         private System.Windows.Forms.Panel panel70;
         private System.Windows.Forms.Label label148;
         private System.Windows.Forms.Label label112;
@@ -5448,42 +5056,42 @@
         private System.Windows.Forms.Label PIESexlabel;
         private System.Windows.Forms.Label SexPI;
         private System.Windows.Forms.Label PISex;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel ServiceTPanel;
         private System.Windows.Forms.Panel BeautySPanel;
         private System.Windows.Forms.Button BeautySbutton;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label BeautySlabel;
+        private System.Windows.Forms.Panel BeautySpanel1;
         private System.Windows.Forms.Panel MisSPanel;
         private System.Windows.Forms.Button MisSbutton;
         private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Label MisSlabel;
+        private System.Windows.Forms.Panel MisSpanel1;
         private System.Windows.Forms.Panel HealthSPanel;
         private System.Windows.Forms.Button HealthSbutton;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label HealthSlabel;
+        private System.Windows.Forms.Panel HealthSpanel1;
         private System.Windows.Forms.Panel FoodSPanel;
         private System.Windows.Forms.Button FoodSbutton;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Label FoodSlabel;
+        private System.Windows.Forms.Panel FoodSpanel1;
         private System.Windows.Forms.Panel EduSPanel;
         private System.Windows.Forms.Button EduSbutton;
         private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Label EduSlabel;
+        private System.Windows.Forms.Panel EduSpanel1;
         private System.Windows.Forms.Panel RepairSPanel;
         private System.Windows.Forms.Button RepairSbutton;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Label RepairSlabel;
+        private System.Windows.Forms.Panel RepairSpanel1;
         private System.Windows.Forms.Panel FitnessSPanel;
         private System.Windows.Forms.Button FitnessSbutton;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label FitnessSlabel;
+        private System.Windows.Forms.Panel FitnessSpanel1;
         private System.Windows.Forms.Label FPServiceName;
         private System.Windows.Forms.Label FPDescription;
         private System.Windows.Forms.PictureBox MailPic;
@@ -5502,5 +5110,11 @@
         private System.Windows.Forms.Label Workinhourslabel;
         private System.Windows.Forms.Label WorkingHoursText;
         private System.Windows.Forms.Panel ClientSopanel;
+        private System.Windows.Forms.TableLayoutPanel FPropanel;
+        private System.Windows.Forms.TableLayoutPanel BaASer1;
+        private System.Windows.Forms.Label BADuration;
+        private System.Windows.Forms.Label BAPrice;
+        private System.Windows.Forms.Label BAService;
+        private System.Windows.Forms.TableLayoutPanel BaASer2;
     }
 }
