@@ -173,6 +173,7 @@ namespace OOP2
             ATCPrev.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCPrev.Width, ATCPrev.Height, 10, 10));
             ATCNext.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCNext.Width, ATCNext.Height, 10, 10));
             Exceptionpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Exceptionpanel.Width, Exceptionpanel.Height, 10, 10));
+            EATIns.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATIns.Width, EATIns.Height, 10, 10));
             //SETTINGS
             GeneralPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GeneralPanel.Width, GeneralPanel.Height, 10, 10));
             AppearancePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppearancePanel.Width, AppearancePanel.Height, 10, 10));
@@ -198,7 +199,7 @@ namespace OOP2
             FIStatus.Text = FIEStatus.Text = AppStatus;
             FISpeCattext.Text = FIESpeCattext.Text = SpeCat;
             FITagstext.Text = FIETagstext.Text = Tags;
-            ATCToday.Text = "Date Today: " + DateTime.Now.ToString("dd, MMMM yyyy");
+            ATCToday.Text = "Today: " + DateTime.Now.ToString("dd, MMMM yyyy");
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -1841,8 +1842,14 @@ namespace OOP2
                             dayLabel.BackColor = Color.IndianRed;
                             dayLabel.ForeColor = Color.White;
                         }
-                        dayLabel.Cursor = Cursors.Hand;
-                        dayLabel.Click += DayLabel_Click;
+                        DateTime Date = (DateTime)dayLabel.Tag;
+
+                        if (Date.Date >= DateTime.Today)
+                        {
+                            dayLabel.Cursor = Cursors.Hand;
+                            dayLabel.Click += DayLabel_Click;
+                        }
+
                     }
 
                     if (thisDate.Date == DateTime.Today.Date)
@@ -1881,8 +1888,18 @@ namespace OOP2
 
                 PopulateCalendar();
 
-                EATException.Text = "Exception Days: " +
-                    string.Join(", ", exceptionDays.Select(d => d.ToString("dddd, dd MMMM yyyy")));
+                if (exceptionDays.Count > 0)
+                {
+                    Exceptionpanel.Visible = true;
+                    EATException.Text = "Exception Days: " +
+                        string.Join(", ", exceptionDays.Select(d => d.ToString("dddd, dd MMMM yyyy")));
+                }
+                else
+                {
+                    Exceptionpanel.Visible = false;
+                    EATException.Text = string.Empty;
+                }
+                
             }
         }
         private void ATCPrev_Click(object sender, EventArgs e)

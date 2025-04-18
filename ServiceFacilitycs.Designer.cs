@@ -217,8 +217,8 @@
             label45 = new System.Windows.Forms.Label();
             ATselcttime = new System.Windows.Forms.Label();
             ATdatetime = new System.Windows.Forms.Panel();
-            ATC0 = new System.Windows.Forms.TableLayoutPanel();
             ATCToday = new System.Windows.Forms.Label();
+            ATC0 = new System.Windows.Forms.TableLayoutPanel();
             ATC01 = new System.Windows.Forms.TableLayoutPanel();
             ATCnwpanel = new System.Windows.Forms.TableLayoutPanel();
             ATCnw = new System.Windows.Forms.Label();
@@ -358,6 +358,7 @@
             label23 = new System.Windows.Forms.Label();
             EATselctime = new System.Windows.Forms.Label();
             EATdate = new System.Windows.Forms.Panel();
+            EATIns = new System.Windows.Forms.Label();
             EATCPanel = new System.Windows.Forms.TableLayoutPanel();
             EATC1 = new System.Windows.Forms.TableLayoutPanel();
             EATCnext = new System.Windows.Forms.Button();
@@ -2945,6 +2946,7 @@
             // ATdatetime
             // 
             ATdatetime.BackColor = System.Drawing.Color.White;
+            ATdatetime.Controls.Add(ATCToday);
             ATdatetime.Controls.Add(ATC0);
             ATdatetime.Controls.Add(ATCaledar);
             ATdatetime.Controls.Add(ATselctdt);
@@ -2955,35 +2957,31 @@
             ATdatetime.Size = new System.Drawing.Size(496, 648);
             ATdatetime.TabIndex = 51;
             // 
+            // ATCToday
+            // 
+            ATCToday.AutoSize = true;
+            ATCToday.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ATCToday.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ATCToday.Location = new System.Drawing.Point(288, 40);
+            ATCToday.Name = "ATCToday";
+            ATCToday.Size = new System.Drawing.Size(88, 23);
+            ATCToday.TabIndex = 56;
+            ATCToday.Text = "Start Time";
+            // 
             // ATC0
             // 
             ATC0.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ATC0.ColumnCount = 1;
             ATC0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATC0.Controls.Add(ATCToday, 0, 1);
             ATC0.Controls.Add(ATC01, 0, 0);
-            ATC0.Location = new System.Drawing.Point(43, 80);
+            ATC0.Location = new System.Drawing.Point(43, 88);
             ATC0.Margin = new System.Windows.Forms.Padding(0);
             ATC0.Name = "ATC0";
             ATC0.RowCount = 2;
-            ATC0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.9090919F));
-            ATC0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.0909081F));
-            ATC0.Size = new System.Drawing.Size(412, 87);
+            ATC0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.77778F));
+            ATC0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.2222214F));
+            ATC0.Size = new System.Drawing.Size(412, 54);
             ATC0.TabIndex = 37;
-            // 
-            // ATCToday
-            // 
-            ATCToday.AutoSize = true;
-            ATCToday.Dock = System.Windows.Forms.DockStyle.Fill;
-            ATCToday.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ATCToday.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCToday.Location = new System.Drawing.Point(10, 40);
-            ATCToday.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            ATCToday.Name = "ATCToday";
-            ATCToday.Size = new System.Drawing.Size(392, 42);
-            ATCToday.TabIndex = 54;
-            ATCToday.Text = "- Non-Working Days";
-            ATCToday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ATC01
             // 
@@ -3002,7 +3000,7 @@
             ATC01.Name = "ATC01";
             ATC01.RowCount = 1;
             ATC01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATC01.Size = new System.Drawing.Size(412, 35);
+            ATC01.Size = new System.Drawing.Size(412, 42);
             ATC01.TabIndex = 0;
             // 
             // ATCnwpanel
@@ -3012,8 +3010,8 @@
             ATCnwpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATCnwpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             ATCnwpanel.Controls.Add(ATCnw, 0, 0);
-            ATCnwpanel.Location = new System.Drawing.Point(215, 5);
-            ATCnwpanel.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            ATCnwpanel.Location = new System.Drawing.Point(215, 10);
+            ATCnwpanel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
             ATCnwpanel.Name = "ATCnwpanel";
             ATCnwpanel.RowCount = 1;
             ATCnwpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3043,7 +3041,7 @@
             ATCnoworking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCnoworking.Location = new System.Drawing.Point(269, 0);
             ATCnoworking.Name = "ATCnoworking";
-            ATCnoworking.Size = new System.Drawing.Size(140, 35);
+            ATCnoworking.Size = new System.Drawing.Size(140, 42);
             ATCnoworking.TabIndex = 53;
             ATCnoworking.Text = "- Non-Working Days";
             ATCnoworking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3056,7 +3054,7 @@
             ATCworking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCworking.Location = new System.Drawing.Point(85, 0);
             ATCworking.Name = "ATCworking";
-            ATCworking.Size = new System.Drawing.Size(117, 35);
+            ATCworking.Size = new System.Drawing.Size(117, 42);
             ATCworking.TabIndex = 50;
             ATCworking.Text = "- Working Days";
             ATCworking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3068,8 +3066,8 @@
             ATCworpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATCworpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             ATCworpanel.Controls.Add(ATCwor, 0, 0);
-            ATCworpanel.Location = new System.Drawing.Point(20, 5);
-            ATCworpanel.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
+            ATCworpanel.Location = new System.Drawing.Point(20, 10);
+            ATCworpanel.Margin = new System.Windows.Forms.Padding(20, 10, 20, 5);
             ATCworpanel.Name = "ATCworpanel";
             ATCworpanel.RowCount = 1;
             ATCworpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3100,7 +3098,7 @@
             ATCaledar.Controls.Add(ATC1, 0, 0);
             ATCaledar.Controls.Add(ATC2, 0, 1);
             ATCaledar.Controls.Add(ATC3, 0, 2);
-            ATCaledar.Location = new System.Drawing.Point(25, 190);
+            ATCaledar.Location = new System.Drawing.Point(25, 173);
             ATCaledar.Margin = new System.Windows.Forms.Padding(0);
             ATCaledar.Name = "ATCaledar";
             ATCaledar.RowCount = 3;
@@ -4501,7 +4499,7 @@
             // 
             Exceptionpanel.BackColor = System.Drawing.Color.White;
             Exceptionpanel.Controls.Add(EATException);
-            Exceptionpanel.Location = new System.Drawing.Point(22, 652);
+            Exceptionpanel.Location = new System.Drawing.Point(20, 660);
             Exceptionpanel.Name = "Exceptionpanel";
             Exceptionpanel.Size = new System.Drawing.Size(652, 125);
             Exceptionpanel.TabIndex = 56;
@@ -4548,7 +4546,7 @@
             EATtable.Name = "EATtable";
             EATtable.RowCount = 1;
             EATtable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            EATtable.Size = new System.Drawing.Size(871, 629);
+            EATtable.Size = new System.Drawing.Size(871, 610);
             EATtable.TabIndex = 54;
             // 
             // EATtimeslot
@@ -4563,7 +4561,7 @@
             EATtimeslot.Location = new System.Drawing.Point(535, 15);
             EATtimeslot.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
             EATtimeslot.Name = "EATtimeslot";
-            EATtimeslot.Size = new System.Drawing.Size(323, 598);
+            EATtimeslot.Size = new System.Drawing.Size(323, 580);
             EATtimeslot.TabIndex = 52;
             // 
             // EATendtime
@@ -4588,7 +4586,7 @@
             EATtimeslots.Controls.Add(tableLayoutPanel1);
             EATtimeslots.Location = new System.Drawing.Point(26, 131);
             EATtimeslots.Name = "EATtimeslots";
-            EATtimeslots.Size = new System.Drawing.Size(270, 433);
+            EATtimeslots.Size = new System.Drawing.Size(270, 415);
             EATtimeslots.TabIndex = 51;
             // 
             // tableLayoutPanel7
@@ -4928,14 +4926,29 @@
             // EATdate
             // 
             EATdate.BackColor = System.Drawing.Color.White;
+            EATdate.Controls.Add(EATIns);
             EATdate.Controls.Add(EATCPanel);
             EATdate.Controls.Add(EATselctdt);
             EATdate.Dock = System.Windows.Forms.DockStyle.Fill;
             EATdate.Location = new System.Drawing.Point(13, 15);
             EATdate.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
             EATdate.Name = "EATdate";
-            EATdate.Size = new System.Drawing.Size(496, 599);
+            EATdate.Size = new System.Drawing.Size(496, 580);
             EATdate.TabIndex = 51;
+            // 
+            // EATIns
+            // 
+            EATIns.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EATIns.AutoSize = true;
+            EATIns.BackColor = System.Drawing.Color.FromArgb(247, 195, 214);
+            EATIns.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EATIns.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATIns.Location = new System.Drawing.Point(18, 77);
+            EATIns.Name = "EATIns";
+            EATIns.Padding = new System.Windows.Forms.Padding(5);
+            EATIns.Size = new System.Drawing.Size(458, 56);
+            EATIns.TabIndex = 50;
+            EATIns.Text = "Select the day(s) you want to mark as Exception (Closed). \r\nClick again to unselect.";
             // 
             // EATCPanel
             // 
@@ -4946,14 +4959,14 @@
             EATCPanel.Controls.Add(EATC1, 0, 0);
             EATCPanel.Controls.Add(EATC2, 0, 1);
             EATCPanel.Controls.Add(EATC3, 0, 2);
-            EATCPanel.Location = new System.Drawing.Point(25, 131);
+            EATCPanel.Location = new System.Drawing.Point(24, 156);
             EATCPanel.Margin = new System.Windows.Forms.Padding(0);
             EATCPanel.Name = "EATCPanel";
             EATCPanel.RowCount = 3;
             EATCPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             EATCPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             EATCPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            EATCPanel.Size = new System.Drawing.Size(446, 445);
+            EATCPanel.Size = new System.Drawing.Size(446, 391);
             EATCPanel.TabIndex = 37;
             // 
             // EATC1
@@ -4972,7 +4985,7 @@
             EATC1.RowCount = 1;
             EATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             EATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            EATC1.Size = new System.Drawing.Size(446, 44);
+            EATC1.Size = new System.Drawing.Size(446, 39);
             EATC1.TabIndex = 0;
             // 
             // EATCnext
@@ -4985,7 +4998,7 @@
             EATCnext.Location = new System.Drawing.Point(387, 0);
             EATCnext.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
             EATCnext.Name = "EATCnext";
-            EATCnext.Size = new System.Drawing.Size(43, 44);
+            EATCnext.Size = new System.Drawing.Size(43, 39);
             EATCnext.TabIndex = 40;
             EATCnext.UseVisualStyleBackColor = false;
             EATCnext.Click += ATCNext_Click;
@@ -4999,7 +5012,7 @@
             EATCmonth.Location = new System.Drawing.Point(74, 0);
             EATCmonth.Margin = new System.Windows.Forms.Padding(0);
             EATCmonth.Name = "EATCmonth";
-            EATCmonth.Size = new System.Drawing.Size(297, 44);
+            EATCmonth.Size = new System.Drawing.Size(297, 39);
             EATCmonth.TabIndex = 38;
             EATCmonth.Text = "Time Slots";
             EATCmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5014,7 +5027,7 @@
             EATCprev.Location = new System.Drawing.Point(16, 0);
             EATCprev.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
             EATCprev.Name = "EATCprev";
-            EATCprev.Size = new System.Drawing.Size(42, 44);
+            EATCprev.Size = new System.Drawing.Size(42, 39);
             EATCprev.TabIndex = 39;
             EATCprev.UseVisualStyleBackColor = false;
             EATCprev.Click += ATCPrev_Click;
@@ -5037,13 +5050,13 @@
             EATC2.Controls.Add(label30, 1, 0);
             EATC2.Controls.Add(label31, 0, 0);
             EATC2.Dock = System.Windows.Forms.DockStyle.Fill;
-            EATC2.Location = new System.Drawing.Point(0, 47);
+            EATC2.Location = new System.Drawing.Point(0, 42);
             EATC2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             EATC2.Name = "EATC2";
             EATC2.RowCount = 1;
             EATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             EATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            EATC2.Size = new System.Drawing.Size(446, 38);
+            EATC2.Size = new System.Drawing.Size(446, 33);
             EATC2.TabIndex = 1;
             // 
             // label21
@@ -5054,7 +5067,7 @@
             label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             label21.Location = new System.Drawing.Point(381, 0);
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(62, 38);
+            label21.Size = new System.Drawing.Size(62, 33);
             label21.TabIndex = 56;
             label21.Text = "Sat";
             label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5067,7 +5080,7 @@
             label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             label22.Location = new System.Drawing.Point(318, 0);
             label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(57, 38);
+            label22.Size = new System.Drawing.Size(57, 33);
             label22.TabIndex = 55;
             label22.Text = "Fri";
             label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5080,7 +5093,7 @@
             label27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             label27.Location = new System.Drawing.Point(255, 0);
             label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(57, 38);
+            label27.Size = new System.Drawing.Size(57, 33);
             label27.TabIndex = 54;
             label27.Text = "Thu";
             label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5093,7 +5106,7 @@
             label28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             label28.Location = new System.Drawing.Point(192, 0);
             label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(57, 38);
+            label28.Size = new System.Drawing.Size(57, 33);
             label28.TabIndex = 53;
             label28.Text = "Wed";
             label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5106,7 +5119,7 @@
             label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             label29.Location = new System.Drawing.Point(129, 0);
             label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(57, 38);
+            label29.Size = new System.Drawing.Size(57, 33);
             label29.TabIndex = 52;
             label29.Text = "Tue";
             label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5119,7 +5132,7 @@
             label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             label30.Location = new System.Drawing.Point(66, 0);
             label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(57, 38);
+            label30.Size = new System.Drawing.Size(57, 33);
             label30.TabIndex = 51;
             label30.Text = "Mon";
             label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5132,7 +5145,7 @@
             label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             label31.Location = new System.Drawing.Point(3, 0);
             label31.Name = "label31";
-            label31.Size = new System.Drawing.Size(57, 38);
+            label31.Size = new System.Drawing.Size(57, 33);
             label31.TabIndex = 50;
             label31.Text = "Sun";
             label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5148,7 +5161,7 @@
             EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
             EATC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
             EATC3.Dock = System.Windows.Forms.DockStyle.Fill;
-            EATC3.Location = new System.Drawing.Point(0, 88);
+            EATC3.Location = new System.Drawing.Point(0, 78);
             EATC3.Margin = new System.Windows.Forms.Padding(0);
             EATC3.Name = "EATC3";
             EATC3.RowCount = 6;
@@ -5158,7 +5171,7 @@
             EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
             EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
             EATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            EATC3.Size = new System.Drawing.Size(446, 357);
+            EATC3.Size = new System.Drawing.Size(446, 313);
             EATC3.TabIndex = 2;
             // 
             // EATselctdt
@@ -5298,7 +5311,6 @@
             ATdatetime.ResumeLayout(false);
             ATdatetime.PerformLayout();
             ATC0.ResumeLayout(false);
-            ATC0.PerformLayout();
             ATC01.ResumeLayout(false);
             ATC01.PerformLayout();
             ATCnwpanel.ResumeLayout(false);
@@ -5699,7 +5711,6 @@
         private System.Windows.Forms.TableLayoutPanel ATC01;
         private System.Windows.Forms.Label ATCnoworking;
         private System.Windows.Forms.Label ATCworking;
-        private System.Windows.Forms.Label ATCToday;
         private System.Windows.Forms.TableLayoutPanel ATCnwpanel;
         private System.Windows.Forms.Label ATCnw;
         private System.Windows.Forms.TableLayoutPanel ATCworpanel;
@@ -5720,5 +5731,7 @@
         private System.Windows.Forms.TableLayoutPanel EATC3;
         private System.Windows.Forms.Label EATException;
         private System.Windows.Forms.Panel Exceptionpanel;
+        private System.Windows.Forms.Label ATCToday;
+        private System.Windows.Forms.Label EATIns;
     }
 }
