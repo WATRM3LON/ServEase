@@ -1583,6 +1583,7 @@ namespace OOP2
             EATButton.Visible = true; EATPanel.Visible = true;
             Loaders();
             TimeslotGetter();
+            PopulateCalendar();
         }
 
         private void EATButton_Click(object sender, EventArgs e)
@@ -1688,7 +1689,8 @@ namespace OOP2
 
             if (string.IsNullOrWhiteSpace(dayRange)) return workingDays;
 
-            string[] parts = dayRange.Split('-');
+            string[] part = dayRange.Split('-');
+            string[] parts = dayRange.Split(',');
             if (parts.Length != 2) return workingDays;
 
             if (Enum.TryParse(parts[0], true, out DayOfWeek startDay) &&
@@ -1725,21 +1727,29 @@ namespace OOP2
                 DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
                 DayOfWeek dayOfWeek = thisDate.DayOfWeek;
 
-                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9)};
+                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate};
                 
                 if (!workingDays.Contains(dayOfWeek))
                 {
                     dayLabel.ForeColor = Color.DimGray;
                     dayLabel.BackColor = Color.WhiteSmoke;
-                    //dayLabel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dayLabel.Width, dayLabel.Height, 10, 10));
+                }
+                else
+                {
+                    dayLabel.Cursor = Cursors.Hand;
+                    dayLabel.Click += DayLabel_Click;
+
+                    if (exceptionDays.Contains(thisDate.Date))
+                    {
+                        dayLabel.BackColor = Color.IndianRed;
+                        dayLabel.ForeColor = Color.White;
+                    }
                 }
 
                 if (thisDate.Date == DateTime.Today.Date)
                 {
                     dayLabel.BackColor = ColorTranslator.FromHtml("#f0246e");
-                    //apexdetdayLabel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dayLabel.Width, dayLabel.Height, 1, 1));
                 }
-
                 ATC3.Controls.Add(dayLabel, col, row);
 
                 col++;
@@ -1752,6 +1762,30 @@ namespace OOP2
             ATCmonth.Text = currentMonth.ToString("MMMM yyyy");
 
             ATC3.ResumeLayout();
+        }
+        List<DateTime> exceptionDays = new List<DateTime>();
+        private void DayLabel_Click(object sender, EventArgs e)
+        {
+            Label clickedLabel = sender as Label;
+
+            if (clickedLabel != null && clickedLabel.Tag is DateTime selectedDate)
+            {
+                selectedDate = selectedDate.Date;
+
+                if (exceptionDays.Contains(selectedDate))
+                {
+                    exceptionDays.Remove(selectedDate);
+                }
+                else
+                {
+                    exceptionDays.Add(selectedDate);
+                }
+
+                PopulateCalendar();
+
+                EATException.Text = "Exception Days:\n" +
+                    string.Join("\n", exceptionDays.Select(d => d.ToString("dddd, dd MMMM yyyy")));
+            }
         }
         private void ATCPrev_Click(object sender, EventArgs e)
         {

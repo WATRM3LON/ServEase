@@ -356,8 +356,22 @@
             label23 = new System.Windows.Forms.Label();
             EATselctime = new System.Windows.Forms.Label();
             EATdate = new System.Windows.Forms.Panel();
+            EATException = new System.Windows.Forms.Label();
+            EATCPanel = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            button1 = new System.Windows.Forms.Button();
+            label20 = new System.Windows.Forms.Label();
+            button8 = new System.Windows.Forms.Button();
+            tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            label21 = new System.Windows.Forms.Label();
+            label22 = new System.Windows.Forms.Label();
+            label27 = new System.Windows.Forms.Label();
+            label28 = new System.Windows.Forms.Label();
+            label29 = new System.Windows.Forms.Label();
+            label30 = new System.Windows.Forms.Label();
+            label31 = new System.Windows.Forms.Label();
+            tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             EATselctdt = new System.Windows.Forms.Label();
-            panel15 = new System.Windows.Forms.Panel();
             button10 = new System.Windows.Forms.Button();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
@@ -437,6 +451,9 @@
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             EATdate.SuspendLayout();
+            EATCPanel.SuspendLayout();
+            tableLayoutPanel9.SuspendLayout();
+            tableLayoutPanel10.SuspendLayout();
             SuspendLayout();
             // 
             // NotifyButton
@@ -4888,14 +4905,248 @@
             // EATdate
             // 
             EATdate.BackColor = System.Drawing.Color.White;
+            EATdate.Controls.Add(EATException);
+            EATdate.Controls.Add(EATCPanel);
             EATdate.Controls.Add(EATselctdt);
-            EATdate.Controls.Add(panel15);
             EATdate.Dock = System.Windows.Forms.DockStyle.Fill;
             EATdate.Location = new System.Drawing.Point(13, 15);
             EATdate.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
             EATdate.Name = "EATdate";
             EATdate.Size = new System.Drawing.Size(496, 599);
             EATdate.TabIndex = 51;
+            // 
+            // EATException
+            // 
+            EATException.AutoSize = true;
+            EATException.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            EATException.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            EATException.Location = new System.Drawing.Point(28, 81);
+            EATException.Name = "EATException";
+            EATException.Size = new System.Drawing.Size(87, 23);
+            EATException.TabIndex = 50;
+            EATException.Text = "Start Time";
+            // 
+            // EATCPanel
+            // 
+            EATCPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EATCPanel.ColumnCount = 1;
+            EATCPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            EATCPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            EATCPanel.Controls.Add(tableLayoutPanel9, 0, 0);
+            EATCPanel.Controls.Add(tableLayoutPanel10, 0, 1);
+            EATCPanel.Controls.Add(tableLayoutPanel11, 0, 2);
+            EATCPanel.Location = new System.Drawing.Point(25, 131);
+            EATCPanel.Margin = new System.Windows.Forms.Padding(0);
+            EATCPanel.Name = "EATCPanel";
+            EATCPanel.RowCount = 3;
+            EATCPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            EATCPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            EATCPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            EATCPanel.Size = new System.Drawing.Size(446, 445);
+            EATCPanel.TabIndex = 37;
+            // 
+            // tableLayoutPanel9
+            // 
+            tableLayoutPanel9.ColumnCount = 3;
+            tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
+            tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
+            tableLayoutPanel9.Controls.Add(button1, 2, 0);
+            tableLayoutPanel9.Controls.Add(label20, 1, 0);
+            tableLayoutPanel9.Controls.Add(button8, 0, 0);
+            tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanel9.Name = "tableLayoutPanel9";
+            tableLayoutPanel9.RowCount = 1;
+            tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel9.Size = new System.Drawing.Size(446, 44);
+            tableLayoutPanel9.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.ForeColor = System.Drawing.Color.White;
+            button1.Image = (System.Drawing.Image)resources.GetObject("button1.Image");
+            button1.Location = new System.Drawing.Point(387, 0);
+            button1.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(43, 44);
+            button1.TabIndex = 40;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            label20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label20.Location = new System.Drawing.Point(74, 0);
+            label20.Margin = new System.Windows.Forms.Padding(0);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(297, 44);
+            label20.TabIndex = 38;
+            label20.Text = "Time Slots";
+            label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button8
+            // 
+            button8.BackColor = System.Drawing.Color.WhiteSmoke;
+            button8.Dock = System.Windows.Forms.DockStyle.Fill;
+            button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button8.ForeColor = System.Drawing.Color.White;
+            button8.Image = (System.Drawing.Image)resources.GetObject("button8.Image");
+            button8.Location = new System.Drawing.Point(16, 0);
+            button8.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            button8.Name = "button8";
+            button8.Size = new System.Drawing.Size(42, 44);
+            button8.TabIndex = 39;
+            button8.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel10
+            // 
+            tableLayoutPanel10.ColumnCount = 7;
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel10.Controls.Add(label21, 6, 0);
+            tableLayoutPanel10.Controls.Add(label22, 5, 0);
+            tableLayoutPanel10.Controls.Add(label27, 4, 0);
+            tableLayoutPanel10.Controls.Add(label28, 3, 0);
+            tableLayoutPanel10.Controls.Add(label29, 2, 0);
+            tableLayoutPanel10.Controls.Add(label30, 1, 0);
+            tableLayoutPanel10.Controls.Add(label31, 0, 0);
+            tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel10.Location = new System.Drawing.Point(0, 47);
+            tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            tableLayoutPanel10.Name = "tableLayoutPanel10";
+            tableLayoutPanel10.RowCount = 1;
+            tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel10.Size = new System.Drawing.Size(446, 38);
+            tableLayoutPanel10.TabIndex = 1;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label21.Location = new System.Drawing.Point(381, 0);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(62, 38);
+            label21.TabIndex = 56;
+            label21.Text = "Sat";
+            label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label22.Location = new System.Drawing.Point(318, 0);
+            label22.Name = "label22";
+            label22.Size = new System.Drawing.Size(57, 38);
+            label22.TabIndex = 55;
+            label22.Text = "Fri";
+            label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label27.Location = new System.Drawing.Point(255, 0);
+            label27.Name = "label27";
+            label27.Size = new System.Drawing.Size(57, 38);
+            label27.TabIndex = 54;
+            label27.Text = "Thu";
+            label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Dock = System.Windows.Forms.DockStyle.Fill;
+            label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label28.Location = new System.Drawing.Point(192, 0);
+            label28.Name = "label28";
+            label28.Size = new System.Drawing.Size(57, 38);
+            label28.TabIndex = 53;
+            label28.Text = "Wed";
+            label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label29.Location = new System.Drawing.Point(129, 0);
+            label29.Name = "label29";
+            label29.Size = new System.Drawing.Size(57, 38);
+            label29.TabIndex = 52;
+            label29.Text = "Tue";
+            label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label30.Location = new System.Drawing.Point(66, 0);
+            label30.Name = "label30";
+            label30.Size = new System.Drawing.Size(57, 38);
+            label30.TabIndex = 51;
+            label30.Text = "Mon";
+            label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label31.Location = new System.Drawing.Point(3, 0);
+            label31.Name = "label31";
+            label31.Size = new System.Drawing.Size(57, 38);
+            label31.TabIndex = 50;
+            label31.Text = "Sun";
+            label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel11
+            // 
+            tableLayoutPanel11.ColumnCount = 7;
+            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel11.Location = new System.Drawing.Point(0, 88);
+            tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanel11.Name = "tableLayoutPanel11";
+            tableLayoutPanel11.RowCount = 6;
+            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            tableLayoutPanel11.Size = new System.Drawing.Size(446, 357);
+            tableLayoutPanel11.TabIndex = 2;
             // 
             // EATselctdt
             // 
@@ -4907,17 +5158,6 @@
             EATselctdt.Size = new System.Drawing.Size(205, 28);
             EATselctdt.TabIndex = 35;
             EATselctdt.Text = "Select Date and Time";
-            // 
-            // panel15
-            // 
-            panel15.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel15.BackColor = System.Drawing.Color.Transparent;
-            panel15.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel15.BackgroundImage");
-            panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            panel15.Location = new System.Drawing.Point(25, 135);
-            panel15.Name = "panel15";
-            panel15.Size = new System.Drawing.Size(447, 429);
-            panel15.TabIndex = 34;
             // 
             // button10
             // 
@@ -4942,8 +5182,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(ATPanel);
             Controls.Add(EATPanel);
+            Controls.Add(ATPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(EditFIPanel);
             Controls.Add(ServicesOfferedPanel);
@@ -5100,6 +5340,11 @@
             tableLayoutPanel1.PerformLayout();
             EATdate.ResumeLayout(false);
             EATdate.PerformLayout();
+            EATCPanel.ResumeLayout(false);
+            tableLayoutPanel9.ResumeLayout(false);
+            tableLayoutPanel9.PerformLayout();
+            tableLayoutPanel10.ResumeLayout(false);
+            tableLayoutPanel10.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5390,7 +5635,6 @@
         private System.Windows.Forms.Label EATselctime;
         private System.Windows.Forms.Panel EATdate;
         private System.Windows.Forms.Label EATselctdt;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label26;
@@ -5445,5 +5689,20 @@
         private System.Windows.Forms.Label ATCnw;
         private System.Windows.Forms.TableLayoutPanel ATCworpanel;
         private System.Windows.Forms.Label ATCwor;
+        private System.Windows.Forms.TableLayoutPanel EATCPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.Label EATException;
     }
 }

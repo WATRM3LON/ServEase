@@ -345,8 +345,8 @@ namespace OOP2
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
                     myConn.Open();
-                    string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], Ratings, [Approval Status], [Tags]) " +
-                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @specificcategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @Ratings, @Approvalstatus, @tags)";
+                    string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], [Exception Day (Closed)],Ratings, [Approval Status], [Tags]) " +
+                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @specificcategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @closed, @Ratings, @Approvalstatus, @tags)";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                     {
@@ -361,6 +361,7 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@Workinghoursstart", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workinghoursend", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@closed", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
                         cmd.Parameters.AddWithValue("@tags", DBNull.Value);
