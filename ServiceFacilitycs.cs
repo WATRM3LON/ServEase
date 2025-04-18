@@ -195,6 +195,7 @@ namespace OOP2
             FIStatus.Text = FIEStatus.Text = AppStatus;
             FISpeCattext.Text = FIESpeCattext.Text = SpeCat;
             FITagstext.Text = FIETagstext.Text = Tags;
+            ATCToday.Text = "Date Today: " + DateTime.Now.ToString("dd, MMMM yyyy");
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -1681,35 +1682,62 @@ namespace OOP2
                 FIESpeCattext.Items.AddRange(subCategories[service]);
             }
         }
+        List<DayOfWeek> ParseWorkingDays(string dayRange)
+        {
+            var workingDays = new List<DayOfWeek>();
+
+            if (string.IsNullOrWhiteSpace(dayRange)) return workingDays;
+
+            string[] parts = dayRange.Split('-');
+            if (parts.Length != 2) return workingDays;
+
+            if (Enum.TryParse(parts[0], true, out DayOfWeek startDay) &&
+                Enum.TryParse(parts[1], true, out DayOfWeek endDay))
+            {
+                int start = (int)startDay;
+                int end = (int)endDay;
+
+                for (int i = start; ; i = (i + 1) % 7)
+                {
+                    workingDays.Add((DayOfWeek)i);
+                    if (i == end) break;
+                }
+            }
+
+            return workingDays;
+        }
         void PopulateCalendar()
         {
             ATC3.Controls.Clear();
             ATC3.SuspendLayout();
 
+            List<DayOfWeek> workingDays = ParseWorkingDays(WorDays);
+
             DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
             int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
             int startCol = (int)firstDayOfMonth.DayOfWeek;
-            ATCmonth.Text = currentMonth.ToString("MMMM yyyy");
+
             int row = 0;
             int col = startCol;
 
             for (int day = 1; day <= daysInMonth; day++)
             {
-                Label dayLabel = new Label
-                {
-                    Text = day.ToString(),
-                    Dock = DockStyle.Fill,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    BorderStyle = BorderStyle.None,
-                    Padding = new Padding(5),
-                    Font = new Font("Segoe UI", 9)
-                };
+                DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
+                DayOfWeek dayOfWeek = thisDate.DayOfWeek;
 
-                if (currentMonth.Year == DateTime.Today.Year &&
-                    currentMonth.Month == DateTime.Today.Month &&
-                    day == DateTime.Today.Day)
+                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9)};
+                
+                if (!workingDays.Contains(dayOfWeek))
                 {
-                    dayLabel.BackColor = Color.LightBlue;
+                    dayLabel.ForeColor = Color.DimGray;
+                    dayLabel.BackColor = Color.WhiteSmoke;
+                    //dayLabel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dayLabel.Width, dayLabel.Height, 10, 10));
+                }
+
+                if (thisDate.Date == DateTime.Today.Date)
+                {
+                    dayLabel.BackColor = ColorTranslator.FromHtml("#f0246e");
+                    //apexdetdayLabel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dayLabel.Width, dayLabel.Height, 1, 1));
                 }
 
                 ATC3.Controls.Add(dayLabel, col, row);
@@ -1721,10 +1749,10 @@ namespace OOP2
                     row++;
                 }
             }
+            ATCmonth.Text = currentMonth.ToString("MMMM yyyy");
 
             ATC3.ResumeLayout();
         }
-
         private void ATCPrev_Click(object sender, EventArgs e)
         {
             currentMonth = currentMonth.AddMonths(-1);
