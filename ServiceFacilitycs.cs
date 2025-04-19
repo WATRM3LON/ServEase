@@ -2168,6 +2168,24 @@ namespace OOP2
             Notice notice = new Notice();
             notice.CompletePanel();
             notice.ShowDialog();
+            if (notice.Yes == "Complete")
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+                    string updateQuery = "UPDATE Appointments SET [Appointment Status] = ? WHERE [Appointment_ID] = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(updateQuery, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", "Completed");
+                        cmd.Parameters.AddWithValue("?", AppointmentId);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Appointment completed successfully.", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void ASCancelButton_Click(object sender, EventArgs e)
@@ -2211,7 +2229,7 @@ namespace OOP2
             Notice notice = new Notice();
             notice.ConfirmPanel();
             notice.ShowDialog();
-            if(notice.Yes == "Confirm")
+            if (notice.Yes == "Confirm")
             {
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
@@ -2221,6 +2239,31 @@ namespace OOP2
                     using (OleDbCommand cmd = new OleDbCommand(updateQuery, myConn))
                     {
                         cmd.Parameters.AddWithValue("?", "Confirmed");
+                        cmd.Parameters.AddWithValue("?", AppointmentId);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Appointment confirmed successfully.", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void ASnoShoButton_Click(object sender, EventArgs e)
+        {
+            Notice notice = new Notice();
+            notice.ConfirmPanel();
+            notice.ShowDialog();
+            if (notice.Yes == "No Show")
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+                    string updateQuery = "UPDATE Appointments SET [Appointment Status] = ? WHERE [Appointment_ID] = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(updateQuery, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", "No Show");
                         cmd.Parameters.AddWithValue("?", AppointmentId);
 
                         cmd.ExecuteNonQuery();

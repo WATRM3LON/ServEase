@@ -42,7 +42,13 @@
             timer1 = new System.Windows.Forms.Timer(components);
             Headinglabel = new System.Windows.Forms.Label();
             Captionlabel = new System.Windows.Forms.Label();
+            CompleteBox = new System.Windows.Forms.PictureBox();
+            CancelBox = new System.Windows.Forms.PictureBox();
+            NoshowBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)ConfirmBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CompleteBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CancelBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NoshowBox).BeginInit();
             SuspendLayout();
             // 
             // CloseButton
@@ -182,12 +188,48 @@
             Captionlabel.Text = "You are about to confirm this appointment. \r\nThis action cannot be undone.";
             Captionlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // CompleteBox
+            // 
+            CompleteBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            CompleteBox.Image = (System.Drawing.Image)resources.GetObject("CompleteBox.Image");
+            CompleteBox.Location = new System.Drawing.Point(94, 12);
+            CompleteBox.Name = "CompleteBox";
+            CompleteBox.Size = new System.Drawing.Size(403, 326);
+            CompleteBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            CompleteBox.TabIndex = 123;
+            CompleteBox.TabStop = false;
+            // 
+            // CancelBox
+            // 
+            CancelBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            CancelBox.Image = (System.Drawing.Image)resources.GetObject("CancelBox.Image");
+            CancelBox.Location = new System.Drawing.Point(94, 12);
+            CancelBox.Name = "CancelBox";
+            CancelBox.Size = new System.Drawing.Size(403, 326);
+            CancelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            CancelBox.TabIndex = 124;
+            CancelBox.TabStop = false;
+            // 
+            // NoshowBox
+            // 
+            NoshowBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            NoshowBox.Image = (System.Drawing.Image)resources.GetObject("NoshowBox.Image");
+            NoshowBox.Location = new System.Drawing.Point(94, 12);
+            NoshowBox.Name = "NoshowBox";
+            NoshowBox.Size = new System.Drawing.Size(403, 326);
+            NoshowBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            NoshowBox.TabIndex = 125;
+            NoshowBox.TabStop = false;
+            // 
             // Notice
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(601, 350);
+            Controls.Add(NoshowBox);
+            Controls.Add(CancelBox);
+            Controls.Add(CompleteBox);
             Controls.Add(Captionlabel);
             Controls.Add(Headinglabel);
             Controls.Add(NoButton);
@@ -204,6 +246,9 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Notice";
             ((System.ComponentModel.ISupportInitialize)ConfirmBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CompleteBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CancelBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NoshowBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -222,5 +267,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label Headinglabel;
         private System.Windows.Forms.Label Captionlabel;
+        private System.Windows.Forms.PictureBox CompleteBox;
+        private System.Windows.Forms.PictureBox CancelBox;
+        private System.Windows.Forms.PictureBox NoshowBox;
     }
 }

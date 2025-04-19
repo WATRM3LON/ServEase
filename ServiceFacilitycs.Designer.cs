@@ -1621,6 +1621,7 @@
             ASnoShoButton.Text = "Client No Show";
             ASnoShoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             ASnoShoButton.UseVisualStyleBackColor = false;
+            ASnoShoButton.Click += ASnoShoButton_Click;
             // 
             // ASCancelButton
             // 
