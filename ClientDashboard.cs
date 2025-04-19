@@ -1732,21 +1732,33 @@ namespace OOP2
                     }
                 }
 
-                string insertAppointment = "INSERT INTO Appointments ([Client_ID], [Facility_ID], [Appointment Status], [Date and Time], [Estimated Price], [Estimated Duration]) " +
-                                           "VALUES (@clientid, @facilityid, @appointmentstatus, @datentime, @price, @duration)";
+                string insertAppointment = "INSERT INTO Appointments ([Client_ID], [Facility_ID], [Appointment Status], [Date], [Start Time], [End Time], [Estimated Price], [Estimated Duration]) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
                 using (OleDbCommand cmd = new OleDbCommand(insertAppointment, myConn))
                 {
-                    cmd.Parameters.AddWithValue("@clientid", newClientId);
-                    cmd.Parameters.AddWithValue("@facilityid", facid);
-                    cmd.Parameters.AddWithValue("@appointmentstatus", "Pending");
-                    string startTimeText = selectedTimeSlotLabel.Text.Split('-')[0].Trim();
-                    string dateTimeString = $"{selectedAppointmentDate:dd MM yyyy} {startTimeText}";
+                    cmd.Parameters.AddWithValue("?", newClientId);
+                    cmd.Parameters.AddWithValue("?", facid);
+                    cmd.Parameters.AddWithValue("?", "Pending");
+
+                    string dateTimeString = $"{selectedAppointmentDate:dd MM yyyy}";
                     DateTime dateTime = DateTime.Parse(dateTimeString);
-                    string formattedWorHours = $"{dateTime:dd MMMM yyyy hh:mm tt}";
-                    cmd.Parameters.AddWithValue("@datentime", formattedWorHours);
-                    cmd.Parameters.AddWithValue("@price", EPrice);
-                    cmd.Parameters.AddWithValue("@duration", EDuration);
+                    cmd.Parameters.AddWithValue("?", dateTimeString);
+
+                    string[] timeParts = selectedTimeSlotLabel.Text.Split('-');
+                    string startTimeText = timeParts[0].Trim();
+                    string endTimeText = timeParts[1].Trim();
+
+                    DateTime startTime = DateTime.Parse($"{startTimeText: hh:mm tt}");
+                    DateTime endTime = DateTime.Parse($"{endTimeText: hh:mm tt}");
+
+                    cmd.Parameters.AddWithValue("?", startTimeText);
+                    cmd.Parameters.AddWithValue("?", endTimeText);
+
+                    cmd.Parameters.AddWithValue("?", EPrice);
+
+                    string durationString = $"{EDuration} mins";
+                    cmd.Parameters.AddWithValue("?", durationString);
 
                     cmd.ExecuteNonQuery();
                 }
