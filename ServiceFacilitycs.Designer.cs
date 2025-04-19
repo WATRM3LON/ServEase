@@ -1135,12 +1135,12 @@
             ASbookedtext.AutoSize = true;
             ASbookedtext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ASbookedtext.ForeColor = System.Drawing.SystemColors.ControlText;
-            ASbookedtext.Location = new System.Drawing.Point(344, 77);
+            ASbookedtext.Location = new System.Drawing.Point(383, 76);
             ASbookedtext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             ASbookedtext.Name = "ASbookedtext";
-            ASbookedtext.Size = new System.Drawing.Size(134, 20);
+            ASbookedtext.Size = new System.Drawing.Size(89, 20);
             ASbookedtext.TabIndex = 111;
-            ASbookedtext.Text = "December 25 2025";
+            ASbookedtext.Text = "17 Apr 2025";
             ASbookedtext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ASbookedlabel

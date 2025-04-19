@@ -182,6 +182,8 @@
             ViewdetailsPanel = new System.Windows.Forms.Panel();
             ViewDetspanel = new System.Windows.Forms.TableLayoutPanel();
             AstatPanel = new System.Windows.Forms.Panel();
+            ASbookedtext = new System.Windows.Forms.Label();
+            ASbookedlabel = new System.Windows.Forms.Label();
             ASserpanel = new System.Windows.Forms.FlowLayoutPanel();
             ASdtext = new System.Windows.Forms.Label();
             ASdlabel = new System.Windows.Forms.Label();
@@ -376,8 +378,6 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            ASbookedlabel = new System.Windows.Forms.Label();
-            ASbookedtext = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -2600,6 +2600,35 @@
             AstatPanel.Name = "AstatPanel";
             AstatPanel.Size = new System.Drawing.Size(505, 692);
             AstatPanel.TabIndex = 52;
+            // 
+            // ASbookedtext
+            // 
+            ASbookedtext.AutoEllipsis = true;
+            ASbookedtext.AutoSize = true;
+            ASbookedtext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ASbookedtext.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASbookedtext.Location = new System.Drawing.Point(394, 67);
+            ASbookedtext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASbookedtext.Name = "ASbookedtext";
+            ASbookedtext.Size = new System.Drawing.Size(89, 20);
+            ASbookedtext.TabIndex = 94;
+            ASbookedtext.Text = "17 Apr 2025";
+            ASbookedtext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ASbookedlabel
+            // 
+            ASbookedlabel.AutoEllipsis = true;
+            ASbookedlabel.AutoSize = true;
+            ASbookedlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASbookedlabel.ForeColor = System.Drawing.Color.DimGray;
+            ASbookedlabel.Location = new System.Drawing.Point(381, 42);
+            ASbookedlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASbookedlabel.Name = "ASbookedlabel";
+            ASbookedlabel.Size = new System.Drawing.Size(113, 23);
+            ASbookedlabel.TabIndex = 93;
+            ASbookedlabel.Text = "Date Booked:";
+            ASbookedlabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            ASbookedlabel.UseMnemonic = false;
             // 
             // ASserpanel
             // 
@@ -5239,35 +5268,6 @@
             PIEpp.Name = "PIEpp";
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
-            // 
-            // ASbookedlabel
-            // 
-            ASbookedlabel.AutoEllipsis = true;
-            ASbookedlabel.AutoSize = true;
-            ASbookedlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ASbookedlabel.ForeColor = System.Drawing.Color.DimGray;
-            ASbookedlabel.Location = new System.Drawing.Point(381, 42);
-            ASbookedlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            ASbookedlabel.Name = "ASbookedlabel";
-            ASbookedlabel.Size = new System.Drawing.Size(113, 23);
-            ASbookedlabel.TabIndex = 93;
-            ASbookedlabel.Text = "Date Booked:";
-            ASbookedlabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            ASbookedlabel.UseMnemonic = false;
-            // 
-            // ASbookedtext
-            // 
-            ASbookedtext.AutoEllipsis = true;
-            ASbookedtext.AutoSize = true;
-            ASbookedtext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ASbookedtext.ForeColor = System.Drawing.SystemColors.ControlText;
-            ASbookedtext.Location = new System.Drawing.Point(356, 67);
-            ASbookedtext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            ASbookedtext.Name = "ASbookedtext";
-            ASbookedtext.Size = new System.Drawing.Size(134, 20);
-            ASbookedtext.TabIndex = 94;
-            ASbookedtext.Text = "December 25 2025";
-            ASbookedtext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ClientDashboard
             // 
