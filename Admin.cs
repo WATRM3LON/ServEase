@@ -477,7 +477,9 @@ namespace OOP2
                 {
                     cmd.Parameters.AddWithValue("?", clientId);
 
-                    int count = (int)cmd.ExecuteScalar();
+                    object result = cmd.ExecuteScalar();
+
+                    int count = (result != null && result != DBNull.Value) ? Convert.ToInt32(result) : 0;
 
                     if (count > 0)
                     {
@@ -509,12 +511,12 @@ namespace OOP2
                                 UsersPanel usersPanel = new UsersPanel();
                                 usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
                                 usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                                usersPanel.SetAppHistory(FacName, FLocation);
+                                
 
                                 usersPanel.Location = new Point(10, margin - 7);
                                 margin += usersPanel.Height + 10;
 
-                                string adminQuery = "SELECT [Appointment Status], [Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                                string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
                                 using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                                 {
                                     adminCmd.Parameters.AddWithValue("?", clientId);
@@ -527,8 +529,9 @@ namespace OOP2
                                         {
                                             string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
                                             string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                            string datebooked = adminReader.IsDBNull(2) ? "" : adminReader.GetDateTime(2).ToString("dd MMM yyyy");
 
-                                            usersPanel.SetInfo(status, dateapp);
+                                            usersPanel.SetInfo(status, dateapp); usersPanel.SetAppHistory(FacName, datebooked);
                                         }
                                     }
                                 }

@@ -1727,8 +1727,8 @@ namespace OOP2
                     }
                 }
 
-                string insertAppointment = "INSERT INTO Appointments ([Client_ID], [Facility_ID], [Appointment Status], [Date], [Start Time], [End Time], [Estimated Price], [Estimated Duration]) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                string insertAppointment = "INSERT INTO Appointments ([Client_ID], [Facility_ID], [Appointment Status], [Appointment Date], [Date Booked], [Start Time], [End Time], [Estimated Price], [Estimated Duration], Reason) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 using (OleDbCommand cmd = new OleDbCommand(insertAppointment, myConn))
                 {
@@ -1746,7 +1746,8 @@ namespace OOP2
 
                     DateTime startTime = DateTime.Parse($"{startTimeText: hh:mm tt}");
                     DateTime endTime = DateTime.Parse($"{endTimeText: hh:mm tt}");
-
+                    string bookeddate = DateTime.Now.ToString("dd MM yyyy");
+                    cmd.Parameters.AddWithValue("?", bookeddate);
                     cmd.Parameters.AddWithValue("?", startTimeText);
                     cmd.Parameters.AddWithValue("?", endTimeText);
 
@@ -1754,6 +1755,7 @@ namespace OOP2
 
                     string durationString = $"{EDuration} mins";
                     cmd.Parameters.AddWithValue("?", durationString);
+                    cmd.Parameters.AddWithValue("?", DBNull.Value);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -1816,8 +1818,9 @@ namespace OOP2
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("?", newClientId);
+                    object result = cmd.ExecuteScalar();
 
-                    int count = (int)cmd.ExecuteScalar();
+                    int count = (result != null && result != DBNull.Value) ? Convert.ToInt32(result) : 0;
 
                     if (count > 0)
                     {
@@ -1849,7 +1852,7 @@ namespace OOP2
                                 UsersPanel usersPanel = new UsersPanel();
                                 usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
                                 usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                                usersPanel.CLientApp(FacName, FLocation);
+                                
 
                                 usersPanel.Location = new Point(10, margin);
                                 margin += usersPanel.Height + 10;
@@ -1859,7 +1862,7 @@ namespace OOP2
                                     ViewDets(appointmentId, newFacilityId, newClientId);
                                 };
 
-                                string adminQuery = "SELECT [Appointment Status], [Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                                string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
                                 using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                                 {
                                     adminCmd.Parameters.AddWithValue("?", newClientId);
@@ -1872,8 +1875,9 @@ namespace OOP2
                                         {
                                             string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
                                             string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                            string datebooked = adminReader.IsDBNull(2) ? "" : adminReader.GetDateTime(2).ToString("dd MMM yyyy");
 
-                                            usersPanel.ClientInfo(status, dateapp);
+                                            usersPanel.ClientInfo(status, dateapp); usersPanel.CLientApp(FacName, datebooked);
                                         }
                                     }
                                 }
@@ -1885,7 +1889,7 @@ namespace OOP2
                     }
                     else
                     {
-
+                       
                     }
                 }
             }
@@ -1934,7 +1938,7 @@ namespace OOP2
                     }
                 }
 
-                string selectAppointment = "SELECT [Appointment Status], [Date], [Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
+                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
                            "FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(selectAppointment, myConn))
@@ -1948,10 +1952,13 @@ namespace OOP2
                         if (adminReader.Read())
                         {
                             string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
-                            string dateapp = adminReader.IsDBNull(adminReader.GetOrdinal("Date"))
+                            string dateapp = adminReader.IsDBNull(adminReader.GetOrdinal("Appointment Date"))
                                 ? ""
-                                : adminReader.GetDateTime(adminReader.GetOrdinal("Date")).ToString("dd MMM yyyy");
+                                : adminReader.GetDateTime(adminReader.GetOrdinal("Appointment Date")).ToString("dd MMM yyyy");
 
+                            string datebooked = adminReader.IsDBNull(adminReader.GetOrdinal("Date Booked"))
+                                ? ""
+                                : adminReader.GetDateTime(adminReader.GetOrdinal("Date Booked")).ToString("dd MMM yyyy");
                             string startTimeStr = adminReader["Start Time"].ToString();
                             string endTimeStr = adminReader["End Time"].ToString();
                             DateTime startTime = DateTime.Parse(startTimeStr);
@@ -1965,7 +1972,7 @@ namespace OOP2
                             ASdatetext.Text = dateapp + " ,    " + formattedStart + " - " + formattedEnd;
                             ASpricetext.Text = "PHP " + price + ".00";
                             ASdtext.Text = duration;
-                            ASstattext.Text = status;
+                            ASstattext.Text = status; ASbookedtext.Text = datebooked;
 
                             if (status == "Active")
                             {

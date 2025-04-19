@@ -54,11 +54,12 @@ namespace OOP2
         //ADMIN//
         public void SetAppHistory(string Name, string FLocation)
         {
-            UserRegistlabel.Text = "Date Booked: "; UserRegistlabel.Location = new Point(390, 45);
+            UserRegistlabel.Text = "Appointment Date: "; UserRegistlabel.Location = new Point(360, 45);
             UserNamelabel.Location = new Point(39, 26);
             UserNamelabel.Text = "Facility Name:";
             UserNametext.Text = Name;
-            UserEmaillabel.Text = "Location: ";
+            UserEmaillabel.Location = new Point(43, 45);
+            UserEmaillabel.Text = "Date Booked: ";
             UserEmailtext.Text = FLocation; ViewDetailsButton.Visible = false;
             ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#22b0e5");
         }
@@ -91,11 +92,12 @@ namespace OOP2
         //CLIENT//
         public void CLientApp(string Name, string FLocation)
         {
-            UserRegistlabel.Text = "Date Booked: "; UserRegistlabel.Location = new Point(390, 45);
+            UserRegistlabel.Text = "Appointment Date: "; UserRegistlabel.Location = new Point(360, 45);
             UserNamelabel.Location = new Point(39, 26);
             UserNamelabel.Text = "Facility Name:";
             UserNametext.Text = Name;
-            UserEmaillabel.Text = "Location: ";
+            UserEmaillabel.Location = new Point(43, 45);
+            UserEmaillabel.Text = "Date Booked: ";
             UserEmailtext.Text = FLocation; ViewDetailsButton.Visible = true;
             ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#d9faf5");
             ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));
@@ -129,11 +131,12 @@ namespace OOP2
         //FACILITY//
         public void DataClient(string Name, string Emailaddress)
         {
-            UserRegistlabel.Text = "Date Booked: "; UserRegistlabel.Location = new Point(390, 45);
-            UserNamelabel.Location = new Point(79, 26);
+            UserRegistlabel.Text = "Appointment Date: "; UserRegistlabel.Location = new Point(360, 45);
+            UserNamelabel.Location = new Point(50, 26);
             UserNamelabel.Text = "Name:";
-            UserEmaillabel.Text = "Email Addres:";
             UserNametext.Text = Name;
+            UserEmaillabel.Location = new Point(43, 45);
+            UserEmaillabel.Text = "Date Booked: ";
             UserEmailtext.Text = Emailaddress; ViewDetailsButton.Visible = true;
             ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#d5fcef");
             ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));

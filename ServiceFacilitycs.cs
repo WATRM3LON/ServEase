@@ -1919,7 +1919,7 @@ namespace OOP2
             currentMonth = currentMonth.AddMonths(+1);
             PopulateCalendar();
         }
-        int ClientId, FacilityiId, AppointmentId;
+        int FacilityiId, AppointmentId;
         public void LoadHistory()
         {
             AppointmentsPanel.Controls.Clear();
@@ -1948,7 +1948,9 @@ namespace OOP2
                 {
                     cmd.Parameters.AddWithValue("?", FacilityiId);
 
-                    int count = (int)cmd.ExecuteScalar();
+                    object result = cmd.ExecuteScalar();
+
+                    int count = (result != null && result != DBNull.Value) ? Convert.ToInt32(result) : 0;
 
                     if (count > 0)
                     {
@@ -1958,7 +1960,7 @@ namespace OOP2
 
                             while (reader.Read())
                             {
-                                ClientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+                                int ClientId = reader.GetInt32(reader.GetOrdinal("Client_ID"));
                                 int appointmentId = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
                                 string ClientName = "", Clientems = "";
 
@@ -1982,7 +1984,6 @@ namespace OOP2
                                 UsersPanel usersPanel = new UsersPanel();
                                 usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
                                 usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                                usersPanel.DataClient(ClientName, Clientems);
 
                                 usersPanel.Location = new Point(10, margin);
                                 margin += usersPanel.Height + 10;
@@ -1992,7 +1993,7 @@ namespace OOP2
                                     ViewDets(appointmentId, FacilityiId, ClientId);
                                 };
 
-                                string adminQuery = "SELECT [Appointment Status], [Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                                string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
                                 using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                                 {
                                     adminCmd.Parameters.AddWithValue("?", ClientId);
@@ -2003,10 +2004,11 @@ namespace OOP2
                                     {
                                         if (adminReader.Read())
                                         {
-                                            AppStatus = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                                            string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
                                             string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                            string datebooked = adminReader.IsDBNull(2) ? "" : adminReader.GetDateTime(2).ToString("dd MMM yyyy");
 
-                                            usersPanel.AppInfo(AppStatus, dateapp);
+                                            usersPanel.AppInfo(status, dateapp); usersPanel.DataClient(ClientName, datebooked);
                                         }
                                     }
                                 }
@@ -2056,7 +2058,7 @@ namespace OOP2
                     }
                 }
 
-                string selectAppointment = "SELECT [Appointment Status], [Date], [Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
+                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
                            "FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(selectAppointment, myConn))
@@ -2070,9 +2072,12 @@ namespace OOP2
                         if (adminReader.Read())
                         {
                             string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
-                            string dateapp = adminReader.IsDBNull(adminReader.GetOrdinal("Date"))
+                            string dateapp = adminReader.IsDBNull(adminReader.GetOrdinal("Appointment Date"))
                                 ? ""
-                                : adminReader.GetDateTime(adminReader.GetOrdinal("Date")).ToString("dd MMM yyyy");
+                                : adminReader.GetDateTime(adminReader.GetOrdinal("Appointment Date")).ToString("dd MMM yyyy");
+                            string datebooked = adminReader.IsDBNull(adminReader.GetOrdinal("Date Booked"))
+                                ? ""
+                                : adminReader.GetDateTime(adminReader.GetOrdinal("Date Booked")).ToString("dd MMM yyyy");
 
                             string startTimeStr = adminReader["Start Time"].ToString();
                             string endTimeStr = adminReader["End Time"].ToString();
@@ -2087,7 +2092,7 @@ namespace OOP2
                             ASdatetext.Text = dateapp + " ,    " + formattedStart + " - " + formattedEnd;
                             ASpricetext.Text = "PHP " + price + ".00";
                             ASdtext.Text = duration;
-                            ASstattext.Text = status;
+                            ASstattext.Text = status; ASbookedtext.Text = datebooked;
 
                             if (status == "Confirmed")
                             {
