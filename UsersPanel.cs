@@ -125,6 +125,44 @@ namespace OOP2
             }
             UserRegisttext.Text = Regist;
         }
+
+        //FACILITY//
+        public void DataClient(string Name, string Emailaddress)
+        {
+            UserRegistlabel.Text = "Date Booked: "; UserRegistlabel.Location = new Point(390, 45);
+            UserNamelabel.Location = new Point(79, 26);
+            UserNamelabel.Text = "Name:";
+            UserEmaillabel.Text = "Email Addres:";
+            UserNametext.Text = Name;
+            UserEmailtext.Text = Emailaddress; ViewDetailsButton.Visible = true;
+            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#d5fcef");
+            ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));
+        }
+        public void AppInfo(string Status, string Regist)
+        {
+            UserStatustext.Text = Status;
+            if (Status == "Active")
+            {
+                UserStatustext.ForeColor = Color.LawnGreen;
+            }
+            else if (Status == "Pending")
+            {
+                UserStatustext.ForeColor = Color.Gold;
+            }
+            else if (Status == "Completed")
+            {
+                UserStatustext.ForeColor = ColorTranslator.FromHtml("#69e331");
+            }
+            else if (Status == "Cancelled")
+            {
+                UserStatustext.ForeColor = Color.Red;
+            }
+            else
+            {
+                UserStatustext.ForeColor = Color.Red;
+            }
+            UserRegisttext.Text = Regist;
+        }
         public event EventHandler ViewDetailsClicked;
 
         private void ViewDetailsButton_Click(object sender, EventArgs e)

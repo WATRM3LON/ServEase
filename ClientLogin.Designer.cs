@@ -778,7 +778,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
+            BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             ClientSize = new System.Drawing.Size(1236, 983);
             Controls.Add(ClickherLabel);

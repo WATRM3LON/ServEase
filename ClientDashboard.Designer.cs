@@ -2536,7 +2536,7 @@
             // 
             AppointmentsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             AppointmentsPanel.AutoScroll = true;
-            AppointmentsPanel.BackColor = System.Drawing.Color.FromArgb(247, 247, 247);
+            AppointmentsPanel.BackColor = System.Drawing.Color.Transparent;
             AppointmentsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             AppointmentsPanel.Location = new System.Drawing.Point(277, 231);
             AppointmentsPanel.Name = "AppointmentsPanel";
@@ -5240,12 +5240,12 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
+            BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(CalendarAppointmentPanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(SerPanel);
             Controls.Add(EditPIPanel);
             Controls.Add(NotificationPanel);
