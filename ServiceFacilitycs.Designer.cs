@@ -66,13 +66,10 @@
             CalendarPanel = new System.Windows.Forms.Panel();
             AppointmentsPanel = new System.Windows.Forms.Panel();
             ViewdetailsPanel = new System.Windows.Forms.Panel();
-            ASnoShoButton = new System.Windows.Forms.Button();
-            ASCancelButton = new System.Windows.Forms.Button();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             AstatPanel = new System.Windows.Forms.Panel();
             ASbookedtext = new System.Windows.Forms.Label();
             ASbookedlabel = new System.Windows.Forms.Label();
-            ASCompleteButton = new System.Windows.Forms.Button();
             ASserpanel = new System.Windows.Forms.FlowLayoutPanel();
             ASdtext = new System.Windows.Forms.Label();
             ASdlabel = new System.Windows.Forms.Label();
@@ -90,6 +87,7 @@
             ASlabel = new System.Windows.Forms.Label();
             ASstatlabel = new System.Windows.Forms.Label();
             ASConfrimButton = new System.Windows.Forms.Button();
+            ASCompleteButton = new System.Windows.Forms.Button();
             AstoreproPanel = new System.Windows.Forms.Panel();
             ASConumicon = new System.Windows.Forms.PictureBox();
             ASEMSicon = new System.Windows.Forms.PictureBox();
@@ -106,6 +104,8 @@
             ASLoclabel = new System.Windows.Forms.Label();
             ASLoctext = new System.Windows.Forms.Label();
             ASsexicon = new System.Windows.Forms.PictureBox();
+            ASnoShoButton = new System.Windows.Forms.Button();
+            ASCancelButton = new System.Windows.Forms.Button();
             AppointmentPanel = new System.Windows.Forms.Panel();
             panel7 = new System.Windows.Forms.Panel();
             button6 = new System.Windows.Forms.Button();
@@ -365,6 +365,7 @@
             EATC3 = new System.Windows.Forms.TableLayoutPanel();
             EATselctdt = new System.Windows.Forms.Label();
             button10 = new System.Windows.Forms.Button();
+            DimPanel = new System.Windows.Forms.Panel();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -1041,47 +1042,13 @@
             ViewdetailsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ViewdetailsPanel.BackColor = System.Drawing.Color.Transparent;
             ViewdetailsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ViewdetailsPanel.Controls.Add(tableLayoutPanel2);
             ViewdetailsPanel.Controls.Add(ASnoShoButton);
             ViewdetailsPanel.Controls.Add(ASCancelButton);
-            ViewdetailsPanel.Controls.Add(tableLayoutPanel2);
             ViewdetailsPanel.Location = new System.Drawing.Point(277, 165);
             ViewdetailsPanel.Name = "ViewdetailsPanel";
             ViewdetailsPanel.Size = new System.Drawing.Size(893, 810);
             ViewdetailsPanel.TabIndex = 54;
-            // 
-            // ASnoShoButton
-            // 
-            ASnoShoButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            ASnoShoButton.BackColor = System.Drawing.Color.FromArgb(252, 232, 238);
-            ASnoShoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ASnoShoButton.FlatAppearance.BorderSize = 0;
-            ASnoShoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ASnoShoButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ASnoShoButton.ForeColor = System.Drawing.Color.Red;
-            ASnoShoButton.Location = new System.Drawing.Point(674, 744);
-            ASnoShoButton.Name = "ASnoShoButton";
-            ASnoShoButton.Size = new System.Drawing.Size(181, 51);
-            ASnoShoButton.TabIndex = 110;
-            ASnoShoButton.Text = "Client No Show";
-            ASnoShoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ASnoShoButton.UseVisualStyleBackColor = false;
-            // 
-            // ASCancelButton
-            // 
-            ASCancelButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            ASCancelButton.BackColor = System.Drawing.Color.FromArgb(252, 232, 238);
-            ASCancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ASCancelButton.FlatAppearance.BorderSize = 0;
-            ASCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ASCancelButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ASCancelButton.ForeColor = System.Drawing.Color.Red;
-            ASCancelButton.Location = new System.Drawing.Point(674, 744);
-            ASCancelButton.Name = "ASCancelButton";
-            ASCancelButton.Size = new System.Drawing.Size(181, 51);
-            ASCancelButton.TabIndex = 109;
-            ASCancelButton.Text = "Cancel Appointment";
-            ASCancelButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ASCancelButton.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -1104,7 +1071,6 @@
             AstatPanel.BackColor = System.Drawing.Color.White;
             AstatPanel.Controls.Add(ASbookedtext);
             AstatPanel.Controls.Add(ASbookedlabel);
-            AstatPanel.Controls.Add(ASCompleteButton);
             AstatPanel.Controls.Add(ASserpanel);
             AstatPanel.Controls.Add(ASdtext);
             AstatPanel.Controls.Add(ASdlabel);
@@ -1122,6 +1088,7 @@
             AstatPanel.Controls.Add(ASlabel);
             AstatPanel.Controls.Add(ASstatlabel);
             AstatPanel.Controls.Add(ASConfrimButton);
+            AstatPanel.Controls.Add(ASCompleteButton);
             AstatPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             AstatPanel.Location = new System.Drawing.Point(361, 15);
             AstatPanel.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
@@ -1157,23 +1124,6 @@
             ASbookedlabel.Text = "Date Booked:";
             ASbookedlabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             ASbookedlabel.UseMnemonic = false;
-            // 
-            // ASCompleteButton
-            // 
-            ASCompleteButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            ASCompleteButton.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
-            ASCompleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ASCompleteButton.FlatAppearance.BorderSize = 0;
-            ASCompleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ASCompleteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ASCompleteButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ASCompleteButton.Location = new System.Drawing.Point(302, 607);
-            ASCompleteButton.Name = "ASCompleteButton";
-            ASCompleteButton.Size = new System.Drawing.Size(180, 62);
-            ASCompleteButton.TabIndex = 109;
-            ASCompleteButton.Text = "Complete Appointment";
-            ASCompleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ASCompleteButton.UseVisualStyleBackColor = false;
             // 
             // ASserpanel
             // 
@@ -1399,6 +1349,25 @@
             ASConfrimButton.Text = "Confirm Appointment";
             ASConfrimButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             ASConfrimButton.UseVisualStyleBackColor = false;
+            ASConfrimButton.Click += ASConfrimButton_Click;
+            // 
+            // ASCompleteButton
+            // 
+            ASCompleteButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ASCompleteButton.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            ASCompleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ASCompleteButton.FlatAppearance.BorderSize = 0;
+            ASCompleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ASCompleteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASCompleteButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ASCompleteButton.Location = new System.Drawing.Point(302, 607);
+            ASCompleteButton.Name = "ASCompleteButton";
+            ASCompleteButton.Size = new System.Drawing.Size(180, 62);
+            ASCompleteButton.TabIndex = 109;
+            ASCompleteButton.Text = "Complete Appointment";
+            ASCompleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ASCompleteButton.UseVisualStyleBackColor = false;
+            ASCompleteButton.Click += ASCompleteButton_Click;
             // 
             // AstoreproPanel
             // 
@@ -1604,6 +1573,41 @@
             ASsexicon.Size = new System.Drawing.Size(32, 25);
             ASsexicon.TabIndex = 96;
             ASsexicon.TabStop = false;
+            // 
+            // ASnoShoButton
+            // 
+            ASnoShoButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ASnoShoButton.BackColor = System.Drawing.Color.FromArgb(252, 232, 238);
+            ASnoShoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ASnoShoButton.FlatAppearance.BorderSize = 0;
+            ASnoShoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ASnoShoButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASnoShoButton.ForeColor = System.Drawing.Color.Red;
+            ASnoShoButton.Location = new System.Drawing.Point(674, 740);
+            ASnoShoButton.Name = "ASnoShoButton";
+            ASnoShoButton.Size = new System.Drawing.Size(181, 51);
+            ASnoShoButton.TabIndex = 110;
+            ASnoShoButton.Text = "Client No Show";
+            ASnoShoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ASnoShoButton.UseVisualStyleBackColor = false;
+            // 
+            // ASCancelButton
+            // 
+            ASCancelButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ASCancelButton.BackColor = System.Drawing.Color.FromArgb(252, 232, 238);
+            ASCancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ASCancelButton.FlatAppearance.BorderSize = 0;
+            ASCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ASCancelButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASCancelButton.ForeColor = System.Drawing.Color.Red;
+            ASCancelButton.Location = new System.Drawing.Point(674, 739);
+            ASCancelButton.Name = "ASCancelButton";
+            ASCancelButton.Size = new System.Drawing.Size(181, 51);
+            ASCancelButton.TabIndex = 109;
+            ASCancelButton.Text = "Cancel Appointment";
+            ASCancelButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ASCancelButton.UseVisualStyleBackColor = false;
+            ASCancelButton.Click += ASCancelButton_Click;
             // 
             // AppointmentPanel
             // 
@@ -5134,12 +5138,22 @@
             button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button10.UseVisualStyleBackColor = false;
             // 
+            // DimPanel
+            // 
+            DimPanel.BackColor = System.Drawing.Color.Black;
+            DimPanel.Location = new System.Drawing.Point(0, 0);
+            DimPanel.Name = "DimPanel";
+            DimPanel.Size = new System.Drawing.Size(1219, 0);
+            DimPanel.TabIndex = 67;
+            DimPanel.Visible = false;
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(DimPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(AppointmentsPanel);
@@ -5645,5 +5659,6 @@
         private System.Windows.Forms.Button ASnoShoButton;
         private System.Windows.Forms.Label ASbookedtext;
         private System.Windows.Forms.Label ASbookedlabel;
+        private System.Windows.Forms.Panel DimPanel;
     }
 }

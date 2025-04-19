@@ -80,7 +80,7 @@ namespace OOP2
             SerButton.Visible = false;
             panel44.Visible = false;
             NotificationPanel.Visible = false;
-            AnalyticsMenuPanel.Visible = false;
+            AnalyticsMenuPanel.Visible = false; DimPanel.Visible = false;
             AnalyticPannel2.Visible = false; ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
             AnalyticPannel1.Visible = false; ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
             ProfilePanel.Visible = false; FIESpeCatlabel.Visible = false; FIESpeCattext.Visible = false;
@@ -453,11 +453,12 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             ViewdetailsPanel.Visible = true;
-            if(AppStatus == "Pending")
+            if (AppStatus == "Pending")
             {
                 ASConfrimButton.Visible = true; ASCancelButton.Visible = true;
                 ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
-            }else if(AppStatus == "Confirmed")
+            }
+            else if (AppStatus == "Confirmed")
             {
                 ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
                 ASCompleteButton.Visible = true; ASnoShoButton.Visible = true;
@@ -1487,7 +1488,7 @@ namespace OOP2
 
                 TextBox[] stratimes = { Startime1, Startime2, Startime3, Startime4, Startime5 };
                 TextBox[] endtimes = { Endtime1, Endtime2, Endtime3, Endtime4, Endtime5 };
-                
+
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -1756,7 +1757,7 @@ namespace OOP2
 
         void PopulateCalendar()
         {
-            if(ATPanel.Visible == true)
+            if (ATPanel.Visible == true)
             {
                 ATC3.Controls.Clear();
                 ATC3.SuspendLayout();
@@ -1776,8 +1777,8 @@ namespace OOP2
                     DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
                     DayOfWeek dayOfWeek = thisDate.DayOfWeek;
 
-                    Label dayLabel = new Label{Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate};
-                    
+                    Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate };
+
                     if (!workingDays.Contains(dayOfWeek))
                     {
                         dayLabel.ForeColor = Color.DimGray;
@@ -1905,7 +1906,7 @@ namespace OOP2
                     Exceptionpanel.Visible = false;
                     EATException.Text = string.Empty;
                 }
-                
+
             }
         }
         private void ATCPrev_Click(object sender, EventArgs e)
@@ -1990,6 +1991,7 @@ namespace OOP2
 
                                 usersPanel.ViewDetailsClicked += (s, e) =>
                                 {
+                                    AppointmentId = appointmentId;
                                     ViewDets(appointmentId, FacilityiId, ClientId);
                                 };
 
@@ -2156,6 +2158,56 @@ namespace OOP2
                 }
             }
 
+        }
+
+        private void ASCompleteButton_Click(object sender, EventArgs e)
+        {
+            Notice notice = new Notice();
+            notice.CompletePanel();
+            notice.ShowDialog();
+        }
+
+        private void ASCancelButton_Click(object sender, EventArgs e)
+        {
+            //DimPanel.BackColor = Color.FromArgb(100, 0, 0, 0);
+            //DimPanel.Dock = DockStyle.Fill;
+            //DimPanel.BringToFront();
+            //DimPanel.Visible = true;
+
+            Notice notice = new Notice();
+            notice.CancelPanel();
+            if (notice.ShowDialog() == DialogResult.OK || !string.IsNullOrWhiteSpace(notice.Reason))
+            {
+                string reason = notice.Reason;
+                if (!string.IsNullOrWhiteSpace(reason))
+                {
+                    using (OleDbConnection myConn = new OleDbConnection(connection))
+                    {
+                        myConn.Open();
+                        string updateQuery = "UPDATE Appointments SET [Appointment Status] = ?, [Reason] = ? WHERE [Appointment_ID] = ?";
+
+                        using (OleDbCommand cmd = new OleDbCommand(updateQuery, myConn))
+                        {
+                            cmd.Parameters.AddWithValue("?", "Cancelled");
+                            cmd.Parameters.AddWithValue("?", reason);
+                            cmd.Parameters.AddWithValue("?", AppointmentId);
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Appointment cancelled successfully.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            //DimPanel.Visible = false;
+
+        }
+
+        private void ASConfrimButton_Click(object sender, EventArgs e)
+        {
+            Notice notice = new Notice();
+            notice.CompletePanel();
+            notice.ShowDialog();
         }
     }
 }
