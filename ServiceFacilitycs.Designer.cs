@@ -68,6 +68,8 @@
             ViewdetailsPanel = new System.Windows.Forms.Panel();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             AstatPanel = new System.Windows.Forms.Panel();
+            ASReasontext = new System.Windows.Forms.Label();
+            ASReasonlabel = new System.Windows.Forms.Label();
             ASbookedtext = new System.Windows.Forms.Label();
             ASbookedlabel = new System.Windows.Forms.Label();
             ASserpanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -1069,6 +1071,8 @@
             // AstatPanel
             // 
             AstatPanel.BackColor = System.Drawing.Color.White;
+            AstatPanel.Controls.Add(ASReasontext);
+            AstatPanel.Controls.Add(ASReasonlabel);
             AstatPanel.Controls.Add(ASbookedtext);
             AstatPanel.Controls.Add(ASbookedlabel);
             AstatPanel.Controls.Add(ASserpanel);
@@ -1095,6 +1099,33 @@
             AstatPanel.Name = "AstatPanel";
             AstatPanel.Size = new System.Drawing.Size(497, 692);
             AstatPanel.TabIndex = 52;
+            // 
+            // ASReasontext
+            // 
+            ASReasontext.AutoEllipsis = true;
+            ASReasontext.AutoSize = true;
+            ASReasontext.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            ASReasontext.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASReasontext.Location = new System.Drawing.Point(58, 589);
+            ASReasontext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASReasontext.MaximumSize = new System.Drawing.Size(423, 0);
+            ASReasontext.Name = "ASReasontext";
+            ASReasontext.Size = new System.Drawing.Size(124, 23);
+            ASReasontext.TabIndex = 113;
+            ASReasontext.Text = "Select Timeslot";
+            // 
+            // ASReasonlabel
+            // 
+            ASReasonlabel.AutoEllipsis = true;
+            ASReasonlabel.AutoSize = true;
+            ASReasonlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASReasonlabel.ForeColor = System.Drawing.Color.Black;
+            ASReasonlabel.Location = new System.Drawing.Point(35, 553);
+            ASReasonlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASReasonlabel.Name = "ASReasonlabel";
+            ASReasonlabel.Size = new System.Drawing.Size(195, 23);
+            ASReasonlabel.TabIndex = 112;
+            ASReasonlabel.Text = "Reason of Cancellation: ";
             // 
             // ASbookedtext
             // 
@@ -5660,5 +5691,7 @@
         private System.Windows.Forms.Label ASbookedtext;
         private System.Windows.Forms.Label ASbookedlabel;
         private System.Windows.Forms.Panel DimPanel;
+        private System.Windows.Forms.Label ASReasontext;
+        private System.Windows.Forms.Label ASReasonlabel;
     }
 }

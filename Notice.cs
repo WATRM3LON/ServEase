@@ -54,7 +54,7 @@ namespace OOP2
                 return;
             }
 
-            Reason = Reasontextbox.Text;
+            Reason = "Cancelled by Facility: " + Reasontextbox.Text;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

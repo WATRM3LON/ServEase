@@ -89,7 +89,7 @@ namespace OOP2
             panel44.Visible = false;
             FacilityProPanel.Visible = false;
             FPButton.Visible = false;
-            FacilityProPanel2.Visible = false;
+            FacilityProPanel2.Visible = false; ASReasontext.Visible = false; ASReasonlabel.Visible = false;
             PIEButton.Visible = false; FillEM.Visible = false; BookAppbutton.Visible = false;
             EditPIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
         }
@@ -1938,7 +1938,7 @@ namespace OOP2
                     }
                 }
 
-                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
+                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration], Reason " +
                            "FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(selectAppointment, myConn))
@@ -1968,13 +1968,14 @@ namespace OOP2
 
                             string price = adminReader["Estimated Price"].ToString();
                             string duration = adminReader["Estimated Duration"].ToString();
+                            string reason = adminReader["Reason"].ToString();
 
                             ASdatetext.Text = dateapp + " ,    " + formattedStart + " - " + formattedEnd;
                             ASpricetext.Text = "PHP " + price + ".00";
                             ASdtext.Text = duration;
                             ASstattext.Text = status; ASbookedtext.Text = datebooked;
 
-                            if (status == "Active")
+                            if (status == "Confirmed")
                             {
                                 ASstattext.ForeColor = Color.LawnGreen;
                             }
@@ -1989,6 +1990,9 @@ namespace OOP2
                             else
                             {
                                 ASstattext.ForeColor = Color.Red;
+                                ASReasonlabel.Visible = true; ASReasontext.Visible = true;
+                                ASReasontext.Text = reason;
+                                ReschedButton.Visible = false;
                             }
                         }
                     }

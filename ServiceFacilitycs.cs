@@ -79,7 +79,7 @@ namespace OOP2
             button41.Visible = false;
             SerButton.Visible = false;
             panel44.Visible = false;
-            NotificationPanel.Visible = false;
+            NotificationPanel.Visible = false; ASReasonlabel.Visible = false; ASReasontext.Visible = false;
             AnalyticsMenuPanel.Visible = false; DimPanel.Visible = false;
             AnalyticPannel2.Visible = false; ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
             AnalyticPannel1.Visible = false; ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
@@ -2060,7 +2060,7 @@ namespace OOP2
                     }
                 }
 
-                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
+                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration], Reason " +
                            "FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(selectAppointment, myConn))
@@ -2090,6 +2090,7 @@ namespace OOP2
 
                             string price = adminReader["Estimated Price"].ToString();
                             string duration = adminReader["Estimated Duration"].ToString();
+                            string reason = adminReader["Reason"].ToString();
 
                             ASdatetext.Text = dateapp + " ,    " + formattedStart + " - " + formattedEnd;
                             ASpricetext.Text = "PHP " + price + ".00";
@@ -2117,6 +2118,8 @@ namespace OOP2
                                 ASstattext.ForeColor = Color.Red;
                                 ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
                                 ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
+                                ASReasonlabel.Visible = true; ASReasontext.Visible = true;
+                                ASReasontext.Text = reason;
                             }
                         }
                     }

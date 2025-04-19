@@ -378,6 +378,8 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
+            ASReasonlabel = new System.Windows.Forms.Label();
+            ASReasontext = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -2551,6 +2553,7 @@
             ViewdetailsPanel.BackColor = System.Drawing.Color.Transparent;
             ViewdetailsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             ViewdetailsPanel.Controls.Add(ViewDetspanel);
+            ViewdetailsPanel.Controls.Add(ReschedButton);
             ViewdetailsPanel.Location = new System.Drawing.Point(277, 165);
             ViewdetailsPanel.Name = "ViewdetailsPanel";
             ViewdetailsPanel.Size = new System.Drawing.Size(893, 810);
@@ -2575,6 +2578,8 @@
             // AstatPanel
             // 
             AstatPanel.BackColor = System.Drawing.Color.White;
+            AstatPanel.Controls.Add(ASReasontext);
+            AstatPanel.Controls.Add(ASReasonlabel);
             AstatPanel.Controls.Add(ASbookedtext);
             AstatPanel.Controls.Add(ASbookedlabel);
             AstatPanel.Controls.Add(ASserpanel);
@@ -2593,7 +2598,6 @@
             AstatPanel.Controls.Add(ASstattext);
             AstatPanel.Controls.Add(ASlabel);
             AstatPanel.Controls.Add(ASstatlabel);
-            AstatPanel.Controls.Add(ReschedButton);
             AstatPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             AstatPanel.Location = new System.Drawing.Point(353, 15);
             AstatPanel.Margin = new System.Windows.Forms.Padding(5, 15, 13, 15);
@@ -2847,7 +2851,7 @@
             ReschedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ReschedButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ReschedButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            ReschedButton.Location = new System.Drawing.Point(223, 608);
+            ReschedButton.Location = new System.Drawing.Point(609, 742);
             ReschedButton.Name = "ReschedButton";
             ReschedButton.Size = new System.Drawing.Size(248, 51);
             ReschedButton.TabIndex = 33;
@@ -5269,6 +5273,33 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
+            // ASReasonlabel
+            // 
+            ASReasonlabel.AutoEllipsis = true;
+            ASReasonlabel.AutoSize = true;
+            ASReasonlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASReasonlabel.ForeColor = System.Drawing.Color.Black;
+            ASReasonlabel.Location = new System.Drawing.Point(34, 551);
+            ASReasonlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASReasonlabel.Name = "ASReasonlabel";
+            ASReasonlabel.Size = new System.Drawing.Size(195, 23);
+            ASReasonlabel.TabIndex = 95;
+            ASReasonlabel.Text = "Reason of Cancellation: ";
+            // 
+            // ASReasontext
+            // 
+            ASReasontext.AutoEllipsis = true;
+            ASReasontext.AutoSize = true;
+            ASReasontext.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            ASReasontext.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASReasontext.Location = new System.Drawing.Point(57, 587);
+            ASReasontext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASReasontext.MaximumSize = new System.Drawing.Size(423, 0);
+            ASReasontext.Name = "ASReasontext";
+            ASReasontext.Size = new System.Drawing.Size(124, 23);
+            ASReasontext.TabIndex = 96;
+            ASReasontext.Text = "Select Timeslot";
+            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -5790,5 +5821,7 @@
         private System.Windows.Forms.TableLayoutPanel CAC3;
         private System.Windows.Forms.Label ASbookedlabel;
         private System.Windows.Forms.Label ASbookedtext;
+        private System.Windows.Forms.Label ASReasontext;
+        private System.Windows.Forms.Label ASReasonlabel;
     }
 }
