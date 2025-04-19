@@ -2022,7 +2022,75 @@ namespace OOP2
             }
 
         }
-        private void AstoreproPanel_Paint(object sender, PaintEventArgs e)
+
+        void PopulateCalendarPanel()
+        {
+            .Controls.Clear();
+            ATC3.SuspendLayout();
+
+            List<DayOfWeek> workingDays = ParseWorkingDays(WorDays);
+            List<DateTime> exceptionDates = ParseWorkDays(ExceptionDay);
+
+            DateTime firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+            int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+            int startCol = (int)firstDay.DayOfWeek;
+
+            int row = 0;
+            int col = startCol;
+
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
+                DayOfWeek dayOfWeek = thisDate.DayOfWeek;
+
+                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate };
+
+                if (!workingDays.Contains(dayOfWeek))
+                {
+                    dayLabel.ForeColor = Color.DimGray;
+                    dayLabel.BackColor = Color.WhiteSmoke;
+                }
+                else
+                {
+                    if (exceptionDates.Any(d => d.Date == thisDate.Date))
+                    {
+                        dayLabel.ForeColor = Color.DimGray;
+                        dayLabel.BackColor = Color.WhiteSmoke;
+                    }
+                    else
+                    {
+                        if (thisDate.Date > DateTime.Today.Date)
+                        {
+                            dayLabel.Cursor = Cursors.Hand;
+                            dayLabel.Click += DayLabel_Click;
+                        }
+                    }
+                    if (selectedAppointmentDate.HasValue && thisDate.Date == selectedAppointmentDate.Value)
+                    {
+                        dayLabel.BackColor = ColorTranslator.FromHtml("#69e331");
+                        dayLabel.ForeColor = Color.White;
+                        LoadTimeSlotsFromDatabase(facid, selectedAppointmentDate.Value);
+                    }
+                    if (thisDate.Date < DateTime.Today.Date)
+                    {
+                        dayLabel.ForeColor = Color.DimGray;
+                    }
+                }
+                if (thisDate.Date == DateTime.Today.Date)
+                {
+                    dayLabel.BackColor = ColorTranslator.FromHtml("#d9faf5");
+                }
+
+                ATC3.Controls.Add(dayLabel, col, row);
+
+                col++;
+                if (col == 7)
+                {
+                    col = 0;
+                    row++;
+                }
+            }
+            private void AstoreproPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
