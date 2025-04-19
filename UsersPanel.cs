@@ -66,7 +66,7 @@ namespace OOP2
         public void SetInfo(string Status, string Regist)
         {
             UserStatustext.Text = Status;
-            if (Status == "Active")
+            if (Status == "Confirmed")
             {
                 UserStatustext.ForeColor = Color.LawnGreen;
             }
@@ -105,7 +105,7 @@ namespace OOP2
         public void ClientInfo(string Status, string Regist)
         {
             UserStatustext.Text = Status;
-            if (Status == "Active")
+            if (Status == "Confirmed")
             {
                 UserStatustext.ForeColor = Color.LawnGreen;
             }
@@ -144,7 +144,7 @@ namespace OOP2
         public void AppInfo(string Status, string Regist)
         {
             UserStatustext.Text = Status;
-            if (Status == "Active")
+            if (Status == "Confirmed")
             {
                 UserStatustext.ForeColor = Color.LawnGreen;
             }

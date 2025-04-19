@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Notice));
             CloseButton = new System.Windows.Forms.Button();
             ConButton = new System.Windows.Forms.Button();
@@ -37,6 +38,9 @@
             Title1label = new System.Windows.Forms.Label();
             YesButton = new System.Windows.Forms.Button();
             NoButton = new System.Windows.Forms.Button();
+            ConfirmBox = new System.Windows.Forms.PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            ((System.ComponentModel.ISupportInitialize)ConfirmBox).BeginInit();
             SuspendLayout();
             // 
             // CloseButton
@@ -124,6 +128,7 @@
             YesButton.Text = "Yes";
             YesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             YesButton.UseVisualStyleBackColor = false;
+            YesButton.Click += YesButton_Click;
             // 
             // NoButton
             // 
@@ -142,12 +147,24 @@
             NoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             NoButton.UseVisualStyleBackColor = false;
             // 
+            // ConfirmBox
+            // 
+            ConfirmBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            ConfirmBox.Image = (System.Drawing.Image)resources.GetObject("ConfirmBox.Image");
+            ConfirmBox.Location = new System.Drawing.Point(102, 12);
+            ConfirmBox.Name = "ConfirmBox";
+            ConfirmBox.Size = new System.Drawing.Size(369, 304);
+            ConfirmBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            ConfirmBox.TabIndex = 120;
+            ConfirmBox.TabStop = false;
+            // 
             // Notice
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
-            ClientSize = new System.Drawing.Size(601, 318);
+            ClientSize = new System.Drawing.Size(601, 328);
+            Controls.Add(ConfirmBox);
             Controls.Add(NoButton);
             Controls.Add(YesButton);
             Controls.Add(Title1label);
@@ -160,6 +177,7 @@
             Name = "Notice";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Notice";
+            ((System.ComponentModel.ISupportInitialize)ConfirmBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -174,5 +192,7 @@
         private System.Windows.Forms.Label Title1label;
         private System.Windows.Forms.Button YesButton;
         private System.Windows.Forms.Button NoButton;
+        private System.Windows.Forms.PictureBox ConfirmBox;
+        private System.Windows.Forms.Timer timer1;
     }
 }

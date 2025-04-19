@@ -2211,6 +2211,24 @@ namespace OOP2
             Notice notice = new Notice();
             notice.CompletePanel();
             notice.ShowDialog();
+            if(notice.Yes == "Confirm")
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+                    string updateQuery = "UPDATE Appointments SET [Appointment Status] = ? WHERE [Appointment_ID] = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(updateQuery, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", "Confirmed");
+                        cmd.Parameters.AddWithValue("?", AppointmentId);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Appointment confirmed successfully.", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

@@ -25,12 +25,14 @@ namespace OOP2
         );
 
         public string Reason { get; set; }
+        public string Yes { get; set; }
         public Notice()
         {
             InitializeComponent();
             ConButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ConButton.Width, ConButton.Height, 10, 10));
             Title1label.Visible = false; YesButton.Visible = false; NoButton.Visible = false;
-            Titlelabel.Visible = false;ReasonLabel.Visible = false; Reasontextbox.Visible = false; ConButton.Visible = false;
+            Titlelabel.Visible = false; ReasonLabel.Visible = false; Reasontextbox.Visible = false; ConButton.Visible = false;
+            ConfirmBox.Visible = false;
         }
         public void CancelPanel()
         {
@@ -61,6 +63,30 @@ namespace OOP2
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void YesButton_Click(object sender, EventArgs e)
+        {
+            Yes = "Confirm";
+            ShowPictureTemporarily();
+        }
+        private Timer hideTimer = new Timer();
+
+        private void ShowPictureTemporarily()
+        {
+            ConfirmBox.Visible = true;
+
+            hideTimer.Interval = 3000;
+            hideTimer.Tick += HideTimer_Tick;
+            hideTimer.Start();
+        }
+
+        private void HideTimer_Tick(object sender, EventArgs e)
+        {
+            ConfirmBox.Visible = false;
+            hideTimer.Stop(); 
+            hideTimer.Tick -= HideTimer_Tick;
             this.Close();
         }
     }
