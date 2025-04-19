@@ -161,6 +161,20 @@
             FPButton = new System.Windows.Forms.Button();
             button41 = new System.Windows.Forms.Button();
             CalendarPanel = new System.Windows.Forms.Panel();
+            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            CAC1 = new System.Windows.Forms.TableLayoutPanel();
+            CACnext = new System.Windows.Forms.Button();
+            CACmonth = new System.Windows.Forms.Label();
+            CACprev = new System.Windows.Forms.Button();
+            CAC2 = new System.Windows.Forms.TableLayoutPanel();
+            label28 = new System.Windows.Forms.Label();
+            label29 = new System.Windows.Forms.Label();
+            label30 = new System.Windows.Forms.Label();
+            label31 = new System.Windows.Forms.Label();
+            label32 = new System.Windows.Forms.Label();
+            label33 = new System.Windows.Forms.Label();
+            label34 = new System.Windows.Forms.Label();
+            CAC3 = new System.Windows.Forms.TableLayoutPanel();
             CalendarAppointmentPanel = new System.Windows.Forms.Panel();
             appointmentsbutton = new System.Windows.Forms.Button();
             calendarsButton = new System.Windows.Forms.Button();
@@ -362,20 +376,6 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            button13 = new System.Windows.Forms.Button();
-            label26 = new System.Windows.Forms.Label();
-            button15 = new System.Windows.Forms.Button();
-            tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            label28 = new System.Windows.Forms.Label();
-            label29 = new System.Windows.Forms.Label();
-            label30 = new System.Windows.Forms.Label();
-            label31 = new System.Windows.Forms.Label();
-            label32 = new System.Windows.Forms.Label();
-            label33 = new System.Windows.Forms.Label();
-            label34 = new System.Windows.Forms.Label();
-            tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -405,6 +405,9 @@
             FitnessSPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
             CalendarPanel.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            CAC1.SuspendLayout();
+            CAC2.SuspendLayout();
             CalendarAppointmentPanel.SuspendLayout();
             ViewdetailsPanel.SuspendLayout();
             ViewDetspanel.SuspendLayout();
@@ -461,9 +464,6 @@
             EditPIPanel.SuspendLayout();
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -2258,6 +2258,234 @@
             CalendarPanel.Size = new System.Drawing.Size(893, 723);
             CalendarPanel.TabIndex = 49;
             // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel2.Controls.Add(CAC1, 0, 0);
+            tableLayoutPanel2.Controls.Add(CAC2, 0, 1);
+            tableLayoutPanel2.Controls.Add(CAC3, 0, 2);
+            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            tableLayoutPanel2.Size = new System.Drawing.Size(893, 723);
+            tableLayoutPanel2.TabIndex = 37;
+            // 
+            // CAC1
+            // 
+            CAC1.BackColor = System.Drawing.Color.White;
+            CAC1.ColumnCount = 3;
+            CAC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            CAC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
+            CAC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
+            CAC1.Controls.Add(CACnext, 2, 0);
+            CAC1.Controls.Add(CACmonth, 1, 0);
+            CAC1.Controls.Add(CACprev, 0, 0);
+            CAC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            CAC1.Location = new System.Drawing.Point(0, 0);
+            CAC1.Margin = new System.Windows.Forms.Padding(0);
+            CAC1.Name = "CAC1";
+            CAC1.RowCount = 1;
+            CAC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            CAC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            CAC1.Size = new System.Drawing.Size(893, 72);
+            CAC1.TabIndex = 0;
+            // 
+            // CACnext
+            // 
+            CACnext.BackColor = System.Drawing.Color.WhiteSmoke;
+            CACnext.Dock = System.Windows.Forms.DockStyle.Fill;
+            CACnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            CACnext.ForeColor = System.Drawing.Color.White;
+            CACnext.Image = (System.Drawing.Image)resources.GetObject("CACnext.Image");
+            CACnext.Location = new System.Drawing.Point(793, 20);
+            CACnext.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
+            CACnext.Name = "CACnext";
+            CACnext.Size = new System.Drawing.Size(50, 32);
+            CACnext.TabIndex = 40;
+            CACnext.UseVisualStyleBackColor = false;
+            CACnext.Click += ATCNext_Click;
+            // 
+            // CACmonth
+            // 
+            CACmonth.AutoSize = true;
+            CACmonth.BackColor = System.Drawing.Color.White;
+            CACmonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            CACmonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            CACmonth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            CACmonth.Location = new System.Drawing.Point(148, 0);
+            CACmonth.Margin = new System.Windows.Forms.Padding(0);
+            CACmonth.Name = "CACmonth";
+            CACmonth.Size = new System.Drawing.Size(595, 72);
+            CACmonth.TabIndex = 38;
+            CACmonth.Text = "Time Slots";
+            CACmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CACprev
+            // 
+            CACprev.BackColor = System.Drawing.Color.WhiteSmoke;
+            CACprev.Dock = System.Windows.Forms.DockStyle.Fill;
+            CACprev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            CACprev.ForeColor = System.Drawing.Color.White;
+            CACprev.Image = (System.Drawing.Image)resources.GetObject("CACprev.Image");
+            CACprev.Location = new System.Drawing.Point(50, 20);
+            CACprev.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
+            CACprev.Name = "CACprev";
+            CACprev.Size = new System.Drawing.Size(48, 32);
+            CACprev.TabIndex = 39;
+            CACprev.UseVisualStyleBackColor = false;
+            CACprev.Click += ATCPrev_Click;
+            // 
+            // CAC2
+            // 
+            CAC2.BackColor = System.Drawing.Color.White;
+            CAC2.ColumnCount = 7;
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.Controls.Add(label28, 6, 0);
+            CAC2.Controls.Add(label29, 5, 0);
+            CAC2.Controls.Add(label30, 4, 0);
+            CAC2.Controls.Add(label31, 3, 0);
+            CAC2.Controls.Add(label32, 2, 0);
+            CAC2.Controls.Add(label33, 1, 0);
+            CAC2.Controls.Add(label34, 0, 0);
+            CAC2.Dock = System.Windows.Forms.DockStyle.Fill;
+            CAC2.Location = new System.Drawing.Point(0, 75);
+            CAC2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            CAC2.Name = "CAC2";
+            CAC2.RowCount = 1;
+            CAC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            CAC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            CAC2.Size = new System.Drawing.Size(893, 66);
+            CAC2.TabIndex = 1;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Dock = System.Windows.Forms.DockStyle.Fill;
+            label28.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label28.Location = new System.Drawing.Point(765, 0);
+            label28.Name = "label28";
+            label28.Size = new System.Drawing.Size(125, 66);
+            label28.TabIndex = 56;
+            label28.Text = "Sat";
+            label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            label29.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label29.Location = new System.Drawing.Point(638, 0);
+            label29.Name = "label29";
+            label29.Size = new System.Drawing.Size(121, 66);
+            label29.TabIndex = 55;
+            label29.Text = "Fri";
+            label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            label30.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label30.Location = new System.Drawing.Point(511, 0);
+            label30.Name = "label30";
+            label30.Size = new System.Drawing.Size(121, 66);
+            label30.TabIndex = 54;
+            label30.Text = "Thu";
+            label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            label31.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label31.Location = new System.Drawing.Point(384, 0);
+            label31.Name = "label31";
+            label31.Size = new System.Drawing.Size(121, 66);
+            label31.TabIndex = 53;
+            label31.Text = "Wed";
+            label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            label32.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label32.Location = new System.Drawing.Point(257, 0);
+            label32.Name = "label32";
+            label32.Size = new System.Drawing.Size(121, 66);
+            label32.TabIndex = 52;
+            label32.Text = "Tue";
+            label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            label33.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label33.Location = new System.Drawing.Point(130, 0);
+            label33.Name = "label33";
+            label33.Size = new System.Drawing.Size(121, 66);
+            label33.TabIndex = 51;
+            label33.Text = "Mon";
+            label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Dock = System.Windows.Forms.DockStyle.Fill;
+            label34.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label34.Location = new System.Drawing.Point(3, 0);
+            label34.Name = "label34";
+            label34.Size = new System.Drawing.Size(121, 66);
+            label34.TabIndex = 50;
+            label34.Text = "Sun";
+            label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CAC3
+            // 
+            CAC3.BackColor = System.Drawing.Color.White;
+            CAC3.ColumnCount = 7;
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.Dock = System.Windows.Forms.DockStyle.Fill;
+            CAC3.Location = new System.Drawing.Point(0, 144);
+            CAC3.Margin = new System.Windows.Forms.Padding(0);
+            CAC3.Name = "CAC3";
+            CAC3.RowCount = 6;
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.Size = new System.Drawing.Size(893, 579);
+            CAC3.TabIndex = 2;
+            // 
             // CalendarAppointmentPanel
             // 
             CalendarAppointmentPanel.Controls.Add(appointmentsbutton);
@@ -2308,7 +2536,7 @@
             // 
             AppointmentsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             AppointmentsPanel.AutoScroll = true;
-            AppointmentsPanel.BackColor = System.Drawing.Color.FromArgb(238, 238, 238);
+            AppointmentsPanel.BackColor = System.Drawing.Color.FromArgb(247, 247, 247);
             AppointmentsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             AppointmentsPanel.Location = new System.Drawing.Point(277, 231);
             AppointmentsPanel.Name = "AppointmentsPanel";
@@ -5008,238 +5236,13 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel5, 0, 0);
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel6, 0, 1);
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel7, 0, 2);
-            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            tableLayoutPanel2.Size = new System.Drawing.Size(893, 723);
-            tableLayoutPanel2.TabIndex = 37;
-            // 
-            // tableLayoutPanel5
-            // 
-            tableLayoutPanel5.BackColor = System.Drawing.Color.White;
-            tableLayoutPanel5.ColumnCount = 3;
-            tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
-            tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
-            tableLayoutPanel5.Controls.Add(button13, 2, 0);
-            tableLayoutPanel5.Controls.Add(label26, 1, 0);
-            tableLayoutPanel5.Controls.Add(button15, 0, 0);
-            tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 1;
-            tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new System.Drawing.Size(893, 72);
-            tableLayoutPanel5.TabIndex = 0;
-            // 
-            // button13
-            // 
-            button13.BackColor = System.Drawing.Color.WhiteSmoke;
-            button13.Dock = System.Windows.Forms.DockStyle.Fill;
-            button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button13.ForeColor = System.Drawing.Color.White;
-            button13.Image = (System.Drawing.Image)resources.GetObject("button13.Image");
-            button13.Location = new System.Drawing.Point(793, 20);
-            button13.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            button13.Name = "button13";
-            button13.Size = new System.Drawing.Size(50, 32);
-            button13.TabIndex = 40;
-            button13.UseVisualStyleBackColor = false;
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.BackColor = System.Drawing.Color.White;
-            label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            label26.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label26.Location = new System.Drawing.Point(148, 0);
-            label26.Margin = new System.Windows.Forms.Padding(0);
-            label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(595, 72);
-            label26.TabIndex = 38;
-            label26.Text = "Time Slots";
-            label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button15
-            // 
-            button15.BackColor = System.Drawing.Color.WhiteSmoke;
-            button15.Dock = System.Windows.Forms.DockStyle.Fill;
-            button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button15.ForeColor = System.Drawing.Color.White;
-            button15.Image = (System.Drawing.Image)resources.GetObject("button15.Image");
-            button15.Location = new System.Drawing.Point(50, 20);
-            button15.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            button15.Name = "button15";
-            button15.Size = new System.Drawing.Size(48, 32);
-            button15.TabIndex = 39;
-            button15.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel6
-            // 
-            tableLayoutPanel6.BackColor = System.Drawing.Color.White;
-            tableLayoutPanel6.ColumnCount = 7;
-            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel6.Controls.Add(label28, 6, 0);
-            tableLayoutPanel6.Controls.Add(label29, 5, 0);
-            tableLayoutPanel6.Controls.Add(label30, 4, 0);
-            tableLayoutPanel6.Controls.Add(label31, 3, 0);
-            tableLayoutPanel6.Controls.Add(label32, 2, 0);
-            tableLayoutPanel6.Controls.Add(label33, 1, 0);
-            tableLayoutPanel6.Controls.Add(label34, 0, 0);
-            tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel6.Location = new System.Drawing.Point(0, 75);
-            tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 1;
-            tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel6.Size = new System.Drawing.Size(893, 66);
-            tableLayoutPanel6.TabIndex = 1;
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label28.Location = new System.Drawing.Point(765, 0);
-            label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(125, 66);
-            label28.TabIndex = 56;
-            label28.Text = "Sat";
-            label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label29.Location = new System.Drawing.Point(638, 0);
-            label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(121, 66);
-            label29.TabIndex = 55;
-            label29.Text = "Fri";
-            label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label30.Location = new System.Drawing.Point(511, 0);
-            label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(121, 66);
-            label30.TabIndex = 54;
-            label30.Text = "Thu";
-            label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label31.Location = new System.Drawing.Point(384, 0);
-            label31.Name = "label31";
-            label31.Size = new System.Drawing.Size(121, 66);
-            label31.TabIndex = 53;
-            label31.Text = "Wed";
-            label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label32.Location = new System.Drawing.Point(257, 0);
-            label32.Name = "label32";
-            label32.Size = new System.Drawing.Size(121, 66);
-            label32.TabIndex = 52;
-            label32.Text = "Tue";
-            label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label33.Location = new System.Drawing.Point(130, 0);
-            label33.Name = "label33";
-            label33.Size = new System.Drawing.Size(121, 66);
-            label33.TabIndex = 51;
-            label33.Text = "Mon";
-            label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Dock = System.Windows.Forms.DockStyle.Fill;
-            label34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label34.Location = new System.Drawing.Point(3, 0);
-            label34.Name = "label34";
-            label34.Size = new System.Drawing.Size(121, 66);
-            label34.TabIndex = 50;
-            label34.Text = "Sun";
-            label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel7
-            // 
-            tableLayoutPanel7.BackColor = System.Drawing.Color.White;
-            tableLayoutPanel7.ColumnCount = 7;
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
-            tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel7.Location = new System.Drawing.Point(0, 144);
-            tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 6;
-            tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            tableLayoutPanel7.Size = new System.Drawing.Size(893, 579);
-            tableLayoutPanel7.TabIndex = 2;
-            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(AppointmentsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ViewdetailsPanel);
@@ -5264,7 +5267,6 @@
             Controls.Add(ProfilePanel);
             Controls.Add(FacilityProPanel);
             Controls.Add(FacilityProPanel2);
-            Controls.Add(AppointmentsPanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -5321,6 +5323,11 @@
             HeaderPanel.ResumeLayout(false);
             HeaderPanel.PerformLayout();
             CalendarPanel.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            CAC1.ResumeLayout(false);
+            CAC1.PerformLayout();
+            CAC2.ResumeLayout(false);
+            CAC2.PerformLayout();
             CalendarAppointmentPanel.ResumeLayout(false);
             ViewdetailsPanel.ResumeLayout(false);
             ViewDetspanel.ResumeLayout(false);
@@ -5397,11 +5404,6 @@
             PIEpanel.PerformLayout();
             PIEprofilepanel.ResumeLayout(false);
             PIEprofilepanel.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel5.PerformLayout();
-            tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel6.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5740,11 +5742,11 @@
         private System.Windows.Forms.Button ASdicon;
         private System.Windows.Forms.FlowLayoutPanel ASserpanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel CAC1;
+        private System.Windows.Forms.Button CACnext;
+        private System.Windows.Forms.Label CACmonth;
+        private System.Windows.Forms.Button CACprev;
+        private System.Windows.Forms.TableLayoutPanel CAC2;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
@@ -5752,6 +5754,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel CAC3;
     }
 }

@@ -747,7 +747,7 @@ namespace OOP2
             FacilityProPanel2.Visible = false;
             FPButton.Visible = false;
             //CALENDAR
-            CalendarAppointmentPanel.Visible = true;
+            CalendarAppointmentPanel.Visible = true; PopulateCalendarPanel();
             CalendarPanel.Visible = true;
             CalendarButton.BackColor = ColorTranslator.FromHtml("#69e331");
             CButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -1556,12 +1556,14 @@ namespace OOP2
         {
             currentMonth = currentMonth.AddMonths(-1);
             PopulateCalendar();
+            PopulateCalendarPanel();
         }
 
         private void ATCNext_Click(object sender, EventArgs e)
         {
             currentMonth = currentMonth.AddMonths(+1);
             PopulateCalendar();
+            PopulateCalendarPanel();
         }
 
         void LoadTimeSlotsFromDatabase(int facilityId, DateTime selectedDate)
@@ -2025,11 +2027,8 @@ namespace OOP2
 
         void PopulateCalendarPanel()
         {
-            .Controls.Clear();
-            ATC3.SuspendLayout();
-
-            List<DayOfWeek> workingDays = ParseWorkingDays(WorDays);
-            List<DateTime> exceptionDates = ParseWorkDays(ExceptionDay);
+            CAC3.Controls.Clear();
+            CAC3.SuspendLayout();
 
             DateTime firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
             int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
@@ -2043,45 +2042,33 @@ namespace OOP2
                 DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
                 DayOfWeek dayOfWeek = thisDate.DayOfWeek;
 
-                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, BorderStyle = BorderStyle.None, Font = new Font("Segoe UI", 9), Tag = thisDate };
+                Label dayLabel = new Label
+                {
+                    Text = day.ToString(),
+                    Dock = DockStyle.Fill,
+                    TextAlign = ContentAlignment.TopRight,
+                    Margin = new(5,5,5,5),
+                    BorderStyle = BorderStyle.None,
+                    Font = new Font("Segoe UI", 10),
+                    Tag = thisDate
+                };
 
-                if (!workingDays.Contains(dayOfWeek))
+                if (dayOfWeek == DayOfWeek.Sunday || dayOfWeek == DayOfWeek.Saturday)
                 {
                     dayLabel.ForeColor = Color.DimGray;
                     dayLabel.BackColor = Color.WhiteSmoke;
                 }
-                else
-                {
-                    if (exceptionDates.Any(d => d.Date == thisDate.Date))
-                    {
-                        dayLabel.ForeColor = Color.DimGray;
-                        dayLabel.BackColor = Color.WhiteSmoke;
-                    }
-                    else
-                    {
-                        if (thisDate.Date > DateTime.Today.Date)
-                        {
-                            dayLabel.Cursor = Cursors.Hand;
-                            dayLabel.Click += DayLabel_Click;
-                        }
-                    }
-                    if (selectedAppointmentDate.HasValue && thisDate.Date == selectedAppointmentDate.Value)
-                    {
-                        dayLabel.BackColor = ColorTranslator.FromHtml("#69e331");
-                        dayLabel.ForeColor = Color.White;
-                        LoadTimeSlotsFromDatabase(facid, selectedAppointmentDate.Value);
-                    }
-                    if (thisDate.Date < DateTime.Today.Date)
-                    {
-                        dayLabel.ForeColor = Color.DimGray;
-                    }
-                }
+
+                dayLabel.Cursor = Cursors.Hand;
+                dayLabel.Click += DayLabel_Click;
+                
+                
                 if (thisDate.Date == DateTime.Today.Date)
                 {
                     dayLabel.BackColor = ColorTranslator.FromHtml("#d9faf5");
                 }
 
-                ATC3.Controls.Add(dayLabel, col, row);
+                CAC3.Controls.Add(dayLabel, col, row);
 
                 col++;
                 if (col == 7)
@@ -2090,7 +2077,12 @@ namespace OOP2
                     row++;
                 }
             }
-            private void AstoreproPanel_Paint(object sender, PaintEventArgs e)
+
+            CACmonth.Text = currentMonth.ToString("MMMM yyyy");
+            CAC3.ResumeLayout();
+        }
+
+        private void AstoreproPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

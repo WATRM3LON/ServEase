@@ -65,30 +65,6 @@
             calendarsButton = new System.Windows.Forms.Button();
             CalendarPanel = new System.Windows.Forms.Panel();
             AppointmentsPanel = new System.Windows.Forms.Panel();
-            panel42 = new System.Windows.Forms.Panel();
-            label68 = new System.Windows.Forms.Label();
-            button45 = new System.Windows.Forms.Button();
-            label69 = new System.Windows.Forms.Label();
-            label70 = new System.Windows.Forms.Label();
-            panel43 = new System.Windows.Forms.Panel();
-            label71 = new System.Windows.Forms.Label();
-            label72 = new System.Windows.Forms.Label();
-            panel40 = new System.Windows.Forms.Panel();
-            label63 = new System.Windows.Forms.Label();
-            button44 = new System.Windows.Forms.Button();
-            label64 = new System.Windows.Forms.Label();
-            label65 = new System.Windows.Forms.Label();
-            panel41 = new System.Windows.Forms.Panel();
-            label66 = new System.Windows.Forms.Label();
-            label67 = new System.Windows.Forms.Label();
-            panel38 = new System.Windows.Forms.Panel();
-            label62 = new System.Windows.Forms.Label();
-            button43 = new System.Windows.Forms.Button();
-            label58 = new System.Windows.Forms.Label();
-            label59 = new System.Windows.Forms.Label();
-            panel39 = new System.Windows.Forms.Panel();
-            label60 = new System.Windows.Forms.Label();
-            label61 = new System.Windows.Forms.Label();
             ViewdetailsPanel = new System.Windows.Forms.Panel();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             AstatPanel = new System.Windows.Forms.Panel();
@@ -375,17 +351,35 @@
             EATC3 = new System.Windows.Forms.TableLayoutPanel();
             EATselctdt = new System.Windows.Forms.Label();
             button10 = new System.Windows.Forms.Button();
+            panel39 = new System.Windows.Forms.Panel();
+            label61 = new System.Windows.Forms.Label();
+            label60 = new System.Windows.Forms.Label();
+            label59 = new System.Windows.Forms.Label();
+            label58 = new System.Windows.Forms.Label();
+            button43 = new System.Windows.Forms.Button();
+            label62 = new System.Windows.Forms.Label();
+            panel38 = new System.Windows.Forms.Panel();
+            panel41 = new System.Windows.Forms.Panel();
+            label67 = new System.Windows.Forms.Label();
+            label66 = new System.Windows.Forms.Label();
+            label65 = new System.Windows.Forms.Label();
+            label64 = new System.Windows.Forms.Label();
+            button44 = new System.Windows.Forms.Button();
+            label63 = new System.Windows.Forms.Label();
+            panel40 = new System.Windows.Forms.Panel();
+            panel43 = new System.Windows.Forms.Panel();
+            label72 = new System.Windows.Forms.Label();
+            label71 = new System.Windows.Forms.Label();
+            label70 = new System.Windows.Forms.Label();
+            label69 = new System.Windows.Forms.Label();
+            button45 = new System.Windows.Forms.Button();
+            label68 = new System.Windows.Forms.Label();
+            panel42 = new System.Windows.Forms.Panel();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
             CalendarAppointmentPanel.SuspendLayout();
             AppointmentsPanel.SuspendLayout();
-            panel42.SuspendLayout();
-            panel43.SuspendLayout();
-            panel40.SuspendLayout();
-            panel41.SuspendLayout();
-            panel38.SuspendLayout();
-            panel39.SuspendLayout();
             ViewdetailsPanel.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             AstatPanel.SuspendLayout();
@@ -457,6 +451,12 @@
             EATCPanel.SuspendLayout();
             EATC1.SuspendLayout();
             EATC2.SuspendLayout();
+            panel39.SuspendLayout();
+            panel38.SuspendLayout();
+            panel41.SuspendLayout();
+            panel40.SuspendLayout();
+            panel43.SuspendLayout();
+            panel42.SuspendLayout();
             SuspendLayout();
             // 
             // NotifyButton
@@ -1049,298 +1049,10 @@
             AppointmentsPanel.Controls.Add(panel42);
             AppointmentsPanel.Controls.Add(panel40);
             AppointmentsPanel.Controls.Add(panel38);
-            AppointmentsPanel.Location = new System.Drawing.Point(277, 231);
+            AppointmentsPanel.Location = new System.Drawing.Point(277, 211);
             AppointmentsPanel.Name = "AppointmentsPanel";
             AppointmentsPanel.Size = new System.Drawing.Size(893, 744);
             AppointmentsPanel.TabIndex = 52;
-            // 
-            // panel42
-            // 
-            panel42.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel42.BackColor = System.Drawing.Color.White;
-            panel42.Controls.Add(label68);
-            panel42.Controls.Add(button45);
-            panel42.Controls.Add(label69);
-            panel42.Controls.Add(label70);
-            panel42.Controls.Add(panel43);
-            panel42.Location = new System.Drawing.Point(21, 257);
-            panel42.Name = "panel42";
-            panel42.Size = new System.Drawing.Size(855, 103);
-            panel42.TabIndex = 52;
-            // 
-            // label68
-            // 
-            label68.AutoSize = true;
-            label68.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label68.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label68.Location = new System.Drawing.Point(311, 18);
-            label68.Name = "label68";
-            label68.Size = new System.Drawing.Size(130, 20);
-            label68.TabIndex = 37;
-            label68.Text = "Status: Confirmed";
-            // 
-            // button45
-            // 
-            button45.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button45.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
-            button45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button45.FlatAppearance.BorderSize = 0;
-            button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button45.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button45.Location = new System.Drawing.Point(679, 25);
-            button45.Name = "button45";
-            button45.Size = new System.Drawing.Size(159, 51);
-            button45.TabIndex = 33;
-            button45.Text = "View Details";
-            button45.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button45.UseVisualStyleBackColor = false;
-            button45.Click += button43_Click;
-            // 
-            // label69
-            // 
-            label69.AutoSize = true;
-            label69.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label69.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label69.Location = new System.Drawing.Point(121, 55);
-            label69.Name = "label69";
-            label69.Size = new System.Drawing.Size(93, 20);
-            label69.TabIndex = 36;
-            label69.Text = "10:00 - 12:00";
-            // 
-            // label70
-            // 
-            label70.AutoSize = true;
-            label70.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label70.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label70.Location = new System.Drawing.Point(96, 17);
-            label70.Name = "label70";
-            label70.Size = new System.Drawing.Size(135, 23);
-            label70.TabIndex = 35;
-            label70.Text = "Jessica Gonzales";
-            // 
-            // panel43
-            // 
-            panel43.BackColor = System.Drawing.Color.FromArgb(252, 211, 226);
-            panel43.Controls.Add(label71);
-            panel43.Controls.Add(label72);
-            panel43.Location = new System.Drawing.Point(12, 12);
-            panel43.Name = "panel43";
-            panel43.Size = new System.Drawing.Size(67, 78);
-            panel43.TabIndex = 34;
-            // 
-            // label71
-            // 
-            label71.AutoSize = true;
-            label71.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label71.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label71.Location = new System.Drawing.Point(11, 28);
-            label71.Name = "label71";
-            label71.Size = new System.Drawing.Size(40, 31);
-            label71.TabIndex = 34;
-            label71.Text = "02";
-            // 
-            // label72
-            // 
-            label72.AutoSize = true;
-            label72.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label72.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label72.Location = new System.Drawing.Point(20, 6);
-            label72.Name = "label72";
-            label72.Size = new System.Drawing.Size(25, 20);
-            label72.TabIndex = 33;
-            label72.Text = "Fri";
-            // 
-            // panel40
-            // 
-            panel40.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel40.BackColor = System.Drawing.Color.White;
-            panel40.Controls.Add(label63);
-            panel40.Controls.Add(button44);
-            panel40.Controls.Add(label64);
-            panel40.Controls.Add(label65);
-            panel40.Controls.Add(panel41);
-            panel40.Location = new System.Drawing.Point(23, 135);
-            panel40.Name = "panel40";
-            panel40.Size = new System.Drawing.Size(855, 103);
-            panel40.TabIndex = 52;
-            // 
-            // label63
-            // 
-            label63.AutoSize = true;
-            label63.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label63.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label63.Location = new System.Drawing.Point(311, 18);
-            label63.Name = "label63";
-            label63.Size = new System.Drawing.Size(130, 20);
-            label63.TabIndex = 37;
-            label63.Text = "Status: Confirmed";
-            // 
-            // button44
-            // 
-            button44.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button44.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
-            button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button44.FlatAppearance.BorderSize = 0;
-            button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button44.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button44.Location = new System.Drawing.Point(679, 25);
-            button44.Name = "button44";
-            button44.Size = new System.Drawing.Size(159, 51);
-            button44.TabIndex = 33;
-            button44.Text = "View Details";
-            button44.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button44.UseVisualStyleBackColor = false;
-            button44.Click += button43_Click;
-            // 
-            // label64
-            // 
-            label64.AutoSize = true;
-            label64.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label64.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label64.Location = new System.Drawing.Point(121, 55);
-            label64.Name = "label64";
-            label64.Size = new System.Drawing.Size(93, 20);
-            label64.TabIndex = 36;
-            label64.Text = "10:00 - 12:00";
-            // 
-            // label65
-            // 
-            label65.AutoSize = true;
-            label65.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label65.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label65.Location = new System.Drawing.Point(96, 17);
-            label65.Name = "label65";
-            label65.Size = new System.Drawing.Size(129, 23);
-            label65.TabIndex = 35;
-            label65.Text = "Jimmy Neutron";
-            // 
-            // panel41
-            // 
-            panel41.BackColor = System.Drawing.Color.FromArgb(252, 211, 226);
-            panel41.Controls.Add(label66);
-            panel41.Controls.Add(label67);
-            panel41.Location = new System.Drawing.Point(12, 12);
-            panel41.Name = "panel41";
-            panel41.Size = new System.Drawing.Size(67, 78);
-            panel41.TabIndex = 34;
-            // 
-            // label66
-            // 
-            label66.AutoSize = true;
-            label66.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label66.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label66.Location = new System.Drawing.Point(9, 28);
-            label66.Name = "label66";
-            label66.Size = new System.Drawing.Size(40, 31);
-            label66.TabIndex = 34;
-            label66.Text = "26";
-            // 
-            // label67
-            // 
-            label67.AutoSize = true;
-            label67.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label67.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label67.Location = new System.Drawing.Point(20, 6);
-            label67.Name = "label67";
-            label67.Size = new System.Drawing.Size(25, 20);
-            label67.TabIndex = 33;
-            label67.Text = "Fri";
-            // 
-            // panel38
-            // 
-            panel38.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel38.BackColor = System.Drawing.Color.White;
-            panel38.Controls.Add(label62);
-            panel38.Controls.Add(button43);
-            panel38.Controls.Add(label58);
-            panel38.Controls.Add(label59);
-            panel38.Controls.Add(panel39);
-            panel38.Location = new System.Drawing.Point(21, 17);
-            panel38.Name = "panel38";
-            panel38.Size = new System.Drawing.Size(855, 103);
-            panel38.TabIndex = 51;
-            // 
-            // label62
-            // 
-            label62.AutoSize = true;
-            label62.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label62.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label62.Location = new System.Drawing.Point(311, 18);
-            label62.Name = "label62";
-            label62.Size = new System.Drawing.Size(130, 20);
-            label62.TabIndex = 37;
-            label62.Text = "Status: Confirmed";
-            // 
-            // button43
-            // 
-            button43.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button43.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
-            button43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button43.FlatAppearance.BorderSize = 0;
-            button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button43.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button43.Location = new System.Drawing.Point(679, 25);
-            button43.Name = "button43";
-            button43.Size = new System.Drawing.Size(159, 51);
-            button43.TabIndex = 33;
-            button43.Text = "View Details";
-            button43.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button43.UseVisualStyleBackColor = false;
-            button43.Click += button43_Click;
-            // 
-            // label58
-            // 
-            label58.AutoSize = true;
-            label58.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label58.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label58.Location = new System.Drawing.Point(121, 55);
-            label58.Name = "label58";
-            label58.Size = new System.Drawing.Size(93, 20);
-            label58.TabIndex = 36;
-            label58.Text = "10:00 - 12:00";
-            // 
-            // label59
-            // 
-            label59.AutoSize = true;
-            label59.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label59.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label59.Location = new System.Drawing.Point(96, 17);
-            label59.Name = "label59";
-            label59.Size = new System.Drawing.Size(125, 23);
-            label59.TabIndex = 35;
-            label59.Text = "Juan Dela Cruz";
-            // 
-            // panel39
-            // 
-            panel39.BackColor = System.Drawing.Color.FromArgb(252, 211, 226);
-            panel39.Controls.Add(label60);
-            panel39.Controls.Add(label61);
-            panel39.Location = new System.Drawing.Point(12, 12);
-            panel39.Name = "panel39";
-            panel39.Size = new System.Drawing.Size(67, 78);
-            panel39.TabIndex = 34;
-            // 
-            // label60
-            // 
-            label60.AutoSize = true;
-            label60.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label60.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label60.Location = new System.Drawing.Point(13, 28);
-            label60.Name = "label60";
-            label60.Size = new System.Drawing.Size(36, 31);
-            label60.TabIndex = 34;
-            label60.Text = "14";
-            // 
-            // label61
-            // 
-            label61.AutoSize = true;
-            label61.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label61.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label61.Location = new System.Drawing.Point(20, 6);
-            label61.Name = "label61";
-            label61.Size = new System.Drawing.Size(25, 20);
-            label61.TabIndex = 33;
-            label61.Text = "Fri";
             // 
             // ViewdetailsPanel
             // 
@@ -5202,21 +4914,309 @@
             button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button10.UseVisualStyleBackColor = false;
             // 
+            // panel39
+            // 
+            panel39.BackColor = System.Drawing.Color.FromArgb(252, 211, 226);
+            panel39.Controls.Add(label60);
+            panel39.Controls.Add(label61);
+            panel39.Location = new System.Drawing.Point(12, 12);
+            panel39.Name = "panel39";
+            panel39.Size = new System.Drawing.Size(67, 78);
+            panel39.TabIndex = 34;
+            // 
+            // label61
+            // 
+            label61.AutoSize = true;
+            label61.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label61.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label61.Location = new System.Drawing.Point(20, 6);
+            label61.Name = "label61";
+            label61.Size = new System.Drawing.Size(25, 20);
+            label61.TabIndex = 33;
+            label61.Text = "Fri";
+            // 
+            // label60
+            // 
+            label60.AutoSize = true;
+            label60.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label60.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label60.Location = new System.Drawing.Point(13, 28);
+            label60.Name = "label60";
+            label60.Size = new System.Drawing.Size(36, 31);
+            label60.TabIndex = 34;
+            label60.Text = "14";
+            // 
+            // label59
+            // 
+            label59.AutoSize = true;
+            label59.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label59.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label59.Location = new System.Drawing.Point(96, 17);
+            label59.Name = "label59";
+            label59.Size = new System.Drawing.Size(125, 23);
+            label59.TabIndex = 35;
+            label59.Text = "Juan Dela Cruz";
+            // 
+            // label58
+            // 
+            label58.AutoSize = true;
+            label58.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label58.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label58.Location = new System.Drawing.Point(121, 55);
+            label58.Name = "label58";
+            label58.Size = new System.Drawing.Size(93, 20);
+            label58.TabIndex = 36;
+            label58.Text = "10:00 - 12:00";
+            // 
+            // button43
+            // 
+            button43.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button43.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            button43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button43.FlatAppearance.BorderSize = 0;
+            button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button43.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button43.Location = new System.Drawing.Point(679, 25);
+            button43.Name = "button43";
+            button43.Size = new System.Drawing.Size(159, 51);
+            button43.TabIndex = 33;
+            button43.Text = "View Details";
+            button43.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button43.UseVisualStyleBackColor = false;
+            button43.Click += button43_Click;
+            // 
+            // label62
+            // 
+            label62.AutoSize = true;
+            label62.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label62.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label62.Location = new System.Drawing.Point(311, 18);
+            label62.Name = "label62";
+            label62.Size = new System.Drawing.Size(130, 20);
+            label62.TabIndex = 37;
+            label62.Text = "Status: Confirmed";
+            // 
+            // panel38
+            // 
+            panel38.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel38.BackColor = System.Drawing.Color.White;
+            panel38.Controls.Add(label62);
+            panel38.Controls.Add(button43);
+            panel38.Controls.Add(label58);
+            panel38.Controls.Add(label59);
+            panel38.Controls.Add(panel39);
+            panel38.Location = new System.Drawing.Point(21, 17);
+            panel38.Name = "panel38";
+            panel38.Size = new System.Drawing.Size(855, 103);
+            panel38.TabIndex = 51;
+            // 
+            // panel41
+            // 
+            panel41.BackColor = System.Drawing.Color.FromArgb(252, 211, 226);
+            panel41.Controls.Add(label66);
+            panel41.Controls.Add(label67);
+            panel41.Location = new System.Drawing.Point(12, 12);
+            panel41.Name = "panel41";
+            panel41.Size = new System.Drawing.Size(67, 78);
+            panel41.TabIndex = 34;
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label67.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label67.Location = new System.Drawing.Point(20, 6);
+            label67.Name = "label67";
+            label67.Size = new System.Drawing.Size(25, 20);
+            label67.TabIndex = 33;
+            label67.Text = "Fri";
+            // 
+            // label66
+            // 
+            label66.AutoSize = true;
+            label66.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label66.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label66.Location = new System.Drawing.Point(9, 28);
+            label66.Name = "label66";
+            label66.Size = new System.Drawing.Size(40, 31);
+            label66.TabIndex = 34;
+            label66.Text = "26";
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label65.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label65.Location = new System.Drawing.Point(96, 17);
+            label65.Name = "label65";
+            label65.Size = new System.Drawing.Size(129, 23);
+            label65.TabIndex = 35;
+            label65.Text = "Jimmy Neutron";
+            // 
+            // label64
+            // 
+            label64.AutoSize = true;
+            label64.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label64.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label64.Location = new System.Drawing.Point(121, 55);
+            label64.Name = "label64";
+            label64.Size = new System.Drawing.Size(93, 20);
+            label64.TabIndex = 36;
+            label64.Text = "10:00 - 12:00";
+            // 
+            // button44
+            // 
+            button44.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button44.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button44.FlatAppearance.BorderSize = 0;
+            button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button44.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button44.Location = new System.Drawing.Point(679, 25);
+            button44.Name = "button44";
+            button44.Size = new System.Drawing.Size(159, 51);
+            button44.TabIndex = 33;
+            button44.Text = "View Details";
+            button44.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button44.UseVisualStyleBackColor = false;
+            button44.Click += button43_Click;
+            // 
+            // label63
+            // 
+            label63.AutoSize = true;
+            label63.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label63.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label63.Location = new System.Drawing.Point(311, 18);
+            label63.Name = "label63";
+            label63.Size = new System.Drawing.Size(130, 20);
+            label63.TabIndex = 37;
+            label63.Text = "Status: Confirmed";
+            // 
+            // panel40
+            // 
+            panel40.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel40.BackColor = System.Drawing.Color.White;
+            panel40.Controls.Add(label63);
+            panel40.Controls.Add(button44);
+            panel40.Controls.Add(label64);
+            panel40.Controls.Add(label65);
+            panel40.Controls.Add(panel41);
+            panel40.Location = new System.Drawing.Point(23, 135);
+            panel40.Name = "panel40";
+            panel40.Size = new System.Drawing.Size(855, 103);
+            panel40.TabIndex = 52;
+            // 
+            // panel43
+            // 
+            panel43.BackColor = System.Drawing.Color.FromArgb(252, 211, 226);
+            panel43.Controls.Add(label71);
+            panel43.Controls.Add(label72);
+            panel43.Location = new System.Drawing.Point(12, 12);
+            panel43.Name = "panel43";
+            panel43.Size = new System.Drawing.Size(67, 78);
+            panel43.TabIndex = 34;
+            // 
+            // label72
+            // 
+            label72.AutoSize = true;
+            label72.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label72.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label72.Location = new System.Drawing.Point(20, 6);
+            label72.Name = "label72";
+            label72.Size = new System.Drawing.Size(25, 20);
+            label72.TabIndex = 33;
+            label72.Text = "Fri";
+            // 
+            // label71
+            // 
+            label71.AutoSize = true;
+            label71.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label71.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label71.Location = new System.Drawing.Point(11, 28);
+            label71.Name = "label71";
+            label71.Size = new System.Drawing.Size(40, 31);
+            label71.TabIndex = 34;
+            label71.Text = "02";
+            // 
+            // label70
+            // 
+            label70.AutoSize = true;
+            label70.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label70.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label70.Location = new System.Drawing.Point(96, 17);
+            label70.Name = "label70";
+            label70.Size = new System.Drawing.Size(135, 23);
+            label70.TabIndex = 35;
+            label70.Text = "Jessica Gonzales";
+            // 
+            // label69
+            // 
+            label69.AutoSize = true;
+            label69.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label69.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label69.Location = new System.Drawing.Point(121, 55);
+            label69.Name = "label69";
+            label69.Size = new System.Drawing.Size(93, 20);
+            label69.TabIndex = 36;
+            label69.Text = "10:00 - 12:00";
+            // 
+            // button45
+            // 
+            button45.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button45.BackColor = System.Drawing.Color.FromArgb(243, 80, 139);
+            button45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button45.FlatAppearance.BorderSize = 0;
+            button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button45.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button45.Location = new System.Drawing.Point(679, 25);
+            button45.Name = "button45";
+            button45.Size = new System.Drawing.Size(159, 51);
+            button45.TabIndex = 33;
+            button45.Text = "View Details";
+            button45.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button45.UseVisualStyleBackColor = false;
+            button45.Click += button43_Click;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label68.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label68.Location = new System.Drawing.Point(311, 18);
+            label68.Name = "label68";
+            label68.Size = new System.Drawing.Size(130, 20);
+            label68.TabIndex = 37;
+            label68.Text = "Status: Confirmed";
+            // 
+            // panel42
+            // 
+            panel42.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel42.BackColor = System.Drawing.Color.White;
+            panel42.Controls.Add(label68);
+            panel42.Controls.Add(button45);
+            panel42.Controls.Add(label69);
+            panel42.Controls.Add(label70);
+            panel42.Controls.Add(panel43);
+            panel42.Location = new System.Drawing.Point(21, 257);
+            panel42.Name = "panel42";
+            panel42.Size = new System.Drawing.Size(855, 103);
+            panel42.TabIndex = 52;
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(CalendarAppointmentPanel);
+            Controls.Add(AppointmentsPanel);
             Controls.Add(ATPanel);
             Controls.Add(ServicesOfferedPanel);
             Controls.Add(EATPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(EditFIPanel);
-            Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ESerOffPanel);
             Controls.Add(SettingsPanel);
-            Controls.Add(AppointmentsPanel);
             Controls.Add(NotificationPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AnalyticPannel2);
@@ -5246,18 +5246,6 @@
             HeaderPanel.PerformLayout();
             CalendarAppointmentPanel.ResumeLayout(false);
             AppointmentsPanel.ResumeLayout(false);
-            panel42.ResumeLayout(false);
-            panel42.PerformLayout();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel40.ResumeLayout(false);
-            panel40.PerformLayout();
-            panel41.ResumeLayout(false);
-            panel41.PerformLayout();
-            panel38.ResumeLayout(false);
-            panel38.PerformLayout();
-            panel39.ResumeLayout(false);
-            panel39.PerformLayout();
             ViewdetailsPanel.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             AstatPanel.ResumeLayout(false);
@@ -5372,6 +5360,18 @@
             EATC1.PerformLayout();
             EATC2.ResumeLayout(false);
             EATC2.PerformLayout();
+            panel39.ResumeLayout(false);
+            panel39.PerformLayout();
+            panel38.ResumeLayout(false);
+            panel38.PerformLayout();
+            panel41.ResumeLayout(false);
+            panel41.PerformLayout();
+            panel40.ResumeLayout(false);
+            panel40.PerformLayout();
+            panel43.ResumeLayout(false);
+            panel43.PerformLayout();
+            panel42.ResumeLayout(false);
+            panel42.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5408,30 +5408,6 @@
         private System.Windows.Forms.Button calendarsButton;
         private System.Windows.Forms.Panel CalendarPanel;
         private System.Windows.Forms.Panel AppointmentsPanel;
-        private System.Windows.Forms.Panel panel42;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Button button45;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Panel panel43;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Button button44;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Panel panel41;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Panel panel38;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Button button43;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Panel panel39;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Panel ViewdetailsPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel AstatPanel;
@@ -5733,5 +5709,29 @@
         private System.Windows.Forms.Panel Exceptionpanel;
         private System.Windows.Forms.Label ATCToday;
         private System.Windows.Forms.Label EATIns;
+        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Button button45;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Panel panel43;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Panel panel39;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
     }
 }
