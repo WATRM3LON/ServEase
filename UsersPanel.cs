@@ -35,6 +35,7 @@ namespace OOP2
 
         public void SetDataClient(string Name, string Emailaddress)
         {
+            UserRegistlabel.Text = "Date Registered: "; UserRegistlabel.Location = new Point(375, 45);
             UserNamelabel.Location = new Point(79, 26);
             UserNamelabel.Text = "Name:";
             UserEmaillabel.Text = "Email Addres:";
@@ -69,6 +70,7 @@ namespace OOP2
         }
         public void SetDataFacility(string Name, string Emailaddress)
         {
+            UserRegistlabel.Text = "Date Registered: "; UserRegistlabel.Location = new Point(375, 45);
             UserNamelabel.Location = new Point(39, 26);
             UserNamelabel.Text = "Facility Name:";
             UserEmaillabel.Text = "Email Addres:";
@@ -78,6 +80,7 @@ namespace OOP2
         }
         public void SetAppHistory(string Name, string FLocation)
         {
+            UserRegistlabel.Text = "Date Booked: "; UserRegistlabel.Location = new Point(390, 45);
             UserNamelabel.Location = new Point(39, 26);
             UserNamelabel.Text = "Facility Name:";
             UserNametext.Text = Name;
