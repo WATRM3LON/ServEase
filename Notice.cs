@@ -32,16 +32,17 @@ namespace OOP2
             ConButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ConButton.Width, ConButton.Height, 10, 10));
             Title1label.Visible = false; YesButton.Visible = false; NoButton.Visible = false;
             Titlelabel.Visible = false; ReasonLabel.Visible = false; Reasontextbox.Visible = false; ConButton.Visible = false;
-            ConfirmBox.Visible = false;
+            ConfirmBox.Visible = false; Headinglabel.Visible = false; Captionlabel.Visible = false;
         }
         public void CancelPanel()
         {
             Titlelabel.Visible = true; ReasonLabel.Visible = true; Reasontextbox.Visible = true; ConButton.Visible = true;
+            Headinglabel.Text = "Appointment Cancellation"; Headinglabel.Visible= true;
         }
         public void ConfirmPanel()
         {
-            Titlelabel.Text = "Confirm Appointment ?";
-            Title1label.Visible = true; YesButton.Visible = true; NoButton.Visible = true;
+            Titlelabel.Text = "Confirm Appointment ?"; Headinglabel.Text = "Appointment Confirmation"; Captionlabel.Text = "You are about to confirm this appointment. \r\nThis action cannot be undone.";
+            Title1label.Visible = true; YesButton.Visible = true; NoButton.Visible = true; Headinglabel.Visible = true; Captionlabel.Visible = true;
         }
         public void CompletePanel()
         {
@@ -50,6 +51,7 @@ namespace OOP2
         }
         private void ConButton_Click(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrWhiteSpace(Reasontextbox.Text))
             {
                 MessageBox.Show("Please enter a reason before proceeding.", "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);

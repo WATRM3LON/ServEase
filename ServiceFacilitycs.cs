@@ -2099,7 +2099,7 @@ namespace OOP2
 
                             if (status == "Confirmed")
                             {
-                                ASstattext.ForeColor = Color.LawnGreen;
+                                ASstattext.ForeColor = Color.DodgerBlue;
                                 ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
                                 ASCompleteButton.Visible = true; ASnoShoButton.Visible = true;
                             }
@@ -2209,7 +2209,7 @@ namespace OOP2
         private void ASConfrimButton_Click(object sender, EventArgs e)
         {
             Notice notice = new Notice();
-            notice.CompletePanel();
+            notice.ConfirmPanel();
             notice.ShowDialog();
             if(notice.Yes == "Confirm")
             {

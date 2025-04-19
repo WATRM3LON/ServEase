@@ -40,6 +40,8 @@
             NoButton = new System.Windows.Forms.Button();
             ConfirmBox = new System.Windows.Forms.PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            Headinglabel = new System.Windows.Forms.Label();
+            Captionlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)ConfirmBox).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             ConButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ConButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             ConButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ConButton.Location = new System.Drawing.Point(375, 250);
+            ConButton.Location = new System.Drawing.Point(367, 279);
             ConButton.Name = "ConButton";
             ConButton.Size = new System.Drawing.Size(180, 46);
             ConButton.TabIndex = 115;
@@ -76,7 +78,7 @@
             // 
             // Reasontextbox
             // 
-            Reasontextbox.Location = new System.Drawing.Point(53, 119);
+            Reasontextbox.Location = new System.Drawing.Point(52, 152);
             Reasontextbox.Multiline = true;
             Reasontextbox.Name = "Reasontextbox";
             Reasontextbox.Size = new System.Drawing.Size(462, 110);
@@ -86,7 +88,7 @@
             // 
             ReasonLabel.AutoSize = true;
             ReasonLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ReasonLabel.Location = new System.Drawing.Point(29, 80);
+            ReasonLabel.Location = new System.Drawing.Point(29, 100);
             ReasonLabel.Name = "ReasonLabel";
             ReasonLabel.Size = new System.Drawing.Size(377, 25);
             ReasonLabel.TabIndex = 113;
@@ -96,7 +98,7 @@
             // 
             Titlelabel.AutoSize = true;
             Titlelabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Titlelabel.Location = new System.Drawing.Point(29, 30);
+            Titlelabel.Location = new System.Drawing.Point(29, 52);
             Titlelabel.Name = "Titlelabel";
             Titlelabel.Size = new System.Drawing.Size(250, 31);
             Titlelabel.TabIndex = 112;
@@ -106,7 +108,7 @@
             // 
             Title1label.AutoSize = true;
             Title1label.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Title1label.Location = new System.Drawing.Point(165, 85);
+            Title1label.Location = new System.Drawing.Point(165, 79);
             Title1label.Name = "Title1label";
             Title1label.Size = new System.Drawing.Size(268, 31);
             Title1label.TabIndex = 117;
@@ -121,7 +123,7 @@
             YesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             YesButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             YesButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            YesButton.Location = new System.Drawing.Point(317, 167);
+            YesButton.Location = new System.Drawing.Point(337, 227);
             YesButton.Name = "YesButton";
             YesButton.Size = new System.Drawing.Size(69, 46);
             YesButton.TabIndex = 118;
@@ -139,7 +141,7 @@
             NoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             NoButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             NoButton.ForeColor = System.Drawing.Color.Red;
-            NoButton.Location = new System.Drawing.Point(189, 167);
+            NoButton.Location = new System.Drawing.Point(180, 227);
             NoButton.Name = "NoButton";
             NoButton.Size = new System.Drawing.Size(69, 46);
             NoButton.TabIndex = 119;
@@ -151,20 +153,43 @@
             // 
             ConfirmBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             ConfirmBox.Image = (System.Drawing.Image)resources.GetObject("ConfirmBox.Image");
-            ConfirmBox.Location = new System.Drawing.Point(102, 12);
+            ConfirmBox.Location = new System.Drawing.Point(94, 12);
             ConfirmBox.Name = "ConfirmBox";
-            ConfirmBox.Size = new System.Drawing.Size(369, 304);
+            ConfirmBox.Size = new System.Drawing.Size(403, 326);
             ConfirmBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             ConfirmBox.TabIndex = 120;
             ConfirmBox.TabStop = false;
+            // 
+            // Headinglabel
+            // 
+            Headinglabel.AutoSize = true;
+            Headinglabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Headinglabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            Headinglabel.Location = new System.Drawing.Point(12, 5);
+            Headinglabel.Name = "Headinglabel";
+            Headinglabel.Size = new System.Drawing.Size(217, 23);
+            Headinglabel.TabIndex = 121;
+            Headinglabel.Text = "Appointment Confirmation";
+            // 
+            // Captionlabel
+            // 
+            Captionlabel.AutoSize = true;
+            Captionlabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            Captionlabel.Location = new System.Drawing.Point(125, 142);
+            Captionlabel.Name = "Captionlabel";
+            Captionlabel.Size = new System.Drawing.Size(346, 46);
+            Captionlabel.TabIndex = 122;
+            Captionlabel.Text = "You are about to confirm this appointment. \r\nThis action cannot be undone.";
+            Captionlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Notice
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
-            ClientSize = new System.Drawing.Size(601, 328);
-            Controls.Add(ConfirmBox);
+            ClientSize = new System.Drawing.Size(601, 350);
+            Controls.Add(Captionlabel);
+            Controls.Add(Headinglabel);
             Controls.Add(NoButton);
             Controls.Add(YesButton);
             Controls.Add(Title1label);
@@ -173,6 +198,7 @@
             Controls.Add(Reasontextbox);
             Controls.Add(ReasonLabel);
             Controls.Add(Titlelabel);
+            Controls.Add(ConfirmBox);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "Notice";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -194,5 +220,7 @@
         private System.Windows.Forms.Button NoButton;
         private System.Windows.Forms.PictureBox ConfirmBox;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label Headinglabel;
+        private System.Windows.Forms.Label Captionlabel;
     }
 }

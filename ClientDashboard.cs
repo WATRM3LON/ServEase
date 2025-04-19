@@ -1977,7 +1977,7 @@ namespace OOP2
 
                             if (status == "Confirmed")
                             {
-                                ASstattext.ForeColor = Color.LawnGreen;
+                                ASstattext.ForeColor = Color.DodgerBlue;
                             }
                             else if (status == "Pending")
                             {

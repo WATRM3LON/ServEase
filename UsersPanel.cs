@@ -68,7 +68,7 @@ namespace OOP2
             UserStatustext.Text = Status;
             if (Status == "Confirmed")
             {
-                UserStatustext.ForeColor = Color.LawnGreen;
+                UserStatustext.ForeColor = Color.DodgerBlue;
             }
             else if (Status == "Pending")
             {
@@ -107,7 +107,7 @@ namespace OOP2
             UserStatustext.Text = Status;
             if (Status == "Confirmed")
             {
-                UserStatustext.ForeColor = Color.LawnGreen;
+                UserStatustext.ForeColor = Color.DodgerBlue;
             }
             else if (Status == "Pending")
             {
@@ -146,7 +146,7 @@ namespace OOP2
             UserStatustext.Text = Status;
             if (Status == "Confirmed")
             {
-                UserStatustext.ForeColor = Color.LawnGreen;
+                UserStatustext.ForeColor = Color.DodgerBlue;
             }
             else if (Status == "Pending")
             {
