@@ -1032,6 +1032,7 @@
             // AppointmentsPanel
             // 
             AppointmentsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            AppointmentsPanel.AutoScroll = true;
             AppointmentsPanel.BackColor = System.Drawing.Color.Transparent;
             AppointmentsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             AppointmentsPanel.Location = new System.Drawing.Point(277, 211);

@@ -36,25 +36,25 @@ namespace OOP2
             ConfirmBox.Visible = false; Headinglabel.Visible = false; Captionlabel.Visible = false; CompleteBox.Visible = false; CancelBox.Visible = false;
         }
         public void CancelPanel()
-        {
+        { 
             Titlelabel.Visible = true; ReasonLabel.Visible = true; Reasontextbox.Visible = true; ConButton.Visible = true;
             Headinglabel.Text = "Appointment Cancellation"; Headinglabel.Visible= true; AppStat = "Cancel";
         }
         public void ConfirmPanel()
         {
-            Titlelabel.Text = "Confirm Appointment ?"; Headinglabel.Text = "Appointment Confirmation"; Captionlabel.Text = "You are about to confirm this appointment.\r\nThis action cannot be undone.";
+            Title1label.Text = "Confirm Appointment ?"; Headinglabel.Text = "Appointment Confirmation"; Captionlabel.Text = "You are about to confirm this appointment.\r\nThis action cannot be undone.";
             Title1label.Visible = true; YesButton.Visible = true; NoButton.Visible = true; Headinglabel.Visible = true; Captionlabel.Visible = true;
             AppStat = "Confirm";
         }
         public void CompletePanel()
         {
-            Titlelabel.Text = "Complete Appointment ?"; Headinglabel.Text = "Confirm Appointment Completion"; Captionlabel.Text = "This action will mark the appointment as completed.\r\nContinue?";
+            Title1label.Text = "Complete Appointment ?"; Headinglabel.Text = "Confirm Appointment Completion"; Captionlabel.Text = "This action will mark the appointment as completed.\r\nContinue?";
             Title1label.Visible = true; YesButton.Visible = true; NoButton.Visible = true; Headinglabel.Visible = true; Captionlabel.Visible = true;
             AppStat = "Complete";
         }
         public void NoshowPanel()
         {
-            Titlelabel.Text = "Mark as No-Show ?"; Headinglabel.Text = "Client No-Show"; Captionlabel.Text = "This will mark the appointment as Client No-Show.\r\nDo you want to proceed?";
+            Title1label.Text = "Mark as No-Show ?"; Headinglabel.Text = "Client No-Show"; Captionlabel.Text = "This will mark the appointment as Client No-Show.\r\nDo you want to proceed?";
             Title1label.Visible = true; YesButton.Visible = true; NoButton.Visible = true; Headinglabel.Visible = true; Captionlabel.Visible = true;
             AppStat = "No Show";
         }

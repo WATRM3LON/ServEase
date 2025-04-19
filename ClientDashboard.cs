@@ -64,7 +64,7 @@ namespace OOP2
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
         string locs = "", Ems = "", selectedTime = "";
-        int facid, newClientId=0;
+        int facid, newClientId = 0, Appid;
         int clientId;
         public ClientDashboard()
         {
@@ -1852,7 +1852,7 @@ namespace OOP2
                                 UsersPanel usersPanel = new UsersPanel();
                                 usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
                                 usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                                
+
 
                                 usersPanel.Location = new Point(10, margin);
                                 margin += usersPanel.Height + 10;
@@ -1889,7 +1889,7 @@ namespace OOP2
                     }
                     else
                     {
-                       
+
                     }
                 }
             }
@@ -1907,7 +1907,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
-
+            Appid = ID;
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
@@ -2058,7 +2058,7 @@ namespace OOP2
                     Text = day.ToString(),
                     Dock = DockStyle.Fill,
                     TextAlign = ContentAlignment.TopRight,
-                    Margin = new(5,5,5,5),
+                    Margin = new(5, 5, 5, 5),
                     BorderStyle = BorderStyle.None,
                     Font = new Font("Segoe UI", 10),
                     Tag = thisDate
@@ -2072,8 +2072,8 @@ namespace OOP2
 
                 dayLabel.Cursor = Cursors.Hand;
                 dayLabel.Click += DayLabel_Click;
-                
-                
+
+
                 if (thisDate.Date == DateTime.Today.Date)
                 {
                     dayLabel.BackColor = ColorTranslator.FromHtml("#d9faf5");
@@ -2096,6 +2096,35 @@ namespace OOP2
         private void AstoreproPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ReschedButton_Click(object sender, EventArgs e)
+        {
+            NoticeClient noticeclient = new NoticeClient();
+            noticeclient.CancelPanel();
+            if (noticeclient.ShowDialog() == DialogResult.OK || !string.IsNullOrWhiteSpace(noticeclient.Reason))
+            {
+                string reason = noticeclient.Reason;
+                if (!string.IsNullOrWhiteSpace(reason))
+                {
+                    using (OleDbConnection myConn = new OleDbConnection(connection))
+                    {
+                        myConn.Open();
+                        string updateQuery = "UPDATE Appointments SET [Appointment Status] = ?, [Reason] = ? WHERE [Appointment_ID] = ?";
+
+                        using (OleDbCommand cmd = new OleDbCommand(updateQuery, myConn))
+                        {
+                            cmd.Parameters.AddWithValue("?", "Cancelled");
+                            cmd.Parameters.AddWithValue("?", reason);
+                            cmd.Parameters.AddWithValue("?", Appid);
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Appointment cancelled successfully.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
     }
 }

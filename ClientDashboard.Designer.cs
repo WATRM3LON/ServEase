@@ -182,6 +182,8 @@
             ViewdetailsPanel = new System.Windows.Forms.Panel();
             ViewDetspanel = new System.Windows.Forms.TableLayoutPanel();
             AstatPanel = new System.Windows.Forms.Panel();
+            ASReasontext = new System.Windows.Forms.Label();
+            ASReasonlabel = new System.Windows.Forms.Label();
             ASbookedtext = new System.Windows.Forms.Label();
             ASbookedlabel = new System.Windows.Forms.Label();
             ASserpanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -200,7 +202,6 @@
             ASstattext = new System.Windows.Forms.Label();
             ASlabel = new System.Windows.Forms.Label();
             ASstatlabel = new System.Windows.Forms.Label();
-            ReschedButton = new System.Windows.Forms.Button();
             AstoreproPanel = new System.Windows.Forms.Panel();
             ASConumicon = new System.Windows.Forms.PictureBox();
             ASEMSicon = new System.Windows.Forms.PictureBox();
@@ -219,6 +220,7 @@
             ASLoclabel = new System.Windows.Forms.Label();
             ASLoctext = new System.Windows.Forms.Label();
             ASWorDaysicon = new System.Windows.Forms.PictureBox();
+            ReschedButton = new System.Windows.Forms.Button();
             ProfilePanel = new System.Windows.Forms.Panel();
             DeleteAccButton = new System.Windows.Forms.Button();
             GPPanel = new System.Windows.Forms.Panel();
@@ -378,8 +380,6 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
-            ASReasonlabel = new System.Windows.Forms.Label();
-            ASReasontext = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -2605,6 +2605,33 @@
             AstatPanel.Size = new System.Drawing.Size(505, 692);
             AstatPanel.TabIndex = 52;
             // 
+            // ASReasontext
+            // 
+            ASReasontext.AutoEllipsis = true;
+            ASReasontext.AutoSize = true;
+            ASReasontext.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            ASReasontext.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASReasontext.Location = new System.Drawing.Point(57, 587);
+            ASReasontext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASReasontext.MaximumSize = new System.Drawing.Size(423, 0);
+            ASReasontext.Name = "ASReasontext";
+            ASReasontext.Size = new System.Drawing.Size(124, 23);
+            ASReasontext.TabIndex = 96;
+            ASReasontext.Text = "Select Timeslot";
+            // 
+            // ASReasonlabel
+            // 
+            ASReasonlabel.AutoEllipsis = true;
+            ASReasonlabel.AutoSize = true;
+            ASReasonlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASReasonlabel.ForeColor = System.Drawing.Color.Black;
+            ASReasonlabel.Location = new System.Drawing.Point(34, 551);
+            ASReasonlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASReasonlabel.Name = "ASReasonlabel";
+            ASReasonlabel.Size = new System.Drawing.Size(195, 23);
+            ASReasonlabel.TabIndex = 95;
+            ASReasonlabel.Text = "Reason of Cancellation: ";
+            // 
             // ASbookedtext
             // 
             ASbookedtext.AutoEllipsis = true;
@@ -2842,23 +2869,6 @@
             ASstatlabel.TabIndex = 37;
             ASstatlabel.Text = "Status:";
             // 
-            // ReschedButton
-            // 
-            ReschedButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            ReschedButton.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            ReschedButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ReschedButton.FlatAppearance.BorderSize = 0;
-            ReschedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ReschedButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ReschedButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            ReschedButton.Location = new System.Drawing.Point(609, 742);
-            ReschedButton.Name = "ReschedButton";
-            ReschedButton.Size = new System.Drawing.Size(248, 51);
-            ReschedButton.TabIndex = 33;
-            ReschedButton.Text = "Reschedule Appointment";
-            ReschedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ReschedButton.UseVisualStyleBackColor = false;
-            // 
             // AstoreproPanel
             // 
             AstoreproPanel.BackColor = System.Drawing.Color.White;
@@ -3088,6 +3098,24 @@
             ASWorDaysicon.Size = new System.Drawing.Size(32, 25);
             ASWorDaysicon.TabIndex = 79;
             ASWorDaysicon.TabStop = false;
+            // 
+            // ReschedButton
+            // 
+            ReschedButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ReschedButton.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
+            ReschedButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ReschedButton.FlatAppearance.BorderSize = 0;
+            ReschedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ReschedButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ReschedButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            ReschedButton.Location = new System.Drawing.Point(609, 742);
+            ReschedButton.Name = "ReschedButton";
+            ReschedButton.Size = new System.Drawing.Size(248, 51);
+            ReschedButton.TabIndex = 33;
+            ReschedButton.Text = "Reschedule Appointment";
+            ReschedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ReschedButton.UseVisualStyleBackColor = false;
+            ReschedButton.Click += ReschedButton_Click;
             // 
             // ProfilePanel
             // 
@@ -5272,33 +5300,6 @@
             PIEpp.Name = "PIEpp";
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
-            // 
-            // ASReasonlabel
-            // 
-            ASReasonlabel.AutoEllipsis = true;
-            ASReasonlabel.AutoSize = true;
-            ASReasonlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ASReasonlabel.ForeColor = System.Drawing.Color.Black;
-            ASReasonlabel.Location = new System.Drawing.Point(34, 551);
-            ASReasonlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            ASReasonlabel.Name = "ASReasonlabel";
-            ASReasonlabel.Size = new System.Drawing.Size(195, 23);
-            ASReasonlabel.TabIndex = 95;
-            ASReasonlabel.Text = "Reason of Cancellation: ";
-            // 
-            // ASReasontext
-            // 
-            ASReasontext.AutoEllipsis = true;
-            ASReasontext.AutoSize = true;
-            ASReasontext.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            ASReasontext.ForeColor = System.Drawing.SystemColors.ControlText;
-            ASReasontext.Location = new System.Drawing.Point(57, 587);
-            ASReasontext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            ASReasontext.MaximumSize = new System.Drawing.Size(423, 0);
-            ASReasontext.Name = "ASReasontext";
-            ASReasontext.Size = new System.Drawing.Size(124, 23);
-            ASReasontext.TabIndex = 96;
-            ASReasontext.Text = "Select Timeslot";
             // 
             // ClientDashboard
             // 

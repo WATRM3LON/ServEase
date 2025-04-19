@@ -119,6 +119,7 @@
             Title1label.Size = new System.Drawing.Size(268, 31);
             Title1label.TabIndex = 117;
             Title1label.Text = "Confirm Appointment ?";
+            Title1label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // YesButton
             // 
@@ -227,6 +228,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(601, 350);
+            Controls.Add(ConfirmBox);
             Controls.Add(NoshowBox);
             Controls.Add(CancelBox);
             Controls.Add(CompleteBox);
@@ -240,7 +242,6 @@
             Controls.Add(Reasontextbox);
             Controls.Add(ReasonLabel);
             Controls.Add(Titlelabel);
-            Controls.Add(ConfirmBox);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "Notice";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

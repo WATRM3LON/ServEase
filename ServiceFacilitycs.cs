@@ -2252,7 +2252,7 @@ namespace OOP2
         private void ASnoShoButton_Click(object sender, EventArgs e)
         {
             Notice notice = new Notice();
-            notice.ConfirmPanel();
+            notice.NoshowPanel();
             notice.ShowDialog();
             if (notice.Yes == "No Show")
             {
