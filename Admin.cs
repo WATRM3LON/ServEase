@@ -473,85 +473,78 @@ namespace OOP2
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
+                string sql = "SELECT Facility_ID, Appointment_ID FROM Appointments WHERE Client_ID = ?";
 
-                if (Client)
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
-                    string sql = "SELECT Facility_ID FROM Appointments WHERE Client_ID = ?";
+                    cmd.Parameters.AddWithValue("?", clientId);
 
-                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
                     {
-                        cmd.Parameters.AddWithValue("?", clientId);
-
-                        int count = (int)cmd.ExecuteScalar();
-
-                        if (count > 0)
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
                         {
-                            using (OleDbDataReader reader = cmd.ExecuteReader())
+                            int margin = 10;
+
+                            while (reader.Read())
                             {
-                                int margin = 10;
+                                int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                                int appointmentId = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
+                                string FacName = "", FLocation = "";
 
-                                while (reader.Read())
+                                string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+                                using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
                                 {
-                                    int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
-                                    string FacName = "", FLocation = "";
+                                    facility.Parameters.AddWithValue("?", newFacilityId);
 
-                                    string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
-                                    using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
+                                    using (OleDbDataReader readers = facility.ExecuteReader())
                                     {
-                                        facility.Parameters.AddWithValue("?", newFacilityId);
-
-                                        using (OleDbDataReader readers = facility.ExecuteReader())
+                                        if (readers.Read())
                                         {
-                                            if (readers.Read())
-                                            {
-                                                FacName = readers.IsDBNull(readers.GetOrdinal("Facility Name")) ? "" : readers["Facility Name"].ToString();
-                                                FLocation = readers.IsDBNull(readers.GetOrdinal("Facility Location")) ? "" : readers["Facility Location"].ToString();
-                                            }
+                                            FacName = readers.IsDBNull(readers.GetOrdinal("Facility Name")) ? "" : readers["Facility Name"].ToString();
+                                            FLocation = readers.IsDBNull(readers.GetOrdinal("Facility Location")) ? "" : readers["Facility Location"].ToString();
                                         }
                                     }
-
-                                    UsersPanel usersPanel = new UsersPanel();
-                                    usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
-                                    usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                                    usersPanel.SetAppHistory(FacName, FLocation);
-                                    usersPanel.Loaders();
-
-                                    usersPanel.Location = new Point(10, margin - 7);
-                                    margin += usersPanel.Height + 10;
-
-                                    string adminQuery = "SELECT [Appointment Status], [Date and Time] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ?";
-                                    using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
-                                    {
-                                        adminCmd.Parameters.AddWithValue("?", clientId);
-                                        adminCmd.Parameters.AddWithValue("?", newFacilityId);
-
-                                        using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
-                                        {
-                                            if (adminReader.Read())
-                                            {
-                                                string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
-                                                string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
-
-                                                usersPanel.SetInfo(status, dateapp);
-                                            }
-                                        }
-                                    }
-
-                                    AppHistPanel.Controls.Add(usersPanel);
                                 }
+
+                                UsersPanel usersPanel = new UsersPanel();
+                                usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                                usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                                usersPanel.SetAppHistory(FacName, FLocation);
+                                usersPanel.Loaders();
+
+                                usersPanel.Location = new Point(10, margin - 7);
+                                margin += usersPanel.Height + 10;
+
+                                string adminQuery = "SELECT [Appointment Status], [Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                                using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
+                                {
+                                    adminCmd.Parameters.AddWithValue("?", clientId);
+                                    adminCmd.Parameters.AddWithValue("?", newFacilityId);
+                                    adminCmd.Parameters.AddWithValue("?", appointmentId);
+
+                                    using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                    {
+                                        if (adminReader.Read())
+                                        {
+                                            string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                                            string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+
+                                            usersPanel.SetInfo(status, dateapp);
+                                        }
+                                    }
+                                }
+
+
+                                AppHistPanel.Controls.Add(usersPanel);
                             }
                         }
-                        else
-                        {
-                            
-                        }
-                        
                     }
-
-                }
-                else
-                {
-                    
+                    else
+                    {
+                            
+                    }
                 }
             }
         }

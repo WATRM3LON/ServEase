@@ -96,8 +96,11 @@
             AppHistPanel = new System.Windows.Forms.Panel();
             button1 = new System.Windows.Forms.Button();
             FViewDetailspanel = new System.Windows.Forms.Panel();
-            button2 = new System.Windows.Forms.Button();
             FPIPanel = new System.Windows.Forms.Panel();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             FIWordaystext = new System.Windows.Forms.Label();
             FIWordayslabel = new System.Windows.Forms.Label();
             FIWorhourstext = new System.Windows.Forms.Label();
@@ -113,19 +116,16 @@
             FIEditButton = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             FProPicPanel = new System.Windows.Forms.Panel();
+            label6 = new System.Windows.Forms.Label();
+            button4 = new System.Windows.Forms.Button();
             FILoclabel = new System.Windows.Forms.Label();
             FILoctext = new System.Windows.Forms.Label();
             FIRatingslabel = new System.Windows.Forms.Label();
             FIRatingstext = new System.Windows.Forms.Label();
             FIFnameTitle = new System.Windows.Forms.Label();
             panel4 = new System.Windows.Forms.Panel();
-            label2 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
+            button2 = new System.Windows.Forms.Button();
             button3 = new System.Windows.Forms.Button();
-            label6 = new System.Windows.Forms.Label();
-            button4 = new System.Windows.Forms.Button();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
@@ -1038,6 +1038,7 @@
             // AppHistPanel
             // 
             AppHistPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            AppHistPanel.AutoScroll = true;
             AppHistPanel.BackColor = System.Drawing.Color.Transparent;
             AppHistPanel.Controls.Add(button1);
             AppHistPanel.Location = new System.Drawing.Point(277, 208);
@@ -1075,23 +1076,6 @@
             FViewDetailspanel.Size = new System.Drawing.Size(914, 655);
             FViewDetailspanel.TabIndex = 61;
             // 
-            // button2
-            // 
-            button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button2.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
-            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button2.ForeColor = System.Drawing.Color.White;
-            button2.Location = new System.Drawing.Point(1417, 1189);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(165, 51);
-            button2.TabIndex = 78;
-            button2.Text = "Deactivate Account";
-            button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = false;
-            // 
             // FPIPanel
             // 
             FPIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -1118,6 +1102,54 @@
             FPIPanel.Name = "FPIPanel";
             FPIPanel.Size = new System.Drawing.Size(888, 378);
             FPIPanel.TabIndex = 80;
+            // 
+            // label2
+            // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label2.Location = new System.Drawing.Point(330, 327);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(210, 25);
+            label2.TabIndex = 82;
+            label2.Text = "juandelacruz@gmail.com";
+            // 
+            // label3
+            // 
+            label3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            label3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label3.Location = new System.Drawing.Point(323, 288);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(122, 25);
+            label3.TabIndex = 81;
+            label3.Text = "Date Deleted";
+            // 
+            // label4
+            // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label4.Location = new System.Drawing.Point(27, 327);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(149, 25);
+            label4.TabIndex = 80;
+            label4.Text = "+63 9956226213";
+            // 
+            // label5
+            // 
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            label5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label5.Location = new System.Drawing.Point(20, 288);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(146, 25);
+            label5.TabIndex = 79;
+            label5.Text = "Date Registered";
             // 
             // FIWordaystext
             // 
@@ -1312,6 +1344,36 @@
             FProPicPanel.Size = new System.Drawing.Size(888, 165);
             FProPicPanel.TabIndex = 79;
             // 
+            // label6
+            // 
+            label6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label6.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label6.Location = new System.Drawing.Point(669, 38);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(50, 20);
+            label6.TabIndex = 52;
+            label6.Text = "Status";
+            // 
+            // button4
+            // 
+            button4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button4.BackColor = System.Drawing.Color.WhiteSmoke;
+            button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button4.ForeColor = System.Drawing.Color.LimeGreen;
+            button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            button4.Location = new System.Drawing.Point(743, 22);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(109, 46);
+            button4.TabIndex = 51;
+            button4.Text = "Active";
+            button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            button4.UseVisualStyleBackColor = false;
+            // 
             // FILoclabel
             // 
             FILoclabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -1382,53 +1444,22 @@
             panel4.Size = new System.Drawing.Size(116, 115);
             panel4.TabIndex = 34;
             // 
-            // label2
+            // button2
             // 
-            label2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label2.Location = new System.Drawing.Point(330, 327);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(210, 25);
-            label2.TabIndex = 82;
-            label2.Text = "juandelacruz@gmail.com";
-            // 
-            // label3
-            // 
-            label3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            label3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label3.Location = new System.Drawing.Point(323, 288);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(122, 25);
-            label3.TabIndex = 81;
-            label3.Text = "Date Deleted";
-            // 
-            // label4
-            // 
-            label4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label4.Location = new System.Drawing.Point(27, 327);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(149, 25);
-            label4.TabIndex = 80;
-            label4.Text = "+63 9956226213";
-            // 
-            // label5
-            // 
-            label5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            label5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label5.Location = new System.Drawing.Point(20, 288);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(146, 25);
-            label5.TabIndex = 79;
-            label5.Text = "Date Registered";
+            button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button2.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
+            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button2.ForeColor = System.Drawing.Color.White;
+            button2.Location = new System.Drawing.Point(1417, 1189);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(165, 51);
+            button2.TabIndex = 78;
+            button2.Text = "Deactivate Account";
+            button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -1447,45 +1478,15 @@
             button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button3.UseVisualStyleBackColor = false;
             // 
-            // label6
-            // 
-            label6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label6.Location = new System.Drawing.Point(669, 38);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(50, 20);
-            label6.TabIndex = 52;
-            label6.Text = "Status";
-            // 
-            // button4
-            // 
-            button4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button4.BackColor = System.Drawing.Color.WhiteSmoke;
-            button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button4.ForeColor = System.Drawing.Color.LimeGreen;
-            button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button4.Location = new System.Drawing.Point(743, 22);
-            button4.Name = "button4";
-            button4.Size = new System.Drawing.Size(109, 46);
-            button4.TabIndex = 51;
-            button4.Text = "Active";
-            button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            button4.UseVisualStyleBackColor = false;
-            // 
             // Admin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(214, 241, 250);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(AppHistPanel);
             Controls.Add(FViewDetailspanel);
             Controls.Add(CViewDetailspanel);
-            Controls.Add(AppHistPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ViewDetpanel);
             Controls.Add(ProfilePanel);
