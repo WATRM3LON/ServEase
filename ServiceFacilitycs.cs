@@ -71,7 +71,6 @@ namespace OOP2
             ViewdetailsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             CalendarPanel.Visible = false;
-            StatusPanel.Visible = false;
             AppointmentPanel.Visible = true;
             panel11.Visible = true;
             panel45.Visible = true;
@@ -82,8 +81,8 @@ namespace OOP2
             panel44.Visible = false;
             NotificationPanel.Visible = false;
             AnalyticsMenuPanel.Visible = false;
-            AnalyticPannel2.Visible = false;
-            AnalyticPannel1.Visible = false;
+            AnalyticPannel2.Visible = false; ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
+            AnalyticPannel1.Visible = false; ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
             ProfilePanel.Visible = false; FIESpeCatlabel.Visible = false; FIESpeCattext.Visible = false;
             SOButton.Visible = false;
             ATPanel.Visible = false; EATPanel.Visible = false; EATButton.Visible = false;
@@ -137,6 +136,8 @@ namespace OOP2
             appointmentsbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, appointmentsbutton.Width, appointmentsbutton.Height, 10, 10));
             ASConfrimButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ASConfrimButton.Width, ASConfrimButton.Height, 10, 10));
             ASCancelButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ASCancelButton.Width, ASCancelButton.Height, 10, 10));
+            ASCompleteButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ASCompleteButton.Width, ASCompleteButton.Height, 10, 10));
+            ASnoShoButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ASnoShoButton.Width, ASnoShoButton.Height, 10, 10));
             //ANALYTICS
             AnalyticPannel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AnalyticPannel1.Width, AnalyticPannel1.Height, 10, 10));
             AnalyticPannel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AnalyticPannel2.Width, AnalyticPannel2.Height, 10, 10));
@@ -452,18 +453,32 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             ViewdetailsPanel.Visible = true;
+            if(AppStatus == "Pending")
+            {
+                ASConfrimButton.Visible = true; ASCancelButton.Visible = true;
+                ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
+            }else if(AppStatus == "Confirmed")
+            {
+                ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
+                ASCompleteButton.Visible = true; ASnoShoButton.Visible = true;
+            }
+            else
+            {
+                ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
+                ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
+            }
         }
 
         private void DownButton_Click(object sender, EventArgs e)
         {
             if (status == false)
             {
-                StatusPanel.Visible = true;
+                //StatusPanel.Visible = true;
                 status = true;
             }
             else
             {
-                StatusPanel.Visible = false;
+                //StatusPanel.Visible = false;
                 status = false;
             }
         }
@@ -1974,7 +1989,7 @@ namespace OOP2
 
                                 usersPanel.ViewDetailsClicked += (s, e) =>
                                 {
-                                    //ViewDets(appointmentId, newFacilityId, newClientId);
+                                    ViewDets(appointmentId, FacilityiId, ClientId);
                                 };
 
                                 string adminQuery = "SELECT [Appointment Status], [Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
@@ -1988,10 +2003,10 @@ namespace OOP2
                                     {
                                         if (adminReader.Read())
                                         {
-                                            string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                                            AppStatus = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
                                             string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
 
-                                            usersPanel.AppInfo(status, dateapp);
+                                            usersPanel.AppInfo(AppStatus, dateapp);
                                         }
                                     }
                                 }
@@ -2007,6 +2022,135 @@ namespace OOP2
                     }
                 }
             }
+        }
+
+        public void ViewDets(int ID, int Faid, int Clid)
+        {
+            WelcomeLabel.Visible = false;
+            button41.Visible = true;
+            AppointmentsPanel.Visible = false;
+            CalendarAppointmentPanel.Visible = false;
+            ViewdetailsPanel.Visible = true;
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getFacility = "SELECT [First Name], [Last Name], Sex, Location, [Contact Number], [Email Address] FROM [Clients] WHERE [Client_ID] = ?";
+                using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
+                {
+                    facility.Parameters.AddWithValue("?", Clid);
+
+                    using (OleDbDataReader readers = facility.ExecuteReader())
+                    {
+                        if (readers.Read())
+                        {
+                            string namefirst = readers.IsDBNull(readers.GetOrdinal("First Name")) ? "" : readers["First Name"].ToString();
+                            string namelast = readers.IsDBNull(readers.GetOrdinal("Last Name")) ? "" : readers["Last Name"].ToString();
+                            ASLastName.Text = namelast; ASFirstName.Text = namefirst;
+                            ASEMStext.Text = readers.IsDBNull(readers.GetOrdinal("Email Address")) ? "" : readers["Email Address"].ToString();
+                            ASsextext.Text = readers.IsDBNull(readers.GetOrdinal("Sex")) ? "" : readers["Sex"].ToString();
+                            ASConumtext.Text = readers.IsDBNull(readers.GetOrdinal("Contact Number")) ? "" : readers["Contact Number"].ToString();
+                            ASLoctext.Text = readers.IsDBNull(readers.GetOrdinal("Location")) ? "" : readers["Location"].ToString();
+                        }
+                    }
+                }
+
+                string selectAppointment = "SELECT [Appointment Status], [Date], [Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
+                           "FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(selectAppointment, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Clid);
+                    cmd.Parameters.AddWithValue("?", Faid);
+                    cmd.Parameters.AddWithValue("?", ID);
+
+                    using (OleDbDataReader adminReader = cmd.ExecuteReader())
+                    {
+                        if (adminReader.Read())
+                        {
+                            string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                            string dateapp = adminReader.IsDBNull(adminReader.GetOrdinal("Date"))
+                                ? ""
+                                : adminReader.GetDateTime(adminReader.GetOrdinal("Date")).ToString("dd MMM yyyy");
+
+                            string startTimeStr = adminReader["Start Time"].ToString();
+                            string endTimeStr = adminReader["End Time"].ToString();
+                            DateTime startTime = DateTime.Parse(startTimeStr);
+                            DateTime endTime = DateTime.Parse(endTimeStr);
+                            string formattedStart = startTime.ToString("hh:mm tt");
+                            string formattedEnd = endTime.ToString("hh:mm tt");
+
+                            string price = adminReader["Estimated Price"].ToString();
+                            string duration = adminReader["Estimated Duration"].ToString();
+
+                            ASdatetext.Text = dateapp + " ,    " + formattedStart + " - " + formattedEnd;
+                            ASpricetext.Text = "PHP " + price + ".00";
+                            ASdtext.Text = duration;
+                            ASstattext.Text = status;
+
+                            if (status == "Confirmed")
+                            {
+                                ASstattext.ForeColor = Color.LawnGreen;
+                                ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
+                                ASCompleteButton.Visible = true; ASnoShoButton.Visible = true;
+                            }
+                            else if (status == "Pending")
+                            {
+                                ASstattext.ForeColor = Color.Gold;
+                                ASConfrimButton.Visible = true; ASCancelButton.Visible = true;
+                                ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
+                            }
+                            else if (status == "Completed")
+                            {
+                                ASstattext.ForeColor = ColorTranslator.FromHtml("#69e331");
+                            }
+                            else
+                            {
+                                ASstattext.ForeColor = Color.Red;
+                                ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
+                                ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
+                            }
+                        }
+                    }
+                }
+                ASserpanel.Controls.Clear();
+
+                string serviceQuery = "SELECT [Service_ID] FROM [Appointment Services] WHERE [Appointment_ID] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(serviceQuery, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string serviceId = reader["Service_ID"].ToString();
+
+                            string serviceInfoQuery = "SELECT [Service Name], [Duration] FROM [Facility Services] WHERE [Service_ID] = ?";
+                            using (OleDbCommand serviceCmd = new OleDbCommand(serviceInfoQuery, myConn))
+                            {
+                                serviceCmd.Parameters.AddWithValue("?", serviceId);
+
+                                using (OleDbDataReader serviceReader = serviceCmd.ExecuteReader())
+                                {
+                                    if (serviceReader.Read())
+                                    {
+                                        string serviceName = serviceReader["Service Name"].ToString();
+                                        string duration = serviceReader["Duration"].ToString();
+
+                                        ServiceDuration serviceDuration = new ServiceDuration();
+                                        serviceDuration.SetInfo(serviceName, duration);
+                                        ASserpanel.Controls.Add(serviceDuration);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
