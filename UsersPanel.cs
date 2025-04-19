@@ -27,12 +27,6 @@ namespace OOP2
         {
             InitializeComponent();
         }
-
-        public void Loaders()
-        {
-            ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));
-        }
-
         public void SetDataClient(string Name, string Emailaddress)
         {
             UserRegistlabel.Text = "Date Registered: "; UserRegistlabel.Location = new Point(375, 45);
@@ -42,6 +36,31 @@ namespace OOP2
             UserNametext.Text = Name;
             UserEmailtext.Text = Emailaddress; ViewDetailsButton.Visible = true;
             ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#69e331");
+            ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));
+        }
+        
+        public void SetDataFacility(string Name, string Emailaddress)
+        {
+            UserRegistlabel.Text = "Date Registered: "; UserRegistlabel.Location = new Point(375, 45);
+            UserNamelabel.Location = new Point(39, 26);
+            UserNamelabel.Text = "Facility Name:";
+            UserEmaillabel.Text = "Email Addres:";
+            UserNametext.Text = Name;
+            UserEmailtext.Text = Emailaddress; ViewDetailsButton.Visible = true;
+            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#f3508b");
+            ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));
+        }
+
+        //ADMIN//
+        public void SetAppHistory(string Name, string FLocation)
+        {
+            UserRegistlabel.Text = "Date Booked: "; UserRegistlabel.Location = new Point(390, 45);
+            UserNamelabel.Location = new Point(39, 26);
+            UserNamelabel.Text = "Facility Name:";
+            UserNametext.Text = Name;
+            UserEmaillabel.Text = "Location: ";
+            UserEmailtext.Text = FLocation; ViewDetailsButton.Visible = false;
+            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#22b0e5");
         }
         public void SetInfo(string Status, string Regist)
         {
@@ -50,7 +69,7 @@ namespace OOP2
             {
                 UserStatustext.ForeColor = Color.LawnGreen;
             }
-            else if(Status == "Pending")
+            else if (Status == "Pending")
             {
                 UserStatustext.ForeColor = Color.Gold;
             }
@@ -68,27 +87,44 @@ namespace OOP2
             }
             UserRegisttext.Text = Regist;
         }
-        public void SetDataFacility(string Name, string Emailaddress)
-        {
-            UserRegistlabel.Text = "Date Registered: "; UserRegistlabel.Location = new Point(375, 45);
-            UserNamelabel.Location = new Point(39, 26);
-            UserNamelabel.Text = "Facility Name:";
-            UserEmaillabel.Text = "Email Addres:";
-            UserNametext.Text = Name;
-            UserEmailtext.Text = Emailaddress; ViewDetailsButton.Visible = true;
-            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#f3508b");
-        }
-        public void SetAppHistory(string Name, string FLocation)
+
+        //CLIENT//
+        public void CLientApp(string Name, string FLocation)
         {
             UserRegistlabel.Text = "Date Booked: "; UserRegistlabel.Location = new Point(390, 45);
             UserNamelabel.Location = new Point(39, 26);
             UserNamelabel.Text = "Facility Name:";
             UserNametext.Text = Name;
             UserEmaillabel.Text = "Location: ";
-            UserEmailtext.Text = FLocation; ViewDetailsButton.Visible = false;
-            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#22b0e5");
+            UserEmailtext.Text = FLocation; ViewDetailsButton.Visible = true;
+            ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#d9faf5");
+            ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));
         }
-
+        public void ClientInfo(string Status, string Regist)
+        {
+            UserStatustext.Text = Status;
+            if (Status == "Active")
+            {
+                UserStatustext.ForeColor = Color.LawnGreen;
+            }
+            else if (Status == "Pending")
+            {
+                UserStatustext.ForeColor = Color.Gold;
+            }
+            else if (Status == "Completed")
+            {
+                UserStatustext.ForeColor = ColorTranslator.FromHtml("#69e331");
+            }
+            else if (Status == "Cancelled")
+            {
+                UserStatustext.ForeColor = Color.Red;
+            }
+            else
+            {
+                UserStatustext.ForeColor = Color.Red;
+            }
+            UserRegisttext.Text = Regist;
+        }
         public event EventHandler ViewDetailsClicked;
 
         private void ViewDetailsButton_Click(object sender, EventArgs e)

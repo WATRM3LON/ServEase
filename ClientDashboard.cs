@@ -64,7 +64,7 @@ namespace OOP2
         List<DateTime> exceptionDays = new List<DateTime>();
         string locs = "", Ems = "", selectedTime = "";
         int facid, newClientId;
-        int clientId ;
+        int clientId;
         public ClientDashboard()
         {
             InitializeComponent();
@@ -89,7 +89,7 @@ namespace OOP2
             FacilityProPanel.Visible = false;
             FPButton.Visible = false;
             FacilityProPanel2.Visible = false;
-            PIEButton.Visible = false; FillEM.Visible = false;
+            PIEButton.Visible = false; FillEM.Visible = false; BookAppbutton.Visible = false;
             EditPIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
         }
 
@@ -155,31 +155,20 @@ namespace OOP2
             FacProPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FacProPanel.Width, FacProPanel.Height, 10, 10));
             FacSerOPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FacSerOPanel.Width, FacSerOPanel.Height, 10, 10));
             EditButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EditButton.Width, EditButton.Height, 10, 10));
-            BAPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BAPanel.Width, BAPanel.Height, 10, 10));
             BaASerpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaASerpanel.Width, BaASerpanel.Height, 10, 10));
             BaADTPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaADTPanel.Width, BaADTPanel.Height, 10, 10));
             SOTable.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOTable.Width, SOTable.Height, 10, 10));
+            FPBookAppButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FPBookAppButton.Width, FPBookAppButton.Height, 10, 10));
             //Calendar
             CalendarPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CalendarPanel.Width, CalendarPanel.Height, 10, 10));
             calendarsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, calendarsButton.Width, calendarsButton.Height, 10, 10));
             //Appointment
             AppointmentsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentsPanel.Width, AppointmentsPanel.Height, 10, 10));
             appointmentsbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, appointmentsbutton.Width, appointmentsbutton.Height, 10, 10));
-            button43.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button43.Width, button43.Height, 10, 10));
-            button44.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button44.Width, button44.Height, 10, 10));
-            button45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button45.Width, button45.Height, 10, 10));
-            panel39.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel39.Width, panel39.Height, 10, 10));
-            panel40.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel40.Width, panel40.Height, 10, 10));
-            panel41.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel41.Width, panel41.Height, 10, 10));
-            panel42.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel42.Width, panel42.Height, 10, 10));
-            panel43.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel43.Width, panel43.Height, 10, 10));
-            panel38.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel38.Width, panel38.Height, 10, 10));
-            panel44.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel44.Width, panel44.Height, 10, 10));
             //APPOINTMENT DETAILS
             AstoreproPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AstoreproPanel.Width, AstoreproPanel.Height, 10, 10));
             AstatPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AstatPanel.Width, AstatPanel.Height, 10, 10));
             ReschedButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ReschedButton.Width, ReschedButton.Height, 10, 10));
-            AproPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AproPanel.Width, AproPanel.Height, 10, 10));
             BaASerpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaASerpanel.Width, BaASerpanel.Height, 10, 10));
             BaADTPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaADTPanel.Width, BaADTPanel.Height, 10, 10));
             ATCPrev.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCPrev.Width, ATCPrev.Height, 10, 10));
@@ -651,6 +640,7 @@ namespace OOP2
             FacilityProPanel2.Visible = false;
             SerButton.Visible = false;
             SerPanel.Visible = false;
+            BookAppbutton.Visible = false;
             if (notify == true)
             {
                 NotificationPanel.Visible = false;
@@ -679,7 +669,8 @@ namespace OOP2
         {
             FacilityProPanel.Visible = false;
             FacilityProPanel2.Visible = true;
-            FPButton.Visible = true;
+            FPButton.Visible = false;
+            BookAppbutton.Visible = true;
             if (notify == true)
             {
                 NotificationPanel.Visible = false;
@@ -1671,7 +1662,7 @@ namespace OOP2
         private List<ClientAppointment> SelectedServices => BaASer2.Controls.OfType<ClientAppointment>().Where(c => c.IsSelected).ToList();
         public List<int> SelectedServiceIds { get; private set; } = new List<int>();
 
-        int EPrice, EDuration; 
+        int EPrice, EDuration;
         private void UpdateBookingSummary()
         {
             BookingSumlabel.Visible = true; BookingSumpanel.Visible = true;
@@ -1792,6 +1783,185 @@ namespace OOP2
                 }
             }
             MessageBox.Show("Updated successfully!");
+        }
+
+        public void LoadHistory()
+        {
+            AppointmentsPanel.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+                string sql = "SELECT Facility_ID, Appointment_ID FROM Appointments WHERE Client_ID = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", clientId);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            int margin = 10;
+
+                            while (reader.Read())
+                            {
+                                int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                                int appointmentId = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
+                                string FacName = "", FLocation = "";
+
+                                string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+                                using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
+                                {
+                                    facility.Parameters.AddWithValue("?", newFacilityId);
+
+                                    using (OleDbDataReader readers = facility.ExecuteReader())
+                                    {
+                                        if (readers.Read())
+                                        {
+                                            FacName = readers.IsDBNull(readers.GetOrdinal("Facility Name")) ? "" : readers["Facility Name"].ToString();
+                                            FLocation = readers.IsDBNull(readers.GetOrdinal("Facility Location")) ? "" : readers["Facility Location"].ToString();
+                                        }
+                                    }
+                                }
+
+                                UsersPanel usersPanel = new UsersPanel();
+                                usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                                usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                                usersPanel.CLientApp(FacName, FLocation);
+
+                                usersPanel.Location = new Point(10, margin - 7);
+                                margin += usersPanel.Height + 10;
+
+                                usersPanel.ViewDetailsClicked += (s, e) =>
+                                {
+                                    ViewDets(appointmentId, newFacilityId, clientId);
+                                };
+
+                                string adminQuery = "SELECT [Appointment Status], [Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                                using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
+                                {
+                                    adminCmd.Parameters.AddWithValue("?", clientId);
+                                    adminCmd.Parameters.AddWithValue("?", newFacilityId);
+                                    adminCmd.Parameters.AddWithValue("?", appointmentId);
+
+                                    using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                    {
+                                        if (adminReader.Read())
+                                        {
+                                            string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                                            string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+
+                                            usersPanel.ClientInfo(status, dateapp);
+                                        }
+                                    }
+                                }
+
+
+                                AppointmentsPanel.Controls.Add(usersPanel);
+                            }
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+        }
+        public void ViewDets(int ID, int Faid, int Clid)
+        {
+            WelcomeLabel.Visible = false;
+            button41.Visible = true;
+            AppointmentsPanel.Visible = false;
+            CalendarAppointmentPanel.Visible = false;
+            ViewdetailsPanel.Visible = true;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT [Facility Location], [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Working Days], [Contact Number], [Exception Day (Closed)] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Faid);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Facname = reader["Facility Name"].ToString();
+                            locs = reader["Facility Location"].ToString();
+                            Ems = reader["Email Address"].ToString();
+                            string contnumb = reader["Contact Number"].ToString();
+                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
+                            WorDays = reader.IsDBNull(reader.GetOrdinal("Working Days")) ? "" : reader.GetString(reader.GetOrdinal("Working Days"));
+                            Ratings = reader["Ratings"].ToString();
+                            ExceptionDay = reader["Exception Day (Closed)"].ToString();
+
+                            ASFaciName.Text = Facname; ASWorkingHoursText.Text = formattedWorHours; ASWorDaystext.Text = WorDays; ASLoctext.Text = locs; ASConumtext.Text = contnumb; ASEMStext.Text = Ems;
+                        }
+                    }
+                }
+
+                string insertAppointment = "SELECT INTO Appointments [Appointment Status], [Date], [Start Time], [End Time], [Estimated Price], [Estimated Duration] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(insertAppointment, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Clid);
+                    cmd.Parameters.AddWithValue("?", Faid);
+                    cmd.Parameters.AddWithValue("?", ID);
+
+                    using (OleDbDataReader adminReader = cmd.ExecuteReader())
+                    {
+                        if (adminReader.Read())
+                        {
+                            string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                            string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                        }
+                    }
+                    cmd.Parameters.AddWithValue("?", newClientId);
+                    cmd.Parameters.AddWithValue("?", facid);
+                    cmd.Parameters.AddWithValue("?", "Pending");
+
+                    string dateTimeString = $"{selectedAppointmentDate:dd MM yyyy}";
+                    DateTime dateTime = DateTime.Parse(dateTimeString);
+                    cmd.Parameters.AddWithValue("?", dateTimeString);
+
+                    string[] timeParts = selectedTimeSlotLabel.Text.Split('-');
+                    string startTimeText = timeParts[0].Trim();
+                    string endTimeText = timeParts[1].Trim();
+
+                    DateTime startTime = DateTime.Parse($"{startTimeText: hh:mm tt}");
+                    DateTime endTime = DateTime.Parse($"{endTimeText: hh:mm tt}");
+
+                    cmd.Parameters.AddWithValue("?", startTimeText);
+                    cmd.Parameters.AddWithValue("?", endTimeText);
+
+                    cmd.Parameters.AddWithValue("?", EPrice);
+
+                    string durationString = $"{EDuration} mins";
+                    cmd.Parameters.AddWithValue("?", durationString);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
+        private void AstoreproPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

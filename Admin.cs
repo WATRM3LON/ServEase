@@ -188,7 +188,6 @@ namespace OOP2
                             usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 
                             usersPanel.SetDataClient(fullName, email);
-                            usersPanel.Loaders();
 
                             usersPanel.ClientId = actualClientId;
                             usersPanel.ViewDetailsClicked += (s, e) =>
@@ -242,7 +241,6 @@ namespace OOP2
                             usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
 
                             usersPanel.SetDataFacility(Name, email);
-                            usersPanel.Loaders();
 
                             usersPanel.Location = new Point(10, margin - 7);
                             margin += usersPanel.Height + 10;
@@ -512,7 +510,6 @@ namespace OOP2
                                 usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
                                 usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
                                 usersPanel.SetAppHistory(FacName, FLocation);
-                                usersPanel.Loaders();
 
                                 usersPanel.Location = new Point(10, margin - 7);
                                 margin += usersPanel.Height + 10;

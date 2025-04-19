@@ -156,6 +156,7 @@
             SerButton = new System.Windows.Forms.Button();
             SerPanel = new System.Windows.Forms.Panel();
             HeaderPanel = new System.Windows.Forms.Panel();
+            BookAppbutton = new System.Windows.Forms.Button();
             PIEButton = new System.Windows.Forms.Button();
             FPButton = new System.Windows.Forms.Button();
             button41 = new System.Windows.Forms.Button();
@@ -164,54 +165,29 @@
             appointmentsbutton = new System.Windows.Forms.Button();
             calendarsButton = new System.Windows.Forms.Button();
             AppointmentsPanel = new System.Windows.Forms.Panel();
-            panel42 = new System.Windows.Forms.Panel();
-            label68 = new System.Windows.Forms.Label();
-            button45 = new System.Windows.Forms.Button();
-            label69 = new System.Windows.Forms.Label();
-            label70 = new System.Windows.Forms.Label();
-            panel43 = new System.Windows.Forms.Panel();
-            label71 = new System.Windows.Forms.Label();
-            label72 = new System.Windows.Forms.Label();
-            panel40 = new System.Windows.Forms.Panel();
-            label63 = new System.Windows.Forms.Label();
-            button44 = new System.Windows.Forms.Button();
-            label64 = new System.Windows.Forms.Label();
-            label65 = new System.Windows.Forms.Label();
-            panel41 = new System.Windows.Forms.Panel();
-            label66 = new System.Windows.Forms.Label();
-            label67 = new System.Windows.Forms.Label();
-            panel38 = new System.Windows.Forms.Panel();
-            label62 = new System.Windows.Forms.Label();
-            button43 = new System.Windows.Forms.Button();
-            label58 = new System.Windows.Forms.Label();
-            label59 = new System.Windows.Forms.Label();
-            panel39 = new System.Windows.Forms.Panel();
-            label60 = new System.Windows.Forms.Label();
-            label61 = new System.Windows.Forms.Label();
             ViewdetailsPanel = new System.Windows.Forms.Panel();
-            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            ViewDetspanel = new System.Windows.Forms.TableLayoutPanel();
             AstatPanel = new System.Windows.Forms.Panel();
-            label89 = new System.Windows.Forms.Label();
-            label90 = new System.Windows.Forms.Label();
-            label82 = new System.Windows.Forms.Label();
-            label88 = new System.Windows.Forms.Label();
-            label80 = new System.Windows.Forms.Label();
-            label81 = new System.Windows.Forms.Label();
-            label78 = new System.Windows.Forms.Label();
+            ASstatlabel = new System.Windows.Forms.Label();
             ReschedButton = new System.Windows.Forms.Button();
             AstoreproPanel = new System.Windows.Forms.Panel();
-            label77 = new System.Windows.Forms.Label();
-            label79 = new System.Windows.Forms.Label();
-            label75 = new System.Windows.Forms.Label();
-            label76 = new System.Windows.Forms.Label();
-            label73 = new System.Windows.Forms.Label();
-            label74 = new System.Windows.Forms.Label();
-            label83 = new System.Windows.Forms.Label();
-            label84 = new System.Windows.Forms.Label();
-            label85 = new System.Windows.Forms.Label();
-            AproPanel = new System.Windows.Forms.Panel();
-            label86 = new System.Windows.Forms.Label();
-            label87 = new System.Windows.Forms.Label();
+            ASConumicon = new System.Windows.Forms.PictureBox();
+            ASEMSicon = new System.Windows.Forms.PictureBox();
+            ASConumlabel = new System.Windows.Forms.Label();
+            ASConumtext = new System.Windows.Forms.Label();
+            ASPP = new System.Windows.Forms.Panel();
+            ASEMSlabel = new System.Windows.Forms.Label();
+            ASEMStext = new System.Windows.Forms.Label();
+            ASFaciName = new System.Windows.Forms.Label();
+            ASWorkingHourslabel = new System.Windows.Forms.Label();
+            ASWorkingHoursText = new System.Windows.Forms.Label();
+            ASWorkingHoursicon = new System.Windows.Forms.PictureBox();
+            ASWorDayslabel = new System.Windows.Forms.Label();
+            ASLocicon = new System.Windows.Forms.PictureBox();
+            ASWorDaystext = new System.Windows.Forms.Label();
+            ASLoclabel = new System.Windows.Forms.Label();
+            ASLoctext = new System.Windows.Forms.Label();
+            ASWorDaysicon = new System.Windows.Forms.PictureBox();
             ProfilePanel = new System.Windows.Forms.Panel();
             DeleteAccButton = new System.Windows.Forms.Button();
             GPPanel = new System.Windows.Forms.Panel();
@@ -286,21 +262,17 @@
             FaciName = new System.Windows.Forms.Label();
             panel49 = new System.Windows.Forms.Panel();
             FacSerOPanel = new System.Windows.Forms.Panel();
+            FPBookAppButton = new System.Windows.Forms.Button();
             SOTable = new System.Windows.Forms.TableLayoutPanel();
             FPDuration = new System.Windows.Forms.Label();
             FPDescription = new System.Windows.Forms.Label();
             FPPrice = new System.Windows.Forms.Label();
             FPServiceName = new System.Windows.Forms.Label();
             ClientSopanel = new System.Windows.Forms.Panel();
-            SBPanel = new System.Windows.Forms.Panel();
-            FPBookAppButton = new System.Windows.Forms.Button();
-            SOButton = new System.Windows.Forms.Button();
             FacilityProPanel2 = new System.Windows.Forms.Panel();
-            BAPanel = new System.Windows.Forms.Panel();
-            button30 = new System.Windows.Forms.Button();
-            button32 = new System.Windows.Forms.Button();
             BaAPanel = new System.Windows.Forms.TableLayoutPanel();
             BaADTPanel = new System.Windows.Forms.Panel();
+            divider2 = new System.Windows.Forms.Panel();
             ATC0 = new System.Windows.Forms.TableLayoutPanel();
             ATC01 = new System.Windows.Forms.TableLayoutPanel();
             ATCnwpanel = new System.Windows.Forms.TableLayoutPanel();
@@ -328,6 +300,7 @@
             EditButton = new System.Windows.Forms.Button();
             BaADTlabel = new System.Windows.Forms.Label();
             BaASerpanel = new System.Windows.Forms.Panel();
+            divider1 = new System.Windows.Forms.Panel();
             BookingSumlabel = new System.Windows.Forms.Label();
             BookingSumpanel = new System.Windows.Forms.TableLayoutPanel();
             tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -374,6 +347,23 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
+            ASlabel = new System.Windows.Forms.Label();
+            ASstattext = new System.Windows.Forms.Label();
+            ASsericon = new System.Windows.Forms.Button();
+            ASdateicon = new System.Windows.Forms.Button();
+            ASdatelabel = new System.Windows.Forms.Label();
+            ASpriceicon = new System.Windows.Forms.Button();
+            ASdatetext = new System.Windows.Forms.Label();
+            label45 = new System.Windows.Forms.Label();
+            ASsertext = new System.Windows.Forms.Label();
+            ASserlabel = new System.Windows.Forms.Label();
+            ASdurlabel = new System.Windows.Forms.Label();
+            ASpricetext = new System.Windows.Forms.Label();
+            ASpricelabel = new System.Windows.Forms.Label();
+            ASdicon = new System.Windows.Forms.Button();
+            ASdtext = new System.Windows.Forms.Label();
+            ASdlabel = new System.Windows.Forms.Label();
+            ASserpanel = new System.Windows.Forms.Panel();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -403,18 +393,15 @@
             FitnessSPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
             CalendarAppointmentPanel.SuspendLayout();
-            AppointmentsPanel.SuspendLayout();
-            panel42.SuspendLayout();
-            panel43.SuspendLayout();
-            panel40.SuspendLayout();
-            panel41.SuspendLayout();
-            panel38.SuspendLayout();
-            panel39.SuspendLayout();
             ViewdetailsPanel.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
+            ViewDetspanel.SuspendLayout();
             AstatPanel.SuspendLayout();
             AstoreproPanel.SuspendLayout();
-            AproPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ASConumicon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ASEMSicon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ASWorkingHoursicon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ASLocicon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ASWorDaysicon).BeginInit();
             ProfilePanel.SuspendLayout();
             GPPanel.SuspendLayout();
             PIPanel.SuspendLayout();
@@ -443,9 +430,7 @@
             ((System.ComponentModel.ISupportInitialize)ClockPic).BeginInit();
             FacSerOPanel.SuspendLayout();
             SOTable.SuspendLayout();
-            SBPanel.SuspendLayout();
             FacilityProPanel2.SuspendLayout();
-            BAPanel.SuspendLayout();
             BaAPanel.SuspendLayout();
             BaADTPanel.SuspendLayout();
             ATC0.SuspendLayout();
@@ -463,6 +448,7 @@
             EditPIPanel.SuspendLayout();
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
+            ASserpanel.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -2153,6 +2139,7 @@
             // HeaderPanel
             // 
             HeaderPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            HeaderPanel.Controls.Add(BookAppbutton);
             HeaderPanel.Controls.Add(SerButton);
             HeaderPanel.Controls.Add(WelcomeLabel);
             HeaderPanel.Controls.Add(HiLabel);
@@ -2164,6 +2151,26 @@
             HeaderPanel.Name = "HeaderPanel";
             HeaderPanel.Size = new System.Drawing.Size(940, 100);
             HeaderPanel.TabIndex = 42;
+            // 
+            // BookAppbutton
+            // 
+            BookAppbutton.BackColor = System.Drawing.Color.Transparent;
+            BookAppbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            BookAppbutton.FlatAppearance.BorderSize = 0;
+            BookAppbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BookAppbutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            BookAppbutton.Image = (System.Drawing.Image)resources.GetObject("BookAppbutton.Image");
+            BookAppbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            BookAppbutton.Location = new System.Drawing.Point(13, 25);
+            BookAppbutton.Name = "BookAppbutton";
+            BookAppbutton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            BookAppbutton.Size = new System.Drawing.Size(501, 74);
+            BookAppbutton.TabIndex = 59;
+            BookAppbutton.Text = "  Book an Appointment";
+            BookAppbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            BookAppbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            BookAppbutton.UseVisualStyleBackColor = false;
+            BookAppbutton.Click += SerStoreButton1_Click;
             // 
             // PIEButton
             // 
@@ -2285,425 +2292,78 @@
             // AppointmentsPanel
             // 
             AppointmentsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            AppointmentsPanel.BackColor = System.Drawing.Color.FromArgb(253, 253, 253);
+            AppointmentsPanel.AutoScroll = true;
+            AppointmentsPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             AppointmentsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            AppointmentsPanel.Controls.Add(panel42);
-            AppointmentsPanel.Controls.Add(panel40);
-            AppointmentsPanel.Controls.Add(panel38);
             AppointmentsPanel.Location = new System.Drawing.Point(277, 231);
             AppointmentsPanel.Name = "AppointmentsPanel";
             AppointmentsPanel.Size = new System.Drawing.Size(893, 744);
             AppointmentsPanel.TabIndex = 50;
-            // 
-            // panel42
-            // 
-            panel42.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel42.BackColor = System.Drawing.Color.White;
-            panel42.Controls.Add(label68);
-            panel42.Controls.Add(button45);
-            panel42.Controls.Add(label69);
-            panel42.Controls.Add(label70);
-            panel42.Controls.Add(panel43);
-            panel42.Location = new System.Drawing.Point(21, 257);
-            panel42.Name = "panel42";
-            panel42.Size = new System.Drawing.Size(855, 103);
-            panel42.TabIndex = 52;
-            // 
-            // label68
-            // 
-            label68.AutoSize = true;
-            label68.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label68.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label68.Location = new System.Drawing.Point(311, 18);
-            label68.Name = "label68";
-            label68.Size = new System.Drawing.Size(130, 20);
-            label68.TabIndex = 37;
-            label68.Text = "Status: Confirmed";
-            // 
-            // button45
-            // 
-            button45.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button45.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            button45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button45.FlatAppearance.BorderSize = 0;
-            button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button45.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button45.Location = new System.Drawing.Point(679, 25);
-            button45.Name = "button45";
-            button45.Size = new System.Drawing.Size(159, 51);
-            button45.TabIndex = 33;
-            button45.Text = "View Details";
-            button45.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button45.UseVisualStyleBackColor = false;
-            button45.Click += button43_Click;
-            // 
-            // label69
-            // 
-            label69.AutoSize = true;
-            label69.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label69.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label69.Location = new System.Drawing.Point(121, 55);
-            label69.Name = "label69";
-            label69.Size = new System.Drawing.Size(93, 20);
-            label69.TabIndex = 36;
-            label69.Text = "10:00 - 12:00";
-            // 
-            // label70
-            // 
-            label70.AutoSize = true;
-            label70.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label70.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label70.Location = new System.Drawing.Point(96, 17);
-            label70.Name = "label70";
-            label70.Size = new System.Drawing.Size(120, 23);
-            label70.TabIndex = 35;
-            label70.Text = "Salon De Rose";
-            // 
-            // panel43
-            // 
-            panel43.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            panel43.Controls.Add(label71);
-            panel43.Controls.Add(label72);
-            panel43.Location = new System.Drawing.Point(12, 12);
-            panel43.Name = "panel43";
-            panel43.Size = new System.Drawing.Size(67, 78);
-            panel43.TabIndex = 34;
-            // 
-            // label71
-            // 
-            label71.AutoSize = true;
-            label71.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label71.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label71.Location = new System.Drawing.Point(11, 28);
-            label71.Name = "label71";
-            label71.Size = new System.Drawing.Size(40, 31);
-            label71.TabIndex = 34;
-            label71.Text = "02";
-            // 
-            // label72
-            // 
-            label72.AutoSize = true;
-            label72.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label72.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label72.Location = new System.Drawing.Point(20, 6);
-            label72.Name = "label72";
-            label72.Size = new System.Drawing.Size(25, 20);
-            label72.TabIndex = 33;
-            label72.Text = "Fri";
-            // 
-            // panel40
-            // 
-            panel40.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel40.BackColor = System.Drawing.Color.White;
-            panel40.Controls.Add(label63);
-            panel40.Controls.Add(button44);
-            panel40.Controls.Add(label64);
-            panel40.Controls.Add(label65);
-            panel40.Controls.Add(panel41);
-            panel40.Location = new System.Drawing.Point(23, 135);
-            panel40.Name = "panel40";
-            panel40.Size = new System.Drawing.Size(855, 103);
-            panel40.TabIndex = 52;
-            // 
-            // label63
-            // 
-            label63.AutoSize = true;
-            label63.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label63.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label63.Location = new System.Drawing.Point(311, 18);
-            label63.Name = "label63";
-            label63.Size = new System.Drawing.Size(130, 20);
-            label63.TabIndex = 37;
-            label63.Text = "Status: Confirmed";
-            // 
-            // button44
-            // 
-            button44.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button44.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button44.FlatAppearance.BorderSize = 0;
-            button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button44.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button44.Location = new System.Drawing.Point(679, 25);
-            button44.Name = "button44";
-            button44.Size = new System.Drawing.Size(159, 51);
-            button44.TabIndex = 33;
-            button44.Text = "View Details";
-            button44.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button44.UseVisualStyleBackColor = false;
-            button44.Click += button43_Click;
-            // 
-            // label64
-            // 
-            label64.AutoSize = true;
-            label64.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label64.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label64.Location = new System.Drawing.Point(121, 55);
-            label64.Name = "label64";
-            label64.Size = new System.Drawing.Size(93, 20);
-            label64.TabIndex = 36;
-            label64.Text = "10:00 - 12:00";
-            // 
-            // label65
-            // 
-            label65.AutoSize = true;
-            label65.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label65.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label65.Location = new System.Drawing.Point(96, 17);
-            label65.Name = "label65";
-            label65.Size = new System.Drawing.Size(109, 23);
-            label65.TabIndex = 35;
-            label65.Text = "Animal Clinic";
-            // 
-            // panel41
-            // 
-            panel41.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            panel41.Controls.Add(label66);
-            panel41.Controls.Add(label67);
-            panel41.Location = new System.Drawing.Point(12, 12);
-            panel41.Name = "panel41";
-            panel41.Size = new System.Drawing.Size(67, 78);
-            panel41.TabIndex = 34;
-            // 
-            // label66
-            // 
-            label66.AutoSize = true;
-            label66.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label66.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label66.Location = new System.Drawing.Point(9, 28);
-            label66.Name = "label66";
-            label66.Size = new System.Drawing.Size(40, 31);
-            label66.TabIndex = 34;
-            label66.Text = "26";
-            // 
-            // label67
-            // 
-            label67.AutoSize = true;
-            label67.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label67.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label67.Location = new System.Drawing.Point(20, 6);
-            label67.Name = "label67";
-            label67.Size = new System.Drawing.Size(25, 20);
-            label67.TabIndex = 33;
-            label67.Text = "Fri";
-            // 
-            // panel38
-            // 
-            panel38.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            panel38.BackColor = System.Drawing.Color.White;
-            panel38.Controls.Add(label62);
-            panel38.Controls.Add(button43);
-            panel38.Controls.Add(label58);
-            panel38.Controls.Add(label59);
-            panel38.Controls.Add(panel39);
-            panel38.Location = new System.Drawing.Point(21, 17);
-            panel38.Name = "panel38";
-            panel38.Size = new System.Drawing.Size(855, 103);
-            panel38.TabIndex = 51;
-            // 
-            // label62
-            // 
-            label62.AutoSize = true;
-            label62.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label62.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label62.Location = new System.Drawing.Point(311, 18);
-            label62.Name = "label62";
-            label62.Size = new System.Drawing.Size(130, 20);
-            label62.TabIndex = 37;
-            label62.Text = "Status: Confirmed";
-            // 
-            // button43
-            // 
-            button43.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            button43.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            button43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button43.FlatAppearance.BorderSize = 0;
-            button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button43.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button43.Location = new System.Drawing.Point(679, 25);
-            button43.Name = "button43";
-            button43.Size = new System.Drawing.Size(159, 51);
-            button43.TabIndex = 33;
-            button43.Text = "View Details";
-            button43.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button43.UseVisualStyleBackColor = false;
-            button43.Click += button43_Click;
-            // 
-            // label58
-            // 
-            label58.AutoSize = true;
-            label58.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label58.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label58.Location = new System.Drawing.Point(121, 55);
-            label58.Name = "label58";
-            label58.Size = new System.Drawing.Size(93, 20);
-            label58.TabIndex = 36;
-            label58.Text = "10:00 - 12:00";
-            // 
-            // label59
-            // 
-            label59.AutoSize = true;
-            label59.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label59.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label59.Location = new System.Drawing.Point(96, 17);
-            label59.Name = "label59";
-            label59.Size = new System.Drawing.Size(120, 23);
-            label59.TabIndex = 35;
-            label59.Text = "Salon De Rose";
-            // 
-            // panel39
-            // 
-            panel39.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            panel39.Controls.Add(label60);
-            panel39.Controls.Add(label61);
-            panel39.Location = new System.Drawing.Point(12, 12);
-            panel39.Name = "panel39";
-            panel39.Size = new System.Drawing.Size(67, 78);
-            panel39.TabIndex = 34;
-            // 
-            // label60
-            // 
-            label60.AutoSize = true;
-            label60.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label60.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label60.Location = new System.Drawing.Point(13, 28);
-            label60.Name = "label60";
-            label60.Size = new System.Drawing.Size(36, 31);
-            label60.TabIndex = 34;
-            label60.Text = "14";
-            // 
-            // label61
-            // 
-            label61.AutoSize = true;
-            label61.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label61.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label61.Location = new System.Drawing.Point(20, 6);
-            label61.Name = "label61";
-            label61.Size = new System.Drawing.Size(25, 20);
-            label61.TabIndex = 33;
-            label61.Text = "Fri";
             // 
             // ViewdetailsPanel
             // 
             ViewdetailsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ViewdetailsPanel.BackColor = System.Drawing.Color.Transparent;
             ViewdetailsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ViewdetailsPanel.Controls.Add(tableLayoutPanel2);
+            ViewdetailsPanel.Controls.Add(ViewDetspanel);
             ViewdetailsPanel.Location = new System.Drawing.Point(277, 231);
             ViewdetailsPanel.Name = "ViewdetailsPanel";
             ViewdetailsPanel.Size = new System.Drawing.Size(893, 744);
             ViewdetailsPanel.TabIndex = 53;
             // 
-            // tableLayoutPanel2
+            // ViewDetspanel
             // 
-            tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            tableLayoutPanel2.Controls.Add(AstatPanel, 1, 0);
-            tableLayoutPanel2.Controls.Add(AstoreproPanel, 0, 0);
-            tableLayoutPanel2.Location = new System.Drawing.Point(11, 12);
-            tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new System.Drawing.Size(871, 629);
-            tableLayoutPanel2.TabIndex = 53;
+            ViewDetspanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ViewDetspanel.ColumnCount = 2;
+            ViewDetspanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            ViewDetspanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            ViewDetspanel.Controls.Add(AstatPanel, 1, 0);
+            ViewDetspanel.Controls.Add(AstoreproPanel, 0, 0);
+            ViewDetspanel.Location = new System.Drawing.Point(11, 12);
+            ViewDetspanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ViewDetspanel.Name = "ViewDetspanel";
+            ViewDetspanel.RowCount = 1;
+            ViewDetspanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            ViewDetspanel.Size = new System.Drawing.Size(871, 649);
+            ViewDetspanel.TabIndex = 53;
             // 
             // AstatPanel
             // 
             AstatPanel.BackColor = System.Drawing.Color.White;
-            AstatPanel.Controls.Add(label89);
-            AstatPanel.Controls.Add(label90);
-            AstatPanel.Controls.Add(label82);
-            AstatPanel.Controls.Add(label88);
-            AstatPanel.Controls.Add(label80);
-            AstatPanel.Controls.Add(label81);
-            AstatPanel.Controls.Add(label78);
+            AstatPanel.Controls.Add(ASserpanel);
+            AstatPanel.Controls.Add(ASdtext);
+            AstatPanel.Controls.Add(ASdlabel);
+            AstatPanel.Controls.Add(ASpricetext);
+            AstatPanel.Controls.Add(ASpricelabel);
+            AstatPanel.Controls.Add(ASserlabel);
+            AstatPanel.Controls.Add(ASdatetext);
+            AstatPanel.Controls.Add(ASdicon);
+            AstatPanel.Controls.Add(ASpriceicon);
+            AstatPanel.Controls.Add(ASdatelabel);
+            AstatPanel.Controls.Add(ASdateicon);
+            AstatPanel.Controls.Add(label45);
+            AstatPanel.Controls.Add(ASsericon);
+            AstatPanel.Controls.Add(ASstattext);
+            AstatPanel.Controls.Add(ASlabel);
+            AstatPanel.Controls.Add(ASstatlabel);
             AstatPanel.Controls.Add(ReschedButton);
             AstatPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             AstatPanel.Location = new System.Drawing.Point(361, 15);
             AstatPanel.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
             AstatPanel.Name = "AstatPanel";
-            AstatPanel.Size = new System.Drawing.Size(497, 599);
+            AstatPanel.Size = new System.Drawing.Size(497, 619);
             AstatPanel.TabIndex = 52;
             // 
-            // label89
+            // ASstatlabel
             // 
-            label89.AutoSize = true;
-            label89.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label89.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            label89.Location = new System.Drawing.Point(35, 317);
-            label89.Name = "label89";
-            label89.Size = new System.Drawing.Size(106, 20);
-            label89.TabIndex = 49;
-            label89.Text = "Total Amount: ";
-            // 
-            // label90
-            // 
-            label90.AutoSize = true;
-            label90.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label90.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label90.Location = new System.Drawing.Point(181, 317);
-            label90.Name = "label90";
-            label90.Size = new System.Drawing.Size(98, 20);
-            label90.TabIndex = 48;
-            label90.Text = "PHP 5,000.00";
-            // 
-            // label82
-            // 
-            label82.AutoSize = true;
-            label82.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label82.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            label82.Location = new System.Drawing.Point(35, 208);
-            label82.Name = "label82";
-            label82.Size = new System.Drawing.Size(65, 20);
-            label82.TabIndex = 47;
-            label82.Text = "Services:";
-            // 
-            // label88
-            // 
-            label88.AutoSize = true;
-            label88.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label88.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label88.Location = new System.Drawing.Point(136, 209);
-            label88.Name = "label88";
-            label88.Size = new System.Drawing.Size(195, 40);
-            label88.TabIndex = 46;
-            label88.Text = "Haircut                     30 mins\r\nHaircoloring            60 mins";
-            // 
-            // label80
-            // 
-            label80.AutoSize = true;
-            label80.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label80.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            label80.Location = new System.Drawing.Point(31, 135);
-            label80.Name = "label80";
-            label80.Size = new System.Drawing.Size(49, 20);
-            label80.TabIndex = 45;
-            label80.Text = "Time: ";
-            // 
-            // label81
-            // 
-            label81.AutoSize = true;
-            label81.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label81.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label81.Location = new System.Drawing.Point(100, 135);
-            label81.Name = "label81";
-            label81.Size = new System.Drawing.Size(91, 20);
-            label81.TabIndex = 44;
-            label81.Text = "10:00 - 12:00";
-            // 
-            // label78
-            // 
-            label78.AutoSize = true;
-            label78.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label78.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label78.Location = new System.Drawing.Point(24, 43);
-            label78.Name = "label78";
-            label78.Size = new System.Drawing.Size(174, 28);
-            label78.TabIndex = 37;
-            label78.Text = "Status: Confirmed";
+            ASstatlabel.AutoSize = true;
+            ASstatlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASstatlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ASstatlabel.Location = new System.Drawing.Point(34, 75);
+            ASstatlabel.Name = "ASstatlabel";
+            ASstatlabel.Size = new System.Drawing.Size(72, 28);
+            ASstatlabel.TabIndex = 37;
+            ASstatlabel.Text = "Status:";
             // 
             // ReschedButton
             // 
@@ -2725,153 +2385,233 @@
             // AstoreproPanel
             // 
             AstoreproPanel.BackColor = System.Drawing.Color.White;
-            AstoreproPanel.Controls.Add(label77);
-            AstoreproPanel.Controls.Add(label79);
-            AstoreproPanel.Controls.Add(label75);
-            AstoreproPanel.Controls.Add(label76);
-            AstoreproPanel.Controls.Add(label73);
-            AstoreproPanel.Controls.Add(label74);
-            AstoreproPanel.Controls.Add(label83);
-            AstoreproPanel.Controls.Add(label84);
-            AstoreproPanel.Controls.Add(label85);
-            AstoreproPanel.Controls.Add(AproPanel);
+            AstoreproPanel.Controls.Add(ASConumicon);
+            AstoreproPanel.Controls.Add(ASEMSicon);
+            AstoreproPanel.Controls.Add(ASConumlabel);
+            AstoreproPanel.Controls.Add(ASConumtext);
+            AstoreproPanel.Controls.Add(ASPP);
+            AstoreproPanel.Controls.Add(ASEMSlabel);
+            AstoreproPanel.Controls.Add(ASEMStext);
+            AstoreproPanel.Controls.Add(ASFaciName);
+            AstoreproPanel.Controls.Add(ASWorkingHourslabel);
+            AstoreproPanel.Controls.Add(ASWorkingHoursText);
+            AstoreproPanel.Controls.Add(ASWorkingHoursicon);
+            AstoreproPanel.Controls.Add(ASWorDayslabel);
+            AstoreproPanel.Controls.Add(ASLocicon);
+            AstoreproPanel.Controls.Add(ASWorDaystext);
+            AstoreproPanel.Controls.Add(ASLoclabel);
+            AstoreproPanel.Controls.Add(ASLoctext);
+            AstoreproPanel.Controls.Add(ASWorDaysicon);
             AstoreproPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             AstoreproPanel.Location = new System.Drawing.Point(13, 15);
             AstoreproPanel.Margin = new System.Windows.Forms.Padding(13, 15, 13, 15);
             AstoreproPanel.Name = "AstoreproPanel";
-            AstoreproPanel.Size = new System.Drawing.Size(322, 599);
+            AstoreproPanel.Size = new System.Drawing.Size(322, 619);
             AstoreproPanel.TabIndex = 51;
+            AstoreproPanel.Paint += AstoreproPanel_Paint;
             // 
-            // label77
+            // ASConumicon
             // 
-            label77.AutoSize = true;
-            label77.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label77.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            label77.Location = new System.Drawing.Point(33, 488);
-            label77.Name = "label77";
-            label77.Size = new System.Drawing.Size(103, 20);
-            label77.TabIndex = 43;
-            label77.Text = "Email Address";
+            ASConumicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASConumicon.Image = (System.Drawing.Image)resources.GetObject("ASConumicon.Image");
+            ASConumicon.Location = new System.Drawing.Point(26, 486);
+            ASConumicon.Name = "ASConumicon";
+            ASConumicon.Size = new System.Drawing.Size(24, 25);
+            ASConumicon.TabIndex = 85;
+            ASConumicon.TabStop = false;
             // 
-            // label79
+            // ASEMSicon
             // 
-            label79.AutoSize = true;
-            label79.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label79.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label79.Location = new System.Drawing.Point(76, 538);
-            label79.Name = "label79";
-            label79.Size = new System.Drawing.Size(176, 20);
-            label79.TabIndex = 42;
-            label79.Text = "salonderose@gmail.com";
+            ASEMSicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASEMSicon.Image = (System.Drawing.Image)resources.GetObject("ASEMSicon.Image");
+            ASEMSicon.Location = new System.Drawing.Point(26, 399);
+            ASEMSicon.Name = "ASEMSicon";
+            ASEMSicon.Size = new System.Drawing.Size(24, 25);
+            ASEMSicon.TabIndex = 88;
+            ASEMSicon.TabStop = false;
             // 
-            // label75
+            // ASConumlabel
             // 
-            label75.AutoSize = true;
-            label75.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label75.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            label75.Location = new System.Drawing.Point(39, 383);
-            label75.Name = "label75";
-            label75.Size = new System.Drawing.Size(118, 20);
-            label75.TabIndex = 41;
-            label75.Text = "Contact Number";
+            ASConumlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASConumlabel.AutoSize = true;
+            ASConumlabel.BackColor = System.Drawing.Color.Transparent;
+            ASConumlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASConumlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            ASConumlabel.Location = new System.Drawing.Point(56, 488);
+            ASConumlabel.Name = "ASConumlabel";
+            ASConumlabel.Size = new System.Drawing.Size(131, 20);
+            ASConumlabel.TabIndex = 84;
+            ASConumlabel.Text = "Contact Number";
             // 
-            // label76
+            // ASConumtext
             // 
-            label76.AutoSize = true;
-            label76.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label76.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label76.Location = new System.Drawing.Point(81, 434);
-            label76.Name = "label76";
-            label76.Size = new System.Drawing.Size(95, 20);
-            label76.TabIndex = 40;
-            label76.Text = "09956223215";
+            ASConumtext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASConumtext.AutoSize = true;
+            ASConumtext.BackColor = System.Drawing.Color.Transparent;
+            ASConumtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASConumtext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            ASConumtext.Location = new System.Drawing.Point(48, 523);
+            ASConumtext.Name = "ASConumtext";
+            ASConumtext.Size = new System.Drawing.Size(163, 20);
+            ASConumtext.TabIndex = 83;
+            ASConumtext.Text = "10:00 am - 12:00 pm";
             // 
-            // label73
+            // ASPP
             // 
-            label73.AutoSize = true;
-            label73.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label73.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            label73.Location = new System.Drawing.Point(33, 265);
-            label73.Name = "label73";
-            label73.Size = new System.Drawing.Size(66, 20);
-            label73.TabIndex = 39;
-            label73.Text = "Location";
+            ASPP.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
+            ASPP.Location = new System.Drawing.Point(17, 20);
+            ASPP.Name = "ASPP";
+            ASPP.Size = new System.Drawing.Size(78, 78);
+            ASPP.TabIndex = 72;
             // 
-            // label74
+            // ASEMSlabel
             // 
-            label74.AutoSize = true;
-            label74.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label74.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label74.Location = new System.Drawing.Point(76, 315);
-            label74.Name = "label74";
-            label74.Size = new System.Drawing.Size(74, 20);
-            label74.TabIndex = 38;
-            label74.Text = "Cebu City";
+            ASEMSlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASEMSlabel.AutoSize = true;
+            ASEMSlabel.BackColor = System.Drawing.Color.Transparent;
+            ASEMSlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASEMSlabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            ASEMSlabel.Location = new System.Drawing.Point(56, 401);
+            ASEMSlabel.Name = "ASEMSlabel";
+            ASEMSlabel.Size = new System.Drawing.Size(118, 20);
+            ASEMSlabel.TabIndex = 87;
+            ASEMSlabel.Text = "Email Address";
             // 
-            // label83
+            // ASEMStext
             // 
-            label83.AutoSize = true;
-            label83.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label83.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            label83.Location = new System.Drawing.Point(33, 155);
-            label83.Name = "label83";
-            label83.Size = new System.Drawing.Size(92, 20);
-            label83.TabIndex = 37;
-            label83.Text = "Office Hours";
+            ASEMStext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASEMStext.AutoSize = true;
+            ASEMStext.BackColor = System.Drawing.Color.Transparent;
+            ASEMStext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASEMStext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            ASEMStext.Location = new System.Drawing.Point(48, 436);
+            ASEMStext.Name = "ASEMStext";
+            ASEMStext.Size = new System.Drawing.Size(163, 20);
+            ASEMStext.TabIndex = 86;
+            ASEMStext.Text = "10:00 am - 12:00 pm";
             // 
-            // label84
+            // ASFaciName
             // 
-            label84.AutoSize = true;
-            label84.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label84.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label84.Location = new System.Drawing.Point(76, 206);
-            label84.Name = "label84";
-            label84.Size = new System.Drawing.Size(91, 20);
-            label84.TabIndex = 36;
-            label84.Text = "10:00 - 12:00";
+            ASFaciName.AutoEllipsis = true;
+            ASFaciName.AutoSize = true;
+            ASFaciName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASFaciName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ASFaciName.Location = new System.Drawing.Point(113, 36);
+            ASFaciName.MaximumSize = new System.Drawing.Size(192, 0);
+            ASFaciName.Name = "ASFaciName";
+            ASFaciName.Size = new System.Drawing.Size(131, 25);
+            ASFaciName.TabIndex = 73;
+            ASFaciName.Text = "Salon De Rose";
             // 
-            // label85
+            // ASWorkingHourslabel
             // 
-            label85.AutoSize = true;
-            label85.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label85.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label85.Location = new System.Drawing.Point(111, 43);
-            label85.Name = "label85";
-            label85.Size = new System.Drawing.Size(120, 23);
-            label85.TabIndex = 35;
-            label85.Text = "Salon De Rose";
+            ASWorkingHourslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASWorkingHourslabel.AutoSize = true;
+            ASWorkingHourslabel.BackColor = System.Drawing.Color.Transparent;
+            ASWorkingHourslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASWorkingHourslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            ASWorkingHourslabel.Location = new System.Drawing.Point(56, 137);
+            ASWorkingHourslabel.Name = "ASWorkingHourslabel";
+            ASWorkingHourslabel.Size = new System.Drawing.Size(121, 20);
+            ASWorkingHourslabel.TabIndex = 75;
+            ASWorkingHourslabel.Text = "Working Hours";
             // 
-            // AproPanel
+            // ASWorkingHoursText
             // 
-            AproPanel.BackColor = System.Drawing.Color.FromArgb(210, 247, 193);
-            AproPanel.Controls.Add(label86);
-            AproPanel.Controls.Add(label87);
-            AproPanel.Location = new System.Drawing.Point(27, 20);
-            AproPanel.Name = "AproPanel";
-            AproPanel.Size = new System.Drawing.Size(67, 78);
-            AproPanel.TabIndex = 34;
+            ASWorkingHoursText.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASWorkingHoursText.AutoSize = true;
+            ASWorkingHoursText.BackColor = System.Drawing.Color.Transparent;
+            ASWorkingHoursText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASWorkingHoursText.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            ASWorkingHoursText.Location = new System.Drawing.Point(48, 172);
+            ASWorkingHoursText.Name = "ASWorkingHoursText";
+            ASWorkingHoursText.Size = new System.Drawing.Size(163, 20);
+            ASWorkingHoursText.TabIndex = 74;
+            ASWorkingHoursText.Text = "10:00 am - 12:00 pm";
             // 
-            // label86
+            // ASWorkingHoursicon
             // 
-            label86.AutoSize = true;
-            label86.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label86.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label86.Location = new System.Drawing.Point(13, 28);
-            label86.Name = "label86";
-            label86.Size = new System.Drawing.Size(36, 31);
-            label86.TabIndex = 34;
-            label86.Text = "14";
+            ASWorkingHoursicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASWorkingHoursicon.Image = (System.Drawing.Image)resources.GetObject("ASWorkingHoursicon.Image");
+            ASWorkingHoursicon.Location = new System.Drawing.Point(26, 135);
+            ASWorkingHoursicon.Name = "ASWorkingHoursicon";
+            ASWorkingHoursicon.Size = new System.Drawing.Size(24, 25);
+            ASWorkingHoursicon.TabIndex = 76;
+            ASWorkingHoursicon.TabStop = false;
             // 
-            // label87
+            // ASWorDayslabel
             // 
-            label87.AutoSize = true;
-            label87.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label87.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label87.Location = new System.Drawing.Point(20, 6);
-            label87.Name = "label87";
-            label87.Size = new System.Drawing.Size(25, 20);
-            label87.TabIndex = 33;
-            label87.Text = "Fri";
+            ASWorDayslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASWorDayslabel.AutoSize = true;
+            ASWorDayslabel.BackColor = System.Drawing.Color.Transparent;
+            ASWorDayslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASWorDayslabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            ASWorDayslabel.Location = new System.Drawing.Point(56, 227);
+            ASWorDayslabel.Name = "ASWorDayslabel";
+            ASWorDayslabel.Size = new System.Drawing.Size(114, 20);
+            ASWorDayslabel.TabIndex = 78;
+            ASWorDayslabel.Text = "Working Days";
+            // 
+            // ASLocicon
+            // 
+            ASLocicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASLocicon.Image = (System.Drawing.Image)resources.GetObject("ASLocicon.Image");
+            ASLocicon.Location = new System.Drawing.Point(26, 312);
+            ASLocicon.Name = "ASLocicon";
+            ASLocicon.Size = new System.Drawing.Size(24, 25);
+            ASLocicon.TabIndex = 82;
+            ASLocicon.TabStop = false;
+            // 
+            // ASWorDaystext
+            // 
+            ASWorDaystext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASWorDaystext.AutoSize = true;
+            ASWorDaystext.BackColor = System.Drawing.Color.Transparent;
+            ASWorDaystext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASWorDaystext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            ASWorDaystext.Location = new System.Drawing.Point(48, 262);
+            ASWorDaystext.Name = "ASWorDaystext";
+            ASWorDaystext.Size = new System.Drawing.Size(163, 20);
+            ASWorDaystext.TabIndex = 77;
+            ASWorDaystext.Text = "10:00 am - 12:00 pm";
+            // 
+            // ASLoclabel
+            // 
+            ASLoclabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASLoclabel.AutoSize = true;
+            ASLoclabel.BackColor = System.Drawing.Color.Transparent;
+            ASLoclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASLoclabel.ForeColor = System.Drawing.Color.FromArgb(60, 179, 155);
+            ASLoclabel.Location = new System.Drawing.Point(56, 314);
+            ASLoclabel.Name = "ASLoclabel";
+            ASLoclabel.Size = new System.Drawing.Size(73, 20);
+            ASLoclabel.TabIndex = 81;
+            ASLoclabel.Text = "Location";
+            // 
+            // ASLoctext
+            // 
+            ASLoctext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASLoctext.AutoEllipsis = true;
+            ASLoctext.AutoSize = true;
+            ASLoctext.BackColor = System.Drawing.Color.Transparent;
+            ASLoctext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            ASLoctext.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            ASLoctext.Location = new System.Drawing.Point(48, 349);
+            ASLoctext.MaximumSize = new System.Drawing.Size(163, 0);
+            ASLoctext.Name = "ASLoctext";
+            ASLoctext.Size = new System.Drawing.Size(163, 20);
+            ASLoctext.TabIndex = 80;
+            ASLoctext.Text = "10:00 am - 12:00 pm";
+            // 
+            // ASWorDaysicon
+            // 
+            ASWorDaysicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASWorDaysicon.Image = (System.Drawing.Image)resources.GetObject("ASWorDaysicon.Image");
+            ASWorDaysicon.Location = new System.Drawing.Point(26, 225);
+            ASWorDaysicon.Name = "ASWorDaysicon";
+            ASWorDaysicon.Size = new System.Drawing.Size(24, 25);
+            ASWorDaysicon.TabIndex = 79;
+            ASWorDaysicon.TabStop = false;
             // 
             // ProfilePanel
             // 
@@ -3837,15 +3577,33 @@
             // FacSerOPanel
             // 
             FacSerOPanel.BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
+            FacSerOPanel.Controls.Add(FPBookAppButton);
             FacSerOPanel.Controls.Add(SOTable);
             FacSerOPanel.Controls.Add(ClientSopanel);
-            FacSerOPanel.Controls.Add(SBPanel);
             FacSerOPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             FacSerOPanel.Location = new System.Drawing.Point(0, 217);
-            FacSerOPanel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            FacSerOPanel.Margin = new System.Windows.Forms.Padding(0);
             FacSerOPanel.Name = "FacSerOPanel";
-            FacSerOPanel.Size = new System.Drawing.Size(871, 554);
+            FacSerOPanel.Size = new System.Drawing.Size(871, 559);
             FacSerOPanel.TabIndex = 52;
+            // 
+            // FPBookAppButton
+            // 
+            FPBookAppButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            FPBookAppButton.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
+            FPBookAppButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            FPBookAppButton.FlatAppearance.BorderSize = 0;
+            FPBookAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FPBookAppButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            FPBookAppButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FPBookAppButton.Location = new System.Drawing.Point(647, 489);
+            FPBookAppButton.Name = "FPBookAppButton";
+            FPBookAppButton.Size = new System.Drawing.Size(199, 51);
+            FPBookAppButton.TabIndex = 61;
+            FPBookAppButton.Text = "Book an Appointment";
+            FPBookAppButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            FPBookAppButton.UseVisualStyleBackColor = false;
+            FPBookAppButton.Click += FPBookAppButton_Click;
             // 
             // SOTable
             // 
@@ -3860,7 +3618,7 @@
             SOTable.Controls.Add(FPDescription, 1, 0);
             SOTable.Controls.Add(FPPrice, 2, 0);
             SOTable.Controls.Add(FPServiceName, 0, 0);
-            SOTable.Location = new System.Drawing.Point(0, 58);
+            SOTable.Location = new System.Drawing.Point(1, 1);
             SOTable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 5);
             SOTable.Name = "SOTable";
             SOTable.RowCount = 1;
@@ -3928,119 +3686,24 @@
             // 
             // ClientSopanel
             // 
+            ClientSopanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ClientSopanel.AutoScroll = true;
             ClientSopanel.BackColor = System.Drawing.Color.White;
-            ClientSopanel.Location = new System.Drawing.Point(1, 134);
+            ClientSopanel.Location = new System.Drawing.Point(2, 74);
             ClientSopanel.Name = "ClientSopanel";
-            ClientSopanel.Size = new System.Drawing.Size(871, 420);
+            ClientSopanel.Size = new System.Drawing.Size(871, 393);
             ClientSopanel.TabIndex = 58;
-            // 
-            // SBPanel
-            // 
-            SBPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            SBPanel.BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
-            SBPanel.Controls.Add(FPBookAppButton);
-            SBPanel.Controls.Add(SOButton);
-            SBPanel.Location = new System.Drawing.Point(0, -12);
-            SBPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            SBPanel.Name = "SBPanel";
-            SBPanel.Size = new System.Drawing.Size(871, 69);
-            SBPanel.TabIndex = 57;
-            // 
-            // FPBookAppButton
-            // 
-            FPBookAppButton.BackColor = System.Drawing.Color.Transparent;
-            FPBookAppButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            FPBookAppButton.FlatAppearance.BorderSize = 0;
-            FPBookAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            FPBookAppButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            FPBookAppButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            FPBookAppButton.Location = new System.Drawing.Point(407, 10);
-            FPBookAppButton.Name = "FPBookAppButton";
-            FPBookAppButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            FPBookAppButton.Size = new System.Drawing.Size(397, 77);
-            FPBookAppButton.TabIndex = 26;
-            FPBookAppButton.Text = "Book an Appointment";
-            FPBookAppButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            FPBookAppButton.UseVisualStyleBackColor = false;
-            FPBookAppButton.Click += FPBookAppButton_Click;
-            // 
-            // SOButton
-            // 
-            SOButton.BackColor = System.Drawing.Color.Transparent;
-            SOButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            SOButton.FlatAppearance.BorderSize = 0;
-            SOButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            SOButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            SOButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            SOButton.Location = new System.Drawing.Point(8, 9);
-            SOButton.Name = "SOButton";
-            SOButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            SOButton.Size = new System.Drawing.Size(397, 77);
-            SOButton.TabIndex = 25;
-            SOButton.Text = "Services Offered";
-            SOButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            SOButton.UseVisualStyleBackColor = false;
             // 
             // FacilityProPanel2
             // 
             FacilityProPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FacilityProPanel2.BackColor = System.Drawing.Color.Transparent;
             FacilityProPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            FacilityProPanel2.Controls.Add(BAPanel);
             FacilityProPanel2.Controls.Add(BaAPanel);
             FacilityProPanel2.Location = new System.Drawing.Point(277, 177);
             FacilityProPanel2.Name = "FacilityProPanel2";
-            FacilityProPanel2.Size = new System.Drawing.Size(913, 799);
+            FacilityProPanel2.Size = new System.Drawing.Size(894, 799);
             FacilityProPanel2.TabIndex = 57;
-            // 
-            // BAPanel
-            // 
-            BAPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            BAPanel.BackColor = System.Drawing.Color.Transparent;
-            BAPanel.Controls.Add(button30);
-            BAPanel.Controls.Add(button32);
-            BAPanel.Location = new System.Drawing.Point(22, 27);
-            BAPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            BAPanel.Name = "BAPanel";
-            BAPanel.Size = new System.Drawing.Size(871, 69);
-            BAPanel.TabIndex = 57;
-            // 
-            // button30
-            // 
-            button30.BackColor = System.Drawing.Color.Transparent;
-            button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            button30.FlatAppearance.BorderSize = 0;
-            button30.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            button30.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button30.Location = new System.Drawing.Point(434, 12);
-            button30.Name = "button30";
-            button30.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            button30.Size = new System.Drawing.Size(416, 77);
-            button30.TabIndex = 26;
-            button30.Text = "Book an Appointment";
-            button30.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button30.UseVisualStyleBackColor = false;
-            button30.Click += FPBookAppButton_Click;
-            // 
-            // button32
-            // 
-            button32.BackColor = System.Drawing.Color.Transparent;
-            button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            button32.FlatAppearance.BorderSize = 0;
-            button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button32.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button32.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button32.Location = new System.Drawing.Point(15, 9);
-            button32.Name = "button32";
-            button32.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            button32.Size = new System.Drawing.Size(416, 77);
-            button32.TabIndex = 25;
-            button32.Text = "Services Offered";
-            button32.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button32.UseVisualStyleBackColor = false;
-            button32.Click += SerStoreButton1_Click;
             // 
             // BaAPanel
             // 
@@ -4055,12 +3718,13 @@
             BaAPanel.Name = "BaAPanel";
             BaAPanel.RowCount = 1;
             BaAPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            BaAPanel.Size = new System.Drawing.Size(891, 776);
+            BaAPanel.Size = new System.Drawing.Size(872, 776);
             BaAPanel.TabIndex = 53;
             // 
             // BaADTPanel
             // 
             BaADTPanel.BackColor = System.Drawing.Color.White;
+            BaADTPanel.Controls.Add(divider2);
             BaADTPanel.Controls.Add(ATC0);
             BaADTPanel.Controls.Add(BaADTlabel1);
             BaADTPanel.Controls.Add(TimeslotPanel);
@@ -4068,11 +3732,19 @@
             BaADTPanel.Controls.Add(EditButton);
             BaADTPanel.Controls.Add(BaADTlabel);
             BaADTPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            BaADTPanel.Location = new System.Drawing.Point(445, 15);
-            BaADTPanel.Margin = new System.Windows.Forms.Padding(0, 15, 13, 15);
+            BaADTPanel.Location = new System.Drawing.Point(437, 15);
+            BaADTPanel.Margin = new System.Windows.Forms.Padding(1, 15, 13, 15);
             BaADTPanel.Name = "BaADTPanel";
-            BaADTPanel.Size = new System.Drawing.Size(433, 746);
+            BaADTPanel.Size = new System.Drawing.Size(422, 746);
             BaADTPanel.TabIndex = 52;
+            // 
+            // divider2
+            // 
+            divider2.BackColor = System.Drawing.Color.LightGray;
+            divider2.Location = new System.Drawing.Point(11, 451);
+            divider2.Name = "divider2";
+            divider2.Size = new System.Drawing.Size(401, 2);
+            divider2.TabIndex = 65;
             // 
             // ATC0
             // 
@@ -4080,12 +3752,12 @@
             ATC0.ColumnCount = 1;
             ATC0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATC0.Controls.Add(ATC01, 0, 0);
-            ATC0.Location = new System.Drawing.Point(10, 126);
+            ATC0.Location = new System.Drawing.Point(10, 66);
             ATC0.Margin = new System.Windows.Forms.Padding(0);
             ATC0.Name = "ATC0";
             ATC0.RowCount = 1;
             ATC0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.77778F));
-            ATC0.Size = new System.Drawing.Size(412, 44);
+            ATC0.Size = new System.Drawing.Size(401, 44);
             ATC0.TabIndex = 64;
             // 
             // ATC01
@@ -4105,7 +3777,7 @@
             ATC01.Name = "ATC01";
             ATC01.RowCount = 1;
             ATC01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            ATC01.Size = new System.Drawing.Size(412, 44);
+            ATC01.Size = new System.Drawing.Size(401, 44);
             ATC01.TabIndex = 0;
             // 
             // ATCnwpanel
@@ -4115,13 +3787,13 @@
             ATCnwpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATCnwpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             ATCnwpanel.Controls.Add(ATCnw, 0, 0);
-            ATCnwpanel.Location = new System.Drawing.Point(215, 10);
+            ATCnwpanel.Location = new System.Drawing.Point(210, 10);
             ATCnwpanel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
             ATCnwpanel.Name = "ATCnwpanel";
             ATCnwpanel.RowCount = 1;
             ATCnwpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATCnwpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATCnwpanel.Size = new System.Drawing.Size(41, 20);
+            ATCnwpanel.Size = new System.Drawing.Size(40, 20);
             ATCnwpanel.TabIndex = 56;
             // 
             // ATCnw
@@ -4134,7 +3806,7 @@
             ATCnw.Location = new System.Drawing.Point(1, 1);
             ATCnw.Margin = new System.Windows.Forms.Padding(1);
             ATCnw.Name = "ATCnw";
-            ATCnw.Size = new System.Drawing.Size(39, 18);
+            ATCnw.Size = new System.Drawing.Size(38, 18);
             ATCnw.TabIndex = 52;
             ATCnw.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -4144,11 +3816,11 @@
             ATCnoworking.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCnoworking.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ATCnoworking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCnoworking.Location = new System.Drawing.Point(269, 0);
+            ATCnoworking.Location = new System.Drawing.Point(263, 0);
             ATCnoworking.Name = "ATCnoworking";
-            ATCnoworking.Size = new System.Drawing.Size(140, 44);
+            ATCnoworking.Size = new System.Drawing.Size(135, 44);
             ATCnoworking.TabIndex = 53;
-            ATCnoworking.Text = "- Non-Working Days";
+            ATCnoworking.Text = "-  Non-Working Days";
             ATCnoworking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ATCworking
@@ -4157,11 +3829,11 @@
             ATCworking.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCworking.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ATCworking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCworking.Location = new System.Drawing.Point(85, 0);
+            ATCworking.Location = new System.Drawing.Point(83, 0);
             ATCworking.Name = "ATCworking";
-            ATCworking.Size = new System.Drawing.Size(117, 44);
+            ATCworking.Size = new System.Drawing.Size(114, 44);
             ATCworking.TabIndex = 50;
-            ATCworking.Text = "- Working Days";
+            ATCworking.Text = "-  Working Days";
             ATCworking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ATCworpanel
@@ -4177,7 +3849,7 @@
             ATCworpanel.RowCount = 1;
             ATCworpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATCworpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATCworpanel.Size = new System.Drawing.Size(42, 20);
+            ATCworpanel.Size = new System.Drawing.Size(40, 20);
             ATCworpanel.TabIndex = 55;
             // 
             // ATCwor
@@ -4190,7 +3862,7 @@
             ATCwor.Location = new System.Drawing.Point(1, 1);
             ATCwor.Margin = new System.Windows.Forms.Padding(1);
             ATCwor.Name = "ATCwor";
-            ATCwor.Size = new System.Drawing.Size(40, 18);
+            ATCwor.Size = new System.Drawing.Size(38, 18);
             ATCwor.TabIndex = 52;
             ATCwor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -4199,7 +3871,7 @@
             BaADTlabel1.AutoSize = true;
             BaADTlabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             BaADTlabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            BaADTlabel1.Location = new System.Drawing.Point(13, 502);
+            BaADTlabel1.Location = new System.Drawing.Point(13, 469);
             BaADTlabel1.Name = "BaADTlabel1";
             BaADTlabel1.Size = new System.Drawing.Size(124, 23);
             BaADTlabel1.TabIndex = 63;
@@ -4212,13 +3884,13 @@
             TimeslotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
             TimeslotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
             TimeslotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            TimeslotPanel.Location = new System.Drawing.Point(15, 535);
+            TimeslotPanel.Location = new System.Drawing.Point(15, 519);
             TimeslotPanel.Margin = new System.Windows.Forms.Padding(0);
             TimeslotPanel.Name = "TimeslotPanel";
             TimeslotPanel.RowCount = 2;
             TimeslotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             TimeslotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            TimeslotPanel.Size = new System.Drawing.Size(404, 103);
+            TimeslotPanel.Size = new System.Drawing.Size(393, 103);
             TimeslotPanel.TabIndex = 62;
             // 
             // ATCaledar
@@ -4230,14 +3902,14 @@
             ATCaledar.Controls.Add(ATC1, 0, 0);
             ATCaledar.Controls.Add(ATC2, 0, 1);
             ATCaledar.Controls.Add(ATC3, 0, 2);
-            ATCaledar.Location = new System.Drawing.Point(19, 184);
+            ATCaledar.Location = new System.Drawing.Point(19, 128);
             ATCaledar.Margin = new System.Windows.Forms.Padding(0);
             ATCaledar.Name = "ATCaledar";
             ATCaledar.RowCount = 3;
             ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             ATCaledar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            ATCaledar.Size = new System.Drawing.Size(393, 304);
+            ATCaledar.Size = new System.Drawing.Size(382, 304);
             ATCaledar.TabIndex = 61;
             // 
             // ATC1
@@ -4256,7 +3928,7 @@
             ATC1.RowCount = 1;
             ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATC1.Size = new System.Drawing.Size(393, 30);
+            ATC1.Size = new System.Drawing.Size(382, 30);
             ATC1.TabIndex = 0;
             // 
             // ATCNext
@@ -4266,10 +3938,10 @@
             ATCNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ATCNext.ForeColor = System.Drawing.Color.White;
             ATCNext.Image = (System.Drawing.Image)resources.GetObject("ATCNext.Image");
-            ATCNext.Location = new System.Drawing.Point(342, 0);
+            ATCNext.Location = new System.Drawing.Point(333, 0);
             ATCNext.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
             ATCNext.Name = "ATCNext";
-            ATCNext.Size = new System.Drawing.Size(35, 30);
+            ATCNext.Size = new System.Drawing.Size(33, 30);
             ATCNext.TabIndex = 40;
             ATCNext.UseVisualStyleBackColor = false;
             ATCNext.Click += ATCNext_Click;
@@ -4280,10 +3952,10 @@
             ATCmonth.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCmonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             ATCmonth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCmonth.Location = new System.Drawing.Point(65, 0);
+            ATCmonth.Location = new System.Drawing.Point(63, 0);
             ATCmonth.Margin = new System.Windows.Forms.Padding(0);
             ATCmonth.Name = "ATCmonth";
-            ATCmonth.Size = new System.Drawing.Size(261, 30);
+            ATCmonth.Size = new System.Drawing.Size(254, 30);
             ATCmonth.TabIndex = 38;
             ATCmonth.Text = "Time Slots";
             ATCmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4298,7 +3970,7 @@
             ATCPrev.Location = new System.Drawing.Point(16, 0);
             ATCPrev.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
             ATCPrev.Name = "ATCPrev";
-            ATCPrev.Size = new System.Drawing.Size(33, 30);
+            ATCPrev.Size = new System.Drawing.Size(31, 30);
             ATCPrev.TabIndex = 39;
             ATCPrev.UseVisualStyleBackColor = false;
             ATCPrev.Click += ATCPrev_Click;
@@ -4327,7 +3999,7 @@
             ATC2.RowCount = 1;
             ATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             ATC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            ATC2.Size = new System.Drawing.Size(393, 24);
+            ATC2.Size = new System.Drawing.Size(382, 24);
             ATC2.TabIndex = 1;
             // 
             // ATCSat
@@ -4336,9 +4008,9 @@
             ATCSat.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCSat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ATCSat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCSat.Location = new System.Drawing.Point(339, 0);
+            ATCSat.Location = new System.Drawing.Point(327, 0);
             ATCSat.Name = "ATCSat";
-            ATCSat.Size = new System.Drawing.Size(51, 24);
+            ATCSat.Size = new System.Drawing.Size(52, 24);
             ATCSat.TabIndex = 56;
             ATCSat.Text = "Sat";
             ATCSat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4349,9 +4021,9 @@
             ATCFri.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCFri.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ATCFri.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCFri.Location = new System.Drawing.Point(283, 0);
+            ATCFri.Location = new System.Drawing.Point(273, 0);
             ATCFri.Name = "ATCFri";
-            ATCFri.Size = new System.Drawing.Size(50, 24);
+            ATCFri.Size = new System.Drawing.Size(48, 24);
             ATCFri.TabIndex = 55;
             ATCFri.Text = "Fri";
             ATCFri.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4362,9 +4034,9 @@
             ATCThu.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCThu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ATCThu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCThu.Location = new System.Drawing.Point(227, 0);
+            ATCThu.Location = new System.Drawing.Point(219, 0);
             ATCThu.Name = "ATCThu";
-            ATCThu.Size = new System.Drawing.Size(50, 24);
+            ATCThu.Size = new System.Drawing.Size(48, 24);
             ATCThu.TabIndex = 54;
             ATCThu.Text = "Thu";
             ATCThu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4375,9 +4047,9 @@
             ATCWed.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCWed.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ATCWed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCWed.Location = new System.Drawing.Point(171, 0);
+            ATCWed.Location = new System.Drawing.Point(165, 0);
             ATCWed.Name = "ATCWed";
-            ATCWed.Size = new System.Drawing.Size(50, 24);
+            ATCWed.Size = new System.Drawing.Size(48, 24);
             ATCWed.TabIndex = 53;
             ATCWed.Text = "Wed";
             ATCWed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4388,9 +4060,9 @@
             ATCTue.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCTue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ATCTue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCTue.Location = new System.Drawing.Point(115, 0);
+            ATCTue.Location = new System.Drawing.Point(111, 0);
             ATCTue.Name = "ATCTue";
-            ATCTue.Size = new System.Drawing.Size(50, 24);
+            ATCTue.Size = new System.Drawing.Size(48, 24);
             ATCTue.TabIndex = 52;
             ATCTue.Text = "Tue";
             ATCTue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4401,9 +4073,9 @@
             ATCMon.Dock = System.Windows.Forms.DockStyle.Fill;
             ATCMon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ATCMon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ATCMon.Location = new System.Drawing.Point(59, 0);
+            ATCMon.Location = new System.Drawing.Point(57, 0);
             ATCMon.Name = "ATCMon";
-            ATCMon.Size = new System.Drawing.Size(50, 24);
+            ATCMon.Size = new System.Drawing.Size(48, 24);
             ATCMon.TabIndex = 51;
             ATCMon.Text = "Mon";
             ATCMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4416,7 +4088,7 @@
             ATCSun.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             ATCSun.Location = new System.Drawing.Point(3, 0);
             ATCSun.Name = "ATCSun";
-            ATCSun.Size = new System.Drawing.Size(50, 24);
+            ATCSun.Size = new System.Drawing.Size(48, 24);
             ATCSun.TabIndex = 50;
             ATCSun.Text = "Sun";
             ATCSun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4442,7 +4114,7 @@
             ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
             ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
             ATC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
-            ATC3.Size = new System.Drawing.Size(393, 244);
+            ATC3.Size = new System.Drawing.Size(382, 244);
             ATC3.TabIndex = 2;
             // 
             // EditButton
@@ -4454,7 +4126,7 @@
             EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             EditButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             EditButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            EditButton.Location = new System.Drawing.Point(225, 683);
+            EditButton.Location = new System.Drawing.Point(214, 683);
             EditButton.Name = "EditButton";
             EditButton.Size = new System.Drawing.Size(199, 51);
             EditButton.TabIndex = 60;
@@ -4468,7 +4140,7 @@
             BaADTlabel.AutoSize = true;
             BaADTlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             BaADTlabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            BaADTlabel.Location = new System.Drawing.Point(13, 94);
+            BaADTlabel.Location = new System.Drawing.Point(13, 28);
             BaADTlabel.Name = "BaADTlabel";
             BaADTlabel.Size = new System.Drawing.Size(90, 23);
             BaADTlabel.TabIndex = 58;
@@ -4477,6 +4149,7 @@
             // BaASerpanel
             // 
             BaASerpanel.BackColor = System.Drawing.Color.White;
+            BaASerpanel.Controls.Add(divider1);
             BaASerpanel.Controls.Add(BookingSumlabel);
             BaASerpanel.Controls.Add(BookingSumpanel);
             BaASerpanel.Controls.Add(FPropanel);
@@ -4485,15 +4158,23 @@
             BaASerpanel.Location = new System.Drawing.Point(13, 15);
             BaASerpanel.Margin = new System.Windows.Forms.Padding(13, 15, 1, 15);
             BaASerpanel.Name = "BaASerpanel";
-            BaASerpanel.Size = new System.Drawing.Size(431, 746);
+            BaASerpanel.Size = new System.Drawing.Size(422, 746);
             BaASerpanel.TabIndex = 51;
+            // 
+            // divider1
+            // 
+            divider1.BackColor = System.Drawing.Color.LightGray;
+            divider1.Location = new System.Drawing.Point(10, 390);
+            divider1.Name = "divider1";
+            divider1.Size = new System.Drawing.Size(401, 2);
+            divider1.TabIndex = 34;
             // 
             // BookingSumlabel
             // 
             BookingSumlabel.AutoSize = true;
             BookingSumlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             BookingSumlabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            BookingSumlabel.Location = new System.Drawing.Point(14, 456);
+            BookingSumlabel.Location = new System.Drawing.Point(14, 415);
             BookingSumlabel.Name = "BookingSumlabel";
             BookingSumlabel.Size = new System.Drawing.Size(152, 23);
             BookingSumlabel.TabIndex = 33;
@@ -4512,7 +4193,7 @@
             BookingSumpanel.Controls.Add(BSduration, 1, 3);
             BookingSumpanel.Controls.Add(BStotalprice, 1, 2);
             BookingSumpanel.Controls.Add(BSservices, 1, 0);
-            BookingSumpanel.Location = new System.Drawing.Point(15, 492);
+            BookingSumpanel.Location = new System.Drawing.Point(15, 461);
             BookingSumpanel.Name = "BookingSumpanel";
             BookingSumpanel.RowCount = 4;
             BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -4520,7 +4201,7 @@
             BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             BookingSumpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            BookingSumpanel.Size = new System.Drawing.Size(399, 242);
+            BookingSumpanel.Size = new System.Drawing.Size(399, 256);
             BookingSumpanel.TabIndex = 32;
             // 
             // tableLayoutPanel3
@@ -4530,13 +4211,13 @@
             tableLayoutPanel3.Controls.Add(BSdatetime1, 0, 1);
             tableLayoutPanel3.Controls.Add(BSdatetime, 0, 0);
             tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            tableLayoutPanel3.Location = new System.Drawing.Point(59, 60);
+            tableLayoutPanel3.Location = new System.Drawing.Point(59, 64);
             tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(340, 60);
+            tableLayoutPanel3.Size = new System.Drawing.Size(340, 64);
             tableLayoutPanel3.TabIndex = 34;
             // 
             // BSdatetime1
@@ -4545,10 +4226,10 @@
             BSdatetime1.Dock = System.Windows.Forms.DockStyle.Fill;
             BSdatetime1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             BSdatetime1.ForeColor = System.Drawing.SystemColors.ControlText;
-            BSdatetime1.Location = new System.Drawing.Point(60, 30);
+            BSdatetime1.Location = new System.Drawing.Point(60, 32);
             BSdatetime1.Margin = new System.Windows.Forms.Padding(60, 0, 0, 0);
             BSdatetime1.Name = "BSdatetime1";
-            BSdatetime1.Size = new System.Drawing.Size(280, 30);
+            BSdatetime1.Size = new System.Drawing.Size(280, 32);
             BSdatetime1.TabIndex = 74;
             BSdatetime1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -4561,7 +4242,7 @@
             BSdatetime.Location = new System.Drawing.Point(3, 0);
             BSdatetime.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             BSdatetime.Name = "BSdatetime";
-            BSdatetime.Size = new System.Drawing.Size(337, 30);
+            BSdatetime.Size = new System.Drawing.Size(337, 32);
             BSdatetime.TabIndex = 73;
             BSdatetime.Text = "Select Timeslot";
             BSdatetime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4576,9 +4257,9 @@
             BSdurationicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             BSdurationicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             BSdurationicon.Image = (System.Drawing.Image)resources.GetObject("BSdurationicon.Image");
-            BSdurationicon.Location = new System.Drawing.Point(3, 183);
+            BSdurationicon.Location = new System.Drawing.Point(3, 195);
             BSdurationicon.Name = "BSdurationicon";
-            BSdurationicon.Size = new System.Drawing.Size(53, 56);
+            BSdurationicon.Size = new System.Drawing.Size(53, 58);
             BSdurationicon.TabIndex = 78;
             BSdurationicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             BSdurationicon.UseVisualStyleBackColor = false;
@@ -4593,9 +4274,9 @@
             BStotalpriceicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             BStotalpriceicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             BStotalpriceicon.Image = (System.Drawing.Image)resources.GetObject("BStotalpriceicon.Image");
-            BStotalpriceicon.Location = new System.Drawing.Point(3, 123);
+            BStotalpriceicon.Location = new System.Drawing.Point(3, 131);
             BStotalpriceicon.Name = "BStotalpriceicon";
-            BStotalpriceicon.Size = new System.Drawing.Size(53, 54);
+            BStotalpriceicon.Size = new System.Drawing.Size(53, 58);
             BStotalpriceicon.TabIndex = 77;
             BStotalpriceicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             BStotalpriceicon.UseVisualStyleBackColor = false;
@@ -4610,9 +4291,9 @@
             BSdatetimeicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             BSdatetimeicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             BSdatetimeicon.Image = (System.Drawing.Image)resources.GetObject("BSdatetimeicon.Image");
-            BSdatetimeicon.Location = new System.Drawing.Point(3, 63);
+            BSdatetimeicon.Location = new System.Drawing.Point(3, 67);
             BSdatetimeicon.Name = "BSdatetimeicon";
-            BSdatetimeicon.Size = new System.Drawing.Size(53, 54);
+            BSdatetimeicon.Size = new System.Drawing.Size(53, 58);
             BSdatetimeicon.TabIndex = 76;
             BSdatetimeicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             BSdatetimeicon.UseVisualStyleBackColor = false;
@@ -4629,7 +4310,7 @@
             BSservicesicon.Image = (System.Drawing.Image)resources.GetObject("BSservicesicon.Image");
             BSservicesicon.Location = new System.Drawing.Point(3, 3);
             BSservicesicon.Name = "BSservicesicon";
-            BSservicesicon.Size = new System.Drawing.Size(53, 54);
+            BSservicesicon.Size = new System.Drawing.Size(53, 58);
             BSservicesicon.TabIndex = 75;
             BSservicesicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             BSservicesicon.UseVisualStyleBackColor = false;
@@ -4640,10 +4321,10 @@
             BSduration.Dock = System.Windows.Forms.DockStyle.Fill;
             BSduration.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             BSduration.ForeColor = System.Drawing.SystemColors.ControlText;
-            BSduration.Location = new System.Drawing.Point(62, 190);
+            BSduration.Location = new System.Drawing.Point(62, 202);
             BSduration.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             BSduration.Name = "BSduration";
-            BSduration.Size = new System.Drawing.Size(334, 52);
+            BSduration.Size = new System.Drawing.Size(334, 54);
             BSduration.TabIndex = 74;
             BSduration.Text = "Select Timeslot";
             // 
@@ -4653,10 +4334,10 @@
             BStotalprice.Dock = System.Windows.Forms.DockStyle.Fill;
             BStotalprice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             BStotalprice.ForeColor = System.Drawing.SystemColors.ControlText;
-            BStotalprice.Location = new System.Drawing.Point(62, 130);
+            BStotalprice.Location = new System.Drawing.Point(62, 138);
             BStotalprice.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             BStotalprice.Name = "BStotalprice";
-            BStotalprice.Size = new System.Drawing.Size(334, 50);
+            BStotalprice.Size = new System.Drawing.Size(334, 54);
             BStotalprice.TabIndex = 73;
             BStotalprice.Text = "Select Timeslot";
             // 
@@ -4669,7 +4350,7 @@
             BSservices.Location = new System.Drawing.Point(62, 10);
             BSservices.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             BSservices.Name = "BSservices";
-            BSservices.Size = new System.Drawing.Size(334, 50);
+            BSservices.Size = new System.Drawing.Size(334, 54);
             BSservices.TabIndex = 65;
             BSservices.Text = "Select Timeslot";
             // 
@@ -4679,7 +4360,7 @@
             FPropanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             FPropanel.Controls.Add(BaASer2, 0, 1);
             FPropanel.Controls.Add(BaASer1, 0, 0);
-            FPropanel.Location = new System.Drawing.Point(17, 140);
+            FPropanel.Location = new System.Drawing.Point(18, 74);
             FPropanel.Margin = new System.Windows.Forms.Padding(0);
             FPropanel.Name = "FPropanel";
             FPropanel.RowCount = 2;
@@ -4765,7 +4446,7 @@
             BaASerlabel.AutoSize = true;
             BaASerlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             BaASerlabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            BaASerlabel.Location = new System.Drawing.Point(9, 94);
+            BaASerlabel.Location = new System.Drawing.Point(10, 28);
             BaASerlabel.Name = "BaASerlabel";
             BaASerlabel.Size = new System.Drawing.Size(122, 23);
             BaASerlabel.TabIndex = 30;
@@ -5116,17 +4797,241 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
+            // ASlabel
+            // 
+            ASlabel.AutoSize = true;
+            ASlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASlabel.ForeColor = System.Drawing.Color.DimGray;
+            ASlabel.Location = new System.Drawing.Point(20, 27);
+            ASlabel.Name = "ASlabel";
+            ASlabel.Size = new System.Drawing.Size(190, 23);
+            ASlabel.TabIndex = 51;
+            ASlabel.Text = "Appointment Summary";
+            // 
+            // ASstattext
+            // 
+            ASstattext.AutoSize = true;
+            ASstattext.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASstattext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ASstattext.Location = new System.Drawing.Point(107, 75);
+            ASstattext.Name = "ASstattext";
+            ASstattext.Size = new System.Drawing.Size(108, 28);
+            ASstattext.TabIndex = 52;
+            ASstattext.Text = "Confirmed";
+            // 
+            // ASsericon
+            // 
+            ASsericon.BackColor = System.Drawing.Color.Transparent;
+            ASsericon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ASsericon.FlatAppearance.BorderSize = 0;
+            ASsericon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ASsericon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ASsericon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ASsericon.Image = (System.Drawing.Image)resources.GetObject("ASsericon.Image");
+            ASsericon.Location = new System.Drawing.Point(20, 319);
+            ASsericon.Name = "ASsericon";
+            ASsericon.Size = new System.Drawing.Size(61, 70);
+            ASsericon.TabIndex = 76;
+            ASsericon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ASsericon.UseVisualStyleBackColor = false;
+            // 
+            // ASdateicon
+            // 
+            ASdateicon.BackColor = System.Drawing.Color.Transparent;
+            ASdateicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ASdateicon.FlatAppearance.BorderSize = 0;
+            ASdateicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ASdateicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ASdateicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ASdateicon.Image = (System.Drawing.Image)resources.GetObject("ASdateicon.Image");
+            ASdateicon.Location = new System.Drawing.Point(20, 124);
+            ASdateicon.Name = "ASdateicon";
+            ASdateicon.Size = new System.Drawing.Size(61, 70);
+            ASdateicon.TabIndex = 78;
+            ASdateicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ASdateicon.UseVisualStyleBackColor = false;
+            // 
+            // ASdatelabel
+            // 
+            ASdatelabel.AutoEllipsis = true;
+            ASdatelabel.AutoSize = true;
+            ASdatelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASdatelabel.ForeColor = System.Drawing.Color.Black;
+            ASdatelabel.Location = new System.Drawing.Point(85, 147);
+            ASdatelabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASdatelabel.Name = "ASdatelabel";
+            ASdatelabel.Size = new System.Drawing.Size(158, 23);
+            ASdatelabel.TabIndex = 79;
+            ASdatelabel.Text = "Date and Timeslot: ";
+            // 
+            // ASpriceicon
+            // 
+            ASpriceicon.BackColor = System.Drawing.Color.Transparent;
+            ASpriceicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ASpriceicon.FlatAppearance.BorderSize = 0;
+            ASpriceicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ASpriceicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ASpriceicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ASpriceicon.Image = (System.Drawing.Image)resources.GetObject("ASpriceicon.Image");
+            ASpriceicon.Location = new System.Drawing.Point(20, 223);
+            ASpriceicon.Name = "ASpriceicon";
+            ASpriceicon.Size = new System.Drawing.Size(61, 70);
+            ASpriceicon.TabIndex = 80;
+            ASpriceicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ASpriceicon.UseVisualStyleBackColor = false;
+            // 
+            // ASdatetext
+            // 
+            ASdatetext.AutoEllipsis = true;
+            ASdatetext.AutoSize = true;
+            ASdatetext.Font = new System.Drawing.Font("Segoe UI", 9F);
+            ASdatetext.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASdatetext.Location = new System.Drawing.Point(120, 182);
+            ASdatetext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASdatetext.Name = "ASdatetext";
+            ASdatetext.Size = new System.Drawing.Size(110, 20);
+            ASdatetext.TabIndex = 82;
+            ASdatetext.Text = "Select Timeslot";
+            // 
+            // label45
+            // 
+            label45.AutoEllipsis = true;
+            label45.AutoSize = true;
+            label45.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label45.ForeColor = System.Drawing.SystemColors.ControlText;
+            label45.Location = new System.Drawing.Point(85, 326);
+            label45.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            label45.Name = "label45";
+            label45.Size = new System.Drawing.Size(0, 23);
+            label45.TabIndex = 77;
+            // 
+            // ASsertext
+            // 
+            ASsertext.AutoEllipsis = true;
+            ASsertext.AutoSize = true;
+            ASsertext.Font = new System.Drawing.Font("Segoe UI", 9F);
+            ASsertext.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASsertext.Location = new System.Drawing.Point(11, 10);
+            ASsertext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASsertext.Name = "ASsertext";
+            ASsertext.Size = new System.Drawing.Size(110, 20);
+            ASsertext.TabIndex = 84;
+            ASsertext.Text = "Select Timeslot";
+            // 
+            // ASserlabel
+            // 
+            ASserlabel.AutoEllipsis = true;
+            ASserlabel.AutoSize = true;
+            ASserlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASserlabel.ForeColor = System.Drawing.Color.Black;
+            ASserlabel.Location = new System.Drawing.Point(85, 342);
+            ASserlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASserlabel.Name = "ASserlabel";
+            ASserlabel.Size = new System.Drawing.Size(81, 23);
+            ASserlabel.TabIndex = 83;
+            ASserlabel.Text = "Services: ";
+            // 
+            // ASdurlabel
+            // 
+            ASdurlabel.AutoEllipsis = true;
+            ASdurlabel.AutoSize = true;
+            ASdurlabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            ASdurlabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASdurlabel.Location = new System.Drawing.Point(261, 10);
+            ASdurlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASdurlabel.Name = "ASdurlabel";
+            ASdurlabel.Size = new System.Drawing.Size(110, 20);
+            ASdurlabel.TabIndex = 85;
+            ASdurlabel.Text = "Select Timeslot";
+            // 
+            // ASpricetext
+            // 
+            ASpricetext.AutoEllipsis = true;
+            ASpricetext.AutoSize = true;
+            ASpricetext.Font = new System.Drawing.Font("Segoe UI", 9F);
+            ASpricetext.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASpricetext.Location = new System.Drawing.Point(122, 279);
+            ASpricetext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASpricetext.Name = "ASpricetext";
+            ASpricetext.Size = new System.Drawing.Size(110, 20);
+            ASpricetext.TabIndex = 87;
+            ASpricetext.Text = "Select Timeslot";
+            // 
+            // ASpricelabel
+            // 
+            ASpricelabel.AutoEllipsis = true;
+            ASpricelabel.AutoSize = true;
+            ASpricelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASpricelabel.ForeColor = System.Drawing.Color.Black;
+            ASpricelabel.Location = new System.Drawing.Point(87, 244);
+            ASpricelabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASpricelabel.Name = "ASpricelabel";
+            ASpricelabel.Size = new System.Drawing.Size(148, 23);
+            ASpricelabel.TabIndex = 86;
+            ASpricelabel.Text = "Price (Estimated): ";
+            // 
+            // ASdicon
+            // 
+            ASdicon.BackColor = System.Drawing.Color.Transparent;
+            ASdicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ASdicon.FlatAppearance.BorderSize = 0;
+            ASdicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ASdicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ASdicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            ASdicon.Image = (System.Drawing.Image)resources.GetObject("ASdicon.Image");
+            ASdicon.Location = new System.Drawing.Point(240, 223);
+            ASdicon.Name = "ASdicon";
+            ASdicon.Size = new System.Drawing.Size(61, 71);
+            ASdicon.TabIndex = 81;
+            ASdicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ASdicon.UseVisualStyleBackColor = false;
+            // 
+            // ASdtext
+            // 
+            ASdtext.AutoEllipsis = true;
+            ASdtext.AutoSize = true;
+            ASdtext.Font = new System.Drawing.Font("Segoe UI", 9F);
+            ASdtext.ForeColor = System.Drawing.SystemColors.ControlText;
+            ASdtext.Location = new System.Drawing.Point(342, 279);
+            ASdtext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASdtext.Name = "ASdtext";
+            ASdtext.Size = new System.Drawing.Size(110, 20);
+            ASdtext.TabIndex = 90;
+            ASdtext.Text = "Select Timeslot";
+            // 
+            // ASdlabel
+            // 
+            ASdlabel.AutoEllipsis = true;
+            ASdlabel.AutoSize = true;
+            ASdlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            ASdlabel.ForeColor = System.Drawing.Color.Black;
+            ASdlabel.Location = new System.Drawing.Point(307, 244);
+            ASdlabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            ASdlabel.Name = "ASdlabel";
+            ASdlabel.Size = new System.Drawing.Size(178, 23);
+            ASdlabel.TabIndex = 89;
+            ASdlabel.Text = "Duration (Estimated): ";
+            // 
+            // ASserpanel
+            // 
+            ASserpanel.AutoScroll = true;
+            ASserpanel.Controls.Add(ASsertext);
+            ASserpanel.Controls.Add(ASdurlabel);
+            ASserpanel.Location = new System.Drawing.Point(108, 368);
+            ASserpanel.Name = "ASserpanel";
+            ASserpanel.Size = new System.Drawing.Size(377, 125);
+            ASserpanel.TabIndex = 91;
+            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 241, 196);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(FacilityProPanel2);
-            Controls.Add(FacilityProPanel);
+            Controls.Add(ViewdetailsPanel);
+            Controls.Add(AppointmentsPanel);
             Controls.Add(SerPanel);
             Controls.Add(EditPIPanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(NotificationPanel);
             Controls.Add(SettingPanel);
             Controls.Add(panel45);
@@ -5144,9 +5049,10 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
-            Controls.Add(AppointmentsPanel);
             Controls.Add(ServicesPanel);
             Controls.Add(ProfilePanel);
+            Controls.Add(FacilityProPanel);
+            Controls.Add(FacilityProPanel2);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -5203,27 +5109,17 @@
             HeaderPanel.ResumeLayout(false);
             HeaderPanel.PerformLayout();
             CalendarAppointmentPanel.ResumeLayout(false);
-            AppointmentsPanel.ResumeLayout(false);
-            panel42.ResumeLayout(false);
-            panel42.PerformLayout();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel40.ResumeLayout(false);
-            panel40.PerformLayout();
-            panel41.ResumeLayout(false);
-            panel41.PerformLayout();
-            panel38.ResumeLayout(false);
-            panel38.PerformLayout();
-            panel39.ResumeLayout(false);
-            panel39.PerformLayout();
             ViewdetailsPanel.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
+            ViewDetspanel.ResumeLayout(false);
             AstatPanel.ResumeLayout(false);
             AstatPanel.PerformLayout();
             AstoreproPanel.ResumeLayout(false);
             AstoreproPanel.PerformLayout();
-            AproPanel.ResumeLayout(false);
-            AproPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ASConumicon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ASEMSicon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ASWorkingHoursicon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ASLocicon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ASWorDaysicon).EndInit();
             ProfilePanel.ResumeLayout(false);
             GPPanel.ResumeLayout(false);
             GPPanel.PerformLayout();
@@ -5258,9 +5154,7 @@
             FacSerOPanel.ResumeLayout(false);
             SOTable.ResumeLayout(false);
             SOTable.PerformLayout();
-            SBPanel.ResumeLayout(false);
             FacilityProPanel2.ResumeLayout(false);
-            BAPanel.ResumeLayout(false);
             BaAPanel.ResumeLayout(false);
             BaADTPanel.ResumeLayout(false);
             BaADTPanel.PerformLayout();
@@ -5290,6 +5184,8 @@
             PIEpanel.PerformLayout();
             PIEprofilepanel.ResumeLayout(false);
             PIEprofilepanel.PerformLayout();
+            ASserpanel.ResumeLayout(false);
+            ASserpanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5389,53 +5285,11 @@
         private System.Windows.Forms.Button appointmentsbutton;
         private System.Windows.Forms.Button calendarsButton;
         private System.Windows.Forms.Panel AppointmentsPanel;
-        private System.Windows.Forms.Panel panel38;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Button button43;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Panel panel39;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Panel panel42;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Button button45;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Panel panel43;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Button button44;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Panel panel41;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Panel ViewdetailsPanel;
         private System.Windows.Forms.Panel AstatPanel;
-        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label ASstatlabel;
         private System.Windows.Forms.Button ReschedButton;
         private System.Windows.Forms.Panel AstoreproPanel;
-        private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Panel AproPanel;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Panel ProfilePanel;
         private System.Windows.Forms.Panel PIPanel;
@@ -5484,7 +5338,7 @@
         private System.Windows.Forms.Panel PrivPanel;
         private System.Windows.Forms.Button PrivacyPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel ViewDetspanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel44;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -5498,16 +5352,10 @@
         private System.Windows.Forms.TableLayoutPanel SOTable;
         private System.Windows.Forms.Label FPDuration;
         private System.Windows.Forms.Label FPPrice;
-        private System.Windows.Forms.Panel SBPanel;
-        private System.Windows.Forms.Button FPBookAppButton;
-        private System.Windows.Forms.Button SOButton;
         private System.Windows.Forms.Button FPButton;
         private System.Windows.Forms.Panel FacilityProPanel2;
         private System.Windows.Forms.TableLayoutPanel BaAPanel;
         private System.Windows.Forms.Panel BaADTPanel;
-        private System.Windows.Forms.Panel BAPanel;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Panel BaASerpanel;
         private System.Windows.Forms.Label BaADTlabel;
         private System.Windows.Forms.Label BaASerlabel;
@@ -5638,7 +5486,44 @@
         private System.Windows.Forms.Label BSdatetime;
         private System.Windows.Forms.Label BSservices;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label BSdatetime1;
+        private System.Windows.Forms.Button BookAppbutton;
+        private System.Windows.Forms.Button FPBookAppButton;
+        private System.Windows.Forms.Panel divider2;
+        private System.Windows.Forms.Panel divider1;
+        private System.Windows.Forms.PictureBox ASEMSicon;
+        private System.Windows.Forms.Label ASEMSlabel;
+        private System.Windows.Forms.Label ASEMStext;
+        private System.Windows.Forms.PictureBox ASConumicon;
+        private System.Windows.Forms.Label ASConumlabel;
+        private System.Windows.Forms.Label ASConumtext;
+        private System.Windows.Forms.Panel ASPP;
+        private System.Windows.Forms.Label ASFaciName;
+        private System.Windows.Forms.Label ASWorkingHourslabel;
+        private System.Windows.Forms.Label ASWorkingHoursText;
+        private System.Windows.Forms.PictureBox ASWorkingHoursicon;
+        private System.Windows.Forms.Label ASWorDayslabel;
+        private System.Windows.Forms.PictureBox ASLocicon;
+        private System.Windows.Forms.Label ASWorDaystext;
+        private System.Windows.Forms.Label ASLoclabel;
+        private System.Windows.Forms.Label ASLoctext;
+        private System.Windows.Forms.PictureBox ASWorDaysicon;
+        private System.Windows.Forms.Button ASpriceicon;
+        private System.Windows.Forms.Label ASdatelabel;
+        private System.Windows.Forms.Button ASdateicon;
+        private System.Windows.Forms.Button ASsericon;
+        private System.Windows.Forms.Label ASstattext;
+        private System.Windows.Forms.Label ASlabel;
+        private System.Windows.Forms.Label ASdatetext;
+        private System.Windows.Forms.Label ASsertext;
+        private System.Windows.Forms.Label ASserlabel;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label ASpricetext;
+        private System.Windows.Forms.Label ASpricelabel;
+        private System.Windows.Forms.Label ASdurlabel;
+        private System.Windows.Forms.Label ASdtext;
+        private System.Windows.Forms.Label ASdlabel;
+        private System.Windows.Forms.Button ASdicon;
+        private System.Windows.Forms.Panel ASserpanel;
     }
 }
