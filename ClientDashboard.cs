@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
@@ -63,7 +64,7 @@ namespace OOP2
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
         string locs = "", Ems = "", selectedTime = "";
-        int facid, newClientId;
+        int facid, newClientId=0;
         int clientId;
         public ClientDashboard()
         {
@@ -822,6 +823,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            LoadHistory();
         }
 
         private void button41_Click(object sender, EventArgs e)
@@ -1788,15 +1790,30 @@ namespace OOP2
         public void LoadHistory()
         {
             AppointmentsPanel.Controls.Clear();
-
+            EmailAddress = ClientLogin.EmailAddress;
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
+
+                string getclientid = "SELECT Client_ID FROM [Clients] WHERE [Email Address] = ?";
+
+                using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getclientid, myConn))
+                {
+                    getServiceIdsCmd.Parameters.AddWithValue("?", EmailAddress);
+
+                    using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                    {
+                        if (reader.Read() && !reader.IsDBNull(0))
+                        {
+                            newClientId = reader.GetInt32(0);
+                        }
+                    }
+                }
                 string sql = "SELECT Facility_ID, Appointment_ID FROM Appointments WHERE Client_ID = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
-                    cmd.Parameters.AddWithValue("?", clientId);
+                    cmd.Parameters.AddWithValue("?", newClientId);
 
                     int count = (int)cmd.ExecuteScalar();
 
@@ -1832,18 +1849,18 @@ namespace OOP2
                                 usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
                                 usersPanel.CLientApp(FacName, FLocation);
 
-                                usersPanel.Location = new Point(10, margin - 7);
+                                usersPanel.Location = new Point(10, margin);
                                 margin += usersPanel.Height + 10;
 
                                 usersPanel.ViewDetailsClicked += (s, e) =>
                                 {
-                                    ViewDets(appointmentId, newFacilityId, clientId);
+                                    ViewDets(appointmentId, newFacilityId, newClientId);
                                 };
 
                                 string adminQuery = "SELECT [Appointment Status], [Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
                                 using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                                 {
-                                    adminCmd.Parameters.AddWithValue("?", clientId);
+                                    adminCmd.Parameters.AddWithValue("?", newClientId);
                                     adminCmd.Parameters.AddWithValue("?", newFacilityId);
                                     adminCmd.Parameters.AddWithValue("?", appointmentId);
 
@@ -1915,9 +1932,10 @@ namespace OOP2
                     }
                 }
 
-                string insertAppointment = "SELECT INTO Appointments [Appointment Status], [Date], [Start Time], [End Time], [Estimated Price], [Estimated Duration] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                string selectAppointment = "SELECT [Appointment Status], [Date], [Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
+                           "FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
 
-                using (OleDbCommand cmd = new OleDbCommand(insertAppointment, myConn))
+                using (OleDbCommand cmd = new OleDbCommand(selectAppointment, myConn))
                 {
                     cmd.Parameters.AddWithValue("?", Clid);
                     cmd.Parameters.AddWithValue("?", Faid);
@@ -1928,33 +1946,78 @@ namespace OOP2
                         if (adminReader.Read())
                         {
                             string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
-                            string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                            string dateapp = adminReader.IsDBNull(adminReader.GetOrdinal("Date"))
+                                ? ""
+                                : adminReader.GetDateTime(adminReader.GetOrdinal("Date")).ToString("dd MMM yyyy");
+
+                            string startTimeStr = adminReader["Start Time"].ToString();
+                            string endTimeStr = adminReader["End Time"].ToString();
+                            DateTime startTime = DateTime.Parse(startTimeStr);
+                            DateTime endTime = DateTime.Parse(endTimeStr);
+                            string formattedStart = startTime.ToString("hh:mm tt");
+                            string formattedEnd = endTime.ToString("hh:mm tt");
+
+                            string price = adminReader["Estimated Price"].ToString();
+                            string duration = adminReader["Estimated Duration"].ToString();
+
+                            ASdatetext.Text = dateapp + " ,    " + formattedStart + " - " + formattedEnd;
+                            ASpricetext.Text = "PHP " + price + ".00";
+                            ASdtext.Text = duration;
+                            ASstattext.Text = status;
+
+                            if (status == "Active")
+                            {
+                                ASstattext.ForeColor = Color.LawnGreen;
+                            }
+                            else if (status == "Pending")
+                            {
+                                ASstattext.ForeColor = Color.Gold;
+                            }
+                            else if (status == "Completed")
+                            {
+                                ASstattext.ForeColor = ColorTranslator.FromHtml("#69e331");
+                            }
+                            else
+                            {
+                                ASstattext.ForeColor = Color.Red;
+                            }
                         }
                     }
-                    cmd.Parameters.AddWithValue("?", newClientId);
-                    cmd.Parameters.AddWithValue("?", facid);
-                    cmd.Parameters.AddWithValue("?", "Pending");
+                }
+                ASserpanel.Controls.Clear();
 
-                    string dateTimeString = $"{selectedAppointmentDate:dd MM yyyy}";
-                    DateTime dateTime = DateTime.Parse(dateTimeString);
-                    cmd.Parameters.AddWithValue("?", dateTimeString);
+                string serviceQuery = "SELECT [Service_ID] FROM [Appointment Services] WHERE [Appointment_ID] = ?";
 
-                    string[] timeParts = selectedTimeSlotLabel.Text.Split('-');
-                    string startTimeText = timeParts[0].Trim();
-                    string endTimeText = timeParts[1].Trim();
+                using (OleDbCommand cmd = new OleDbCommand(serviceQuery, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", ID);
 
-                    DateTime startTime = DateTime.Parse($"{startTimeText: hh:mm tt}");
-                    DateTime endTime = DateTime.Parse($"{endTimeText: hh:mm tt}");
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string serviceId = reader["Service_ID"].ToString();
 
-                    cmd.Parameters.AddWithValue("?", startTimeText);
-                    cmd.Parameters.AddWithValue("?", endTimeText);
+                            string serviceInfoQuery = "SELECT [Service Name], [Duration] FROM [Facility Services] WHERE [Service_ID] = ?";
+                            using (OleDbCommand serviceCmd = new OleDbCommand(serviceInfoQuery, myConn))
+                            {
+                                serviceCmd.Parameters.AddWithValue("?", serviceId);
 
-                    cmd.Parameters.AddWithValue("?", EPrice);
+                                using (OleDbDataReader serviceReader = serviceCmd.ExecuteReader())
+                                {
+                                    if (serviceReader.Read())
+                                    {
+                                        string serviceName = serviceReader["Service Name"].ToString();
+                                        string duration = serviceReader["Duration"].ToString();
 
-                    string durationString = $"{EDuration} mins";
-                    cmd.Parameters.AddWithValue("?", durationString);
-
-                    cmd.ExecuteNonQuery();
+                                        ServiceDuration serviceDuration = new ServiceDuration();
+                                        serviceDuration.SetInfo(serviceName, duration);
+                                        ASserpanel.Controls.Add(serviceDuration);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
