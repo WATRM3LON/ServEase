@@ -1635,6 +1635,7 @@
             // 
             timer1.Enabled = true;
             timer1.Interval = 1;
+            timer1.Tick += AppSerchtext_TextChanged;
             // 
             // ServicesPanel
             // 
@@ -5397,6 +5398,7 @@
             AppSerchtext.TabIndex = 11;
             AppSerchtext.Tag = "";
             AppSerchtext.Text = "Search";
+            AppSerchtext.TextChanged += AppSerchtext_TextChanged;
             // 
             // button15
             // 

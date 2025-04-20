@@ -73,6 +73,7 @@ namespace OOP2
             InitializeComponent();
             InfoGetter();
             Loaders(); HiLabel.Text = $"Hi {FName},";
+            AppSerchtext.TextChanged += AppSerchtext_TextChanged;
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
             DashboardButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -755,8 +756,8 @@ namespace OOP2
             FacilityProPanel.Visible = false;
             FacilityProPanel2.Visible = false;
             FPButton.Visible = false;
-            //CALENDAR
-            CalendarAppointmentPanel.Visible = true; PopulateCalendarPanel();
+            //CALENDAR 
+            CalendarAppointmentPanel.Visible = true; LoadHistory(Appid, facid, clientId);
             CalendarPanel.Visible = true;
             CalendarButton.BackColor = ColorTranslator.FromHtml("#69e331");
             CButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -1552,14 +1553,14 @@ namespace OOP2
         {
             currentMonth = currentMonth.AddMonths(-1);
             PopulateCalendar();
-            PopulateCalendarPanel();
+            PopulateCalendarPanel(Appid, facid, clientId);
         }
 
         private void ATCNext_Click(object sender, EventArgs e)
         {
             currentMonth = currentMonth.AddMonths(+1);
             PopulateCalendar();
-            PopulateCalendarPanel();
+            PopulateCalendarPanel(Appid, facid, clientId);
         }
 
         void LoadTimeSlotsFromDatabase(int facilityId, DateTime selectedDate)
@@ -1870,7 +1871,7 @@ namespace OOP2
                             {
                                 ViewDets(appointmentId, newFacilityId, newClientId);
                             };
-
+                            
                             string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
                             using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                             {
@@ -1891,7 +1892,7 @@ namespace OOP2
                                     }
                                 }
                             }
-
+                            PopulateCalendarPanel(appointmentId, newFacilityId, newClientId);
                             Appid = appointmentId;
                             facid = newFacilityId;
                             clientId = newClientId;
@@ -2045,9 +2046,9 @@ namespace OOP2
 
         }
 
-        void PopulateCalendarPanel()
+        void PopulateCalendarPanel(int ID, int Faid, int Clid)
         {
-            LoadHistory(Appid, facid, clientId);
+            //LoadHistory(Appid, facid, clientId);
             CAC3.Controls.Clear();
             CAC3.SuspendLayout();
 
@@ -2062,11 +2063,11 @@ namespace OOP2
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
-                string query = "SELECT [Appointment Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ?";
+                string query = "SELECT [Appointment Date] FROM Appointments WHERE [Client_ID] = ?";
                 using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                 {
                     cmd.Parameters.AddWithValue("?", clientId);
-                    cmd.Parameters.AddWithValue("?", facid);
+
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -2211,7 +2212,9 @@ namespace OOP2
         {
             filter2 = FilterDateBox.SelectedItem.ToString();
             AppSearch.Visible = true;
-            
+            AppSerchtext.Text = "eg. yyyy-MM-dd";
+
+
             if (filter2 == "--Back--")
             {
                 LoadHistory(Appid, facid, clientId);
@@ -2251,5 +2254,50 @@ namespace OOP2
                 filter2 = null;
             }
         }
+        private Timer debounceTimer = new Timer();
+
+        private void AppSercht_TextChanged(object sender, EventArgs e)
+        {
+            debounceTimer.Stop();
+            debounceTimer.Interval = 400;
+            debounceTimer.Tick += (s, args) =>
+            {
+                debounceTimer.Stop();
+                //HandleSearchTextChange();
+            };
+            debounceTimer.Start();
+        }
+
+        private void AppSerchtext_TextChanged(object sender, EventArgs e)
+        {
+            string input = AppSerchtext.Text.Trim();
+            if (string.IsNullOrWhiteSpace(input) || input == "eg. yyyy-MM-dd")
+                return;
+
+            if (FilterDateBox.Visible)
+            {
+                if (DateTime.TryParse(input, out DateTime date))
+                {
+                    if (filter2 == "Appointment Date")
+                    {
+                        LoadHistory(Appid, facid, clientId, appointmentDateFilter: date);
+                    }
+                    else if (filter2 == "Date Booked")
+                    {
+                        LoadHistory(Appid, facid, clientId, dateBookedFilter: date);
+                    }
+                }
+            }
+            else if (filter1 == "Facility")
+            {
+                if (int.TryParse(input, out int facilityId)) {
+                    LoadHistory(Appid, facid, clientId, facilityIdFilter: facilityId); }
+                else { 
+                    //LoadHistory(Appid, facid, clientId, facilityNameLike: input);
+                }
+            }
+        }
+
+
     }
 }
