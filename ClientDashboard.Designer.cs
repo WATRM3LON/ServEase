@@ -2556,7 +2556,7 @@
             ViewdetailsPanel.Controls.Add(ReschedButton);
             ViewdetailsPanel.Location = new System.Drawing.Point(277, 165);
             ViewdetailsPanel.Name = "ViewdetailsPanel";
-            ViewdetailsPanel.Size = new System.Drawing.Size(893, 810);
+            ViewdetailsPanel.Size = new System.Drawing.Size(893, 805);
             ViewdetailsPanel.TabIndex = 53;
             // 
             // ViewDetspanel
@@ -3108,9 +3108,9 @@
             ReschedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ReschedButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ReschedButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            ReschedButton.Location = new System.Drawing.Point(609, 742);
+            ReschedButton.Location = new System.Drawing.Point(655, 730);
             ReschedButton.Name = "ReschedButton";
-            ReschedButton.Size = new System.Drawing.Size(248, 51);
+            ReschedButton.Size = new System.Drawing.Size(202, 51);
             ReschedButton.TabIndex = 33;
             ReschedButton.Text = "Reschedule Appointment";
             ReschedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -5307,9 +5307,9 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(CalendarPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(AppointmentsPanel);
-            Controls.Add(CalendarPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(SerPanel);
             Controls.Add(EditPIPanel);

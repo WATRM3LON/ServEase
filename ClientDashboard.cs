@@ -64,7 +64,7 @@ namespace OOP2
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
         string locs = "", Ems = "", selectedTime = "";
-        int facid, newClientId = 0, Appid;
+        int facid, Appid;
         int clientId;
         public ClientDashboard()
         {
@@ -163,6 +163,8 @@ namespace OOP2
             //Calendar
             CalendarPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CalendarPanel.Width, CalendarPanel.Height, 10, 10));
             calendarsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, calendarsButton.Width, calendarsButton.Height, 10, 10));
+            CACnext.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CACnext.Width, CACnext.Height, 10, 10));
+            CACprev.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CACprev.Width, CACprev.Height, 10, 10));
             //Appointment
             AppointmentsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentsPanel.Width, AppointmentsPanel.Height, 10, 10));
             appointmentsbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, appointmentsbutton.Width, appointmentsbutton.Height, 10, 10));
@@ -217,6 +219,9 @@ namespace OOP2
             PIEAddresstext.Text = LocationAddress;
             SexPI.Text = PIESextext.Text = Sex;
         }
+        //
+        ///CONTROLS
+        //
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -270,7 +275,9 @@ namespace OOP2
         {
             MinimizeButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
         }
-
+        //
+        ///DASHBOARD
+        //
         private void LogoButton_Click(object sender, EventArgs e)
         {
             dbp1 = false;
@@ -436,7 +443,7 @@ namespace OOP2
                 using (OleDbCommand getIdCmd = new OleDbCommand("SELECT @@IDENTITY", myConn))
                 {
                     object result = getIdCmd.ExecuteScalar();
-                    newClientId = Convert.ToInt32(result);
+                    int newClientId = Convert.ToInt32(result);
                 }
 
                 string AdminQuery = "UPDATE [Admin (Clients)] SET [First Name] = @fname, [Last Name] = @lname, [Birth Date] = @datebirth, Sex = @sex, [Contact Number] = @cnumber, Location = @address WHERE [Email Address] = @Email";
@@ -823,7 +830,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
-            LoadHistory();
+            LoadHistory(Appid, facid, clientId);
         }
 
         private void button41_Click(object sender, EventArgs e)
@@ -1033,7 +1040,7 @@ namespace OOP2
         private void DeleteAccButton_Click(object sender, EventArgs e)
         {
             DialogResult results = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            int newClientId = 0;
             if (results == DialogResult.Yes)
             {
                 using (OleDbConnection myConn = new OleDbConnection(connection))
@@ -1049,7 +1056,7 @@ namespace OOP2
 
                         if (result != null)
                         {
-                            clientId = Convert.ToInt32(result);
+                            newClientId = Convert.ToInt32(result);
                         }
                         else
                         {
@@ -1080,7 +1087,7 @@ namespace OOP2
                     {
                         updateCmd.Parameters.AddWithValue("?", "Deleted");
                         updateCmd.Parameters.AddWithValue("?", DateTime.Today);
-                        updateCmd.Parameters.AddWithValue("?", clientId);
+                        updateCmd.Parameters.AddWithValue("?", newClientId);
 
                         updateCmd.ExecuteNonQuery();
                     }
@@ -1709,6 +1716,7 @@ namespace OOP2
             }
 
             EmailAddress = ClientLogin.EmailAddress;
+            int newClientId = 0;
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
@@ -1791,10 +1799,11 @@ namespace OOP2
             MessageBox.Show("Updated successfully!");
         }
 
-        public void LoadHistory()
+        public void LoadHistory(int ID, int Faid, int Clid)
         {
             AppointmentsPanel.Controls.Clear();
             EmailAddress = ClientLogin.EmailAddress;
+            int newClientId = 0;
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
@@ -1834,6 +1843,7 @@ namespace OOP2
                                 int appointmentId = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
                                 string FacName = "", FLocation = "";
 
+                                
                                 string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
                                 using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
                                 {
@@ -1881,8 +1891,9 @@ namespace OOP2
                                         }
                                     }
                                 }
-
-
+                                Appid = appointmentId;
+                                facid = newFacilityId;
+                                clientId = newClientId;
                                 AppointmentsPanel.Controls.Add(usersPanel);
                             }
                         }
@@ -2038,6 +2049,7 @@ namespace OOP2
 
         void PopulateCalendarPanel()
         {
+            LoadHistory(Appid, facid, clientId);
             CAC3.Controls.Clear();
             CAC3.SuspendLayout();
 
@@ -2048,38 +2060,90 @@ namespace OOP2
             int row = 0;
             int col = startCol;
 
+            Dictionary<DateTime, int> appointmentCounts = new Dictionary<DateTime, int>();
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+                string query = "SELECT [Appointment Date] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ?";
+                using (OleDbCommand cmd = new OleDbCommand(query, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", clientId);
+                    cmd.Parameters.AddWithValue("?", facid);
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                DateTime date = reader.GetDateTime(0).Date;
+                                if (appointmentCounts.ContainsKey(date))
+                                    appointmentCounts[date]++;
+                                else
+                                    appointmentCounts[date] = 1;
+                            }
+                        }
+                    }
+                }
+            }
+
             for (int day = 1; day <= daysInMonth; day++)
             {
                 DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
                 DayOfWeek dayOfWeek = thisDate.DayOfWeek;
 
+                Panel cellPanel = new Panel
+                {
+                    Dock = DockStyle.Fill,
+                    BackColor = Color.Transparent,
+                    Margin = new Padding(5)
+                };
+
                 Label dayLabel = new Label
                 {
                     Text = day.ToString(),
-                    Dock = DockStyle.Fill,
+                    Dock = DockStyle.Top,
                     TextAlign = ContentAlignment.TopRight,
-                    Margin = new(5, 5, 5, 5),
-                    BorderStyle = BorderStyle.None,
-                    Font = new Font("Segoe UI", 10),
-                    Tag = thisDate
+                    AutoSize = false,
+                    Height = 20,
+                    Font = new Font("Segoe UI", 9),
+                    Tag = thisDate,
+                    BackColor = Color.Transparent
                 };
+
+                if (appointmentCounts.ContainsKey(thisDate.Date))
+                {
+                    int count = appointmentCounts[thisDate.Date];
+
+                    Label appLabel = new Label
+                    {
+                        Text = $" ● {count} Appointment/s",
+                        AutoEllipsis = true,
+                        AutoSize = false,
+                        Dock = DockStyle.Fill,
+                        //Height = 18,
+                        TextAlign = ContentAlignment.MiddleLeft,
+                        ForeColor = ColorTranslator.FromHtml("#69e331"),
+                        Font = new Font("Segoe UI", 8)
+                    };
+                    cellPanel.Controls.Add(appLabel);
+                    cellPanel.Cursor = Cursors.Hand;
+                    cellPanel.Click += DayLabel_Click;
+                    cellPanel.BackColor = ColorTranslator.FromHtml("#E1F9D7");
+                }
 
                 if (dayOfWeek == DayOfWeek.Sunday || dayOfWeek == DayOfWeek.Saturday)
                 {
-                    dayLabel.ForeColor = Color.DimGray;
-                    dayLabel.BackColor = Color.WhiteSmoke;
+                    cellPanel.ForeColor = Color.DimGray;
+                    cellPanel.BackColor = Color.WhiteSmoke;
                 }
-
-                dayLabel.Cursor = Cursors.Hand;
-                dayLabel.Click += DayLabel_Click;
-
 
                 if (thisDate.Date == DateTime.Today.Date)
                 {
-                    dayLabel.BackColor = ColorTranslator.FromHtml("#d9faf5");
+                    cellPanel.BackColor = ColorTranslator.FromHtml("#d9faf5");
                 }
 
-                CAC3.Controls.Add(dayLabel, col, row);
+                cellPanel.Controls.Add(dayLabel);
+                CAC3.Controls.Add(cellPanel, col, row);
 
                 col++;
                 if (col == 7)
