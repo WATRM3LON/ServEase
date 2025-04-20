@@ -11,7 +11,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -63,7 +65,7 @@ namespace OOP2
         public DateTime workingend;
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
-        string locs = "", Ems = "", selectedTime = "";
+        string locs = "", Ems = "", selectedTime = "", filter1 = "", filter2 = "";
         int facid, Appid;
         int clientId;
         public ClientDashboard()
@@ -81,7 +83,7 @@ namespace OOP2
             CalendarAppointmentPanel.Visible = false;
             CalendarPanel.Visible = false;
             AppointmentsPanel.Visible = false;
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             ProfilePanel.Visible = false;
             NotificationPanel.Visible = false;
@@ -569,7 +571,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.Flat;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
@@ -622,7 +624,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.Flat;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
@@ -712,7 +714,7 @@ namespace OOP2
             CalendarAppointmentPanel.Visible = false;
             CalendarPanel.Visible = false;
             AppointmentsPanel.Visible = false;
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
@@ -764,7 +766,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.Flat;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
@@ -780,6 +782,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
 
         private void appointmentsbutton_Click(object sender, EventArgs e)
@@ -814,7 +817,7 @@ namespace OOP2
             AppointmentsPanel.Visible = true;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
@@ -830,10 +833,11 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = true; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
             LoadHistory(Appid, facid, clientId);
         }
 
-        private void button41_Click(object sender, EventArgs e)
+        private void AppDetsbutton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
@@ -865,7 +869,7 @@ namespace OOP2
             AppointmentsPanel.Visible = true;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
@@ -881,24 +885,8 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
-            FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
+            FilterBox.Visible = true; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
-
-        private void button43_Click(object sender, EventArgs e)
-        {
-            WelcomeLabel.Visible = false;
-            button41.Visible = true;
-            AppointmentsPanel.Visible = false;
-            CalendarAppointmentPanel.Visible = false;
-            ViewdetailsPanel.Visible = true;
-            if (notify == true)
-            {
-                NotificationPanel.Visible = false;
-                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
-                notify = false;
-            }
-        }
-
 
         private void ProfileButton_Click(object sender, EventArgs e)
         {
@@ -934,7 +922,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = true;
@@ -984,7 +972,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
@@ -1917,7 +1905,7 @@ namespace OOP2
         public void ViewDets(int ID, int Faid, int Clid)
         {
             WelcomeLabel.Visible = false;
-            button41.Visible = true;
+            AppDetsbutton.Visible = true;
             AppointmentsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             ViewdetailsPanel.Visible = true;
@@ -2101,10 +2089,10 @@ namespace OOP2
                 DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
                 DayOfWeek dayOfWeek = thisDate.DayOfWeek;
 
-                Panel cellPanel = new Panel{Dock = DockStyle.Fill, BackColor = Color.Transparent, Margin = new Padding(5)};
+                Panel cellPanel = new Panel { Dock = DockStyle.Fill, BackColor = Color.Transparent, Margin = new Padding(5) };
 
-                Label dayLabel = new Label {Text = day.ToString(), Dock = DockStyle.Top, TextAlign = ContentAlignment.TopRight, AutoSize = false, Height = 20, Font = new Font("Segoe UI", 9), Tag = thisDate, BackColor = Color.Transparent};
-                
+                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Top, TextAlign = ContentAlignment.TopRight, AutoSize = false, Height = 20, Font = new Font("Segoe UI", 9), Tag = thisDate, BackColor = Color.Transparent };
+
                 if (dayOfWeek == DayOfWeek.Sunday || dayOfWeek == DayOfWeek.Saturday)
                 {
                     cellPanel.ForeColor = Color.DimGray;
@@ -2120,7 +2108,7 @@ namespace OOP2
                 {
                     int count = appointmentCounts[thisDate.Date];
 
-                    Label appLabel = new Label {Text = $" ● {count} Appointment/s", AutoEllipsis = true, AutoSize = false, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = ColorTranslator.FromHtml("#69e331"), Font = new Font("Segoe UI", 8), Tag = thisDate};
+                    Label appLabel = new Label { Text = $" ● {count} Appointment/s", AutoEllipsis = true, AutoSize = false, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = ColorTranslator.FromHtml("#69e331"), Font = new Font("Segoe UI", 8), Tag = thisDate };
 
                     cellPanel.Controls.Add(appLabel);
                     cellPanel.Cursor = Cursors.Hand;
@@ -2129,7 +2117,7 @@ namespace OOP2
                     cellPanel.BackColor = ColorTranslator.FromHtml("#E1F9D7");
                 }
 
-                
+
 
                 cellPanel.Controls.Add(dayLabel);
                 CAC3.Controls.Add(cellPanel, col, row);
@@ -2199,6 +2187,68 @@ namespace OOP2
                         MessageBox.Show("Appointment cancelled successfully.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+        }
+
+        private void FilterBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filter1 = FilterBox.SelectedItem.ToString();
+            if (filter1 == "Date")
+            {
+                FilterDateBox.Visible = true; FilterBox.Visible = false; filter1 = null;
+            }
+            else if (filter1 == "Status")
+            {
+                FilterStatusBox.Visible = true; FilterBox.Visible = false; filter1 = null;
+            }
+            else if (filter1 == "Facility")
+            {
+                AppSearch.Visible = true;
+            }
+        }
+
+        private void FilterDateBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filter2 = FilterDateBox.SelectedItem.ToString();
+            AppSearch.Visible = true;
+            
+            if (filter2 == "--Back--")
+            {
+                LoadHistory(Appid, facid, clientId);
+                FilterDateBox.Visible = false; FilterBox.Visible = true; AppSearch.Visible = false;
+                filter2 = null;
+            }
+        }
+
+        private void FilterStatusBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filter2 = FilterStatusBox.SelectedItem.ToString();
+
+            if (filter2 == "Pending")
+            {
+                LoadHistory(Appid, facid, clientId, statusFilter: "Pending");
+            }
+            else if (filter2 == "Confirmed")
+            {
+                LoadHistory(Appid, facid, clientId, statusFilter: "Confirmed");
+            }
+            else if (filter2 == "Cancelled")
+            {
+                LoadHistory(Appid, facid, clientId, statusFilter: "Cancelled");
+            }
+            else if (filter2 == "Completed")
+            {
+                LoadHistory(Appid, facid, clientId, statusFilter: "Completed");
+            }
+            else if (filter2 == "No Show")
+            {
+                LoadHistory(Appid, facid, clientId, statusFilter: "No Show");
+            }
+            else if (filter2 == "--Back--")
+            {
+                LoadHistory(Appid, facid, clientId);
+                FilterDateBox.Visible = false; FilterBox.Visible = true; AppSearch.Visible = false;
+                filter2 = null;
             }
         }
     }

@@ -55,7 +55,7 @@
             SearchPanel = new System.Windows.Forms.Panel();
             SearchButton = new System.Windows.Forms.Button();
             NameTextBox = new System.Windows.Forms.TextBox();
-            button1 = new System.Windows.Forms.Button();
+            Searchicon = new System.Windows.Forms.Button();
             NotifyButton = new System.Windows.Forms.Button();
             AppointmentPanel = new System.Windows.Forms.Panel();
             panel7 = new System.Windows.Forms.Panel();
@@ -101,10 +101,10 @@
             label19 = new System.Windows.Forms.Label();
             panel12 = new System.Windows.Forms.Panel();
             panel15 = new System.Windows.Forms.Panel();
+            button10 = new System.Windows.Forms.Button();
             label24 = new System.Windows.Forms.Label();
             button12 = new System.Windows.Forms.Button();
             label25 = new System.Windows.Forms.Label();
-            button10 = new System.Windows.Forms.Button();
             label27 = new System.Windows.Forms.Label();
             panel16 = new System.Windows.Forms.Panel();
             panel13 = new System.Windows.Forms.Panel();
@@ -156,10 +156,10 @@
             SerButton = new System.Windows.Forms.Button();
             SerPanel = new System.Windows.Forms.Panel();
             HeaderPanel = new System.Windows.Forms.Panel();
+            AppDetsbutton = new System.Windows.Forms.Button();
             BookAppbutton = new System.Windows.Forms.Button();
             PIEButton = new System.Windows.Forms.Button();
             FPButton = new System.Windows.Forms.Button();
-            button41 = new System.Windows.Forms.Button();
             CalendarPanel = new System.Windows.Forms.Panel();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             CAC1 = new System.Windows.Forms.TableLayoutPanel();
@@ -834,7 +834,7 @@
             SearchPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             SearchPanel.Controls.Add(SearchButton);
             SearchPanel.Controls.Add(NameTextBox);
-            SearchPanel.Controls.Add(button1);
+            SearchPanel.Controls.Add(Searchicon);
             SearchPanel.Location = new System.Drawing.Point(767, 89);
             SearchPanel.Name = "SearchPanel";
             SearchPanel.Size = new System.Drawing.Size(387, 51);
@@ -872,21 +872,21 @@
             NameTextBox.Tag = "Find Services";
             NameTextBox.Text = "Find Services";
             // 
-            // button1
+            // Searchicon
             // 
-            button1.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button1.BackColor = System.Drawing.Color.Transparent;
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button1.Image = (System.Drawing.Image)resources.GetObject("button1.Image");
-            button1.Location = new System.Drawing.Point(3, 0);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(37, 51);
-            button1.TabIndex = 23;
-            button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
+            Searchicon.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            Searchicon.BackColor = System.Drawing.Color.Transparent;
+            Searchicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            Searchicon.FlatAppearance.BorderSize = 0;
+            Searchicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Searchicon.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            Searchicon.Image = (System.Drawing.Image)resources.GetObject("Searchicon.Image");
+            Searchicon.Location = new System.Drawing.Point(3, 0);
+            Searchicon.Name = "Searchicon";
+            Searchicon.Size = new System.Drawing.Size(37, 51);
+            Searchicon.TabIndex = 23;
+            Searchicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            Searchicon.UseVisualStyleBackColor = false;
             // 
             // NotifyButton
             // 
@@ -1449,10 +1449,10 @@
             // panel15
             // 
             panel15.BackColor = System.Drawing.Color.WhiteSmoke;
+            panel15.Controls.Add(button10);
             panel15.Controls.Add(label24);
             panel15.Controls.Add(button12);
             panel15.Controls.Add(label25);
-            panel15.Controls.Add(button10);
             panel15.Controls.Add(label27);
             panel15.Controls.Add(panel16);
             panel15.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1461,6 +1461,22 @@
             panel15.Name = "panel15";
             panel15.Size = new System.Drawing.Size(282, 273);
             panel15.TabIndex = 38;
+            // 
+            // button10
+            // 
+            button10.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button10.FlatAppearance.BorderSize = 0;
+            button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button10.Image = (System.Drawing.Image)resources.GetObject("button10.Image");
+            button10.Location = new System.Drawing.Point(299, 116);
+            button10.Name = "button10";
+            button10.Size = new System.Drawing.Size(0, 37);
+            button10.TabIndex = 33;
+            button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button10.UseVisualStyleBackColor = false;
             // 
             // label24
             // 
@@ -1497,22 +1513,6 @@
             label25.Size = new System.Drawing.Size(93, 20);
             label25.TabIndex = 40;
             label25.Text = "10:00 - 12:00";
-            // 
-            // button10
-            // 
-            button10.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button10.BackColor = System.Drawing.Color.Transparent;
-            button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button10.Image = (System.Drawing.Image)resources.GetObject("button10.Image");
-            button10.Location = new System.Drawing.Point(299, 116);
-            button10.Name = "button10";
-            button10.Size = new System.Drawing.Size(14, 37);
-            button10.TabIndex = 33;
-            button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button10.UseVisualStyleBackColor = false;
             // 
             // label27
             // 
@@ -2166,18 +2166,38 @@
             // HeaderPanel
             // 
             HeaderPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            HeaderPanel.Controls.Add(BookAppbutton);
-            HeaderPanel.Controls.Add(SerButton);
+            HeaderPanel.Controls.Add(AppDetsbutton);
             HeaderPanel.Controls.Add(WelcomeLabel);
             HeaderPanel.Controls.Add(HiLabel);
+            HeaderPanel.Controls.Add(SerButton);
+            HeaderPanel.Controls.Add(BookAppbutton);
             HeaderPanel.Controls.Add(PIEButton);
             HeaderPanel.Controls.Add(FPButton);
-            HeaderPanel.Controls.Add(button41);
             HeaderPanel.Location = new System.Drawing.Point(257, 68);
             HeaderPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             HeaderPanel.Name = "HeaderPanel";
             HeaderPanel.Size = new System.Drawing.Size(940, 100);
             HeaderPanel.TabIndex = 42;
+            // 
+            // AppDetsbutton
+            // 
+            AppDetsbutton.BackColor = System.Drawing.Color.Transparent;
+            AppDetsbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            AppDetsbutton.FlatAppearance.BorderSize = 0;
+            AppDetsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            AppDetsbutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            AppDetsbutton.Image = (System.Drawing.Image)resources.GetObject("AppDetsbutton.Image");
+            AppDetsbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            AppDetsbutton.Location = new System.Drawing.Point(25, 23);
+            AppDetsbutton.Name = "AppDetsbutton";
+            AppDetsbutton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            AppDetsbutton.Size = new System.Drawing.Size(436, 74);
+            AppDetsbutton.TabIndex = 28;
+            AppDetsbutton.Text = "  Appointment Details";
+            AppDetsbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            AppDetsbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            AppDetsbutton.UseVisualStyleBackColor = false;
+            AppDetsbutton.Click += AppDetsbutton_Click;
             // 
             // BookAppbutton
             // 
@@ -2238,26 +2258,6 @@
             FPButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             FPButton.UseVisualStyleBackColor = false;
             FPButton.Click += FPButton_Click;
-            // 
-            // button41
-            // 
-            button41.BackColor = System.Drawing.Color.Transparent;
-            button41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            button41.FlatAppearance.BorderSize = 0;
-            button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button41.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button41.Image = (System.Drawing.Image)resources.GetObject("button41.Image");
-            button41.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button41.Location = new System.Drawing.Point(25, 23);
-            button41.Name = "button41";
-            button41.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            button41.Size = new System.Drawing.Size(436, 74);
-            button41.TabIndex = 28;
-            button41.Text = "  Appointment Details";
-            button41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            button41.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button41.UseVisualStyleBackColor = false;
-            button41.Click += button41_Click;
             // 
             // CalendarPanel
             // 
@@ -5322,6 +5322,7 @@
             FilterBox.Size = new System.Drawing.Size(151, 31);
             FilterBox.TabIndex = 59;
             FilterBox.Text = " Filter";
+            FilterBox.SelectedIndexChanged += FilterBox_SelectedIndexChanged;
             // 
             // FilterDateBox
             // 
@@ -5330,12 +5331,13 @@
             FilterDateBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FilterDateBox.ForeColor = System.Drawing.Color.DarkGray;
             FilterDateBox.FormattingEnabled = true;
-            FilterDateBox.Items.AddRange(new object[] { "Date Booked", "Appointment Date" });
+            FilterDateBox.Items.AddRange(new object[] { "Date Booked", "Appointment Date", "--Back--" });
             FilterDateBox.Location = new System.Drawing.Point(1021, 175);
             FilterDateBox.Name = "FilterDateBox";
             FilterDateBox.Size = new System.Drawing.Size(151, 31);
             FilterDateBox.TabIndex = 60;
             FilterDateBox.Text = " Filter Date";
+            FilterDateBox.SelectedIndexChanged += FilterDateBox_SelectedIndexChanged;
             // 
             // FilterStatusBox
             // 
@@ -5344,12 +5346,13 @@
             FilterStatusBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FilterStatusBox.ForeColor = System.Drawing.Color.DarkGray;
             FilterStatusBox.FormattingEnabled = true;
-            FilterStatusBox.Items.AddRange(new object[] { "Pending", "Confirmed", "Cancelled", "Completed", "No Show" });
+            FilterStatusBox.Items.AddRange(new object[] { "Pending", "Confirmed", "Cancelled", "Completed", "No Show", "--Back--" });
             FilterStatusBox.Location = new System.Drawing.Point(1021, 175);
             FilterStatusBox.Name = "FilterStatusBox";
             FilterStatusBox.Size = new System.Drawing.Size(151, 31);
             FilterStatusBox.TabIndex = 61;
             FilterStatusBox.Text = " Filter Status";
+            FilterStatusBox.SelectedIndexChanged += FilterStatusBox_SelectedIndexChanged;
             // 
             // AppSearch
             // 
@@ -5417,10 +5420,10 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(FilterBox);
             Controls.Add(AppSearch);
             Controls.Add(FilterStatusBox);
             Controls.Add(FilterDateBox);
-            Controls.Add(FilterBox);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(CalendarPanel);
@@ -5613,7 +5616,7 @@
         private System.Windows.Forms.Label HiLabel;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Panel SearchPanel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Searchicon;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button NotifyButton;
@@ -5689,7 +5692,7 @@
         private System.Windows.Forms.Label ASstatlabel;
         private System.Windows.Forms.Button ReschedButton;
         private System.Windows.Forms.Panel AstoreproPanel;
-        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Button AppDetsbutton;
         private System.Windows.Forms.Panel ProfilePanel;
         private System.Windows.Forms.Panel PIPanel;
         private System.Windows.Forms.Label AgePI;
