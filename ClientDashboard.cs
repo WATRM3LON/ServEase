@@ -1921,6 +1921,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             ViewdetailsPanel.Visible = true;
+            AppSearch.Visible = false; FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false;
             if (notify == true)
             {
                 NotificationPanel.Visible = false;
@@ -2119,11 +2120,12 @@ namespace OOP2
                 {
                     int count = appointmentCounts[thisDate.Date];
 
-                    Label appLabel = new Label {Text = $" ● {count} Appointment/s", AutoEllipsis = true, AutoSize = false, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = ColorTranslator.FromHtml("#69e331"), Font = new Font("Segoe UI", 8)};
+                    Label appLabel = new Label {Text = $" ● {count} Appointment/s", AutoEllipsis = true, AutoSize = false, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = ColorTranslator.FromHtml("#69e331"), Font = new Font("Segoe UI", 8), Tag = thisDate};
 
                     cellPanel.Controls.Add(appLabel);
                     cellPanel.Cursor = Cursors.Hand;
-                    cellPanel.Click += CellPanel_Click;
+                    appLabel.Tag = thisDate;
+                    appLabel.Click += CellPanel_Click;
                     cellPanel.BackColor = ColorTranslator.FromHtml("#E1F9D7");
                 }
 
@@ -2146,17 +2148,25 @@ namespace OOP2
 
         private void CellPanel_Click(object sender, EventArgs e)
         {
-            if (sender is Panel cellPanel && cellPanel.Tag is DateTime clickedDate)
+            Label clickedLabel = sender as Label;
+
+            if (clickedLabel?.Tag is DateTime selectedDate)
             {
+                CalendarPanel.Visible = false;
                 CalendarAppointmentPanel.Visible = true;
                 AppointmentsPanel.Visible = true;
                 appointmentsbutton.FlatStyle = FlatStyle.System;
                 appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-                FilterDateBox.Visible = true; AppSearch.Visible = true; AppSerchtext.Text = clickedDate.ToString();
+                calendarsButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
+                calendarsButton.FlatStyle = FlatStyle.Flat;
+                FilterDateBox.Visible = true;
+                AppSearch.Visible = true;
+                AppSerchtext.Text = selectedDate.ToString("yyyy-MM-dd");
 
-                LoadHistory(Appid, facid, clientId, appointmentDateFilter: clickedDate);
+                LoadHistory(Appid, facid, clientId, appointmentDateFilter: selectedDate);
             }
         }
+
 
         private void AstoreproPanel_Paint(object sender, PaintEventArgs e)
         {
