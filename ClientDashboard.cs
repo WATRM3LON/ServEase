@@ -87,8 +87,8 @@ namespace OOP2
             NotificationPanel.Visible = false;
             SettingPanel.Visible = false;
             panel44.Visible = false;
-            FacilityProPanel.Visible = false;
-            FPButton.Visible = false;
+            FacilityProPanel.Visible = false; AppSearch.Visible = false;
+            FPButton.Visible = false; FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false;
             FacilityProPanel2.Visible = false; ASReasontext.Visible = false; ASReasonlabel.Visible = false;
             PIEButton.Visible = false; FillEM.Visible = false; BookAppbutton.Visible = false;
             EditPIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
@@ -881,6 +881,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
 
         private void button43_Click(object sender, EventArgs e)
@@ -1799,21 +1800,24 @@ namespace OOP2
             MessageBox.Show("Updated successfully!");
         }
 
-        public void LoadHistory(int ID, int Faid, int Clid)
+        public void LoadHistory(int ID, int Faid, int Clid,
+                        string statusFilter = "",
+                        DateTime? dateBookedFilter = null,
+                        DateTime? appointmentDateFilter = null,
+                        int? facilityIdFilter = null)
         {
             AppointmentsPanel.Controls.Clear();
             EmailAddress = ClientLogin.EmailAddress;
             int newClientId = 0;
+
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
 
                 string getclientid = "SELECT Client_ID FROM [Clients] WHERE [Email Address] = ?";
-
                 using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getclientid, myConn))
                 {
                     getServiceIdsCmd.Parameters.AddWithValue("?", EmailAddress);
-
                     using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
                     {
                         if (reader.Read() && !reader.IsDBNull(0))
@@ -1822,89 +1826,94 @@ namespace OOP2
                         }
                     }
                 }
+
                 string sql = "SELECT Facility_ID, Appointment_ID FROM Appointments WHERE Client_ID = ?";
+                if (!string.IsNullOrEmpty(statusFilter))
+                    sql += " AND [Appointment Status] = ?";
+                if (dateBookedFilter.HasValue)
+                    sql += " AND [Date Booked] = ?";
+                if (appointmentDateFilter.HasValue)
+                    sql += " AND [Appointment Date] = ?";
+                if (facilityIdFilter.HasValue)
+                    sql += " AND [Facility_ID] = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("?", newClientId);
-                    object result = cmd.ExecuteScalar();
+                    if (!string.IsNullOrEmpty(statusFilter))
+                        cmd.Parameters.AddWithValue("?", statusFilter);
+                    if (dateBookedFilter.HasValue)
+                        cmd.Parameters.AddWithValue("?", dateBookedFilter.Value.Date);
+                    if (appointmentDateFilter.HasValue)
+                        cmd.Parameters.AddWithValue("?", appointmentDateFilter.Value.Date);
+                    if (facilityIdFilter.HasValue)
+                        cmd.Parameters.AddWithValue("?", facilityIdFilter.Value);
 
-                    int count = (result != null && result != DBNull.Value) ? Convert.ToInt32(result) : 0;
-
-                    if (count > 0)
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        int margin = 10;
+                        while (reader.Read())
                         {
-                            int margin = 10;
+                            int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            int appointmentId = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
 
-                            while (reader.Read())
+                            string FacName = "", FLocation = "";
+                            string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+                            using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
                             {
-                                int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
-                                int appointmentId = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
-                                string FacName = "", FLocation = "";
-
-                                
-                                string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
-                                using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
+                                facility.Parameters.AddWithValue("?", newFacilityId);
+                                using (OleDbDataReader readers = facility.ExecuteReader())
                                 {
-                                    facility.Parameters.AddWithValue("?", newFacilityId);
-
-                                    using (OleDbDataReader readers = facility.ExecuteReader())
+                                    if (readers.Read())
                                     {
-                                        if (readers.Read())
-                                        {
-                                            FacName = readers.IsDBNull(readers.GetOrdinal("Facility Name")) ? "" : readers["Facility Name"].ToString();
-                                            FLocation = readers.IsDBNull(readers.GetOrdinal("Facility Location")) ? "" : readers["Facility Location"].ToString();
-                                        }
+                                        FacName = readers.IsDBNull(0) ? "" : readers.GetString(0);
+                                        FLocation = readers.IsDBNull(1) ? "" : readers.GetString(1);
                                     }
                                 }
-
-                                UsersPanel usersPanel = new UsersPanel();
-                                usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
-                                usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-
-
-                                usersPanel.Location = new Point(10, margin);
-                                margin += usersPanel.Height + 10;
-
-                                usersPanel.ViewDetailsClicked += (s, e) =>
-                                {
-                                    ViewDets(appointmentId, newFacilityId, newClientId);
-                                };
-
-                                string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
-                                using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
-                                {
-                                    adminCmd.Parameters.AddWithValue("?", newClientId);
-                                    adminCmd.Parameters.AddWithValue("?", newFacilityId);
-                                    adminCmd.Parameters.AddWithValue("?", appointmentId);
-
-                                    using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
-                                    {
-                                        if (adminReader.Read())
-                                        {
-                                            string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
-                                            string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
-                                            string datebooked = adminReader.IsDBNull(2) ? "" : adminReader.GetDateTime(2).ToString("dd MMM yyyy");
-
-                                            usersPanel.ClientInfo(status, dateapp); usersPanel.CLientApp(FacName, datebooked);
-                                        }
-                                    }
-                                }
-                                Appid = appointmentId;
-                                facid = newFacilityId;
-                                clientId = newClientId;
-                                AppointmentsPanel.Controls.Add(usersPanel);
                             }
-                        }
-                    }
-                    else
-                    {
 
+                            UsersPanel usersPanel = new UsersPanel();
+                            usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                            usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                            usersPanel.Location = new Point(10, margin);
+                            margin += usersPanel.Height + 10;
+
+                            usersPanel.ViewDetailsClicked += (s, e) =>
+                            {
+                                ViewDets(appointmentId, newFacilityId, newClientId);
+                            };
+
+                            string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                            using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
+                            {
+                                adminCmd.Parameters.AddWithValue("?", newClientId);
+                                adminCmd.Parameters.AddWithValue("?", newFacilityId);
+                                adminCmd.Parameters.AddWithValue("?", appointmentId);
+
+                                using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                {
+                                    if (adminReader.Read())
+                                    {
+                                        string status = adminReader.GetString(0);
+                                        string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                        string datebooked = adminReader.IsDBNull(2) ? "" : adminReader.GetDateTime(2).ToString("dd MMM yyyy");
+
+                                        usersPanel.ClientInfo(status, dateapp);
+                                        usersPanel.CLientApp(FacName, datebooked);
+                                    }
+                                }
+                            }
+
+                            Appid = appointmentId;
+                            facid = newFacilityId;
+                            clientId = newClientId;
+                            AppointmentsPanel.Controls.Add(usersPanel);
+                        }
                     }
                 }
             }
         }
+
         public void ViewDets(int ID, int Faid, int Clid)
         {
             WelcomeLabel.Visible = false;
@@ -2091,46 +2100,10 @@ namespace OOP2
                 DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
                 DayOfWeek dayOfWeek = thisDate.DayOfWeek;
 
-                Panel cellPanel = new Panel
-                {
-                    Dock = DockStyle.Fill,
-                    BackColor = Color.Transparent,
-                    Margin = new Padding(5)
-                };
+                Panel cellPanel = new Panel{Dock = DockStyle.Fill, BackColor = Color.Transparent, Margin = new Padding(5)};
 
-                Label dayLabel = new Label
-                {
-                    Text = day.ToString(),
-                    Dock = DockStyle.Top,
-                    TextAlign = ContentAlignment.TopRight,
-                    AutoSize = false,
-                    Height = 20,
-                    Font = new Font("Segoe UI", 9),
-                    Tag = thisDate,
-                    BackColor = Color.Transparent
-                };
-
-                if (appointmentCounts.ContainsKey(thisDate.Date))
-                {
-                    int count = appointmentCounts[thisDate.Date];
-
-                    Label appLabel = new Label
-                    {
-                        Text = $" ● {count} Appointment/s",
-                        AutoEllipsis = true,
-                        AutoSize = false,
-                        Dock = DockStyle.Fill,
-                        //Height = 18,
-                        TextAlign = ContentAlignment.MiddleLeft,
-                        ForeColor = ColorTranslator.FromHtml("#69e331"),
-                        Font = new Font("Segoe UI", 8)
-                    };
-                    cellPanel.Controls.Add(appLabel);
-                    cellPanel.Cursor = Cursors.Hand;
-                    cellPanel.Click += DayLabel_Click;
-                    cellPanel.BackColor = ColorTranslator.FromHtml("#E1F9D7");
-                }
-
+                Label dayLabel = new Label {Text = day.ToString(), Dock = DockStyle.Top, TextAlign = ContentAlignment.TopRight, AutoSize = false, Height = 20, Font = new Font("Segoe UI", 9), Tag = thisDate, BackColor = Color.Transparent};
+                
                 if (dayOfWeek == DayOfWeek.Sunday || dayOfWeek == DayOfWeek.Saturday)
                 {
                     cellPanel.ForeColor = Color.DimGray;
@@ -2141,6 +2114,20 @@ namespace OOP2
                 {
                     cellPanel.BackColor = ColorTranslator.FromHtml("#d9faf5");
                 }
+
+                if (appointmentCounts.ContainsKey(thisDate.Date))
+                {
+                    int count = appointmentCounts[thisDate.Date];
+
+                    Label appLabel = new Label {Text = $" ● {count} Appointment/s", AutoEllipsis = true, AutoSize = false, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = ColorTranslator.FromHtml("#69e331"), Font = new Font("Segoe UI", 8)};
+
+                    cellPanel.Controls.Add(appLabel);
+                    cellPanel.Cursor = Cursors.Hand;
+                    cellPanel.Click += CellPanel_Click;
+                    cellPanel.BackColor = ColorTranslator.FromHtml("#E1F9D7");
+                }
+
+                
 
                 cellPanel.Controls.Add(dayLabel);
                 CAC3.Controls.Add(cellPanel, col, row);
@@ -2155,6 +2142,20 @@ namespace OOP2
 
             CACmonth.Text = currentMonth.ToString("MMMM yyyy");
             CAC3.ResumeLayout();
+        }
+
+        private void CellPanel_Click(object sender, EventArgs e)
+        {
+            if (sender is Panel cellPanel && cellPanel.Tag is DateTime clickedDate)
+            {
+                CalendarAppointmentPanel.Visible = true;
+                AppointmentsPanel.Visible = true;
+                appointmentsbutton.FlatStyle = FlatStyle.System;
+                appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
+                FilterDateBox.Visible = true; AppSearch.Visible = true; AppSerchtext.Text = clickedDate.ToString();
+
+                LoadHistory(Appid, facid, clientId, appointmentDateFilter: clickedDate);
+            }
         }
 
         private void AstoreproPanel_Paint(object sender, PaintEventArgs e)

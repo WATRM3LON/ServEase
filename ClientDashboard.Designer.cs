@@ -380,6 +380,13 @@
             PIEprofilepanel = new System.Windows.Forms.Panel();
             PIEname = new System.Windows.Forms.Label();
             PIEpp = new System.Windows.Forms.Panel();
+            FilterBox = new System.Windows.Forms.ComboBox();
+            FilterDateBox = new System.Windows.Forms.ComboBox();
+            FilterStatusBox = new System.Windows.Forms.ComboBox();
+            AppSearch = new System.Windows.Forms.Panel();
+            button13 = new System.Windows.Forms.Button();
+            AppSerchtext = new System.Windows.Forms.TextBox();
+            button15 = new System.Windows.Forms.Button();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -468,6 +475,7 @@
             EditPIPanel.SuspendLayout();
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
+            AppSearch.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -5301,16 +5309,122 @@
             PIEpp.Size = new System.Drawing.Size(116, 115);
             PIEpp.TabIndex = 34;
             // 
+            // FilterBox
+            // 
+            FilterBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            FilterBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FilterBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FilterBox.ForeColor = System.Drawing.Color.DarkGray;
+            FilterBox.FormattingEnabled = true;
+            FilterBox.Items.AddRange(new object[] { "Date", "Status", "Facility" });
+            FilterBox.Location = new System.Drawing.Point(1021, 175);
+            FilterBox.Name = "FilterBox";
+            FilterBox.Size = new System.Drawing.Size(151, 31);
+            FilterBox.TabIndex = 59;
+            FilterBox.Text = " Filter";
+            // 
+            // FilterDateBox
+            // 
+            FilterDateBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            FilterDateBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FilterDateBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FilterDateBox.ForeColor = System.Drawing.Color.DarkGray;
+            FilterDateBox.FormattingEnabled = true;
+            FilterDateBox.Items.AddRange(new object[] { "Date Booked", "Appointment Date" });
+            FilterDateBox.Location = new System.Drawing.Point(1021, 175);
+            FilterDateBox.Name = "FilterDateBox";
+            FilterDateBox.Size = new System.Drawing.Size(151, 31);
+            FilterDateBox.TabIndex = 60;
+            FilterDateBox.Text = " Filter Date";
+            // 
+            // FilterStatusBox
+            // 
+            FilterStatusBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            FilterStatusBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FilterStatusBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FilterStatusBox.ForeColor = System.Drawing.Color.DarkGray;
+            FilterStatusBox.FormattingEnabled = true;
+            FilterStatusBox.Items.AddRange(new object[] { "Pending", "Confirmed", "Cancelled", "Completed", "No Show" });
+            FilterStatusBox.Location = new System.Drawing.Point(1021, 175);
+            FilterStatusBox.Name = "FilterStatusBox";
+            FilterStatusBox.Size = new System.Drawing.Size(151, 31);
+            FilterStatusBox.TabIndex = 61;
+            FilterStatusBox.Text = " Filter Status";
+            // 
+            // AppSearch
+            // 
+            AppSearch.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            AppSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            AppSearch.Controls.Add(button13);
+            AppSearch.Controls.Add(AppSerchtext);
+            AppSearch.Controls.Add(button15);
+            AppSearch.Location = new System.Drawing.Point(767, 88);
+            AppSearch.Name = "AppSearch";
+            AppSearch.Size = new System.Drawing.Size(387, 51);
+            AppSearch.TabIndex = 62;
+            // 
+            // button13
+            // 
+            button13.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            button13.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
+            button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button13.FlatAppearance.BorderSize = 0;
+            button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button13.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            button13.Location = new System.Drawing.Point(250, 4);
+            button13.Name = "button13";
+            button13.Size = new System.Drawing.Size(128, 42);
+            button13.TabIndex = 24;
+            button13.Text = "Search";
+            button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button13.UseVisualStyleBackColor = false;
+            // 
+            // AppSerchtext
+            // 
+            AppSerchtext.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            AppSerchtext.BackColor = System.Drawing.Color.WhiteSmoke;
+            AppSerchtext.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            AppSerchtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            AppSerchtext.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            AppSerchtext.Location = new System.Drawing.Point(36, 12);
+            AppSerchtext.Multiline = true;
+            AppSerchtext.Name = "AppSerchtext";
+            AppSerchtext.Size = new System.Drawing.Size(217, 34);
+            AppSerchtext.TabIndex = 11;
+            AppSerchtext.Tag = "";
+            AppSerchtext.Text = "Search";
+            // 
+            // button15
+            // 
+            button15.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button15.FlatAppearance.BorderSize = 0;
+            button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button15.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button15.Image = (System.Drawing.Image)resources.GetObject("button15.Image");
+            button15.Location = new System.Drawing.Point(-11, -1);
+            button15.Name = "button15";
+            button15.Size = new System.Drawing.Size(62, 51);
+            button15.TabIndex = 23;
+            button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button15.UseVisualStyleBackColor = false;
+            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(AppSearch);
+            Controls.Add(FilterStatusBox);
+            Controls.Add(FilterDateBox);
+            Controls.Add(FilterBox);
+            Controls.Add(CalendarAppointmentPanel);
+            Controls.Add(AppointmentsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(ViewdetailsPanel);
-            Controls.Add(AppointmentsPanel);
-            Controls.Add(CalendarAppointmentPanel);
             Controls.Add(SerPanel);
             Controls.Add(EditPIPanel);
             Controls.Add(NotificationPanel);
@@ -5469,6 +5583,8 @@
             PIEpanel.PerformLayout();
             PIEprofilepanel.ResumeLayout(false);
             PIEprofilepanel.PerformLayout();
+            AppSearch.ResumeLayout(false);
+            AppSearch.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5824,5 +5940,12 @@
         private System.Windows.Forms.Label ASbookedtext;
         private System.Windows.Forms.Label ASReasontext;
         private System.Windows.Forms.Label ASReasonlabel;
+        private System.Windows.Forms.ComboBox FilterBox;
+        private System.Windows.Forms.ComboBox FilterDateBox;
+        private System.Windows.Forms.ComboBox FilterStatusBox;
+        private System.Windows.Forms.Panel AppSearch;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.TextBox AppSerchtext;
+        private System.Windows.Forms.Button button15;
     }
 }

@@ -12038,6 +12038,16 @@
         9Aji//z/w/9PQHredZUAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="button15.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAQRJREFUOE/Vkz1KA2EURQ82aazstEolwU5LtyDZhIrBDRg02UKyDHsbIa0QCwu1
+        slPQdYiRI58QLplxSBpzqvDuzJ33cwPrTBs4AfpAD9jNB5qyBVwDX8A7cA+8AjPgBtjOF+rQ7AV4Bg5D
+        2y/mfmQntErsTLPNFAot4A6YpLAId+aY2VnSKc8dpJB4gI8sVvAEXGQxuSw7aoLHGWcxOQPesljBA3CV
+        xcScGQ2vWYe7/myw6x8cxbG95iI2gFtgmkIVhtacGQ2vOY+daeYUw9BqMbTmzGg8lq7dmWPamWb+Ps0X
+        /8Kc+T8eAYPYmWZLmdZxXEzPU1iF3067KazCEbCXxf/LN+6TMd73ZhALAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>45</value>
   </metadata>
