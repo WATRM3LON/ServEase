@@ -2048,7 +2048,6 @@ namespace OOP2
 
         void PopulateCalendarPanel(int ID, int Faid, int Clid)
         {
-            //LoadHistory(Appid, facid, clientId);
             CAC3.Controls.Clear();
             CAC3.SuspendLayout();
 

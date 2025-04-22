@@ -384,7 +384,7 @@
             FilterDateBox = new System.Windows.Forms.ComboBox();
             FilterStatusBox = new System.Windows.Forms.ComboBox();
             AppSearch = new System.Windows.Forms.Panel();
-            button13 = new System.Windows.Forms.Button();
+            AppSearcbutton = new System.Windows.Forms.Button();
             AppSerchtext = new System.Windows.Forms.TextBox();
             button15 = new System.Windows.Forms.Button();
             DashboardPanel.SuspendLayout();
@@ -2317,10 +2317,10 @@
             CACnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             CACnext.ForeColor = System.Drawing.Color.White;
             CACnext.Image = (System.Drawing.Image)resources.GetObject("CACnext.Image");
-            CACnext.Location = new System.Drawing.Point(793, 20);
-            CACnext.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
+            CACnext.Location = new System.Drawing.Point(793, 15);
+            CACnext.Margin = new System.Windows.Forms.Padding(50, 15, 50, 15);
             CACnext.Name = "CACnext";
-            CACnext.Size = new System.Drawing.Size(50, 32);
+            CACnext.Size = new System.Drawing.Size(50, 42);
             CACnext.TabIndex = 40;
             CACnext.UseVisualStyleBackColor = false;
             CACnext.Click += ATCNext_Click;
@@ -2347,10 +2347,10 @@
             CACprev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             CACprev.ForeColor = System.Drawing.Color.White;
             CACprev.Image = (System.Drawing.Image)resources.GetObject("CACprev.Image");
-            CACprev.Location = new System.Drawing.Point(50, 20);
-            CACprev.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
+            CACprev.Location = new System.Drawing.Point(50, 15);
+            CACprev.Margin = new System.Windows.Forms.Padding(50, 15, 50, 15);
             CACprev.Name = "CACprev";
-            CACprev.Size = new System.Drawing.Size(48, 32);
+            CACprev.Size = new System.Drawing.Size(48, 42);
             CACprev.TabIndex = 39;
             CACprev.UseVisualStyleBackColor = false;
             CACprev.Click += ATCPrev_Click;
@@ -5359,7 +5359,7 @@
             // 
             AppSearch.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             AppSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            AppSearch.Controls.Add(button13);
+            AppSearch.Controls.Add(AppSearcbutton);
             AppSearch.Controls.Add(AppSerchtext);
             AppSearch.Controls.Add(button15);
             AppSearch.Location = new System.Drawing.Point(767, 88);
@@ -5367,22 +5367,22 @@
             AppSearch.Size = new System.Drawing.Size(387, 51);
             AppSearch.TabIndex = 62;
             // 
-            // button13
+            // AppSearcbutton
             // 
-            button13.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            button13.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
-            button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button13.FlatAppearance.BorderSize = 0;
-            button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button13.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button13.Location = new System.Drawing.Point(250, 4);
-            button13.Name = "button13";
-            button13.Size = new System.Drawing.Size(128, 42);
-            button13.TabIndex = 24;
-            button13.Text = "Search";
-            button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button13.UseVisualStyleBackColor = false;
+            AppSearcbutton.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            AppSearcbutton.BackColor = System.Drawing.Color.FromArgb(105, 227, 49);
+            AppSearcbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            AppSearcbutton.FlatAppearance.BorderSize = 0;
+            AppSearcbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            AppSearcbutton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            AppSearcbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            AppSearcbutton.Location = new System.Drawing.Point(252, 7);
+            AppSearcbutton.Name = "AppSearcbutton";
+            AppSearcbutton.Size = new System.Drawing.Size(122, 36);
+            AppSearcbutton.TabIndex = 24;
+            AppSearcbutton.Text = "Search";
+            AppSearcbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            AppSearcbutton.UseVisualStyleBackColor = false;
             // 
             // AppSerchtext
             // 
@@ -5422,13 +5422,13 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(CalendarPanel);
             Controls.Add(FilterBox);
             Controls.Add(AppSearch);
             Controls.Add(FilterStatusBox);
             Controls.Add(FilterDateBox);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(AppointmentsPanel);
-            Controls.Add(CalendarPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(SerPanel);
             Controls.Add(EditPIPanel);
@@ -5949,7 +5949,7 @@
         private System.Windows.Forms.ComboBox FilterDateBox;
         private System.Windows.Forms.ComboBox FilterStatusBox;
         private System.Windows.Forms.Panel AppSearch;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button AppSearcbutton;
         private System.Windows.Forms.TextBox AppSerchtext;
         private System.Windows.Forms.Button button15;
     }

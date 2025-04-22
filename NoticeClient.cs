@@ -44,7 +44,7 @@ namespace OOP2
 
         private void ConButton_Click(object sender, EventArgs e)
         {
-            ShowPictureTemporarily();       
+            ShowPicture();       
             if (string.IsNullOrWhiteSpace(Reasontextbox.Text))
             {
                 MessageBox.Show("Please enter a reason before proceeding.", "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -56,7 +56,7 @@ namespace OOP2
             this.Close();
         }
         private Timer hideTimer = new Timer();
-        private void ShowPictureTemporarily()
+        private void ShowPicture()
         {
             CancelBox.Visible = true;
            
