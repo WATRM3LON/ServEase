@@ -1865,7 +1865,8 @@ namespace OOP2
                             UsersPanel usersPanel = new UsersPanel();
                             usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
                             usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                            usersPanel.Location = new Point(10, margin);
+                            usersPanel.Width = AppointmentsPanel.ClientSize.Width - 20;
+                            usersPanel.Location = new Point(0, margin);
                             margin += usersPanel.Height + 10;
 
                             usersPanel.ViewDetailsClicked += (s, e) =>

@@ -5422,6 +5422,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(FilterBox);
             Controls.Add(AppSearch);
@@ -5429,7 +5430,6 @@
             Controls.Add(FilterDateBox);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(AppointmentsPanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(SerPanel);
             Controls.Add(EditPIPanel);
             Controls.Add(NotificationPanel);

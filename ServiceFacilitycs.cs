@@ -59,7 +59,7 @@ namespace OOP2
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
 
-        string filter1 = "", filter2 = "";
+        string filter1 = "", filter2 = "", locs = " ", Ems = " ", Conum = " ";
         public ServiceFacilitycs()
         {
             InitializeComponent();
@@ -1932,8 +1932,8 @@ namespace OOP2
                         DateTime? appointmentDateFilter = null)
         {
             AppointmentsPanel.Controls.Clear();
+            int appid = 0, facid = 0, cleid = 0;
             EmailAddress = ServiceFacilityLogin.EmailAddress;
-            int facid = 0, appid, clid;
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
@@ -1962,7 +1962,7 @@ namespace OOP2
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
-                    cmd.Parameters.AddWithValue("?", FacilityiId);
+                    cmd.Parameters.AddWithValue("?", facid);
                     if (!string.IsNullOrEmpty(statusFilter))
                         cmd.Parameters.AddWithValue("?", statusFilter);
                     if (dateBookedFilter.HasValue)
@@ -1976,14 +1976,14 @@ namespace OOP2
 
                         while (reader.Read())
                         {
-                            clid = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+                            cleid = reader.GetInt32(reader.GetOrdinal("Client_ID"));
                             appid = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
                             string ClientName = "", Clientems = "";
 
                             string getFacility = "SELECT [First Name], [Last Name], [Email Address] FROM [Clients] WHERE [Client_ID] = ?";
                             using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
                             {
-                                facility.Parameters.AddWithValue("?", ClientId);
+                                facility.Parameters.AddWithValue("?", cleid);
 
                                 using (OleDbDataReader readers = facility.ExecuteReader())
                                 {
@@ -1998,23 +1998,23 @@ namespace OOP2
                             }
 
                             UsersPanel usersPanel = new UsersPanel();
-                            usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                            //usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                            usersPanel.Width = AppointmentsPanel.ClientSize.Width - 20;
                             usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-
-                            usersPanel.Location = new Point(10, margin);
+                            usersPanel.Location = new Point(0, margin);
                             margin += usersPanel.Height + 10;
 
                             usersPanel.ViewDetailsClicked += (s, e) =>
                             {
-                                ViewDets(appid, facid, clid);
+                                ViewDets(appid, facid, cleid);
                             };
 
                             string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
                             using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                             {
-                                adminCmd.Parameters.AddWithValue("?", clid);
+                                adminCmd.Parameters.AddWithValue("?", cleid);
                                 adminCmd.Parameters.AddWithValue("?", facid);
-                                adminCmd.Parameters.AddWithValue("?", clid);
+                                adminCmd.Parameters.AddWithValue("?", appid);
 
                                 using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
                                 {
@@ -2028,10 +2028,10 @@ namespace OOP2
                                     }
                                 }
                             }
-                            PopulateCalendarPanel(appid, facid, clid);
+                            PopulateCalendarPanel(appid, facid, cleid);
                             AppointmentId = appid;
                             FacilityiId = facid;
-                            ClientId = clid;
+                            ClientId = cleid;
                             AppointmentsPanel.Controls.Add(usersPanel);
                         }
                     }
@@ -2146,6 +2146,22 @@ namespace OOP2
                 LoadHistory(AppointmentId, FacilityiId, ClientId, appointmentDateFilter: selectedDate);
             }
         }
+        private void FilterBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filter1 = FilterBox.SelectedItem.ToString();
+            if (filter1 == "Date")
+            {
+                FilterDateBox.Visible = true; FilterBox.Visible = false; filter1 = null;
+            }
+            else if (filter1 == "Status")
+            {
+                FilterStatusBox.Visible = true; FilterBox.Visible = false; filter1 = null;
+            }
+            else if (filter1 == "Facility")
+            {
+                AppSearch.Visible = true;
+            }
+        }
         private void FilterDateBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             filter2 = FilterDateBox.SelectedItem.ToString();
@@ -2230,48 +2246,36 @@ namespace OOP2
         public void ViewDets(int ID, int Faid, int Clid)
         {
             WelcomeLabel.Visible = false;
-            //AppDetsbutton.Visible = true;
+            AppDetsbutton.Visible = true;
             AppointmentsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             ViewdetailsPanel.Visible = true;
-            AppSearch.Visible = false; FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false;
-            if (notify == true)
-            {
-                NotificationPanel.Visible = false;
-                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
-                notify = false;
-            }
+
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
 
-                string sql = "SELECT [Facility Location], [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Working Days], [Contact Number], [Exception Day (Closed)] FROM [Service Facilities] WHERE [Facility_ID] = ?";
-
-                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                string getFacility = "SELECT [First Name], [Last Name], Sex, Location, [Contact Number], [Email Address] FROM [Clients] WHERE [Client_ID] = ?";
+                using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
                 {
-                    cmd.Parameters.AddWithValue("?", Faid);
+                    facility.Parameters.AddWithValue("?", Clid);
 
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    using (OleDbDataReader readers = facility.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (readers.Read())
                         {
-                            Facname = reader["Facility Name"].ToString();
-                            locs = reader["Facility Location"].ToString();
-                            Ems = reader["Email Address"].ToString();
-                            string contnumb = reader["Contact Number"].ToString();
-                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
-                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
-                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
-                            WorDays = reader.IsDBNull(reader.GetOrdinal("Working Days")) ? "" : reader.GetString(reader.GetOrdinal("Working Days"));
-                            Ratings = reader["Ratings"].ToString();
-                            ExceptionDay = reader["Exception Day (Closed)"].ToString();
-
-                            ASFaciName.Text = Facname; ASWorkingHoursText.Text = formattedWorHours; ASWorDaystext.Text = WorDays; ASLoctext.Text = locs; ASConumtext.Text = contnumb; ASEMStext.Text = Ems;
+                            string namefirst = readers.IsDBNull(readers.GetOrdinal("First Name")) ? "" : readers["First Name"].ToString();
+                            string namelast = readers.IsDBNull(readers.GetOrdinal("Last Name")) ? "" : readers["Last Name"].ToString();
+                            ASLastName.Text = namelast; ASFirstName.Text = namefirst;
+                            ASEMStext.Text = readers.IsDBNull(readers.GetOrdinal("Email Address")) ? "" : readers["Email Address"].ToString();
+                            ASsextext.Text = readers.IsDBNull(readers.GetOrdinal("Sex")) ? "" : readers["Sex"].ToString();
+                            ASConumtext.Text = readers.IsDBNull(readers.GetOrdinal("Contact Number")) ? "" : readers["Contact Number"].ToString();
+                            ASLoctext.Text = readers.IsDBNull(readers.GetOrdinal("Location")) ? "" : readers["Location"].ToString();
                         }
                     }
                 }
 
-                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration], Reason " +
+                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
                            "FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(selectAppointment, myConn))
@@ -2288,10 +2292,10 @@ namespace OOP2
                             string dateapp = adminReader.IsDBNull(adminReader.GetOrdinal("Appointment Date"))
                                 ? ""
                                 : adminReader.GetDateTime(adminReader.GetOrdinal("Appointment Date")).ToString("dd MMM yyyy");
-
                             string datebooked = adminReader.IsDBNull(adminReader.GetOrdinal("Date Booked"))
                                 ? ""
                                 : adminReader.GetDateTime(adminReader.GetOrdinal("Date Booked")).ToString("dd MMM yyyy");
+
                             string startTimeStr = adminReader["Start Time"].ToString();
                             string endTimeStr = adminReader["End Time"].ToString();
                             DateTime startTime = DateTime.Parse(startTimeStr);
@@ -2301,7 +2305,6 @@ namespace OOP2
 
                             string price = adminReader["Estimated Price"].ToString();
                             string duration = adminReader["Estimated Duration"].ToString();
-                            string reason = adminReader["Reason"].ToString();
 
                             ASdatetext.Text = dateapp + " ,    " + formattedStart + " - " + formattedEnd;
                             ASpricetext.Text = "PHP " + price + ".00";
@@ -2310,11 +2313,15 @@ namespace OOP2
 
                             if (status == "Confirmed")
                             {
-                                ASstattext.ForeColor = Color.DodgerBlue;
+                                ASstattext.ForeColor = Color.LawnGreen;
+                                ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
+                                ASCompleteButton.Visible = true; ASnoShoButton.Visible = true;
                             }
                             else if (status == "Pending")
                             {
                                 ASstattext.ForeColor = Color.Gold;
+                                ASConfrimButton.Visible = true; ASCancelButton.Visible = true;
+                                ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
                             }
                             else if (status == "Completed")
                             {
@@ -2323,9 +2330,8 @@ namespace OOP2
                             else
                             {
                                 ASstattext.ForeColor = Color.Red;
-                                ASReasonlabel.Visible = true; ASReasontext.Visible = true;
-                                ASReasontext.Text = reason;
-                                ReschedButton.Visible = false;
+                                ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
+                                ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
                             }
                         }
                     }
@@ -2366,7 +2372,6 @@ namespace OOP2
                     }
                 }
             }
-
         }
 
         private void ASCompleteButton_Click(object sender, EventArgs e)

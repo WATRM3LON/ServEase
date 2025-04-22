@@ -5208,6 +5208,7 @@
             FilterBox.Size = new System.Drawing.Size(151, 31);
             FilterBox.TabIndex = 68;
             FilterBox.Text = " Filter";
+            FilterBox.SelectedIndexChanged += FilterBox_SelectedIndexChanged;
             // 
             // FilterStatusBox
             // 
@@ -5222,6 +5223,7 @@
             FilterStatusBox.Size = new System.Drawing.Size(151, 31);
             FilterStatusBox.TabIndex = 70;
             FilterStatusBox.Text = " Filter Status";
+            FilterStatusBox.SelectedIndexChanged += FilterStatusBox_SelectedIndexChanged;
             // 
             // FilterDateBox
             // 
@@ -5236,6 +5238,7 @@
             FilterDateBox.Size = new System.Drawing.Size(151, 31);
             FilterDateBox.TabIndex = 69;
             FilterDateBox.Text = " Filter Date";
+            FilterDateBox.SelectedIndexChanged += FilterDateBox_SelectedIndexChanged;
             // 
             // AppSearch
             // 
@@ -5542,6 +5545,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(AppSearch);
             Controls.Add(FilterBox);
@@ -5550,7 +5554,6 @@
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(DimPanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(ATPanel);
             Controls.Add(ServicesOfferedPanel);
             Controls.Add(EATPanel);
