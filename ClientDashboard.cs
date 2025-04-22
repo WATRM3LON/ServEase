@@ -71,7 +71,7 @@ namespace OOP2
         public ClientDashboard()
         {
             InitializeComponent();
-            InfoGetter();
+            InfoGetter(); LoadHistory(Appid, facid, clientId);
             Loaders(); HiLabel.Text = $"Hi {FName},";
             AppSerchtext.TextChanged += AppSerchtext_TextChanged;
             DashboardPanel.Visible = true;
@@ -381,7 +381,7 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT [First Name], [Last Name], [Birth Date], Sex, [Contact Number], Location, Password FROM Clients WHERE [Email Address] = @Email";
+                string sql = "SELECT [Client_ID], [First Name], [Last Name], [Birth Date], Sex, [Contact Number], Location, Password FROM Clients WHERE [Email Address] = @Email";
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
@@ -391,6 +391,7 @@ namespace OOP2
                     {
                         if (reader.Read())
                         {
+                            clientId = Convert.ToInt32(reader["Client_ID"]);
                             FName = reader["First Name"].ToString();
                             LName = reader["Last Name"].ToString();
                             Birthdate = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Birth Date"));
@@ -757,7 +758,7 @@ namespace OOP2
             FacilityProPanel2.Visible = false;
             FPButton.Visible = false;
             //CALENDAR 
-            CalendarAppointmentPanel.Visible = true; LoadHistory(Appid, facid, clientId);
+            CalendarAppointmentPanel.Visible = true; PopulateCalendarPanel(Appid, facid, clientId); LoadHistory(Appid, facid, clientId);
             CalendarPanel.Visible = true;
             CalendarButton.BackColor = ColorTranslator.FromHtml("#69e331");
             CButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -2296,7 +2297,5 @@ namespace OOP2
                 }
             }
         }
-
-
     }
 }

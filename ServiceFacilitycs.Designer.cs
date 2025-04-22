@@ -374,6 +374,21 @@
             AppSearcbutton = new System.Windows.Forms.Button();
             AppSerchtext = new System.Windows.Forms.TextBox();
             button15 = new System.Windows.Forms.Button();
+            CalendarPanel = new System.Windows.Forms.Panel();
+            tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            CAC1 = new System.Windows.Forms.TableLayoutPanel();
+            CACnext = new System.Windows.Forms.Button();
+            CACmonth = new System.Windows.Forms.Label();
+            CACprev = new System.Windows.Forms.Button();
+            CAC2 = new System.Windows.Forms.TableLayoutPanel();
+            label20 = new System.Windows.Forms.Label();
+            label32 = new System.Windows.Forms.Label();
+            label33 = new System.Windows.Forms.Label();
+            label34 = new System.Windows.Forms.Label();
+            label35 = new System.Windows.Forms.Label();
+            label36 = new System.Windows.Forms.Label();
+            label37 = new System.Windows.Forms.Label();
+            CAC3 = new System.Windows.Forms.TableLayoutPanel();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -452,6 +467,10 @@
             EATC1.SuspendLayout();
             EATC2.SuspendLayout();
             AppSearch.SuspendLayout();
+            CalendarPanel.SuspendLayout();
+            tableLayoutPanel8.SuspendLayout();
+            CAC1.SuspendLayout();
+            CAC2.SuspendLayout();
             SuspendLayout();
             // 
             // NotifyButton
@@ -5183,7 +5202,7 @@
             FilterBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FilterBox.ForeColor = System.Drawing.Color.DarkGray;
             FilterBox.FormattingEnabled = true;
-            FilterBox.Items.AddRange(new object[] { "Date", "Status", "Facility" });
+            FilterBox.Items.AddRange(new object[] { "Date", "Status" });
             FilterBox.Location = new System.Drawing.Point(1021, 160);
             FilterBox.Name = "FilterBox";
             FilterBox.Size = new System.Drawing.Size(151, 31);
@@ -5278,12 +5297,252 @@
             button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button15.UseVisualStyleBackColor = false;
             // 
+            // CalendarPanel
+            // 
+            CalendarPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CalendarPanel.BackColor = System.Drawing.Color.FromArgb(251, 251, 251);
+            CalendarPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            CalendarPanel.Controls.Add(tableLayoutPanel8);
+            CalendarPanel.Location = new System.Drawing.Point(277, 211);
+            CalendarPanel.Name = "CalendarPanel";
+            CalendarPanel.Size = new System.Drawing.Size(893, 723);
+            CalendarPanel.TabIndex = 72;
+            // 
+            // tableLayoutPanel8
+            // 
+            tableLayoutPanel8.ColumnCount = 1;
+            tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel8.Controls.Add(CAC1, 0, 0);
+            tableLayoutPanel8.Controls.Add(CAC2, 0, 1);
+            tableLayoutPanel8.Controls.Add(CAC3, 0, 2);
+            tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanel8.Name = "tableLayoutPanel8";
+            tableLayoutPanel8.RowCount = 3;
+            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            tableLayoutPanel8.Size = new System.Drawing.Size(893, 723);
+            tableLayoutPanel8.TabIndex = 37;
+            // 
+            // CAC1
+            // 
+            CAC1.BackColor = System.Drawing.Color.White;
+            CAC1.ColumnCount = 3;
+            CAC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            CAC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.6666641F));
+            CAC1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.666666F));
+            CAC1.Controls.Add(CACnext, 2, 0);
+            CAC1.Controls.Add(CACmonth, 1, 0);
+            CAC1.Controls.Add(CACprev, 0, 0);
+            CAC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            CAC1.Location = new System.Drawing.Point(0, 0);
+            CAC1.Margin = new System.Windows.Forms.Padding(0);
+            CAC1.Name = "CAC1";
+            CAC1.RowCount = 1;
+            CAC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            CAC1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            CAC1.Size = new System.Drawing.Size(893, 72);
+            CAC1.TabIndex = 0;
+            // 
+            // CACnext
+            // 
+            CACnext.BackColor = System.Drawing.Color.WhiteSmoke;
+            CACnext.Dock = System.Windows.Forms.DockStyle.Fill;
+            CACnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            CACnext.ForeColor = System.Drawing.Color.White;
+            CACnext.Image = (System.Drawing.Image)resources.GetObject("CACnext.Image");
+            CACnext.Location = new System.Drawing.Point(793, 15);
+            CACnext.Margin = new System.Windows.Forms.Padding(50, 15, 50, 15);
+            CACnext.Name = "CACnext";
+            CACnext.Size = new System.Drawing.Size(50, 42);
+            CACnext.TabIndex = 40;
+            CACnext.UseVisualStyleBackColor = false;
+            CACnext.Click += ATCNext_Click;
+            // 
+            // CACmonth
+            // 
+            CACmonth.AutoSize = true;
+            CACmonth.BackColor = System.Drawing.Color.White;
+            CACmonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            CACmonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            CACmonth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            CACmonth.Location = new System.Drawing.Point(148, 0);
+            CACmonth.Margin = new System.Windows.Forms.Padding(0);
+            CACmonth.Name = "CACmonth";
+            CACmonth.Size = new System.Drawing.Size(595, 72);
+            CACmonth.TabIndex = 38;
+            CACmonth.Text = "Time Slots";
+            CACmonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CACprev
+            // 
+            CACprev.BackColor = System.Drawing.Color.WhiteSmoke;
+            CACprev.Dock = System.Windows.Forms.DockStyle.Fill;
+            CACprev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            CACprev.ForeColor = System.Drawing.Color.White;
+            CACprev.Image = (System.Drawing.Image)resources.GetObject("CACprev.Image");
+            CACprev.Location = new System.Drawing.Point(50, 15);
+            CACprev.Margin = new System.Windows.Forms.Padding(50, 15, 50, 15);
+            CACprev.Name = "CACprev";
+            CACprev.Size = new System.Drawing.Size(48, 42);
+            CACprev.TabIndex = 39;
+            CACprev.UseVisualStyleBackColor = false;
+            CACprev.Click += ATCPrev_Click;
+            // 
+            // CAC2
+            // 
+            CAC2.BackColor = System.Drawing.Color.White;
+            CAC2.ColumnCount = 7;
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC2.Controls.Add(label20, 6, 0);
+            CAC2.Controls.Add(label32, 5, 0);
+            CAC2.Controls.Add(label33, 4, 0);
+            CAC2.Controls.Add(label34, 3, 0);
+            CAC2.Controls.Add(label35, 2, 0);
+            CAC2.Controls.Add(label36, 1, 0);
+            CAC2.Controls.Add(label37, 0, 0);
+            CAC2.Dock = System.Windows.Forms.DockStyle.Fill;
+            CAC2.Location = new System.Drawing.Point(0, 75);
+            CAC2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            CAC2.Name = "CAC2";
+            CAC2.RowCount = 1;
+            CAC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            CAC2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            CAC2.Size = new System.Drawing.Size(893, 66);
+            CAC2.TabIndex = 1;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            label20.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label20.Location = new System.Drawing.Point(765, 0);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(125, 66);
+            label20.TabIndex = 56;
+            label20.Text = "Sat";
+            label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            label32.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label32.Location = new System.Drawing.Point(638, 0);
+            label32.Name = "label32";
+            label32.Size = new System.Drawing.Size(121, 66);
+            label32.TabIndex = 55;
+            label32.Text = "Fri";
+            label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            label33.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label33.Location = new System.Drawing.Point(511, 0);
+            label33.Name = "label33";
+            label33.Size = new System.Drawing.Size(121, 66);
+            label33.TabIndex = 54;
+            label33.Text = "Thu";
+            label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Dock = System.Windows.Forms.DockStyle.Fill;
+            label34.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label34.Location = new System.Drawing.Point(384, 0);
+            label34.Name = "label34";
+            label34.Size = new System.Drawing.Size(121, 66);
+            label34.TabIndex = 53;
+            label34.Text = "Wed";
+            label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Dock = System.Windows.Forms.DockStyle.Fill;
+            label35.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label35.Location = new System.Drawing.Point(257, 0);
+            label35.Name = "label35";
+            label35.Size = new System.Drawing.Size(121, 66);
+            label35.TabIndex = 52;
+            label35.Text = "Tue";
+            label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Dock = System.Windows.Forms.DockStyle.Fill;
+            label36.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label36.Location = new System.Drawing.Point(130, 0);
+            label36.Name = "label36";
+            label36.Size = new System.Drawing.Size(121, 66);
+            label36.TabIndex = 51;
+            label36.Text = "Mon";
+            label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Dock = System.Windows.Forms.DockStyle.Fill;
+            label37.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            label37.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label37.Location = new System.Drawing.Point(3, 0);
+            label37.Name = "label37";
+            label37.Size = new System.Drawing.Size(121, 66);
+            label37.TabIndex = 50;
+            label37.Text = "Sun";
+            label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CAC3
+            // 
+            CAC3.BackColor = System.Drawing.Color.White;
+            CAC3.ColumnCount = 7;
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2857132F));
+            CAC3.Dock = System.Windows.Forms.DockStyle.Fill;
+            CAC3.Location = new System.Drawing.Point(0, 144);
+            CAC3.Margin = new System.Windows.Forms.Padding(0);
+            CAC3.Name = "CAC3";
+            CAC3.RowCount = 6;
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            CAC3.Size = new System.Drawing.Size(893, 579);
+            CAC3.TabIndex = 2;
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(CalendarPanel);
             Controls.Add(AppSearch);
             Controls.Add(FilterBox);
             Controls.Add(FilterStatusBox);
@@ -5441,6 +5700,12 @@
             EATC2.PerformLayout();
             AppSearch.ResumeLayout(false);
             AppSearch.PerformLayout();
+            CalendarPanel.ResumeLayout(false);
+            tableLayoutPanel8.ResumeLayout(false);
+            CAC1.ResumeLayout(false);
+            CAC1.PerformLayout();
+            CAC2.ResumeLayout(false);
+            CAC2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5804,5 +6069,20 @@
         private System.Windows.Forms.Button AppSearcbutton;
         private System.Windows.Forms.TextBox AppSerchtext;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Panel CalendarPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel CAC1;
+        private System.Windows.Forms.Button CACnext;
+        private System.Windows.Forms.Label CACmonth;
+        private System.Windows.Forms.Button CACprev;
+        private System.Windows.Forms.TableLayoutPanel CAC2;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TableLayoutPanel CAC3;
     }
 }
