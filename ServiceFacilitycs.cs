@@ -78,7 +78,7 @@ namespace OOP2
             panel45.Visible = true;
             DashboardButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             Dbutton.BackColor = ColorTranslator.FromHtml("#f0246e");
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             SerButton.Visible = false;
             panel44.Visible = false;
             NotificationPanel.Visible = false; ASReasonlabel.Visible = false; ASReasontext.Visible = false;
@@ -314,7 +314,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
             AnalyticsMenuPanel.Visible = false;
@@ -366,7 +366,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.Flat;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
             AnalyticsMenuPanel.Visible = false;
@@ -419,7 +419,7 @@ namespace OOP2
             AppointmentsPanel.Visible = true; LoadHistory(AppointmentId, FacilityiId, ClientId);
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
             AnalyticsMenuPanel.Visible = false;
@@ -451,7 +451,7 @@ namespace OOP2
         private void button43_Click(object sender, EventArgs e)
         {
             WelcomeLabel.Visible = false;
-            button41.Visible = true;
+            AppDetsbutton.Visible = true;
             AppointmentsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             ViewdetailsPanel.Visible = true;
@@ -486,7 +486,7 @@ namespace OOP2
             }
         }
 
-        private void button41_Click(object sender, EventArgs e)
+        private void AppDetsbutton_Click(object sender, EventArgs e)
         {
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Calendar";
@@ -501,7 +501,7 @@ namespace OOP2
             AppointmentsPanel.Visible = true; LoadHistory(AppointmentId, FacilityiId, ClientId);
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
@@ -537,7 +537,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
             AnalyticsMenuPanel.Visible = true;
@@ -637,7 +637,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
             AnalyticsMenuPanel.Visible = false;
@@ -722,7 +722,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
             AnalyticsMenuPanel.Visible = false;
@@ -777,7 +777,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
             AnalyticsMenuPanel.Visible = false;
@@ -831,7 +831,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             appointmentsbutton.FlatStyle = FlatStyle.System;
             appointmentsbutton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold);
-            button41.Visible = false;
+            AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
             AnalyticsMenuPanel.Visible = false;
@@ -2230,31 +2230,43 @@ namespace OOP2
         public void ViewDets(int ID, int Faid, int Clid)
         {
             WelcomeLabel.Visible = false;
-            button41.Visible = true;
+            //AppDetsbutton.Visible = true;
             AppointmentsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             ViewdetailsPanel.Visible = true;
-
+            AppSearch.Visible = false; FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
 
-                string getFacility = "SELECT [First Name], [Last Name], Sex, Location, [Contact Number], [Email Address] FROM [Clients] WHERE [Client_ID] = ?";
-                using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
-                {
-                    facility.Parameters.AddWithValue("?", Clid);
+                string sql = "SELECT [Facility Location], [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Working Days], [Contact Number], [Exception Day (Closed)] FROM [Service Facilities] WHERE [Facility_ID] = ?";
 
-                    using (OleDbDataReader readers = facility.ExecuteReader())
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Faid);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        if (readers.Read())
+                        if (reader.Read())
                         {
-                            string namefirst = readers.IsDBNull(readers.GetOrdinal("First Name")) ? "" : readers["First Name"].ToString();
-                            string namelast = readers.IsDBNull(readers.GetOrdinal("Last Name")) ? "" : readers["Last Name"].ToString();
-                            ASLastName.Text = namelast; ASFirstName.Text = namefirst;
-                            ASEMStext.Text = readers.IsDBNull(readers.GetOrdinal("Email Address")) ? "" : readers["Email Address"].ToString();
-                            ASsextext.Text = readers.IsDBNull(readers.GetOrdinal("Sex")) ? "" : readers["Sex"].ToString();
-                            ASConumtext.Text = readers.IsDBNull(readers.GetOrdinal("Contact Number")) ? "" : readers["Contact Number"].ToString();
-                            ASLoctext.Text = readers.IsDBNull(readers.GetOrdinal("Location")) ? "" : readers["Location"].ToString();
+                            Facname = reader["Facility Name"].ToString();
+                            locs = reader["Facility Location"].ToString();
+                            Ems = reader["Email Address"].ToString();
+                            string contnumb = reader["Contact Number"].ToString();
+                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
+                            WorDays = reader.IsDBNull(reader.GetOrdinal("Working Days")) ? "" : reader.GetString(reader.GetOrdinal("Working Days"));
+                            Ratings = reader["Ratings"].ToString();
+                            ExceptionDay = reader["Exception Day (Closed)"].ToString();
+
+                            ASFaciName.Text = Facname; ASWorkingHoursText.Text = formattedWorHours; ASWorDaystext.Text = WorDays; ASLoctext.Text = locs; ASConumtext.Text = contnumb; ASEMStext.Text = Ems;
                         }
                     }
                 }
@@ -2276,10 +2288,10 @@ namespace OOP2
                             string dateapp = adminReader.IsDBNull(adminReader.GetOrdinal("Appointment Date"))
                                 ? ""
                                 : adminReader.GetDateTime(adminReader.GetOrdinal("Appointment Date")).ToString("dd MMM yyyy");
+
                             string datebooked = adminReader.IsDBNull(adminReader.GetOrdinal("Date Booked"))
                                 ? ""
                                 : adminReader.GetDateTime(adminReader.GetOrdinal("Date Booked")).ToString("dd MMM yyyy");
-
                             string startTimeStr = adminReader["Start Time"].ToString();
                             string endTimeStr = adminReader["End Time"].ToString();
                             DateTime startTime = DateTime.Parse(startTimeStr);
@@ -2299,14 +2311,10 @@ namespace OOP2
                             if (status == "Confirmed")
                             {
                                 ASstattext.ForeColor = Color.DodgerBlue;
-                                ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
-                                ASCompleteButton.Visible = true; ASnoShoButton.Visible = true;
                             }
                             else if (status == "Pending")
                             {
                                 ASstattext.ForeColor = Color.Gold;
-                                ASConfrimButton.Visible = true; ASCancelButton.Visible = true;
-                                ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
                             }
                             else if (status == "Completed")
                             {
@@ -2315,10 +2323,9 @@ namespace OOP2
                             else
                             {
                                 ASstattext.ForeColor = Color.Red;
-                                ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
-                                ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
                                 ASReasonlabel.Visible = true; ASReasontext.Visible = true;
                                 ASReasontext.Text = reason;
+                                ReschedButton.Visible = false;
                             }
                         }
                     }

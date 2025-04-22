@@ -56,7 +56,7 @@
             EditSOButton = new System.Windows.Forms.Button();
             FIEButton = new System.Windows.Forms.Button();
             SOButton = new System.Windows.Forms.Button();
-            button41 = new System.Windows.Forms.Button();
+            AppDetsbutton = new System.Windows.Forms.Button();
             SerButton = new System.Windows.Forms.Button();
             WelcomeLabel = new System.Windows.Forms.Label();
             HiLabel = new System.Windows.Forms.Label();
@@ -827,7 +827,7 @@
             HeaderPanel.Controls.Add(EditSOButton);
             HeaderPanel.Controls.Add(FIEButton);
             HeaderPanel.Controls.Add(SOButton);
-            HeaderPanel.Controls.Add(button41);
+            HeaderPanel.Controls.Add(AppDetsbutton);
             HeaderPanel.Controls.Add(SerButton);
             HeaderPanel.Controls.Add(WelcomeLabel);
             HeaderPanel.Controls.Add(HiLabel);
@@ -937,25 +937,25 @@
             SOButton.UseVisualStyleBackColor = false;
             SOButton.Click += SOButton_Click;
             // 
-            // button41
+            // AppDetsbutton
             // 
-            button41.BackColor = System.Drawing.Color.Transparent;
-            button41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            button41.FlatAppearance.BorderSize = 0;
-            button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button41.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button41.Image = (System.Drawing.Image)resources.GetObject("button41.Image");
-            button41.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button41.Location = new System.Drawing.Point(25, 23);
-            button41.Name = "button41";
-            button41.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            button41.Size = new System.Drawing.Size(436, 74);
-            button41.TabIndex = 28;
-            button41.Text = "  Appointment Details";
-            button41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            button41.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button41.UseVisualStyleBackColor = false;
-            button41.Click += button41_Click;
+            AppDetsbutton.BackColor = System.Drawing.Color.Transparent;
+            AppDetsbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            AppDetsbutton.FlatAppearance.BorderSize = 0;
+            AppDetsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            AppDetsbutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            AppDetsbutton.Image = (System.Drawing.Image)resources.GetObject("AppDetsbutton.Image");
+            AppDetsbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            AppDetsbutton.Location = new System.Drawing.Point(25, 23);
+            AppDetsbutton.Name = "AppDetsbutton";
+            AppDetsbutton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            AppDetsbutton.Size = new System.Drawing.Size(436, 74);
+            AppDetsbutton.TabIndex = 28;
+            AppDetsbutton.Text = "  Appointment Details";
+            AppDetsbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            AppDetsbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            AppDetsbutton.UseVisualStyleBackColor = false;
+            AppDetsbutton.Click += AppDetsbutton_Click;
             // 
             // SerButton
             // 
@@ -5732,7 +5732,7 @@
         private System.Windows.Forms.Button MaximizeButton;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Panel HeaderPanel;
-        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Button AppDetsbutton;
         private System.Windows.Forms.Button SerButton;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label HiLabel;
