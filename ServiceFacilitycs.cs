@@ -1932,7 +1932,7 @@ namespace OOP2
                         DateTime? appointmentDateFilter = null)
         {
             AppointmentsPanel.Controls.Clear();
-            int appid = 0, facid = 0, cleid = 0;
+            int facid = 0;
             EmailAddress = ServiceFacilityLogin.EmailAddress;
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
@@ -1976,8 +1976,8 @@ namespace OOP2
 
                         while (reader.Read())
                         {
-                            cleid = reader.GetInt32(reader.GetOrdinal("Client_ID"));
-                            appid = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
+                            int cleid = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+                            int appid = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
                             string ClientName = "", Clientems = "";
 
                             string getFacility = "SELECT [First Name], [Last Name], [Email Address] FROM [Clients] WHERE [Client_ID] = ?";
@@ -2006,6 +2006,9 @@ namespace OOP2
 
                             usersPanel.ViewDetailsClicked += (s, e) =>
                             {
+                                AppointmentId = appid;
+                                FacilityiId = facid;
+                                ClientId = cleid;
                                 ViewDets(appid, facid, cleid);
                             };
 
@@ -2029,9 +2032,7 @@ namespace OOP2
                                 }
                             }
                             PopulateCalendarPanel(appid, facid, cleid);
-                            AppointmentId = appid;
-                            FacilityiId = facid;
-                            ClientId = cleid;
+                            
                             AppointmentsPanel.Controls.Add(usersPanel);
                         }
                     }

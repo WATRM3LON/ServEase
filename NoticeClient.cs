@@ -59,7 +59,8 @@ namespace OOP2
         private void ShowPicture()
         {
             CancelBox.Visible = true;
-           
+            Titlelabel.Visible = false; ReasonLabel.Visible = false; Reasontextbox.Visible = false; ConButton.Visible = false;
+
             hideTimer.Interval = 3000;
             hideTimer.Tick += HideTimer_Tick;
             hideTimer.Start();

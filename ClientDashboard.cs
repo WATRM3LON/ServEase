@@ -1871,6 +1871,9 @@ namespace OOP2
 
                             usersPanel.ViewDetailsClicked += (s, e) =>
                             {
+                                Appid = appointmentId;
+                                facid = newFacilityId;
+                                clientId = newClientId;
                                 ViewDets(appointmentId, newFacilityId, newClientId);
                             };
                             
@@ -1895,9 +1898,7 @@ namespace OOP2
                                 }
                             }
                             PopulateCalendarPanel(appointmentId, newFacilityId, newClientId);
-                            Appid = appointmentId;
-                            facid = newFacilityId;
-                            clientId = newClientId;
+                            
                             AppointmentsPanel.Controls.Add(usersPanel);
                         }
                     }

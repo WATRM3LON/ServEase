@@ -86,6 +86,8 @@ namespace OOP2
 
         private void ShowPictureTemporarily()
         {
+            Title1label.Visible = false; YesButton.Visible = false; NoButton.Visible = false;
+            Titlelabel.Visible = false; ReasonLabel.Visible = false; Reasontextbox.Visible = false; ConButton.Visible = false; NoshowBox.Visible = false;
             if (AppStat == "Confirm")
             {
                 ConfirmBox.Visible = true;
