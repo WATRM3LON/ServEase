@@ -2518,7 +2518,7 @@ namespace OOP2
             {
                 businessRegistrationBytes = File.ReadAllBytes(ofd.FileName);
                 File1Fname.Visible = true; File1Fname.Text = Path.GetFileName(ofd.FileName); File1button.BackColor = Color.White;
-                File1button.ForeColor = ColorTranslator.FromHtml("#f0246e");
+                File1button.ForeColor = ColorTranslator.FromHtml("#69e331"); Allfiles.Visible = false;
                 Notice notice = new Notice();
                 notice.UploadPanel();
             }
@@ -2534,7 +2534,7 @@ namespace OOP2
             {
                 governmentIdBytes = File.ReadAllBytes(ofd.FileName);
                 File2Fname.Visible = true; File2Fname.Text = Path.GetFileName(ofd.FileName); File2button.BackColor = Color.White;
-                File2button.ForeColor = ColorTranslator.FromHtml("#f0246e");
+                File2button.ForeColor = ColorTranslator.FromHtml("#69e331"); Allfiles.Visible = false;
                 Notice notice = new Notice();
                 notice.UploadPanel();
             }
@@ -2554,18 +2554,19 @@ namespace OOP2
                     using (OleDbConnection myConn = new OleDbConnection(connection))
                     {
                         myConn.Open();
-                        using (OleDbCommand cmd = new OleDbCommand("INSERT INTO Facility_Photos (Facility_ID, PhotoFile) VALUES (?, ?)", myConn))
+                        using (OleDbCommand cmd = new OleDbCommand("INSERT INTO [Facility Photos] (Facility_ID, Photos, [Uploaded Date]) VALUES (?, ?, ?)", myConn))
                         {
                             cmd.Parameters.AddWithValue("?", FacilityiId);
                             cmd.Parameters.AddWithValue("?", fileData);
+                            cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("dd MMM yyyy"));
                             cmd.ExecuteNonQuery();
                         }
                     }
                 }
 
                 File3Fname.Visible = true; File3Fname.Text = "Photos Uploaded";
-                File3button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File3button.BackColor = Color.White;
-                Notice notice = new Notice();
+                File3button.ForeColor = ColorTranslator.FromHtml("#69e331"); File3button.BackColor = Color.White;
+                Notice notice = new Notice(); Allfiles.Visible = false;
                 notice.UploadPanel();
             }
         }
@@ -2579,8 +2580,8 @@ namespace OOP2
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 serviceLicensesBytes = File.ReadAllBytes(ofd.FileName);
-                File4Fname.Visible = true; File4Fname.Text = Path.GetFileName(ofd.FileName);
-                File4button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File4button.BackColor = Color.White;
+                File4Fname.Visible = true; File4Fname.Text = Path.GetFileName(ofd.FileName); Allfiles.Visible = false;
+                File4button.ForeColor = ColorTranslator.FromHtml("#69e331"); File4button.BackColor = Color.White;
                 Notice notice = new Notice();
                 notice.UploadPanel();
             }
@@ -2595,8 +2596,8 @@ namespace OOP2
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 proofOfAddressBytes = File.ReadAllBytes(ofd.FileName);
-                File5Fname.Visible = true; File5Fname.Text = Path.GetFileName(ofd.FileName);
-                File5button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File5button.BackColor = Color.White;
+                File5Fname.Visible = true; File5Fname.Text = Path.GetFileName(ofd.FileName); Allfiles.Visible = false;
+                File5button.ForeColor = ColorTranslator.FromHtml("#69e331"); File5button.BackColor = Color.White;
                 Notice notice = new Notice();
                 notice.UploadPanel();
             }
@@ -2611,8 +2612,8 @@ namespace OOP2
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 taxDocumentsBytes = File.ReadAllBytes(ofd.FileName);
-                File6Fname.Visible = true; File6Fname.Text = Path.GetFileName(ofd.FileName);
-                File6button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File6button.BackColor = Color.White;
+                File6Fname.Visible = true; File6Fname.Text = Path.GetFileName(ofd.FileName); Allfiles.Visible = false;
+                File6button.ForeColor = ColorTranslator.FromHtml("#69e331"); File6button.BackColor = Color.White;
                 Notice notice = new Notice();
                 notice.UploadPanel();
             }
@@ -2627,8 +2628,8 @@ namespace OOP2
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 insuranceComplianceBytes = File.ReadAllBytes(ofd.FileName);
-                File7Fname.Visible = true; File7Fname.Text = Path.GetFileName(ofd.FileName);
-                File7button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File7button.BackColor = Color.White;
+                File7Fname.Visible = true; File7Fname.Text = Path.GetFileName(ofd.FileName); Allfiles.Visible = false;
+                File7button.ForeColor = ColorTranslator.FromHtml("#69e331"); File7button.BackColor = Color.White;
                 Notice notice = new Notice();
                 notice.UploadPanel();
             }
@@ -2661,7 +2662,7 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("?", (object)proofOfAddressBytes ?? DBNull.Value);
                         cmd.Parameters.AddWithValue("?", (object)taxDocumentsBytes ?? DBNull.Value);
                         cmd.Parameters.AddWithValue("?", (object)insuranceComplianceBytes ?? DBNull.Value);
-                        cmd.Parameters.AddWithValue("?", DateTime.Now);
+                        cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("dd MMM yyyy"));
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Facility files uploaded successfully!");
@@ -2692,6 +2693,7 @@ namespace OOP2
                 {
                     File7button.BackColor = Color.MistyRose; File7button.ForeColor = Color.Red;
                 }
+                Allfiles.Visible = true;
             }
         }
     }

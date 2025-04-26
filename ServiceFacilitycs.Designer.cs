@@ -392,6 +392,7 @@
             label37 = new System.Windows.Forms.Label();
             CAC3 = new System.Windows.Forms.TableLayoutPanel();
             UploadfilesPanel = new System.Windows.Forms.Panel();
+            Allfiles = new System.Windows.Forms.Label();
             Filesubmitbutton = new System.Windows.Forms.Button();
             Filespanel = new System.Windows.Forms.TableLayoutPanel();
             File7panel = new System.Windows.Forms.Panel();
@@ -5630,13 +5631,26 @@
             // 
             UploadfilesPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             UploadfilesPanel.BackColor = System.Drawing.Color.Transparent;
+            UploadfilesPanel.Controls.Add(Allfiles);
             UploadfilesPanel.Controls.Add(Filesubmitbutton);
             UploadfilesPanel.Controls.Add(Filespanel);
             UploadfilesPanel.Controls.Add(button1);
             UploadfilesPanel.Location = new System.Drawing.Point(277, 165);
             UploadfilesPanel.Name = "UploadfilesPanel";
-            UploadfilesPanel.Size = new System.Drawing.Size(893, 799);
+            UploadfilesPanel.Size = new System.Drawing.Size(893, 805);
             UploadfilesPanel.TabIndex = 73;
+            // 
+            // Allfiles
+            // 
+            Allfiles.AutoSize = true;
+            Allfiles.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            Allfiles.ForeColor = System.Drawing.Color.Red;
+            Allfiles.Location = new System.Drawing.Point(193, 717);
+            Allfiles.Name = "Allfiles";
+            Allfiles.Size = new System.Drawing.Size(518, 25);
+            Allfiles.TabIndex = 76;
+            Allfiles.Text = "All files are required. Please upload all the necessary documents.";
+            Allfiles.Visible = false;
             // 
             // Filesubmitbutton
             // 
@@ -5648,7 +5662,6 @@
             Filesubmitbutton.TabIndex = 75;
             Filesubmitbutton.Text = "Submit Files";
             Filesubmitbutton.UseVisualStyleBackColor = true;
-            Filesubmitbutton.Visible = false;
             Filesubmitbutton.Click += Filesubmitbutton_Click;
             // 
             // Filespanel
@@ -5698,6 +5711,7 @@
             File7Fname.Size = new System.Drawing.Size(110, 17);
             File7Fname.TabIndex = 77;
             File7Fname.Text = "No file uploaded.";
+            File7Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // File7name
             // 
@@ -5742,6 +5756,7 @@
             File6Fname.Size = new System.Drawing.Size(110, 17);
             File6Fname.TabIndex = 77;
             File6Fname.Text = "No file uploaded.";
+            File6Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // File6name
             // 
@@ -5786,6 +5801,7 @@
             File5Fname.Size = new System.Drawing.Size(110, 17);
             File5Fname.TabIndex = 77;
             File5Fname.Text = "No file uploaded.";
+            File5Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // File5name
             // 
@@ -5830,6 +5846,7 @@
             File4Fname.Size = new System.Drawing.Size(110, 17);
             File4Fname.TabIndex = 77;
             File4Fname.Text = "No file uploaded.";
+            File4Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // File4name
             // 
@@ -5874,6 +5891,7 @@
             File3Fname.Size = new System.Drawing.Size(110, 17);
             File3Fname.TabIndex = 77;
             File3Fname.Text = "No file uploaded.";
+            File3Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // File3name
             // 
@@ -5918,6 +5936,7 @@
             File2Fname.Size = new System.Drawing.Size(110, 17);
             File2Fname.TabIndex = 77;
             File2Fname.Text = "No file uploaded.";
+            File2Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // File2name
             // 
@@ -5962,6 +5981,7 @@
             File1Fname.Size = new System.Drawing.Size(110, 17);
             File1Fname.TabIndex = 76;
             File1Fname.Text = "No file uploaded.";
+            File1Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // File1name
             // 
@@ -6215,6 +6235,7 @@
             CAC2.ResumeLayout(false);
             CAC2.PerformLayout();
             UploadfilesPanel.ResumeLayout(false);
+            UploadfilesPanel.PerformLayout();
             Filespanel.ResumeLayout(false);
             File7panel.ResumeLayout(false);
             File7panel.PerformLayout();
@@ -6638,5 +6659,6 @@
         private System.Windows.Forms.Label File3Fname;
         private System.Windows.Forms.Label File2Fname;
         private System.Windows.Forms.Button Filesubmitbutton;
+        private System.Windows.Forms.Label Allfiles;
     }
 }
