@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
@@ -41,7 +42,7 @@ namespace OOP2
             ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AppHistPanel.Visible = false; FViewDetailspanel.Visible = false;
             Loaders();
         }
-        string Fname, Lname;
+        string Fname, Lname; int Facility_ID;
         public void Loaders()
         {
             DashboardPanel.Visible = true;
@@ -62,6 +63,22 @@ namespace OOP2
             CPIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CPIPanel.Width, CPIPanel.Height, 10, 10));
             DeAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeAccButton.Width, DeAccButton.Height, 10, 10));
             StatusText.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, StatusText.Width, StatusText.Height, 10, 10));
+            File1Approved.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File1Approved.Width, File1Approved.Height, 10, 10));
+            File1Reject.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File1Reject.Width, File1Reject.Height, 10, 10));
+            File2Approved.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File2Approved.Width, File2Approved.Height, 10, 10));
+            File2Reject.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File2Reject.Width, File2Reject.Height, 10, 10));
+            File3Approved.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File3Approved.Width, File3Approved.Height, 10, 10));
+            File3Reject.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File3Reject.Width, File3Reject.Height, 10, 10));
+            File4Approved.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File4Approved.Width, File4Approved.Height, 10, 10));
+            File4Reject.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File4Reject.Width, File4Reject.Height, 10, 10));
+            File5Approved.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File5Approved.Width, File5Approved.Height, 10, 10));
+            File5Reject.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File5Reject.Width, File5Reject.Height, 10, 10));
+            File6Approved.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File6Approved.Width, File6Approved.Height, 10, 10));
+            File6Reject.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File6Reject.Width, File6Reject.Height, 10, 10));
+            File7Approved.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File7Approved.Width, File7Approved.Height, 10, 10));
+            File7Reject.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File7Reject.Width, File7Reject.Height, 10, 10));
+            File1Approved.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, File1Approved.Width, File1Approved.Height, 10, 10));
+            ConfirmButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ConfirmButton.Width, ConfirmButton.Height, 10, 10));
         }
         public void UpdateInfo() { }
         public bool CNumberChecker(string cNumber, string connection)
@@ -242,6 +259,11 @@ namespace OOP2
                             usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
 
                             usersPanel.SetDataFacility(Name, email);
+                            usersPanel.ViewDetailsClicked += (s, e) =>
+                            {
+                                Facility_ID = facilityId;
+                                ViewDets(facilityId);
+                            };
 
                             usersPanel.Location = new Point(10, margin - 7);
                             margin += usersPanel.Height + 10;
@@ -414,6 +436,44 @@ namespace OOP2
                             }
                         }
                     }
+                    string getLatestFiles = @"
+                        SELECT * 
+                        FROM [Facility Files] 
+                        WHERE [Uploaded Date] = (
+                            SELECT MAX([Uploaded Date]) 
+                            FROM [Facility Files] 
+                            WHERE Facility_ID = ?
+                        ) 
+                        AND Facility_ID = ?
+                    ";
+
+                    using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", Facility_ID);
+                        cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string businessRegistrationName = !reader.IsDBNull(reader.GetOrdinal("Business Registration")) ? "Business Registration Uploaded" : "No File";
+                                string governmentIdName = !reader.IsDBNull(reader.GetOrdinal("Valid Government-issued ID")) ? "Government ID Uploaded" : "No File";
+                                string serviceLicensesName = !reader.IsDBNull(reader.GetOrdinal("Service Licenses / Certifications")) ? "Service Licenses Uploaded" : "No File";
+                                string proofOfAddressName = !reader.IsDBNull(reader.GetOrdinal("Proof of Address")) ? "Proof of Address Uploaded" : "No File";
+                                string taxDocumentsName = !reader.IsDBNull(reader.GetOrdinal("Tax Documents")) ? "Tax Documents Uploaded" : "No File";
+                                string insuranceComplianceName = !reader.IsDBNull(reader.GetOrdinal("Insurance or Safety Compliance")) ? "Insurance Compliance Uploaded" : "No File";
+
+                                File1Fname.Text = businessRegistrationName;
+                                File2Fname.Text = governmentIdName;
+                                File4Fname.Text = serviceLicensesName;
+                                File5Fname.Text = proofOfAddressName;
+                                File6Fname.Text = taxDocumentsName;
+                                File7Fname.Text = insuranceComplianceName;
+                            }
+                        }
+                    }
+                    
+
                 }
             }
         }
@@ -582,6 +642,301 @@ namespace OOP2
             FViewDetailspanel.Visible = true; AccountButton.Visible = true;
             AccountButton.Text = " Facility's Account";
             VFilesbutton.Visible = false; VFilespanel.Visible = false;
+        }
+
+        private void FilesButton_Click(object sender, EventArgs e)
+        {
+            FViewDetailspanel.Visible = false; AccountButton.Visible = false;
+            VFilesbutton.Visible = true; VFilespanel.Visible = true;
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getLatestFiles = @"
+                                        SELECT * 
+                                        FROM [Facility Files] 
+                                        WHERE [Uploaded Date] = (
+                                            SELECT MAX([Uploaded Date]) 
+                                            FROM [Facility Files] 
+                                            WHERE Facility_ID = ?
+                                        ) 
+                                        AND Facility_ID = ?
+                                    ";
+
+                using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(reader.GetOrdinal("Business Registration")))
+                            {
+                                byte[] imageBytes = (byte[])reader["Business Registration"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Photobox.Image = Image.FromStream(ms);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void Photoclose_Click(object sender, EventArgs e)
+        {
+            Photopanel.Visible = false;
+        }
+
+        private void File1Fname_Click(object sender, EventArgs e)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getLatestFiles = @"
+                                        SELECT * 
+                                        FROM [Facility Files] 
+                                        WHERE [Uploaded Date] = (
+                                            SELECT MAX([Uploaded Date]) 
+                                            FROM [Facility Files] 
+                                            WHERE Facility_ID = ?
+                                        ) 
+                                        AND Facility_ID = ?
+                                    ";
+
+                using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(reader.GetOrdinal("Business Registration")))
+                            {
+                                byte[] imageBytes = (byte[])reader["Business Registration"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Photobox.Image = Image.FromStream(ms);
+                                    Photopanel.Visible = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void File2Fname_Click(object sender, EventArgs e)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getLatestFiles = @"
+                                        SELECT * 
+                                        FROM [Facility Files] 
+                                        WHERE [Uploaded Date] = (
+                                            SELECT MAX([Uploaded Date]) 
+                                            FROM [Facility Files] 
+                                            WHERE Facility_ID = ?
+                                        ) 
+                                        AND Facility_ID = ?
+                                    ";
+
+                using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(reader.GetOrdinal("Valid Government-issued ID")))
+                            {
+                                byte[] imageBytes = (byte[])reader["Valid Government-issued ID"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Photobox.Image = Image.FromStream(ms);
+                                    Photopanel.Visible = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void File4Fname_Click(object sender, EventArgs e)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getLatestFiles = @"
+                            SELECT * 
+                            FROM [Facility Files] 
+                            WHERE [Uploaded Date] = (
+                                SELECT MAX([Uploaded Date]) 
+                                FROM [Facility Files] 
+                                WHERE Facility_ID = ?
+                            ) 
+                            AND Facility_ID = ?
+                        ";
+
+                using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(reader.GetOrdinal("Service Licenses / Certifications")))
+                            {
+                                byte[] imageBytes = (byte[])reader["Service Licenses / Certifications"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Photobox.Image = Image.FromStream(ms);
+                                    Photopanel.Visible = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void File5Fname_Click(object sender, EventArgs e)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getLatestFiles = @"
+                            SELECT * 
+                            FROM [Facility Files] 
+                            WHERE [Uploaded Date] = (
+                                SELECT MAX([Uploaded Date]) 
+                                FROM [Facility Files] 
+                                WHERE Facility_ID = ?
+                            ) 
+                            AND Facility_ID = ?
+                        ";
+
+                using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(reader.GetOrdinal("Proof of Address")))
+                            {
+                                byte[] imageBytes = (byte[])reader["Proof of Address"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Photobox.Image = Image.FromStream(ms);
+                                    Photopanel.Visible = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void File6Fname_Click(object sender, EventArgs e)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getLatestFiles = @"
+                            SELECT * 
+                            FROM [Facility Files] 
+                            WHERE [Uploaded Date] = (
+                                SELECT MAX([Uploaded Date]) 
+                                FROM [Facility Files] 
+                                WHERE Facility_ID = ?
+                            ) 
+                            AND Facility_ID = ?
+                        ";
+
+                using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(reader.GetOrdinal("Tax Documents")))
+                            {
+                                byte[] imageBytes = (byte[])reader["Tax Documents"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Photobox.Image = Image.FromStream(ms);
+                                    Photopanel.Visible = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void File7Fname_Click(object sender, EventArgs e)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getLatestFiles = @"
+                            SELECT * 
+                            FROM [Facility Files] 
+                            WHERE [Uploaded Date] = (
+                                SELECT MAX([Uploaded Date]) 
+                                FROM [Facility Files] 
+                                WHERE Facility_ID = ?
+                            ) 
+                            AND Facility_ID = ?
+                        ";
+
+                using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(reader.GetOrdinal("Insurance or Safety Compliance")))
+                            {
+                                byte[] imageBytes = (byte[])reader["Insurance or Safety Compliance"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Photobox.Image = Image.FromStream(ms);
+                                    Photopanel.Visible = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

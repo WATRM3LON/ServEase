@@ -55,6 +55,7 @@
             MaximizeButton = new System.Windows.Forms.Button();
             CloseButton = new System.Windows.Forms.Button();
             HeaderPanel = new System.Windows.Forms.Panel();
+            VFilesbutton = new System.Windows.Forms.Button();
             WelcomeLabel = new System.Windows.Forms.Label();
             HiLabel = new System.Windows.Forms.Label();
             AccountButton = new System.Windows.Forms.Button();
@@ -130,49 +131,51 @@
             button2 = new System.Windows.Forms.Button();
             button3 = new System.Windows.Forms.Button();
             VFilespanel = new System.Windows.Forms.Panel();
-            button8 = new System.Windows.Forms.Button();
-            button9 = new System.Windows.Forms.Button();
+            NotePanel = new System.Windows.Forms.Panel();
+            Reasontext = new System.Windows.Forms.TextBox();
+            NoteTitle = new System.Windows.Forms.Label();
             ConfirmButton = new System.Windows.Forms.Button();
             Filespanel = new System.Windows.Forms.TableLayoutPanel();
             File7panel = new System.Windows.Forms.Panel();
+            File7Approved = new System.Windows.Forms.Button();
+            File7Reject = new System.Windows.Forms.Button();
             File7Fname = new System.Windows.Forms.Label();
             File7name = new System.Windows.Forms.Label();
             File6panel = new System.Windows.Forms.Panel();
+            File6Approved = new System.Windows.Forms.Button();
+            File6Reject = new System.Windows.Forms.Button();
             File6Fname = new System.Windows.Forms.Label();
             File6name = new System.Windows.Forms.Label();
             File5panel = new System.Windows.Forms.Panel();
+            File5Approved = new System.Windows.Forms.Button();
             File5Fname = new System.Windows.Forms.Label();
+            File5Reject = new System.Windows.Forms.Button();
             File5name = new System.Windows.Forms.Label();
             File4panel = new System.Windows.Forms.Panel();
+            File4Approved = new System.Windows.Forms.Button();
+            File4Reject = new System.Windows.Forms.Button();
             File4Fname = new System.Windows.Forms.Label();
             File4name = new System.Windows.Forms.Label();
             File3panel = new System.Windows.Forms.Panel();
+            File3Approved = new System.Windows.Forms.Button();
+            File3Reject = new System.Windows.Forms.Button();
             File3Fname = new System.Windows.Forms.Label();
             File3name = new System.Windows.Forms.Label();
             File2panel = new System.Windows.Forms.Panel();
+            File2Approved = new System.Windows.Forms.Button();
+            File2Reject = new System.Windows.Forms.Button();
             File2Fname = new System.Windows.Forms.Label();
             File2name = new System.Windows.Forms.Label();
             File1panel = new System.Windows.Forms.Panel();
+            File1Approved = new System.Windows.Forms.Button();
             File1Fname = new System.Windows.Forms.Label();
             File1name = new System.Windows.Forms.Label();
             File1Reject = new System.Windows.Forms.Button();
-            File1Approved = new System.Windows.Forms.Button();
-            File2Approved = new System.Windows.Forms.Button();
-            File2Reject = new System.Windows.Forms.Button();
-            File3Approved = new System.Windows.Forms.Button();
-            File3Reject = new System.Windows.Forms.Button();
-            File4Reject = new System.Windows.Forms.Button();
-            File5Approved = new System.Windows.Forms.Button();
-            File5Reject = new System.Windows.Forms.Button();
-            File4Approved = new System.Windows.Forms.Button();
-            File6Approved = new System.Windows.Forms.Button();
-            File6Reject = new System.Windows.Forms.Button();
-            File7Approved = new System.Windows.Forms.Button();
-            File7Reject = new System.Windows.Forms.Button();
-            NotePanel = new System.Windows.Forms.Panel();
-            NoteTitle = new System.Windows.Forms.Label();
-            Reasontext = new System.Windows.Forms.TextBox();
-            VFilesbutton = new System.Windows.Forms.Button();
+            button8 = new System.Windows.Forms.Button();
+            button9 = new System.Windows.Forms.Button();
+            Photopanel = new System.Windows.Forms.Panel();
+            Photobox = new System.Windows.Forms.PictureBox();
+            Photoclose = new System.Windows.Forms.Button();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
@@ -188,6 +191,7 @@
             FPIPanel.SuspendLayout();
             FProPicPanel.SuspendLayout();
             VFilespanel.SuspendLayout();
+            NotePanel.SuspendLayout();
             Filespanel.SuspendLayout();
             File7panel.SuspendLayout();
             File6panel.SuspendLayout();
@@ -196,7 +200,8 @@
             File3panel.SuspendLayout();
             File2panel.SuspendLayout();
             File1panel.SuspendLayout();
-            NotePanel.SuspendLayout();
+            Photopanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Photobox).BeginInit();
             SuspendLayout();
             // 
             // NotificationPanel
@@ -579,6 +584,27 @@
             HeaderPanel.Name = "HeaderPanel";
             HeaderPanel.Size = new System.Drawing.Size(940, 100);
             HeaderPanel.TabIndex = 55;
+            // 
+            // VFilesbutton
+            // 
+            VFilesbutton.BackColor = System.Drawing.Color.Transparent;
+            VFilesbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            VFilesbutton.FlatAppearance.BorderSize = 0;
+            VFilesbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            VFilesbutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            VFilesbutton.Image = (System.Drawing.Image)resources.GetObject("VFilesbutton.Image");
+            VFilesbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            VFilesbutton.Location = new System.Drawing.Point(10, 17);
+            VFilesbutton.Name = "VFilesbutton";
+            VFilesbutton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            VFilesbutton.Size = new System.Drawing.Size(436, 74);
+            VFilesbutton.TabIndex = 63;
+            VFilesbutton.Text = "  Facility's Files";
+            VFilesbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            VFilesbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            VFilesbutton.UseVisualStyleBackColor = false;
+            VFilesbutton.Visible = false;
+            VFilesbutton.Click += VFilesbutton_Click;
             // 
             // WelcomeLabel
             // 
@@ -1210,6 +1236,7 @@
             FilesButton.Text = "View Files";
             FilesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             FilesButton.UseVisualStyleBackColor = false;
+            FilesButton.Click += FilesButton_Click;
             // 
             // label2
             // 
@@ -1591,7 +1618,7 @@
             VFilespanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             VFilespanel.BackColor = System.Drawing.Color.Transparent;
             VFilespanel.Controls.Add(NotePanel);
-            VFilespanel.Controls.Add(this.ConfirmButton);
+            VFilespanel.Controls.Add(ConfirmButton);
             VFilespanel.Controls.Add(Filespanel);
             VFilespanel.Controls.Add(button8);
             VFilespanel.Controls.Add(button9);
@@ -1600,39 +1627,36 @@
             VFilespanel.Size = new System.Drawing.Size(893, 755);
             VFilespanel.TabIndex = 62;
             // 
-            // button8
+            // NotePanel
             // 
-            button8.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button8.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
-            button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button8.ForeColor = System.Drawing.Color.White;
-            button8.Location = new System.Drawing.Point(2089, 1944);
-            button8.Name = "button8";
-            button8.Size = new System.Drawing.Size(165, 51);
-            button8.TabIndex = 78;
-            button8.Text = "Deactivate Account";
-            button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button8.UseVisualStyleBackColor = false;
+            NotePanel.BackColor = System.Drawing.Color.White;
+            NotePanel.Controls.Add(Reasontext);
+            NotePanel.Controls.Add(NoteTitle);
+            NotePanel.Location = new System.Drawing.Point(54, 691);
+            NotePanel.Name = "NotePanel";
+            NotePanel.Size = new System.Drawing.Size(422, 54);
+            NotePanel.TabIndex = 86;
+            NotePanel.Visible = false;
+            NotePanel.Paint += NotePanel_Paint;
             // 
-            // button9
+            // Reasontext
             // 
-            button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button9.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
-            button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button9.ForeColor = System.Drawing.Color.White;
-            button9.Location = new System.Drawing.Point(1396, 1348);
-            button9.Name = "button9";
-            button9.Size = new System.Drawing.Size(165, 51);
-            button9.TabIndex = 83;
-            button9.Text = "Deactivate Account";
-            button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button9.UseVisualStyleBackColor = false;
+            Reasontext.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            Reasontext.Location = new System.Drawing.Point(83, 10);
+            Reasontext.Multiline = true;
+            Reasontext.Name = "Reasontext";
+            Reasontext.Size = new System.Drawing.Size(327, 34);
+            Reasontext.TabIndex = 78;
+            // 
+            // NoteTitle
+            // 
+            NoteTitle.AutoSize = true;
+            NoteTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            NoteTitle.Location = new System.Drawing.Point(11, 10);
+            NoteTitle.Name = "NoteTitle";
+            NoteTitle.Size = new System.Drawing.Size(70, 23);
+            NoteTitle.TabIndex = 76;
+            NoteTitle.Text = "Reason:";
             // 
             // ConfirmButton
             // 
@@ -1682,6 +1706,30 @@
             File7panel.Size = new System.Drawing.Size(865, 92);
             File7panel.TabIndex = 6;
             // 
+            // File7Approved
+            // 
+            File7Approved.BackColor = System.Drawing.Color.Lime;
+            File7Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File7Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File7Approved.Location = new System.Drawing.Point(603, 24);
+            File7Approved.Name = "File7Approved";
+            File7Approved.Size = new System.Drawing.Size(107, 39);
+            File7Approved.TabIndex = 85;
+            File7Approved.Text = "Approved";
+            File7Approved.UseVisualStyleBackColor = false;
+            // 
+            // File7Reject
+            // 
+            File7Reject.BackColor = System.Drawing.Color.Red;
+            File7Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File7Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File7Reject.Location = new System.Drawing.Point(716, 24);
+            File7Reject.Name = "File7Reject";
+            File7Reject.Size = new System.Drawing.Size(107, 39);
+            File7Reject.TabIndex = 84;
+            File7Reject.Text = "Reject";
+            File7Reject.UseVisualStyleBackColor = false;
+            // 
             // File7Fname
             // 
             File7Fname.AutoEllipsis = true;
@@ -1694,6 +1742,7 @@
             File7Fname.TabIndex = 77;
             File7Fname.Text = "No file uploaded.";
             File7Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            File7Fname.Click += File7Fname_Click;
             // 
             // File7name
             // 
@@ -1717,6 +1766,30 @@
             File6panel.Size = new System.Drawing.Size(865, 86);
             File6panel.TabIndex = 5;
             // 
+            // File6Approved
+            // 
+            File6Approved.BackColor = System.Drawing.Color.Lime;
+            File6Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File6Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File6Approved.Location = new System.Drawing.Point(603, 24);
+            File6Approved.Name = "File6Approved";
+            File6Approved.Size = new System.Drawing.Size(107, 39);
+            File6Approved.TabIndex = 85;
+            File6Approved.Text = "Approved";
+            File6Approved.UseVisualStyleBackColor = false;
+            // 
+            // File6Reject
+            // 
+            File6Reject.BackColor = System.Drawing.Color.Red;
+            File6Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File6Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File6Reject.Location = new System.Drawing.Point(716, 24);
+            File6Reject.Name = "File6Reject";
+            File6Reject.Size = new System.Drawing.Size(107, 39);
+            File6Reject.TabIndex = 84;
+            File6Reject.Text = "Reject";
+            File6Reject.UseVisualStyleBackColor = false;
+            // 
             // File6Fname
             // 
             File6Fname.AutoEllipsis = true;
@@ -1729,6 +1802,7 @@
             File6Fname.TabIndex = 77;
             File6Fname.Text = "No file uploaded.";
             File6Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            File6Fname.Click += File6Fname_Click;
             // 
             // File6name
             // 
@@ -1752,6 +1826,18 @@
             File5panel.Size = new System.Drawing.Size(865, 86);
             File5panel.TabIndex = 4;
             // 
+            // File5Approved
+            // 
+            File5Approved.BackColor = System.Drawing.Color.Lime;
+            File5Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File5Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File5Approved.Location = new System.Drawing.Point(603, 24);
+            File5Approved.Name = "File5Approved";
+            File5Approved.Size = new System.Drawing.Size(107, 39);
+            File5Approved.TabIndex = 83;
+            File5Approved.Text = "Approved";
+            File5Approved.UseVisualStyleBackColor = false;
+            // 
             // File5Fname
             // 
             File5Fname.AutoEllipsis = true;
@@ -1764,6 +1850,19 @@
             File5Fname.TabIndex = 77;
             File5Fname.Text = "No file uploaded.";
             File5Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            File5Fname.Click += File5Fname_Click;
+            // 
+            // File5Reject
+            // 
+            File5Reject.BackColor = System.Drawing.Color.Red;
+            File5Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File5Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File5Reject.Location = new System.Drawing.Point(716, 24);
+            File5Reject.Name = "File5Reject";
+            File5Reject.Size = new System.Drawing.Size(107, 39);
+            File5Reject.TabIndex = 82;
+            File5Reject.Text = "Reject";
+            File5Reject.UseVisualStyleBackColor = false;
             // 
             // File5name
             // 
@@ -1787,6 +1886,30 @@
             File4panel.Size = new System.Drawing.Size(865, 86);
             File4panel.TabIndex = 3;
             // 
+            // File4Approved
+            // 
+            File4Approved.BackColor = System.Drawing.Color.Lime;
+            File4Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File4Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File4Approved.Location = new System.Drawing.Point(603, 24);
+            File4Approved.Name = "File4Approved";
+            File4Approved.Size = new System.Drawing.Size(107, 39);
+            File4Approved.TabIndex = 81;
+            File4Approved.Text = "Approved";
+            File4Approved.UseVisualStyleBackColor = false;
+            // 
+            // File4Reject
+            // 
+            File4Reject.BackColor = System.Drawing.Color.Red;
+            File4Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File4Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File4Reject.Location = new System.Drawing.Point(716, 24);
+            File4Reject.Name = "File4Reject";
+            File4Reject.Size = new System.Drawing.Size(107, 39);
+            File4Reject.TabIndex = 80;
+            File4Reject.Text = "Reject";
+            File4Reject.UseVisualStyleBackColor = false;
+            // 
             // File4Fname
             // 
             File4Fname.AutoEllipsis = true;
@@ -1799,6 +1922,7 @@
             File4Fname.TabIndex = 77;
             File4Fname.Text = "No file uploaded.";
             File4Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            File4Fname.Click += File4Fname_Click;
             // 
             // File4name
             // 
@@ -1821,6 +1945,30 @@
             File3panel.Name = "File3panel";
             File3panel.Size = new System.Drawing.Size(865, 86);
             File3panel.TabIndex = 2;
+            // 
+            // File3Approved
+            // 
+            File3Approved.BackColor = System.Drawing.Color.Lime;
+            File3Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File3Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File3Approved.Location = new System.Drawing.Point(603, 24);
+            File3Approved.Name = "File3Approved";
+            File3Approved.Size = new System.Drawing.Size(107, 39);
+            File3Approved.TabIndex = 81;
+            File3Approved.Text = "Approved";
+            File3Approved.UseVisualStyleBackColor = false;
+            // 
+            // File3Reject
+            // 
+            File3Reject.BackColor = System.Drawing.Color.Red;
+            File3Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File3Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File3Reject.Location = new System.Drawing.Point(716, 24);
+            File3Reject.Name = "File3Reject";
+            File3Reject.Size = new System.Drawing.Size(107, 39);
+            File3Reject.TabIndex = 80;
+            File3Reject.Text = "Reject";
+            File3Reject.UseVisualStyleBackColor = false;
             // 
             // File3Fname
             // 
@@ -1857,88 +2005,6 @@
             File2panel.Size = new System.Drawing.Size(865, 86);
             File2panel.TabIndex = 1;
             // 
-            // File2Fname
-            // 
-            File2Fname.AutoEllipsis = true;
-            File2Fname.AutoSize = true;
-            File2Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            File2Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            File2Fname.Location = new System.Drawing.Point(320, 36);
-            File2Fname.Name = "File2Fname";
-            File2Fname.Size = new System.Drawing.Size(110, 17);
-            File2Fname.TabIndex = 77;
-            File2Fname.Text = "No file uploaded.";
-            File2Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // File2name
-            // 
-            File2name.AutoSize = true;
-            File2name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            File2name.Location = new System.Drawing.Point(30, 33);
-            File2name.Name = "File2name";
-            File2name.Size = new System.Drawing.Size(252, 25);
-            File2name.TabIndex = 75;
-            File2name.Text = "2. Valid Government-issued ID";
-            // 
-            // File1panel
-            // 
-            File1panel.Controls.Add(File1Approved);
-            File1panel.Controls.Add(File1Fname);
-            File1panel.Controls.Add(File1name);
-            File1panel.Controls.Add(File1Reject);
-            File1panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            File1panel.Location = new System.Drawing.Point(3, 3);
-            File1panel.Name = "File1panel";
-            File1panel.Size = new System.Drawing.Size(865, 86);
-            File1panel.TabIndex = 0;
-            // 
-            // File1Fname
-            // 
-            File1Fname.AutoEllipsis = true;
-            File1Fname.AutoSize = true;
-            File1Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            File1Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            File1Fname.Location = new System.Drawing.Point(320, 36);
-            File1Fname.Name = "File1Fname";
-            File1Fname.Size = new System.Drawing.Size(110, 17);
-            File1Fname.TabIndex = 76;
-            File1Fname.Text = "No file uploaded.";
-            File1Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // File1name
-            // 
-            File1name.AutoSize = true;
-            File1name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            File1name.Location = new System.Drawing.Point(30, 33);
-            File1name.Name = "File1name";
-            File1name.Size = new System.Drawing.Size(197, 25);
-            File1name.TabIndex = 75;
-            File1name.Text = "1. Business Registration";
-            // 
-            // File1Reject
-            // 
-            File1Reject.BackColor = System.Drawing.Color.Red;
-            File1Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File1Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File1Reject.Location = new System.Drawing.Point(716, 24);
-            File1Reject.Name = "File1Reject";
-            File1Reject.Size = new System.Drawing.Size(107, 39);
-            File1Reject.TabIndex = 74;
-            File1Reject.Text = "Reject";
-            File1Reject.UseVisualStyleBackColor = false;
-            // 
-            // File1Approved
-            // 
-            File1Approved.BackColor = System.Drawing.Color.Lime;
-            File1Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File1Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File1Approved.Location = new System.Drawing.Point(603, 24);
-            File1Approved.Name = "File1Approved";
-            File1Approved.Size = new System.Drawing.Size(107, 39);
-            File1Approved.TabIndex = 77;
-            File1Approved.Text = "Approved";
-            File1Approved.UseVisualStyleBackColor = false;
-            // 
             // File2Approved
             // 
             File2Approved.BackColor = System.Drawing.Color.Lime;
@@ -1963,177 +2029,158 @@
             File2Reject.Text = "Reject";
             File2Reject.UseVisualStyleBackColor = false;
             // 
-            // File3Approved
+            // File2Fname
             // 
-            File3Approved.BackColor = System.Drawing.Color.Lime;
-            File3Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File3Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File3Approved.Location = new System.Drawing.Point(603, 24);
-            File3Approved.Name = "File3Approved";
-            File3Approved.Size = new System.Drawing.Size(107, 39);
-            File3Approved.TabIndex = 81;
-            File3Approved.Text = "Approved";
-            File3Approved.UseVisualStyleBackColor = false;
+            File2Fname.AutoEllipsis = true;
+            File2Fname.AutoSize = true;
+            File2Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File2Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File2Fname.Location = new System.Drawing.Point(320, 36);
+            File2Fname.Name = "File2Fname";
+            File2Fname.Size = new System.Drawing.Size(110, 17);
+            File2Fname.TabIndex = 77;
+            File2Fname.Text = "No file uploaded.";
+            File2Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            File2Fname.Click += File2Fname_Click;
             // 
-            // File3Reject
+            // File2name
             // 
-            File3Reject.BackColor = System.Drawing.Color.Red;
-            File3Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File3Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File3Reject.Location = new System.Drawing.Point(716, 24);
-            File3Reject.Name = "File3Reject";
-            File3Reject.Size = new System.Drawing.Size(107, 39);
-            File3Reject.TabIndex = 80;
-            File3Reject.Text = "Reject";
-            File3Reject.UseVisualStyleBackColor = false;
+            File2name.AutoSize = true;
+            File2name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File2name.Location = new System.Drawing.Point(30, 33);
+            File2name.Name = "File2name";
+            File2name.Size = new System.Drawing.Size(252, 25);
+            File2name.TabIndex = 75;
+            File2name.Text = "2. Valid Government-issued ID";
             // 
-            // File4Reject
+            // File1panel
             // 
-            File4Reject.BackColor = System.Drawing.Color.Red;
-            File4Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File4Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File4Reject.Location = new System.Drawing.Point(716, 24);
-            File4Reject.Name = "File4Reject";
-            File4Reject.Size = new System.Drawing.Size(107, 39);
-            File4Reject.TabIndex = 80;
-            File4Reject.Text = "Reject";
-            File4Reject.UseVisualStyleBackColor = false;
+            File1panel.Controls.Add(File1Approved);
+            File1panel.Controls.Add(File1Fname);
+            File1panel.Controls.Add(File1name);
+            File1panel.Controls.Add(File1Reject);
+            File1panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            File1panel.Location = new System.Drawing.Point(3, 3);
+            File1panel.Name = "File1panel";
+            File1panel.Size = new System.Drawing.Size(865, 86);
+            File1panel.TabIndex = 0;
             // 
-            // File5Approved
+            // File1Approved
             // 
-            File5Approved.BackColor = System.Drawing.Color.Lime;
-            File5Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File5Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File5Approved.Location = new System.Drawing.Point(603, 24);
-            File5Approved.Name = "File5Approved";
-            File5Approved.Size = new System.Drawing.Size(107, 39);
-            File5Approved.TabIndex = 83;
-            File5Approved.Text = "Approved";
-            File5Approved.UseVisualStyleBackColor = false;
+            File1Approved.BackColor = System.Drawing.Color.Lime;
+            File1Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File1Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File1Approved.Location = new System.Drawing.Point(603, 24);
+            File1Approved.Name = "File1Approved";
+            File1Approved.Size = new System.Drawing.Size(107, 39);
+            File1Approved.TabIndex = 77;
+            File1Approved.Text = "Approved";
+            File1Approved.UseVisualStyleBackColor = false;
             // 
-            // File5Reject
+            // File1Fname
             // 
-            File5Reject.BackColor = System.Drawing.Color.Red;
-            File5Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File5Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File5Reject.Location = new System.Drawing.Point(716, 24);
-            File5Reject.Name = "File5Reject";
-            File5Reject.Size = new System.Drawing.Size(107, 39);
-            File5Reject.TabIndex = 82;
-            File5Reject.Text = "Reject";
-            File5Reject.UseVisualStyleBackColor = false;
+            File1Fname.AutoEllipsis = true;
+            File1Fname.AutoSize = true;
+            File1Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File1Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File1Fname.Location = new System.Drawing.Point(320, 36);
+            File1Fname.Name = "File1Fname";
+            File1Fname.Size = new System.Drawing.Size(110, 17);
+            File1Fname.TabIndex = 76;
+            File1Fname.Text = "No file uploaded.";
+            File1Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            File1Fname.Click += File1Fname_Click;
             // 
-            // File4Approved
+            // File1name
             // 
-            File4Approved.BackColor = System.Drawing.Color.Lime;
-            File4Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File4Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File4Approved.Location = new System.Drawing.Point(603, 24);
-            File4Approved.Name = "File4Approved";
-            File4Approved.Size = new System.Drawing.Size(107, 39);
-            File4Approved.TabIndex = 81;
-            File4Approved.Text = "Approved";
-            File4Approved.UseVisualStyleBackColor = false;
+            File1name.AutoSize = true;
+            File1name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File1name.Location = new System.Drawing.Point(30, 33);
+            File1name.Name = "File1name";
+            File1name.Size = new System.Drawing.Size(197, 25);
+            File1name.TabIndex = 75;
+            File1name.Text = "1. Business Registration";
             // 
-            // File6Approved
+            // File1Reject
             // 
-            File6Approved.BackColor = System.Drawing.Color.Lime;
-            File6Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File6Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File6Approved.Location = new System.Drawing.Point(603, 24);
-            File6Approved.Name = "File6Approved";
-            File6Approved.Size = new System.Drawing.Size(107, 39);
-            File6Approved.TabIndex = 85;
-            File6Approved.Text = "Approved";
-            File6Approved.UseVisualStyleBackColor = false;
+            File1Reject.BackColor = System.Drawing.Color.Red;
+            File1Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File1Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            File1Reject.Location = new System.Drawing.Point(716, 24);
+            File1Reject.Name = "File1Reject";
+            File1Reject.Size = new System.Drawing.Size(107, 39);
+            File1Reject.TabIndex = 74;
+            File1Reject.Text = "Reject";
+            File1Reject.UseVisualStyleBackColor = false;
             // 
-            // File6Reject
+            // button8
             // 
-            File6Reject.BackColor = System.Drawing.Color.Red;
-            File6Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File6Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File6Reject.Location = new System.Drawing.Point(716, 24);
-            File6Reject.Name = "File6Reject";
-            File6Reject.Size = new System.Drawing.Size(107, 39);
-            File6Reject.TabIndex = 84;
-            File6Reject.Text = "Reject";
-            File6Reject.UseVisualStyleBackColor = false;
+            button8.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button8.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
+            button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button8.ForeColor = System.Drawing.Color.White;
+            button8.Location = new System.Drawing.Point(2089, 1944);
+            button8.Name = "button8";
+            button8.Size = new System.Drawing.Size(165, 51);
+            button8.TabIndex = 78;
+            button8.Text = "Deactivate Account";
+            button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button8.UseVisualStyleBackColor = false;
             // 
-            // File7Approved
+            // button9
             // 
-            File7Approved.BackColor = System.Drawing.Color.Lime;
-            File7Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File7Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File7Approved.Location = new System.Drawing.Point(603, 24);
-            File7Approved.Name = "File7Approved";
-            File7Approved.Size = new System.Drawing.Size(107, 39);
-            File7Approved.TabIndex = 85;
-            File7Approved.Text = "Approved";
-            File7Approved.UseVisualStyleBackColor = false;
+            button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button9.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
+            button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button9.ForeColor = System.Drawing.Color.White;
+            button9.Location = new System.Drawing.Point(1396, 1348);
+            button9.Name = "button9";
+            button9.Size = new System.Drawing.Size(165, 51);
+            button9.TabIndex = 83;
+            button9.Text = "Deactivate Account";
+            button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button9.UseVisualStyleBackColor = false;
             // 
-            // File7Reject
+            // Photopanel
             // 
-            File7Reject.BackColor = System.Drawing.Color.Red;
-            File7Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            File7Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            File7Reject.Location = new System.Drawing.Point(716, 24);
-            File7Reject.Name = "File7Reject";
-            File7Reject.Size = new System.Drawing.Size(107, 39);
-            File7Reject.TabIndex = 84;
-            File7Reject.Text = "Reject";
-            File7Reject.UseVisualStyleBackColor = false;
+            Photopanel.BackColor = System.Drawing.Color.White;
+            Photopanel.Controls.Add(Photobox);
+            Photopanel.Controls.Add(Photoclose);
+            Photopanel.Location = new System.Drawing.Point(294, 124);
+            Photopanel.Name = "Photopanel";
+            Photopanel.Size = new System.Drawing.Size(765, 765);
+            Photopanel.TabIndex = 87;
+            Photopanel.Visible = false;
             // 
-            // NotePanel
+            // Photobox
             // 
-            NotePanel.BackColor = System.Drawing.Color.White;
-            NotePanel.Controls.Add(Reasontext);
-            NotePanel.Controls.Add(NoteTitle);
-            NotePanel.Location = new System.Drawing.Point(54, 691);
-            NotePanel.Name = "NotePanel";
-            NotePanel.Size = new System.Drawing.Size(422, 54);
-            NotePanel.TabIndex = 86;
-            NotePanel.Visible = false;
-            NotePanel.Paint += NotePanel_Paint;
+            Photobox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            Photobox.Location = new System.Drawing.Point(0, 52);
+            Photobox.Margin = new System.Windows.Forms.Padding(20);
+            Photobox.Name = "Photobox";
+            Photobox.Size = new System.Drawing.Size(765, 713);
+            Photobox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            Photobox.TabIndex = 56;
+            Photobox.TabStop = false;
             // 
-            // NoteTitle
+            // Photoclose
             // 
-            NoteTitle.AutoSize = true;
-            NoteTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            NoteTitle.Location = new System.Drawing.Point(11, 10);
-            NoteTitle.Name = "NoteTitle";
-            NoteTitle.Size = new System.Drawing.Size(70, 23);
-            NoteTitle.TabIndex = 76;
-            NoteTitle.Text = "Reason:";
-            // 
-            // Reasontext
-            // 
-            Reasontext.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            Reasontext.Location = new System.Drawing.Point(83, 10);
-            Reasontext.Multiline = true;
-            Reasontext.Name = "Reasontext";
-            Reasontext.Size = new System.Drawing.Size(327, 34);
-            Reasontext.TabIndex = 78;
-            // 
-            // VFilesbutton
-            // 
-            VFilesbutton.BackColor = System.Drawing.Color.Transparent;
-            VFilesbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            VFilesbutton.FlatAppearance.BorderSize = 0;
-            VFilesbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            VFilesbutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            VFilesbutton.Image = (System.Drawing.Image)resources.GetObject("VFilesbutton.Image");
-            VFilesbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            VFilesbutton.Location = new System.Drawing.Point(10, 17);
-            VFilesbutton.Name = "VFilesbutton";
-            VFilesbutton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            VFilesbutton.Size = new System.Drawing.Size(436, 74);
-            VFilesbutton.TabIndex = 63;
-            VFilesbutton.Text = "  Facility's Files";
-            VFilesbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            VFilesbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            VFilesbutton.UseVisualStyleBackColor = false;
-            VFilesbutton.Visible = false;
-            VFilesbutton.Click += VFilesbutton_Click;
+            Photoclose.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            Photoclose.FlatAppearance.BorderSize = 0;
+            Photoclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Photoclose.Image = (System.Drawing.Image)resources.GetObject("Photoclose.Image");
+            Photoclose.Location = new System.Drawing.Point(713, -6);
+            Photoclose.Name = "Photoclose";
+            Photoclose.Size = new System.Drawing.Size(49, 63);
+            Photoclose.TabIndex = 55;
+            Photoclose.UseVisualStyleBackColor = true;
+            Photoclose.Click += Photoclose_Click;
             // 
             // Admin
             // 
@@ -2143,7 +2190,6 @@
             ClientSize = new System.Drawing.Size(1219, 990);
             Controls.Add(VFilespanel);
             Controls.Add(ViewDetpanel);
-            Controls.Add(FViewDetailspanel);
             Controls.Add(AppHistPanel);
             Controls.Add(CViewDetailspanel);
             Controls.Add(CalendarAppointmentPanel);
@@ -2157,6 +2203,8 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
+            Controls.Add(FViewDetailspanel);
+            Controls.Add(Photopanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "Admin";
@@ -2183,6 +2231,8 @@
             FProPicPanel.ResumeLayout(false);
             FProPicPanel.PerformLayout();
             VFilespanel.ResumeLayout(false);
+            NotePanel.ResumeLayout(false);
+            NotePanel.PerformLayout();
             Filespanel.ResumeLayout(false);
             File7panel.ResumeLayout(false);
             File7panel.PerformLayout();
@@ -2198,8 +2248,8 @@
             File2panel.PerformLayout();
             File1panel.ResumeLayout(false);
             File1panel.PerformLayout();
-            NotePanel.ResumeLayout(false);
-            NotePanel.PerformLayout();
+            Photopanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Photobox).EndInit();
             ResumeLayout(false);
         }
 
@@ -2351,5 +2401,8 @@
         private System.Windows.Forms.TextBox Reasontext;
         private System.Windows.Forms.Label NoteTitle;
         private System.Windows.Forms.Button VFilesbutton;
+        private System.Windows.Forms.Panel Photopanel;
+        private System.Windows.Forms.Button Photoclose;
+        private System.Windows.Forms.PictureBox Photobox;
     }
 }
