@@ -34,7 +34,7 @@
             label107 = new System.Windows.Forms.Label();
             NotiCloseButton = new System.Windows.Forms.Button();
             label105 = new System.Windows.Forms.Label();
-            label106 = new System.Windows.Forms.Label();
+            NotifiTitle = new System.Windows.Forms.Label();
             NotifyButton = new System.Windows.Forms.Button();
             DashboardPanel2 = new System.Windows.Forms.Panel();
             LButton = new System.Windows.Forms.Button();
@@ -98,13 +98,15 @@
             button1 = new System.Windows.Forms.Button();
             FViewDetailspanel = new System.Windows.Forms.Panel();
             FPIPanel = new System.Windows.Forms.Panel();
-            label7 = new System.Windows.Forms.Label();
+            FISpecific = new System.Windows.Forms.Label();
+            FISpecificlabel = new System.Windows.Forms.Label();
+            FIAppstatuslabel = new System.Windows.Forms.Label();
             FIAppStatus = new System.Windows.Forms.Button();
             FilesButton = new System.Windows.Forms.Button();
-            label2 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
+            FIdeletetext = new System.Windows.Forms.Label();
+            FIdeletelabel = new System.Windows.Forms.Label();
+            FIregisttext = new System.Windows.Forms.Label();
+            FIregistlabel = new System.Windows.Forms.Label();
             FIWordaystext = new System.Windows.Forms.Label();
             FIWordayslabel = new System.Windows.Forms.Label();
             FIWorhourstext = new System.Windows.Forms.Label();
@@ -118,9 +120,9 @@
             FIFnametext = new System.Windows.Forms.Label();
             FIFnamelabel = new System.Windows.Forms.Label();
             FIEditButton = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
+            FItitle = new System.Windows.Forms.Label();
             FProPicPanel = new System.Windows.Forms.Panel();
-            label6 = new System.Windows.Forms.Label();
+            FIStatuslabel = new System.Windows.Forms.Label();
             FIStatus = new System.Windows.Forms.Button();
             FILoclabel = new System.Windows.Forms.Label();
             FILoctext = new System.Windows.Forms.Label();
@@ -131,6 +133,7 @@
             button2 = new System.Windows.Forms.Button();
             button3 = new System.Windows.Forms.Button();
             VFilespanel = new System.Windows.Forms.Panel();
+            Reason = new System.Windows.Forms.Label();
             NotePanel = new System.Windows.Forms.Panel();
             Reasontext = new System.Windows.Forms.TextBox();
             NoteTitle = new System.Windows.Forms.Label();
@@ -176,6 +179,10 @@
             Photopanel = new System.Windows.Forms.Panel();
             Photobox = new System.Windows.Forms.PictureBox();
             Photoclose = new System.Windows.Forms.Button();
+            FPhotosPanel = new System.Windows.Forms.Panel();
+            ClosePFbutton = new System.Windows.Forms.Button();
+            button4 = new System.Windows.Forms.Button();
+            PhotosFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
@@ -202,6 +209,7 @@
             File1panel.SuspendLayout();
             Photopanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Photobox).BeginInit();
+            FPhotosPanel.SuspendLayout();
             SuspendLayout();
             // 
             // NotificationPanel
@@ -212,7 +220,7 @@
             NotificationPanel.Controls.Add(label107);
             NotificationPanel.Controls.Add(NotiCloseButton);
             NotificationPanel.Controls.Add(label105);
-            NotificationPanel.Controls.Add(label106);
+            NotificationPanel.Controls.Add(NotifiTitle);
             NotificationPanel.Location = new System.Drawing.Point(679, 62);
             NotificationPanel.Name = "NotificationPanel";
             NotificationPanel.Size = new System.Drawing.Size(385, 763);
@@ -263,16 +271,16 @@
             label105.TabIndex = 37;
             label105.Text = "You're all caught up!";
             // 
-            // label106
+            // NotifiTitle
             // 
-            label106.AutoSize = true;
-            label106.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label106.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label106.Location = new System.Drawing.Point(19, 28);
-            label106.Name = "label106";
-            label106.Size = new System.Drawing.Size(148, 31);
-            label106.TabIndex = 35;
-            label106.Text = "Notifications";
+            NotifiTitle.AutoSize = true;
+            NotifiTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            NotifiTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            NotifiTitle.Location = new System.Drawing.Point(19, 28);
+            NotifiTitle.Name = "NotifiTitle";
+            NotifiTitle.Size = new System.Drawing.Size(148, 31);
+            NotifiTitle.TabIndex = 35;
+            NotifiTitle.Text = "Notifications";
             // 
             // NotifyButton
             // 
@@ -1164,13 +1172,15 @@
             // 
             FPIPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FPIPanel.BackColor = System.Drawing.Color.White;
-            FPIPanel.Controls.Add(label7);
+            FPIPanel.Controls.Add(FISpecific);
+            FPIPanel.Controls.Add(FISpecificlabel);
+            FPIPanel.Controls.Add(FIAppstatuslabel);
             FPIPanel.Controls.Add(FIAppStatus);
             FPIPanel.Controls.Add(FilesButton);
-            FPIPanel.Controls.Add(label2);
-            FPIPanel.Controls.Add(label3);
-            FPIPanel.Controls.Add(label4);
-            FPIPanel.Controls.Add(label5);
+            FPIPanel.Controls.Add(FIdeletetext);
+            FPIPanel.Controls.Add(FIdeletelabel);
+            FPIPanel.Controls.Add(FIregisttext);
+            FPIPanel.Controls.Add(FIregistlabel);
             FPIPanel.Controls.Add(FIWordaystext);
             FPIPanel.Controls.Add(FIWordayslabel);
             FPIPanel.Controls.Add(FIWorhourstext);
@@ -1184,23 +1194,47 @@
             FPIPanel.Controls.Add(FIFnametext);
             FPIPanel.Controls.Add(FIFnamelabel);
             FPIPanel.Controls.Add(FIEditButton);
-            FPIPanel.Controls.Add(label1);
+            FPIPanel.Controls.Add(FItitle);
             FPIPanel.Location = new System.Drawing.Point(13, 200);
             FPIPanel.Name = "FPIPanel";
-            FPIPanel.Size = new System.Drawing.Size(887, 378);
+            FPIPanel.Size = new System.Drawing.Size(887, 478);
             FPIPanel.TabIndex = 80;
             // 
-            // label7
+            // FISpecific
             // 
-            label7.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label7.Location = new System.Drawing.Point(598, 27);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(117, 20);
-            label7.TabIndex = 86;
-            label7.Text = "Approval Status";
+            FISpecific.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FISpecific.AutoSize = true;
+            FISpecific.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FISpecific.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FISpecific.Location = new System.Drawing.Point(328, 216);
+            FISpecific.Name = "FISpecific";
+            FISpecific.Size = new System.Drawing.Size(279, 25);
+            FISpecific.TabIndex = 88;
+            FISpecific.Text = "Personal and Beauty Care Services";
+            // 
+            // FISpecificlabel
+            // 
+            FISpecificlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FISpecificlabel.AutoSize = true;
+            FISpecificlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FISpecificlabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FISpecificlabel.Location = new System.Drawing.Point(321, 178);
+            FISpecificlabel.Name = "FISpecificlabel";
+            FISpecificlabel.Size = new System.Drawing.Size(156, 25);
+            FISpecificlabel.TabIndex = 87;
+            FISpecificlabel.Text = "Specific Category";
+            // 
+            // FIAppstatuslabel
+            // 
+            FIAppstatuslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIAppstatuslabel.AutoSize = true;
+            FIAppstatuslabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FIAppstatuslabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIAppstatuslabel.Location = new System.Drawing.Point(598, 27);
+            FIAppstatuslabel.Name = "FIAppstatuslabel";
+            FIAppstatuslabel.Size = new System.Drawing.Size(117, 20);
+            FIAppstatuslabel.TabIndex = 86;
+            FIAppstatuslabel.Text = "Approval Status";
             // 
             // FIAppStatus
             // 
@@ -1229,7 +1263,7 @@
             FilesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             FilesButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FilesButton.ForeColor = System.Drawing.Color.White;
-            FilesButton.Location = new System.Drawing.Point(737, 327);
+            FilesButton.Location = new System.Drawing.Point(737, 427);
             FilesButton.Name = "FilesButton";
             FilesButton.Size = new System.Drawing.Size(132, 40);
             FilesButton.TabIndex = 84;
@@ -1238,53 +1272,53 @@
             FilesButton.UseVisualStyleBackColor = false;
             FilesButton.Click += FilesButton_Click;
             // 
-            // label2
+            // FIdeletetext
             // 
-            label2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label2.Location = new System.Drawing.Point(330, 327);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(210, 25);
-            label2.TabIndex = 82;
-            label2.Text = "juandelacruz@gmail.com";
+            FIdeletetext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIdeletetext.AutoSize = true;
+            FIdeletetext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FIdeletetext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FIdeletetext.Location = new System.Drawing.Point(330, 414);
+            FIdeletetext.Name = "FIdeletetext";
+            FIdeletetext.Size = new System.Drawing.Size(210, 25);
+            FIdeletetext.TabIndex = 82;
+            FIdeletetext.Text = "juandelacruz@gmail.com";
             // 
-            // label3
+            // FIdeletelabel
             // 
-            label3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            label3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label3.Location = new System.Drawing.Point(323, 288);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(122, 25);
-            label3.TabIndex = 81;
-            label3.Text = "Date Deleted";
+            FIdeletelabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIdeletelabel.AutoSize = true;
+            FIdeletelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FIdeletelabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIdeletelabel.Location = new System.Drawing.Point(323, 375);
+            FIdeletelabel.Name = "FIdeletelabel";
+            FIdeletelabel.Size = new System.Drawing.Size(122, 25);
+            FIdeletelabel.TabIndex = 81;
+            FIdeletelabel.Text = "Date Deleted";
             // 
-            // label4
+            // FIregisttext
             // 
-            label4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label4.Location = new System.Drawing.Point(27, 327);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(149, 25);
-            label4.TabIndex = 80;
-            label4.Text = "+63 9956226213";
+            FIregisttext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIregisttext.AutoSize = true;
+            FIregisttext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            FIregisttext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FIregisttext.Location = new System.Drawing.Point(27, 414);
+            FIregisttext.Name = "FIregisttext";
+            FIregisttext.Size = new System.Drawing.Size(149, 25);
+            FIregisttext.TabIndex = 80;
+            FIregisttext.Text = "+63 9956226213";
             // 
-            // label5
+            // FIregistlabel
             // 
-            label5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            label5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label5.Location = new System.Drawing.Point(20, 288);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(146, 25);
-            label5.TabIndex = 79;
-            label5.Text = "Date Registered";
+            FIregistlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIregistlabel.AutoSize = true;
+            FIregistlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            FIregistlabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIregistlabel.Location = new System.Drawing.Point(20, 375);
+            FIregistlabel.Name = "FIregistlabel";
+            FIregistlabel.Size = new System.Drawing.Size(146, 25);
+            FIregistlabel.TabIndex = 79;
+            FIregistlabel.Text = "Date Registered";
             // 
             // FIWordaystext
             // 
@@ -1341,7 +1375,7 @@
             FIEmailtext.AutoSize = true;
             FIEmailtext.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             FIEmailtext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            FIEmailtext.Location = new System.Drawing.Point(334, 217);
+            FIEmailtext.Location = new System.Drawing.Point(27, 313);
             FIEmailtext.Name = "FIEmailtext";
             FIEmailtext.Size = new System.Drawing.Size(208, 25);
             FIEmailtext.TabIndex = 43;
@@ -1353,7 +1387,7 @@
             FIEmaillabel.AutoSize = true;
             FIEmaillabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             FIEmaillabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            FIEmaillabel.Location = new System.Drawing.Point(327, 178);
+            FIEmaillabel.Location = new System.Drawing.Point(20, 274);
             FIEmaillabel.Name = "FIEmaillabel";
             FIEmaillabel.Size = new System.Drawing.Size(128, 25);
             FIEmaillabel.TabIndex = 42;
@@ -1429,7 +1463,7 @@
             FIFnamelabel.Name = "FIFnamelabel";
             FIFnamelabel.Size = new System.Drawing.Size(122, 25);
             FIFnamelabel.TabIndex = 36;
-            FIFnamelabel.Text = "Facility Name";
+            FIFnamelabel.Text = "Owner Name";
             // 
             // FIEditButton
             // 
@@ -1450,23 +1484,23 @@
             FIEditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             FIEditButton.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // FItitle
             // 
-            label1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label1.Location = new System.Drawing.Point(19, 17);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(172, 25);
-            label1.TabIndex = 35;
-            label1.Text = "Facility Information";
+            FItitle.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FItitle.AutoSize = true;
+            FItitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FItitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            FItitle.Location = new System.Drawing.Point(19, 17);
+            FItitle.Name = "FItitle";
+            FItitle.Size = new System.Drawing.Size(172, 25);
+            FItitle.TabIndex = 35;
+            FItitle.Text = "Facility Information";
             // 
             // FProPicPanel
             // 
             FProPicPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FProPicPanel.BackColor = System.Drawing.Color.White;
-            FProPicPanel.Controls.Add(label6);
+            FProPicPanel.Controls.Add(FIStatuslabel);
             FProPicPanel.Controls.Add(FIStatus);
             FProPicPanel.Controls.Add(FILoclabel);
             FProPicPanel.Controls.Add(FILoctext);
@@ -1479,17 +1513,17 @@
             FProPicPanel.Size = new System.Drawing.Size(887, 165);
             FProPicPanel.TabIndex = 79;
             // 
-            // label6
+            // FIStatuslabel
             // 
-            label6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            label6.Location = new System.Drawing.Point(669, 38);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(50, 20);
-            label6.TabIndex = 52;
-            label6.Text = "Status";
+            FIStatuslabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FIStatuslabel.AutoSize = true;
+            FIStatuslabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FIStatuslabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            FIStatuslabel.Location = new System.Drawing.Point(669, 38);
+            FIStatuslabel.Name = "FIStatuslabel";
+            FIStatuslabel.Size = new System.Drawing.Size(50, 20);
+            FIStatuslabel.TabIndex = 52;
+            FIStatuslabel.Text = "Status";
             // 
             // FIStatus
             // 
@@ -1617,6 +1651,7 @@
             // 
             VFilespanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             VFilespanel.BackColor = System.Drawing.Color.Transparent;
+            VFilespanel.Controls.Add(Reason);
             VFilespanel.Controls.Add(NotePanel);
             VFilespanel.Controls.Add(ConfirmButton);
             VFilespanel.Controls.Add(Filespanel);
@@ -1626,6 +1661,19 @@
             VFilespanel.Name = "VFilespanel";
             VFilespanel.Size = new System.Drawing.Size(893, 755);
             VFilespanel.TabIndex = 62;
+            VFilespanel.Visible = false;
+            // 
+            // Reason
+            // 
+            Reason.AutoSize = true;
+            Reason.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            Reason.ForeColor = System.Drawing.Color.Red;
+            Reason.Location = new System.Drawing.Point(489, 704);
+            Reason.Name = "Reason";
+            Reason.Size = new System.Drawing.Size(183, 25);
+            Reason.TabIndex = 87;
+            Reason.Text = "Please input a reason.";
+            Reason.Visible = false;
             // 
             // NotePanel
             // 
@@ -1668,6 +1716,7 @@
             ConfirmButton.TabIndex = 85;
             ConfirmButton.Text = "Confirm";
             ConfirmButton.UseVisualStyleBackColor = true;
+            ConfirmButton.Click += ConfirmButton_Click;
             // 
             // Filespanel
             // 
@@ -1709,6 +1758,7 @@
             // File7Approved
             // 
             File7Approved.BackColor = System.Drawing.Color.Lime;
+            File7Approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File7Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File7Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File7Approved.Location = new System.Drawing.Point(603, 24);
@@ -1717,10 +1767,12 @@
             File7Approved.TabIndex = 85;
             File7Approved.Text = "Approved";
             File7Approved.UseVisualStyleBackColor = false;
+            File7Approved.Click += File7Approved_Click;
             // 
             // File7Reject
             // 
             File7Reject.BackColor = System.Drawing.Color.Red;
+            File7Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File7Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File7Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File7Reject.Location = new System.Drawing.Point(716, 24);
@@ -1729,6 +1781,7 @@
             File7Reject.TabIndex = 84;
             File7Reject.Text = "Reject";
             File7Reject.UseVisualStyleBackColor = false;
+            File7Reject.Click += File7Reject_Click;
             // 
             // File7Fname
             // 
@@ -1769,6 +1822,7 @@
             // File6Approved
             // 
             File6Approved.BackColor = System.Drawing.Color.Lime;
+            File6Approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File6Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File6Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File6Approved.Location = new System.Drawing.Point(603, 24);
@@ -1777,10 +1831,12 @@
             File6Approved.TabIndex = 85;
             File6Approved.Text = "Approved";
             File6Approved.UseVisualStyleBackColor = false;
+            File6Approved.Click += File6Approved_Click;
             // 
             // File6Reject
             // 
             File6Reject.BackColor = System.Drawing.Color.Red;
+            File6Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File6Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File6Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File6Reject.Location = new System.Drawing.Point(716, 24);
@@ -1789,6 +1845,7 @@
             File6Reject.TabIndex = 84;
             File6Reject.Text = "Reject";
             File6Reject.UseVisualStyleBackColor = false;
+            File6Reject.Click += File6Reject_Click;
             // 
             // File6Fname
             // 
@@ -1829,6 +1886,7 @@
             // File5Approved
             // 
             File5Approved.BackColor = System.Drawing.Color.Lime;
+            File5Approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File5Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File5Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File5Approved.Location = new System.Drawing.Point(603, 24);
@@ -1837,6 +1895,7 @@
             File5Approved.TabIndex = 83;
             File5Approved.Text = "Approved";
             File5Approved.UseVisualStyleBackColor = false;
+            File5Approved.Click += File5Approved_Click;
             // 
             // File5Fname
             // 
@@ -1855,6 +1914,7 @@
             // File5Reject
             // 
             File5Reject.BackColor = System.Drawing.Color.Red;
+            File5Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File5Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File5Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File5Reject.Location = new System.Drawing.Point(716, 24);
@@ -1863,6 +1923,7 @@
             File5Reject.TabIndex = 82;
             File5Reject.Text = "Reject";
             File5Reject.UseVisualStyleBackColor = false;
+            File5Reject.Click += File5Reject_Click;
             // 
             // File5name
             // 
@@ -1889,6 +1950,7 @@
             // File4Approved
             // 
             File4Approved.BackColor = System.Drawing.Color.Lime;
+            File4Approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File4Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File4Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File4Approved.Location = new System.Drawing.Point(603, 24);
@@ -1897,10 +1959,12 @@
             File4Approved.TabIndex = 81;
             File4Approved.Text = "Approved";
             File4Approved.UseVisualStyleBackColor = false;
+            File4Approved.Click += File4Approved_Click;
             // 
             // File4Reject
             // 
             File4Reject.BackColor = System.Drawing.Color.Red;
+            File4Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File4Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File4Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File4Reject.Location = new System.Drawing.Point(716, 24);
@@ -1909,6 +1973,7 @@
             File4Reject.TabIndex = 80;
             File4Reject.Text = "Reject";
             File4Reject.UseVisualStyleBackColor = false;
+            File4Reject.Click += File4Reject_Click;
             // 
             // File4Fname
             // 
@@ -1949,6 +2014,7 @@
             // File3Approved
             // 
             File3Approved.BackColor = System.Drawing.Color.Lime;
+            File3Approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File3Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File3Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File3Approved.Location = new System.Drawing.Point(603, 24);
@@ -1957,10 +2023,12 @@
             File3Approved.TabIndex = 81;
             File3Approved.Text = "Approved";
             File3Approved.UseVisualStyleBackColor = false;
+            File3Approved.Click += File3Approved_Click;
             // 
             // File3Reject
             // 
             File3Reject.BackColor = System.Drawing.Color.Red;
+            File3Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File3Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File3Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File3Reject.Location = new System.Drawing.Point(716, 24);
@@ -1969,6 +2037,7 @@
             File3Reject.TabIndex = 80;
             File3Reject.Text = "Reject";
             File3Reject.UseVisualStyleBackColor = false;
+            File3Reject.Click += File3Reject_Click;
             // 
             // File3Fname
             // 
@@ -1982,6 +2051,7 @@
             File3Fname.TabIndex = 77;
             File3Fname.Text = "No file uploaded.";
             File3Fname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            File3Fname.Click += File3Fname_Click;
             // 
             // File3name
             // 
@@ -2008,6 +2078,7 @@
             // File2Approved
             // 
             File2Approved.BackColor = System.Drawing.Color.Lime;
+            File2Approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File2Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File2Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File2Approved.Location = new System.Drawing.Point(603, 25);
@@ -2016,10 +2087,12 @@
             File2Approved.TabIndex = 79;
             File2Approved.Text = "Approved";
             File2Approved.UseVisualStyleBackColor = false;
+            File2Approved.Click += File2Approved_Click;
             // 
             // File2Reject
             // 
             File2Reject.BackColor = System.Drawing.Color.Red;
+            File2Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File2Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File2Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File2Reject.Location = new System.Drawing.Point(716, 25);
@@ -2028,6 +2101,7 @@
             File2Reject.TabIndex = 78;
             File2Reject.Text = "Reject";
             File2Reject.UseVisualStyleBackColor = false;
+            File2Reject.Click += File2Reject_Click;
             // 
             // File2Fname
             // 
@@ -2068,6 +2142,7 @@
             // File1Approved
             // 
             File1Approved.BackColor = System.Drawing.Color.Lime;
+            File1Approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File1Approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File1Approved.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File1Approved.Location = new System.Drawing.Point(603, 24);
@@ -2076,6 +2151,7 @@
             File1Approved.TabIndex = 77;
             File1Approved.Text = "Approved";
             File1Approved.UseVisualStyleBackColor = false;
+            File1Approved.Click += File1Approved_Click;
             // 
             // File1Fname
             // 
@@ -2104,6 +2180,7 @@
             // File1Reject
             // 
             File1Reject.BackColor = System.Drawing.Color.Red;
+            File1Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             File1Reject.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             File1Reject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             File1Reject.Location = new System.Drawing.Point(716, 24);
@@ -2112,6 +2189,7 @@
             File1Reject.TabIndex = 74;
             File1Reject.Text = "Reject";
             File1Reject.UseVisualStyleBackColor = false;
+            File1Reject.Click += File1Reject_Click;
             // 
             // button8
             // 
@@ -2182,6 +2260,52 @@
             Photoclose.UseVisualStyleBackColor = true;
             Photoclose.Click += Photoclose_Click;
             // 
+            // FPhotosPanel
+            // 
+            FPhotosPanel.BackColor = System.Drawing.Color.White;
+            FPhotosPanel.Controls.Add(ClosePFbutton);
+            FPhotosPanel.Controls.Add(button4);
+            FPhotosPanel.Controls.Add(PhotosFlowLayoutPanel);
+            FPhotosPanel.Location = new System.Drawing.Point(294, 124);
+            FPhotosPanel.Name = "FPhotosPanel";
+            FPhotosPanel.Size = new System.Drawing.Size(765, 765);
+            FPhotosPanel.TabIndex = 88;
+            FPhotosPanel.Visible = false;
+            // 
+            // ClosePFbutton
+            // 
+            ClosePFbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ClosePFbutton.FlatAppearance.BorderSize = 0;
+            ClosePFbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ClosePFbutton.Image = (System.Drawing.Image)resources.GetObject("ClosePFbutton.Image");
+            ClosePFbutton.Location = new System.Drawing.Point(716, 0);
+            ClosePFbutton.Name = "ClosePFbutton";
+            ClosePFbutton.Size = new System.Drawing.Size(49, 63);
+            ClosePFbutton.TabIndex = 57;
+            ClosePFbutton.UseVisualStyleBackColor = true;
+            ClosePFbutton.Click += ClosePFbutton_Click;
+            // 
+            // button4
+            // 
+            button4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button4.Image = (System.Drawing.Image)resources.GetObject("button4.Image");
+            button4.Location = new System.Drawing.Point(1278, -6);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(49, 63);
+            button4.TabIndex = 55;
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // PhotosFlowLayoutPanel
+            // 
+            PhotosFlowLayoutPanel.BackColor = System.Drawing.Color.White;
+            PhotosFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            PhotosFlowLayoutPanel.Location = new System.Drawing.Point(0, 52);
+            PhotosFlowLayoutPanel.Name = "PhotosFlowLayoutPanel";
+            PhotosFlowLayoutPanel.Size = new System.Drawing.Size(765, 713);
+            PhotosFlowLayoutPanel.TabIndex = 89;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -2205,6 +2329,7 @@
             Controls.Add(HeaderPanel);
             Controls.Add(FViewDetailspanel);
             Controls.Add(Photopanel);
+            Controls.Add(FPhotosPanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "Admin";
@@ -2231,6 +2356,7 @@
             FProPicPanel.ResumeLayout(false);
             FProPicPanel.PerformLayout();
             VFilespanel.ResumeLayout(false);
+            VFilespanel.PerformLayout();
             NotePanel.ResumeLayout(false);
             NotePanel.PerformLayout();
             Filespanel.ResumeLayout(false);
@@ -2250,6 +2376,7 @@
             File1panel.PerformLayout();
             Photopanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Photobox).EndInit();
+            FPhotosPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -2260,7 +2387,7 @@
         private System.Windows.Forms.Label label107;
         private System.Windows.Forms.Button NotiCloseButton;
         private System.Windows.Forms.Label label105;
-        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.Label NotifiTitle;
         private System.Windows.Forms.Button NotifyButton;
         private System.Windows.Forms.Panel DashboardPanel2;
         private System.Windows.Forms.Button LButton;
@@ -2337,7 +2464,7 @@
         private System.Windows.Forms.Label FIFnametext;
         private System.Windows.Forms.Label FIFnamelabel;
         private System.Windows.Forms.Button FIEditButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label FItitle;
         private System.Windows.Forms.Panel FProPicPanel;
         private System.Windows.Forms.Label FILoclabel;
         private System.Windows.Forms.Label FILoctext;
@@ -2345,20 +2472,20 @@
         private System.Windows.Forms.Label FIRatingstext;
         private System.Windows.Forms.Label FIFnameTitle;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label FIdeletetext;
+        private System.Windows.Forms.Label FIdeletelabel;
+        private System.Windows.Forms.Label FIregisttext;
+        private System.Windows.Forms.Label FIregistlabel;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label FIStatuslabel;
         private System.Windows.Forms.Button FIStatus;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label FIAppstatuslabel;
         private System.Windows.Forms.Button FIAppStatus;
         private System.Windows.Forms.Button FilesButton;
         private System.Windows.Forms.Panel VFilespanel;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label Allfiles;
+        private System.Windows.Forms.Label Reason;
         private System.Windows.Forms.Button Filesubmitbutton;
         private System.Windows.Forms.TableLayoutPanel Filespanel;
         private System.Windows.Forms.Panel File7panel;
@@ -2404,5 +2531,11 @@
         private System.Windows.Forms.Panel Photopanel;
         private System.Windows.Forms.Button Photoclose;
         private System.Windows.Forms.PictureBox Photobox;
+        private System.Windows.Forms.Label FISpecific;
+        private System.Windows.Forms.Label FISpecificlabel;
+        private System.Windows.Forms.Panel FPhotosPanel;
+        private System.Windows.Forms.Button ClosePFbutton;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.FlowLayoutPanel PhotosFlowLayoutPanel;
     }
 }

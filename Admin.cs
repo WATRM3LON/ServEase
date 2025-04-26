@@ -7,11 +7,14 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Image = System.Drawing.Image;
 
 namespace OOP2
 {
@@ -23,7 +26,7 @@ namespace OOP2
         DataSet? ds;
 
         string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OOP2 Database - Copy.accdb";
-        bool Client = true, Facility = false;
+        bool Client = true, Facility = false, File1 = false, File2 = false, File3 = false, File4 = false, File5 = false, File6 = false, File7 = false;
         int clientId, facilityId;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -366,47 +369,38 @@ namespace OOP2
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
                     myConn.Open();
-
-                    string sql = "SELECT [First Name], [Last Name], [Birth Date], Sex, [Contact Number], Location, [Email Address], Password, Status, [Approval Status], [Date Registered], [Date Deleted] FROM [Admin (Service Facilities)] WHERE Facility_ID = ?";
+                    string sql = "SELECT [Email Address], [Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Status], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], [Date Registered], Ratings, [Approval Status], [Date Deleted] FROM [Admin (Service Facilities)] WHERE [Facility_ID] = ?";
 
                     using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                     {
-                        cmd.Parameters.AddWithValue("?", clientId);
+                        cmd.Parameters.AddWithValue("?", Facility_ID);
 
                         using (OleDbDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                string CFName = reader["First Name"].ToString();
-                                string CLName = reader["Last Name"].ToString();
-                                string emailaddress = reader["Email Address"].ToString();
-                                DateTime Birthdate = reader.IsDBNull(reader.GetOrdinal("Birth Date")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Birth Date"));
-                                string formattedBirthdate = Birthdate == DateTime.MinValue ? " " : Birthdate.ToString("dd MMMM yyyy");
-                                string Sex = reader["Sex"].ToString();
-                                string Password = reader["Password"].ToString();
-                                string ContactNumber = reader["Contact Number"].ToString();
-                                string Appstatus = reader["Contact Number"].ToString();
-                                string LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? " " : reader["Location"].ToString();
+                                FIEmailtext.Text = reader["Email Address"].ToString();
+                                FIFnameTitle.Text = reader["Facility Name"].ToString();
+                                string FName = reader["Owner First Name"].ToString();
+                                string LName = reader["Owner Last Name"].ToString();
+                                FIFnametext.Text = Fname + " " + Lname;
+                                DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                                DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                                string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
+                                FIWorhourstext.Text = formattedWorHours;
+                                FIWordaystext.Text = reader["Working Days"].ToString();
+                                FICnumbertext.Text = reader["Contact Number"].ToString();
+                                FILoctext.Text = reader.IsDBNull(reader.GetOrdinal("Facility Location")) ? " " : reader["Facility Location"].ToString();
+                                FISerCattext.Text = reader["Service Category"].ToString();
+                                FISpecific.Text = reader["Specific Category"].ToString();
+                                string AppStatus = reader["Approval Status"].ToString();
                                 string Status = reader["Status"].ToString();
                                 DateTime dateregist = reader.IsDBNull(reader.GetOrdinal("Date Registered")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Registered"));
                                 string regist = dateregist == DateTime.MinValue ? " " : dateregist.ToString("dd MMMM yyyy");
+                                FIregisttext.Text = regist;
                                 DateTime datedelete = reader.IsDBNull(reader.GetOrdinal("Date Deleted")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Deleted"));
-                                string deleted = datedelete == DateTime.MinValue ? " " : datedelete.ToString("dd MMMM yyyy");
-
-                                PPClientName.Text = ClientNamePI.Text = CFName + CLName;
-                                BirthDatePI.Text = formattedBirthdate; SexPI.Text = Sex; ContactNumberPI.Text = ContactNumber; EmailAddressPI.Text = emailaddress;
-                                LocText.Text = LocationAddress; dateregisttext.Text = regist; datedeletetext.Text = deleted;
-
-
-                                int age;
-                                if (BirthDatePI.Text.Length == 1)
-                                {
-                                    AgePI.Text = " ";
-                                }
-                                else
-                                {
-                                    age = DateTime.Now.Year - Birthdate.Year; AgePI.Text = age.ToString();
-                                }
+                                string delete = datedelete == DateTime.MinValue ? " " : datedelete.ToString("dd MMMM yyyy");
+                                FIdeletetext.Text = delete;
 
                                 if (Status == "Active")
                                 {
@@ -421,17 +415,17 @@ namespace OOP2
                                     FIStatus.ForeColor = Color.Red; FIStatus.Text = Status;
                                 }
 
-                                if (Appstatus == "Approved")
+                                if (AppStatus == "Approved")
                                 {
-                                    FIAppStatus.ForeColor = ColorTranslator.FromHtml("#69e331"); FIAppStatus.Text = Appstatus;
+                                    FIAppStatus.ForeColor = ColorTranslator.FromHtml("#69e331"); FIAppStatus.Text = AppStatus;
                                 }
-                                else if (Status == "Pending")
+                                else if (AppStatus == "Pending")
                                 {
-                                    FIAppStatus.ForeColor = Color.Gold; FIAppStatus.Text = Appstatus;
+                                    FIAppStatus.ForeColor = Color.Gold; FIAppStatus.Text = AppStatus;
                                 }
                                 else
                                 {
-                                    FIAppStatus.ForeColor = Color.Red; FIAppStatus.Text = Appstatus;
+                                    FIAppStatus.ForeColor = Color.Red; FIAppStatus.Text = AppStatus;
                                 }
                             }
                         }
@@ -472,7 +466,7 @@ namespace OOP2
                             }
                         }
                     }
-                    
+
 
                 }
             }
@@ -502,6 +496,7 @@ namespace OOP2
 
         public void ViewDets(int IdClient)
         {
+            InfoGetter();
             CalendarAppointmentPanel.Visible = false; ProfilePanel.Visible = false; HiLabel.Visible = false; WelcomeLabel.Visible = false;
             AccountButton.Visible = true;
             if (Client)
@@ -514,7 +509,7 @@ namespace OOP2
             {
                 FViewDetailspanel.Visible = true;
                 AccountButton.Text = " Facility's Account";
-                InfoGetter();
+                
             }
         }
         private void AccountButton_Click(object sender, EventArgs e)
@@ -639,53 +634,18 @@ namespace OOP2
 
         private void VFilesbutton_Click(object sender, EventArgs e)
         {
+            InfoGetter();
             FViewDetailspanel.Visible = true; AccountButton.Visible = true;
             AccountButton.Text = " Facility's Account";
             VFilesbutton.Visible = false; VFilespanel.Visible = false;
+            File1name.Font = File2name.Font = File3name.Font = File4name.Font = File5name.Font = File6name.Font = File7name.Font = new Font(File1name.Font, FontStyle.Regular); File1name.ForeColor = Color.Black;
+            File1name.ForeColor = File2name.ForeColor = File3name.ForeColor = File4name.ForeColor = File5name.ForeColor = File6name.ForeColor = File7name.ForeColor = Color.Black;
         }
 
         private void FilesButton_Click(object sender, EventArgs e)
         {
             FViewDetailspanel.Visible = false; AccountButton.Visible = false;
             VFilesbutton.Visible = true; VFilespanel.Visible = true;
-
-            using (OleDbConnection myConn = new OleDbConnection(connection))
-            {
-                myConn.Open();
-
-                string getLatestFiles = @"
-                                        SELECT * 
-                                        FROM [Facility Files] 
-                                        WHERE [Uploaded Date] = (
-                                            SELECT MAX([Uploaded Date]) 
-                                            FROM [Facility Files] 
-                                            WHERE Facility_ID = ?
-                                        ) 
-                                        AND Facility_ID = ?
-                                    ";
-
-                using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
-                {
-                    cmd.Parameters.AddWithValue("?", Facility_ID);
-                    cmd.Parameters.AddWithValue("?", Facility_ID);
-
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            if (!reader.IsDBNull(reader.GetOrdinal("Business Registration")))
-                            {
-                                byte[] imageBytes = (byte[])reader["Business Registration"];
-                                using (MemoryStream ms = new MemoryStream(imageBytes))
-                                {
-                                    Photobox.Image = Image.FromStream(ms);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
         }
 
         private void Photoclose_Click(object sender, EventArgs e)
@@ -700,15 +660,15 @@ namespace OOP2
                 myConn.Open();
 
                 string getLatestFiles = @"
-                                        SELECT * 
-                                        FROM [Facility Files] 
-                                        WHERE [Uploaded Date] = (
-                                            SELECT MAX([Uploaded Date]) 
-                                            FROM [Facility Files] 
-                                            WHERE Facility_ID = ?
-                                        ) 
-                                        AND Facility_ID = ?
-                                    ";
+                                SELECT * 
+                                FROM [Facility Files] 
+                                WHERE [Uploaded Date] = (
+                                    SELECT MAX([Uploaded Date]) 
+                                    FROM [Facility Files] 
+                                    WHERE Facility_ID = ?
+                                ) 
+                                AND Facility_ID = ?
+                            ";
 
                 using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
                 {
@@ -726,11 +686,13 @@ namespace OOP2
                                 {
                                     Photobox.Image = Image.FromStream(ms);
                                     Photopanel.Visible = true;
+
                                 }
                             }
                         }
                     }
                 }
+                VFilespanel.SendToBack();
             }
         }
 
@@ -741,15 +703,15 @@ namespace OOP2
                 myConn.Open();
 
                 string getLatestFiles = @"
-                                        SELECT * 
-                                        FROM [Facility Files] 
-                                        WHERE [Uploaded Date] = (
-                                            SELECT MAX([Uploaded Date]) 
-                                            FROM [Facility Files] 
-                                            WHERE Facility_ID = ?
-                                        ) 
-                                        AND Facility_ID = ?
-                                    ";
+                                SELECT * 
+                                FROM [Facility Files] 
+                                WHERE [Uploaded Date] = (
+                                    SELECT MAX([Uploaded Date]) 
+                                    FROM [Facility Files] 
+                                    WHERE Facility_ID = ?
+                                ) 
+                                AND Facility_ID = ?
+                            ";
 
                 using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
                 {
@@ -772,6 +734,7 @@ namespace OOP2
                         }
                     }
                 }
+                VFilespanel.SendToBack();
             }
         }
 
@@ -782,15 +745,15 @@ namespace OOP2
                 myConn.Open();
 
                 string getLatestFiles = @"
-                            SELECT * 
-                            FROM [Facility Files] 
-                            WHERE [Uploaded Date] = (
-                                SELECT MAX([Uploaded Date]) 
-                                FROM [Facility Files] 
-                                WHERE Facility_ID = ?
-                            ) 
-                            AND Facility_ID = ?
-                        ";
+                    SELECT * 
+                    FROM [Facility Files] 
+                    WHERE [Uploaded Date] = (
+                        SELECT MAX([Uploaded Date]) 
+                        FROM [Facility Files] 
+                        WHERE Facility_ID = ?
+                    ) 
+                    AND Facility_ID = ?
+                ";
 
                 using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
                 {
@@ -813,6 +776,7 @@ namespace OOP2
                         }
                     }
                 }
+                VFilespanel.SendToBack();
             }
         }
 
@@ -823,15 +787,15 @@ namespace OOP2
                 myConn.Open();
 
                 string getLatestFiles = @"
-                            SELECT * 
-                            FROM [Facility Files] 
-                            WHERE [Uploaded Date] = (
-                                SELECT MAX([Uploaded Date]) 
-                                FROM [Facility Files] 
-                                WHERE Facility_ID = ?
-                            ) 
-                            AND Facility_ID = ?
-                        ";
+                    SELECT * 
+                    FROM [Facility Files] 
+                    WHERE [Uploaded Date] = (
+                        SELECT MAX([Uploaded Date]) 
+                        FROM [Facility Files] 
+                        WHERE Facility_ID = ?
+                    ) 
+                    AND Facility_ID = ?
+                ";
 
                 using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
                 {
@@ -855,6 +819,7 @@ namespace OOP2
                     }
                 }
             }
+            VFilespanel.SendToBack();
         }
 
         private void File6Fname_Click(object sender, EventArgs e)
@@ -864,15 +829,15 @@ namespace OOP2
                 myConn.Open();
 
                 string getLatestFiles = @"
-                            SELECT * 
-                            FROM [Facility Files] 
-                            WHERE [Uploaded Date] = (
-                                SELECT MAX([Uploaded Date]) 
-                                FROM [Facility Files] 
-                                WHERE Facility_ID = ?
-                            ) 
-                            AND Facility_ID = ?
-                        ";
+                    SELECT * 
+                    FROM [Facility Files] 
+                    WHERE [Uploaded Date] = (
+                        SELECT MAX([Uploaded Date]) 
+                        FROM [Facility Files] 
+                        WHERE Facility_ID = ?
+                    ) 
+                    AND Facility_ID = ?
+                ";
 
                 using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
                 {
@@ -896,6 +861,7 @@ namespace OOP2
                     }
                 }
             }
+            VFilespanel.SendToBack();
         }
 
         private void File7Fname_Click(object sender, EventArgs e)
@@ -905,15 +871,15 @@ namespace OOP2
                 myConn.Open();
 
                 string getLatestFiles = @"
-                            SELECT * 
-                            FROM [Facility Files] 
-                            WHERE [Uploaded Date] = (
-                                SELECT MAX([Uploaded Date]) 
-                                FROM [Facility Files] 
-                                WHERE Facility_ID = ?
-                            ) 
-                            AND Facility_ID = ?
-                        ";
+                    SELECT * 
+                    FROM [Facility Files] 
+                    WHERE [Uploaded Date] = (
+                        SELECT MAX([Uploaded Date]) 
+                        FROM [Facility Files] 
+                        WHERE Facility_ID = ?
+                    ) 
+                    AND Facility_ID = ?
+                ";
 
                 using (OleDbCommand cmd = new OleDbCommand(getLatestFiles, myConn))
                 {
@@ -937,6 +903,275 @@ namespace OOP2
                     }
                 }
             }
+            VFilespanel.SendToBack();
+        }
+
+        private void File1Approved_Click(object sender, EventArgs e)
+        {
+            File1 = true;
+            File1name.Font = new Font(File1name.Font, FontStyle.Bold);
+            File1name.ForeColor = Color.Lime;
+            if (File1 != false && File2 != false && File3 != false && File4 != false && File5 != false && File6 != false && File7 != false)
+            {
+                NotePanel.Visible = false;
+            }
+        }
+
+        private void File1Reject_Click(object sender, EventArgs e)
+        {
+            File1 = false;
+            File1name.Font = new Font(File1name.Font, FontStyle.Bold);
+            File1name.ForeColor = Color.Red;
+            NotePanel.Visible = true;
+        }
+
+        private void File2Approved_Click(object sender, EventArgs e)
+        {
+            File2 = true;
+            File2name.Font = new Font(File2name.Font, FontStyle.Bold);
+            File2name.ForeColor = Color.Lime;
+            if (File1 != false && File2 != false && File3 != false && File4 != false && File5 != false && File6 != false && File7 != false)
+            {
+                NotePanel.Visible = false;
+            }
+        }
+
+        private void File2Reject_Click(object sender, EventArgs e)
+        {
+            File2 = false;
+            File2name.Font = new Font(File2name.Font, FontStyle.Bold);
+            File2name.ForeColor = Color.Red;
+        }
+
+        private void File3Approved_Click(object sender, EventArgs e)
+        {
+            File3 = true;
+            File3name.Font = new Font(File3name.Font, FontStyle.Bold);
+            File3name.ForeColor = Color.Lime;
+            if (File1 != false && File2 != false && File3 != false && File4 != false && File5 != false && File6 != false && File7 != false)
+            {
+                NotePanel.Visible = false;
+            }
+        }
+
+        private void File3Reject_Click(object sender, EventArgs e)
+        {
+            File3 = false;
+            File3name.Font = new Font(File3name.Font, FontStyle.Bold);
+            File3name.ForeColor = Color.Red;
+        }
+
+        private void File4Approved_Click(object sender, EventArgs e)
+        {
+            File4 = true;
+            File4name.Font = new Font(File4name.Font, FontStyle.Bold);
+            File4name.ForeColor = Color.Lime;
+            if (File1 != false && File2 != false && File3 != false && File4 != false && File5 != false && File6 != false && File7 != false)
+            {
+                NotePanel.Visible = false;
+            }
+        }
+
+        private void File4Reject_Click(object sender, EventArgs e)
+        {
+            File4 = false;
+            File4name.Font = new Font(File4name.Font, FontStyle.Bold);
+            File4name.ForeColor = Color.Red; NotePanel.Visible = true;
+        }
+
+        private void File5Approved_Click(object sender, EventArgs e)
+        {
+            File5 = true;
+            File5name.Font = new Font(File5name.Font, FontStyle.Bold);
+            File5name.ForeColor = Color.Lime;
+            if (File1 != false && File2 != false && File3 != false && File4 != false && File5 != false && File6 != false && File7 != false)
+            {
+                NotePanel.Visible = false;
+            }
+        }
+
+        private void File5Reject_Click(object sender, EventArgs e)
+        {
+            File5 = false;
+            File5name.Font = new Font(File5name.Font, FontStyle.Bold);
+            File5name.ForeColor = Color.Red; NotePanel.Visible = true;
+        }
+
+        private void File6Approved_Click(object sender, EventArgs e)
+        {
+            File6 = true;
+            File6name.Font = new Font(File6name.Font, FontStyle.Bold);
+            File6name.ForeColor = Color.Lime;
+            if (File1 != false && File2 != false && File3 != false && File4 != false && File5 != false && File6 != false && File7 != false)
+            {
+                NotePanel.Visible = false;
+            }
+        }
+
+        private void File6Reject_Click(object sender, EventArgs e)
+        {
+            File6 = false;
+            File6name.Font = new Font(File6name.Font, FontStyle.Bold);
+            File6name.ForeColor = Color.Red; NotePanel.Visible = true;
+        }
+
+        private void File7Approved_Click(object sender, EventArgs e)
+        {
+            File7 = true;
+            File7name.Font = new Font(File7name.Font, FontStyle.Bold);
+            File7name.ForeColor = Color.Lime;
+            if (File1 != false && File2 != false && File3 != false && File4 != false && File5 != false && File6 != false && File7 != false)
+            {
+                NotePanel.Visible = false;
+            }
+        }
+
+        private void File7Reject_Click(object sender, EventArgs e)
+        {
+            File7 = false;
+            File7name.Font = new Font(File7name.Font, FontStyle.Bold);
+            File7name.ForeColor = Color.Red; NotePanel.Visible = true;
+        }
+
+        private void ClosePFbutton_Click(object sender, EventArgs e)
+        {
+            FPhotosPanel.Visible = false;
+        }
+
+        private void File3Fname_Click(object sender, EventArgs e)
+        {
+            PhotosFlowLayoutPanel.Controls.Clear();
+            FPhotosPanel.Visible = true;
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getLatestDateQuery = "SELECT MAX([Uploaded Date]) FROM [Facility Files] WHERE Facility_ID = ?";
+                DateTime? latestUploadDate = null;
+
+                using (OleDbCommand latestDateCmd = new OleDbCommand(getLatestDateQuery, myConn))
+                {
+                    latestDateCmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    object result = latestDateCmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        latestUploadDate = Convert.ToDateTime(result);
+                    }
+                }
+
+                if (latestUploadDate == null)
+                {
+                    MessageBox.Show("No uploaded facility files found.");
+                    return;
+                }
+                string getPhotos = "SELECT Photos FROM [Facility Photos] WHERE Facility_ID = ? AND [Uploaded Date] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(getPhotos, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+                    cmd.Parameters.AddWithValue("?", latestUploadDate);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                byte[] photoData = (byte[])reader["Photos"];
+                                using (MemoryStream ms = new MemoryStream(photoData))
+                                {
+                                    PictureBox pic = new PictureBox();
+                                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+                                    pic.Image = Image.FromStream(ms);
+                                    pic.Width = 200;
+                                    pic.Height = 200;
+                                    pic.Margin = new Padding(10);
+                                    pic.Cursor = Cursors.Hand;
+
+                                    PhotosFlowLayoutPanel.Controls.Add(pic);
+                                }
+                            }
+                        }
+                    }
+                }
+                VFilespanel.SendToBack();
+            }
+        }
+
+        private void ConfirmButton_Click(object sender, EventArgs e)
+        {
+            Reason.Visible = false;
+            if (File1 == false ||  File2 == false || File3 == false || File4 == false || File5 == false || File6 == false || File7 == false)
+            {
+                if (Reasontext.Text.Length == 0)
+                {
+                    Reason.Visible = true;
+                    return;
+                }
+                else
+                {
+                    using (OleDbConnection myConn = new OleDbConnection(connection))
+                    {
+                        myConn.Open();
+
+                        string sql = "UPDATE [Service Facilities] SET [Approval Status] = ? WHERE [Facility_ID] = ?";
+
+                        using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                        {
+                            cmd.Parameters.AddWithValue("?", "Rejected");
+                            cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        string admin = "UPDATE [Admin (Service Facilities)] SET [Approval Status] = ? WHERE [Facility_ID] = ?";
+
+                        using (OleDbCommand cmd = new OleDbCommand(admin, myConn))
+                        {
+                            cmd.Parameters.AddWithValue("?", "Rejected");
+                            cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        string files = "UPDATE [Facility Files] SET [Note] = ? WHERE [Facility_ID] = ?";
+
+                        using (OleDbCommand cmd = new OleDbCommand(files, myConn))
+                        {
+                            cmd.Parameters.AddWithValue("?", Reasontext.Text);
+                            cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("Facility files rejected!");
+                    return;
+                }
+            }
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "UPDATE [Service Facilities] SET [Approval Status] = ? WHERE [Facility_ID] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", "Approved");
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    cmd.ExecuteNonQuery();
+                }
+                string admin = "UPDATE [Admin (Service Facilities)] SET [Approval Status] = ? WHERE [Facility_ID] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(admin, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", "Approved");
+                    cmd.Parameters.AddWithValue("?", Facility_ID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Facility files approved successfully!");
         }
     }
 }
