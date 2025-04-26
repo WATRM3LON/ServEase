@@ -16,6 +16,8 @@ using OxyPlot.Series;
 using OxyPlot;
 using OxyPlot.WindowsForms;
 using OxyPlot.Axes;
+using OxyPlot.Wpf;
+using System.Collections;
 
 namespace OOP2
 {
@@ -206,7 +208,7 @@ namespace OOP2
             {
                 FIStatus.Text = FIEStatus.Text = AppStatus; FIStatus.ForeColor = FIEStatus.ForeColor = Color.Red;
             }
-            
+
             FISpeCattext.Text = FIESpeCattext.Text = SpeCat;
             FITagstext.Text = FIETagstext.Text = Tags;
             ATCToday.Text = "Today: " + DateTime.Now.ToString("dd, MMMM yyyy");
@@ -335,6 +337,7 @@ namespace OOP2
             //ANALYTICS
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
+            AnalyticsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
@@ -549,12 +552,9 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsPanel.Visible = true; LoadAppointmentPieChart(); LoadRevenueLineChart(); LoadPopularServicesChart();
+            AnalyticsPanel.Visible = true; LoadAppointmentPieChart(); LoadRevenueLineChart(); LoadCustomerGrowthChart(); LoadFacilityAnalyticsSummary();
             AnalyticsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             SButton.BackColor = ColorTranslator.FromHtml("#f0246e");
-            BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold); BFButton.FlatStyle = FlatStyle.System;
-            CGRButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); CGRButton.FlatStyle = FlatStyle.Flat;
-            PSButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); PSButton.FlatStyle = FlatStyle.Flat;
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
@@ -583,9 +583,10 @@ namespace OOP2
         {
             AnalyticsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             SButton.BackColor = ColorTranslator.FromHtml("#f0246e");
-            BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
-            CGRButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold); CGRButton.FlatStyle = FlatStyle.System;
-            PSButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); PSButton.FlatStyle = FlatStyle.Flat;
+            BFButton.FlatStyle = FlatStyle.System; BFButton.BackColor = Color.White;
+            CGRButton.FlatStyle = FlatStyle.System; CGRButton.BackColor = ColorTranslator.FromHtml("#ed82a9");
+            PSButton.FlatStyle = FlatStyle.System; PSButton.BackColor = Color.White;
+            LoadCustomerGrowthChart();
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -602,9 +603,29 @@ namespace OOP2
         {
             AnalyticsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             SButton.BackColor = ColorTranslator.FromHtml("#f0246e");
-            BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
-            CGRButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); CGRButton.FlatStyle = FlatStyle.Flat;
-            PSButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold); PSButton.FlatStyle = FlatStyle.System;
+            BFButton.FlatStyle = FlatStyle.System; BFButton.BackColor = Color.White;
+            CGRButton.FlatStyle = FlatStyle.System; CGRButton.BackColor = Color.White;
+            PSButton.FlatStyle = FlatStyle.System; PSButton.BackColor = ColorTranslator.FromHtml("#ed82a9");
+            LoadPopularServicesChart();
+            //SETTINGS
+            SettingsPanel.Visible = false;
+            SettingsButton.BackColor = Color.White;
+            StButton.BackColor = Color.White;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+        }
+        private void BFButton_Click(object sender, EventArgs e)
+        {
+            AnalyticsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
+            SButton.BackColor = ColorTranslator.FromHtml("#f0246e");
+            BFButton.FlatStyle = FlatStyle.System; BFButton.BackColor = ColorTranslator.FromHtml("#ed82a9");
+            CGRButton.FlatStyle = FlatStyle.System; CGRButton.BackColor = Color.White;
+            PSButton.FlatStyle = FlatStyle.System; PSButton.BackColor = Color.White;
+            LoadPopularTimeslotsChart();
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -646,9 +667,7 @@ namespace OOP2
             //ANALYTICS
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
-            BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
-            CGRButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); CGRButton.FlatStyle = FlatStyle.Flat;
-            PSButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); PSButton.FlatStyle = FlatStyle.Flat;
+            AnalyticsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = true;
             ProfileButton.BackColor = ColorTranslator.FromHtml("#f0246e");
@@ -730,9 +749,6 @@ namespace OOP2
             //ANALYTICS
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
-            BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
-            CGRButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); CGRButton.FlatStyle = FlatStyle.Flat;
-            PSButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); PSButton.FlatStyle = FlatStyle.Flat;
             //PROFILE
             ProfilePanel.Visible = true;
             ProfileButton.BackColor = ColorTranslator.FromHtml("#f0246e");
@@ -783,9 +799,7 @@ namespace OOP2
             //ANALYTICS
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
-            BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
-            CGRButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); CGRButton.FlatStyle = FlatStyle.Flat;
-            PSButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); PSButton.FlatStyle = FlatStyle.Flat;
+            AnalyticsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = true;
             ProfileButton.BackColor = ColorTranslator.FromHtml("#f0246e");
@@ -835,9 +849,7 @@ namespace OOP2
             //ANALYTICS
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
-            BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
-            CGRButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); CGRButton.FlatStyle = FlatStyle.Flat;
-            PSButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); PSButton.FlatStyle = FlatStyle.Flat;
+            AnalyticsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
@@ -2630,7 +2642,7 @@ namespace OOP2
                 MessageBox.Show("Facility ID is not valid.");
                 return;
             }
-            if(File1Fname.Text != "No file uploaded." && File2Fname.Text != "No file uploaded." && File3Fname.Text != "No file uploaded." && File4Fname.Text != "No file uploaded." && File5Fname.Text != "No file uploaded." && File6Fname.Text != "No file uploaded." && File7Fname.Text != "No file uploaded.")
+            if (File1Fname.Text != "No file uploaded." && File2Fname.Text != "No file uploaded." && File3Fname.Text != "No file uploaded." && File4Fname.Text != "No file uploaded." && File5Fname.Text != "No file uploaded." && File6Fname.Text != "No file uploaded." && File7Fname.Text != "No file uploaded.")
             {
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
@@ -2659,25 +2671,31 @@ namespace OOP2
             }
             else
             {
-                if(File1Fname.Text == "No file uploaded.")
+                if (File1Fname.Text == "No file uploaded.")
                 {
                     File1button.BackColor = Color.MistyRose; File1button.ForeColor = Color.Red;
-                }else if (File2Fname.Text == "No file uploaded.")
+                }
+                else if (File2Fname.Text == "No file uploaded.")
                 {
                     File2button.BackColor = Color.MistyRose; File2button.ForeColor = Color.Red;
-                }else if (File3Fname.Text == "No file uploaded.")
+                }
+                else if (File3Fname.Text == "No file uploaded.")
                 {
                     File3button.BackColor = Color.MistyRose; File3button.ForeColor = Color.Red;
-                }else if (File4Fname.Text == "No file uploaded.")
+                }
+                else if (File4Fname.Text == "No file uploaded.")
                 {
                     File4button.BackColor = Color.MistyRose; File4button.ForeColor = Color.Red;
-                }else if (File5Fname.Text == "No file uploaded.")
+                }
+                else if (File5Fname.Text == "No file uploaded.")
                 {
                     File5button.BackColor = Color.MistyRose; File5button.ForeColor = Color.Red;
-                }else if (File6Fname.Text == "No file uploaded.")
+                }
+                else if (File6Fname.Text == "No file uploaded.")
                 {
                     File6button.BackColor = Color.MistyRose; File6button.ForeColor = Color.Red;
-                }else if (File7Fname.Text == "No file uploaded.")
+                }
+                else if (File7Fname.Text == "No file uploaded.")
                 {
                     File7button.BackColor = Color.MistyRose; File7button.ForeColor = Color.Red;
                 }
@@ -2718,15 +2736,15 @@ namespace OOP2
         {
             Dictionary<string, int> appointmentStatusCounts = GetAppointmentStatusCounts(FacilityiId);
 
-            PlotModel pieModel = new PlotModel {};
+            PlotModel pieModel = new PlotModel { };
             var pieSeries = new PieSeries
             {
                 StrokeThickness = 1.5,
-                InsideLabelPosition = 0.9,
+                InsideLabelPosition = 0.8,
                 InsideLabelFormat = "{1}: {0}",
                 AngleSpan = 360,
                 StartAngle = 0,
-                FontSize = 10, 
+                FontSize = 10,
                 InsideLabelColor = OxyColors.White,
             };
 
@@ -2757,7 +2775,7 @@ namespace OOP2
         {
             var revenuePerDay = new Dictionary<DateTime, double>();
 
-            string query = "SELECT [Appointment Date], SUM([Price]) AS Revenue " +
+            string query = "SELECT [Appointment Date], SUM([Estimated Price]) AS Revenue " +
                            "FROM Appointments WHERE [Facility_ID] = ? AND [Appointment Status] = 'Completed' " +
                            "GROUP BY [Appointment Date] ORDER BY [Appointment Date]";
 
@@ -2797,14 +2815,18 @@ namespace OOP2
                 IntervalType = DateTimeIntervalType.Days,
                 MinorIntervalType = DateTimeIntervalType.Days,
                 IsZoomEnabled = false,
-                IsPanEnabled = false
+                IsPanEnabled = false,
+                MinimumPadding = 0.2,
+                MaximumPadding = 0.2,
+                AbsoluteMinimum = 0
             };
 
             var yAxis = new LinearAxis
             {
                 Position = AxisPosition.Left,
                 Title = "Revenue (₱)",
-                MinimumPadding = 0,
+                MinimumPadding = 0.2,
+                MaximumPadding = 0.2,
                 AbsoluteMinimum = 0
             };
 
@@ -2816,7 +2838,7 @@ namespace OOP2
                 MarkerType = MarkerType.Circle,
                 MarkerSize = 4,
                 MarkerStroke = OxyColor.FromRgb(240, 36, 110),
-                Color = OxyColor.FromRgb(237, 121, 163),
+                Color = OxyColor.FromRgb(240, 36, 110),
                 StrokeThickness = 2
             };
 
@@ -2834,14 +2856,16 @@ namespace OOP2
             var serviceCounts = new Dictionary<string, int>();
 
             string query = @"
-                        SELECT fs.[Service Name], COUNT(*) AS BookingCount
-                        FROM ((Appointments a
-                        INNER JOIN [Appointment Services] aps ON a.[Appointment_ID] = aps.[Appointment_ID])
-                        INNER JOIN [Facility Services] fs ON aps.[Service_ID] = fs.[Service_ID])
-                        WHERE a.[Facility_ID] = ? AND a.[Appointment Status] = 'Completed'
-                        GROUP BY fs.[Service Name]
-                        ORDER BY BookingCount DESC";
-
+                    SELECT [Facility Services].[Service Name], COUNT(*) AS BookingCount
+                    FROM [Facility Services]
+                    INNER JOIN (Appointments 
+                    INNER JOIN [Appointment Services] 
+                    ON Appointments.Appointment_ID = [Appointment Services].Appointment_ID)
+                    ON [Facility Services].Service_ID = [Appointment Services].Service_ID
+                    WHERE Appointments.[Facility_ID] = ? 
+                    AND Appointments.[Appointment Status] = ?
+                    GROUP BY [Facility Services].[Service Name]
+                    ORDER BY BookingCount DESC";
 
             using (OleDbConnection conn = new OleDbConnection(connection))
             {
@@ -2849,6 +2873,7 @@ namespace OOP2
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("?", facilityId);
+                    cmd.Parameters.AddWithValue("?", "Completed");
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -2882,7 +2907,8 @@ namespace OOP2
             {
                 Position = AxisPosition.Bottom,
                 Title = "Number of Bookings",
-                MinimumPadding = 0,
+                MinimumPadding = 0.2,
+                MaximumPadding = 0.2,
                 AbsoluteMinimum = 0
             };
 
@@ -2902,6 +2928,202 @@ namespace OOP2
             model.Series.Add(series);
 
             Analytics1.Model = model;
+        }
+
+        void LoadPopularTimeslotsChart()
+        {
+            Analytics1Title.Text = "Popular Timeslots";
+
+            PlotModel model = new PlotModel { };
+
+            var lineSeries = new LineSeries
+            {
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.White,
+                MarkerFill = OxyColors.SkyBlue,
+                StrokeThickness = 2,
+                Color = OxyColors.DodgerBlue,
+                CanTrackerInterpolatePoints = false
+            };
+
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                GapWidth = 0.5
+            };
+
+            var valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                MinimumPadding = 0.2,
+                MaximumPadding = 0.2,
+                AbsoluteMinimum = 0
+            };
+
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                string query = @"SELECT FORMAT([Appointment Date], 'hh AM/PM') AS HourSlot, COUNT(*) AS BookingCount
+                         FROM [Appointments]
+                         WHERE [Facility_ID] = ? AND [Appointment Status] = 'Completed'
+                         GROUP BY FORMAT([Appointment Date], 'hh AM/PM')
+                         ORDER BY MIN([Appointment Date]) ASC";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", FacilityiId);
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int index = 0;
+                        while (reader.Read())
+                        {
+                            string hourSlot = reader["HourSlot"].ToString();
+                            double bookingCount = Convert.ToDouble(reader["BookingCount"]);
+
+                            lineSeries.Points.Add(new DataPoint(index, bookingCount));
+                            categoryAxis.Labels.Add(hourSlot);
+                            index++;
+                        }
+                    }
+                }
+            }
+
+            model.Series.Add(lineSeries);
+            model.Axes.Add(categoryAxis);
+            model.Axes.Add(valueAxis);
+
+            Analytics1.Model = model;
+        }
+
+
+
+        private void LoadCustomerGrowthChart()
+        {
+            Analytics1Title.Text = "Customer Growth";
+            PlotModel model = new PlotModel { Title = "Customer Growth" };
+
+            LineSeries lineSeries = new LineSeries
+            {
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.Blue,
+                Color = OxyColors.Blue,
+                StrokeThickness = 2,
+            };
+
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                string query = @"
+                            SELECT [Appointment Date], COUNT(*) AS UniqueClients
+                            FROM (
+                                SELECT [Appointment Date], [Client_ID]
+                                FROM Appointments
+                                WHERE [Facility_ID] = ?
+                                GROUP BY [Appointment Date], [Client_ID]
+                            ) AS Subquery
+                            GROUP BY [Appointment Date]
+                            ORDER BY [Appointment Date];
+                            ";
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", FacilityiId);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DateTime appointmentDate = Convert.ToDateTime(reader["Appointment Date"]);
+                            int uniqueClients = Convert.ToInt32(reader["UniqueClients"]);
+
+                            lineSeries.Points.Add(DateTimeAxis.CreateDataPoint(appointmentDate, uniqueClients));
+                        }
+                    }
+                }
+            }
+
+            model.Series.Add(lineSeries);
+
+            model.Axes.Add(new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                StringFormat = "MMM dd",
+                Title = "Date",
+                IntervalType = DateTimeIntervalType.Days,
+                MinorIntervalType = DateTimeIntervalType.Days,
+                IsZoomEnabled = false,
+                IsPanEnabled = false,
+                MinimumPadding = 0.2,
+                MaximumPadding = 0.2,
+                AbsoluteMinimum = 0
+            });
+
+            model.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Unique Clients",
+                MinimumPadding = 0.2,
+                MaximumPadding = 0.2,
+                AbsoluteMinimum = 0
+            });
+
+            Analytics1.Model = model;
+        }
+
+        void LoadFacilityAnalyticsSummary()
+        {
+            decimal totalRevenue = 0;
+            int totalCustomers = 0;
+            int totalAppointments = 0;
+
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                string revenueQuery = @"SELECT SUM([Estimated Price]) FROM [Appointments] WHERE [Facility_ID] = ? AND [Appointment Status] = ?";
+                using (OleDbCommand cmd = new OleDbCommand(revenueQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", FacilityiId);
+                    cmd.Parameters.AddWithValue("?", "Completed");
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                        totalRevenue = Convert.ToDecimal(result);
+                }
+
+                string customerQuery = @"
+                                    SELECT COUNT(*) AS UniqueClients
+                                    FROM (
+                                        SELECT [Client_ID]
+                                        FROM [Appointments]
+                                        WHERE [Facility_ID] = ? 
+                                        AND [Appointment Status] = ?
+                                        GROUP BY [Client_ID]
+                                    ) AS UniqueClientsTable";
+
+                using (OleDbCommand cmd = new OleDbCommand(customerQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", FacilityiId);
+                    cmd.Parameters.AddWithValue("?", "Completed");
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                        totalCustomers = Convert.ToInt32(result);
+                }
+
+                string appointmentQuery = @"SELECT COUNT(*) FROM [Appointments] WHERE [Facility_ID] = ?";
+                using (OleDbCommand cmd = new OleDbCommand(appointmentQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", FacilityiId);
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                        totalAppointments = Convert.ToInt32(result);
+                }
+            }
+
+            TotalRevenutext.Text = $"₱ {totalRevenue:N2}";
+            TotalCGtext.Text = $"{totalCustomers}";
+            TotalAppstext.Text = $"{totalAppointments}";
         }
 
     }

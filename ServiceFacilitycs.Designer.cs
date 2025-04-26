@@ -419,6 +419,12 @@
             File1button = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             AnalyticsPanel = new System.Windows.Forms.Panel();
+            TotalAppstext = new System.Windows.Forms.Label();
+            TotalApps = new System.Windows.Forms.Label();
+            TotalCGtext = new System.Windows.Forms.Label();
+            TotalRevenutext = new System.Windows.Forms.Label();
+            TotalCG = new System.Windows.Forms.Label();
+            TotalRevenue = new System.Windows.Forms.Label();
             Analytics1Title = new System.Windows.Forms.Label();
             label39 = new System.Windows.Forms.Label();
             BFButton = new System.Windows.Forms.Button();
@@ -5941,6 +5947,12 @@
             // 
             AnalyticsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             AnalyticsPanel.BackColor = System.Drawing.Color.Transparent;
+            AnalyticsPanel.Controls.Add(TotalAppstext);
+            AnalyticsPanel.Controls.Add(TotalApps);
+            AnalyticsPanel.Controls.Add(TotalCGtext);
+            AnalyticsPanel.Controls.Add(TotalRevenutext);
+            AnalyticsPanel.Controls.Add(TotalCG);
+            AnalyticsPanel.Controls.Add(TotalRevenue);
             AnalyticsPanel.Controls.Add(Analytics1Title);
             AnalyticsPanel.Controls.Add(label39);
             AnalyticsPanel.Controls.Add(BFButton);
@@ -5957,11 +5969,74 @@
             AnalyticsPanel.Size = new System.Drawing.Size(893, 811);
             AnalyticsPanel.TabIndex = 74;
             // 
+            // TotalAppstext
+            // 
+            TotalAppstext.AutoEllipsis = true;
+            TotalAppstext.AutoSize = true;
+            TotalAppstext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            TotalAppstext.Location = new System.Drawing.Point(657, 655);
+            TotalAppstext.Name = "TotalAppstext";
+            TotalAppstext.Size = new System.Drawing.Size(112, 31);
+            TotalAppstext.TabIndex = 75;
+            TotalAppstext.Text = "P1500.00";
+            // 
+            // TotalApps
+            // 
+            TotalApps.AutoSize = true;
+            TotalApps.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            TotalApps.Location = new System.Drawing.Point(636, 623);
+            TotalApps.Name = "TotalApps";
+            TotalApps.Size = new System.Drawing.Size(163, 23);
+            TotalApps.TabIndex = 74;
+            TotalApps.Text = "Total Appointments:";
+            // 
+            // TotalCGtext
+            // 
+            TotalCGtext.AutoEllipsis = true;
+            TotalCGtext.AutoSize = true;
+            TotalCGtext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            TotalCGtext.Location = new System.Drawing.Point(657, 580);
+            TotalCGtext.Name = "TotalCGtext";
+            TotalCGtext.Size = new System.Drawing.Size(112, 31);
+            TotalCGtext.TabIndex = 73;
+            TotalCGtext.Text = "P1500.00";
+            // 
+            // TotalRevenutext
+            // 
+            TotalRevenutext.AutoEllipsis = true;
+            TotalRevenutext.AutoSize = true;
+            TotalRevenutext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            TotalRevenutext.Location = new System.Drawing.Point(657, 503);
+            TotalRevenutext.Name = "TotalRevenutext";
+            TotalRevenutext.Size = new System.Drawing.Size(112, 31);
+            TotalRevenutext.TabIndex = 72;
+            TotalRevenutext.Text = "P1500.00";
+            // 
+            // TotalCG
+            // 
+            TotalCG.AutoSize = true;
+            TotalCG.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            TotalCG.Location = new System.Drawing.Point(636, 548);
+            TotalCG.Name = "TotalCG";
+            TotalCG.Size = new System.Drawing.Size(196, 23);
+            TotalCG.TabIndex = 71;
+            TotalCG.Text = "Total Customer Growth: ";
+            // 
+            // TotalRevenue
+            // 
+            TotalRevenue.AutoSize = true;
+            TotalRevenue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            TotalRevenue.Location = new System.Drawing.Point(636, 467);
+            TotalRevenue.Name = "TotalRevenue";
+            TotalRevenue.Size = new System.Drawing.Size(127, 23);
+            TotalRevenue.TabIndex = 70;
+            TotalRevenue.Text = "Total Revenue: ";
+            // 
             // Analytics1Title
             // 
             Analytics1Title.AutoSize = true;
             Analytics1Title.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Analytics1Title.Location = new System.Drawing.Point(185, 37);
+            Analytics1Title.Location = new System.Drawing.Point(185, 28);
             Analytics1Title.Name = "Analytics1Title";
             Analytics1Title.Size = new System.Drawing.Size(183, 25);
             Analytics1Title.TabIndex = 69;
@@ -5971,7 +6046,7 @@
             // 
             label39.AutoSize = true;
             label39.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label39.Location = new System.Drawing.Point(709, 423);
+            label39.Location = new System.Drawing.Point(700, 705);
             label39.Name = "label39";
             label39.Size = new System.Drawing.Size(108, 23);
             label39.TabIndex = 68;
@@ -5982,42 +6057,45 @@
             BFButton.BackColor = System.Drawing.Color.White;
             BFButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             BFButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            BFButton.Location = new System.Drawing.Point(353, 70);
+            BFButton.Location = new System.Drawing.Point(353, 59);
             BFButton.Name = "BFButton";
-            BFButton.Size = new System.Drawing.Size(158, 29);
+            BFButton.Size = new System.Drawing.Size(158, 31);
             BFButton.TabIndex = 67;
             BFButton.Text = "Popular Timeslots";
             BFButton.UseVisualStyleBackColor = false;
+            BFButton.Click += BFButton_Click;
             // 
             // PSButton
             // 
             PSButton.BackColor = System.Drawing.Color.White;
             PSButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             PSButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            PSButton.Location = new System.Drawing.Point(189, 70);
+            PSButton.Location = new System.Drawing.Point(189, 59);
             PSButton.Name = "PSButton";
-            PSButton.Size = new System.Drawing.Size(158, 29);
+            PSButton.Size = new System.Drawing.Size(158, 31);
             PSButton.TabIndex = 66;
             PSButton.Text = "Popular Serivces";
             PSButton.UseVisualStyleBackColor = false;
+            PSButton.Click += PSButton_Click;
             // 
             // CGRButton
             // 
-            CGRButton.BackColor = System.Drawing.Color.White;
-            CGRButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            CGRButton.BackColor = System.Drawing.Color.FromArgb(237, 130, 169);
             CGRButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            CGRButton.Location = new System.Drawing.Point(25, 70);
+            CGRButton.ForeColor = System.Drawing.Color.Black;
+            CGRButton.Location = new System.Drawing.Point(25, 59);
             CGRButton.Name = "CGRButton";
-            CGRButton.Size = new System.Drawing.Size(158, 29);
+            CGRButton.Size = new System.Drawing.Size(158, 31);
             CGRButton.TabIndex = 65;
             CGRButton.Text = "Customer Growth";
             CGRButton.UseVisualStyleBackColor = false;
+            CGRButton.Click += CGRButton_Click;
             // 
             // Analytics2Title
             // 
             Analytics2Title.AutoSize = true;
             Analytics2Title.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            Analytics2Title.Location = new System.Drawing.Point(198, 416);
+            Analytics2Title.Location = new System.Drawing.Point(199, 416);
             Analytics2Title.Name = "Analytics2Title";
             Analytics2Title.Size = new System.Drawing.Size(230, 25);
             Analytics2Title.TabIndex = 64;
@@ -6687,5 +6765,11 @@
         private System.Windows.Forms.Button PSButton;
         private System.Windows.Forms.Button CGRButton;
         private System.Windows.Forms.Label Analytics1Title;
+        private System.Windows.Forms.Label TotalCGtext;
+        private System.Windows.Forms.Label TotalRevenutext;
+        private System.Windows.Forms.Label TotalCG;
+        private System.Windows.Forms.Label TotalRevenue;
+        private System.Windows.Forms.Label TotalAppstext;
+        private System.Windows.Forms.Label TotalApps;
     }
 }
