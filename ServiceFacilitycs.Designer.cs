@@ -51,6 +51,7 @@
             MaximizeButton = new System.Windows.Forms.Button();
             CloseButton = new System.Windows.Forms.Button();
             HeaderPanel = new System.Windows.Forms.Panel();
+            UFilebutton = new System.Windows.Forms.Button();
             EATButton = new System.Windows.Forms.Button();
             ATButton = new System.Windows.Forms.Button();
             EditSOButton = new System.Windows.Forms.Button();
@@ -158,6 +159,7 @@
             AnalyticPannel1 = new System.Windows.Forms.Panel();
             AnalyticPannel2 = new System.Windows.Forms.Panel();
             ProfilePanel = new System.Windows.Forms.Panel();
+            filesbutton = new System.Windows.Forms.Button();
             SOAPanel = new System.Windows.Forms.Panel();
             ATView = new System.Windows.Forms.Button();
             label92 = new System.Windows.Forms.Label();
@@ -389,6 +391,41 @@
             label36 = new System.Windows.Forms.Label();
             label37 = new System.Windows.Forms.Label();
             CAC3 = new System.Windows.Forms.TableLayoutPanel();
+            UploadfilesPanel = new System.Windows.Forms.Panel();
+            Filesubmitbutton = new System.Windows.Forms.Button();
+            Filespanel = new System.Windows.Forms.TableLayoutPanel();
+            File7panel = new System.Windows.Forms.Panel();
+            File7Fname = new System.Windows.Forms.Label();
+            File7name = new System.Windows.Forms.Label();
+            File7button = new System.Windows.Forms.Button();
+            File6panel = new System.Windows.Forms.Panel();
+            File6Fname = new System.Windows.Forms.Label();
+            File6name = new System.Windows.Forms.Label();
+            File6button = new System.Windows.Forms.Button();
+            File5panel = new System.Windows.Forms.Panel();
+            File5Fname = new System.Windows.Forms.Label();
+            File5name = new System.Windows.Forms.Label();
+            File5button = new System.Windows.Forms.Button();
+            File4panel = new System.Windows.Forms.Panel();
+            File4Fname = new System.Windows.Forms.Label();
+            File4name = new System.Windows.Forms.Label();
+            File4button = new System.Windows.Forms.Button();
+            File3panel = new System.Windows.Forms.Panel();
+            File3Fname = new System.Windows.Forms.Label();
+            File3name = new System.Windows.Forms.Label();
+            File3button = new System.Windows.Forms.Button();
+            File2panel = new System.Windows.Forms.Panel();
+            File2Fname = new System.Windows.Forms.Label();
+            File2name = new System.Windows.Forms.Label();
+            File2button = new System.Windows.Forms.Button();
+            File1panel = new System.Windows.Forms.Panel();
+            File1Fname = new System.Windows.Forms.Label();
+            File1name = new System.Windows.Forms.Label();
+            File1button = new System.Windows.Forms.Button();
+            button1 = new System.Windows.Forms.Button();
+            AnalyticsPanel = new System.Windows.Forms.Panel();
+            plotView1 = new OxyPlot.WindowsForms.PlotView();
+            button8 = new System.Windows.Forms.Button();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -471,6 +508,16 @@
             tableLayoutPanel8.SuspendLayout();
             CAC1.SuspendLayout();
             CAC2.SuspendLayout();
+            UploadfilesPanel.SuspendLayout();
+            Filespanel.SuspendLayout();
+            File7panel.SuspendLayout();
+            File6panel.SuspendLayout();
+            File5panel.SuspendLayout();
+            File4panel.SuspendLayout();
+            File3panel.SuspendLayout();
+            File2panel.SuspendLayout();
+            File1panel.SuspendLayout();
+            AnalyticsPanel.SuspendLayout();
             SuspendLayout();
             // 
             // NotifyButton
@@ -822,6 +869,7 @@
             // HeaderPanel
             // 
             HeaderPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            HeaderPanel.Controls.Add(UFilebutton);
             HeaderPanel.Controls.Add(EATButton);
             HeaderPanel.Controls.Add(ATButton);
             HeaderPanel.Controls.Add(EditSOButton);
@@ -836,6 +884,26 @@
             HeaderPanel.Name = "HeaderPanel";
             HeaderPanel.Size = new System.Drawing.Size(964, 100);
             HeaderPanel.TabIndex = 49;
+            // 
+            // UFilebutton
+            // 
+            UFilebutton.BackColor = System.Drawing.Color.Transparent;
+            UFilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            UFilebutton.FlatAppearance.BorderSize = 0;
+            UFilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            UFilebutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            UFilebutton.Image = (System.Drawing.Image)resources.GetObject("UFilebutton.Image");
+            UFilebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            UFilebutton.Location = new System.Drawing.Point(25, 23);
+            UFilebutton.Name = "UFilebutton";
+            UFilebutton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            UFilebutton.Size = new System.Drawing.Size(436, 74);
+            UFilebutton.TabIndex = 74;
+            UFilebutton.Text = "  Upload Facility Files";
+            UFilebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            UFilebutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            UFilebutton.UseVisualStyleBackColor = false;
+            UFilebutton.Click += UFilebutton_Click;
             // 
             // EATButton
             // 
@@ -2186,7 +2254,7 @@
             AnalyticsMenuPanel.Controls.Add(PSButton);
             AnalyticsMenuPanel.Controls.Add(CGRButton);
             AnalyticsMenuPanel.Controls.Add(BFButton);
-            AnalyticsMenuPanel.Location = new System.Drawing.Point(263, 166);
+            AnalyticsMenuPanel.Location = new System.Drawing.Point(-14, -9);
             AnalyticsMenuPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             AnalyticsMenuPanel.Name = "AnalyticsMenuPanel";
             AnalyticsMenuPanel.Size = new System.Drawing.Size(944, 69);
@@ -2252,9 +2320,9 @@
             AnalyticPannel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             AnalyticPannel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("AnalyticPannel1.BackgroundImage");
             AnalyticPannel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            AnalyticPannel1.Location = new System.Drawing.Point(277, 231);
+            AnalyticPannel1.Location = new System.Drawing.Point(1, 64);
             AnalyticPannel1.Name = "AnalyticPannel1";
-            AnalyticPannel1.Size = new System.Drawing.Size(893, 363);
+            AnalyticPannel1.Size = new System.Drawing.Size(890, 363);
             AnalyticPannel1.TabIndex = 31;
             // 
             // AnalyticPannel2
@@ -2263,15 +2331,16 @@
             AnalyticPannel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             AnalyticPannel2.BackgroundImage = (System.Drawing.Image)resources.GetObject("AnalyticPannel2.BackgroundImage");
             AnalyticPannel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            AnalyticPannel2.Location = new System.Drawing.Point(277, 231);
+            AnalyticPannel2.Location = new System.Drawing.Point(1, 64);
             AnalyticPannel2.Name = "AnalyticPannel2";
-            AnalyticPannel2.Size = new System.Drawing.Size(893, 363);
+            AnalyticPannel2.Size = new System.Drawing.Size(892, 363);
             AnalyticPannel2.TabIndex = 60;
             // 
             // ProfilePanel
             // 
             ProfilePanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ProfilePanel.BackColor = System.Drawing.Color.Transparent;
+            ProfilePanel.Controls.Add(filesbutton);
             ProfilePanel.Controls.Add(SOAPanel);
             ProfilePanel.Controls.Add(PIPanel);
             ProfilePanel.Controls.Add(ProPicPanel);
@@ -2279,6 +2348,24 @@
             ProfilePanel.Name = "ProfilePanel";
             ProfilePanel.Size = new System.Drawing.Size(893, 799);
             ProfilePanel.TabIndex = 61;
+            // 
+            // filesbutton
+            // 
+            filesbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            filesbutton.BackColor = System.Drawing.Color.WhiteSmoke;
+            filesbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            filesbutton.FlatAppearance.BorderSize = 0;
+            filesbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            filesbutton.Font = new System.Drawing.Font("Segoe UI", 8F);
+            filesbutton.ForeColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            filesbutton.Location = new System.Drawing.Point(701, 741);
+            filesbutton.Name = "filesbutton";
+            filesbutton.Size = new System.Drawing.Size(161, 46);
+            filesbutton.TabIndex = 40;
+            filesbutton.Text = "Upload Facility Files";
+            filesbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            filesbutton.UseVisualStyleBackColor = false;
+            filesbutton.Click += filesbutton_Click;
             // 
             // SOAPanel
             // 
@@ -5539,12 +5626,434 @@
             CAC3.Size = new System.Drawing.Size(893, 579);
             CAC3.TabIndex = 2;
             // 
+            // UploadfilesPanel
+            // 
+            UploadfilesPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            UploadfilesPanel.BackColor = System.Drawing.Color.Transparent;
+            UploadfilesPanel.Controls.Add(Filesubmitbutton);
+            UploadfilesPanel.Controls.Add(Filespanel);
+            UploadfilesPanel.Controls.Add(button1);
+            UploadfilesPanel.Location = new System.Drawing.Point(277, 165);
+            UploadfilesPanel.Name = "UploadfilesPanel";
+            UploadfilesPanel.Size = new System.Drawing.Size(893, 799);
+            UploadfilesPanel.TabIndex = 73;
+            // 
+            // Filesubmitbutton
+            // 
+            Filesubmitbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Filesubmitbutton.ForeColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            Filesubmitbutton.Location = new System.Drawing.Point(711, 737);
+            Filesubmitbutton.Name = "Filesubmitbutton";
+            Filesubmitbutton.Size = new System.Drawing.Size(143, 43);
+            Filesubmitbutton.TabIndex = 75;
+            Filesubmitbutton.Text = "Submit Files";
+            Filesubmitbutton.UseVisualStyleBackColor = true;
+            Filesubmitbutton.Visible = false;
+            Filesubmitbutton.Click += Filesubmitbutton_Click;
+            // 
+            // Filespanel
+            // 
+            Filespanel.BackColor = System.Drawing.Color.White;
+            Filespanel.ColumnCount = 1;
+            Filespanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            Filespanel.Controls.Add(File7panel, 0, 6);
+            Filespanel.Controls.Add(File6panel, 0, 5);
+            Filespanel.Controls.Add(File5panel, 0, 4);
+            Filespanel.Controls.Add(File4panel, 0, 3);
+            Filespanel.Controls.Add(File3panel, 0, 2);
+            Filespanel.Controls.Add(File2panel, 0, 1);
+            Filespanel.Controls.Add(File1panel, 0, 0);
+            Filespanel.Location = new System.Drawing.Point(11, 52);
+            Filespanel.Name = "Filespanel";
+            Filespanel.RowCount = 7;
+            Filespanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.2857113F));
+            Filespanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.2857151F));
+            Filespanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.2857151F));
+            Filespanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.2857151F));
+            Filespanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.2857151F));
+            Filespanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.2857151F));
+            Filespanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.2857151F));
+            Filespanel.Size = new System.Drawing.Size(871, 650);
+            Filespanel.TabIndex = 41;
+            // 
+            // File7panel
+            // 
+            File7panel.Controls.Add(File7Fname);
+            File7panel.Controls.Add(File7name);
+            File7panel.Controls.Add(File7button);
+            File7panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            File7panel.Location = new System.Drawing.Point(3, 555);
+            File7panel.Name = "File7panel";
+            File7panel.Size = new System.Drawing.Size(865, 92);
+            File7panel.TabIndex = 6;
+            // 
+            // File7Fname
+            // 
+            File7Fname.AutoEllipsis = true;
+            File7Fname.AutoSize = true;
+            File7Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File7Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File7Fname.Location = new System.Drawing.Point(685, 63);
+            File7Fname.Name = "File7Fname";
+            File7Fname.Size = new System.Drawing.Size(110, 17);
+            File7Fname.TabIndex = 77;
+            File7Fname.Text = "No file uploaded.";
+            // 
+            // File7name
+            // 
+            File7name.AutoSize = true;
+            File7name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File7name.Location = new System.Drawing.Point(30, 33);
+            File7name.Name = "File7name";
+            File7name.Size = new System.Drawing.Size(280, 25);
+            File7name.TabIndex = 75;
+            File7name.Text = "7. Insurance or Safety Compliance";
+            // 
+            // File7button
+            // 
+            File7button.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File7button.Location = new System.Drawing.Point(666, 24);
+            File7button.Name = "File7button";
+            File7button.Size = new System.Drawing.Size(143, 39);
+            File7button.TabIndex = 74;
+            File7button.Text = "Upload Here";
+            File7button.UseVisualStyleBackColor = true;
+            File7button.Click += File7button_Click;
+            // 
+            // File6panel
+            // 
+            File6panel.Controls.Add(File6Fname);
+            File6panel.Controls.Add(File6name);
+            File6panel.Controls.Add(File6button);
+            File6panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            File6panel.Location = new System.Drawing.Point(3, 463);
+            File6panel.Name = "File6panel";
+            File6panel.Size = new System.Drawing.Size(865, 86);
+            File6panel.TabIndex = 5;
+            // 
+            // File6Fname
+            // 
+            File6Fname.AutoEllipsis = true;
+            File6Fname.AutoSize = true;
+            File6Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File6Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File6Fname.Location = new System.Drawing.Point(685, 63);
+            File6Fname.Name = "File6Fname";
+            File6Fname.Size = new System.Drawing.Size(110, 17);
+            File6Fname.TabIndex = 77;
+            File6Fname.Text = "No file uploaded.";
+            // 
+            // File6name
+            // 
+            File6name.AutoSize = true;
+            File6name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File6name.Location = new System.Drawing.Point(30, 33);
+            File6name.Name = "File6name";
+            File6name.Size = new System.Drawing.Size(151, 25);
+            File6name.TabIndex = 75;
+            File6name.Text = "6. Tax Documents";
+            // 
+            // File6button
+            // 
+            File6button.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File6button.Location = new System.Drawing.Point(666, 24);
+            File6button.Name = "File6button";
+            File6button.Size = new System.Drawing.Size(143, 39);
+            File6button.TabIndex = 74;
+            File6button.Text = "Upload Here";
+            File6button.UseVisualStyleBackColor = true;
+            File6button.Click += File6button_Click;
+            // 
+            // File5panel
+            // 
+            File5panel.Controls.Add(File5Fname);
+            File5panel.Controls.Add(File5name);
+            File5panel.Controls.Add(File5button);
+            File5panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            File5panel.Location = new System.Drawing.Point(3, 371);
+            File5panel.Name = "File5panel";
+            File5panel.Size = new System.Drawing.Size(865, 86);
+            File5panel.TabIndex = 4;
+            // 
+            // File5Fname
+            // 
+            File5Fname.AutoEllipsis = true;
+            File5Fname.AutoSize = true;
+            File5Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File5Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File5Fname.Location = new System.Drawing.Point(685, 63);
+            File5Fname.Name = "File5Fname";
+            File5Fname.Size = new System.Drawing.Size(110, 17);
+            File5Fname.TabIndex = 77;
+            File5Fname.Text = "No file uploaded.";
+            // 
+            // File5name
+            // 
+            File5name.AutoSize = true;
+            File5name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File5name.Location = new System.Drawing.Point(30, 33);
+            File5name.Name = "File5name";
+            File5name.Size = new System.Drawing.Size(167, 25);
+            File5name.TabIndex = 75;
+            File5name.Text = "5. Proof of Address";
+            // 
+            // File5button
+            // 
+            File5button.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File5button.Location = new System.Drawing.Point(666, 24);
+            File5button.Name = "File5button";
+            File5button.Size = new System.Drawing.Size(143, 39);
+            File5button.TabIndex = 74;
+            File5button.Text = "Upload Here";
+            File5button.UseVisualStyleBackColor = true;
+            File5button.Click += File5button_Click;
+            // 
+            // File4panel
+            // 
+            File4panel.Controls.Add(File4Fname);
+            File4panel.Controls.Add(File4name);
+            File4panel.Controls.Add(File4button);
+            File4panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            File4panel.Location = new System.Drawing.Point(3, 279);
+            File4panel.Name = "File4panel";
+            File4panel.Size = new System.Drawing.Size(865, 86);
+            File4panel.TabIndex = 3;
+            // 
+            // File4Fname
+            // 
+            File4Fname.AutoEllipsis = true;
+            File4Fname.AutoSize = true;
+            File4Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File4Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File4Fname.Location = new System.Drawing.Point(685, 63);
+            File4Fname.Name = "File4Fname";
+            File4Fname.Size = new System.Drawing.Size(110, 17);
+            File4Fname.TabIndex = 77;
+            File4Fname.Text = "No file uploaded.";
+            // 
+            // File4name
+            // 
+            File4name.AutoSize = true;
+            File4name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File4name.Location = new System.Drawing.Point(30, 33);
+            File4name.Name = "File4name";
+            File4name.Size = new System.Drawing.Size(274, 25);
+            File4name.TabIndex = 75;
+            File4name.Text = "4. Service Licenses / Certifications";
+            // 
+            // File4button
+            // 
+            File4button.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File4button.Location = new System.Drawing.Point(666, 24);
+            File4button.Name = "File4button";
+            File4button.Size = new System.Drawing.Size(143, 39);
+            File4button.TabIndex = 74;
+            File4button.Text = "Upload Here";
+            File4button.UseVisualStyleBackColor = true;
+            File4button.Click += File4button_Click;
+            // 
+            // File3panel
+            // 
+            File3panel.Controls.Add(File3Fname);
+            File3panel.Controls.Add(File3name);
+            File3panel.Controls.Add(File3button);
+            File3panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            File3panel.Location = new System.Drawing.Point(3, 187);
+            File3panel.Name = "File3panel";
+            File3panel.Size = new System.Drawing.Size(865, 86);
+            File3panel.TabIndex = 2;
+            // 
+            // File3Fname
+            // 
+            File3Fname.AutoEllipsis = true;
+            File3Fname.AutoSize = true;
+            File3Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File3Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File3Fname.Location = new System.Drawing.Point(684, 63);
+            File3Fname.Name = "File3Fname";
+            File3Fname.Size = new System.Drawing.Size(110, 17);
+            File3Fname.TabIndex = 77;
+            File3Fname.Text = "No file uploaded.";
+            // 
+            // File3name
+            // 
+            File3name.AutoSize = true;
+            File3name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File3name.Location = new System.Drawing.Point(30, 33);
+            File3name.Name = "File3name";
+            File3name.Size = new System.Drawing.Size(144, 25);
+            File3name.TabIndex = 75;
+            File3name.Text = "3. Facility Photos";
+            // 
+            // File3button
+            // 
+            File3button.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File3button.Location = new System.Drawing.Point(666, 24);
+            File3button.Name = "File3button";
+            File3button.Size = new System.Drawing.Size(143, 39);
+            File3button.TabIndex = 74;
+            File3button.Text = "Upload Here";
+            File3button.UseVisualStyleBackColor = true;
+            File3button.Click += File3button_Click;
+            // 
+            // File2panel
+            // 
+            File2panel.Controls.Add(File2Fname);
+            File2panel.Controls.Add(File2name);
+            File2panel.Controls.Add(File2button);
+            File2panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            File2panel.Location = new System.Drawing.Point(3, 95);
+            File2panel.Name = "File2panel";
+            File2panel.Size = new System.Drawing.Size(865, 86);
+            File2panel.TabIndex = 1;
+            // 
+            // File2Fname
+            // 
+            File2Fname.AutoEllipsis = true;
+            File2Fname.AutoSize = true;
+            File2Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File2Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File2Fname.Location = new System.Drawing.Point(685, 63);
+            File2Fname.Name = "File2Fname";
+            File2Fname.Size = new System.Drawing.Size(110, 17);
+            File2Fname.TabIndex = 77;
+            File2Fname.Text = "No file uploaded.";
+            // 
+            // File2name
+            // 
+            File2name.AutoSize = true;
+            File2name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File2name.Location = new System.Drawing.Point(30, 33);
+            File2name.Name = "File2name";
+            File2name.Size = new System.Drawing.Size(252, 25);
+            File2name.TabIndex = 75;
+            File2name.Text = "2. Valid Government-issued ID";
+            // 
+            // File2button
+            // 
+            File2button.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File2button.Location = new System.Drawing.Point(666, 24);
+            File2button.Name = "File2button";
+            File2button.Size = new System.Drawing.Size(143, 39);
+            File2button.TabIndex = 74;
+            File2button.Text = "Upload Here";
+            File2button.UseVisualStyleBackColor = true;
+            File2button.Click += File2button_Click;
+            // 
+            // File1panel
+            // 
+            File1panel.Controls.Add(File1Fname);
+            File1panel.Controls.Add(File1name);
+            File1panel.Controls.Add(File1button);
+            File1panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            File1panel.Location = new System.Drawing.Point(3, 3);
+            File1panel.Name = "File1panel";
+            File1panel.Size = new System.Drawing.Size(865, 86);
+            File1panel.TabIndex = 0;
+            // 
+            // File1Fname
+            // 
+            File1Fname.AutoEllipsis = true;
+            File1Fname.AutoSize = true;
+            File1Fname.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            File1Fname.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            File1Fname.Location = new System.Drawing.Point(685, 63);
+            File1Fname.Name = "File1Fname";
+            File1Fname.Size = new System.Drawing.Size(110, 17);
+            File1Fname.TabIndex = 76;
+            File1Fname.Text = "No file uploaded.";
+            // 
+            // File1name
+            // 
+            File1name.AutoSize = true;
+            File1name.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            File1name.Location = new System.Drawing.Point(30, 33);
+            File1name.Name = "File1name";
+            File1name.Size = new System.Drawing.Size(197, 25);
+            File1name.TabIndex = 75;
+            File1name.Text = "1. Business Registration";
+            // 
+            // File1button
+            // 
+            File1button.BackColor = System.Drawing.Color.White;
+            File1button.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            File1button.Location = new System.Drawing.Point(666, 24);
+            File1button.Name = "File1button";
+            File1button.Size = new System.Drawing.Size(143, 39);
+            File1button.TabIndex = 74;
+            File1button.Text = "Upload Here";
+            File1button.UseVisualStyleBackColor = false;
+            File1button.Click += File1button_Click;
+            // 
+            // button1
+            // 
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("Segoe UI", 8F);
+            button1.ForeColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            button1.Location = new System.Drawing.Point(1394, 741);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(161, 46);
+            button1.TabIndex = 40;
+            button1.Text = "Upload Facility Files";
+            button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // AnalyticsPanel
+            // 
+            AnalyticsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            AnalyticsPanel.BackColor = System.Drawing.Color.Transparent;
+            AnalyticsPanel.Controls.Add(AnalyticPannel2);
+            AnalyticsPanel.Controls.Add(AnalyticsMenuPanel);
+            AnalyticsPanel.Controls.Add(AnalyticPannel1);
+            AnalyticsPanel.Controls.Add(plotView1);
+            AnalyticsPanel.Controls.Add(button8);
+            AnalyticsPanel.Location = new System.Drawing.Point(277, 177);
+            AnalyticsPanel.Name = "AnalyticsPanel";
+            AnalyticsPanel.Size = new System.Drawing.Size(893, 799);
+            AnalyticsPanel.TabIndex = 74;
+            // 
+            // plotView1
+            // 
+            plotView1.Location = new System.Drawing.Point(172, 504);
+            plotView1.Name = "plotView1";
+            plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
+            plotView1.Size = new System.Drawing.Size(391, 100);
+            plotView1.TabIndex = 41;
+            plotView1.Text = "plotView1";
+            plotView1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            plotView1.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            plotView1.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            // 
+            // button8
+            // 
+            button8.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button8.BackColor = System.Drawing.Color.WhiteSmoke;
+            button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button8.Font = new System.Drawing.Font("Segoe UI", 8F);
+            button8.ForeColor = System.Drawing.Color.FromArgb(240, 36, 110);
+            button8.Location = new System.Drawing.Point(1394, 741);
+            button8.Name = "button8";
+            button8.Size = new System.Drawing.Size(161, 46);
+            button8.TabIndex = 40;
+            button8.Text = "Upload Facility Files";
+            button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            button8.UseVisualStyleBackColor = false;
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(UploadfilesPanel);
+            Controls.Add(AnalyticsPanel);
+            Controls.Add(ProfilePanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(AppSearch);
@@ -5557,14 +6066,10 @@
             Controls.Add(ATPanel);
             Controls.Add(ServicesOfferedPanel);
             Controls.Add(EATPanel);
-            Controls.Add(ProfilePanel);
             Controls.Add(EditFIPanel);
             Controls.Add(ESerOffPanel);
             Controls.Add(SettingsPanel);
             Controls.Add(NotificationPanel);
-            Controls.Add(AnalyticPannel2);
-            Controls.Add(AnalyticPannel1);
-            Controls.Add(AnalyticsMenuPanel);
             Controls.Add(panel11);
             Controls.Add(panel45);
             Controls.Add(panel44);
@@ -5709,6 +6214,23 @@
             CAC1.PerformLayout();
             CAC2.ResumeLayout(false);
             CAC2.PerformLayout();
+            UploadfilesPanel.ResumeLayout(false);
+            Filespanel.ResumeLayout(false);
+            File7panel.ResumeLayout(false);
+            File7panel.PerformLayout();
+            File6panel.ResumeLayout(false);
+            File6panel.PerformLayout();
+            File5panel.ResumeLayout(false);
+            File5panel.PerformLayout();
+            File4panel.ResumeLayout(false);
+            File4panel.PerformLayout();
+            File3panel.ResumeLayout(false);
+            File3panel.PerformLayout();
+            File2panel.ResumeLayout(false);
+            File2panel.PerformLayout();
+            File1panel.ResumeLayout(false);
+            File1panel.PerformLayout();
+            AnalyticsPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -5837,16 +6359,9 @@
         private System.Windows.Forms.Label ATselctdt;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Panel ATtimeslot;
-        private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label ATselcttime;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label File7name;
         private System.Windows.Forms.Button ATButton;
         private System.Windows.Forms.Button EditButton2;
         private System.Windows.Forms.Panel SettingsPanel;
@@ -6087,5 +6602,41 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TableLayoutPanel CAC3;
+        private System.Windows.Forms.Button filesbutton;
+        private System.Windows.Forms.Panel UploadfilesPanel;
+        private System.Windows.Forms.TableLayoutPanel Filespanel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button File1button;
+        private System.Windows.Forms.Panel File1panel;
+        private System.Windows.Forms.Panel File7panel;
+        private System.Windows.Forms.Button File7button;
+        private System.Windows.Forms.Panel File6panel;
+        private System.Windows.Forms.Label File6name;
+        private System.Windows.Forms.Button File6button;
+        private System.Windows.Forms.Panel File5panel;
+        private System.Windows.Forms.Label File5name;
+        private System.Windows.Forms.Button File5button;
+        private System.Windows.Forms.Panel File4panel;
+        private System.Windows.Forms.Label File4name;
+        private System.Windows.Forms.Button File4button;
+        private System.Windows.Forms.Panel File3panel;
+        private System.Windows.Forms.Label File3name;
+        private System.Windows.Forms.Button File3button;
+        private System.Windows.Forms.Panel File2panel;
+        private System.Windows.Forms.Label File2name;
+        private System.Windows.Forms.Button File2button;
+        private System.Windows.Forms.Label File1name;
+        private System.Windows.Forms.Button UFilebutton;
+        private System.Windows.Forms.Panel AnalyticsPanel;
+        private System.Windows.Forms.Button button8;
+        private OxyPlot.WindowsForms.PlotView plotView1;
+        private System.Windows.Forms.Label File1Fname;
+        private System.Windows.Forms.Label File7Fname;
+        private System.Windows.Forms.Label File6Fname;
+        private System.Windows.Forms.Label File5Fname;
+        private System.Windows.Forms.Label File4Fname;
+        private System.Windows.Forms.Label File3Fname;
+        private System.Windows.Forms.Label File2Fname;
+        private System.Windows.Forms.Button Filesubmitbutton;
     }
 }

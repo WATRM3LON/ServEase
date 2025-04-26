@@ -71,6 +71,11 @@ namespace OOP2
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+        public void UploadPanel()
+        {
+            Title1label.Visible = false; YesButton.Visible = false; NoButton.Visible = false; Headinglabel.Visible = false; Captionlabel.Visible = false; CloseButton.Visible = false;
+            AppStat = "Confirm"; ShowPictureTemporarily();
+        }
 
         private void CloseButton_Click(object sender, EventArgs e)
         {

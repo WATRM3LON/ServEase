@@ -404,6 +404,25 @@ namespace OOP2
                         cmd.ExecuteNonQuery();
                     }
 
+                    string facilityfiles = "INSERT INTO [Facility Files] " +
+                                                 "(Facility_ID, [Profile Picture], [Business Registration], [Valid Government-issued ID], [Facility Photos], [Service Licenses / Certifications], [Proof of Address], [Tax Documents], [Insurance or Safety Compliance]) " +
+                                                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(facilityfiles, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", newFacilityId);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
                     for (int i = 0; i < 5; i++)
                     {
                         string ServiceoffQuery = "INSERT INTO [Facility Services] " +

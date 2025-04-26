@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.IO;
 
 namespace OOP2
 {
@@ -79,8 +80,8 @@ namespace OOP2
             DashboardButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             Dbutton.BackColor = ColorTranslator.FromHtml("#f0246e");
             AppDetsbutton.Visible = false;
-            SerButton.Visible = false;
-            panel44.Visible = false;
+            SerButton.Visible = false; AnalyticsPanel.Visible = false;
+            panel44.Visible = false; UFilebutton.Visible = false; UploadfilesPanel.Visible = false;
             NotificationPanel.Visible = false; ASReasonlabel.Visible = false; ASReasontext.Visible = false;
             AnalyticsMenuPanel.Visible = false; DimPanel.Visible = false;
             AnalyticPannel2.Visible = false; ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
@@ -156,6 +157,8 @@ namespace OOP2
             SOView.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOView.Width, SOView.Height, 10, 10));
             ATView.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATView.Width, ATView.Height, 10, 10));
             Cconfirmbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Cconfirmbutton.Width, Cconfirmbutton.Height, 10, 10));
+            filesbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, filesbutton.Width, filesbutton.Height, 10, 10));
+            Filespanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Filespanel.Width, Filespanel.Height, 10, 10));
             //SERVICES OFFRED
             //SOTable.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 10, 10));
             ATdatetime.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATdatetime.Width, ATdatetime.Height, 10, 10));
@@ -168,6 +171,7 @@ namespace OOP2
             ATCNext.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCNext.Width, ATCNext.Height, 10, 10));
             Exceptionpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Exceptionpanel.Width, Exceptionpanel.Height, 10, 10));
             EATIns.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EATIns.Width, EATIns.Height, 10, 10));
+            Filesubmitbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Filesubmitbutton.Width, Filesubmitbutton.Height, 10, 10));
             //SETTINGS
             GeneralPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GeneralPanel.Width, GeneralPanel.Height, 10, 10));
             AppearancePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppearancePanel.Width, AppearancePanel.Height, 10, 10));
@@ -326,6 +330,7 @@ namespace OOP2
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
             PButton.BackColor = Color.White;
+            UFilebutton.Visible = false; UploadfilesPanel.Visible = false;
             //SOAPanel.Visible = false;
             SOButton.Visible = false;
             ATPanel.Visible = false;
@@ -385,6 +390,7 @@ namespace OOP2
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             EATButton.Visible = false; EATPanel.Visible = false;
+            UFilebutton.Visible = false; UploadfilesPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -542,6 +548,7 @@ namespace OOP2
             //ANALYTICS
             AnalyticsMenuPanel.Visible = true;
             AnalyticPannel1.Visible = true;
+            AnalyticsPanel.Visible = true;
             AnalyticsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             SButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold); BFButton.FlatStyle = FlatStyle.System;
@@ -558,6 +565,7 @@ namespace OOP2
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             EATButton.Visible = false; EATPanel.Visible = false;
+            UFilebutton.Visible = false; UploadfilesPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -658,6 +666,7 @@ namespace OOP2
             EditFIPanel.Visible = false; FIEButton.Visible = false;
             EditSOButton.Visible = false; ESerOffPanel.Visible = false;
             EATButton.Visible = false; EATPanel.Visible = false;
+            UFilebutton.Visible = false; UploadfilesPanel.Visible = false;
             //SETTINGS
             SettingsPanel.Visible = false;
             SettingsButton.BackColor = Color.White;
@@ -2032,11 +2041,11 @@ namespace OOP2
                                 }
                             }
                             PopulateCalendarPanel(appid, facid, cleid);
-                            
+
                             AppointmentsPanel.Controls.Add(usersPanel);
                         }
                     }
-                    
+
                 }
             }
         }
@@ -2402,11 +2411,6 @@ namespace OOP2
 
         private void ASCancelButton_Click(object sender, EventArgs e)
         {
-            //DimPanel.BackColor = Color.FromArgb(100, 0, 0, 0);
-            //DimPanel.Dock = DockStyle.Fill;
-            //DimPanel.BringToFront();
-            //DimPanel.Visible = true;
-
             Notice notice = new Notice();
             notice.CancelPanel();
             if (notice.ShowDialog() == DialogResult.OK || !string.IsNullOrWhiteSpace(notice.Reason))
@@ -2432,8 +2436,6 @@ namespace OOP2
                     }
                 }
             }
-            //DimPanel.Visible = false;
-
         }
 
         private void ASConfrimButton_Click(object sender, EventArgs e)
@@ -2482,6 +2484,213 @@ namespace OOP2
                     }
 
                     MessageBox.Show("Appointment confirmed successfully.", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void filesbutton_Click(object sender, EventArgs e)
+        {
+            UFilebutton.Visible = true; UploadfilesPanel.Visible = true;
+            WelcomeLabel.Visible = false; ProfilePanel.Visible = false;
+        }
+
+        private void UFilebutton_Click(object sender, EventArgs e)
+        {
+            UFilebutton.Visible = false; UploadfilesPanel.Visible = false; WelcomeLabel.Visible = true;
+            ProfilePanel.Visible = true;
+        }
+
+        byte[] businessRegistrationBytes = null;
+        byte[] governmentIdBytes = null;
+        byte[] facilityPhotosBytes = null;
+        byte[] serviceLicensesBytes = null;
+        byte[] proofOfAddressBytes = null;
+        byte[] taxDocumentsBytes = null;
+        byte[] insuranceComplianceBytes = null;
+
+        private void File1button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Business Registration Document";
+            ofd.Filter = "All Files|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                businessRegistrationBytes = File.ReadAllBytes(ofd.FileName);
+                File1Fname.Visible = true; File1Fname.Text = Path.GetFileName(ofd.FileName); File1button.BackColor = Color.White;
+                File1button.ForeColor = ColorTranslator.FromHtml("#f0246e");
+                Notice notice = new Notice();
+                notice.UploadPanel();
+            }
+        }
+
+        private void File2button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Government-issued ID";
+            ofd.Filter = "All Files|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                governmentIdBytes = File.ReadAllBytes(ofd.FileName);
+                File2Fname.Visible = true; File2Fname.Text = Path.GetFileName(ofd.FileName); File2button.BackColor = Color.White;
+                File2button.ForeColor = ColorTranslator.FromHtml("#f0246e");
+                Notice notice = new Notice();
+                notice.UploadPanel();
+            }
+        }
+
+        private void File3button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Multiselect = true;
+            ofd.Filter = "Images (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                foreach (string filePath in ofd.FileNames)
+                {
+                    byte[] fileData = File.ReadAllBytes(filePath);
+                    using (OleDbConnection myConn = new OleDbConnection(connection))
+                    {
+                        myConn.Open();
+                        using (OleDbCommand cmd = new OleDbCommand("INSERT INTO Facility_Photos (Facility_ID, PhotoFile) VALUES (?, ?)", myConn))
+                        {
+                            cmd.Parameters.AddWithValue("?", FacilityiId);
+                            cmd.Parameters.AddWithValue("?", fileData);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                File3Fname.Visible = true; File3Fname.Text = "Photos Uploaded";
+                File3button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File3button.BackColor = Color.White;
+                Notice notice = new Notice();
+                notice.UploadPanel();
+            }
+        }
+
+        private void File4button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Service Licenses / Certifications";
+            ofd.Filter = "All Files|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                serviceLicensesBytes = File.ReadAllBytes(ofd.FileName);
+                File4Fname.Visible = true; File4Fname.Text = Path.GetFileName(ofd.FileName);
+                File4button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File4button.BackColor = Color.White;
+                Notice notice = new Notice();
+                notice.UploadPanel();
+            }
+        }
+
+        private void File5button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Proof of Address";
+            ofd.Filter = "All Files|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                proofOfAddressBytes = File.ReadAllBytes(ofd.FileName);
+                File5Fname.Visible = true; File5Fname.Text = Path.GetFileName(ofd.FileName);
+                File5button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File5button.BackColor = Color.White;
+                Notice notice = new Notice();
+                notice.UploadPanel();
+            }
+        }
+
+        private void File6button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Tax Documents";
+            ofd.Filter = "All Files|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                taxDocumentsBytes = File.ReadAllBytes(ofd.FileName);
+                File6Fname.Visible = true; File6Fname.Text = Path.GetFileName(ofd.FileName);
+                File6button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File6button.BackColor = Color.White;
+                Notice notice = new Notice();
+                notice.UploadPanel();
+            }
+        }
+
+        private void File7button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Insurance or Safety Compliance";
+            ofd.Filter = "All Files|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                insuranceComplianceBytes = File.ReadAllBytes(ofd.FileName);
+                File7Fname.Visible = true; File7Fname.Text = Path.GetFileName(ofd.FileName);
+                File7button.ForeColor = ColorTranslator.FromHtml("#f0246e"); File7button.BackColor = Color.White;
+                Notice notice = new Notice();
+                notice.UploadPanel();
+            }
+        }
+
+        private void Filesubmitbutton_Click(object sender, EventArgs e)
+        {
+            if (FacilityiId == 0)
+            {
+                MessageBox.Show("Facility ID is not valid.");
+                return;
+            }
+            if(File1Fname.Text != "No file uploaded." && File2Fname.Text != "No file uploaded." && File3Fname.Text != "No file uploaded." && File4Fname.Text != "No file uploaded." && File5Fname.Text != "No file uploaded." && File6Fname.Text != "No file uploaded." && File7Fname.Text != "No file uploaded.")
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    string facilityfiles = "INSERT INTO [Facility Files] " +
+                        "(Facility_ID, [Business Registration], [Valid Government-issued ID]," +
+                        "[Service Licenses / Certifications], [Proof of Address], [Tax Documents], [Insurance or Safety Compliance], [Uploaded Date]) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(facilityfiles, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", FacilityiId);
+                        cmd.Parameters.AddWithValue("?", (object)businessRegistrationBytes ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", (object)governmentIdBytes ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", (object)serviceLicensesBytes ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", (object)proofOfAddressBytes ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", (object)taxDocumentsBytes ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", (object)insuranceComplianceBytes ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DateTime.Now);
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Facility files uploaded successfully!");
+                    }
+                }
+            }
+            else
+            {
+                if(File1Fname.Text == "No file uploaded.")
+                {
+                    File1button.BackColor = Color.MistyRose; File1button.ForeColor = Color.Red;
+                }else if (File2Fname.Text == "No file uploaded.")
+                {
+                    File2button.BackColor = Color.MistyRose; File2button.ForeColor = Color.Red;
+                }else if (File3Fname.Text == "No file uploaded.")
+                {
+                    File3button.BackColor = Color.MistyRose; File3button.ForeColor = Color.Red;
+                }else if (File4Fname.Text == "No file uploaded.")
+                {
+                    File4button.BackColor = Color.MistyRose; File4button.ForeColor = Color.Red;
+                }else if (File5Fname.Text == "No file uploaded.")
+                {
+                    File5button.BackColor = Color.MistyRose; File5button.ForeColor = Color.Red;
+                }else if (File6Fname.Text == "No file uploaded.")
+                {
+                    File6button.BackColor = Color.MistyRose; File6button.ForeColor = Color.Red;
+                }else if (File7Fname.Text == "No file uploaded.")
+                {
+                    File7button.BackColor = Color.MistyRose; File7button.ForeColor = Color.Red;
                 }
             }
         }
