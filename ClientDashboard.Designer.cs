@@ -193,12 +193,8 @@
             ASpricelabel = new System.Windows.Forms.Label();
             ASserlabel = new System.Windows.Forms.Label();
             ASdatetext = new System.Windows.Forms.Label();
-            ASdicon = new System.Windows.Forms.Button();
-            ASpriceicon = new System.Windows.Forms.Button();
             ASdatelabel = new System.Windows.Forms.Label();
-            ASdateicon = new System.Windows.Forms.Button();
             label45 = new System.Windows.Forms.Label();
-            ASsericon = new System.Windows.Forms.Button();
             ASstattext = new System.Windows.Forms.Label();
             ASlabel = new System.Windows.Forms.Label();
             ASstatlabel = new System.Windows.Forms.Label();
@@ -387,6 +383,10 @@
             AppSearcbutton = new System.Windows.Forms.Button();
             AppSerchtext = new System.Windows.Forms.TextBox();
             button15 = new System.Windows.Forms.Button();
+            ASdateicon = new System.Windows.Forms.PictureBox();
+            pictureBox4 = new System.Windows.Forms.PictureBox();
+            ASsericon = new System.Windows.Forms.PictureBox();
+            ASpriceicon = new System.Windows.Forms.PictureBox();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -476,6 +476,10 @@
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
             AppSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ASdateicon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ASsericon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ASpriceicon).BeginInit();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -2587,6 +2591,10 @@
             // AstatPanel
             // 
             AstatPanel.BackColor = System.Drawing.Color.White;
+            AstatPanel.Controls.Add(ASpriceicon);
+            AstatPanel.Controls.Add(ASsericon);
+            AstatPanel.Controls.Add(pictureBox4);
+            AstatPanel.Controls.Add(ASdateicon);
             AstatPanel.Controls.Add(ASReasontext);
             AstatPanel.Controls.Add(ASReasonlabel);
             AstatPanel.Controls.Add(ASbookedtext);
@@ -2598,12 +2606,8 @@
             AstatPanel.Controls.Add(ASpricelabel);
             AstatPanel.Controls.Add(ASserlabel);
             AstatPanel.Controls.Add(ASdatetext);
-            AstatPanel.Controls.Add(ASdicon);
-            AstatPanel.Controls.Add(ASpriceicon);
             AstatPanel.Controls.Add(ASdatelabel);
-            AstatPanel.Controls.Add(ASdateicon);
             AstatPanel.Controls.Add(label45);
-            AstatPanel.Controls.Add(ASsericon);
             AstatPanel.Controls.Add(ASstattext);
             AstatPanel.Controls.Add(ASlabel);
             AstatPanel.Controls.Add(ASstatlabel);
@@ -2756,38 +2760,6 @@
             ASdatetext.TabIndex = 82;
             ASdatetext.Text = "Select Timeslot";
             // 
-            // ASdicon
-            // 
-            ASdicon.BackColor = System.Drawing.Color.Transparent;
-            ASdicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ASdicon.FlatAppearance.BorderSize = 0;
-            ASdicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ASdicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ASdicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ASdicon.Image = (System.Drawing.Image)resources.GetObject("ASdicon.Image");
-            ASdicon.Location = new System.Drawing.Point(240, 252);
-            ASdicon.Name = "ASdicon";
-            ASdicon.Size = new System.Drawing.Size(61, 71);
-            ASdicon.TabIndex = 81;
-            ASdicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ASdicon.UseVisualStyleBackColor = false;
-            // 
-            // ASpriceicon
-            // 
-            ASpriceicon.BackColor = System.Drawing.Color.Transparent;
-            ASpriceicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ASpriceicon.FlatAppearance.BorderSize = 0;
-            ASpriceicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ASpriceicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ASpriceicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ASpriceicon.Image = (System.Drawing.Image)resources.GetObject("ASpriceicon.Image");
-            ASpriceicon.Location = new System.Drawing.Point(20, 252);
-            ASpriceicon.Name = "ASpriceicon";
-            ASpriceicon.Size = new System.Drawing.Size(61, 70);
-            ASpriceicon.TabIndex = 80;
-            ASpriceicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ASpriceicon.UseVisualStyleBackColor = false;
-            // 
             // ASdatelabel
             // 
             ASdatelabel.AutoEllipsis = true;
@@ -2801,22 +2773,6 @@
             ASdatelabel.TabIndex = 79;
             ASdatelabel.Text = "Date and Timeslot: ";
             // 
-            // ASdateicon
-            // 
-            ASdateicon.BackColor = System.Drawing.Color.Transparent;
-            ASdateicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ASdateicon.FlatAppearance.BorderSize = 0;
-            ASdateicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ASdateicon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ASdateicon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ASdateicon.Image = (System.Drawing.Image)resources.GetObject("ASdateicon.Image");
-            ASdateicon.Location = new System.Drawing.Point(20, 151);
-            ASdateicon.Name = "ASdateicon";
-            ASdateicon.Size = new System.Drawing.Size(61, 70);
-            ASdateicon.TabIndex = 78;
-            ASdateicon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ASdateicon.UseVisualStyleBackColor = false;
-            // 
             // label45
             // 
             label45.AutoEllipsis = true;
@@ -2828,22 +2784,6 @@
             label45.Name = "label45";
             label45.Size = new System.Drawing.Size(0, 23);
             label45.TabIndex = 77;
-            // 
-            // ASsericon
-            // 
-            ASsericon.BackColor = System.Drawing.Color.Transparent;
-            ASsericon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ASsericon.FlatAppearance.BorderSize = 0;
-            ASsericon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ASsericon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ASsericon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            ASsericon.Image = (System.Drawing.Image)resources.GetObject("ASsericon.Image");
-            ASsericon.Location = new System.Drawing.Point(20, 354);
-            ASsericon.Name = "ASsericon";
-            ASsericon.Size = new System.Drawing.Size(61, 70);
-            ASsericon.TabIndex = 76;
-            ASsericon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            ASsericon.UseVisualStyleBackColor = false;
             // 
             // ASstattext
             // 
@@ -5416,13 +5356,52 @@
             button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button15.UseVisualStyleBackColor = false;
             // 
+            // ASdateicon
+            // 
+            ASdateicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASdateicon.Image = (System.Drawing.Image)resources.GetObject("ASdateicon.Image");
+            ASdateicon.Location = new System.Drawing.Point(40, 174);
+            ASdateicon.Name = "ASdateicon";
+            ASdateicon.Size = new System.Drawing.Size(32, 25);
+            ASdateicon.TabIndex = 97;
+            ASdateicon.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new System.Drawing.Point(260, 273);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new System.Drawing.Size(32, 25);
+            pictureBox4.TabIndex = 98;
+            pictureBox4.TabStop = false;
+            // 
+            // ASsericon
+            // 
+            ASsericon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASsericon.Image = (System.Drawing.Image)resources.GetObject("ASsericon.Image");
+            ASsericon.Location = new System.Drawing.Point(40, 377);
+            ASsericon.Name = "ASsericon";
+            ASsericon.Size = new System.Drawing.Size(32, 25);
+            ASsericon.TabIndex = 99;
+            ASsericon.TabStop = false;
+            // 
+            // ASpriceicon
+            // 
+            ASpriceicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASpriceicon.Image = (System.Drawing.Image)resources.GetObject("ASpriceicon.Image");
+            ASpriceicon.Location = new System.Drawing.Point(40, 273);
+            ASpriceicon.Name = "ASpriceicon";
+            ASpriceicon.Size = new System.Drawing.Size(32, 25);
+            ASpriceicon.TabIndex = 100;
+            ASpriceicon.TabStop = false;
+            // 
             // ClientDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(NotificationPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(FilterBox);
@@ -5451,6 +5430,7 @@
             Controls.Add(ProfilePanel);
             Controls.Add(FacilityProPanel);
             Controls.Add(FacilityProPanel2);
+            Controls.Add(NotificationPanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -5590,6 +5570,10 @@
             PIEprofilepanel.PerformLayout();
             AppSearch.ResumeLayout(false);
             AppSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ASdateicon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ASsericon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ASpriceicon).EndInit();
             ResumeLayout(false);
         }
 
@@ -5912,10 +5896,7 @@
         private System.Windows.Forms.Label ASLoclabel;
         private System.Windows.Forms.Label ASLoctext;
         private System.Windows.Forms.PictureBox ASWorDaysicon;
-        private System.Windows.Forms.Button ASpriceicon;
         private System.Windows.Forms.Label ASdatelabel;
-        private System.Windows.Forms.Button ASdateicon;
-        private System.Windows.Forms.Button ASsericon;
         private System.Windows.Forms.Label ASstattext;
         private System.Windows.Forms.Label ASlabel;
         private System.Windows.Forms.Label ASdatetext;
@@ -5925,7 +5906,6 @@
         private System.Windows.Forms.Label ASpricelabel;
         private System.Windows.Forms.Label ASdtext;
         private System.Windows.Forms.Label ASdlabel;
-        private System.Windows.Forms.Button ASdicon;
         private System.Windows.Forms.FlowLayoutPanel ASserpanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel CAC1;
@@ -5952,5 +5932,9 @@
         private System.Windows.Forms.Button AppSearcbutton;
         private System.Windows.Forms.TextBox AppSerchtext;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.PictureBox ASpriceicon;
+        private System.Windows.Forms.PictureBox ASsericon;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox ASdateicon;
     }
 }

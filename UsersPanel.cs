@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace OOP2
 {
@@ -44,9 +46,21 @@ namespace OOP2
             UserRegistlabel.Text = "Date Registered: "; UserRegistlabel.Location = new Point(375, 45);
             UserNamelabel.Location = new Point(39, 26);
             UserNamelabel.Text = "Facility Name:";
-            UserEmaillabel.Text = "Email Addres:";
+            UserEmaillabel.Text = "Aprroval Status:";
             UserNametext.Text = Name;
             UserEmailtext.Text = Emailaddress; ViewDetailsButton.Visible = true;
+            if (Emailaddress == "Pending")
+            {
+                UserEmailtext.ForeColor = Color.Gold;
+            }
+            else if(Emailaddress == "Approved")
+            {
+                UserEmailtext.ForeColor = ColorTranslator.FromHtml("#69e331");
+            }
+            else
+            {
+                UserEmailtext.ForeColor = Color.Red;
+            }
             ViewDetailsButton.BackColor = ColorTranslator.FromHtml("#f3508b");
             ViewDetailsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ViewDetailsButton.Width, ViewDetailsButton.Height, 10, 10));
         }
@@ -66,7 +80,7 @@ namespace OOP2
         public void SetInfo(string Status, string Regist)
         {
             UserStatustext.Text = Status;
-            if (Status == "Confirmed")
+            if (Status == "Confirmed" )
             {
                 UserStatustext.ForeColor = Color.DodgerBlue;
             }
@@ -74,7 +88,7 @@ namespace OOP2
             {
                 UserStatustext.ForeColor = Color.Gold;
             }
-            else if (Status == "Completed")
+            else if (Status == "Completed" || Status == "Active")
             {
                 UserStatustext.ForeColor = ColorTranslator.FromHtml("#69e331");
             }

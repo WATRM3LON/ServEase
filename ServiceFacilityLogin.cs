@@ -363,7 +363,7 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
                         cmd.Parameters.AddWithValue("@closed", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Approvalstatus", "Pending");
                         cmd.Parameters.AddWithValue("@tags", DBNull.Value);
 
                         cmd.ExecuteNonQuery();
@@ -396,7 +396,7 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@Workinghoursend", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workingdays", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Approvalstatus", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Approvalstatus", "Pending");
                         cmd.Parameters.AddWithValue("@status", "Active");
                         cmd.Parameters.AddWithValue("@regist", DateTime.Today);
                         cmd.Parameters.AddWithValue("@delete", DBNull.Value);
@@ -405,12 +405,14 @@ namespace OOP2
                     }
 
                     string facilityfiles = "INSERT INTO [Facility Files] " +
-                                                 "(Facility_ID, [Profile Picture], [Business Registration], [Valid Government-issued ID], [Facility Photos], [Service Licenses / Certifications], [Proof of Address], [Tax Documents], [Insurance or Safety Compliance]) " +
-                                                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                                                 "(Facility_ID, [Profile Picture], [Business Registration], [Valid Government-issued ID], [Facility Photos], [Service Licenses / Certifications], [Proof of Address], [Tax Documents], [Insurance or Safety Compliance], [Uploaded Date], [Note]) " +
+                                                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                     using (OleDbCommand cmd = new OleDbCommand(facilityfiles, myConn))
                     {
                         cmd.Parameters.AddWithValue("?", newFacilityId);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
+                        cmd.Parameters.AddWithValue("?", DBNull.Value);
                         cmd.Parameters.AddWithValue("?", DBNull.Value);
                         cmd.Parameters.AddWithValue("?", DBNull.Value);
                         cmd.Parameters.AddWithValue("?", DBNull.Value);

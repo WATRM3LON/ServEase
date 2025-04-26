@@ -38,7 +38,7 @@ namespace OOP2
         public Admin()
         {
             InitializeComponent();
-            ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AppHistPanel.Visible = false; FViewDetailspanel.Visible=false;
+            ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AppHistPanel.Visible = false; FViewDetailspanel.Visible = false;
             Loaders();
         }
         string Fname, Lname;
@@ -64,8 +64,9 @@ namespace OOP2
             StatusText.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, StatusText.Width, StatusText.Height, 10, 10));
         }
         public void UpdateInfo() { }
-        public bool CNumberChecker(string cNumber, string connection) { 
-        
+        public bool CNumberChecker(string cNumber, string connection)
+        {
+
             return true;
         }
         private void CloseButton_Click(object sender, EventArgs e)
@@ -224,7 +225,7 @@ namespace OOP2
                 }
                 else
                 {
-                    string sql = "SELECT Facility_ID, [Facility Name], [Email Address] FROM [Admin (Service Facilities)] WHERE [Email Address] <> 'admin12345'";
+                    string sql = "SELECT Facility_ID, [Facility Name], [Approval Status] FROM [Admin (Service Facilities)] WHERE [Email Address] <> 'admin12345'";
 
                     using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                     using (OleDbDataReader reader = cmd.ExecuteReader())
@@ -235,7 +236,7 @@ namespace OOP2
                         {
                             int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
                             string Name = reader.IsDBNull(reader.GetOrdinal("Facility Name")) ? "" : reader.GetString(reader.GetOrdinal("Facility Name"));
-                            string email = reader.IsDBNull(reader.GetOrdinal("Email Address")) ? "" : reader.GetString(reader.GetOrdinal("Email Address"));
+                            string email = reader.IsDBNull(reader.GetOrdinal("Approval Status")) ? "" : reader.GetString(reader.GetOrdinal("Approval Status"));
 
                             UsersPanel usersPanel = new UsersPanel();
                             usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
@@ -306,6 +307,7 @@ namespace OOP2
                                 LocText.Text = LocationAddress; dateregisttext.Text = regist; datedeletetext.Text = deleted;
 
 
+
                                 int age;
                                 if (BirthDatePI.Text.Length == 1)
                                 {
@@ -343,7 +345,7 @@ namespace OOP2
                 {
                     myConn.Open();
 
-                    string sql = "SELECT [First Name], [Last Name], [Birth Date], Sex, [Contact Number], Location, [Email Address], Password, Status, [Date Registered], [Date Deleted] FROM [Admin (Service Facilities)] WHERE Facility_ID = ?";
+                    string sql = "SELECT [First Name], [Last Name], [Birth Date], Sex, [Contact Number], Location, [Email Address], Password, Status, [Approval Status], [Date Registered], [Date Deleted] FROM [Admin (Service Facilities)] WHERE Facility_ID = ?";
 
                     using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                     {
@@ -361,6 +363,7 @@ namespace OOP2
                                 string Sex = reader["Sex"].ToString();
                                 string Password = reader["Password"].ToString();
                                 string ContactNumber = reader["Contact Number"].ToString();
+                                string Appstatus = reader["Contact Number"].ToString();
                                 string LocationAddress = reader.IsDBNull(reader.GetOrdinal("Location")) ? " " : reader["Location"].ToString();
                                 string Status = reader["Status"].ToString();
                                 DateTime dateregist = reader.IsDBNull(reader.GetOrdinal("Date Registered")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Date Registered"));
@@ -385,15 +388,28 @@ namespace OOP2
 
                                 if (Status == "Active")
                                 {
-                                    StatusText.ForeColor = ColorTranslator.FromHtml("#69e331"); StatusText.Text = Status;
+                                    FIStatus.ForeColor = ColorTranslator.FromHtml("#69e331"); FIStatus.Text = Status;
                                 }
                                 else if (Status == "Deactivated")
                                 {
-                                    StatusText.ForeColor = Color.Gold; StatusText.Text = Status;
+                                    FIStatus.ForeColor = Color.Gold; FIStatus.Text = Status;
                                 }
                                 else
                                 {
-                                    StatusText.ForeColor = Color.Red; StatusText.Text = Status;
+                                    FIStatus.ForeColor = Color.Red; FIStatus.Text = Status;
+                                }
+
+                                if (Appstatus == "Approved")
+                                {
+                                    FIAppStatus.ForeColor = ColorTranslator.FromHtml("#69e331"); FIAppStatus.Text = Appstatus;
+                                }
+                                else if (Status == "Pending")
+                                {
+                                    FIAppStatus.ForeColor = Color.Gold; FIAppStatus.Text = Appstatus;
+                                }
+                                else
+                                {
+                                    FIAppStatus.ForeColor = Color.Red; FIAppStatus.Text = Appstatus;
                                 }
                             }
                         }
@@ -427,10 +443,17 @@ namespace OOP2
         public void ViewDets(int IdClient)
         {
             CalendarAppointmentPanel.Visible = false; ProfilePanel.Visible = false; HiLabel.Visible = false; WelcomeLabel.Visible = false;
-            ViewDetpanel.Visible = true; CViewDetailspanel.Visible = true; AccountButton.Visible = true;
+            AccountButton.Visible = true;
             if (Client)
             {
+                ViewDetpanel.Visible = true; CViewDetailspanel.Visible = true;
                 AccountButton.Text = " Client's Account";
+                InfoGetter();
+            }
+            else
+            {
+                FViewDetailspanel.Visible = true;
+                AccountButton.Text = " Facility's Account";
                 InfoGetter();
             }
         }
@@ -439,7 +462,7 @@ namespace OOP2
             CalendarAppointmentPanel.Visible = true; ProfilePanel.Visible = true; HiLabel.Visible = true; WelcomeLabel.Visible = true;
             ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AccountButton.Visible = false; AppHistPanel.Visible = false;
             ApphisButton.Font = new Font(ApphisButton.Font, ApphisButton.Font.Style & ~FontStyle.Bold);
-            ApphisButton.FlatStyle = FlatStyle.Flat; 
+            ApphisButton.FlatStyle = FlatStyle.Flat;
 
             Personalbutton.FlatStyle = FlatStyle.System;
             Personalbutton.Font = new Font(Personalbutton.Font, Personalbutton.Font.Style | FontStyle.Bold);
@@ -457,7 +480,7 @@ namespace OOP2
         private void ApphisButton_Click(object sender, EventArgs e)
         {
             Personalbutton.Font = new Font(Personalbutton.Font, Personalbutton.Font.Style & ~FontStyle.Bold);
-            Personalbutton.FlatStyle = FlatStyle.Flat; CViewDetailspanel.Visible= false;
+            Personalbutton.FlatStyle = FlatStyle.Flat; CViewDetailspanel.Visible = false;
 
             ApphisButton.FlatStyle = FlatStyle.System; AppHistPanel.Visible = true;
             ApphisButton.Font = new Font(ApphisButton.Font, ApphisButton.Font.Style | FontStyle.Bold);
@@ -511,7 +534,7 @@ namespace OOP2
                                 UsersPanel usersPanel = new UsersPanel();
                                 usersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
                                 usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                                
+
 
                                 usersPanel.Location = new Point(10, margin - 7);
                                 margin += usersPanel.Height + 10;
@@ -543,10 +566,22 @@ namespace OOP2
                     }
                     else
                     {
-                            
+
                     }
                 }
             }
+        }
+
+        private void NotePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void VFilesbutton_Click(object sender, EventArgs e)
+        {
+            FViewDetailspanel.Visible = true; AccountButton.Visible = true;
+            AccountButton.Text = " Facility's Account";
+            VFilesbutton.Visible = false; VFilespanel.Visible = false;
         }
     }
 }

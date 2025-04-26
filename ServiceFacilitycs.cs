@@ -194,7 +194,19 @@ namespace OOP2
             FIWordaystext.Text = FIEWordaystext.Text = WorDays;
             FICnumbertext.Text = FIECnumbertext.Text = ContactNumber;
             FIEmailtext.Text = FIEEmailaddtext.Text = EmailAddress;
-            FIStatus.Text = FIEStatus.Text = AppStatus;
+            if (AppStatus == "Pending")
+            {
+                FIStatus.Text = FIEStatus.Text = AppStatus; FIStatus.ForeColor = FIEStatus.ForeColor = Color.Gold;
+            }
+            else if (AppStatus == "Approved")
+            {
+                FIStatus.Text = FIEStatus.Text = AppStatus; FIStatus.ForeColor = FIEStatus.ForeColor = ColorTranslator.FromHtml("#69e331");
+            }
+            else
+            {
+                FIStatus.Text = FIEStatus.Text = AppStatus; FIStatus.ForeColor = FIEStatus.ForeColor = Color.Red;
+            }
+            
             FISpeCattext.Text = FIESpeCattext.Text = SpeCat;
             FITagstext.Text = FIETagstext.Text = Tags;
             ATCToday.Text = "Today: " + DateTime.Now.ToString("dd, MMMM yyyy");

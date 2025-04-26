@@ -2353,7 +2353,7 @@
             // filesbutton
             // 
             filesbutton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            filesbutton.BackColor = System.Drawing.Color.WhiteSmoke;
+            filesbutton.BackColor = System.Drawing.Color.White;
             filesbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             filesbutton.FlatAppearance.BorderSize = 0;
             filesbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -6073,7 +6073,6 @@
             ClientSize = new System.Drawing.Size(1219, 990);
             Controls.Add(UploadfilesPanel);
             Controls.Add(AnalyticsPanel);
-            Controls.Add(ProfilePanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(AppSearch);
@@ -6101,6 +6100,7 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
+            Controls.Add(ProfilePanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "ServiceFacilitycs";
