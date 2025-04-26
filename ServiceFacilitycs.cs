@@ -18,6 +18,10 @@ using OxyPlot.WindowsForms;
 using OxyPlot.Axes;
 using OxyPlot.Wpf;
 using System.Collections;
+using AForge.Video;
+using AForge.Video.DirectShow;
+using ZXing;
+using ZXing.QrCode;
 
 namespace OOP2
 {
@@ -3126,5 +3130,73 @@ namespace OOP2
             TotalAppstext.Text = $"{totalAppointments}";
         }
 
+        FilterInfoCollection videoDevices;
+        VideoCaptureDevice videoSource;
+
+        private void StartCamera()
+        {
+            videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            if (videoDevices.Count > 0)
+            {
+                videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
+                videoSource.NewFrame += VideoSource_NewFrame;
+                videoSource.Start();
+            }
+            else
+            {
+                MessageBox.Show("No camera detected.");
+            }
+        }
+
+        private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+            BarcodeReader reader = new BarcodeReader();
+            var reader = new BarcodeReader
+            {
+                AutoRotate = true,
+                TryInverted = true
+            };
+            var result = reader.Decode(bitmap);
+
+            if (result != null)
+            {
+                videoSource.SignalToStop();
+
+                string qrContent = result.Text;
+
+                Invoke(new Action(() =>
+                {
+                    try
+                    {
+                        string[] parts = qrContent.Split('|');
+                        if (parts.Length == 3)
+                        {
+                            int appointmentId = int.Parse(parts[0]);
+                            int facilityId = int.Parse(parts[1]);
+                            int clientId = int.Parse(parts[2]);
+
+                            ViewDets(appointmentId, facilityId, clientId);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid QR code format.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error decoding appointment: " + ex.Message);
+                    }
+                }));
+            }
+
+            QRBox.Image = bitmap;
+        }
+
+
+        private void QRbutton_Click(object sender, EventArgs e)
+        {
+            QRBox.Visible = true;
+        }
     }
 }

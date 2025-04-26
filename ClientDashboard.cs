@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,8 @@ using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -17,6 +20,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace OOP2
@@ -1692,6 +1696,39 @@ namespace OOP2
             }
         }
 
+        public void GenerateAndSaveQrCode(int appointmentId, int facid, int clid)
+        {
+            string qrContent = $"{appointmentId}|{facid}|{clid}";
+
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrContent, QRCodeGenerator.ECCLevel.L);
+            QRCode qrCode = new QRCode(qrCodeData);
+
+            using (Bitmap qrBitmap = qrCode.GetGraphic( 5, Color.Black, Color.White, true))     
+            {
+                byte[] qrBytes;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    qrBitmap.Save(ms, ImageFormat.Png);
+                    qrBytes = ms.ToArray();
+                }
+                using (OleDbConnection conn = new OleDbConnection(connection))
+                {
+                    conn.Open();
+                    string updateQuery = "UPDATE Appointments SET [QRCode] = ? WHERE [Appointment_ID] = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(updateQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?", qrBytes);
+                        cmd.Parameters.AddWithValue("?", appointmentId);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+    
         private void EditButton_Click(object sender, EventArgs e)
         {
             if (!SelectedServices.Any())
@@ -1706,13 +1743,49 @@ namespace OOP2
                 return;
             }
 
+            bool IsOverlappingConflict(DateTime date, DateTime startTime, DateTime endTime, int clientId, int facilityId)
+            {
+                using (OleDbConnection conn = new OleDbConnection(connection))
+                {
+                    conn.Open();
+                    string query = @"SELECT COUNT(*) FROM Appointments 
+                             WHERE [Appointment Date] = ? 
+                             AND ([Client_ID] = ? OR [Facility_ID] = ?)
+                             AND (? < [End Time] AND ? > [Start Time])";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?", date.Date.ToString("dd MM yyyy"));
+                        cmd.Parameters.AddWithValue("?", clientId);
+                        cmd.Parameters.AddWithValue("?", facilityId);
+                        cmd.Parameters.AddWithValue("?", startTime.ToString("hh:mm tt"));
+                        cmd.Parameters.AddWithValue("?", endTime.ToString("hh:mm tt"));
+
+                        int count = (int)cmd.ExecuteScalar();
+                        return count > 0;
+                    }
+                }
+            }
+
+            DateTime selectedDate = selectedAppointmentDate.Value.Date;
+            string[] timeParts = selectedTimeSlotLabel.Text.Split('-');
+            DateTime startTime = DateTime.Parse(timeParts[0].Trim());
+            DateTime endTime = DateTime.Parse(timeParts[1].Trim());
+
+            if (IsOverlappingConflict(selectedDate, startTime, endTime, clientId, facid))
+            {
+                MessageBox.Show("Time conflict detected. Please choose another time slot.", "Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             EmailAddress = ClientLogin.EmailAddress;
             int newClientId = 0;
+
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
-                string getclientid = "SELECT Client_ID FROM [Clients] WHERE [Email Address] = ?";
 
+                string getclientid = "SELECT Client_ID FROM [Clients] WHERE [Email Address] = ?";
                 using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getclientid, myConn))
                 {
                     getServiceIdsCmd.Parameters.AddWithValue("?", EmailAddress);
@@ -1720,14 +1793,14 @@ namespace OOP2
                     using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
                     {
                         if (reader.Read() && !reader.IsDBNull(0))
-                        {
                             newClientId = reader.GetInt32(0);
-                        }
                     }
                 }
 
-                string insertAppointment = "INSERT INTO Appointments ([Client_ID], [Facility_ID], [Appointment Status], [Appointment Date], [Date Booked], [Start Time], [End Time], [Estimated Price], [Estimated Duration], Reason) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                string insertAppointment = @"
+            INSERT INTO Appointments 
+            ([Client_ID], [Facility_ID], [Appointment Status], [Appointment Date], [Start Time], [End Time], [Date Booked], [Estimated Price], [Estimated Duration], [Reason])
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 using (OleDbCommand cmd = new OleDbCommand(insertAppointment, myConn))
                 {
@@ -1739,29 +1812,25 @@ namespace OOP2
                     DateTime dateTime = DateTime.Parse(dateTimeString);
                     cmd.Parameters.AddWithValue("?", dateTimeString);
 
-                    string[] timeParts = selectedTimeSlotLabel.Text.Split('-');
-                    string startTimeText = timeParts[0].Trim();
-                    string endTimeText = timeParts[1].Trim();
-
-                    DateTime startTime = DateTime.Parse($"{startTimeText: hh:mm tt}");
-                    DateTime endTime = DateTime.Parse($"{endTimeText: hh:mm tt}");
+                    DateTime start = DateTime.Parse($"{startTime: hh:mm tt}");
+                    DateTime end = DateTime.Parse($"{endTime: hh:mm tt}");
                     string bookeddate = DateTime.Now.ToString("dd MM yyyy");
+                    
+                    cmd.Parameters.AddWithValue("?", start.ToString("hh:mm tt"));
+                    cmd.Parameters.AddWithValue("?", end.ToString("hh:mm tt"));
                     cmd.Parameters.AddWithValue("?", bookeddate);
-                    cmd.Parameters.AddWithValue("?", startTimeText);
-                    cmd.Parameters.AddWithValue("?", endTimeText);
-
                     cmd.Parameters.AddWithValue("?", EPrice);
 
                     string durationString = $"{EDuration} mins";
                     cmd.Parameters.AddWithValue("?", durationString);
                     cmd.Parameters.AddWithValue("?", DBNull.Value);
+                    
 
                     cmd.ExecuteNonQuery();
                 }
 
                 int AppointmentId = 0;
-                string getAppointmentIdQuery = "SELECT MAX(Appointment_ID) FROM [Appointments] WHERE Facility_ID = ?";
-
+                string getAppointmentIdQuery = "SELECT MAX(Appointment_ID) FROM [Appointments] WHERE [Facility_ID] = ?";
                 using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getAppointmentIdQuery, myConn))
                 {
                     getServiceIdsCmd.Parameters.AddWithValue("?", facid);
@@ -1769,26 +1838,27 @@ namespace OOP2
                     using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
                     {
                         if (reader.Read() && !reader.IsDBNull(0))
-                        {
                             AppointmentId = reader.GetInt32(0);
-                        }
+                            GenerateAndSaveQrCode(AppointmentId,facid,clientId);
                     }
                 }
+
                 foreach (var service in SelectedServices)
                 {
-                    string insertServiceQuery = "INSERT INTO [Appointment Services] ([Appointment_ID], [Service_ID]) " +
-                                                "VALUES (@appid, @serviceid)";
+                    string insertServiceQuery = "INSERT INTO [Appointment Services] ([Appointment_ID], [Service_ID]) VALUES (?, ?)";
 
                     using (OleDbCommand cmd = new OleDbCommand(insertServiceQuery, myConn))
                     {
-                        cmd.Parameters.AddWithValue("@appid", AppointmentId);
-                        cmd.Parameters.AddWithValue("@serviceid", service.ServiceId);
+                        cmd.Parameters.AddWithValue("?", AppointmentId);
+                        cmd.Parameters.AddWithValue("?", service.ServiceId);
                         cmd.ExecuteNonQuery();
                     }
                 }
             }
-            MessageBox.Show("Updated successfully!");
+
+            MessageBox.Show("Appointment booked successfully!");
         }
+
 
         public void LoadHistory(int ID, int Faid, int Clid,
                         string statusFilter = "",

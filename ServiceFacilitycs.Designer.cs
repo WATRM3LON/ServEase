@@ -436,6 +436,8 @@
             Analytics1 = new OxyPlot.WindowsForms.PlotView();
             AppointmentsPieChart = new OxyPlot.WindowsForms.PlotView();
             button8 = new System.Windows.Forms.Button();
+            QRbutton = new System.Windows.Forms.Button();
+            QRBox = new System.Windows.Forms.PictureBox();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -527,6 +529,7 @@
             File2panel.SuspendLayout();
             File1panel.SuspendLayout();
             AnalyticsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)QRBox).BeginInit();
             SuspendLayout();
             // 
             // NotifyButton
@@ -6167,12 +6170,36 @@
             button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             button8.UseVisualStyleBackColor = false;
             // 
+            // QRbutton
+            // 
+            QRbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            QRbutton.ForeColor = System.Drawing.Color.FromArgb(254, 241, 245);
+            QRbutton.Image = (System.Drawing.Image)resources.GetObject("QRbutton.Image");
+            QRbutton.Location = new System.Drawing.Point(1136, 66);
+            QRbutton.Name = "QRbutton";
+            QRbutton.Size = new System.Drawing.Size(74, 70);
+            QRbutton.TabIndex = 75;
+            QRbutton.UseVisualStyleBackColor = true;
+            QRbutton.Click += QRbutton_Click;
+            // 
+            // QRBox
+            // 
+            QRBox.BackColor = System.Drawing.Color.White;
+            QRBox.Location = new System.Drawing.Point(849, 125);
+            QRBox.Name = "QRBox";
+            QRBox.Size = new System.Drawing.Size(348, 317);
+            QRBox.TabIndex = 76;
+            QRBox.TabStop = false;
+            QRBox.Visible = false;
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(QRBox);
+            Controls.Add(QRbutton);
             Controls.Add(AnalyticsPanel);
             Controls.Add(UploadfilesPanel);
             Controls.Add(ViewdetailsPanel);
@@ -6354,6 +6381,7 @@
             File1panel.PerformLayout();
             AnalyticsPanel.ResumeLayout(false);
             AnalyticsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)QRBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -6771,5 +6799,7 @@
         private System.Windows.Forms.Label TotalRevenue;
         private System.Windows.Forms.Label TotalAppstext;
         private System.Windows.Forms.Label TotalApps;
+        private System.Windows.Forms.Button QRbutton;
+        private System.Windows.Forms.PictureBox QRBox;
     }
 }
