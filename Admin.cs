@@ -63,6 +63,8 @@ namespace OOP2
             SerFacbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerFacbutton.Width, SerFacbutton.Height, 10, 10));
             //PROFILE
             CProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CProPicPanel.Width, CProPicPanel.Height, 10, 10));
+            FilesButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FilesButton.Width, FilesButton.Height, 10, 10));
+            FDeavtive.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FDeavtive.Width, FDeavtive.Height, 10, 10));
             CPIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CPIPanel.Width, CPIPanel.Height, 10, 10));
             DeAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeAccButton.Width, DeAccButton.Height, 10, 10));
             StatusText.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, StatusText.Width, StatusText.Height, 10, 10));
@@ -383,7 +385,7 @@ namespace OOP2
                                 FIFnameTitle.Text = reader["Facility Name"].ToString();
                                 string FName = reader["Owner First Name"].ToString();
                                 string LName = reader["Owner Last Name"].ToString();
-                                FIFnametext.Text = Fname + " " + Lname;
+                                FIFnametext.Text = FName + " " + LName;
                                 DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
                                 DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
                                 string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
@@ -515,7 +517,7 @@ namespace OOP2
         private void AccountButton_Click(object sender, EventArgs e)
         {
             CalendarAppointmentPanel.Visible = true; ProfilePanel.Visible = true; HiLabel.Visible = true; WelcomeLabel.Visible = true;
-            ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AccountButton.Visible = false; AppHistPanel.Visible = false;
+            ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AccountButton.Visible = false; AppHistPanel.Visible = false; FViewDetailspanel.Visible=false;
             ApphisButton.Font = new Font(ApphisButton.Font, ApphisButton.Font.Style & ~FontStyle.Bold);
             ApphisButton.FlatStyle = FlatStyle.Flat;
 
@@ -591,7 +593,7 @@ namespace OOP2
                                 usersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 
 
-                                usersPanel.Location = new Point(10, margin - 7);
+                                usersPanel.Location = new Point(10, margin);
                                 margin += usersPanel.Height + 10;
 
                                 string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";

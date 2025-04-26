@@ -997,7 +997,7 @@
         ogQUz4lsVLz8HLbkJullhlmXqhDwJPMhBy5qLp2oMt0+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="VFilesbutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="AccountButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAHpJREFUOE/tzCEKAlEUhtHT7AarQXC2MsWgFlcgCLYJA+7LXcw2phnMGhThabhY
@@ -1005,7 +1005,7 @@
         sI5DiTZF6ziUOGAVn6OPJ66CJU8YoT8UAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="AccountButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="VFilesbutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAHpJREFUOE/tzCEKAlEUhtHT7AarQXC2MsWgFlcgCLYJA+7LXcw2phnMGhThabhY
@@ -1020,7 +1020,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel58.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CProfile.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAaf1JREFUeF7t
         3QeUHEWWL3ztsLsz+3bWzOzumzXvfW9BeO89gxMC4b0HgQAJIwRySEIgb5H33qvlvffqlkcWeam7pXaZ
@@ -1485,7 +1485,7 @@
         ZmBgsEKXIARgNvegSxACI0EjCHRRkraZ0AWwAQCGChC2qZjMTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FProfile.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAABGdBTUEAALGPC/xhBQAAAORQTFRFAAAA
         ////9BWS7AeNk5SXY2Rm8RSQAAgAAAYAAAQA9hWT8waRkpKSsrKyAAkAlJSUmRBe0w9/5OTk6hWMeXl5

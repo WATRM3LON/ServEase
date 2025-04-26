@@ -152,12 +152,6 @@
             label105 = new System.Windows.Forms.Label();
             label106 = new System.Windows.Forms.Label();
             panel11 = new System.Windows.Forms.Panel();
-            AnalyticsMenuPanel = new System.Windows.Forms.Panel();
-            PSButton = new System.Windows.Forms.Button();
-            CGRButton = new System.Windows.Forms.Button();
-            BFButton = new System.Windows.Forms.Button();
-            AnalyticPannel1 = new System.Windows.Forms.Panel();
-            AnalyticPannel2 = new System.Windows.Forms.Panel();
             ProfilePanel = new System.Windows.Forms.Panel();
             filesbutton = new System.Windows.Forms.Button();
             SOAPanel = new System.Windows.Forms.Panel();
@@ -425,7 +419,16 @@
             File1button = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             AnalyticsPanel = new System.Windows.Forms.Panel();
-            plotView1 = new OxyPlot.WindowsForms.PlotView();
+            Analytics1Title = new System.Windows.Forms.Label();
+            label39 = new System.Windows.Forms.Label();
+            BFButton = new System.Windows.Forms.Button();
+            PSButton = new System.Windows.Forms.Button();
+            CGRButton = new System.Windows.Forms.Button();
+            Analytics2Title = new System.Windows.Forms.Label();
+            AppstatusTitle = new System.Windows.Forms.Label();
+            Analytics2 = new OxyPlot.WindowsForms.PlotView();
+            Analytics1 = new OxyPlot.WindowsForms.PlotView();
+            AppointmentsPieChart = new OxyPlot.WindowsForms.PlotView();
             button8 = new System.Windows.Forms.Button();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
@@ -453,7 +456,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            AnalyticsMenuPanel.SuspendLayout();
             ProfilePanel.SuspendLayout();
             SOAPanel.SuspendLayout();
             PIPanel.SuspendLayout();
@@ -2249,93 +2251,6 @@
             panel11.Name = "panel11";
             panel11.Size = new System.Drawing.Size(893, 363);
             panel11.TabIndex = 30;
-            // 
-            // AnalyticsMenuPanel
-            // 
-            AnalyticsMenuPanel.Controls.Add(PSButton);
-            AnalyticsMenuPanel.Controls.Add(CGRButton);
-            AnalyticsMenuPanel.Controls.Add(BFButton);
-            AnalyticsMenuPanel.Location = new System.Drawing.Point(-14, -9);
-            AnalyticsMenuPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            AnalyticsMenuPanel.Name = "AnalyticsMenuPanel";
-            AnalyticsMenuPanel.Size = new System.Drawing.Size(944, 69);
-            AnalyticsMenuPanel.TabIndex = 59;
-            // 
-            // PSButton
-            // 
-            PSButton.BackColor = System.Drawing.Color.Transparent;
-            PSButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            PSButton.FlatAppearance.BorderSize = 0;
-            PSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            PSButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            PSButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            PSButton.Location = new System.Drawing.Point(608, 12);
-            PSButton.Name = "PSButton";
-            PSButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            PSButton.Size = new System.Drawing.Size(297, 77);
-            PSButton.TabIndex = 27;
-            PSButton.Text = "Popular Services";
-            PSButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            PSButton.UseVisualStyleBackColor = false;
-            PSButton.Click += PSButton_Click;
-            // 
-            // CGRButton
-            // 
-            CGRButton.BackColor = System.Drawing.Color.Transparent;
-            CGRButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            CGRButton.FlatAppearance.BorderSize = 0;
-            CGRButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            CGRButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            CGRButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            CGRButton.Location = new System.Drawing.Point(311, 11);
-            CGRButton.Name = "CGRButton";
-            CGRButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            CGRButton.Size = new System.Drawing.Size(297, 77);
-            CGRButton.TabIndex = 26;
-            CGRButton.Text = "Customer Growth Rate";
-            CGRButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            CGRButton.UseVisualStyleBackColor = false;
-            CGRButton.Click += CGRButton_Click;
-            // 
-            // BFButton
-            // 
-            BFButton.BackColor = System.Drawing.Color.Transparent;
-            BFButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            BFButton.FlatAppearance.BorderSize = 0;
-            BFButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            BFButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            BFButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            BFButton.Location = new System.Drawing.Point(15, 9);
-            BFButton.Name = "BFButton";
-            BFButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            BFButton.Size = new System.Drawing.Size(297, 77);
-            BFButton.TabIndex = 25;
-            BFButton.Text = "Booking Frequency";
-            BFButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            BFButton.UseVisualStyleBackColor = false;
-            BFButton.Click += AnalyticsButton_Click;
-            // 
-            // AnalyticPannel1
-            // 
-            AnalyticPannel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            AnalyticPannel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            AnalyticPannel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("AnalyticPannel1.BackgroundImage");
-            AnalyticPannel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            AnalyticPannel1.Location = new System.Drawing.Point(1, 64);
-            AnalyticPannel1.Name = "AnalyticPannel1";
-            AnalyticPannel1.Size = new System.Drawing.Size(890, 363);
-            AnalyticPannel1.TabIndex = 31;
-            // 
-            // AnalyticPannel2
-            // 
-            AnalyticPannel2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            AnalyticPannel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            AnalyticPannel2.BackgroundImage = (System.Drawing.Image)resources.GetObject("AnalyticPannel2.BackgroundImage");
-            AnalyticPannel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            AnalyticPannel2.Location = new System.Drawing.Point(1, 64);
-            AnalyticPannel2.Name = "AnalyticPannel2";
-            AnalyticPannel2.Size = new System.Drawing.Size(892, 363);
-            AnalyticPannel2.TabIndex = 60;
             // 
             // ProfilePanel
             // 
@@ -6026,27 +5941,136 @@
             // 
             AnalyticsPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             AnalyticsPanel.BackColor = System.Drawing.Color.Transparent;
-            AnalyticsPanel.Controls.Add(AnalyticPannel2);
-            AnalyticsPanel.Controls.Add(AnalyticsMenuPanel);
-            AnalyticsPanel.Controls.Add(AnalyticPannel1);
-            AnalyticsPanel.Controls.Add(plotView1);
+            AnalyticsPanel.Controls.Add(Analytics1Title);
+            AnalyticsPanel.Controls.Add(label39);
+            AnalyticsPanel.Controls.Add(BFButton);
+            AnalyticsPanel.Controls.Add(PSButton);
+            AnalyticsPanel.Controls.Add(CGRButton);
+            AnalyticsPanel.Controls.Add(Analytics2Title);
+            AnalyticsPanel.Controls.Add(AppstatusTitle);
+            AnalyticsPanel.Controls.Add(Analytics2);
+            AnalyticsPanel.Controls.Add(Analytics1);
+            AnalyticsPanel.Controls.Add(AppointmentsPieChart);
             AnalyticsPanel.Controls.Add(button8);
-            AnalyticsPanel.Location = new System.Drawing.Point(277, 177);
+            AnalyticsPanel.Location = new System.Drawing.Point(277, 165);
             AnalyticsPanel.Name = "AnalyticsPanel";
-            AnalyticsPanel.Size = new System.Drawing.Size(893, 799);
+            AnalyticsPanel.Size = new System.Drawing.Size(893, 811);
             AnalyticsPanel.TabIndex = 74;
             // 
-            // plotView1
+            // Analytics1Title
             // 
-            plotView1.Location = new System.Drawing.Point(172, 504);
-            plotView1.Name = "plotView1";
-            plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
-            plotView1.Size = new System.Drawing.Size(391, 100);
-            plotView1.TabIndex = 41;
-            plotView1.Text = "plotView1";
-            plotView1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
-            plotView1.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
-            plotView1.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            Analytics1Title.AutoSize = true;
+            Analytics1Title.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Analytics1Title.Location = new System.Drawing.Point(185, 37);
+            Analytics1Title.Name = "Analytics1Title";
+            Analytics1Title.Size = new System.Drawing.Size(183, 25);
+            Analytics1Title.TabIndex = 69;
+            Analytics1Title.Text = "Appointment Status";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label39.Location = new System.Drawing.Point(709, 423);
+            label39.Name = "label39";
+            label39.Size = new System.Drawing.Size(108, 23);
+            label39.TabIndex = 68;
+            label39.Text = "Total Ratings";
+            // 
+            // BFButton
+            // 
+            BFButton.BackColor = System.Drawing.Color.White;
+            BFButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            BFButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            BFButton.Location = new System.Drawing.Point(353, 70);
+            BFButton.Name = "BFButton";
+            BFButton.Size = new System.Drawing.Size(158, 29);
+            BFButton.TabIndex = 67;
+            BFButton.Text = "Popular Timeslots";
+            BFButton.UseVisualStyleBackColor = false;
+            // 
+            // PSButton
+            // 
+            PSButton.BackColor = System.Drawing.Color.White;
+            PSButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            PSButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            PSButton.Location = new System.Drawing.Point(189, 70);
+            PSButton.Name = "PSButton";
+            PSButton.Size = new System.Drawing.Size(158, 29);
+            PSButton.TabIndex = 66;
+            PSButton.Text = "Popular Serivces";
+            PSButton.UseVisualStyleBackColor = false;
+            // 
+            // CGRButton
+            // 
+            CGRButton.BackColor = System.Drawing.Color.White;
+            CGRButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            CGRButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            CGRButton.Location = new System.Drawing.Point(25, 70);
+            CGRButton.Name = "CGRButton";
+            CGRButton.Size = new System.Drawing.Size(158, 29);
+            CGRButton.TabIndex = 65;
+            CGRButton.Text = "Customer Growth";
+            CGRButton.UseVisualStyleBackColor = false;
+            // 
+            // Analytics2Title
+            // 
+            Analytics2Title.AutoSize = true;
+            Analytics2Title.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            Analytics2Title.Location = new System.Drawing.Point(198, 416);
+            Analytics2Title.Name = "Analytics2Title";
+            Analytics2Title.Size = new System.Drawing.Size(230, 25);
+            Analytics2Title.TabIndex = 64;
+            Analytics2Title.Text = "Revenue by Appointment";
+            // 
+            // AppstatusTitle
+            // 
+            AppstatusTitle.AutoSize = true;
+            AppstatusTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            AppstatusTitle.Location = new System.Drawing.Point(632, 61);
+            AppstatusTitle.Name = "AppstatusTitle";
+            AppstatusTitle.Size = new System.Drawing.Size(163, 23);
+            AppstatusTitle.TabIndex = 63;
+            AppstatusTitle.Text = "Appointment Status";
+            // 
+            // Analytics2
+            // 
+            Analytics2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            Analytics2.Location = new System.Drawing.Point(12, 448);
+            Analytics2.Name = "Analytics2";
+            Analytics2.PanCursor = System.Windows.Forms.Cursors.Hand;
+            Analytics2.Size = new System.Drawing.Size(612, 342);
+            Analytics2.TabIndex = 62;
+            Analytics2.Text = "plotView2";
+            Analytics2.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            Analytics2.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            Analytics2.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            // 
+            // Analytics1
+            // 
+            Analytics1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            Analytics1.Location = new System.Drawing.Point(14, 105);
+            Analytics1.Name = "Analytics1";
+            Analytics1.PanCursor = System.Windows.Forms.Cursors.Hand;
+            Analytics1.Size = new System.Drawing.Size(507, 294);
+            Analytics1.TabIndex = 61;
+            Analytics1.Text = "plotView1";
+            Analytics1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            Analytics1.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            Analytics1.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            // 
+            // AppointmentsPieChart
+            // 
+            AppointmentsPieChart.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            AppointmentsPieChart.Location = new System.Drawing.Point(533, 87);
+            AppointmentsPieChart.Name = "AppointmentsPieChart";
+            AppointmentsPieChart.PanCursor = System.Windows.Forms.Cursors.Hand;
+            AppointmentsPieChart.Size = new System.Drawing.Size(350, 312);
+            AppointmentsPieChart.TabIndex = 60;
+            AppointmentsPieChart.Text = "plotView1";
+            AppointmentsPieChart.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            AppointmentsPieChart.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            AppointmentsPieChart.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
             // 
             // button8
             // 
@@ -6071,8 +6095,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(UploadfilesPanel);
             Controls.Add(AnalyticsPanel);
+            Controls.Add(UploadfilesPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(AppSearch);
@@ -6147,7 +6171,6 @@
             NotificationPanel.ResumeLayout(false);
             NotificationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            AnalyticsMenuPanel.ResumeLayout(false);
             ProfilePanel.ResumeLayout(false);
             SOAPanel.ResumeLayout(false);
             SOAPanel.PerformLayout();
@@ -6252,6 +6275,7 @@
             File1panel.ResumeLayout(false);
             File1panel.PerformLayout();
             AnalyticsPanel.ResumeLayout(false);
+            AnalyticsPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -6336,12 +6360,6 @@
         private System.Windows.Forms.Label label105;
         private System.Windows.Forms.Label label106;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel AnalyticsMenuPanel;
-        private System.Windows.Forms.Button PSButton;
-        private System.Windows.Forms.Button CGRButton;
-        private System.Windows.Forms.Button BFButton;
-        private System.Windows.Forms.Panel AnalyticPannel1;
-        private System.Windows.Forms.Panel AnalyticPannel2;
         private System.Windows.Forms.Panel ProfilePanel;
         private System.Windows.Forms.Panel SOAPanel;
         private System.Windows.Forms.Button ATView;
@@ -6650,7 +6668,6 @@
         private System.Windows.Forms.Button UFilebutton;
         private System.Windows.Forms.Panel AnalyticsPanel;
         private System.Windows.Forms.Button button8;
-        private OxyPlot.WindowsForms.PlotView plotView1;
         private System.Windows.Forms.Label File1Fname;
         private System.Windows.Forms.Label File7Fname;
         private System.Windows.Forms.Label File6Fname;
@@ -6660,5 +6677,15 @@
         private System.Windows.Forms.Label File2Fname;
         private System.Windows.Forms.Button Filesubmitbutton;
         private System.Windows.Forms.Label Allfiles;
+        private OxyPlot.WindowsForms.PlotView AppointmentsPieChart;
+        private System.Windows.Forms.Label Analytics2Title;
+        private System.Windows.Forms.Label AppstatusTitle;
+        private OxyPlot.WindowsForms.PlotView Analytics2;
+        private OxyPlot.WindowsForms.PlotView Analytics1;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Button BFButton;
+        private System.Windows.Forms.Button PSButton;
+        private System.Windows.Forms.Button CGRButton;
+        private System.Windows.Forms.Label Analytics1Title;
     }
 }

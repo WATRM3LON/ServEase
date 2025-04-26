@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.IO;
+using OxyPlot.Series;
+using OxyPlot;
+using OxyPlot.WindowsForms;
+using OxyPlot.Axes;
 
 namespace OOP2
 {
@@ -82,10 +86,9 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             SerButton.Visible = false; AnalyticsPanel.Visible = false;
             panel44.Visible = false; UFilebutton.Visible = false; UploadfilesPanel.Visible = false;
-            NotificationPanel.Visible = false; ASReasonlabel.Visible = false; ASReasontext.Visible = false;
-            AnalyticsMenuPanel.Visible = false; DimPanel.Visible = false;
-            AnalyticPannel2.Visible = false; ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
-            AnalyticPannel1.Visible = false; ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
+            NotificationPanel.Visible = false; ASReasonlabel.Visible = false; ASReasontext.Visible = false; DimPanel.Visible = false;
+            ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
+            ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
             ProfilePanel.Visible = false; FIESpeCatlabel.Visible = false; FIESpeCattext.Visible = false;
             SOButton.Visible = false;
             ATPanel.Visible = false; EATPanel.Visible = false; EATButton.Visible = false;
@@ -141,9 +144,6 @@ namespace OOP2
             ASCancelButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ASCancelButton.Width, ASCancelButton.Height, 10, 10));
             ASCompleteButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ASCompleteButton.Width, ASCompleteButton.Height, 10, 10));
             ASnoShoButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ASnoShoButton.Width, ASnoShoButton.Height, 10, 10));
-            //ANALYTICS
-            AnalyticPannel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AnalyticPannel1.Width, AnalyticPannel1.Height, 10, 10));
-            AnalyticPannel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AnalyticPannel2.Width, AnalyticPannel2.Height, 10, 10));
             //PROFILE
             ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
             FIStatus.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FIStatus.Width, FIStatus.Height, 10, 10));
@@ -333,9 +333,6 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsMenuPanel.Visible = false;
-            AnalyticPannel1.Visible = false;
-            AnalyticPannel2.Visible = false;
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
             //PROFILE
@@ -386,9 +383,6 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsMenuPanel.Visible = false;
-            AnalyticPannel1.Visible = false;
-            AnalyticPannel2.Visible = false;
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
             //PROFILE
@@ -440,9 +434,6 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsMenuPanel.Visible = false;
-            AnalyticPannel1.Visible = false;
-            AnalyticPannel2.Visible = false;
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
             //PROFILE
@@ -558,9 +549,7 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsMenuPanel.Visible = true;
-            AnalyticPannel1.Visible = true;
-            AnalyticsPanel.Visible = true;
+            AnalyticsPanel.Visible = true; LoadAppointmentPieChart(); LoadRevenueLineChart(); LoadPopularServicesChart();
             AnalyticsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             SButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style | FontStyle.Bold); BFButton.FlatStyle = FlatStyle.System;
@@ -592,9 +581,6 @@ namespace OOP2
 
         private void CGRButton_Click(object sender, EventArgs e)
         {
-            AnalyticsMenuPanel.Visible = true;
-            AnalyticPannel1.Visible = false;
-            AnalyticPannel2.Visible = true;
             AnalyticsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             SButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
@@ -614,8 +600,6 @@ namespace OOP2
 
         private void PSButton_Click(object sender, EventArgs e)
         {
-            AnalyticsMenuPanel.Visible = true;
-            AnalyticPannel1.Visible = true;
             AnalyticsButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             SButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
@@ -660,8 +644,6 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsMenuPanel.Visible = false;
-            AnalyticPannel1.Visible = false;
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
             BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
@@ -746,8 +728,6 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsMenuPanel.Visible = false;
-            AnalyticPannel1.Visible = false;
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
             BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
@@ -801,8 +781,6 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsMenuPanel.Visible = false;
-            AnalyticPannel1.Visible = false;
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
             BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
@@ -855,8 +833,6 @@ namespace OOP2
             AppDetsbutton.Visible = false;
             ViewdetailsPanel.Visible = false;
             //ANALYTICS
-            AnalyticsMenuPanel.Visible = false;
-            AnalyticPannel1.Visible = false;
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
             BFButton.Font = new Font(calendarsButton.Font, calendarsButton.Font.Style & ~FontStyle.Bold); BFButton.FlatStyle = FlatStyle.Flat;
@@ -2708,5 +2684,225 @@ namespace OOP2
                 Allfiles.Visible = true;
             }
         }
+
+        Dictionary<string, int> GetAppointmentStatusCounts(int facilityId)
+        {
+            var statusCounts = new Dictionary<string, int>();
+
+            string query = "SELECT [Appointment Status], COUNT(*) AS Total " +
+                           "FROM Appointments WHERE [Facility_ID] = ? GROUP BY [Appointment Status]";
+
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", facilityId);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string status = reader["Appointment Status"].ToString();
+                            int count = Convert.ToInt32(reader["Total"]);
+                            statusCounts[status] = count;
+                        }
+                    }
+                }
+            }
+
+            return statusCounts;
+        }
+
+        private void LoadAppointmentPieChart()
+        {
+            Dictionary<string, int> appointmentStatusCounts = GetAppointmentStatusCounts(FacilityiId);
+
+            PlotModel pieModel = new PlotModel {};
+            var pieSeries = new PieSeries
+            {
+                StrokeThickness = 1.5,
+                InsideLabelPosition = 0.9,
+                InsideLabelFormat = "{1}: {0}",
+                AngleSpan = 360,
+                StartAngle = 0,
+                FontSize = 10, 
+                InsideLabelColor = OxyColors.White,
+            };
+
+            var colors = new[]
+            {
+                OxyColor.FromRgb(219, 0, 0),//Cancelled
+                OxyColor.FromRgb(137,243,54),//Completed
+                OxyColor.FromRgb(0,127,255),//confirmed
+                OxyColor.FromRgb(127, 0, 255), // noshow
+                OxyColor.FromRgb(255, 228, 54) //pending
+            };
+
+            int i = 0;
+            foreach (var entry in appointmentStatusCounts)
+            {
+                pieSeries.Slices.Add(new PieSlice(entry.Key, entry.Value)
+                {
+                    Fill = colors[i % colors.Length]
+                });
+                i++;
+            }
+
+            pieModel.Series.Add(pieSeries);
+            AppointmentsPieChart.Model = pieModel;
+        }
+
+        Dictionary<DateTime, double> GetDailyRevenue(int FacilityiId)
+        {
+            var revenuePerDay = new Dictionary<DateTime, double>();
+
+            string query = "SELECT [Appointment Date], SUM([Price]) AS Revenue " +
+                           "FROM Appointments WHERE [Facility_ID] = ? AND [Appointment Status] = 'Completed' " +
+                           "GROUP BY [Appointment Date] ORDER BY [Appointment Date]";
+
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", FacilityiId);
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DateTime date = Convert.ToDateTime(reader["Appointment Date"]);
+                            double revenue = Convert.ToDouble(reader["Revenue"]);
+                            revenuePerDay[date] = revenue;
+                        }
+                    }
+                }
+            }
+
+            return revenuePerDay;
+        }
+
+        private void LoadRevenueLineChart()
+        {
+            Analytics2Title.Text = "Revenue by Appointment";
+            Dictionary<DateTime, double> revenueData = GetDailyRevenue(FacilityiId);
+
+            var model = new PlotModel { };
+
+            var xAxis = new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                StringFormat = "MMM-dd",
+                Title = "Date",
+                IntervalType = DateTimeIntervalType.Days,
+                MinorIntervalType = DateTimeIntervalType.Days,
+                IsZoomEnabled = false,
+                IsPanEnabled = false
+            };
+
+            var yAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Revenue (₱)",
+                MinimumPadding = 0,
+                AbsoluteMinimum = 0
+            };
+
+            model.Axes.Add(xAxis);
+            model.Axes.Add(yAxis);
+
+            var series = new LineSeries
+            {
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColor.FromRgb(240, 36, 110),
+                Color = OxyColor.FromRgb(237, 121, 163),
+                StrokeThickness = 2
+            };
+
+            foreach (var entry in revenueData)
+            {
+                series.Points.Add(DateTimeAxis.CreateDataPoint(entry.Key, entry.Value));
+            }
+
+            model.Series.Add(series);
+            Analytics2.Model = model;
+        }
+
+        Dictionary<string, int> GetPopularServices(int facilityId)
+        {
+            var serviceCounts = new Dictionary<string, int>();
+
+            string query = @"
+                        SELECT fs.[Service Name], COUNT(*) AS BookingCount
+                        FROM ((Appointments a
+                        INNER JOIN [Appointment Services] aps ON a.[Appointment_ID] = aps.[Appointment_ID])
+                        INNER JOIN [Facility Services] fs ON aps.[Service_ID] = fs.[Service_ID])
+                        WHERE a.[Facility_ID] = ? AND a.[Appointment Status] = 'Completed'
+                        GROUP BY fs.[Service Name]
+                        ORDER BY BookingCount DESC";
+
+
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", facilityId);
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string service = reader["Service Name"].ToString();
+                            int count = Convert.ToInt32(reader["BookingCount"]);
+                            serviceCounts[service] = count;
+                        }
+                    }
+                }
+            }
+
+            return serviceCounts;
+        }
+
+        private void LoadPopularServicesChart()
+        {
+            Analytics1Title.Text = "Popular Services";
+            Dictionary<string, int> serviceData = GetPopularServices(FacilityiId);
+
+            var model = new PlotModel { };
+
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Service",
+                GapWidth = 0.3
+            };
+
+            var valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Number of Bookings",
+                MinimumPadding = 0,
+                AbsoluteMinimum = 0
+            };
+
+            var series = new BarSeries
+            {
+                ItemsSource = serviceData.Select(kv => new BarItem { Value = kv.Value }).ToList(),
+                LabelPlacement = LabelPlacement.Inside,
+                LabelFormatString = "{0}",
+                FillColor = OxyColor.FromRgb(240, 36, 110)
+            };
+
+            foreach (var service in serviceData.Keys)
+                categoryAxis.Labels.Add(service);
+
+            model.Axes.Add(categoryAxis);
+            model.Axes.Add(valueAxis);
+            model.Series.Add(series);
+
+            Analytics1.Model = model;
+        }
+
     }
 }

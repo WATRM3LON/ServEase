@@ -55,10 +55,10 @@
             MaximizeButton = new System.Windows.Forms.Button();
             CloseButton = new System.Windows.Forms.Button();
             HeaderPanel = new System.Windows.Forms.Panel();
-            VFilesbutton = new System.Windows.Forms.Button();
-            WelcomeLabel = new System.Windows.Forms.Label();
             HiLabel = new System.Windows.Forms.Label();
             AccountButton = new System.Windows.Forms.Button();
+            VFilesbutton = new System.Windows.Forms.Button();
+            WelcomeLabel = new System.Windows.Forms.Label();
             ProfilePanel = new System.Windows.Forms.Panel();
             ClientsButton = new System.Windows.Forms.Button();
             SerFacbutton = new System.Windows.Forms.Button();
@@ -83,19 +83,17 @@
             ClientNamePI = new System.Windows.Forms.Label();
             PIName = new System.Windows.Forms.Label();
             PIEditButton = new System.Windows.Forms.Button();
-            label91 = new System.Windows.Forms.Label();
+            PITitle = new System.Windows.Forms.Label();
             CProPicPanel = new System.Windows.Forms.Panel();
             LocText = new System.Windows.Forms.Label();
             StatusLabel = new System.Windows.Forms.Label();
             LocLabel = new System.Windows.Forms.Label();
             StatusText = new System.Windows.Forms.Button();
             PPClientName = new System.Windows.Forms.Label();
-            panel58 = new System.Windows.Forms.Panel();
+            CProfile = new System.Windows.Forms.Panel();
             ViewDetpanel = new System.Windows.Forms.Panel();
             ApphisButton = new System.Windows.Forms.Button();
             Personalbutton = new System.Windows.Forms.Button();
-            AppHistPanel = new System.Windows.Forms.Panel();
-            button1 = new System.Windows.Forms.Button();
             FViewDetailspanel = new System.Windows.Forms.Panel();
             FPIPanel = new System.Windows.Forms.Panel();
             FISpecific = new System.Windows.Forms.Label();
@@ -129,9 +127,9 @@
             FIRatingslabel = new System.Windows.Forms.Label();
             FIRatingstext = new System.Windows.Forms.Label();
             FIFnameTitle = new System.Windows.Forms.Label();
-            panel4 = new System.Windows.Forms.Panel();
+            FProfile = new System.Windows.Forms.Panel();
             button2 = new System.Windows.Forms.Button();
-            button3 = new System.Windows.Forms.Button();
+            FDeavtive = new System.Windows.Forms.Button();
             VFilespanel = new System.Windows.Forms.Panel();
             Reason = new System.Windows.Forms.Label();
             NotePanel = new System.Windows.Forms.Panel();
@@ -183,6 +181,7 @@
             ClosePFbutton = new System.Windows.Forms.Button();
             button4 = new System.Windows.Forms.Button();
             PhotosFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            AppHistPanel = new System.Windows.Forms.Panel();
             NotificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DashboardPanel2.SuspendLayout();
@@ -193,7 +192,6 @@
             CPIPanel.SuspendLayout();
             CProPicPanel.SuspendLayout();
             ViewDetpanel.SuspendLayout();
-            AppHistPanel.SuspendLayout();
             FViewDetailspanel.SuspendLayout();
             FPIPanel.SuspendLayout();
             FProPicPanel.SuspendLayout();
@@ -583,15 +581,46 @@
             // HeaderPanel
             // 
             HeaderPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            HeaderPanel.Controls.Add(VFilesbutton);
-            HeaderPanel.Controls.Add(WelcomeLabel);
             HeaderPanel.Controls.Add(HiLabel);
             HeaderPanel.Controls.Add(AccountButton);
+            HeaderPanel.Controls.Add(VFilesbutton);
+            HeaderPanel.Controls.Add(WelcomeLabel);
             HeaderPanel.Location = new System.Drawing.Point(267, 68);
             HeaderPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             HeaderPanel.Name = "HeaderPanel";
             HeaderPanel.Size = new System.Drawing.Size(940, 100);
             HeaderPanel.TabIndex = 55;
+            // 
+            // HiLabel
+            // 
+            HiLabel.AutoSize = true;
+            HiLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            HiLabel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            HiLabel.Location = new System.Drawing.Point(13, -5);
+            HiLabel.Name = "HiLabel";
+            HiLabel.Size = new System.Drawing.Size(94, 25);
+            HiLabel.TabIndex = 24;
+            HiLabel.Text = "Hi Admin,";
+            // 
+            // AccountButton
+            // 
+            AccountButton.BackColor = System.Drawing.Color.Transparent;
+            AccountButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            AccountButton.FlatAppearance.BorderSize = 0;
+            AccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            AccountButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            AccountButton.Image = (System.Drawing.Image)resources.GetObject("AccountButton.Image");
+            AccountButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            AccountButton.Location = new System.Drawing.Point(3, 6);
+            AccountButton.Name = "AccountButton";
+            AccountButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            AccountButton.Size = new System.Drawing.Size(436, 74);
+            AccountButton.TabIndex = 29;
+            AccountButton.Text = "  Client's Account";
+            AccountButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            AccountButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            AccountButton.UseVisualStyleBackColor = false;
+            AccountButton.Click += AccountButton_Click;
             // 
             // VFilesbutton
             // 
@@ -624,37 +653,6 @@
             WelcomeLabel.Size = new System.Drawing.Size(326, 41);
             WelcomeLabel.TabIndex = 25;
             WelcomeLabel.Text = "Welcome to ServEase!";
-            // 
-            // HiLabel
-            // 
-            HiLabel.AutoSize = true;
-            HiLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            HiLabel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            HiLabel.Location = new System.Drawing.Point(13, -5);
-            HiLabel.Name = "HiLabel";
-            HiLabel.Size = new System.Drawing.Size(94, 25);
-            HiLabel.TabIndex = 24;
-            HiLabel.Text = "Hi Admin,";
-            // 
-            // AccountButton
-            // 
-            AccountButton.BackColor = System.Drawing.Color.Transparent;
-            AccountButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            AccountButton.FlatAppearance.BorderSize = 0;
-            AccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            AccountButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            AccountButton.Image = (System.Drawing.Image)resources.GetObject("AccountButton.Image");
-            AccountButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            AccountButton.Location = new System.Drawing.Point(3, 6);
-            AccountButton.Name = "AccountButton";
-            AccountButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            AccountButton.Size = new System.Drawing.Size(436, 74);
-            AccountButton.TabIndex = 29;
-            AccountButton.Text = "  Client's Account";
-            AccountButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            AccountButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            AccountButton.UseVisualStyleBackColor = false;
-            AccountButton.Click += AccountButton_Click;
             // 
             // ProfilePanel
             // 
@@ -761,7 +759,7 @@
             CPIPanel.Controls.Add(ClientNamePI);
             CPIPanel.Controls.Add(PIName);
             CPIPanel.Controls.Add(PIEditButton);
-            CPIPanel.Controls.Add(label91);
+            CPIPanel.Controls.Add(PITitle);
             CPIPanel.Location = new System.Drawing.Point(12, 194);
             CPIPanel.Name = "CPIPanel";
             CPIPanel.Size = new System.Drawing.Size(867, 399);
@@ -978,17 +976,17 @@
             PIEditButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             PIEditButton.UseVisualStyleBackColor = false;
             // 
-            // label91
+            // PITitle
             // 
-            label91.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            label91.AutoSize = true;
-            label91.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label91.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label91.Location = new System.Drawing.Point(19, 17);
-            label91.Name = "label91";
-            label91.Size = new System.Drawing.Size(187, 25);
-            label91.TabIndex = 35;
-            label91.Text = "Personal Information";
+            PITitle.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            PITitle.AutoSize = true;
+            PITitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PITitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            PITitle.Location = new System.Drawing.Point(19, 17);
+            PITitle.Name = "PITitle";
+            PITitle.Size = new System.Drawing.Size(187, 25);
+            PITitle.TabIndex = 35;
+            PITitle.Text = "Personal Information";
             // 
             // CProPicPanel
             // 
@@ -999,7 +997,7 @@
             CProPicPanel.Controls.Add(LocLabel);
             CProPicPanel.Controls.Add(StatusText);
             CProPicPanel.Controls.Add(PPClientName);
-            CProPicPanel.Controls.Add(panel58);
+            CProPicPanel.Controls.Add(CProfile);
             CProPicPanel.Location = new System.Drawing.Point(13, 1);
             CProPicPanel.Name = "CProPicPanel";
             CProPicPanel.Size = new System.Drawing.Size(867, 171);
@@ -1071,15 +1069,15 @@
             PPClientName.TabIndex = 35;
             PPClientName.Text = "Juan Dela Cruz";
             // 
-            // panel58
+            // CProfile
             // 
-            panel58.BackColor = System.Drawing.Color.Transparent;
-            panel58.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel58.BackgroundImage");
-            panel58.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            panel58.Location = new System.Drawing.Point(21, 22);
-            panel58.Name = "panel58";
-            panel58.Size = new System.Drawing.Size(116, 115);
-            panel58.TabIndex = 34;
+            CProfile.BackColor = System.Drawing.Color.Transparent;
+            CProfile.BackgroundImage = (System.Drawing.Image)resources.GetObject("CProfile.BackgroundImage");
+            CProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            CProfile.Location = new System.Drawing.Point(21, 22);
+            CProfile.Name = "CProfile";
+            CProfile.Size = new System.Drawing.Size(116, 115);
+            CProfile.TabIndex = 34;
             // 
             // ViewDetpanel
             // 
@@ -1127,34 +1125,6 @@
             Personalbutton.UseVisualStyleBackColor = false;
             Personalbutton.Click += Personalbutton_Click;
             // 
-            // AppHistPanel
-            // 
-            AppHistPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            AppHistPanel.AutoScroll = true;
-            AppHistPanel.BackColor = System.Drawing.Color.Transparent;
-            AppHistPanel.Controls.Add(button1);
-            AppHistPanel.Location = new System.Drawing.Point(277, 208);
-            AppHistPanel.Name = "AppHistPanel";
-            AppHistPanel.Size = new System.Drawing.Size(893, 593);
-            AppHistPanel.TabIndex = 60;
-            // 
-            // button1
-            // 
-            button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button1.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button1.ForeColor = System.Drawing.Color.White;
-            button1.Location = new System.Drawing.Point(1396, 1127);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(165, 51);
-            button1.TabIndex = 78;
-            button1.Text = "Deactivate Account";
-            button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
-            // 
             // FViewDetailspanel
             // 
             FViewDetailspanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -1162,10 +1132,10 @@
             FViewDetailspanel.Controls.Add(FPIPanel);
             FViewDetailspanel.Controls.Add(FProPicPanel);
             FViewDetailspanel.Controls.Add(button2);
-            FViewDetailspanel.Controls.Add(button3);
-            FViewDetailspanel.Location = new System.Drawing.Point(277, 208);
+            FViewDetailspanel.Controls.Add(FDeavtive);
+            FViewDetailspanel.Location = new System.Drawing.Point(277, 172);
             FViewDetailspanel.Name = "FViewDetailspanel";
-            FViewDetailspanel.Size = new System.Drawing.Size(913, 755);
+            FViewDetailspanel.Size = new System.Drawing.Size(893, 791);
             FViewDetailspanel.TabIndex = 61;
             // 
             // FPIPanel
@@ -1197,7 +1167,7 @@
             FPIPanel.Controls.Add(FItitle);
             FPIPanel.Location = new System.Drawing.Point(13, 200);
             FPIPanel.Name = "FPIPanel";
-            FPIPanel.Size = new System.Drawing.Size(887, 478);
+            FPIPanel.Size = new System.Drawing.Size(867, 478);
             FPIPanel.TabIndex = 80;
             // 
             // FISpecific
@@ -1246,7 +1216,7 @@
             FIAppStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FIAppStatus.ForeColor = System.Drawing.Color.LimeGreen;
             FIAppStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            FIAppStatus.Location = new System.Drawing.Point(743, 17);
+            FIAppStatus.Location = new System.Drawing.Point(723, 17);
             FIAppStatus.Name = "FIAppStatus";
             FIAppStatus.Size = new System.Drawing.Size(109, 36);
             FIAppStatus.TabIndex = 85;
@@ -1263,7 +1233,7 @@
             FilesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             FilesButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FilesButton.ForeColor = System.Drawing.Color.White;
-            FilesButton.Location = new System.Drawing.Point(737, 427);
+            FilesButton.Location = new System.Drawing.Point(717, 427);
             FilesButton.Name = "FilesButton";
             FilesButton.Size = new System.Drawing.Size(132, 40);
             FilesButton.TabIndex = 84;
@@ -1475,7 +1445,7 @@
             FIEditButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FIEditButton.Image = (System.Drawing.Image)resources.GetObject("FIEditButton.Image");
             FIEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            FIEditButton.Location = new System.Drawing.Point(1430, 11);
+            FIEditButton.Location = new System.Drawing.Point(1410, 11);
             FIEditButton.Name = "FIEditButton";
             FIEditButton.Size = new System.Drawing.Size(109, 54);
             FIEditButton.TabIndex = 33;
@@ -1507,10 +1477,10 @@
             FProPicPanel.Controls.Add(FIRatingslabel);
             FProPicPanel.Controls.Add(FIRatingstext);
             FProPicPanel.Controls.Add(FIFnameTitle);
-            FProPicPanel.Controls.Add(panel4);
+            FProPicPanel.Controls.Add(FProfile);
             FProPicPanel.Location = new System.Drawing.Point(13, 18);
             FProPicPanel.Name = "FProPicPanel";
-            FProPicPanel.Size = new System.Drawing.Size(887, 165);
+            FProPicPanel.Size = new System.Drawing.Size(867, 165);
             FProPicPanel.TabIndex = 79;
             // 
             // FIStatuslabel
@@ -1535,7 +1505,7 @@
             FIStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             FIStatus.ForeColor = System.Drawing.Color.LimeGreen;
             FIStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            FIStatus.Location = new System.Drawing.Point(742, 27);
+            FIStatus.Location = new System.Drawing.Point(722, 27);
             FIStatus.Name = "FIStatus";
             FIStatus.Size = new System.Drawing.Size(109, 36);
             FIStatus.TabIndex = 51;
@@ -1603,15 +1573,15 @@
             FIFnameTitle.TabIndex = 35;
             FIFnameTitle.Text = "Salon de Rose";
             // 
-            // panel4
+            // FProfile
             // 
-            panel4.BackColor = System.Drawing.Color.Transparent;
-            panel4.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel4.BackgroundImage");
-            panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            panel4.Location = new System.Drawing.Point(21, 22);
-            panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(116, 115);
-            panel4.TabIndex = 34;
+            FProfile.BackColor = System.Drawing.Color.Transparent;
+            FProfile.BackgroundImage = (System.Drawing.Image)resources.GetObject("FProfile.BackgroundImage");
+            FProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            FProfile.Location = new System.Drawing.Point(21, 22);
+            FProfile.Name = "FProfile";
+            FProfile.Size = new System.Drawing.Size(116, 115);
+            FProfile.TabIndex = 34;
             // 
             // button2
             // 
@@ -1622,7 +1592,7 @@
             button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             button2.ForeColor = System.Drawing.Color.White;
-            button2.Location = new System.Drawing.Point(1416, 1289);
+            button2.Location = new System.Drawing.Point(1396, 1325);
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(165, 51);
             button2.TabIndex = 78;
@@ -1630,22 +1600,22 @@
             button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // FDeavtive
             // 
-            button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button3.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
-            button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button3.ForeColor = System.Drawing.Color.White;
-            button3.Location = new System.Drawing.Point(723, 693);
-            button3.Name = "button3";
-            button3.Size = new System.Drawing.Size(165, 51);
-            button3.TabIndex = 83;
-            button3.Text = "Deactivate Account";
-            button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = false;
+            FDeavtive.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            FDeavtive.BackColor = System.Drawing.Color.FromArgb(187, 228, 242);
+            FDeavtive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            FDeavtive.FlatAppearance.BorderSize = 0;
+            FDeavtive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            FDeavtive.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            FDeavtive.ForeColor = System.Drawing.Color.White;
+            FDeavtive.Location = new System.Drawing.Point(703, 729);
+            FDeavtive.Name = "FDeavtive";
+            FDeavtive.Size = new System.Drawing.Size(165, 51);
+            FDeavtive.TabIndex = 83;
+            FDeavtive.Text = "Deactivate Account";
+            FDeavtive.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            FDeavtive.UseVisualStyleBackColor = false;
             // 
             // VFilespanel
             // 
@@ -1657,7 +1627,7 @@
             VFilespanel.Controls.Add(Filespanel);
             VFilespanel.Controls.Add(button8);
             VFilespanel.Controls.Add(button9);
-            VFilespanel.Location = new System.Drawing.Point(277, 208);
+            VFilespanel.Location = new System.Drawing.Point(277, 172);
             VFilespanel.Name = "VFilespanel";
             VFilespanel.Size = new System.Drawing.Size(893, 755);
             VFilespanel.TabIndex = 62;
@@ -2306,16 +2276,25 @@
             PhotosFlowLayoutPanel.Size = new System.Drawing.Size(765, 713);
             PhotosFlowLayoutPanel.TabIndex = 89;
             // 
+            // AppHistPanel
+            // 
+            AppHistPanel.AutoScroll = true;
+            AppHistPanel.Location = new System.Drawing.Point(277, 208);
+            AppHistPanel.Name = "AppHistPanel";
+            AppHistPanel.Padding = new System.Windows.Forms.Padding(20);
+            AppHistPanel.Size = new System.Drawing.Size(893, 595);
+            AppHistPanel.TabIndex = 89;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(214, 241, 250);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(AppHistPanel);
+            Controls.Add(FViewDetailspanel);
             Controls.Add(VFilespanel);
             Controls.Add(ViewDetpanel);
-            Controls.Add(AppHistPanel);
-            Controls.Add(CViewDetailspanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(NotificationPanel);
@@ -2327,9 +2306,9 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
-            Controls.Add(FViewDetailspanel);
             Controls.Add(Photopanel);
             Controls.Add(FPhotosPanel);
+            Controls.Add(CViewDetailspanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "Admin";
@@ -2349,7 +2328,6 @@
             CProPicPanel.ResumeLayout(false);
             CProPicPanel.PerformLayout();
             ViewDetpanel.ResumeLayout(false);
-            AppHistPanel.ResumeLayout(false);
             FViewDetailspanel.ResumeLayout(false);
             FPIPanel.ResumeLayout(false);
             FPIPanel.PerformLayout();
@@ -2431,10 +2409,10 @@
         private System.Windows.Forms.Label ClientNamePI;
         private System.Windows.Forms.Label PIName;
         private System.Windows.Forms.Button PIEditButton;
-        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label PITitle;
         private System.Windows.Forms.Panel CProPicPanel;
         private System.Windows.Forms.Label PPClientName;
-        private System.Windows.Forms.Panel panel58;
+        private System.Windows.Forms.Panel CProfile;
         private System.Windows.Forms.Panel ViewDetpanel;
         private System.Windows.Forms.Button ApphisButton;
         private System.Windows.Forms.Button Personalbutton;
@@ -2446,8 +2424,6 @@
         private System.Windows.Forms.Label dateregistlabel;
         private System.Windows.Forms.Label LocText;
         private System.Windows.Forms.Label LocLabel;
-        private System.Windows.Forms.Panel AppHistPanel;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel FViewDetailspanel;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel FPIPanel;
@@ -2471,12 +2447,12 @@
         private System.Windows.Forms.Label FIRatingslabel;
         private System.Windows.Forms.Label FIRatingstext;
         private System.Windows.Forms.Label FIFnameTitle;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel FProfile;
         private System.Windows.Forms.Label FIdeletetext;
         private System.Windows.Forms.Label FIdeletelabel;
         private System.Windows.Forms.Label FIregisttext;
         private System.Windows.Forms.Label FIregistlabel;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button FDeavtive;
         private System.Windows.Forms.Label FIStatuslabel;
         private System.Windows.Forms.Button FIStatus;
         private System.Windows.Forms.Label FIAppstatuslabel;
@@ -2537,5 +2513,6 @@
         private System.Windows.Forms.Button ClosePFbutton;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.FlowLayoutPanel PhotosFlowLayoutPanel;
+        private System.Windows.Forms.Panel AppHistPanel;
     }
 }

@@ -158,6 +158,7 @@
             Controls.Add(UserNamelabel);
             Controls.Add(UserEmailtext);
             Controls.Add(UserNametext);
+            Margin = new System.Windows.Forms.Padding(0);
             Name = "UsersPanel";
             Size = new System.Drawing.Size(855, 103);
             ResumeLayout(false);
