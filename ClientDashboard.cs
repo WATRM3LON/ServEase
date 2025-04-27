@@ -73,7 +73,7 @@ namespace OOP2
         public DateTime workingend;
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
-        string locs = "", Ems = "", selectedTime = "", filter1 = "", filter2 = "";
+        string locs = "", Ems = "", selectedTime = "", filter1 = "", filter2 = "", appdate = "", apptime = "";
         int facid, Appid;
         int clientId;
         public ClientDashboard()
@@ -1901,8 +1901,6 @@ namespace OOP2
 
                     smtpClient.Send(message);
                 }
-
-                Console.WriteLine("Booking email sent successfully to " + clientEmail);
             }
             catch (Exception ex)
             {
@@ -1934,8 +1932,6 @@ namespace OOP2
 
                     smtpClient.Send(message);
                 }
-
-                //Console.WriteLine("Booking email sent successfully to " + clientEmail);
             }
             catch (Exception ex)
             {
@@ -2161,6 +2157,8 @@ namespace OOP2
                                 ASReasontext.Text = reason;
                                 ReschedButton.Visible = false;
                             }
+
+                            appdate = dateapp; apptime = formattedStart;
                         }
                     }
                 }
@@ -2340,12 +2338,49 @@ namespace OOP2
 
                             cmd.ExecuteNonQuery();
                         }
-
+                        string clientName = FName + " " + LName;
+                        SendCancelEmail(Appid, EmailAddress, clientName, appdate, apptime, Facname, reason);
                         MessageBox.Show("Appointment cancelled successfully.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
         }
+
+        private void SendCancelEmail(int appointmentId, string clientEmail, string clientName, string appointmentDate, string appointmentTime, string providerName, string Reason)
+        {
+            try
+            {
+                string emailTemplatePath = @"D:\\OOP2\\HTML\\Appointment Cancellation by Client.html";
+                string emailBody = File.ReadAllText(emailTemplatePath);
+
+                emailBody = emailBody.Replace("{ClientName}", clientName)
+                                     .Replace("{FacilityName}", providerName)
+                                     .Replace("{AppointmentDate}", appointmentDate)
+                                     .Replace("{AppointmentTime}", appointmentTime)
+                                     .Replace("{Reasonbyclient}", Reason);
+
+                var message = new MailMessage();
+                message.From = new MailAddress("snmcorporation.dlic@gmail.com");
+                message.To.Add("snmcorporation.dlic@gmail.com");
+                message.Subject = "Appointment Cancellation Notice";
+                message.Body = emailBody;
+                message.IsBodyHtml = true;
+
+                using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtpClient.Port = 587;
+                    smtpClient.Credentials = new NetworkCredential("snmcorporation.dlic@gmail.com", "kgap arcn qkvq ktgx");
+                    smtpClient.EnableSsl = true;
+
+                    smtpClient.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending email: " + ex.Message);
+            }
+        }
+
 
         private void FilterBox_SelectedIndexChanged(object sender, EventArgs e)
         {

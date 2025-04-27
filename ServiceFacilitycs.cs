@@ -24,6 +24,9 @@ using ZXing;
 using ZXing.Aztec;
 using ZXing.QrCode;
 using ZXing.Common;
+using System.Net.Mail;
+using System.Net;
+using System.Configuration.Provider;
 
 namespace OOP2
 {
@@ -2260,6 +2263,7 @@ namespace OOP2
                 }
             }
         }
+        string clientname = "", appdate = "", apptime = "", clientemail = "";
         public void ViewDets(int ID, int Faid, int Clid)
         {
             WelcomeLabel.Visible = false;
@@ -2283,8 +2287,8 @@ namespace OOP2
                         {
                             string namefirst = readers.IsDBNull(readers.GetOrdinal("First Name")) ? "" : readers["First Name"].ToString();
                             string namelast = readers.IsDBNull(readers.GetOrdinal("Last Name")) ? "" : readers["Last Name"].ToString();
-                            ASLastName.Text = namelast; ASFirstName.Text = namefirst;
-                            ASEMStext.Text = readers.IsDBNull(readers.GetOrdinal("Email Address")) ? "" : readers["Email Address"].ToString();
+                            clientname = ASLastName.Text = namelast; ASFirstName.Text = namefirst;
+                            clientemail = ASEMStext.Text = readers.IsDBNull(readers.GetOrdinal("Email Address")) ? "" : readers["Email Address"].ToString();
                             ASsextext.Text = readers.IsDBNull(readers.GetOrdinal("Sex")) ? "" : readers["Sex"].ToString();
                             ASConumtext.Text = readers.IsDBNull(readers.GetOrdinal("Contact Number")) ? "" : readers["Contact Number"].ToString();
                             ASLoctext.Text = readers.IsDBNull(readers.GetOrdinal("Location")) ? "" : readers["Location"].ToString();
@@ -2350,6 +2354,7 @@ namespace OOP2
                                 ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
                                 ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
                             }
+                            appdate = dateapp; apptime = formattedStart;
                         }
                     }
                 }
@@ -2391,6 +2396,7 @@ namespace OOP2
             }
         }
 
+
         private void ASCompleteButton_Click(object sender, EventArgs e)
         {
             Notice notice = new Notice();
@@ -2410,9 +2416,43 @@ namespace OOP2
 
                         cmd.ExecuteNonQuery();
                     }
-
+                    SendCompleteEmail(AppointmentId, clientemail, clientname, appdate, apptime, Facname);
                     MessageBox.Show("Appointment completed successfully.", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void SendCompleteEmail(int appointmentId, string clientEmail, string clientName, string appointmentDate, string appointmentTime, string providerName)
+        {
+            try
+            {
+                string emailTemplatePath = @"D:\\OOP2\\HTML\\Appointment Completed.html";
+                string emailBody = File.ReadAllText(emailTemplatePath);
+
+                emailBody = emailBody.Replace("{ClientName}", clientName)
+                                     .Replace("{FacilityName}", providerName)
+                                     .Replace("{AppointmentDate}", appointmentDate)
+                                     .Replace("{AppointmentTime}", appointmentTime);
+
+                var message = new MailMessage();
+                message.From = new MailAddress("snmcorporation.dlic@gmail.com");
+                message.To.Add("vaughanash02@gmail.com");
+                message.Subject = "Appointment Cancellation Notice";
+                message.Body = emailBody;
+                message.IsBodyHtml = true;
+
+                using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtpClient.Port = 587;
+                    smtpClient.Credentials = new NetworkCredential("snmcorporation.dlic@gmail.com", "kgap arcn qkvq ktgx");
+                    smtpClient.EnableSsl = true;
+
+                    smtpClient.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending email: " + ex.Message);
             }
         }
 
@@ -2439,9 +2479,44 @@ namespace OOP2
                             cmd.ExecuteNonQuery();
                         }
 
+                        SendCancelEmail(AppointmentId, clientemail, clientname, appdate, apptime, Facname, reason);
                         MessageBox.Show("Appointment cancelled successfully.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+        }
+        private void SendCancelEmail(int appointmentId, string clientEmail, string clientName, string appointmentDate, string appointmentTime, string providerName, string Reason)
+        {
+            try
+            {
+                string emailTemplatePath = @"D:\\OOP2\\HTML\\Appointment Cancellation by Facility.html";
+                string emailBody = File.ReadAllText(emailTemplatePath);
+
+                emailBody = emailBody.Replace("{ClientName}", clientName)
+                                     .Replace("{FacilityName}", providerName)
+                                     .Replace("{AppointmentDate}", appointmentDate)
+                                     .Replace("{AppointmentTime}", appointmentTime)
+                                     .Replace("{Reasonbyfacility}", Reason);
+
+                var message = new MailMessage();
+                message.From = new MailAddress("snmcorporation.dlic@gmail.com");
+                message.To.Add("vaughanash02@gmail.com");
+                message.Subject = "Appointment Cancellation Notice";
+                message.Body = emailBody;
+                message.IsBodyHtml = true;
+
+                using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtpClient.Port = 587;
+                    smtpClient.Credentials = new NetworkCredential("snmcorporation.dlic@gmail.com", "kgap arcn qkvq ktgx");
+                    smtpClient.EnableSsl = true;
+
+                    smtpClient.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending email: " + ex.Message);
             }
         }
 
@@ -2464,9 +2539,43 @@ namespace OOP2
 
                         cmd.ExecuteNonQuery();
                     }
-
+                    SendConfirmEmail(AppointmentId, clientemail, clientname, appdate, apptime, Facname);
                     MessageBox.Show("Appointment confirmed successfully.", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void SendConfirmEmail(int appointmentId, string clientEmail, string clientName, string appointmentDate, string appointmentTime, string providerName)
+        {
+            try
+            {
+                string emailTemplatePath = @"D:\\OOP2\\HTML\\Appointment Confirmed.html";
+                string emailBody = File.ReadAllText(emailTemplatePath);
+
+                emailBody = emailBody.Replace("{ClientName}", clientName)
+                                     .Replace("{FacilityName}", providerName)
+                                     .Replace("{AppointmentDate}", appointmentDate)
+                                     .Replace("{AppointmentTime}", appointmentTime);
+
+                var message = new MailMessage();
+                message.From = new MailAddress("snmcorporation.dlic@gmail.com");
+                message.To.Add("vaughanash02@gmail.com");
+                message.Subject = "Appointment Cancellation Notice";
+                message.Body = emailBody;
+                message.IsBodyHtml = true;
+
+                using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtpClient.Port = 587;
+                    smtpClient.Credentials = new NetworkCredential("snmcorporation.dlic@gmail.com", "kgap arcn qkvq ktgx");
+                    smtpClient.EnableSsl = true;
+
+                    smtpClient.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending email: " + ex.Message);
             }
         }
 
@@ -2490,8 +2599,43 @@ namespace OOP2
                         cmd.ExecuteNonQuery();
                     }
 
+                    SendNoshowEmail(AppointmentId, clientemail, clientname, appdate, apptime, Facname);
                     MessageBox.Show("Appointment confirmed successfully.", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void SendNoshowEmail(int appointmentId, string clientEmail, string clientName, string appointmentDate, string appointmentTime, string providerName)
+        {
+            try
+            {
+                string emailTemplatePath = @"D:\\OOP2\\HTML\\Appointment Noshow.html";
+                string emailBody = File.ReadAllText(emailTemplatePath);
+
+                emailBody = emailBody.Replace("{ClientName}", clientName)
+                                     .Replace("{FacilityName}", providerName)
+                                     .Replace("{AppointmentDate}", appointmentDate)
+                                     .Replace("{AppointmentTime}", appointmentTime);
+
+                var message = new MailMessage();
+                message.From = new MailAddress("snmcorporation.dlic@gmail.com");
+                message.To.Add("vaughanash02@gmail.com");
+                message.Subject = "Appointment Cancellation Notice";
+                message.Body = emailBody;
+                message.IsBodyHtml = true;
+
+                using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtpClient.Port = 587;
+                    smtpClient.Credentials = new NetworkCredential("snmcorporation.dlic@gmail.com", "kgap arcn qkvq ktgx");
+                    smtpClient.EnableSsl = true;
+
+                    smtpClient.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending email: " + ex.Message);
             }
         }
 
