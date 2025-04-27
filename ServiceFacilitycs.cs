@@ -21,7 +21,9 @@ using System.Collections;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
+using ZXing.Aztec;
 using ZXing.QrCode;
+using ZXing.Common;
 
 namespace OOP2
 {
@@ -392,6 +394,7 @@ namespace OOP2
             //ANALYTICS
             AnalyticsButton.BackColor = Color.White;
             SButton.BackColor = Color.White;
+            AnalyticsPanel.Visible = false;
             //PROFILE
             ProfilePanel.Visible = false;
             ProfileButton.BackColor = Color.White;
@@ -3139,7 +3142,7 @@ namespace OOP2
             if (videoDevices.Count > 0)
             {
                 videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
-                videoSource.NewFrame += VideoSource_NewFrame;
+                //videoSource.NewFrame += VideoSource_NewFrame;
                 videoSource.Start();
             }
             else
@@ -3148,55 +3151,64 @@ namespace OOP2
             }
         }
 
-        private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        /*private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-            BarcodeReader reader = new BarcodeReader();
+            BarcodeReader barcodeReader = new BarcodeReader();
+
             var reader = new BarcodeReader
             {
                 AutoRotate = true,
                 TryInverted = true
             };
+
             var result = reader.Decode(bitmap);
 
             if (result != null)
             {
-                videoSource.SignalToStop();
-
                 string qrContent = result.Text;
 
-                Invoke(new Action(() =>
+                string[] parts = qrContent.Split('|');
+                if (parts.Length == 3)
                 {
-                    try
-                    {
-                        string[] parts = qrContent.Split('|');
-                        if (parts.Length == 3)
-                        {
-                            int appointmentId = int.Parse(parts[0]);
-                            int facilityId = int.Parse(parts[1]);
-                            int clientId = int.Parse(parts[2]);
+                    int appointmentId = int.Parse(parts[0]);
+                    int facilityId = int.Parse(parts[1]);
+                    int clientId = int.Parse(parts[2]);
 
-                            ViewDets(appointmentId, facilityId, clientId);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid QR code format.");
-                        }
-                    }
-                    catch (Exception ex)
+                    if (videoSource.IsRunning)
                     {
-                        MessageBox.Show("Error decoding appointment: " + ex.Message);
+                        videoSource.SignalToStop();
                     }
-                }));
+
+                    Invoke(new Action(() =>
+                    {
+                        ViewDets(appointmentId, facilityId, clientId);
+                    }));
+                }
+                else
+                {
+                    Invoke(new Action(() =>
+                    {
+                        MessageBox.Show("Invalid QR code format.");
+                    }));
+                }
             }
-
             QRBox.Image = bitmap;
-        }
-
+        }*/
 
         private void QRbutton_Click(object sender, EventArgs e)
         {
-            QRBox.Visible = true;
+            if(QRBox.Visible == true)
+            {
+                QRBox.Visible = false;
+            }
+            else
+            {
+                QRBox.Visible = true;
+            }
+            
         }
+
+        //Booking Pending
     }
 }

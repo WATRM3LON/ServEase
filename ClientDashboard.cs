@@ -10,6 +10,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,6 +25,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Configuration.Provider;
 
 namespace OOP2
 {
@@ -1696,16 +1700,15 @@ namespace OOP2
             }
         }
 
-        public void GenerateAndSaveQrCode(int appointmentId, int facid, int clid)
+        public void GenerateAndSaveQrCodeAndSendEmail(int appointmentId, int facid, int clid, string clientEmail, string clientName, DateTime appointmentDate, string appointmentTime, string providerName)
         {
             string qrContent = $"{appointmentId}|{facid}|{clid}";
-
 
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrContent, QRCodeGenerator.ECCLevel.L);
             QRCode qrCode = new QRCode(qrCodeData);
 
-            using (Bitmap qrBitmap = qrCode.GetGraphic( 5, Color.Black, Color.White, true))     
+            using (Bitmap qrBitmap = qrCode.GetGraphic(5, Color.Black, Color.White, true))
             {
                 byte[] qrBytes;
                 using (MemoryStream ms = new MemoryStream())
@@ -1713,10 +1716,11 @@ namespace OOP2
                     qrBitmap.Save(ms, ImageFormat.Png);
                     qrBytes = ms.ToArray();
                 }
+
                 using (OleDbConnection conn = new OleDbConnection(connection))
                 {
                     conn.Open();
-                    string updateQuery = "UPDATE Appointments SET [QRCode] = ? WHERE [Appointment_ID] = ?";
+                    string updateQuery = "UPDATE Appointments SET [QR Code] = ? WHERE [Appointment_ID] = ?";
 
                     using (OleDbCommand cmd = new OleDbCommand(updateQuery, conn))
                     {
@@ -1726,9 +1730,11 @@ namespace OOP2
                         cmd.ExecuteNonQuery();
                     }
                 }
+
+                SendBookingEmail(appointmentId, clientEmail, clientName, appointmentDate, appointmentTime, providerName, qrBytes);
             }
         }
-    
+
         private void EditButton_Click(object sender, EventArgs e)
         {
             if (!SelectedServices.Any())
@@ -1749,9 +1755,9 @@ namespace OOP2
                 {
                     conn.Open();
                     string query = @"SELECT COUNT(*) FROM Appointments 
-                             WHERE [Appointment Date] = ? 
-                             AND ([Client_ID] = ? OR [Facility_ID] = ?)
-                             AND (? < [End Time] AND ? > [Start Time])";
+                     WHERE [Appointment Date] = ? 
+                     AND ([Client_ID] = ? OR [Facility_ID] = ?)
+                     AND (? < [End Time] AND ? > [Start Time])";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
@@ -1798,9 +1804,9 @@ namespace OOP2
                 }
 
                 string insertAppointment = @"
-            INSERT INTO Appointments 
-            ([Client_ID], [Facility_ID], [Appointment Status], [Appointment Date], [Start Time], [End Time], [Date Booked], [Estimated Price], [Estimated Duration], [Reason])
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    INSERT INTO Appointments 
+    ([Client_ID], [Facility_ID], [Appointment Status], [Appointment Date], [Start Time], [End Time], [Date Booked], [Estimated Price], [Estimated Duration], [Reason])
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 using (OleDbCommand cmd = new OleDbCommand(insertAppointment, myConn))
                 {
@@ -1815,7 +1821,7 @@ namespace OOP2
                     DateTime start = DateTime.Parse($"{startTime: hh:mm tt}");
                     DateTime end = DateTime.Parse($"{endTime: hh:mm tt}");
                     string bookeddate = DateTime.Now.ToString("dd MM yyyy");
-                    
+
                     cmd.Parameters.AddWithValue("?", start.ToString("hh:mm tt"));
                     cmd.Parameters.AddWithValue("?", end.ToString("hh:mm tt"));
                     cmd.Parameters.AddWithValue("?", bookeddate);
@@ -1824,7 +1830,6 @@ namespace OOP2
                     string durationString = $"{EDuration} mins";
                     cmd.Parameters.AddWithValue("?", durationString);
                     cmd.Parameters.AddWithValue("?", DBNull.Value);
-                    
 
                     cmd.ExecuteNonQuery();
                 }
@@ -1839,7 +1844,6 @@ namespace OOP2
                     {
                         if (reader.Read() && !reader.IsDBNull(0))
                             AppointmentId = reader.GetInt32(0);
-                            GenerateAndSaveQrCode(AppointmentId,facid,clientId);
                     }
                 }
 
@@ -1854,12 +1858,92 @@ namespace OOP2
                         cmd.ExecuteNonQuery();
                     }
                 }
+
+                string clientEmail = EmailAddress;
+                string clientName = FName + " " + LName;
+                string providerName = Facname; 
+                GenerateAndSaveQrCodeAndSendEmail(AppointmentId, facid, newClientId, clientEmail, clientName, selectedDate, startTime.ToString("hh:mm tt"), providerName);
             }
 
             MessageBox.Show("Appointment booked successfully!");
         }
 
+        private void SendBookingEmail(int appointmentId, string clientEmail, string clientName, DateTime appointmentDate, string appointmentTime, string providerName, byte[] qrCodeImage)
+        {
+            try
+            {
+                string emailTemplatePath = @"D:\\OOP2\\HTML\\Booked Pending.html";
+                string emailBody = File.ReadAllText(emailTemplatePath);
 
+                emailBody = emailBody.Replace("{ClientName}", clientName)
+                                     .Replace("{FacilityName}", providerName)
+                                     .Replace("{AppointmentDate}", appointmentDate.ToString("MMMM dd, yyyy"))
+                                     .Replace("{AppointmentTime}", appointmentTime);
+
+                var message = new MailMessage();
+                message.From = new MailAddress("snmcorporation.dlic@gmail.com");
+                message.To.Add("vaughanash02@gmail.com"); 
+                message.Subject = "Appointment Booking Confirmation";
+                message.Body = emailBody;
+                message.IsBodyHtml = true;
+
+                var qrAttachment = new Attachment(new MemoryStream(qrCodeImage), "qr_code.png");
+                qrAttachment.ContentDisposition.Inline = true;
+                qrAttachment.ContentDisposition.DispositionType = DispositionTypeNames.Inline;
+                qrAttachment.ContentId = "qr_code";
+                message.Attachments.Add(qrAttachment);
+
+                using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtpClient.Port = 587; 
+                    smtpClient.Credentials = new NetworkCredential("snmcorporation.dlic@gmail.com", "kgap arcn qkvq ktgx");
+                    smtpClient.EnableSsl = true;
+
+                    smtpClient.Send(message);
+                }
+
+                Console.WriteLine("Booking email sent successfully to " + clientEmail);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending email: " + ex.Message);
+            }
+
+            try
+            {
+                string emailTemplatePath = @"D:\\OOP2\\HTML\\Appointment Request.html";
+                string emailBody = File.ReadAllText(emailTemplatePath);
+
+                emailBody = emailBody.Replace("{ClientName}", clientName)
+                                     .Replace("{FacilityName}", providerName)
+                                     .Replace("{AppointmentDate}", appointmentDate.ToString("MMMM dd, yyyy"))
+                                     .Replace("{AppointmentTime}", appointmentTime);
+
+                var message = new MailMessage();
+                message.From = new MailAddress("snmcorporation.dlic@gmail.com");
+                message.To.Add("snmcorporation.dlic@gmail.com");
+                message.Subject = "Appointment Booking Request";
+                message.Body = emailBody;
+                message.IsBodyHtml = true;
+
+                using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtpClient.Port = 587;
+                    smtpClient.Credentials = new NetworkCredential("snmcorporation.dlic@gmail.com", "kgap arcn qkvq ktgx");
+                    smtpClient.EnableSsl = true;
+
+                    smtpClient.Send(message);
+                }
+
+                //Console.WriteLine("Booking email sent successfully to " + clientEmail);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending email: " + ex.Message);
+            }
+        }
+
+        
         public void LoadHistory(int ID, int Faid, int Clid,
                         string statusFilter = "",
                         DateTime? dateBookedFilter = null,

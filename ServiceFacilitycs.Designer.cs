@@ -6185,9 +6185,9 @@
             // QRBox
             // 
             QRBox.BackColor = System.Drawing.Color.White;
-            QRBox.Location = new System.Drawing.Point(849, 125);
+            QRBox.Location = new System.Drawing.Point(794, 125);
             QRBox.Name = "QRBox";
-            QRBox.Size = new System.Drawing.Size(348, 317);
+            QRBox.Size = new System.Drawing.Size(403, 376);
             QRBox.TabIndex = 76;
             QRBox.TabStop = false;
             QRBox.Visible = false;
