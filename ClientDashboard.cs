@@ -2611,8 +2611,6 @@ namespace OOP2
 
             panel.Controls.Add(lblMessage);
             panel.Controls.Add(lblTime);
-            panel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel.Width, panel.Height, 10, 10));
-
 
             lblTime.Location = new Point(0, lblMessage.Bottom + 5);
 

@@ -2269,6 +2269,7 @@ namespace OOP2
         string clientname = "", appdate = "", apptime = "", clientemail = "";
         public void ViewDets(int ID, int Faid, int Clid)
         {
+            NotificationPanel.Visible = false;
             WelcomeLabel.Visible = false;
             AppDetsbutton.Visible = true;
             AppointmentsPanel.Visible = false;
@@ -3378,6 +3379,7 @@ namespace OOP2
         }
         private void LoadChatMessages(int clientId, int facilityId)
         {
+            NotificationPanel.Visible = false;
             MessagePanel.Controls.Clear();
 
             using (OleDbConnection con = new OleDbConnection(connection))
@@ -3455,7 +3457,7 @@ namespace OOP2
             Panel panel = new Panel();
             panel.AutoSize = true;
             panel.Padding = new Padding(10);
-            panel.BackColor = senderType == "Facility" ? SystemColors.GradientInactiveCaption : Color.LightGray;
+            panel.BackColor = senderType == "Client" ? SystemColors.GradientInactiveCaption : Color.LightGray;
             panel.Margin = new Padding(5);
 
             Label lblMessage = new Label();
@@ -3469,9 +3471,13 @@ namespace OOP2
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Segoe UI", 8, FontStyle.Italic);
             lblTime.ForeColor = Color.DarkGray;
+            lblTime.Margin = new Padding(0, 5, 0, 0);
 
             panel.Controls.Add(lblMessage);
             panel.Controls.Add(lblTime);
+
+            lblTime.Location = new Point(0, lblMessage.Bottom + 5);
+
             MessagePanel.Controls.Add(panel);
         }
 
@@ -3536,10 +3542,10 @@ namespace OOP2
             }
         }
 
-        private void AddNotification(string title, string message, DateTime notifTime, int? appointmentId = null, int appointmentRealId = 0, int facilityId = 0, int clientId = 0)
+        private void AddNotification(string title, string message, DateTime notifTime, int? appointmentId, int appointmentRealId, int facilityId, int clientId, bool isViewed)
         {
             Panel notifPanel = new Panel();
-            notifPanel.BackColor = Color.LightYellow;
+            notifPanel.BackColor = isViewed ? Color.Gainsboro : Color.Snow;
             notifPanel.BorderStyle = BorderStyle.FixedSingle;
             notifPanel.Padding = new Padding(10);
             notifPanel.Margin = new Padding(5);
@@ -3569,11 +3575,12 @@ namespace OOP2
 
             if (appointmentId.HasValue)
             {
-                notifPanel.Click += (s, e) => ViewDets(appointmentRealId, facilityId, clientId);
+                notifPanel.Click += (s, e) => ViewDets(appointmentRealId, facilityId, clientId); 
                 foreach (Control control in new Control[] { lblTitle, lblMessage, lblTime })
                 {
-                    control.Click += (s, e) => ViewDets(appointmentRealId, facilityId, clientId);
+                    control.Click += (s, e) => ViewDets(appointmentRealId, facilityId, clientId); 
                 }
+                
             }
             else
             {
@@ -3592,6 +3599,7 @@ namespace OOP2
                         LoadChatMessages(clientId, facilityId);
                     };
                 }
+                
             }
 
             notifPanel.Controls.Add(lblTitle);
@@ -3608,16 +3616,15 @@ namespace OOP2
             using (OleDbConnection conn = new OleDbConnection(connection))
             {
                 conn.Open();
-                string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID 
+                string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID, [View Status]
                          FROM Notifications
-                         WHERE Facility_ID = ? AND Sender = ? AND [View Status] = ?
+                         WHERE Facility_ID = ? AND Sender = ?
                          ORDER BY [Date and Time] DESC";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("?", facid);
                     cmd.Parameters.AddWithValue("?", "Client");
-                    cmd.Parameters.AddWithValue("?", false);
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
@@ -3630,8 +3637,10 @@ namespace OOP2
                             int? appointmentId = reader["Appointment_ID"] != DBNull.Value ? Convert.ToInt32(reader["Appointment_ID"]) : (int?)null;
                             int facilityId = reader["Facility_ID"] != DBNull.Value ? Convert.ToInt32(reader["Facility_ID"]) : 0;
                             int clientId = reader["Client_ID"] != DBNull.Value ? Convert.ToInt32(reader["Client_ID"]) : 0;
+                            bool isViewed = reader["View Status"] != DBNull.Value ? Convert.ToBoolean(reader["View Status"]) : false; // <-- ADD THIS
 
-                            AddNotification(title, message, time, appointmentId, appointmentId ?? 0, facilityId, clientId);
+                            // Now pass all parameters including isViewed
+                            AddNotification(title, message, time, appointmentId, appointmentId ?? 0, facilityId, clientId, isViewed);
                         }
                     }
                 }
