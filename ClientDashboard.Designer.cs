@@ -850,10 +850,11 @@
             SearchPanel.Controls.Add(SearchButton);
             SearchPanel.Controls.Add(NameTextBox);
             SearchPanel.Controls.Add(Searchicon);
-            SearchPanel.Location = new System.Drawing.Point(767, 89);
+            SearchPanel.Location = new System.Drawing.Point(367, 4);
             SearchPanel.Name = "SearchPanel";
             SearchPanel.Size = new System.Drawing.Size(387, 51);
             SearchPanel.TabIndex = 27;
+            SearchPanel.Visible = false;
             // 
             // SearchButton
             // 
@@ -871,6 +872,7 @@
             SearchButton.Text = "Search";
             SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             SearchButton.UseVisualStyleBackColor = false;
+            SearchButton.Click += SearchButton_Click;
             // 
             // NameTextBox
             // 
@@ -879,13 +881,15 @@
             NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             NameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             NameTextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            NameTextBox.Location = new System.Drawing.Point(45, 8);
+            NameTextBox.Location = new System.Drawing.Point(50, 6);
             NameTextBox.Multiline = true;
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new System.Drawing.Size(216, 37);
+            NameTextBox.Size = new System.Drawing.Size(205, 37);
             NameTextBox.TabIndex = 11;
             NameTextBox.Tag = "Find Services";
             NameTextBox.Text = "Find Services";
+            NameTextBox.Click += NameTextBox_Click;
+            NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // Searchicon
             // 
@@ -2189,6 +2193,7 @@
             HeaderPanel.Controls.Add(BookAppbutton);
             HeaderPanel.Controls.Add(PIEButton);
             HeaderPanel.Controls.Add(FPButton);
+            HeaderPanel.Controls.Add(SearchPanel);
             HeaderPanel.Location = new System.Drawing.Point(257, 68);
             HeaderPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             HeaderPanel.Name = "HeaderPanel";
@@ -5398,6 +5403,7 @@
             AppSearch.Name = "AppSearch";
             AppSearch.Size = new System.Drawing.Size(387, 51);
             AppSearch.TabIndex = 62;
+            AppSearch.Visible = false;
             // 
             // AppSearcbutton
             // 
@@ -5540,12 +5546,9 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(NotificationPanel);
-            Controls.Add(Messagerpanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(FilterBox);
-            Controls.Add(AppSearch);
             Controls.Add(FilterStatusBox);
             Controls.Add(FilterDateBox);
             Controls.Add(CalendarAppointmentPanel);
@@ -5557,7 +5560,6 @@
             Controls.Add(panel3);
             Controls.Add(AppointmentPanel);
             Controls.Add(panel44);
-            Controls.Add(SearchPanel);
             Controls.Add(NotifyButton);
             Controls.Add(DashboardPanel2);
             Controls.Add(DashboardPanel);
@@ -5570,6 +5572,9 @@
             Controls.Add(ProfilePanel);
             Controls.Add(FacilityProPanel2);
             Controls.Add(FacilityProPanel);
+            Controls.Add(NotificationPanel);
+            Controls.Add(Messagerpanel);
+            Controls.Add(AppSearch);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

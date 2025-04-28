@@ -614,7 +614,7 @@ namespace OOP2
             WelcomeLabel.Text = "Welcome ServEase!";
             DashboardButton.BackColor = ColorTranslator.FromHtml("#69e331");
             Dbutton.BackColor = ColorTranslator.FromHtml("#69e331");
-            SearchPanel.Visible = true;
+            SearchPanel.Visible = false;
             panel45.Visible = true;
             //SERVICES
             ServicesPanel.Visible = false;
@@ -1221,7 +1221,7 @@ namespace OOP2
             LoadFacilities();
         }
 
-        public void LoadFacilities()
+        /*public void LoadFacilities()
         {
             int margin = 10;
             int padding = 5;
@@ -1301,7 +1301,266 @@ namespace OOP2
                     }
                 }
             }
+        }*/
+        /*public void LoadFacilities(string searchText = "")
+        {
+            int margin = 10;
+            int padding = 5;
+            int panelWidth = 250;
+            int panelHeight = 190;
+            int columns = 3;
+
+            int currentRow = 0;
+            int currentCol = 0;
+
+            SerPanel.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Tags] " +
+                        "FROM [Service Facilities] " +
+                        "WHERE [Service Category] = ? AND [Approval Status] = ?";
+
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    sql += " AND ([Facility Name] LIKE ? OR [Tags] LIKE ?)";
+                }
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", sercat);
+                    cmd.Parameters.AddWithValue("?", "Approved");
+
+                    if (!string.IsNullOrEmpty(searchText))
+                    {
+                        cmd.Parameters.AddWithValue("?", "%" + searchText + "%");
+                        cmd.Parameters.AddWithValue("?", "%" + searchText + "%");
+                    }
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        /*while (reader.Read())
+                        {
+                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            string fName = reader["Facility Name"].ToString();
+                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
+                            string ratings = reader["Ratings"].ToString();
+
+                            decimal minPrice = 0, maxPrice = 0;
+                            using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
+                            {
+                                priceCmd.Parameters.AddWithValue("?", facilityId);
+                                using (OleDbDataReader priceReader = priceCmd.ExecuteReader())
+                                {
+                                    if (priceReader.Read())
+                                    {
+                                        minPrice = priceReader.IsDBNull(0) ? 0 : priceReader.GetDecimal(0);
+                                        maxPrice = priceReader.IsDBNull(1) ? 0 : priceReader.GetDecimal(1);
+                                    }
+                                }
+                            }
+
+                            string priceRange = $"₱{minPrice} - ₱{maxPrice}";
+
+                            FacilityPanel facilityPanel = new FacilityPanel();
+                            facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
+                            facilityPanel.Width = panelWidth;
+                            facilityPanel.Height = panelHeight;
+                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelWidth, panelHeight, 10, 10));
+
+                            int x = margin + currentCol * (panelWidth + padding);
+                            int y = margin + currentRow * (panelHeight + padding);
+                            facilityPanel.Location = new Point(x, y);
+
+                            facilityPanel.ViewProfileClicked += (s, e) =>
+                            {
+                                ViewFacDets(facilityId);
+                            };
+
+                            SerPanel.Controls.Add(facilityPanel);
+
+                            currentCol++;
+                            if (currentCol >= columns)
+                            {
+                                currentCol = 0;
+                                currentRow++;
+                            }
+                        }
+                        while (reader.Read())
+                        {
+                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            string fName = reader["Facility Name"].ToString();
+                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
+                            string ratings = reader["Ratings"].ToString();
+
+                            string tagsFromDb = reader["Tags"]?.ToString() ?? "";
+
+                            List<string> tagList = tagsFromDb
+                                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                                .Select(tag => tag.Trim())
+                                .ToList();
+
+                            decimal minPrice = 0, maxPrice = 0;
+                            using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
+                            {
+                                priceCmd.Parameters.AddWithValue("?", facilityId);
+                                using (OleDbDataReader priceReader = priceCmd.ExecuteReader())
+                                {
+                                    if (priceReader.Read())
+                                    {
+                                        minPrice = priceReader.IsDBNull(0) ? 0 : priceReader.GetDecimal(0);
+                                        maxPrice = priceReader.IsDBNull(1) ? 0 : priceReader.GetDecimal(1);
+                                    }
+                                }
+                            }
+
+                            string priceRange = $"₱{minPrice} - ₱{maxPrice}";
+
+                            FacilityPanel facilityPanel = new FacilityPanel();
+                            facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
+                            facilityPanel.Width = panelWidth;
+                            facilityPanel.Height = panelHeight;
+                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelWidth, panelHeight, 10, 10));
+
+                            int x = margin + currentCol * (panelWidth + padding);
+                            int y = margin + currentRow * (panelHeight + padding);
+                            facilityPanel.Location = new Point(x, y);
+
+                            facilityPanel.ViewProfileClicked += (s, e) =>
+                            {
+                                ViewFacDets(facilityId);
+                            };
+
+                            SerPanel.Controls.Add(facilityPanel);
+
+                            currentCol++;
+                            if (currentCol >= columns)
+                            {
+                                currentCol = 0;
+                                currentRow++;
+                            }
+                        }
+                    }
+                }
+            }
+        }*/
+        public void LoadFacilities(string searchText = "")
+        {
+            int margin = 10;
+            int padding = 5;
+            int panelWidth = 250;
+            int panelHeight = 190;
+            int columns = 3;
+
+            int currentRow = 0;
+            int currentCol = 0;
+
+            SerPanel.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Tags] " +
+                             "FROM [Service Facilities] " +
+                             "WHERE [Service Category] = ? AND [Approval Status] = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", sercat);
+                    cmd.Parameters.AddWithValue("?", "Approved");
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        List<string> searchTags = new List<string>();
+                        if (!string.IsNullOrWhiteSpace(searchText))
+                        {
+                            searchTags = searchText
+                                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                                .Select(tag => tag.Trim().ToLower())
+                                .ToList();
+                        }
+
+                        while (reader.Read())
+                        {
+                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            string fName = reader["Facility Name"].ToString();
+                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
+                            string ratings = reader["Ratings"].ToString();
+                            string tagsFromDb = reader["Tags"]?.ToString() ?? "";
+
+                            List<string> facilityTags = tagsFromDb
+                                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                                .Select(tag => tag.Trim().ToLower())
+                                .ToList();
+
+                            bool matchesSearch = true;
+                            if (searchTags.Count > 0)
+                            {
+                                matchesSearch = searchTags.Intersect(facilityTags).Any();
+                            }
+
+                            if (!matchesSearch)
+                            {
+                                System.Windows.Forms.MessageBox.Show("No Search Match!");
+                                continue;
+                            }
+
+                            decimal minPrice = 0, maxPrice = 0;
+                            using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
+                            {
+                                priceCmd.Parameters.AddWithValue("?", facilityId);
+                                using (OleDbDataReader priceReader = priceCmd.ExecuteReader())
+                                {
+                                    if (priceReader.Read())
+                                    {
+                                        minPrice = priceReader.IsDBNull(0) ? 0 : priceReader.GetDecimal(0);
+                                        maxPrice = priceReader.IsDBNull(1) ? 0 : priceReader.GetDecimal(1);
+                                    }
+                                }
+                            }
+
+                            string priceRange = $"₱{minPrice} - ₱{maxPrice}";
+
+                            FacilityPanel facilityPanel = new FacilityPanel();
+                            facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
+                            facilityPanel.Width = panelWidth;
+                            facilityPanel.Height = panelHeight;
+                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelWidth, panelHeight, 10, 10));
+
+                            int x = margin + currentCol * (panelWidth + padding);
+                            int y = margin + currentRow * (panelHeight + padding);
+                            facilityPanel.Location = new Point(x, y);
+
+                            facilityPanel.ViewProfileClicked += (s, e) =>
+                            {
+                                ViewFacDets(facilityId);
+                            };
+
+                            SerPanel.Controls.Add(facilityPanel);
+
+                            currentCol++;
+                            if (currentCol >= columns)
+                            {
+                                currentCol = 0;
+                                currentRow++;
+                            }
+                        }
+                    }
+                }
+            }
         }
+
+
 
         public void ViewFacDets(int ID)
         {
@@ -2678,11 +2937,10 @@ namespace OOP2
                 throw;
             }
         }
-
-        private void AddNotification(string title, string message, DateTime notifTime, int? appointmentId = null, int appointmentRealId = 0, int facilityId = 0, int clientId = 0)
+        private void AddNotification(string title, string message, DateTime notifTime, int? appointmentId, int appointmentRealId, int facilityId, int clientId, bool isViewed)
         {
             Panel notifPanel = new Panel();
-            notifPanel.BackColor = Color.LightYellow;
+            notifPanel.BackColor = isViewed ? Color.Gainsboro : Color.Snow;
             notifPanel.BorderStyle = BorderStyle.FixedSingle;
             notifPanel.Padding = new Padding(10);
             notifPanel.Margin = new Padding(5);
@@ -2694,7 +2952,7 @@ namespace OOP2
             lblTitle.Text = title;
             lblTitle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(0, 0);
+            lblTitle.Location = new Point(0, 3);
 
             Label lblTime = new Label();
             lblTime.Text = notifTime.ToString("hh:mm tt");
@@ -2708,7 +2966,7 @@ namespace OOP2
             lblMessage.Font = new Font("Segoe UI", 10);
             lblMessage.AutoSize = true;
             lblMessage.MaximumSize = new Size(300, 0);
-            lblMessage.Location = new Point(0, lblTitle.Bottom + 5);
+            lblMessage.Location = new Point(2, lblTitle.Bottom + 5);
 
             if (appointmentId.HasValue)
             {
@@ -2717,6 +2975,7 @@ namespace OOP2
                 {
                     control.Click += (s, e) => ViewDets(appointmentRealId, facilityId, clientId);
                 }
+
             }
             else
             {
@@ -2735,6 +2994,7 @@ namespace OOP2
                         LoadChatMessages(clientId, facilityId);
                     };
                 }
+
             }
 
             notifPanel.Controls.Add(lblTitle);
@@ -2745,22 +3005,21 @@ namespace OOP2
         }
 
 
-        private void LoadFacilityNotifications(int clid)
+        private void LoadFacilityNotifications(int facid)
         {
             NotifyPanel.Controls.Clear();
             using (OleDbConnection conn = new OleDbConnection(connection))
             {
                 conn.Open();
-                string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID 
+                string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID, [View Status]
                          FROM Notifications
-                         WHERE Client_ID = ? AND Sender = ? AND [View Status] = ?
+                         WHERE Facility_ID = ? AND Sender = ?
                          ORDER BY [Date and Time] DESC";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("?", clid);
-                    cmd.Parameters.AddWithValue("?", "Facility");
-                    cmd.Parameters.AddWithValue("?", false);
+                    cmd.Parameters.AddWithValue("?", facid);
+                    cmd.Parameters.AddWithValue("?", "Client");
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
@@ -2773,12 +3032,50 @@ namespace OOP2
                             int? appointmentId = reader["Appointment_ID"] != DBNull.Value ? Convert.ToInt32(reader["Appointment_ID"]) : (int?)null;
                             int facilityId = reader["Facility_ID"] != DBNull.Value ? Convert.ToInt32(reader["Facility_ID"]) : 0;
                             int clientId = reader["Client_ID"] != DBNull.Value ? Convert.ToInt32(reader["Client_ID"]) : 0;
+                            bool isViewed = reader["View Status"] != DBNull.Value ? Convert.ToBoolean(reader["View Status"]) : false;
 
-                            AddNotification(title, message, time, appointmentId, appointmentId ?? 0, facilityId, clientId);
+                            AddNotification(title, message, time, appointmentId, appointmentId ?? 0, facilityId, clientId, isViewed);
                         }
                     }
                 }
             }
+        }
+
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = NameTextBox.Text.Trim();
+            LoadFacilities(searchText);
+
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            string searchText = NameTextBox.Text.Trim();
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            SerButton.Text = "  Search Facility";
+            LoadFacilities(searchText);
+        }
+
+        private void NameTextBox_Click(object sender, EventArgs e)
+        {
+            SerButton.Visible = true;
+            SerPanel.Visible = true;
+            ServicesPanel.Visible = false;
+            if (notify == true)
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+            SerButton.Text = "  Search Facility";
         }
     }
 }

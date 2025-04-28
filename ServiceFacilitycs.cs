@@ -3023,30 +3023,30 @@ namespace OOP2
             var serviceCounts = new Dictionary<string, int>();
 
             string query = @"
-                    SELECT [Facility Services].[Service Name], COUNT(*) AS BookingCount
-                    FROM [Facility Services]
-                    INNER JOIN (Appointments 
-                    INNER JOIN [Appointment Services] 
-                    ON Appointments.Appointment_ID = [Appointment Services].Appointment_ID)
-                    ON [Facility Services].Service_ID = [Appointment Services].Service_ID
-                    WHERE Appointments.[Facility_ID] = ? 
-                    AND Appointments.[Appointment Status] = ?
-                    GROUP BY [Facility Services].[Service Name]
-                    ORDER BY BookingCount DESC";
+            SELECT [Facility Services].[Service Name], COUNT(*) AS BookingCount
+            FROM [Facility Services]
+            INNER JOIN (Appointments 
+            INNER JOIN [Appointment Services] 
+            ON Appointments.Appointment_ID = [Appointment Services].Appointment_ID)
+            ON [Facility Services].Service_ID = [Appointment Services].Service_ID
+            WHERE Appointments.[Facility_ID] = @FacilityId
+            AND Appointments.[Appointment Status] = @Status
+            GROUP BY [Facility Services].[Service Name]
+            ORDER BY BookingCount DESC";
 
             using (OleDbConnection conn = new OleDbConnection(connection))
             {
                 conn.Open();
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("?", facilityId);
-                    cmd.Parameters.AddWithValue("?", "Completed");
+                    cmd.Parameters.AddWithValue("@FacilityId", facilityId);
+                    cmd.Parameters.AddWithValue("@Status", "Completed");
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            string service = reader["Service Name"].ToString();
-                            int count = Convert.ToInt32(reader["BookingCount"]);
+                            string service = reader["Service Name"] as string ?? "Unknown Service";
+                            int count = reader["BookingCount"] != DBNull.Value ? Convert.ToInt32(reader["BookingCount"]) : 0;
                             serviceCounts[service] = count;
                         }
                     }
@@ -3096,6 +3096,7 @@ namespace OOP2
 
             Analytics1.Model = model;
         }
+
 
         void LoadPopularTimeslotsChart()
         {
@@ -3573,8 +3574,66 @@ namespace OOP2
             lblMessage.MaximumSize = new Size(300, 0);
             lblMessage.Location = new Point(2, lblTitle.Bottom + 5);
 
-            if (appointmentId.HasValue)
+            void HandleClick()
             {
+                FacilityiId = facilityId;
+                ClientId = clientId;
+                if (!isViewed)
+                {
+                    using (OleDbConnection myConn = new OleDbConnection(connection))
+                    {
+                        myConn.Open();
+                        if (appointmentId.HasValue)
+                        {
+                            string updateQuery = "UPDATE Notifications SET [View Status] = ? WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Date and Time] = ?";
+
+                            using (OleDbCommand cmd = new OleDbCommand(updateQuery, myConn))
+                            {
+                                cmd.Parameters.AddWithValue("?", true);
+                                cmd.Parameters.AddWithValue("?", clientId);
+                                cmd.Parameters.AddWithValue("?", facilityId);
+                                cmd.Parameters.AddWithValue("?", notifTime);
+
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                        else
+                        {
+                            DateTime now = notifTime;
+                            string updateQuery = "UPDATE Notifications SET [View Status] = ? WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Date and Time] = ?";
+
+                            using (OleDbCommand cmd = new OleDbCommand(updateQuery, myConn))
+                            {
+                                cmd.Parameters.AddWithValue("?", true);
+                                cmd.Parameters.AddWithValue("?", clientId);
+                                cmd.Parameters.AddWithValue("?", facilityId);
+                                cmd.Parameters.AddWithValue("?", $"{notifTime}");
+
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                        
+                    notifPanel.BackColor = Color.Gainsboro;
+                    isViewed = true;
+                }
+
+                if (appointmentId.HasValue)
+                {
+                    ViewDets(appointmentRealId, facilityId, clientId);
+                }
+                else
+                {
+                    Messagerpanel.Visible = true;
+                    Messagerpanel.BringToFront();
+                    LoadChatMessages(clientId, facilityId);
+                }
+            }
+
+            notifPanel.Click += (s, e) => HandleClick();
+            /*if (appointmentId.HasValue)
+            {
+                
                 notifPanel.Click += (s, e) => ViewDets(appointmentRealId, facilityId, clientId); 
                 foreach (Control control in new Control[] { lblTitle, lblMessage, lblTime })
                 {
@@ -3584,10 +3643,13 @@ namespace OOP2
             }
             else
             {
+                FacilityiId = facilityId;
+                ClientId = clientId;
                 notifPanel.Click += (s, e) =>
                 {
                     Messagerpanel.Visible = true;
                     Messagerpanel.BringToFront();
+                    
                     LoadChatMessages(clientId, facilityId);
                 };
                 foreach (Control control in new Control[] { lblTitle, lblMessage, lblTime })
@@ -3596,11 +3658,12 @@ namespace OOP2
                     {
                         Messagerpanel.Visible = true;
                         Messagerpanel.BringToFront();
+                        
                         LoadChatMessages(clientId, facilityId);
                     };
                 }
                 
-            }
+            }*/
 
             notifPanel.Controls.Add(lblTitle);
             notifPanel.Controls.Add(lblTime);
@@ -3637,9 +3700,8 @@ namespace OOP2
                             int? appointmentId = reader["Appointment_ID"] != DBNull.Value ? Convert.ToInt32(reader["Appointment_ID"]) : (int?)null;
                             int facilityId = reader["Facility_ID"] != DBNull.Value ? Convert.ToInt32(reader["Facility_ID"]) : 0;
                             int clientId = reader["Client_ID"] != DBNull.Value ? Convert.ToInt32(reader["Client_ID"]) : 0;
-                            bool isViewed = reader["View Status"] != DBNull.Value ? Convert.ToBoolean(reader["View Status"]) : false; // <-- ADD THIS
+                            bool isViewed = reader["View Status"] != DBNull.Value ? Convert.ToBoolean(reader["View Status"]) : false;
 
-                            // Now pass all parameters including isViewed
                             AddNotification(title, message, time, appointmentId, appointmentId ?? 0, facilityId, clientId, isViewed);
                         }
                     }
