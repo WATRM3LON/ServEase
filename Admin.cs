@@ -511,13 +511,13 @@ namespace OOP2
             {
                 FViewDetailspanel.Visible = true;
                 AccountButton.Text = " Facility's Account";
-                
+
             }
         }
         private void AccountButton_Click(object sender, EventArgs e)
         {
             CalendarAppointmentPanel.Visible = true; ProfilePanel.Visible = true; HiLabel.Visible = true; WelcomeLabel.Visible = true;
-            ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AccountButton.Visible = false; AppHistPanel.Visible = false; FViewDetailspanel.Visible=false;
+            ViewDetpanel.Visible = false; CViewDetailspanel.Visible = false; AccountButton.Visible = false; AppHistPanel.Visible = false; FViewDetailspanel.Visible = false;
             ApphisButton.Font = new Font(ApphisButton.Font, ApphisButton.Font.Style & ~FontStyle.Bold);
             ApphisButton.FlatStyle = FlatStyle.Flat;
 
@@ -1104,7 +1104,7 @@ namespace OOP2
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
             Reason.Visible = false;
-            if (File1 == false ||  File2 == false || File3 == false || File4 == false || File5 == false || File6 == false || File7 == false)
+            if (File1 == false || File2 == false || File3 == false || File4 == false || File5 == false || File6 == false || File7 == false)
             {
                 if (Reasontext.Text.Length == 0)
                 {
@@ -1174,6 +1174,282 @@ namespace OOP2
                 }
             }
             MessageBox.Show("Facility files approved successfully!");
+        }
+
+        private void MessageBox_Click(object sender, EventArgs e)
+        {
+            Messagerpanel.Visible = true; Messagerpanel.BringToFront();
+            //LoadChatMessages(clientId, facid);
+        }
+
+        private void Messengerclose_Click(object sender, EventArgs e)
+        {
+            Messagerpanel.Visible = false;
+        }
+
+        private void LoadChatMessages(int clientId, int facilityId)
+        {
+            clientId = 3;
+            MessagePanel.Controls.Clear();
+
+            using (OleDbConnection con = new OleDbConnection(connection))
+            {
+                con.Open();
+                string query = @"SELECT [Sender], [Messages], [Date and Time]
+                 FROM Messenger
+                 WHERE [Client_ID] = ? AND [Facility_ID] = ?
+                 ORDER BY [Date and Time] ASC";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ClientId", clientId);
+                    cmd.Parameters.AddWithValue("@FacilityId", facilityId);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string senderType = reader["Sender"].ToString();
+                            string message = reader["Messages"].ToString();
+                            DateTime time = Convert.ToDateTime(reader["Date and Time"]);
+
+                            AddMessageBubble(senderType, message, time);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SaveMessageToDatabase(int clientId, int facilityId, string senderType, string message)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+                string query = @"INSERT INTO Messenger (Client_ID, Facility_ID, Sender, Messages, [Date and Time])
+                 VALUES (@ClientId, @FacilityId, @Sender, @Message, @DateAndTime)";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, myConn))
+                {
+                    cmd.Parameters.Add("@ClientId", OleDbType.Integer).Value = clientId;
+                    cmd.Parameters.Add("@FacilityId", OleDbType.Integer).Value = facilityId;
+                    cmd.Parameters.Add("@Sender", OleDbType.VarWChar).Value = senderType;
+                    cmd.Parameters.Add("@Message", OleDbType.VarWChar).Value = message;
+                    cmd.Parameters.Add("@DateAndTime", OleDbType.Date).Value = DateTime.Now;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void EnterMessage_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(Messengertext.Text))
+            {
+                string senderType = "Client";
+                string message = Messengertext.Text.Trim();
+
+                int clientI = 3;
+                int facility = facilityId;
+
+                DateTime now = DateTime.Now;
+
+                SaveMessageToDatabase(clientId, facility, senderType, message);
+
+                AddMessageBubble(senderType, message, now);
+                string senders = "Admin", titles = "New Message", messages = "Admin sent you a message!";
+                SaveNotificationMessage(clientI, facility, senders, titles, messages, now);
+
+                Messengertext.Clear();
+            }
+        }
+
+        private void AddMessageBubble(string senderType, string message, DateTime time)
+        {
+            System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
+            panel.AutoSize = true;
+            panel.Padding = new Padding(10);
+            panel.BackColor = senderType == "Client" ? SystemColors.GradientInactiveCaption : Color.LightGray;
+            panel.Margin = new Padding(5);
+
+            System.Windows.Forms.Label lblMessage = new System.Windows.Forms.Label();
+            lblMessage.Text = message;
+            lblMessage.AutoSize = true;
+            lblMessage.Font = new Font("Segoe UI", 14, FontStyle.Regular);
+            lblMessage.MaximumSize = new Size(250, 0);
+
+            System.Windows.Forms.Label lblTime = new System.Windows.Forms.Label();
+            lblTime.Text = time.ToString("hh:mm tt");
+            lblTime.AutoSize = true;
+            lblTime.Font = new Font("Segoe UI", 8, FontStyle.Italic);
+            lblTime.ForeColor = Color.DarkGray;
+            lblTime.Margin = new Padding(0, 5, 0, 0);
+
+            panel.Controls.Add(lblMessage);
+            panel.Controls.Add(lblTime);
+
+            lblTime.Location = new Point(0, lblMessage.Bottom + 5);
+
+            MessagePanel.Controls.Add(panel);
+        }
+
+
+        private void SaveNotification(int clientId, int facilityId, string sender, string title, string message, DateTime now, int appointmentId)
+        {
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                string query = $@"INSERT INTO Notifications (Client_ID, Facility_ID, Sender, Title, Message, [Date and Time], [View Status], Appointment_ID)
+                                    VALUES ({clientId}, {facilityId}, '{sender}', '{title}', '{message}', '{now}', FALSE, {appointmentId})";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    /*cmd.Parameters.AddWithValue("@ClientId", clientId);
+                    cmd.Parameters.AddWithValue("@FacilityId", facilityId);
+                    cmd.Parameters.AddWithValue("@Sender", sender);
+                    cmd.Parameters.AddWithValue("@Title", title);
+                    cmd.Parameters.AddWithValue("@Message", message);
+                    cmd.Parameters.AddWithValue("@DateAndTime", now);
+                    cmd.Parameters.AddWithValue("@IsRead", "No");
+                    cmd.Parameters.AddWithValue("@AppointmentId", appointmentId);*/
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void SaveNotificationMessage(int clientId, int facilityId, string sender, string title, string message, DateTime now)
+        {
+            try
+            {
+                using (OleDbConnection conn = new OleDbConnection(connection))
+                {
+                    conn.Open();
+                    string query = $@"INSERT INTO Notifications (Client_ID, Facility_ID, Sender, Title, Message, [Date and Time], [View Status], Appointment_ID)
+                                    VALUES ({clientId}, {facilityId}, '{sender}', '{title}', '{message}', '{now}', FALSE, NULL)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        /*cmd.Parameters.AddWithValue("@ClientId", clientId);
+                        cmd.Parameters.AddWithValue("@FacilityId", facilityId);
+                        cmd.Parameters.AddWithValue("@Sender", sender);
+                        cmd.Parameters.AddWithValue("@Title", title);
+                        cmd.Parameters.AddWithValue("@Message", message);
+                        cmd.Parameters.AddWithValue("@DateAndTime", now);
+                        cmd.Parameters.AddWithValue("@IsRead", false);
+                        cmd.Parameters.AddWithValue("@AppointmentId", DBNull.Value);*/
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (OleDbException ex)
+            {
+                Console.WriteLine($"Database error occurred: {ex.Message}");
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                throw;
+            }
+        }
+        private void AddNotification(string title, string message, DateTime notifTime, int? appointmentId, int appointmentRealId, int facilityId, int clientId, bool isViewed)
+        {
+            clientId = 3;
+            System.Windows.Forms.Panel notifPanel = new System.Windows.Forms.Panel();
+            notifPanel.BackColor = isViewed ? Color.Gainsboro : Color.Snow;
+            notifPanel.BorderStyle = BorderStyle.FixedSingle;
+            notifPanel.Padding = new Padding(10);
+            notifPanel.Margin = new Padding(5);
+            notifPanel.Width = 300;
+            notifPanel.AutoSize = true;
+            notifPanel.Cursor = appointmentId.HasValue ? Cursors.Hand : Cursors.Default;
+
+            System.Windows.Forms.Label lblTitle = new System.Windows.Forms.Label();
+            lblTitle.Text = title;
+            lblTitle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblTitle.AutoSize = true;
+            lblTitle.Location = new Point(0, 3);
+
+            System.Windows.Forms.Label lblTime = new System.Windows.Forms.Label();
+            lblTime.Text = notifTime.ToString("hh:mm tt");
+            lblTime.Font = new Font("Segoe UI", 8, FontStyle.Italic);
+            lblTime.ForeColor = Color.Gray;
+            lblTime.AutoSize = true;
+            lblTime.Location = new Point(notifPanel.Width - 70, 5);
+
+            System.Windows.Forms.Label lblMessage = new System.Windows.Forms.Label();
+            lblMessage.Text = message;
+            lblMessage.Font = new Font("Segoe UI", 10);
+            lblMessage.AutoSize = true;
+            lblMessage.MaximumSize = new Size(300, 0);
+            lblMessage.Location = new Point(2, lblTitle.Bottom + 5);
+
+
+            notifPanel.Click += (s, e) =>
+            {
+                Messagerpanel.Visible = true;
+                Messagerpanel.BringToFront();
+                LoadChatMessages(clientId, facilityId);
+            };
+            foreach (System.Windows.Forms.Control control in new System.Windows.Forms.Control[] { lblTitle, lblMessage, lblTime })
+            {
+                control.Click += (s, e) =>
+                {
+                    Messagerpanel.Visible = true;
+                    Messagerpanel.BringToFront();
+                    LoadChatMessages(clientId, facilityId);
+                };
+            }
+
+            notifPanel.Controls.Add(lblTitle);
+            notifPanel.Controls.Add(lblTime);
+            notifPanel.Controls.Add(lblMessage);
+
+            NotifyPanel.Controls.Add(notifPanel);
+        }
+
+
+        private void LoadFacilityNotifications(int facid)
+        {
+            clientId = 3;
+            NotifyPanel.Controls.Clear();
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID, [View Status]
+                         FROM Notifications
+                         WHERE Client_ID = ? AND Sender = ?
+                         ORDER BY [Date and Time] DESC";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", facid);
+                    cmd.Parameters.AddWithValue("?", "Facility");
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string title = reader["Title"].ToString();
+                            string message = reader["Message"].ToString();
+                            DateTime time = Convert.ToDateTime(reader["Date and Time"]);
+
+                            int? appointmentId = reader["Appointment_ID"] != DBNull.Value ? Convert.ToInt32(reader["Appointment_ID"]) : (int?)null;
+                            int facilityId = reader["Facility_ID"] != DBNull.Value ? Convert.ToInt32(reader["Facility_ID"]) : 0;
+                            int clientId = reader["Client_ID"] != DBNull.Value ? Convert.ToInt32(reader["Client_ID"]) : 0;
+                            bool isViewed = reader["View Status"] != DBNull.Value ? Convert.ToBoolean(reader["View Status"]) : false;
+
+                            AddNotification(title, message, time, appointmentId, appointmentId ?? 0, facilityId, clientId, isViewed);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void NotiCloseButton_Click(object sender, EventArgs e)
+        {
+            NotificationPanel.Visible = false;
         }
     }
 }

@@ -82,8 +82,8 @@ namespace OOP2
         public ClientDashboard()
         {
             InitializeComponent();
-            InfoGetter(); LoadHistory(Appid, facid, clientId);
-            Loaders(); HiLabel.Text = $"Hi {FName},";
+            InfoGetter(); LoadHistory(Appid, facid, clientId); LoadUpcomingHistory(Appid, facid, clientId);
+            Loaders(); LoadTopFacilities(); HiLabel.Text = $"Hi {FName},";
             AppSerchtext.TextChanged += AppSerchtext_TextChanged;
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
@@ -132,6 +132,7 @@ namespace OOP2
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             MessagePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MessagePanel.Width, MessagePanel.Height, 10, 10));
             RateButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, RateButton.Width, RateButton.Height, 10, 10));
+            RecomdPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, RecomdPanel.Width, RecomdPanel.Height, 10, 10));
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
             DashboardPanel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel2.Width, DashboardPanel2.Height, 20, 20));
@@ -1319,6 +1320,92 @@ namespace OOP2
             }
         }
 
+        public void LoadTopFacilities()
+        {
+            int margin = 10;
+            int padding = 5;
+            int panelWidth = 250;
+            int panelHeight = 190;
+            int columns = 3;
+
+            int currentRow = 0;
+            int currentCol = 0;
+
+            RecodPanel.Controls.Clear();
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Tags], [Service Category] " +
+                             "FROM [Service Facilities] " +
+                             "WHERE [Approval Status] = ?" +
+                             "ORDER BY Ratings DESC";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", "Approved");
+
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            string fName = reader["Facility Name"].ToString();
+                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
+                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
+                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
+                            string ratings = reader["Ratings"].ToString();
+                            string tagsFromDb = reader["Tags"]?.ToString() ?? "";
+                            string facilityCategory = reader["Service Category"].ToString();
+
+                            decimal minPrice = 0, maxPrice = 0;
+                            using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
+                            {
+                                priceCmd.Parameters.AddWithValue("?", facilityId);
+                                using (OleDbDataReader priceReader = priceCmd.ExecuteReader())
+                                {
+                                    if (priceReader.Read())
+                                    {
+                                        minPrice = priceReader.IsDBNull(0) ? 0 : priceReader.GetDecimal(0);
+                                        maxPrice = priceReader.IsDBNull(1) ? 0 : priceReader.GetDecimal(1);
+                                    }
+                                }
+                            }
+
+                            string priceRange = $"₱{minPrice} - ₱{maxPrice}";
+
+                            FacilityPanel facilityPanel = new FacilityPanel();
+                            facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
+                            facilityPanel.Width = panelWidth;
+                            facilityPanel.Height = panelHeight;
+                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelWidth, panelHeight, 10, 10));
+
+                            int x = margin + currentCol * (panelWidth + padding);
+                            int y = margin + currentRow * (panelHeight + padding);
+                            facilityPanel.Location = new Point(x, y);
+
+                            facilityPanel.ViewProfileClicked += (s, e) =>
+                            {
+                                ViewFacDets(facilityId);
+                            };
+
+                            RecodPanel.Controls.Add(facilityPanel);
+
+                            currentCol++;
+                            if (currentCol >= columns)
+                            {
+                                currentCol = 0;
+                                currentRow++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         public void ViewFacDets(int ID)
         {
             //PROFILE
@@ -2080,6 +2167,96 @@ namespace OOP2
             }
         }
 
+        public void LoadUpcomingHistory(int ID, int Faid, int Clid)
+        {
+            Upcomingpanel.Controls.Clear();
+            EmailAddress = ClientLogin.EmailAddress;
+            int newClientId = 0;
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getclientid = "SELECT Client_ID FROM [Clients] WHERE [Email Address] = ?";
+                using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getclientid, myConn))
+                {
+                    getServiceIdsCmd.Parameters.AddWithValue("?", EmailAddress);
+                    using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                    {
+                        if (reader.Read() && !reader.IsDBNull(0))
+                        {
+                            newClientId = reader.GetInt32(0);
+                        }
+                    }
+                }
+
+                string sql = "SELECT Facility_ID, Appointment_ID FROM Appointments WHERE Client_ID = ? AND [Appointment Status] IN (?, ?)";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", newClientId);
+                    cmd.Parameters.AddWithValue("?", "Pending");
+                    cmd.Parameters.AddWithValue("?", "Confirmed");
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int margin = 10;
+                        while (reader.Read())
+                        {
+                            int newFacilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
+                            int appointmentId = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
+
+                            string FacName = "", FLocation = "";
+                            string getFacility = "SELECT [Facility Name], [Facility Location] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+                            using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
+                            {
+                                facility.Parameters.AddWithValue("?", newFacilityId);
+                                using (OleDbDataReader readers = facility.ExecuteReader())
+                                {
+                                    if (readers.Read())
+                                    {
+                                        FacName = readers.IsDBNull(0) ? "" : readers.GetString(0);
+                                        FLocation = readers.IsDBNull(1) ? "" : readers.GetString(1);
+                                    }
+                                }
+                            }
+                            Rating rating = new Rating();
+
+                            UsersPanel usersPanel = new UsersPanel();
+                            rating.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                            rating.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                            rating.Width = Upcomingpanel.ClientSize.Width - 20;
+                            rating.Location = new Point(0, margin);
+                            margin += rating.Height + 10;
+
+                            string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                            using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
+                            {
+                                adminCmd.Parameters.AddWithValue("?", newClientId);
+                                adminCmd.Parameters.AddWithValue("?", newFacilityId);
+                                adminCmd.Parameters.AddWithValue("?", appointmentId);
+
+                                using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                {
+                                    if (adminReader.Read())
+                                    {
+                                        string status = adminReader.GetString(0);
+                                        string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                        string datebooked = adminReader.IsDBNull(2) ? "" : adminReader.GetDateTime(2).ToString("dd MMM yyyy");
+
+                                        rating.ClientInfo(status, dateapp);
+                                        rating.CLientApp(FacName, datebooked);
+                                    }
+                                }
+                            }
+
+                            Upcomingpanel.Controls.Add(rating);
+                        }
+                    }
+                }
+            }
+        }
+
         public void ViewDets(int ID, int Faid, int Clid)
         {
             WelcomeLabel.Visible = false;
@@ -2121,7 +2298,7 @@ namespace OOP2
                             ExceptionDay = reader["Exception Day (Closed)"].ToString();
 
                             ASFaciName.Text = Facname; ASWorkingHoursText.Text = formattedWorHours; ASWorDaystext.Text = WorDays; ASLoctext.Text = locs; ASConumtext.Text = contnumb; ASEMStext.Text = Ems;
-                           
+
                         }
                     }
                 }
@@ -2183,7 +2360,7 @@ namespace OOP2
                                 ASReasontext.Text = reason;
                                 ReschedButton.Visible = false;
                             }
-                            
+
                             appdate = dateapp; apptime = formattedStart;
                         }
                     }
@@ -2335,7 +2512,7 @@ namespace OOP2
                 string query = "SELECT [Appointment Date], COUNT(*) FROM Appointments WHERE [Client_ID] = ? AND [Appointment Status] IN (?, ?) GROUP BY [Appointment Date]";
                 using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                 {
-                    cmd.Parameters.AddWithValue("?", Clid); 
+                    cmd.Parameters.AddWithValue("?", Clid);
                     cmd.Parameters.AddWithValue("?", "Pending");
                     cmd.Parameters.AddWithValue("?", "Confirmed");
 
@@ -2991,5 +3168,11 @@ namespace OOP2
             }
         }
 
+        private void Adminbutton_Click(object sender, EventArgs e)
+        {
+            Messagerpanel.Visible = true; Messagerpanel.BringToFront();
+            facid = 2;
+            LoadChatMessages(clientId, facid);
+        }
     }
 }

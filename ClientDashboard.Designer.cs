@@ -172,6 +172,8 @@
             ASWorDaysicon = new System.Windows.Forms.PictureBox();
             ReschedButton = new System.Windows.Forms.Button();
             ProfilePanel = new System.Windows.Forms.Panel();
+            Adminlabel = new System.Windows.Forms.Label();
+            Adminbutton = new System.Windows.Forms.Button();
             DeleteAccButton = new System.Windows.Forms.Button();
             GPPanel = new System.Windows.Forms.Panel();
             button49 = new System.Windows.Forms.Button();
@@ -872,7 +874,7 @@
             // AppointmentPanel
             // 
             AppointmentPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            AppointmentPanel.BackColor = System.Drawing.Color.White;
+            AppointmentPanel.BackColor = System.Drawing.Color.FromArgb(247, 247, 247);
             AppointmentPanel.Controls.Add(Upcomingpanel);
             AppointmentPanel.Controls.Add(UpcomingLabel);
             AppointmentPanel.Location = new System.Drawing.Point(771, 175);
@@ -882,6 +884,8 @@
             // 
             // Upcomingpanel
             // 
+            Upcomingpanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            Upcomingpanel.AutoScroll = true;
             Upcomingpanel.Location = new System.Drawing.Point(13, 57);
             Upcomingpanel.Name = "Upcomingpanel";
             Upcomingpanel.Size = new System.Drawing.Size(374, 332);
@@ -901,7 +905,7 @@
             // RecomdPanel
             // 
             RecomdPanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            RecomdPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            RecomdPanel.BackColor = System.Drawing.Color.FromArgb(247, 247, 247);
             RecomdPanel.Controls.Add(RecodPanel);
             RecomdPanel.Controls.Add(Recomdlabel);
             RecomdPanel.Location = new System.Drawing.Point(277, 594);
@@ -911,6 +915,7 @@
             // 
             // RecodPanel
             // 
+            RecodPanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             RecodPanel.Location = new System.Drawing.Point(13, 59);
             RecodPanel.Name = "RecodPanel";
             RecodPanel.Size = new System.Drawing.Size(868, 293);
@@ -2438,6 +2443,8 @@
             // 
             ProfilePanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ProfilePanel.BackColor = System.Drawing.Color.Transparent;
+            ProfilePanel.Controls.Add(Adminlabel);
+            ProfilePanel.Controls.Add(Adminbutton);
             ProfilePanel.Controls.Add(DeleteAccButton);
             ProfilePanel.Controls.Add(GPPanel);
             ProfilePanel.Controls.Add(PIPanel);
@@ -2446,6 +2453,32 @@
             ProfilePanel.Name = "ProfilePanel";
             ProfilePanel.Size = new System.Drawing.Size(893, 783);
             ProfilePanel.TabIndex = 41;
+            // 
+            // Adminlabel
+            // 
+            Adminlabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            Adminlabel.AutoSize = true;
+            Adminlabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            Adminlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            Adminlabel.Location = new System.Drawing.Point(93, 727);
+            Adminlabel.Name = "Adminlabel";
+            Adminlabel.Size = new System.Drawing.Size(133, 20);
+            Adminlabel.TabIndex = 79;
+            Adminlabel.Text = "Message to Admin";
+            Adminlabel.Visible = false;
+            // 
+            // Adminbutton
+            // 
+            Adminbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Adminbutton.ForeColor = System.Drawing.Color.FromArgb(254, 241, 245);
+            Adminbutton.Image = (System.Drawing.Image)resources.GetObject("Adminbutton.Image");
+            Adminbutton.Location = new System.Drawing.Point(19, 704);
+            Adminbutton.Name = "Adminbutton";
+            Adminbutton.Size = new System.Drawing.Size(74, 64);
+            Adminbutton.TabIndex = 78;
+            Adminbutton.UseVisualStyleBackColor = true;
+            Adminbutton.Visible = false;
+            Adminbutton.Click += Adminbutton_Click;
             // 
             // DeleteAccButton
             // 
@@ -4853,6 +4886,7 @@
             // 
             // AdsBox
             // 
+            AdsBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             AdsBox.Location = new System.Drawing.Point(277, 177);
             AdsBox.Name = "AdsBox";
             AdsBox.Size = new System.Drawing.Size(484, 400);
@@ -4865,6 +4899,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ProfilePanel);
+            Controls.Add(NotificationPanel);
             Controls.Add(AdsBox);
             Controls.Add(FilterBox);
             Controls.Add(FilterStatusBox);
@@ -4881,9 +4917,7 @@
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
             Controls.Add(ServicesPanel);
-            Controls.Add(ProfilePanel);
             Controls.Add(FacilityProPanel2);
-            Controls.Add(NotificationPanel);
             Controls.Add(Messagerpanel);
             Controls.Add(AppSearch);
             Controls.Add(FacilityProPanel);
@@ -4947,6 +4981,7 @@
             ((System.ComponentModel.ISupportInitialize)ASLocicon).EndInit();
             ((System.ComponentModel.ISupportInitialize)ASWorDaysicon).EndInit();
             ProfilePanel.ResumeLayout(false);
+            ProfilePanel.PerformLayout();
             GPPanel.ResumeLayout(false);
             GPPanel.PerformLayout();
             PIPanel.ResumeLayout(false);
@@ -5339,5 +5374,7 @@
         private System.Windows.Forms.FlowLayoutPanel RecodPanel;
         private System.Windows.Forms.FlowLayoutPanel Upcomingpanel;
         private System.Windows.Forms.PictureBox AdsBox;
+        private System.Windows.Forms.Label Adminlabel;
+        private System.Windows.Forms.Button Adminbutton;
     }
 }

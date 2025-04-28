@@ -82,6 +82,8 @@ namespace OOP2
             InfoGetter();
             Loaders();
             LoadFacilityData(); LoadHistory(AppointmentId, FacilityiId, ClientId);
+            LoadCounter(); LoadRevenueLineChartdb();
+            LoadUpcomingHistory(AppointmentId, FacilityiId, ClientId);
             HiLabel.Text = $"Hi {Facname},";
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
@@ -90,8 +92,6 @@ namespace OOP2
             CalendarAppointmentPanel.Visible = false;
             CalendarPanel.Visible = false;
             AppointmentPanel.Visible = true;
-            panel11.Visible = true;
-            panel45.Visible = true;
             DashboardButton.BackColor = ColorTranslator.FromHtml("#f0246e");
             Dbutton.BackColor = ColorTranslator.FromHtml("#f0246e");
             AppDetsbutton.Visible = false;
@@ -137,15 +137,7 @@ namespace OOP2
             MessagePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MessagePanel.Width, MessagePanel.Height, 10, 10));
             //DASHBOARD
             AppointmentPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentPanel.Width, AppointmentPanel.Height, 10, 10));
-            MonthPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MonthPanel.Width, MonthPanel.Height, 10, 10));
-            panel9.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel9.Width, panel9.Height, 10, 10));
-            panel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel10.Width, panel10.Height, 10, 10));
-            panel8.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel8.Width, panel8.Height, 10, 10));
-            panel5.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel5.Width, panel5.Height, 10, 10));
-            panel6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel6.Height, 10, 10));
-            panel7.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel7.Width, panel7.Height, 10, 10));
-            panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
-            panel11.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel11.Width, panel11.Height, 10, 10));
+            AppCountpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppCountpanel.Width, AppCountpanel.Height, 10, 10));
             //CALENDAR
             CalendarPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CalendarPanel.Width, CalendarPanel.Height, 10, 10));
             calendarsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, calendarsButton.Width, calendarsButton.Height, 10, 10));
@@ -198,7 +190,7 @@ namespace OOP2
             //panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
             //INFOSETTER
             FIFnameTitle.Text = FIEFnameTitle.Text = FIEFacnametext.Text = FIEFacnametext.Text = FIFnametext.Text = Facname;
-            FIRatingstext.Text = FIERatingstext.Text = Ratings;
+            FIRatingstext.Text = FIERatingstext.Text = ratingstext.Text = Ratings + " Ratings";
             FILoctext.Text = FIELoctext.Text = LocationAddress;
             FIEOFnametext.Text = FName; FIEOLnametext.Text = LName;
             FISerCattext.Text = SerCat; FIWorhourstext.Text = formattedWorHours; FIEStarttext.Text = workingstart == DateTime.MinValue ? "" : workingstart.ToString("hh:mm tt");
@@ -222,6 +214,7 @@ namespace OOP2
             FISpeCattext.Text = FIESpeCattext.Text = SpeCat;
             FITagstext.Text = FIETagstext.Text = Tags;
             ATCToday.Text = "Today: " + DateTime.Now.ToString("dd, MMMM yyyy");
+            FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -326,8 +319,8 @@ namespace OOP2
             Loaders();
             //DASHBOARD
             AppointmentPanel.Visible = true;
-            panel11.Visible = true;
-            panel45.Visible = true;
+            DBanalytics.Visible = true;
+            AppCountpanel.Visible = true;
             HiLabel.Visible = true; HiLabel.Text = $"Hi {Facname},";
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Welcome ServEase!";
@@ -372,13 +365,14 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
         private void CalendarButton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel11.Visible = false;
-            panel45.Visible = false;
+            DBanalytics.Visible = false;
+            AppCountpanel.Visible = false; DBrevenue.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Calendar";
@@ -423,14 +417,15 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
 
         private void appointmentsbutton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel11.Visible = false;
-            panel45.Visible = false;
+            DBanalytics.Visible = false;
+            AppCountpanel.Visible = false; DBrevenue.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Calendar";
@@ -471,6 +466,9 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = true; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
+            LoadHistory(AppointmentId, FacilityiId, ClientId);
+
         }
 
         private void button43_Click(object sender, EventArgs e)
@@ -538,14 +536,15 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = true; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
 
         private void AnalyticsButton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel11.Visible = false;
-            panel45.Visible = false;
+            DBanalytics.Visible = false;
+            AppCountpanel.Visible = false; DBrevenue.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Analytics";
@@ -590,6 +589,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
 
         private void CGRButton_Click(object sender, EventArgs e)
@@ -657,8 +657,8 @@ namespace OOP2
             Loaders();
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel11.Visible = false;
-            panel45.Visible = false;
+            DBanalytics.Visible = false;
+            AppCountpanel.Visible = false; DBrevenue.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Profile";
@@ -703,6 +703,7 @@ namespace OOP2
                 NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
                 notify = false;
             }
+            FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
         private void SOView_Click(object sender, EventArgs e)
         {
@@ -739,8 +740,8 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel11.Visible = false;
-            panel45.Visible = false;
+            DBanalytics.Visible = false;
+            AppCountpanel.Visible = false; DBrevenue.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Profile";
@@ -789,8 +790,8 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel11.Visible = false;
-            panel45.Visible = false;
+            DBanalytics.Visible = false;
+            AppCountpanel.Visible = false; DBrevenue.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Profile";
@@ -839,8 +840,8 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel11.Visible = false;
-            panel45.Visible = false;
+            DBanalytics.Visible = false;
+            AppCountpanel.Visible = false; DBrevenue.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Settings";
@@ -897,6 +898,143 @@ namespace OOP2
         {
 
         }
+        public void LoadCounter()
+        {
+            Dictionary<string, int> appointmentCounts = new Dictionary<string, int>()
+    {
+        { "Pending", 0 },
+        { "Confirmed", 0 },
+        { "Cancelled", 0 },
+        { "Completed", 0 },
+        { "No Show", 0 }
+    };
+
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string query = "SELECT [Appointment Status], COUNT(*) AS [Count] FROM Appointments WHERE [Facility_ID] = ? GROUP BY [Appointment Status]";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", FacilityiId);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string status = reader["Appointment Status"].ToString();
+                            int count = Convert.ToInt32(reader["Count"]);
+
+                            if (appointmentCounts.ContainsKey(status))
+                            {
+                                appointmentCounts[status] = count;
+                            }
+                        }
+                    }
+                }
+            }
+
+            PenConter.Text = appointmentCounts["Pending"].ToString();
+            ConCounter.Text = appointmentCounts["Confirmed"].ToString();
+            CanCounter.Text = appointmentCounts["Cancelled"].ToString();
+            ComCounter.Text = appointmentCounts["Completed"].ToString();
+            NosCounter.Text = appointmentCounts["No Show"].ToString();
+        }
+        public void LoadUpcomingHistory(int ID, int Faid, int Clid)
+        {
+            Upcomingpanel.Controls.Clear();
+            int facid = 0;
+            EmailAddress = ServiceFacilityLogin.EmailAddress;
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string getclientid = "SELECT Facility_ID FROM [Service Facilities] WHERE [Email Address] = ?";
+
+                using (OleDbCommand getServiceIdsCmd = new OleDbCommand(getclientid, myConn))
+                {
+                    getServiceIdsCmd.Parameters.AddWithValue("?", EmailAddress);
+
+                    using (OleDbDataReader reader = getServiceIdsCmd.ExecuteReader())
+                    {
+                        if (reader.Read() && !reader.IsDBNull(0))
+                        {
+                            facid = reader.GetInt32(0);
+                        }
+                    }
+                }
+                string sql = "SELECT Client_ID, Appointment_ID FROM Appointments WHERE Facility_ID = ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", facid);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int margin = 10;
+
+                        while (reader.Read())
+                        {
+                            int cleid = reader.GetInt32(reader.GetOrdinal("Client_ID"));
+                            int appid = reader.GetInt32(reader.GetOrdinal("Appointment_ID"));
+                            string ClientName = "", Clientems = "";
+
+                            string getFacility = "SELECT [First Name], [Last Name], [Email Address] FROM [Clients] WHERE [Client_ID] = ?";
+                            using (OleDbCommand facility = new OleDbCommand(getFacility, myConn))
+                            {
+                                facility.Parameters.AddWithValue("?", cleid);
+
+                                using (OleDbDataReader readers = facility.ExecuteReader())
+                                {
+                                    if (readers.Read())
+                                    {
+                                        string namefirst = readers.IsDBNull(readers.GetOrdinal("First Name")) ? "" : readers["First Name"].ToString();
+                                        string namelast = readers.IsDBNull(readers.GetOrdinal("Last Name")) ? "" : readers["Last Name"].ToString();
+                                        ClientName = namefirst + " " + namelast;
+                                        Clientems = readers.IsDBNull(readers.GetOrdinal("Email Address")) ? "" : readers["Email Address"].ToString();
+                                    }
+                                }
+                            }
+
+                            Rating rating = new Rating();
+
+                            UsersPanel usersPanel = new UsersPanel();
+                            rating.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
+                            rating.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                            rating.Width = Upcomingpanel.ClientSize.Width - 20;
+                            rating.Location = new Point(0, margin);
+                            margin += rating.Height + 10;
+
+                            string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
+                            using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
+                            {
+                                adminCmd.Parameters.AddWithValue("?", cleid);
+                                adminCmd.Parameters.AddWithValue("?", facid);
+                                adminCmd.Parameters.AddWithValue("?", appid);
+
+                                using (OleDbDataReader adminReader = adminCmd.ExecuteReader())
+                                {
+                                    if (adminReader.Read())
+                                    {
+                                        string status = adminReader.GetString(adminReader.GetOrdinal("Appointment Status"));
+                                        string dateapp = adminReader.IsDBNull(1) ? "" : adminReader.GetDateTime(1).ToString("dd MMM yyyy");
+                                        string datebooked = adminReader.IsDBNull(2) ? "" : adminReader.GetDateTime(2).ToString("dd MMM yyyy");
+
+                                        rating.ClientInfo(status, dateapp);
+                                        rating.FacilityApp(ClientName, datebooked);
+                                    }
+                                }
+                            }
+
+                            Upcomingpanel.Controls.Add(rating);
+                        }
+                    }
+
+                }
+            }
+        }
+
 
         public void InfoGetter()
         {
@@ -931,6 +1069,7 @@ namespace OOP2
                             ExceptionDay = reader["Exception Day (Closed)"].ToString();
                             AppStatus = reader["Approval Status"].ToString();
                             Tags = reader["Tags"].ToString();
+                            Ratings = reader["Ratings"].ToString();
 
                         }
                     }
@@ -2107,10 +2246,12 @@ namespace OOP2
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
-                string query = "SELECT [Appointment Date] FROM Appointments WHERE [Facility_ID] = ?";
+                string query = "SELECT [Appointment Date] FROM Appointments WHERE [Facility_ID] = ? AND [Appointment Status] IN (?, ?)";
                 using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                 {
                     cmd.Parameters.AddWithValue("?", Faid);
+                    cmd.Parameters.AddWithValue("?", "Pending");
+                    cmd.Parameters.AddWithValue("?", "Confirmed");
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
@@ -2304,6 +2445,7 @@ namespace OOP2
             AppointmentsPanel.Visible = false;
             CalendarAppointmentPanel.Visible = false;
             ViewdetailsPanel.Visible = true;
+            AppSearch.Visible = false; FilterBox.Visible = false; FilterDateBox.Visible = false; FilterStatusBox.Visible = false;
 
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
@@ -3047,30 +3189,80 @@ namespace OOP2
             model.Series.Add(series);
             Analytics2.Model = model;
         }
+        private void LoadRevenueLineChartdb()
+        {
+            Dictionary<DateTime, double> revenueData = GetDailyRevenue(FacilityiId);
+
+            var model = new PlotModel { };
+
+            var xAxis = new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                StringFormat = "MMM-dd",
+                Title = "Date",
+                IntervalType = DateTimeIntervalType.Days,
+                MinorIntervalType = DateTimeIntervalType.Days,
+                IsZoomEnabled = false,
+                IsPanEnabled = false,
+                MinimumPadding = 0.2,
+                MaximumPadding = 0.2,
+                AbsoluteMinimum = 0
+            };
+
+            var yAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Revenue (₱)",
+                MinimumPadding = 0.2,
+                MaximumPadding = 0.2,
+                AbsoluteMinimum = 0
+            };
+
+            model.Axes.Add(xAxis);
+            model.Axes.Add(yAxis);
+
+            var series = new LineSeries
+            {
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColor.FromRgb(240, 36, 110),
+                Color = OxyColor.FromRgb(240, 36, 110),
+                StrokeThickness = 2
+            };
+
+            foreach (var entry in revenueData)
+            {
+                series.Points.Add(DateTimeAxis.CreateDataPoint(entry.Key, entry.Value));
+            }
+
+            model.Series.Add(series);
+            DBanalytics.Model = model;
+        }
 
         Dictionary<string, int> GetPopularServices(int facilityId)
         {
             var serviceCounts = new Dictionary<string, int>();
 
             string query = @"
-            SELECT [Facility Services].[Service Name], COUNT(*) AS BookingCount
-            FROM [Facility Services]
-            INNER JOIN (Appointments 
-            INNER JOIN [Appointment Services] 
-            ON Appointments.Appointment_ID = [Appointment Services].Appointment_ID)
-            ON [Facility Services].Service_ID = [Appointment Services].Service_ID
-            WHERE Appointments.[Facility_ID] = @FacilityId
-            AND Appointments.[Appointment Status] = @Status
-            GROUP BY [Facility Services].[Service Name]
-            ORDER BY BookingCount DESC";
+                SELECT [Facility Services].[Service Name], COUNT(*) AS [BookingCount]
+                FROM [Facility Services]
+                INNER JOIN (Appointments 
+                INNER JOIN [Appointment Services] 
+                ON Appointments.Appointment_ID = [Appointment Services].Appointment_ID)
+                ON [Facility Services].Service_ID = [Appointment Services].Service_ID
+                WHERE Appointments.[Facility_ID] = ? 
+                AND Appointments.[Appointment Status] = ?
+                GROUP BY [Facility Services].[Service Name]
+                ORDER BY [BookingCount] DESC";
 
             using (OleDbConnection conn = new OleDbConnection(connection))
             {
                 conn.Open();
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@FacilityId", facilityId);
-                    cmd.Parameters.AddWithValue("@Status", "Completed");
+                    cmd.Parameters.AddWithValue("?", facilityId);
+                    cmd.Parameters.AddWithValue("?", "Completed");
+
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -3089,9 +3281,10 @@ namespace OOP2
         private void LoadPopularServicesChart()
         {
             Analytics1Title.Text = "Popular Services";
+
             Dictionary<string, int> serviceData = GetPopularServices(FacilityiId);
 
-            var model = new PlotModel { };
+            var model = new PlotModel { Title = "Popular Services" };
 
             var categoryAxis = new CategoryAxis
             {
@@ -3104,8 +3297,8 @@ namespace OOP2
             {
                 Position = AxisPosition.Bottom,
                 Title = "Number of Bookings",
-                MinimumPadding = 0.2,
-                MaximumPadding = 0.2,
+                MinimumPadding = 0.1,
+                MaximumPadding = 0.1,
                 AbsoluteMinimum = 0
             };
 
@@ -3114,7 +3307,7 @@ namespace OOP2
                 ItemsSource = serviceData.Select(kv => new BarItem { Value = kv.Value }).ToList(),
                 LabelPlacement = LabelPlacement.Inside,
                 LabelFormatString = "{0}",
-                FillColor = OxyColor.FromRgb(240, 36, 110)
+                FillColor = OxyColor.FromRgb(240, 36, 110) 
             };
 
             foreach (var service in serviceData.Keys)
@@ -3128,11 +3321,12 @@ namespace OOP2
         }
 
 
+
         void LoadPopularTimeslotsChart()
         {
             Analytics1Title.Text = "Popular Timeslots";
 
-            PlotModel model = new PlotModel { };
+            PlotModel model = new PlotModel { Title = "Popular Timeslots" };
 
             var lineSeries = new LineSeries
             {
@@ -3148,29 +3342,34 @@ namespace OOP2
             var categoryAxis = new CategoryAxis
             {
                 Position = AxisPosition.Bottom,
-                GapWidth = 0.5
+                GapWidth = 0.5,
+                Angle = 45
             };
 
             var valueAxis = new LinearAxis
             {
                 Position = AxisPosition.Left,
-                MinimumPadding = 0.2,
-                MaximumPadding = 0.2,
-                AbsoluteMinimum = 0
+                MinimumPadding = 0.1,
+                MaximumPadding = 0.1,
+                AbsoluteMinimum = 0,
+                Title = "Bookings"
             };
 
             using (OleDbConnection conn = new OleDbConnection(connection))
             {
                 conn.Open();
-                string query = @"SELECT FORMAT([Appointment Date], 'hh AM/PM') AS HourSlot, COUNT(*) AS BookingCount
-                         FROM [Appointments]
-                         WHERE [Facility_ID] = ? AND [Appointment Status] = 'Completed'
-                         GROUP BY FORMAT([Appointment Date], 'hh AM/PM')
-                         ORDER BY MIN([Appointment Date]) ASC";
+                string query = @"
+            SELECT FORMAT([Appointment Date], 'hh tt') AS HourSlot, COUNT(*) AS [BookingCount]
+            FROM [Appointments]
+            WHERE [Facility_ID] = ? AND [Appointment Status] = 'Completed'
+            GROUP BY FORMAT([Appointment Date], 'hh tt')
+            ORDER BY MIN(HOUR([Appointment Date])) ASC
+        ";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("?", FacilityiId);
+
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         int index = 0;
@@ -3193,8 +3392,6 @@ namespace OOP2
 
             Analytics1.Model = model;
         }
-
-
 
         private void LoadCustomerGrowthChart()
         {
@@ -3711,13 +3908,14 @@ namespace OOP2
                 conn.Open();
                 string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID, [View Status]
                          FROM Notifications
-                         WHERE Facility_ID = ? AND Sender = ?
+                         WHERE Facility_ID = ? AND Sender = IN (?, ?)
                          ORDER BY [Date and Time] DESC";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("?", facid);
                     cmd.Parameters.AddWithValue("?", "Client");
+                    cmd.Parameters.AddWithValue("?", "Admin");
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
@@ -3777,5 +3975,11 @@ namespace OOP2
             InfoGetter();
         }
 
+        private void Adminbutton_Click(object sender, EventArgs e)
+        {
+            Messagerpanel.Visible = true; Messagerpanel.BringToFront();
+            ClientId = 3;
+            LoadChatMessages(ClientId, FacilityiId);
+        }
     }
 }

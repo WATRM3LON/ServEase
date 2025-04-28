@@ -40,18 +40,19 @@
             UserNamelabel.AutoSize = true;
             UserNamelabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             UserNamelabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            UserNamelabel.Location = new System.Drawing.Point(122, 19);
+            UserNamelabel.Location = new System.Drawing.Point(113, 19);
             UserNamelabel.Name = "UserNamelabel";
-            UserNamelabel.Size = new System.Drawing.Size(52, 20);
+            UserNamelabel.Size = new System.Drawing.Size(101, 20);
             UserNamelabel.TabIndex = 57;
-            UserNamelabel.Text = "Name:";
+            UserNamelabel.Text = "Facility Name:";
             // 
             // UserNametext
             // 
+            UserNametext.AutoEllipsis = true;
             UserNametext.AutoSize = true;
             UserNametext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             UserNametext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            UserNametext.Location = new System.Drawing.Point(180, 19);
+            UserNametext.Location = new System.Drawing.Point(218, 19);
             UserNametext.Name = "UserNametext";
             UserNametext.Size = new System.Drawing.Size(135, 23);
             UserNametext.TabIndex = 56;
@@ -62,7 +63,7 @@
             UserRegisttext.AutoSize = true;
             UserRegisttext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             UserRegisttext.ForeColor = System.Drawing.Color.Black;
-            UserRegisttext.Location = new System.Drawing.Point(246, 52);
+            UserRegisttext.Location = new System.Drawing.Point(253, 52);
             UserRegisttext.Name = "UserRegisttext";
             UserRegisttext.Size = new System.Drawing.Size(81, 20);
             UserRegisttext.TabIndex = 62;
@@ -73,11 +74,11 @@
             UserRegistlabel.AutoSize = true;
             UserRegistlabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             UserRegistlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            UserRegistlabel.Location = new System.Drawing.Point(122, 52);
+            UserRegistlabel.Location = new System.Drawing.Point(113, 52);
             UserRegistlabel.Name = "UserRegistlabel";
-            UserRegistlabel.Size = new System.Drawing.Size(123, 20);
+            UserRegistlabel.Size = new System.Drawing.Size(140, 20);
             UserRegistlabel.TabIndex = 63;
-            UserRegistlabel.Text = "Date Registered: ";
+            UserRegistlabel.Text = "Appointment Date: ";
             // 
             // SerStorePP1
             // 
@@ -92,14 +93,13 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(249, 252, 247);
-            BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             Controls.Add(SerStorePP1);
             Controls.Add(UserRegisttext);
             Controls.Add(UserRegistlabel);
             Controls.Add(UserNamelabel);
             Controls.Add(UserNametext);
             Name = "Rating";
-            Size = new System.Drawing.Size(365, 91);
+            Size = new System.Drawing.Size(367, 93);
             ResumeLayout(false);
             PerformLayout();
         }
