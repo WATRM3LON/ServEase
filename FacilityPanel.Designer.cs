@@ -39,8 +39,10 @@
             pictureBox1 = new System.Windows.Forms.PictureBox();
             Workinhourslabel = new System.Windows.Forms.Label();
             pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // WorkingHoursText
@@ -106,7 +108,7 @@
             Ratings.AutoSize = true;
             Ratings.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             Ratings.ForeColor = System.Drawing.Color.Gray;
-            Ratings.Location = new System.Drawing.Point(116, 65);
+            Ratings.Location = new System.Drawing.Point(141, 72);
             Ratings.Name = "Ratings";
             Ratings.Size = new System.Drawing.Size(53, 17);
             Ratings.TabIndex = 47;
@@ -154,11 +156,21 @@
             pictureBox2.TabIndex = 53;
             pictureBox2.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new System.Drawing.Point(110, 69);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(25, 25);
+            pictureBox3.TabIndex = 54;
+            pictureBox3.TabStop = false;
+            // 
             // FacilityPanel
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
+            Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(Workinhourslabel);
@@ -173,6 +185,7 @@
             Size = new System.Drawing.Size(283, 250);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,5 +201,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Workinhourslabel;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

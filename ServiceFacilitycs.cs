@@ -936,6 +936,35 @@ namespace OOP2
                     }
                 }
             }
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                try
+                {
+                    myConn.Open();
+
+                    string sql = "SELECT [Profile Picture] FROM [Facility Files] WHERE [Facility_ID] = ?";
+                    using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", FacilityiId);
+
+                        object result = cmd.ExecuteScalar();
+                        if (result != DBNull.Value)
+                        {
+                            byte[] imageBytes = (byte[])result;
+                            using (MemoryStream ms = new MemoryStream(imageBytes))
+                            {
+                                Image img = Image.FromStream(ms);
+                                Eprofilepic.Image = FIProfile.Image = img;
+                                Eprofilepic.SizeMode = FIProfile.SizeMode = PictureBoxSizeMode.StretchImage;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error loading image: " + ex.Message);
+                }
+            }
 
         }
 
@@ -2667,6 +2696,7 @@ namespace OOP2
             ProfilePanel.Visible = true;
         }
 
+        byte[] Profilebytes = null;
         byte[] businessRegistrationBytes = null;
         byte[] governmentIdBytes = null;
         byte[] facilityPhotosBytes = null;
@@ -3613,7 +3643,7 @@ namespace OOP2
                             }
                         }
                     }
-                        
+
                     notifPanel.BackColor = Color.Gainsboro;
                     isViewed = true;
                 }
@@ -3707,6 +3737,44 @@ namespace OOP2
                     }
                 }
             }
+        }
+
+        private void Eprofilepic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Profile Pic";
+            ofd.Filter = "All Files|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                byte[] governmentIdBytes = File.ReadAllBytes(ofd.FileName);
+
+                File2Fname.Visible = true;
+                File2Fname.Text = Path.GetFileName(ofd.FileName);
+                File2button.BackColor = Color.White;
+                File2button.ForeColor = ColorTranslator.FromHtml("#69e331");
+                Allfiles.Visible = false;
+
+                Notice notice = new Notice();
+                notice.UploadPanel();
+
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    string facilityfiles = "INSERT INTO [Facility Files] (Facility_ID, [Profile Picture]) VALUES (?, ?)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(facilityfiles, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("?", FacilityiId);
+                        cmd.Parameters.AddWithValue("?", (object)governmentIdBytes ?? DBNull.Value);
+
+                        cmd.ExecuteNonQuery();
+                        System.Windows.Forms.MessageBox.Show("Facility Profile uploaded successfully!");
+                    }
+                }
+            }
+            InfoGetter();
         }
 
     }

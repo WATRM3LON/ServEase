@@ -34,7 +34,7 @@ namespace OOP2
         {
             SerStoreButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerStoreButton.Width, SerStoreButton.Height, 10, 10));
             FacilityName.Text = Servicename;
-            Ratings.Text = ratings;
+            Ratings.Text = ratings + " Ratings";
             WorkingHoursText.Text = workinghours;
             Pricerangetext.Text = pricerange;
         }

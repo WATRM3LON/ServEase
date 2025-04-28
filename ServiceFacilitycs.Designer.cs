@@ -175,13 +175,13 @@
             FIEditButton = new System.Windows.Forms.Button();
             label91 = new System.Windows.Forms.Label();
             ProPicPanel = new System.Windows.Forms.Panel();
+            FIProfile = new System.Windows.Forms.PictureBox();
             FIStatus = new System.Windows.Forms.Button();
             FILoclabel = new System.Windows.Forms.Label();
             FILoctext = new System.Windows.Forms.Label();
             FIRatingslabel = new System.Windows.Forms.Label();
             FIRatingstext = new System.Windows.Forms.Label();
             FIFnameTitle = new System.Windows.Forms.Label();
-            panel58 = new System.Windows.Forms.Panel();
             ServicesOfferedPanel = new System.Windows.Forms.Panel();
             SerOffPanel = new System.Windows.Forms.Panel();
             EditButton2 = new System.Windows.Forms.Button();
@@ -276,13 +276,13 @@
             button13 = new System.Windows.Forms.Button();
             label108 = new System.Windows.Forms.Label();
             FIEProfilepanel = new System.Windows.Forms.Panel();
+            Eprofilepic = new System.Windows.Forms.PictureBox();
             FIELoctext = new System.Windows.Forms.TextBox();
             FIEStatus = new System.Windows.Forms.Button();
             FIELoclabel = new System.Windows.Forms.Label();
             FIERatingslabel = new System.Windows.Forms.Label();
             FIERatingstext = new System.Windows.Forms.Label();
             FIEFnameTitle = new System.Windows.Forms.Label();
-            panel47 = new System.Windows.Forms.Panel();
             ESerOffPanel = new System.Windows.Forms.Panel();
             SerOffEPanel = new System.Windows.Forms.Panel();
             SO3Panel = new System.Windows.Forms.TableLayoutPanel();
@@ -475,6 +475,7 @@
             SOAPanel.SuspendLayout();
             PIPanel.SuspendLayout();
             ProPicPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)FIProfile).BeginInit();
             ServicesOfferedPanel.SuspendLayout();
             SerOffTitlePanel.SuspendLayout();
             ATPanel.SuspendLayout();
@@ -501,6 +502,7 @@
             EditFIPanel.SuspendLayout();
             FIEPanel.SuspendLayout();
             FIEProfilepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Eprofilepic).BeginInit();
             ESerOffPanel.SuspendLayout();
             SerOffEPanel.SuspendLayout();
             SO3Panel.SuspendLayout();
@@ -2588,17 +2590,27 @@
             // 
             ProPicPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             ProPicPanel.BackColor = System.Drawing.Color.White;
+            ProPicPanel.Controls.Add(FIProfile);
             ProPicPanel.Controls.Add(FIStatus);
             ProPicPanel.Controls.Add(FILoclabel);
             ProPicPanel.Controls.Add(FILoctext);
             ProPicPanel.Controls.Add(FIRatingslabel);
             ProPicPanel.Controls.Add(FIRatingstext);
             ProPicPanel.Controls.Add(FIFnameTitle);
-            ProPicPanel.Controls.Add(panel58);
             ProPicPanel.Location = new System.Drawing.Point(9, 18);
             ProPicPanel.Name = "ProPicPanel";
             ProPicPanel.Size = new System.Drawing.Size(867, 165);
             ProPicPanel.TabIndex = 37;
+            // 
+            // FIProfile
+            // 
+            FIProfile.Image = (System.Drawing.Image)resources.GetObject("FIProfile.Image");
+            FIProfile.Location = new System.Drawing.Point(21, 16);
+            FIProfile.Name = "FIProfile";
+            FIProfile.Size = new System.Drawing.Size(132, 124);
+            FIProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            FIProfile.TabIndex = 51;
+            FIProfile.TabStop = false;
             // 
             // FIStatus
             // 
@@ -2676,16 +2688,6 @@
             FIFnameTitle.Size = new System.Drawing.Size(162, 31);
             FIFnameTitle.TabIndex = 35;
             FIFnameTitle.Text = "Salon de Rose";
-            // 
-            // panel58
-            // 
-            panel58.BackColor = System.Drawing.Color.Transparent;
-            panel58.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel58.BackgroundImage");
-            panel58.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            panel58.Location = new System.Drawing.Point(21, 22);
-            panel58.Name = "panel58";
-            panel58.Size = new System.Drawing.Size(116, 115);
-            panel58.TabIndex = 34;
             // 
             // ServicesOfferedPanel
             // 
@@ -3976,17 +3978,26 @@
             // 
             FIEProfilepanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             FIEProfilepanel.BackColor = System.Drawing.Color.White;
+            FIEProfilepanel.Controls.Add(Eprofilepic);
             FIEProfilepanel.Controls.Add(FIELoctext);
             FIEProfilepanel.Controls.Add(FIEStatus);
             FIEProfilepanel.Controls.Add(FIELoclabel);
             FIEProfilepanel.Controls.Add(FIERatingslabel);
             FIEProfilepanel.Controls.Add(FIERatingstext);
             FIEProfilepanel.Controls.Add(FIEFnameTitle);
-            FIEProfilepanel.Controls.Add(panel47);
             FIEProfilepanel.Location = new System.Drawing.Point(9, 18);
             FIEProfilepanel.Name = "FIEProfilepanel";
             FIEProfilepanel.Size = new System.Drawing.Size(867, 165);
             FIEProfilepanel.TabIndex = 37;
+            // 
+            // Eprofilepic
+            // 
+            Eprofilepic.Location = new System.Drawing.Point(21, 22);
+            Eprofilepic.Name = "Eprofilepic";
+            Eprofilepic.Size = new System.Drawing.Size(116, 115);
+            Eprofilepic.TabIndex = 53;
+            Eprofilepic.TabStop = false;
+            Eprofilepic.Click += Eprofilepic_Click;
             // 
             // FIELoctext
             // 
@@ -4062,16 +4073,6 @@
             FIEFnameTitle.Size = new System.Drawing.Size(162, 31);
             FIEFnameTitle.TabIndex = 35;
             FIEFnameTitle.Text = "Salon de Rose";
-            // 
-            // panel47
-            // 
-            panel47.BackColor = System.Drawing.Color.Transparent;
-            panel47.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel47.BackgroundImage");
-            panel47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            panel47.Location = new System.Drawing.Point(21, 22);
-            panel47.Name = "panel47";
-            panel47.Size = new System.Drawing.Size(116, 115);
-            panel47.TabIndex = 34;
             // 
             // ESerOffPanel
             // 
@@ -6322,24 +6323,14 @@
             Controls.Add(NotificationPanel);
             Controls.Add(QRBox);
             Controls.Add(Messagerpanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(QRbutton);
-            Controls.Add(AnalyticsPanel);
-            Controls.Add(UploadfilesPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(AppSearch);
             Controls.Add(FilterBox);
             Controls.Add(FilterStatusBox);
             Controls.Add(FilterDateBox);
             Controls.Add(CalendarAppointmentPanel);
-            Controls.Add(AppointmentsPanel);
             Controls.Add(DimPanel);
-            Controls.Add(ATPanel);
-            Controls.Add(ServicesOfferedPanel);
-            Controls.Add(EATPanel);
-            Controls.Add(EditFIPanel);
-            Controls.Add(ESerOffPanel);
-            Controls.Add(SettingsPanel);
             Controls.Add(panel11);
             Controls.Add(panel45);
             Controls.Add(panel44);
@@ -6351,6 +6342,16 @@
             Controls.Add(MaximizeButton);
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
+            Controls.Add(EditFIPanel);
+            Controls.Add(ViewdetailsPanel);
+            Controls.Add(AnalyticsPanel);
+            Controls.Add(UploadfilesPanel);
+            Controls.Add(AppointmentsPanel);
+            Controls.Add(ATPanel);
+            Controls.Add(ServicesOfferedPanel);
+            Controls.Add(EATPanel);
+            Controls.Add(SettingsPanel);
+            Controls.Add(ESerOffPanel);
             Controls.Add(ProfilePanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -6402,6 +6403,7 @@
             PIPanel.PerformLayout();
             ProPicPanel.ResumeLayout(false);
             ProPicPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)FIProfile).EndInit();
             ServicesOfferedPanel.ResumeLayout(false);
             SerOffTitlePanel.ResumeLayout(false);
             SerOffTitlePanel.PerformLayout();
@@ -6438,6 +6440,7 @@
             FIEPanel.PerformLayout();
             FIEProfilepanel.ResumeLayout(false);
             FIEProfilepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Eprofilepic).EndInit();
             ESerOffPanel.ResumeLayout(false);
             ESerOffPanel.PerformLayout();
             SerOffEPanel.ResumeLayout(false);
@@ -6606,7 +6609,6 @@
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Panel ProPicPanel;
         private System.Windows.Forms.Label FIFnameTitle;
-        private System.Windows.Forms.Panel panel58;
         private System.Windows.Forms.Label FIWordaystext;
         private System.Windows.Forms.Label FIWordayslabel;
         private System.Windows.Forms.Panel ServicesOfferedPanel;
@@ -6669,7 +6671,6 @@
         private System.Windows.Forms.Label FIERatingslabel;
         private System.Windows.Forms.Label FIERatingstext;
         private System.Windows.Forms.Label FIEFnameTitle;
-        private System.Windows.Forms.Panel panel47;
         private System.Windows.Forms.TextBox FIEFacnametext;
         private System.Windows.Forms.TextBox FIEWordaystext;
         private System.Windows.Forms.TextBox FIEStarttext;
@@ -6934,5 +6935,7 @@
         private System.Windows.Forms.Button NotiCloseButton;
         private System.Windows.Forms.Label label105;
         private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.PictureBox Eprofilepic;
+        private System.Windows.Forms.PictureBox FIProfile;
     }
 }

@@ -76,6 +76,9 @@ namespace OOP2
         string locs = "", Ems = "", selectedTime = "", filter1 = "", filter2 = "", appdate = "", apptime = "";
         int facid, Appid;
         int clientId;
+        Timer slideshowTimer = new Timer();
+        List<Image> images = new List<Image>();
+        int currentImageIndex = 0;
         public ClientDashboard()
         {
             InitializeComponent();
@@ -103,12 +106,32 @@ namespace OOP2
             FacilityProPanel2.Visible = false; ASReasontext.Visible = false; ASReasonlabel.Visible = false;
             PIEButton.Visible = false; FillEM.Visible = false; BookAppbutton.Visible = false;
             EditPIPanel.Visible = false; CnumberExisted.Visible = false; CnumberInvalid.Visible = false;
+
+            images.Add(Image.FromFile(@"D:\\OOP2\\HTML\\Ads1.jpg"));
+            images.Add(Image.FromFile(@"D:\\OOP2\\HTML\\Ads2.jpg"));
+            images.Add(Image.FromFile(@"D:\\OOP2\\HTML\\Ads3.jpg"));
+
+            AdsBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            slideshowTimer.Interval = 2000;
+            slideshowTimer.Tick += SlideshowTimer_Tick;
+            slideshowTimer.Start();
+        }
+        private void SlideshowTimer_Tick(object sender, EventArgs e)
+        {
+            if (images.Count == 0) return;
+
+            AdsBox.Image = images[currentImageIndex];
+            currentImageIndex++;
+
+            if (currentImageIndex >= images.Count)
+                currentImageIndex = 0;
         }
 
         public void Loaders()
         {
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
             MessagePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MessagePanel.Width, MessagePanel.Height, 10, 10));
+            RateButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, RateButton.Width, RateButton.Height, 10, 10));
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
             DashboardPanel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel2.Width, DashboardPanel2.Height, 20, 20));
@@ -129,24 +152,6 @@ namespace OOP2
             LogoButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogoButton.Width, LogoButton.Height, 10, 10));
             LogosButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogosButton.Width, LogosButton.Height, 10, 10));
             AppointmentPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentPanel.Width, AppointmentPanel.Height, 10, 10));
-            MonthPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MonthPanel.Width, MonthPanel.Height, 10, 10));
-            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 10, 10));
-            panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 10, 10));
-            panel4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel4.Width, panel4.Height, 10, 10));
-            panel5.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel5.Width, panel5.Height, 10, 10));
-            panel6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel6.Height, 10, 10));
-            panel7.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel7.Width, panel7.Height, 10, 10));
-            panel8.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel8.Width, panel8.Height, 10, 10));
-            panel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel10.Width, panel10.Height, 10, 10));
-            panel12.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel12.Width, panel12.Height, 30, 30));
-            panel14.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel14.Width, panel14.Height, 30, 30));
-            panel16.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel16.Width, panel16.Height, 30, 30));
-            panel11.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel11.Width, panel11.Height, 10, 10));
-            panel13.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel13.Width, panel13.Height, 10, 10));
-            panel15.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel15.Width, panel15.Height, 10, 10));
-            SignInButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SignInButton.Width, SignInButton.Height, 10, 10));
-            button11.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button11.Width, button11.Height, 10, 10));
-            button12.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button12.Width, button12.Height, 10, 10));
             //SERVICES
             ServicesPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ServicesPanel.Width, ServicesPanel.Height, 10, 10));
             BeautySPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BeautySPanel.Width, BeautySPanel.Height, 10, 10));
@@ -211,7 +216,7 @@ namespace OOP2
             AccessPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AccessPanel.Width, AccessPanel.Height, 10, 10));
             AboutPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AboutPanel.Width, AboutPanel.Height, 10, 10));
             HelpPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, HelpPanel.Width, HelpPanel.Height, 10, 10));
-            panel45.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel45.Width, panel45.Height, 10, 10));
+            AdsBox.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AdsBox.Width, AdsBox.Height, 10, 10));
 
             //INFOSETTER
             PPClientName.Text = PIEname.Text = FName + " " + LName; PIEFnametext.Text = FName; PIELnametext.Text = LName;
@@ -311,42 +316,6 @@ namespace OOP2
             HeaderPanel.Location = new Point(190, 44);
             panel44.Visible = false;
         }
-
-        private void panel2_MouseHover(object sender, EventArgs e)
-        {
-            panel2.BackColor = ColorTranslator.FromHtml("#d9faf5");
-            panel4.BackColor = Color.White;
-        }
-
-        private void panel2_MouseLeave(object sender, EventArgs e)
-        {
-            panel2.BackColor = Color.White;
-            panel4.BackColor = ColorTranslator.FromHtml("#d2f7c1");
-        }
-
-        private void panel5_MouseHover(object sender, EventArgs e)
-        {
-            panel5.BackColor = ColorTranslator.FromHtml("#d9faf5");
-            panel6.BackColor = Color.White;
-        }
-
-        private void panel5_MouseLeave(object sender, EventArgs e)
-        {
-            panel5.BackColor = Color.White;
-            panel6.BackColor = ColorTranslator.FromHtml("#d2f7c1");
-        }
-
-        private void panel7_MouseHover(object sender, EventArgs e)
-        {
-            panel7.BackColor = ColorTranslator.FromHtml("#d9faf5");
-            panel8.BackColor = Color.White;
-        }
-        private void panel7_MouseLeave(object sender, EventArgs e)
-        {
-            panel7.BackColor = Color.White;
-            panel8.BackColor = ColorTranslator.FromHtml("#d2f7c1");
-        }
-
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -555,14 +524,14 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel3.Visible = false;
+            RecomdPanel.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Services";
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
             SearchPanel.Visible = true;
-            panel45.Visible = false;
+            AdsBox.Visible = false;
             //SERVICES
             ServicesPanel.Visible = true;
             ServicesButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -608,14 +577,14 @@ namespace OOP2
             Loaders();
             //DASHBOARD
             AppointmentPanel.Visible = true;
-            panel3.Visible = true;
+            RecomdPanel.Visible = true;
             HiLabel.Visible = true; HiLabel.Text = $"Hi {ClientLogin.EmailAddress},";
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Welcome ServEase!";
             DashboardButton.BackColor = ColorTranslator.FromHtml("#69e331");
             Dbutton.BackColor = ColorTranslator.FromHtml("#69e331");
             SearchPanel.Visible = false;
-            panel45.Visible = true;
+            AdsBox.Visible = true;
             //SERVICES
             ServicesPanel.Visible = false;
             ServicesButton.BackColor = Color.White;
@@ -706,13 +675,13 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel3.Visible = false;
+            RecomdPanel.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Services";
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
-            panel45.Visible = false;
+            AdsBox.Visible = false;
             //SERVICES
             ServicesPanel.Visible = true;
             ServicesButton.BackColor = ColorTranslator.FromHtml("#69e331");
@@ -750,14 +719,14 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel3.Visible = false;
+            RecomdPanel.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Calendar";
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
             SearchPanel.Visible = false;
-            panel45.Visible = false;
+            AdsBox.Visible = false;
             //SERVICES
             ServicesPanel.Visible = false;
             ServicesButton.BackColor = Color.White;
@@ -802,13 +771,13 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel3.Visible = false;
+            RecomdPanel.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Calendar";
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
-            panel45.Visible = false;
+            AdsBox.Visible = false;
             //SERVICES
             ServicesPanel.Visible = false;
             ServicesButton.BackColor = Color.White;
@@ -854,13 +823,13 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel3.Visible = false;
+            RecomdPanel.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Calendar";
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
-            panel45.Visible = false;
+            AdsBox.Visible = false;
             //SERVICES
             ServicesPanel.Visible = false;
             ServicesButton.BackColor = Color.White;
@@ -907,13 +876,13 @@ namespace OOP2
             Loaders();
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel3.Visible = false;
+            RecomdPanel.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Profile";
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
-            panel45.Visible = false;
+            AdsBox.Visible = false;
             //SERVICES
             ServicesPanel.Visible = false;
             ServicesButton.BackColor = Color.White;
@@ -957,13 +926,13 @@ namespace OOP2
         {
             //DASHBOARD
             AppointmentPanel.Visible = false;
-            panel3.Visible = false;
+            RecomdPanel.Visible = false;
             HiLabel.Visible = false;
             WelcomeLabel.Visible = true;
             WelcomeLabel.Text = "Settings";
             DashboardButton.BackColor = Color.White;
             Dbutton.BackColor = Color.White;
-            panel45.Visible = false;
+            AdsBox.Visible = false;
             //SERVICES
             ServicesPanel.Visible = false;
             ServicesButton.BackColor = Color.White;
@@ -1220,237 +1189,6 @@ namespace OOP2
             SerButton.Text = "  Miscellaneous Services";
             LoadFacilities();
         }
-
-        /*public void LoadFacilities()
-        {
-            int margin = 10;
-            int padding = 5;
-            int panelWidth = 250;
-            int panelHeight = 190;
-            int columns = 3;
-
-            int currentRow = 0;
-            int currentCol = 0;
-
-
-            SerPanel.Controls.Clear();
-
-            using (OleDbConnection myConn = new OleDbConnection(connection))
-            {
-                myConn.Open();
-
-                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address] FROM [Service Facilities] WHERE [Service Category] = ? AND [Approval Status] = ?";
-                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
-                {
-                    cmd.Parameters.AddWithValue("?", sercat);
-                    cmd.Parameters.AddWithValue("?", "Approved");
-
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
-                    {
-
-                        while (reader.Read())
-                        {
-                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
-                            string fName = reader["Facility Name"].ToString();
-                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
-                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
-                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
-                            string ratings = reader["Ratings"].ToString();
-
-                            decimal minPrice = 0, maxPrice = 0;
-                            using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
-                            {
-                                priceCmd.Parameters.AddWithValue("?", facilityId);
-                                using (OleDbDataReader priceReader = priceCmd.ExecuteReader())
-                                {
-                                    if (priceReader.Read())
-                                    {
-                                        minPrice = priceReader.IsDBNull(0) ? 0 : priceReader.GetDecimal(0);
-                                        maxPrice = priceReader.IsDBNull(1) ? 0 : priceReader.GetDecimal(1);
-                                    }
-                                }
-                            }
-
-                            string priceRange = $"₱{minPrice} - ₱{maxPrice}";
-
-                            FacilityPanel facilityPanel = new FacilityPanel();
-                            facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
-                            //facilityPanel.Loaders();
-                            facilityPanel.Width = panelWidth;
-                            facilityPanel.Height = panelHeight;
-                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelWidth, panelHeight, 10, 10));
-
-                            int x = margin + currentCol * (panelWidth + padding);
-                            int y = margin + currentRow * (panelHeight + padding);
-                            facilityPanel.Location = new Point(x, y);
-
-                            facilityPanel.ViewProfileClicked += (s, e) =>
-                            {
-                                ViewFacDets(facilityId);
-                            };
-
-                            SerPanel.Controls.Add(facilityPanel);
-
-                            currentCol++;
-                            if (currentCol >= columns)
-                            {
-                                currentCol = 0;
-                                currentRow++;
-                            }
-                        }
-                    }
-                }
-            }
-        }*/
-        /*public void LoadFacilities(string searchText = "")
-        {
-            int margin = 10;
-            int padding = 5;
-            int panelWidth = 250;
-            int panelHeight = 190;
-            int columns = 3;
-
-            int currentRow = 0;
-            int currentCol = 0;
-
-            SerPanel.Controls.Clear();
-
-            using (OleDbConnection myConn = new OleDbConnection(connection))
-            {
-                myConn.Open();
-
-                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Tags] " +
-                        "FROM [Service Facilities] " +
-                        "WHERE [Service Category] = ? AND [Approval Status] = ?";
-
-
-                if (!string.IsNullOrEmpty(searchText))
-                {
-                    sql += " AND ([Facility Name] LIKE ? OR [Tags] LIKE ?)";
-                }
-
-                using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
-                {
-                    cmd.Parameters.AddWithValue("?", sercat);
-                    cmd.Parameters.AddWithValue("?", "Approved");
-
-                    if (!string.IsNullOrEmpty(searchText))
-                    {
-                        cmd.Parameters.AddWithValue("?", "%" + searchText + "%");
-                        cmd.Parameters.AddWithValue("?", "%" + searchText + "%");
-                    }
-
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
-                    {
-                        /*while (reader.Read())
-                        {
-                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
-                            string fName = reader["Facility Name"].ToString();
-                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
-                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
-                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
-                            string ratings = reader["Ratings"].ToString();
-
-                            decimal minPrice = 0, maxPrice = 0;
-                            using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
-                            {
-                                priceCmd.Parameters.AddWithValue("?", facilityId);
-                                using (OleDbDataReader priceReader = priceCmd.ExecuteReader())
-                                {
-                                    if (priceReader.Read())
-                                    {
-                                        minPrice = priceReader.IsDBNull(0) ? 0 : priceReader.GetDecimal(0);
-                                        maxPrice = priceReader.IsDBNull(1) ? 0 : priceReader.GetDecimal(1);
-                                    }
-                                }
-                            }
-
-                            string priceRange = $"₱{minPrice} - ₱{maxPrice}";
-
-                            FacilityPanel facilityPanel = new FacilityPanel();
-                            facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
-                            facilityPanel.Width = panelWidth;
-                            facilityPanel.Height = panelHeight;
-                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelWidth, panelHeight, 10, 10));
-
-                            int x = margin + currentCol * (panelWidth + padding);
-                            int y = margin + currentRow * (panelHeight + padding);
-                            facilityPanel.Location = new Point(x, y);
-
-                            facilityPanel.ViewProfileClicked += (s, e) =>
-                            {
-                                ViewFacDets(facilityId);
-                            };
-
-                            SerPanel.Controls.Add(facilityPanel);
-
-                            currentCol++;
-                            if (currentCol >= columns)
-                            {
-                                currentCol = 0;
-                                currentRow++;
-                            }
-                        }
-                        while (reader.Read())
-                        {
-                            int facilityId = reader.GetInt32(reader.GetOrdinal("Facility_ID"));
-                            string fName = reader["Facility Name"].ToString();
-                            DateTime workingstart = reader.IsDBNull(reader.GetOrdinal("Working Hours Start")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours Start"));
-                            DateTime workingend = reader.IsDBNull(reader.GetOrdinal("Working Hours End")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("Working Hours End"));
-                            string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
-                            string ratings = reader["Ratings"].ToString();
-
-                            string tagsFromDb = reader["Tags"]?.ToString() ?? "";
-
-                            List<string> tagList = tagsFromDb
-                                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                                .Select(tag => tag.Trim())
-                                .ToList();
-
-                            decimal minPrice = 0, maxPrice = 0;
-                            using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
-                            {
-                                priceCmd.Parameters.AddWithValue("?", facilityId);
-                                using (OleDbDataReader priceReader = priceCmd.ExecuteReader())
-                                {
-                                    if (priceReader.Read())
-                                    {
-                                        minPrice = priceReader.IsDBNull(0) ? 0 : priceReader.GetDecimal(0);
-                                        maxPrice = priceReader.IsDBNull(1) ? 0 : priceReader.GetDecimal(1);
-                                    }
-                                }
-                            }
-
-                            string priceRange = $"₱{minPrice} - ₱{maxPrice}";
-
-                            FacilityPanel facilityPanel = new FacilityPanel();
-                            facilityPanel.SetData(fName, ratings, formattedWorHours, priceRange);
-                            facilityPanel.Width = panelWidth;
-                            facilityPanel.Height = panelHeight;
-                            facilityPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelWidth, panelHeight, 10, 10));
-
-                            int x = margin + currentCol * (panelWidth + padding);
-                            int y = margin + currentRow * (panelHeight + padding);
-                            facilityPanel.Location = new Point(x, y);
-
-                            facilityPanel.ViewProfileClicked += (s, e) =>
-                            {
-                                ViewFacDets(facilityId);
-                            };
-
-                            SerPanel.Controls.Add(facilityPanel);
-
-                            currentCol++;
-                            if (currentCol >= columns)
-                            {
-                                currentCol = 0;
-                                currentRow++;
-                            }
-                        }
-                    }
-                }
-            }
-        }*/
         public void LoadFacilities(string searchText = "")
         {
             int margin = 10;
@@ -1534,7 +1272,7 @@ namespace OOP2
 
                             if (!matchesSearch)
                             {
-                                continue; 
+                                continue;
                             }
                             decimal minPrice = 0, maxPrice = 0;
                             using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
@@ -1623,6 +1361,7 @@ namespace OOP2
                             ExceptionDay = reader["Exception Day (Closed)"].ToString();
 
                             FaciName.Text = Facname; WorkingHoursText.Text = formattedWorHours; WorDaystext.Text = WorDays; Loctext.Text = locs; Conumtext.Text = contnumb; EMStext.Text = Ems;
+                            Ratinglabel.Text = Ratings + " Ratings";
                         }
                     }
                 }
@@ -2382,6 +2121,7 @@ namespace OOP2
                             ExceptionDay = reader["Exception Day (Closed)"].ToString();
 
                             ASFaciName.Text = Facname; ASWorkingHoursText.Text = formattedWorHours; ASWorDaystext.Text = WorDays; ASLoctext.Text = locs; ASConumtext.Text = contnumb; ASEMStext.Text = Ems;
+                           
                         }
                     }
                 }
@@ -2434,6 +2174,7 @@ namespace OOP2
                             else if (status == "Completed")
                             {
                                 ASstattext.ForeColor = ColorTranslator.FromHtml("#69e331");
+                                RateButton.Visible = true;
                             }
                             else
                             {
@@ -2442,7 +2183,7 @@ namespace OOP2
                                 ASReasontext.Text = reason;
                                 ReschedButton.Visible = false;
                             }
-
+                            
                             appdate = dateapp; apptime = formattedStart;
                         }
                     }
@@ -2486,7 +2227,7 @@ namespace OOP2
 
         }
 
-        void PopulateCalendarPanel(int ID, int Faid, int Clid)
+        /*void PopulateCalendarPanel(int ID, int Faid, int Clid)
         {
             CAC3.Controls.Clear();
             CAC3.SuspendLayout();
@@ -2502,10 +2243,11 @@ namespace OOP2
             using (OleDbConnection myConn = new OleDbConnection(connection))
             {
                 myConn.Open();
-                string query = "SELECT [Appointment Date] FROM Appointments WHERE [Client_ID] = ?";
+                string query = "SELECT [Appointment Date] FROM Appointments WHERE [Client_ID] = ? AND [Appointment Status] = ?";
                 using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                 {
                     cmd.Parameters.AddWithValue("?", clientId);
+                    cmd.Parameters.AddWithValue("?", "Pending" || "Confirmed");
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
@@ -2572,7 +2314,94 @@ namespace OOP2
 
             CACmonth.Text = currentMonth.ToString("MMMM yyyy");
             CAC3.ResumeLayout();
+        }*/
+        void PopulateCalendarPanel(int ID, int Faid, int Clid)
+        {
+            CAC3.Controls.Clear();
+            CAC3.SuspendLayout();
+
+            DateTime firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+            int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+            int startCol = (int)firstDay.DayOfWeek;
+
+            int row = 0;
+            int col = startCol;
+
+            Dictionary<DateTime, int> appointmentCounts = new Dictionary<DateTime, int>();
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+
+                string query = "SELECT [Appointment Date], COUNT(*) FROM Appointments WHERE [Client_ID] = ? AND [Appointment Status] IN (?, ?) GROUP BY [Appointment Date]";
+                using (OleDbCommand cmd = new OleDbCommand(query, myConn))
+                {
+                    cmd.Parameters.AddWithValue("?", Clid); 
+                    cmd.Parameters.AddWithValue("?", "Pending");
+                    cmd.Parameters.AddWithValue("?", "Confirmed");
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                DateTime date = reader.GetDateTime(0).Date;
+                                int count = reader.GetInt32(1);
+                                appointmentCounts[date] = count;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                DateTime thisDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
+                DayOfWeek dayOfWeek = thisDate.DayOfWeek;
+
+                Panel cellPanel = new Panel { Dock = DockStyle.Fill, BackColor = Color.Transparent, Margin = new Padding(5) };
+
+                Label dayLabel = new Label { Text = day.ToString(), Dock = DockStyle.Top, TextAlign = ContentAlignment.TopRight, AutoSize = false, Height = 20, Font = new Font("Segoe UI", 9), Tag = thisDate, BackColor = Color.Transparent };
+
+                if (dayOfWeek == DayOfWeek.Sunday || dayOfWeek == DayOfWeek.Saturday)
+                {
+                    cellPanel.ForeColor = Color.DimGray;
+                    cellPanel.BackColor = Color.WhiteSmoke;
+                }
+
+                if (thisDate.Date == DateTime.Today.Date)
+                {
+                    cellPanel.BackColor = ColorTranslator.FromHtml("#d9faf5");
+                }
+
+                if (appointmentCounts.ContainsKey(thisDate.Date))
+                {
+                    int count = appointmentCounts[thisDate.Date];
+
+                    Label appLabel = new Label { Text = $" ● {count} Appointment/s", AutoEllipsis = true, AutoSize = false, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = ColorTranslator.FromHtml("#69e331"), Font = new Font("Segoe UI", 8), Tag = thisDate };
+
+                    cellPanel.Controls.Add(appLabel);
+                    cellPanel.Cursor = Cursors.Hand;
+                    appLabel.Tag = thisDate;
+                    appLabel.Click += CellPanel_Click;
+                    cellPanel.BackColor = ColorTranslator.FromHtml("#E1F9D7");
+                }
+
+                cellPanel.Controls.Add(dayLabel);
+                CAC3.Controls.Add(cellPanel, col, row);
+
+                col++;
+                if (col == 7)
+                {
+                    col = 0;
+                    row++;
+                }
+            }
+
+            CACmonth.Text = currentMonth.ToString("MMMM yyyy");
+            CAC3.ResumeLayout();
         }
+
 
         private void CellPanel_Click(object sender, EventArgs e)
         {
@@ -3097,5 +2926,70 @@ namespace OOP2
             }
             SerButton.Text = "  Search Facility";
         }
+
+        private void RateButton_Click(object sender, EventArgs e)
+        {
+            Rates rates = new Rates();
+            rates.SubmitButtonClicked += (s, ev) =>
+            {
+                int userRating = rates.Ratings;
+                UpdateFacilityRating(facid, userRating);
+                rates.Close();
+            };
+
+            rates.ShowDialog();
+        }
+
+        private void UpdateFacilityRating(int facilityId, int newRating)
+        {
+            try
+            {
+                using (OleDbConnection myConn = new OleDbConnection(connection))
+                {
+                    myConn.Open();
+
+                    double oldRating = 0;
+
+                    string selectSql = "SELECT [Ratings] FROM [Service Facilities] WHERE [Facility_ID] = ?";
+                    using (OleDbCommand selectCmd = new OleDbCommand(selectSql, myConn))
+                    {
+                        selectCmd.Parameters.AddWithValue("?", facilityId);
+
+                        object result = selectCmd.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            double.TryParse(result.ToString(), out oldRating);
+                        }
+                    }
+
+                    double averageRating = (oldRating + newRating) / 2.0;
+
+                    string updateSql = "UPDATE [Service Facilities] SET [Ratings] = ? WHERE [Facility_ID] = ?";
+                    using (OleDbCommand updateCmd = new OleDbCommand(updateSql, myConn))
+                    {
+                        updateCmd.Parameters.AddWithValue("?", averageRating);
+                        updateCmd.Parameters.AddWithValue("?", facilityId);
+
+                        updateCmd.ExecuteNonQuery();
+                    }
+
+                    string updateadmin = "UPDATE [Admin (Service Facilities)] SET [Ratings] = ? WHERE [Facility_ID] = ?";
+                    using (OleDbCommand updateCmd = new OleDbCommand(updateadmin, myConn))
+                    {
+                        updateCmd.Parameters.AddWithValue("?", averageRating);
+                        updateCmd.Parameters.AddWithValue("?", facilityId);
+
+                        updateCmd.ExecuteNonQuery();
+                    }
+                }
+
+                System.Windows.Forms.MessageBox.Show("Thank you for rating! Your rating has been submitted.", "Rating Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error while submitting rating:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
