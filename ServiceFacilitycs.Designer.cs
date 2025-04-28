@@ -146,12 +146,6 @@
             panel44 = new System.Windows.Forms.Panel();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             panel45 = new System.Windows.Forms.Panel();
-            NotificationPanel = new System.Windows.Forms.Panel();
-            pictureBox3 = new System.Windows.Forms.PictureBox();
-            label107 = new System.Windows.Forms.Label();
-            NotiCloseButton = new System.Windows.Forms.Button();
-            label105 = new System.Windows.Forms.Label();
-            label106 = new System.Windows.Forms.Label();
             panel11 = new System.Windows.Forms.Panel();
             ProfilePanel = new System.Windows.Forms.Panel();
             filesbutton = new System.Windows.Forms.Button();
@@ -446,6 +440,13 @@
             Messengerclose = new System.Windows.Forms.Button();
             button11 = new System.Windows.Forms.Button();
             MessengerPanel = new System.Windows.Forms.Label();
+            NotificationPanel = new System.Windows.Forms.Panel();
+            NotifyPanel = new System.Windows.Forms.FlowLayoutPanel();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            label107 = new System.Windows.Forms.Label();
+            NotiCloseButton = new System.Windows.Forms.Button();
+            label105 = new System.Windows.Forms.Label();
+            label106 = new System.Windows.Forms.Label();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -470,8 +471,6 @@
             MonthPanel.SuspendLayout();
             panel44.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            NotificationPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ProfilePanel.SuspendLayout();
             SOAPanel.SuspendLayout();
             PIPanel.SuspendLayout();
@@ -539,6 +538,8 @@
             AnalyticsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)QRBox).BeginInit();
             Messagerpanel.SuspendLayout();
+            NotificationPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // NotifyButton
@@ -2202,77 +2203,6 @@
             panel45.Name = "panel45";
             panel45.Size = new System.Drawing.Size(484, 400);
             panel45.TabIndex = 57;
-            // 
-            // NotificationPanel
-            // 
-            NotificationPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            NotificationPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            NotificationPanel.Controls.Add(pictureBox3);
-            NotificationPanel.Controls.Add(label107);
-            NotificationPanel.Controls.Add(NotiCloseButton);
-            NotificationPanel.Controls.Add(label105);
-            NotificationPanel.Controls.Add(label106);
-            NotificationPanel.Location = new System.Drawing.Point(680, 68);
-            NotificationPanel.Name = "NotificationPanel";
-            NotificationPanel.Size = new System.Drawing.Size(385, 763);
-            NotificationPanel.TabIndex = 58;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new System.Drawing.Point(115, 302);
-            pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new System.Drawing.Size(195, 200);
-            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 56;
-            pictureBox3.TabStop = false;
-            // 
-            // label107
-            // 
-            label107.AutoSize = true;
-            label107.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label107.ForeColor = System.Drawing.Color.DarkGray;
-            label107.Location = new System.Drawing.Point(72, 254);
-            label107.Name = "label107";
-            label107.Size = new System.Drawing.Size(214, 20);
-            label107.TabIndex = 55;
-            label107.Text = "You have no new notifications";
-            // 
-            // NotiCloseButton
-            // 
-            NotiCloseButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            NotiCloseButton.FlatAppearance.BorderSize = 0;
-            NotiCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            NotiCloseButton.Image = (System.Drawing.Image)resources.GetObject("NotiCloseButton.Image");
-            NotiCloseButton.Location = new System.Drawing.Point(325, 5);
-            NotiCloseButton.Name = "NotiCloseButton";
-            NotiCloseButton.Size = new System.Drawing.Size(49, 63);
-            NotiCloseButton.TabIndex = 54;
-            NotiCloseButton.UseVisualStyleBackColor = true;
-            NotiCloseButton.Click += NotiCloseButton_Click;
-            // 
-            // label105
-            // 
-            label105.AutoSize = true;
-            label105.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label105.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label105.Location = new System.Drawing.Point(120, 211);
-            label105.Name = "label105";
-            label105.Size = new System.Drawing.Size(150, 20);
-            label105.TabIndex = 37;
-            label105.Text = "You're all caught up!";
-            // 
-            // label106
-            // 
-            label106.AutoSize = true;
-            label106.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label106.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            label106.Location = new System.Drawing.Point(19, 28);
-            label106.Name = "label106";
-            label106.Size = new System.Drawing.Size(148, 31);
-            label106.TabIndex = 35;
-            label106.Text = "Notifications";
             // 
             // panel11
             // 
@@ -6302,12 +6232,94 @@
             MessengerPanel.TabIndex = 35;
             MessengerPanel.Text = "Messenger";
             // 
+            // NotificationPanel
+            // 
+            NotificationPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            NotificationPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            NotificationPanel.Controls.Add(NotifyPanel);
+            NotificationPanel.Controls.Add(pictureBox1);
+            NotificationPanel.Controls.Add(label107);
+            NotificationPanel.Controls.Add(NotiCloseButton);
+            NotificationPanel.Controls.Add(label105);
+            NotificationPanel.Controls.Add(label106);
+            NotificationPanel.Location = new System.Drawing.Point(680, 68);
+            NotificationPanel.Name = "NotificationPanel";
+            NotificationPanel.Size = new System.Drawing.Size(385, 763);
+            NotificationPanel.TabIndex = 78;
+            NotificationPanel.Visible = false;
+            // 
+            // NotifyPanel
+            // 
+            NotifyPanel.AutoScroll = true;
+            NotifyPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            NotifyPanel.Location = new System.Drawing.Point(18, 75);
+            NotifyPanel.Name = "NotifyPanel";
+            NotifyPanel.Size = new System.Drawing.Size(348, 658);
+            NotifyPanel.TabIndex = 59;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new System.Drawing.Point(115, 302);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(195, 200);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 56;
+            pictureBox1.TabStop = false;
+            // 
+            // label107
+            // 
+            label107.AutoSize = true;
+            label107.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label107.ForeColor = System.Drawing.Color.DarkGray;
+            label107.Location = new System.Drawing.Point(72, 254);
+            label107.Name = "label107";
+            label107.Size = new System.Drawing.Size(214, 20);
+            label107.TabIndex = 55;
+            label107.Text = "You have no new notifications";
+            // 
+            // NotiCloseButton
+            // 
+            NotiCloseButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            NotiCloseButton.FlatAppearance.BorderSize = 0;
+            NotiCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            NotiCloseButton.Image = (System.Drawing.Image)resources.GetObject("NotiCloseButton.Image");
+            NotiCloseButton.Location = new System.Drawing.Point(334, 0);
+            NotiCloseButton.Name = "NotiCloseButton";
+            NotiCloseButton.Size = new System.Drawing.Size(49, 63);
+            NotiCloseButton.TabIndex = 54;
+            NotiCloseButton.UseVisualStyleBackColor = true;
+            // 
+            // label105
+            // 
+            label105.AutoSize = true;
+            label105.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label105.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label105.Location = new System.Drawing.Point(120, 211);
+            label105.Name = "label105";
+            label105.Size = new System.Drawing.Size(150, 20);
+            label105.TabIndex = 37;
+            label105.Text = "You're all caught up!";
+            // 
+            // label106
+            // 
+            label106.AutoSize = true;
+            label106.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label106.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label106.Location = new System.Drawing.Point(19, 28);
+            label106.Name = "label106";
+            label106.Size = new System.Drawing.Size(148, 31);
+            label106.TabIndex = 35;
+            label106.Text = "Notifications";
+            // 
             // ServiceFacilitycs
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(NotificationPanel);
             Controls.Add(QRBox);
             Controls.Add(Messagerpanel);
             Controls.Add(ViewdetailsPanel);
@@ -6328,7 +6340,6 @@
             Controls.Add(EditFIPanel);
             Controls.Add(ESerOffPanel);
             Controls.Add(SettingsPanel);
-            Controls.Add(NotificationPanel);
             Controls.Add(panel11);
             Controls.Add(panel45);
             Controls.Add(panel44);
@@ -6384,9 +6395,6 @@
             MonthPanel.PerformLayout();
             panel44.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            NotificationPanel.ResumeLayout(false);
-            NotificationPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ProfilePanel.ResumeLayout(false);
             SOAPanel.ResumeLayout(false);
             SOAPanel.PerformLayout();
@@ -6495,6 +6503,9 @@
             ((System.ComponentModel.ISupportInitialize)QRBox).EndInit();
             Messagerpanel.ResumeLayout(false);
             Messagerpanel.PerformLayout();
+            NotificationPanel.ResumeLayout(false);
+            NotificationPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -6572,12 +6583,6 @@
         private System.Windows.Forms.Panel panel44;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel45;
-        private System.Windows.Forms.Panel NotificationPanel;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label107;
-        private System.Windows.Forms.Button NotiCloseButton;
-        private System.Windows.Forms.Label label105;
-        private System.Windows.Forms.Label label106;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel ProfilePanel;
         private System.Windows.Forms.Panel SOAPanel;
@@ -6922,5 +6927,12 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label MessengerPanel;
         private System.Windows.Forms.Button MessageBox;
+        private System.Windows.Forms.Panel NotificationPanel;
+        private System.Windows.Forms.FlowLayoutPanel NotifyPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Button NotiCloseButton;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Label label106;
     }
 }

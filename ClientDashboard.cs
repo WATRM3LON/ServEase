@@ -2581,7 +2581,7 @@ namespace OOP2
                 SaveMessageToDatabase(clientId, facilityId, senderType, message);
 
                 AddMessageBubble(senderType, message, now);
-                string senders = "Client", titles = "New Message", messages = "Facility sent you a message!";
+                string senders = "Client", titles = "New Message", messages = "Client sent you a message!";
                 SaveNotificationMessage(clientI, facilityId, senders, titles, messages, now);
 
                 Messengertext.Clear();
@@ -2607,11 +2607,18 @@ namespace OOP2
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Segoe UI", 8, FontStyle.Italic);
             lblTime.ForeColor = Color.DarkGray;
+            lblTime.Margin = new Padding(0, 5, 0, 0);
 
             panel.Controls.Add(lblMessage);
             panel.Controls.Add(lblTime);
+            panel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel.Width, panel.Height, 10, 10));
+
+
+            lblTime.Location = new Point(0, lblMessage.Bottom + 5);
+
             MessagePanel.Controls.Add(panel);
         }
+
 
         private void SaveNotification(int clientId, int facilityId, string sender, string title, string message, DateTime now, int appointmentId)
         {
@@ -2674,13 +2681,14 @@ namespace OOP2
             }
         }
 
-        private void AddNotification(string title, string message, int? appointmentId = null, int appointmentRealId = 0, int facilityId = 0, int clientId = 0)
+        private void AddNotification(string title, string message, DateTime notifTime, int? appointmentId = null, int appointmentRealId = 0, int facilityId = 0, int clientId = 0)
         {
             Panel notifPanel = new Panel();
             notifPanel.BackColor = Color.LightYellow;
             notifPanel.BorderStyle = BorderStyle.FixedSingle;
             notifPanel.Padding = new Padding(10);
             notifPanel.Margin = new Padding(5);
+            notifPanel.Width = 300;
             notifPanel.AutoSize = true;
             notifPanel.Cursor = appointmentId.HasValue ? Cursors.Hand : Cursors.Default;
 
@@ -2688,32 +2696,28 @@ namespace OOP2
             lblTitle.Text = title;
             lblTitle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             lblTitle.AutoSize = true;
+            lblTitle.Location = new Point(0, 0);
+
+            Label lblTime = new Label();
+            lblTime.Text = notifTime.ToString("hh:mm tt");
+            lblTime.Font = new Font("Segoe UI", 8, FontStyle.Italic);
+            lblTime.ForeColor = Color.Gray;
+            lblTime.AutoSize = true;
+            lblTime.Location = new Point(notifPanel.Width - 70, 5);
 
             Label lblMessage = new Label();
             lblMessage.Text = message;
             lblMessage.Font = new Font("Segoe UI", 10);
             lblMessage.AutoSize = true;
             lblMessage.MaximumSize = new Size(300, 0);
-
-            Label lblTime = new Label();
-            lblTime.Text = DateTime.Now.ToString("hh:mm tt");
-            lblTime.Font = new Font("Arial", 8, FontStyle.Italic);
-            lblTime.ForeColor = Color.DarkGray;
-            lblTime.AutoSize = true;
+            lblMessage.Location = new Point(0, lblTitle.Bottom + 5);
 
             if (appointmentId.HasValue)
             {
-                notifPanel.Click += (s, e) =>
-                {
-                    ViewDets(appointmentRealId, facilityId, clientId);
-                };
-
+                notifPanel.Click += (s, e) => ViewDets(appointmentRealId, facilityId, clientId);
                 foreach (Control control in new Control[] { lblTitle, lblMessage, lblTime })
                 {
-                    control.Click += (s, e) =>
-                    {
-                        ViewDets(appointmentRealId, facilityId, clientId);
-                    };
+                    control.Click += (s, e) => ViewDets(appointmentRealId, facilityId, clientId);
                 }
             }
             else
@@ -2724,7 +2728,6 @@ namespace OOP2
                     Messagerpanel.BringToFront();
                     LoadChatMessages(clientId, facilityId);
                 };
-
                 foreach (Control control in new Control[] { lblTitle, lblMessage, lblTime })
                 {
                     control.Click += (s, e) =>
@@ -2737,8 +2740,8 @@ namespace OOP2
             }
 
             notifPanel.Controls.Add(lblTitle);
-            notifPanel.Controls.Add(lblMessage);
             notifPanel.Controls.Add(lblTime);
+            notifPanel.Controls.Add(lblMessage);
 
             NotifyPanel.Controls.Add(notifPanel);
         }
@@ -2773,14 +2776,11 @@ namespace OOP2
                             int facilityId = reader["Facility_ID"] != DBNull.Value ? Convert.ToInt32(reader["Facility_ID"]) : 0;
                             int clientId = reader["Client_ID"] != DBNull.Value ? Convert.ToInt32(reader["Client_ID"]) : 0;
 
-                            AddNotification(title, message, appointmentId, appointmentId ?? 0, facilityId, clientId);
+                            AddNotification(title, message, time, appointmentId, appointmentId ?? 0, facilityId, clientId);
                         }
                     }
                 }
             }
         }
-
-
-
     }
 }
