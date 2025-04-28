@@ -249,6 +249,7 @@
             PPClientName = new System.Windows.Forms.Label();
             panel58 = new System.Windows.Forms.Panel();
             NotificationPanel = new System.Windows.Forms.Panel();
+            NotifyPanel = new System.Windows.Forms.FlowLayoutPanel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label107 = new System.Windows.Forms.Label();
             NotiCloseButton = new System.Windows.Forms.Button();
@@ -3482,6 +3483,7 @@
             // 
             NotificationPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             NotificationPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            NotificationPanel.Controls.Add(NotifyPanel);
             NotificationPanel.Controls.Add(pictureBox1);
             NotificationPanel.Controls.Add(label107);
             NotificationPanel.Controls.Add(NotiCloseButton);
@@ -3491,6 +3493,16 @@
             NotificationPanel.Name = "NotificationPanel";
             NotificationPanel.Size = new System.Drawing.Size(385, 763);
             NotificationPanel.TabIndex = 47;
+            NotificationPanel.Visible = false;
+            // 
+            // NotifyPanel
+            // 
+            NotifyPanel.AutoScroll = true;
+            NotifyPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            NotifyPanel.Location = new System.Drawing.Point(18, 75);
+            NotifyPanel.Name = "NotifyPanel";
+            NotifyPanel.Size = new System.Drawing.Size(348, 658);
+            NotifyPanel.TabIndex = 59;
             // 
             // pictureBox1
             // 
@@ -5439,7 +5451,7 @@
             // Messagerpanel
             // 
             Messagerpanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            Messagerpanel.BackColor = System.Drawing.Color.White;
+            Messagerpanel.BackColor = System.Drawing.Color.FromArgb(249, 252, 247);
             Messagerpanel.Controls.Add(EnterMessage);
             Messagerpanel.Controls.Add(Messengertext);
             Messagerpanel.Controls.Add(MessagePanel);
@@ -5480,6 +5492,7 @@
             // MessagePanel
             // 
             MessagePanel.AutoScroll = true;
+            MessagePanel.BackColor = System.Drawing.Color.White;
             MessagePanel.Location = new System.Drawing.Point(17, 75);
             MessagePanel.Name = "MessagePanel";
             MessagePanel.Size = new System.Drawing.Size(348, 703);
@@ -5527,8 +5540,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
-            Controls.Add(Messagerpanel);
             Controls.Add(NotificationPanel);
+            Controls.Add(Messagerpanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(FilterBox);
@@ -6073,5 +6086,6 @@
         private System.Windows.Forms.Button EnterMessage;
         private System.Windows.Forms.Button MessageBox;
         private System.Windows.Forms.Button MessageBox1;
+        private System.Windows.Forms.FlowLayoutPanel NotifyPanel;
     }
 }

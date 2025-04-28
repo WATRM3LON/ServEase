@@ -134,6 +134,7 @@ namespace OOP2
             LogosButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogosButton.Width, LogosButton.Height, 10, 10));
             Startime1.ForeColor = Startime2.ForeColor = Startime3.ForeColor = Startime4.ForeColor = Startime5.ForeColor = SystemColors.InactiveCaption;
             Endtime1.ForeColor = Endtime2.ForeColor = Endtime3.ForeColor = Endtime4.ForeColor = Endtime5.ForeColor = SystemColors.InactiveCaption;
+            MessagePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MessagePanel.Width, MessagePanel.Height, 10, 10));
             //DASHBOARD
             AppointmentPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentPanel.Width, AppointmentPanel.Height, 10, 10));
             MonthPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MonthPanel.Width, MonthPanel.Height, 10, 10));
@@ -3439,7 +3440,7 @@ namespace OOP2
             Panel panel = new Panel();
             panel.AutoSize = true;
             panel.Padding = new Padding(10);
-            panel.BackColor = senderType == "Facility" ? Color.Azure : Color.LightGray;
+            panel.BackColor = senderType == "Facility" ? SystemColors.GradientInactiveCaption : Color.LightGray;
             panel.Margin = new Padding(5);
 
             Label lblMessage = new Label();

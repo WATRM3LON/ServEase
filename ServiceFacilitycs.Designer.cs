@@ -6208,7 +6208,7 @@
             // 
             // QRBox
             // 
-            QRBox.BackColor = System.Drawing.Color.AliceBlue;
+            QRBox.BackColor = System.Drawing.Color.MintCream;
             QRBox.Location = new System.Drawing.Point(794, 125);
             QRBox.Name = "QRBox";
             QRBox.Size = new System.Drawing.Size(403, 376);

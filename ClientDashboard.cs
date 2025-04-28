@@ -108,6 +108,7 @@ namespace OOP2
         public void Loaders()
         {
             NotificationPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, NotificationPanel.Width, NotificationPanel.Height, 10, 10));
+            MessagePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MessagePanel.Width, MessagePanel.Height, 10, 10));
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
             DashboardPanel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel2.Width, DashboardPanel2.Height, 20, 20));
@@ -367,6 +368,8 @@ namespace OOP2
                 NotificationPanel.Visible = true;
                 NotifyButton.BackColor = Color.White;
                 notify = true;
+                NotificationPanel.BringToFront();
+                LoadFacilityNotifications(clientId);
             }
             else
             {
@@ -1236,10 +1239,11 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address] FROM [Service Facilities] WHERE [Service Category] = ?";
+                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address] FROM [Service Facilities] WHERE [Service Category] = ? AND [Approval Status] = ?";
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
                     cmd.Parameters.AddWithValue("?", sercat);
+                    cmd.Parameters.AddWithValue("?", "Approved");
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
@@ -1863,6 +1867,9 @@ namespace OOP2
                 string clientName = FName + " " + LName;
                 string providerName = Facname;
                 GenerateAndSaveQrCodeAndSendEmail(AppointmentId, facid, newClientId, clientEmail, clientName, selectedDate, startTime.ToString("hh:mm tt"), providerName);
+                string senders = "Client", titles = "Appointment Booked", messages = "A new appointment was booked!";
+                DateTime now = DateTime.Now;
+                SaveNotification(clientId, facid, senders, titles, messages, now, AppointmentId);
             }
 
             System.Windows.Forms.MessageBox.Show("Appointment booked successfully!");
@@ -2340,6 +2347,9 @@ namespace OOP2
                         }
                         string clientName = FName + " " + LName;
                         SendCancelEmail(Appid, EmailAddress, clientName, appdate, apptime, Facname, reason);
+                        string senders = "Client", titles = "Appointment Updated", messages = "Your appointment was updated.";
+                        DateTime now = DateTime.Now;
+                        SaveNotification(clientId, facid, senders, titles, messages, now, Appid);
                         System.Windows.Forms.MessageBox.Show("Appointment cancelled successfully.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -2571,6 +2581,8 @@ namespace OOP2
                 SaveMessageToDatabase(clientId, facilityId, senderType, message);
 
                 AddMessageBubble(senderType, message, now);
+                string senders = "Client", titles = "New Message", messages = "Facility sent you a message!";
+                SaveNotificationMessage(clientI, facilityId, senders, titles, messages, now);
 
                 Messengertext.Clear();
             }
@@ -2581,7 +2593,7 @@ namespace OOP2
             Panel panel = new Panel();
             panel.AutoSize = true;
             panel.Padding = new Padding(10);
-            panel.BackColor = senderType == "Client" ? Color.Azure : Color.LightGray;
+            panel.BackColor = senderType == "Client" ? SystemColors.GradientInactiveCaption : Color.LightGray;
             panel.Margin = new Padding(5);
 
             Label lblMessage = new Label();
@@ -2600,5 +2612,175 @@ namespace OOP2
             panel.Controls.Add(lblTime);
             MessagePanel.Controls.Add(panel);
         }
+
+        private void SaveNotification(int clientId, int facilityId, string sender, string title, string message, DateTime now, int appointmentId)
+        {
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                string query = $@"INSERT INTO Notifications (Client_ID, Facility_ID, Sender, Title, Message, [Date and Time], [View Status], Appointment_ID)
+                                    VALUES ({clientId}, {facilityId}, '{sender}', '{title}', '{message}', '{now}', FALSE, {appointmentId})";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    /*cmd.Parameters.AddWithValue("@ClientId", clientId);
+                    cmd.Parameters.AddWithValue("@FacilityId", facilityId);
+                    cmd.Parameters.AddWithValue("@Sender", sender);
+                    cmd.Parameters.AddWithValue("@Title", title);
+                    cmd.Parameters.AddWithValue("@Message", message);
+                    cmd.Parameters.AddWithValue("@DateAndTime", now);
+                    cmd.Parameters.AddWithValue("@IsRead", "No");
+                    cmd.Parameters.AddWithValue("@AppointmentId", appointmentId);*/
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void SaveNotificationMessage(int clientId, int facilityId, string sender, string title, string message, DateTime now)
+        {
+            try
+            {
+                using (OleDbConnection conn = new OleDbConnection(connection))
+                {
+                    conn.Open();
+                    string query = $@"INSERT INTO Notifications (Client_ID, Facility_ID, Sender, Title, Message, [Date and Time], [View Status], Appointment_ID)
+                                    VALUES ({clientId}, {facilityId}, '{sender}', '{title}', '{message}', '{now}', FALSE, NULL)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        /*cmd.Parameters.AddWithValue("@ClientId", clientId);
+                        cmd.Parameters.AddWithValue("@FacilityId", facilityId);
+                        cmd.Parameters.AddWithValue("@Sender", sender);
+                        cmd.Parameters.AddWithValue("@Title", title);
+                        cmd.Parameters.AddWithValue("@Message", message);
+                        cmd.Parameters.AddWithValue("@DateAndTime", now);
+                        cmd.Parameters.AddWithValue("@IsRead", false);
+                        cmd.Parameters.AddWithValue("@AppointmentId", DBNull.Value);*/
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (OleDbException ex)
+            {
+                Console.WriteLine($"Database error occurred: {ex.Message}");
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                throw;
+            }
+        }
+
+        private void AddNotification(string title, string message, int? appointmentId = null, int appointmentRealId = 0, int facilityId = 0, int clientId = 0)
+        {
+            Panel notifPanel = new Panel();
+            notifPanel.BackColor = Color.LightYellow;
+            notifPanel.BorderStyle = BorderStyle.FixedSingle;
+            notifPanel.Padding = new Padding(10);
+            notifPanel.Margin = new Padding(5);
+            notifPanel.AutoSize = true;
+            notifPanel.Cursor = appointmentId.HasValue ? Cursors.Hand : Cursors.Default;
+
+            Label lblTitle = new Label();
+            lblTitle.Text = title;
+            lblTitle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblTitle.AutoSize = true;
+
+            Label lblMessage = new Label();
+            lblMessage.Text = message;
+            lblMessage.Font = new Font("Segoe UI", 10);
+            lblMessage.AutoSize = true;
+            lblMessage.MaximumSize = new Size(300, 0);
+
+            Label lblTime = new Label();
+            lblTime.Text = DateTime.Now.ToString("hh:mm tt");
+            lblTime.Font = new Font("Arial", 8, FontStyle.Italic);
+            lblTime.ForeColor = Color.DarkGray;
+            lblTime.AutoSize = true;
+
+            if (appointmentId.HasValue)
+            {
+                notifPanel.Click += (s, e) =>
+                {
+                    ViewDets(appointmentRealId, facilityId, clientId);
+                };
+
+                foreach (Control control in new Control[] { lblTitle, lblMessage, lblTime })
+                {
+                    control.Click += (s, e) =>
+                    {
+                        ViewDets(appointmentRealId, facilityId, clientId);
+                    };
+                }
+            }
+            else
+            {
+                notifPanel.Click += (s, e) =>
+                {
+                    Messagerpanel.Visible = true;
+                    Messagerpanel.BringToFront();
+                    LoadChatMessages(clientId, facilityId);
+                };
+
+                foreach (Control control in new Control[] { lblTitle, lblMessage, lblTime })
+                {
+                    control.Click += (s, e) =>
+                    {
+                        Messagerpanel.Visible = true;
+                        Messagerpanel.BringToFront();
+                        LoadChatMessages(clientId, facilityId);
+                    };
+                }
+            }
+
+            notifPanel.Controls.Add(lblTitle);
+            notifPanel.Controls.Add(lblMessage);
+            notifPanel.Controls.Add(lblTime);
+
+            NotifyPanel.Controls.Add(notifPanel);
+        }
+
+
+        private void LoadFacilityNotifications(int clid)
+        {
+            NotifyPanel.Controls.Clear();
+            using (OleDbConnection conn = new OleDbConnection(connection))
+            {
+                conn.Open();
+                string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID 
+                         FROM Notifications
+                         WHERE Client_ID = ? AND Sender = ? AND [View Status] = ?
+                         ORDER BY [Date and Time] DESC";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", clid);
+                    cmd.Parameters.AddWithValue("?", "Facility");
+                    cmd.Parameters.AddWithValue("?", false);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string title = reader["Title"].ToString();
+                            string message = reader["Message"].ToString();
+                            DateTime time = Convert.ToDateTime(reader["Date and Time"]);
+
+                            int? appointmentId = reader["Appointment_ID"] != DBNull.Value ? Convert.ToInt32(reader["Appointment_ID"]) : (int?)null;
+                            int facilityId = reader["Facility_ID"] != DBNull.Value ? Convert.ToInt32(reader["Facility_ID"]) : 0;
+                            int clientId = reader["Client_ID"] != DBNull.Value ? Convert.ToInt32(reader["Client_ID"]) : 0;
+
+                            AddNotification(title, message, appointmentId, appointmentId ?? 0, facilityId, clientId);
+                        }
+                    }
+                }
+            }
+        }
+
+
+
     }
 }
