@@ -438,7 +438,7 @@ namespace OOP2
                     }
                     else
                     {
-                        MessageBox.Show("Invalid birthdate format.");
+                        System.Windows.Forms.MessageBox.Show("Invalid birthdate format.");
                         return;
                     }
 
@@ -472,7 +472,7 @@ namespace OOP2
                     }
                     else
                     {
-                        MessageBox.Show("Invalid birthdate format.");
+                        System.Windows.Forms.MessageBox.Show("Invalid birthdate format.");
                         return;
                     }
 
@@ -483,7 +483,7 @@ namespace OOP2
 
                     cmd.ExecuteNonQuery();
                 }
-                MessageBox.Show("Updated successfully!");
+                System.Windows.Forms.MessageBox.Show("Updated successfully!");
             }
         }
 
@@ -1038,7 +1038,7 @@ namespace OOP2
 
         private void DeleteAccButton_Click(object sender, EventArgs e)
         {
-            DialogResult results = MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult results = System.Windows.Forms.MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             int newClientId = 0;
             if (results == DialogResult.Yes)
             {
@@ -1059,7 +1059,7 @@ namespace OOP2
                         }
                         else
                         {
-                            MessageBox.Show("Client not found.");
+                            System.Windows.Forms.MessageBox.Show("Client not found.");
                             return;
                         }
                     }
@@ -1072,11 +1072,11 @@ namespace OOP2
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Deleted successfully!");
+                            System.Windows.Forms.MessageBox.Show("Deleted successfully!");
                         }
                         else
                         {
-                            MessageBox.Show("No matching email found. Deletion failed.");
+                            System.Windows.Forms.MessageBox.Show("No matching email found. Deletion failed.");
                             return;
                         }
                     }
@@ -1098,7 +1098,7 @@ namespace OOP2
             }
             else
             {
-                MessageBox.Show("You clicked No!");
+                System.Windows.Forms.MessageBox.Show("You clicked No!");
             }
         }
         private void BeautySbutton_Click(object sender, EventArgs e)
@@ -1739,13 +1739,13 @@ namespace OOP2
         {
             if (!SelectedServices.Any())
             {
-                MessageBox.Show("Please select at least one service.");
+                System.Windows.Forms.MessageBox.Show("Please select at least one service.");
                 return;
             }
 
             if (selectedAppointmentDate == null || selectedTimeSlotLabel == null)
             {
-                MessageBox.Show("Please select a date and timeslot.");
+                System.Windows.Forms.MessageBox.Show("Please select a date and timeslot.");
                 return;
             }
 
@@ -1780,7 +1780,7 @@ namespace OOP2
 
             if (IsOverlappingConflict(selectedDate, startTime, endTime, clientId, facid))
             {
-                MessageBox.Show("Time conflict detected. Please choose another time slot.", "Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                System.Windows.Forms.MessageBox.Show("Time conflict detected. Please choose another time slot.", "Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -1861,11 +1861,11 @@ namespace OOP2
 
                 string clientEmail = EmailAddress;
                 string clientName = FName + " " + LName;
-                string providerName = Facname; 
+                string providerName = Facname;
                 GenerateAndSaveQrCodeAndSendEmail(AppointmentId, facid, newClientId, clientEmail, clientName, selectedDate, startTime.ToString("hh:mm tt"), providerName);
             }
 
-            MessageBox.Show("Appointment booked successfully!");
+            System.Windows.Forms.MessageBox.Show("Appointment booked successfully!");
         }
 
         private void SendBookingEmail(int appointmentId, string clientEmail, string clientName, DateTime appointmentDate, string appointmentTime, string providerName, byte[] qrCodeImage)
@@ -1882,7 +1882,7 @@ namespace OOP2
 
                 var message = new MailMessage();
                 message.From = new MailAddress("snmcorporation.dlic@gmail.com");
-                message.To.Add("vaughanash02@gmail.com"); 
+                message.To.Add("vaughanash02@gmail.com");
                 message.Subject = "Appointment Booking Confirmation";
                 message.Body = emailBody;
                 message.IsBodyHtml = true;
@@ -1895,7 +1895,7 @@ namespace OOP2
 
                 using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
                 {
-                    smtpClient.Port = 587; 
+                    smtpClient.Port = 587;
                     smtpClient.Credentials = new NetworkCredential("snmcorporation.dlic@gmail.com", "kgap arcn qkvq ktgx");
                     smtpClient.EnableSsl = true;
 
@@ -1939,7 +1939,7 @@ namespace OOP2
             }
         }
 
-        
+
         public void LoadHistory(int ID, int Faid, int Clid,
                         string statusFilter = "",
                         DateTime? dateBookedFilter = null,
@@ -2026,7 +2026,7 @@ namespace OOP2
                                 clientId = newClientId;
                                 ViewDets(appointmentId, newFacilityId, newClientId);
                             };
-                            
+
                             string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
                             using (OleDbCommand adminCmd = new OleDbCommand(adminQuery, myConn))
                             {
@@ -2048,7 +2048,7 @@ namespace OOP2
                                 }
                             }
                             PopulateCalendarPanel(appointmentId, newFacilityId, newClientId);
-                            
+
                             AppointmentsPanel.Controls.Add(usersPanel);
                         }
                     }
@@ -2340,7 +2340,7 @@ namespace OOP2
                         }
                         string clientName = FName + " " + LName;
                         SendCancelEmail(Appid, EmailAddress, clientName, appdate, apptime, Facname, reason);
-                        MessageBox.Show("Appointment cancelled successfully.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        System.Windows.Forms.MessageBox.Show("Appointment cancelled successfully.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -2481,12 +2481,124 @@ namespace OOP2
             }
             else if (filter1 == "Facility")
             {
-                if (int.TryParse(input, out int facilityId)) {
-                    LoadHistory(Appid, facid, clientId, facilityIdFilter: facilityId); }
-                else { 
+                if (int.TryParse(input, out int facilityId))
+                {
+                    LoadHistory(Appid, facid, clientId, facilityIdFilter: facilityId);
+                }
+                else
+                {
                     //LoadHistory(Appid, facid, clientId, facilityNameLike: input);
                 }
             }
+        }
+
+        private void MessageBox_Click(object sender, EventArgs e)
+        {
+            Messagerpanel.Visible = true; Messagerpanel.BringToFront();
+            LoadChatMessages(clientId, facid);
+        }
+
+        private void Messengerclose_Click(object sender, EventArgs e)
+        {
+            Messagerpanel.Visible = false;
+        }
+
+        private void LoadChatMessages(int clientId, int facilityId)
+        {
+            MessagePanel.Controls.Clear();
+
+            using (OleDbConnection con = new OleDbConnection(connection))
+            {
+                con.Open();
+                string query = @"SELECT [Sender], [Messages], [Date and Time]
+                 FROM Messenger
+                 WHERE [Client_ID] = ? AND [Facility_ID] = ?
+                 ORDER BY [Date and Time] ASC";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ClientId", clientId);
+                    cmd.Parameters.AddWithValue("@FacilityId", facilityId);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string senderType = reader["Sender"].ToString();
+                            string message = reader["Messages"].ToString();
+                            DateTime time = Convert.ToDateTime(reader["Date and Time"]);
+
+                            AddMessageBubble(senderType, message, time);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SaveMessageToDatabase(int clientId, int facilityId, string senderType, string message)
+        {
+            using (OleDbConnection myConn = new OleDbConnection(connection))
+            {
+                myConn.Open();
+                string query = @"INSERT INTO Messenger (Client_ID, Facility_ID, Sender, Messages, [Date and Time])
+                 VALUES (@ClientId, @FacilityId, @Sender, @Message, @DateAndTime)";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, myConn))
+                {
+                    cmd.Parameters.Add("@ClientId", OleDbType.Integer).Value = clientId;
+                    cmd.Parameters.Add("@FacilityId", OleDbType.Integer).Value = facilityId;
+                    cmd.Parameters.Add("@Sender", OleDbType.VarWChar).Value = senderType;
+                    cmd.Parameters.Add("@Message", OleDbType.VarWChar).Value = message;
+                    cmd.Parameters.Add("@DateAndTime", OleDbType.Date).Value = DateTime.Now;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void EnterMessage_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(Messengertext.Text))
+            {
+                string senderType = "Client";
+                string message = Messengertext.Text.Trim();
+
+                int clientI = clientId;
+                int facilityId = facid;
+
+                DateTime now = DateTime.Now;
+
+                SaveMessageToDatabase(clientId, facilityId, senderType, message);
+
+                AddMessageBubble(senderType, message, now);
+
+                Messengertext.Clear();
+            }
+        }
+
+        private void AddMessageBubble(string senderType, string message, DateTime time)
+        {
+            Panel panel = new Panel();
+            panel.AutoSize = true;
+            panel.Padding = new Padding(10);
+            panel.BackColor = senderType == "Client" ? Color.LightBlue : Color.LightGray;
+            panel.Margin = new Padding(5);
+
+            Label lblMessage = new Label();
+            lblMessage.Text = message;
+            lblMessage.AutoSize = true;
+            lblMessage.Font = new Font("Segui UI", 14, FontStyle.Regular);
+            lblMessage.MaximumSize = new Size(250, 0);
+
+            Label lblTime = new Label();
+            lblTime.Text = time.ToString("hh:mm tt");
+            lblTime.AutoSize = true;
+            lblTime.Font = new Font("Arial", 8, FontStyle.Italic);
+            lblTime.ForeColor = Color.DarkGray;
+
+            panel.Controls.Add(lblMessage);
+            panel.Controls.Add(lblTime);
+            MessagePanel.Controls.Add(panel);
         }
     }
 }

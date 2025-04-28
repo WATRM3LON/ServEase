@@ -182,6 +182,10 @@
             ViewdetailsPanel = new System.Windows.Forms.Panel();
             ViewDetspanel = new System.Windows.Forms.TableLayoutPanel();
             AstatPanel = new System.Windows.Forms.Panel();
+            ASpriceicon = new System.Windows.Forms.PictureBox();
+            ASsericon = new System.Windows.Forms.PictureBox();
+            pictureBox4 = new System.Windows.Forms.PictureBox();
+            ASdateicon = new System.Windows.Forms.PictureBox();
             ASReasontext = new System.Windows.Forms.Label();
             ASReasonlabel = new System.Windows.Forms.Label();
             ASbookedtext = new System.Windows.Forms.Label();
@@ -199,6 +203,7 @@
             ASlabel = new System.Windows.Forms.Label();
             ASstatlabel = new System.Windows.Forms.Label();
             AstoreproPanel = new System.Windows.Forms.Panel();
+            MessageBox = new System.Windows.Forms.Button();
             ASConumicon = new System.Windows.Forms.PictureBox();
             ASEMSicon = new System.Windows.Forms.PictureBox();
             ASConumlabel = new System.Windows.Forms.Label();
@@ -274,6 +279,7 @@
             FacilityProTable = new System.Windows.Forms.TableLayoutPanel();
             FacProPanel = new System.Windows.Forms.Panel();
             MailPic = new System.Windows.Forms.PictureBox();
+            MessageBox1 = new System.Windows.Forms.Button();
             EMSlabel = new System.Windows.Forms.Label();
             EMStext = new System.Windows.Forms.Label();
             PhonePic = new System.Windows.Forms.PictureBox();
@@ -383,10 +389,13 @@
             AppSearcbutton = new System.Windows.Forms.Button();
             AppSerchtext = new System.Windows.Forms.TextBox();
             button15 = new System.Windows.Forms.Button();
-            ASdateicon = new System.Windows.Forms.PictureBox();
-            pictureBox4 = new System.Windows.Forms.PictureBox();
-            ASsericon = new System.Windows.Forms.PictureBox();
-            ASpriceicon = new System.Windows.Forms.PictureBox();
+            Messagerpanel = new System.Windows.Forms.Panel();
+            EnterMessage = new System.Windows.Forms.Button();
+            Messengertext = new System.Windows.Forms.TextBox();
+            MessagePanel = new System.Windows.Forms.FlowLayoutPanel();
+            Messengerclose = new System.Windows.Forms.Button();
+            button1 = new System.Windows.Forms.Button();
+            MessengerPanel = new System.Windows.Forms.Label();
             DashboardPanel.SuspendLayout();
             DashboardPanel2.SuspendLayout();
             SearchPanel.SuspendLayout();
@@ -423,6 +432,10 @@
             ViewdetailsPanel.SuspendLayout();
             ViewDetspanel.SuspendLayout();
             AstatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ASpriceicon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ASsericon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ASdateicon).BeginInit();
             AstoreproPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ASConumicon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ASEMSicon).BeginInit();
@@ -476,10 +489,7 @@
             PIEpanel.SuspendLayout();
             PIEprofilepanel.SuspendLayout();
             AppSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ASdateicon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ASsericon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ASpriceicon).BeginInit();
+            Messagerpanel.SuspendLayout();
             SuspendLayout();
             // 
             // MinimizeButton
@@ -2618,6 +2628,46 @@
             AstatPanel.Size = new System.Drawing.Size(505, 692);
             AstatPanel.TabIndex = 52;
             // 
+            // ASpriceicon
+            // 
+            ASpriceicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASpriceicon.Image = (System.Drawing.Image)resources.GetObject("ASpriceicon.Image");
+            ASpriceicon.Location = new System.Drawing.Point(40, 273);
+            ASpriceicon.Name = "ASpriceicon";
+            ASpriceicon.Size = new System.Drawing.Size(32, 25);
+            ASpriceicon.TabIndex = 100;
+            ASpriceicon.TabStop = false;
+            // 
+            // ASsericon
+            // 
+            ASsericon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASsericon.Image = (System.Drawing.Image)resources.GetObject("ASsericon.Image");
+            ASsericon.Location = new System.Drawing.Point(40, 377);
+            ASsericon.Name = "ASsericon";
+            ASsericon.Size = new System.Drawing.Size(32, 25);
+            ASsericon.TabIndex = 99;
+            ASsericon.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new System.Drawing.Point(260, 273);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new System.Drawing.Size(32, 25);
+            pictureBox4.TabIndex = 98;
+            pictureBox4.TabStop = false;
+            // 
+            // ASdateicon
+            // 
+            ASdateicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            ASdateicon.Image = (System.Drawing.Image)resources.GetObject("ASdateicon.Image");
+            ASdateicon.Location = new System.Drawing.Point(40, 174);
+            ASdateicon.Name = "ASdateicon";
+            ASdateicon.Size = new System.Drawing.Size(32, 25);
+            ASdateicon.TabIndex = 97;
+            ASdateicon.TabStop = false;
+            // 
             // ASReasontext
             // 
             ASReasontext.AutoEllipsis = true;
@@ -2821,6 +2871,7 @@
             // AstoreproPanel
             // 
             AstoreproPanel.BackColor = System.Drawing.Color.White;
+            AstoreproPanel.Controls.Add(MessageBox);
             AstoreproPanel.Controls.Add(ASConumicon);
             AstoreproPanel.Controls.Add(ASEMSicon);
             AstoreproPanel.Controls.Add(ASConumlabel);
@@ -2844,6 +2895,20 @@
             AstoreproPanel.Name = "AstoreproPanel";
             AstoreproPanel.Size = new System.Drawing.Size(330, 692);
             AstoreproPanel.TabIndex = 51;
+            // 
+            // MessageBox
+            // 
+            MessageBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            MessageBox.BackColor = System.Drawing.Color.Transparent;
+            MessageBox.FlatAppearance.BorderSize = 0;
+            MessageBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            MessageBox.Image = (System.Drawing.Image)resources.GetObject("MessageBox.Image");
+            MessageBox.Location = new System.Drawing.Point(261, 623);
+            MessageBox.Name = "MessageBox";
+            MessageBox.Size = new System.Drawing.Size(54, 54);
+            MessageBox.TabIndex = 89;
+            MessageBox.UseVisualStyleBackColor = false;
+            MessageBox.Click += MessageBox_Click;
             // 
             // ASConumicon
             // 
@@ -3805,6 +3870,7 @@
             // 
             FacProPanel.BackColor = System.Drawing.Color.White;
             FacProPanel.Controls.Add(MailPic);
+            FacProPanel.Controls.Add(MessageBox1);
             FacProPanel.Controls.Add(EMSlabel);
             FacProPanel.Controls.Add(EMStext);
             FacProPanel.Controls.Add(PhonePic);
@@ -3837,6 +3903,20 @@
             MailPic.Size = new System.Drawing.Size(24, 25);
             MailPic.TabIndex = 71;
             MailPic.TabStop = false;
+            // 
+            // MessageBox1
+            // 
+            MessageBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            MessageBox1.BackColor = System.Drawing.Color.Transparent;
+            MessageBox1.FlatAppearance.BorderSize = 0;
+            MessageBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            MessageBox1.Image = (System.Drawing.Image)resources.GetObject("MessageBox1.Image");
+            MessageBox1.Location = new System.Drawing.Point(808, 6);
+            MessageBox1.Name = "MessageBox1";
+            MessageBox1.Size = new System.Drawing.Size(54, 54);
+            MessageBox1.TabIndex = 90;
+            MessageBox1.UseVisualStyleBackColor = false;
+            MessageBox1.Click += MessageBox_Click;
             // 
             // EMSlabel
             // 
@@ -5356,45 +5436,90 @@
             button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button15.UseVisualStyleBackColor = false;
             // 
-            // ASdateicon
+            // Messagerpanel
             // 
-            ASdateicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            ASdateicon.Image = (System.Drawing.Image)resources.GetObject("ASdateicon.Image");
-            ASdateicon.Location = new System.Drawing.Point(40, 174);
-            ASdateicon.Name = "ASdateicon";
-            ASdateicon.Size = new System.Drawing.Size(32, 25);
-            ASdateicon.TabIndex = 97;
-            ASdateicon.TabStop = false;
+            Messagerpanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            Messagerpanel.BackColor = System.Drawing.Color.White;
+            Messagerpanel.Controls.Add(EnterMessage);
+            Messagerpanel.Controls.Add(Messengertext);
+            Messagerpanel.Controls.Add(MessagePanel);
+            Messagerpanel.Controls.Add(Messengerclose);
+            Messagerpanel.Controls.Add(button1);
+            Messagerpanel.Controls.Add(MessengerPanel);
+            Messagerpanel.Location = new System.Drawing.Point(834, 64);
+            Messagerpanel.Name = "Messagerpanel";
+            Messagerpanel.Size = new System.Drawing.Size(382, 854);
+            Messagerpanel.TabIndex = 63;
+            Messagerpanel.Visible = false;
             // 
-            // pictureBox4
+            // EnterMessage
             // 
-            pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new System.Drawing.Point(260, 273);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new System.Drawing.Size(32, 25);
-            pictureBox4.TabIndex = 98;
-            pictureBox4.TabStop = false;
+            EnterMessage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            EnterMessage.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            EnterMessage.FlatAppearance.BorderSize = 0;
+            EnterMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            EnterMessage.Image = (System.Drawing.Image)resources.GetObject("EnterMessage.Image");
+            EnterMessage.Location = new System.Drawing.Point(316, 776);
+            EnterMessage.Name = "EnterMessage";
+            EnterMessage.Size = new System.Drawing.Size(49, 54);
+            EnterMessage.TabIndex = 60;
+            EnterMessage.UseVisualStyleBackColor = false;
+            EnterMessage.Click += EnterMessage_Click;
             // 
-            // ASsericon
+            // Messengertext
             // 
-            ASsericon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            ASsericon.Image = (System.Drawing.Image)resources.GetObject("ASsericon.Image");
-            ASsericon.Location = new System.Drawing.Point(40, 377);
-            ASsericon.Name = "ASsericon";
-            ASsericon.Size = new System.Drawing.Size(32, 25);
-            ASsericon.TabIndex = 99;
-            ASsericon.TabStop = false;
+            Messengertext.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            Messengertext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            Messengertext.Location = new System.Drawing.Point(17, 776);
+            Messengertext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            Messengertext.Multiline = true;
+            Messengertext.Name = "Messengertext";
+            Messengertext.Size = new System.Drawing.Size(348, 54);
+            Messengertext.TabIndex = 59;
             // 
-            // ASpriceicon
+            // MessagePanel
             // 
-            ASpriceicon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            ASpriceicon.Image = (System.Drawing.Image)resources.GetObject("ASpriceicon.Image");
-            ASpriceicon.Location = new System.Drawing.Point(40, 273);
-            ASpriceicon.Name = "ASpriceicon";
-            ASpriceicon.Size = new System.Drawing.Size(32, 25);
-            ASpriceicon.TabIndex = 100;
-            ASpriceicon.TabStop = false;
+            MessagePanel.AutoScroll = true;
+            MessagePanel.Location = new System.Drawing.Point(17, 75);
+            MessagePanel.Name = "MessagePanel";
+            MessagePanel.Size = new System.Drawing.Size(348, 703);
+            MessagePanel.TabIndex = 58;
+            // 
+            // Messengerclose
+            // 
+            Messengerclose.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            Messengerclose.FlatAppearance.BorderSize = 0;
+            Messengerclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Messengerclose.Image = (System.Drawing.Image)resources.GetObject("Messengerclose.Image");
+            Messengerclose.Location = new System.Drawing.Point(333, -3);
+            Messengerclose.Name = "Messengerclose";
+            Messengerclose.Size = new System.Drawing.Size(49, 63);
+            Messengerclose.TabIndex = 57;
+            Messengerclose.UseVisualStyleBackColor = true;
+            Messengerclose.Click += Messengerclose_Click;
+            // 
+            // button1
+            // 
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Image = (System.Drawing.Image)resources.GetObject("button1.Image");
+            button1.Location = new System.Drawing.Point(507, 5);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(49, 63);
+            button1.TabIndex = 54;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // MessengerPanel
+            // 
+            MessengerPanel.AutoSize = true;
+            MessengerPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            MessengerPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            MessengerPanel.Location = new System.Drawing.Point(19, 28);
+            MessengerPanel.Name = "MessengerPanel";
+            MessengerPanel.Size = new System.Drawing.Size(127, 31);
+            MessengerPanel.TabIndex = 35;
+            MessengerPanel.Text = "Messenger";
             // 
             // ClientDashboard
             // 
@@ -5402,6 +5527,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(Messagerpanel);
+            Controls.Add(NotificationPanel);
             Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(FilterBox);
@@ -5428,9 +5555,8 @@
             Controls.Add(HeaderPanel);
             Controls.Add(ServicesPanel);
             Controls.Add(ProfilePanel);
-            Controls.Add(FacilityProPanel);
             Controls.Add(FacilityProPanel2);
-            Controls.Add(NotificationPanel);
+            Controls.Add(FacilityProPanel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ClientDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -5497,6 +5623,10 @@
             ViewDetspanel.ResumeLayout(false);
             AstatPanel.ResumeLayout(false);
             AstatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ASpriceicon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ASsericon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ASdateicon).EndInit();
             AstoreproPanel.ResumeLayout(false);
             AstoreproPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ASConumicon).EndInit();
@@ -5570,10 +5700,8 @@
             PIEprofilepanel.PerformLayout();
             AppSearch.ResumeLayout(false);
             AppSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ASdateicon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ASsericon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ASpriceicon).EndInit();
+            Messagerpanel.ResumeLayout(false);
+            Messagerpanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -5936,5 +6064,14 @@
         private System.Windows.Forms.PictureBox ASsericon;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox ASdateicon;
+        private System.Windows.Forms.Panel Messagerpanel;
+        private System.Windows.Forms.TextBox Messengertext;
+        private System.Windows.Forms.FlowLayoutPanel MessagePanel;
+        private System.Windows.Forms.Button Messengerclose;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label MessengerPanel;
+        private System.Windows.Forms.Button EnterMessage;
+        private System.Windows.Forms.Button MessageBox;
+        private System.Windows.Forms.Button MessageBox1;
     }
 }
