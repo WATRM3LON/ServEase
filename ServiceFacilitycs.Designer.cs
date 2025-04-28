@@ -91,6 +91,7 @@
             ASConfrimButton = new System.Windows.Forms.Button();
             ASCompleteButton = new System.Windows.Forms.Button();
             AstoreproPanel = new System.Windows.Forms.Panel();
+            MessageBox = new System.Windows.Forms.Button();
             ASConumicon = new System.Windows.Forms.PictureBox();
             ASEMSicon = new System.Windows.Forms.PictureBox();
             ASConumlabel = new System.Windows.Forms.Label();
@@ -438,6 +439,13 @@
             button8 = new System.Windows.Forms.Button();
             QRbutton = new System.Windows.Forms.Button();
             QRBox = new System.Windows.Forms.PictureBox();
+            Messagerpanel = new System.Windows.Forms.Panel();
+            EnterMessage = new System.Windows.Forms.Button();
+            Messengertext = new System.Windows.Forms.TextBox();
+            MessagePanel = new System.Windows.Forms.FlowLayoutPanel();
+            Messengerclose = new System.Windows.Forms.Button();
+            button11 = new System.Windows.Forms.Button();
+            MessengerPanel = new System.Windows.Forms.Label();
             DashboardPanel2.SuspendLayout();
             DashboardPanel.SuspendLayout();
             HeaderPanel.SuspendLayout();
@@ -530,6 +538,7 @@
             File1panel.SuspendLayout();
             AnalyticsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)QRBox).BeginInit();
+            Messagerpanel.SuspendLayout();
             SuspendLayout();
             // 
             // NotifyButton
@@ -1499,6 +1508,7 @@
             // AstoreproPanel
             // 
             AstoreproPanel.BackColor = System.Drawing.Color.White;
+            AstoreproPanel.Controls.Add(MessageBox);
             AstoreproPanel.Controls.Add(ASConumicon);
             AstoreproPanel.Controls.Add(ASEMSicon);
             AstoreproPanel.Controls.Add(ASConumlabel);
@@ -1520,6 +1530,20 @@
             AstoreproPanel.Name = "AstoreproPanel";
             AstoreproPanel.Size = new System.Drawing.Size(322, 692);
             AstoreproPanel.TabIndex = 51;
+            // 
+            // MessageBox
+            // 
+            MessageBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            MessageBox.BackColor = System.Drawing.Color.Transparent;
+            MessageBox.FlatAppearance.BorderSize = 0;
+            MessageBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            MessageBox.Image = (System.Drawing.Image)resources.GetObject("MessageBox.Image");
+            MessageBox.Location = new System.Drawing.Point(259, 627);
+            MessageBox.Name = "MessageBox";
+            MessageBox.Size = new System.Drawing.Size(49, 54);
+            MessageBox.TabIndex = 106;
+            MessageBox.UseVisualStyleBackColor = false;
+            MessageBox.Click += MessageBox_Click;
             // 
             // ASConumicon
             // 
@@ -6184,13 +6208,99 @@
             // 
             // QRBox
             // 
-            QRBox.BackColor = System.Drawing.Color.White;
+            QRBox.BackColor = System.Drawing.Color.AliceBlue;
             QRBox.Location = new System.Drawing.Point(794, 125);
             QRBox.Name = "QRBox";
             QRBox.Size = new System.Drawing.Size(403, 376);
             QRBox.TabIndex = 76;
             QRBox.TabStop = false;
             QRBox.Visible = false;
+            // 
+            // Messagerpanel
+            // 
+            Messagerpanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            Messagerpanel.BackColor = System.Drawing.Color.FromArgb(252, 247, 249);
+            Messagerpanel.Controls.Add(EnterMessage);
+            Messagerpanel.Controls.Add(Messengertext);
+            Messagerpanel.Controls.Add(MessagePanel);
+            Messagerpanel.Controls.Add(Messengerclose);
+            Messagerpanel.Controls.Add(button11);
+            Messagerpanel.Controls.Add(MessengerPanel);
+            Messagerpanel.Location = new System.Drawing.Point(834, 64);
+            Messagerpanel.Name = "Messagerpanel";
+            Messagerpanel.Size = new System.Drawing.Size(382, 854);
+            Messagerpanel.TabIndex = 77;
+            Messagerpanel.Visible = false;
+            // 
+            // EnterMessage
+            // 
+            EnterMessage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            EnterMessage.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            EnterMessage.FlatAppearance.BorderSize = 0;
+            EnterMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            EnterMessage.Image = (System.Drawing.Image)resources.GetObject("EnterMessage.Image");
+            EnterMessage.Location = new System.Drawing.Point(312, 776);
+            EnterMessage.Name = "EnterMessage";
+            EnterMessage.Size = new System.Drawing.Size(49, 54);
+            EnterMessage.TabIndex = 60;
+            EnterMessage.UseVisualStyleBackColor = false;
+            EnterMessage.Click += EnterMessage_Click;
+            // 
+            // Messengertext
+            // 
+            Messengertext.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            Messengertext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            Messengertext.Location = new System.Drawing.Point(17, 776);
+            Messengertext.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            Messengertext.Multiline = true;
+            Messengertext.Name = "Messengertext";
+            Messengertext.Size = new System.Drawing.Size(348, 54);
+            Messengertext.TabIndex = 59;
+            // 
+            // MessagePanel
+            // 
+            MessagePanel.AutoScroll = true;
+            MessagePanel.BackColor = System.Drawing.Color.White;
+            MessagePanel.Location = new System.Drawing.Point(17, 75);
+            MessagePanel.Name = "MessagePanel";
+            MessagePanel.Size = new System.Drawing.Size(348, 703);
+            MessagePanel.TabIndex = 58;
+            // 
+            // Messengerclose
+            // 
+            Messengerclose.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            Messengerclose.FlatAppearance.BorderSize = 0;
+            Messengerclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Messengerclose.Image = (System.Drawing.Image)resources.GetObject("Messengerclose.Image");
+            Messengerclose.Location = new System.Drawing.Point(333, -3);
+            Messengerclose.Name = "Messengerclose";
+            Messengerclose.Size = new System.Drawing.Size(49, 63);
+            Messengerclose.TabIndex = 57;
+            Messengerclose.UseVisualStyleBackColor = true;
+            Messengerclose.Click += Messengerclose_Click;
+            // 
+            // button11
+            // 
+            button11.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button11.FlatAppearance.BorderSize = 0;
+            button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button11.Image = (System.Drawing.Image)resources.GetObject("button11.Image");
+            button11.Location = new System.Drawing.Point(689, 5);
+            button11.Name = "button11";
+            button11.Size = new System.Drawing.Size(49, 63);
+            button11.TabIndex = 54;
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // MessengerPanel
+            // 
+            MessengerPanel.AutoSize = true;
+            MessengerPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            MessengerPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            MessengerPanel.Location = new System.Drawing.Point(19, 28);
+            MessengerPanel.Name = "MessengerPanel";
+            MessengerPanel.Size = new System.Drawing.Size(127, 31);
+            MessengerPanel.TabIndex = 35;
+            MessengerPanel.Text = "Messenger";
             // 
             // ServiceFacilitycs
             // 
@@ -6199,10 +6309,11 @@
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
             Controls.Add(QRBox);
+            Controls.Add(Messagerpanel);
+            Controls.Add(ViewdetailsPanel);
             Controls.Add(QRbutton);
             Controls.Add(AnalyticsPanel);
             Controls.Add(UploadfilesPanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(AppSearch);
             Controls.Add(FilterBox);
@@ -6382,6 +6493,8 @@
             AnalyticsPanel.ResumeLayout(false);
             AnalyticsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)QRBox).EndInit();
+            Messagerpanel.ResumeLayout(false);
+            Messagerpanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -6801,5 +6914,13 @@
         private System.Windows.Forms.Label TotalApps;
         private System.Windows.Forms.Button QRbutton;
         private System.Windows.Forms.PictureBox QRBox;
+        private System.Windows.Forms.Panel Messagerpanel;
+        private System.Windows.Forms.Button EnterMessage;
+        private System.Windows.Forms.TextBox Messengertext;
+        private System.Windows.Forms.FlowLayoutPanel MessagePanel;
+        private System.Windows.Forms.Button Messengerclose;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label MessengerPanel;
+        private System.Windows.Forms.Button MessageBox;
     }
 }

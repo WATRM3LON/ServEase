@@ -2581,19 +2581,19 @@ namespace OOP2
             Panel panel = new Panel();
             panel.AutoSize = true;
             panel.Padding = new Padding(10);
-            panel.BackColor = senderType == "Client" ? Color.LightBlue : Color.LightGray;
+            panel.BackColor = senderType == "Client" ? Color.Azure : Color.LightGray;
             panel.Margin = new Padding(5);
 
             Label lblMessage = new Label();
             lblMessage.Text = message;
             lblMessage.AutoSize = true;
-            lblMessage.Font = new Font("Segui UI", 14, FontStyle.Regular);
+            lblMessage.Font = new Font("Segoe UI", 14, FontStyle.Regular);
             lblMessage.MaximumSize = new Size(250, 0);
 
             Label lblTime = new Label();
             lblTime.Text = time.ToString("hh:mm tt");
             lblTime.AutoSize = true;
-            lblTime.Font = new Font("Arial", 8, FontStyle.Italic);
+            lblTime.Font = new Font("Segoe UI", 8, FontStyle.Italic);
             lblTime.ForeColor = Color.DarkGray;
 
             panel.Controls.Add(lblMessage);
