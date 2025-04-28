@@ -1468,19 +1468,39 @@ namespace OOP2
             {
                 myConn.Open();
 
-                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Tags] " +
+                string sql = "SELECT Facility_ID, [Facility Name], [Working Hours Start], [Working Hours End], [Ratings], [Email Address], [Tags], [Service Category] " +
                              "FROM [Service Facilities] " +
-                             "WHERE [Service Category] = ? AND [Approval Status] = ?";
+                             "WHERE [Approval Status] = ?";
+
+                bool isSearching = !string.IsNullOrWhiteSpace(searchText);
+
+                if (isSearching)
+                {
+                    sql += " AND ([Facility Name] LIKE ? OR [Tags] LIKE ?)";
+                }
+                else
+                {
+                    sql += " AND [Service Category] = ?";
+                }
 
                 using (OleDbCommand cmd = new OleDbCommand(sql, myConn))
                 {
-                    cmd.Parameters.AddWithValue("?", sercat);
                     cmd.Parameters.AddWithValue("?", "Approved");
+
+                    if (isSearching)
+                    {
+                        cmd.Parameters.AddWithValue("?", "%" + searchText + "%");
+                        cmd.Parameters.AddWithValue("?", "%" + searchText + "%");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("?", sercat);
+                    }
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         List<string> searchTags = new List<string>();
-                        if (!string.IsNullOrWhiteSpace(searchText))
+                        if (isSearching)
                         {
                             searchTags = searchText
                                 .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
@@ -1497,6 +1517,7 @@ namespace OOP2
                             string formattedWorHours = (workingstart == DateTime.MinValue || workingend == DateTime.MinValue) ? " " : $"{workingstart:hh\\:mm tt} - {workingend:hh\\:mm tt}";
                             string ratings = reader["Ratings"].ToString();
                             string tagsFromDb = reader["Tags"]?.ToString() ?? "";
+                            string facilityCategory = reader["Service Category"].ToString();
 
                             List<string> facilityTags = tagsFromDb
                                 .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
@@ -1504,17 +1525,17 @@ namespace OOP2
                                 .ToList();
 
                             bool matchesSearch = true;
-                            if (searchTags.Count > 0)
+                            if (isSearching)
                             {
-                                matchesSearch = searchTags.Intersect(facilityTags).Any();
+                                bool nameMatches = fName.ToLower().Contains(searchText.ToLower());
+                                bool tagsMatch = searchTags.Intersect(facilityTags).Any();
+                                matchesSearch = nameMatches || tagsMatch;
                             }
 
                             if (!matchesSearch)
                             {
-                                System.Windows.Forms.MessageBox.Show("No Search Match!");
-                                continue;
+                                continue; 
                             }
-
                             decimal minPrice = 0, maxPrice = 0;
                             using (OleDbCommand priceCmd = new OleDbCommand("SELECT MIN(Price), MAX(Price) FROM [Facility Services] WHERE Facility_ID = ?", myConn))
                             {
@@ -1559,8 +1580,6 @@ namespace OOP2
                 }
             }
         }
-
-
 
         public void ViewFacDets(int ID)
         {
@@ -3066,6 +3085,7 @@ namespace OOP2
 
         private void NameTextBox_Click(object sender, EventArgs e)
         {
+            WelcomeLabel.Visible = false;
             SerButton.Visible = true;
             SerPanel.Visible = true;
             ServicesPanel.Visible = false;

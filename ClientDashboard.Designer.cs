@@ -850,7 +850,7 @@
             SearchPanel.Controls.Add(SearchButton);
             SearchPanel.Controls.Add(NameTextBox);
             SearchPanel.Controls.Add(Searchicon);
-            SearchPanel.Location = new System.Drawing.Point(367, 4);
+            SearchPanel.Location = new System.Drawing.Point(526, 10);
             SearchPanel.Name = "SearchPanel";
             SearchPanel.Size = new System.Drawing.Size(387, 51);
             SearchPanel.TabIndex = 27;
