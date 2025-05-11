@@ -2471,7 +2471,7 @@ namespace OOP2
                     }
                 }
 
-                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration] " +
+                string selectAppointment = "SELECT [Appointment Status], [Appointment Date], [Date Booked],[Start Time], [End Time], [Estimated Price], [Estimated Duration], Reason " +
                            "FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
 
                 using (OleDbCommand cmd = new OleDbCommand(selectAppointment, myConn))
@@ -2501,6 +2501,7 @@ namespace OOP2
 
                             string price = adminReader["Estimated Price"].ToString();
                             string duration = adminReader["Estimated Duration"].ToString();
+                            string reason = adminReader["Reason"].ToString();
 
                             ASdatetext.Text = dateapp + " ,    " + formattedStart + " - " + formattedEnd;
                             ASpricetext.Text = "PHP " + price + ".00";
@@ -2526,6 +2527,8 @@ namespace OOP2
                             else
                             {
                                 ASstattext.ForeColor = Color.Red;
+                                ASReasonlabel.Visible = true; ASReasontext.Visible = true;
+                                ASReasontext.Text = reason;
                                 ASConfrimButton.Visible = false; ASCancelButton.Visible = false;
                                 ASCompleteButton.Visible = false; ASnoShoButton.Visible = false;
                             }
@@ -2614,7 +2617,7 @@ namespace OOP2
 
                 var message = new MailMessage();
                 message.From = new MailAddress("snmcorporation.dlic@gmail.com");
-                message.To.Add("vaughanash02@gmail.com");
+                message.To.Add(clientEmail);
                 message.Subject = "Appointment Cancellation Notice";
                 message.Body = emailBody;
                 message.IsBodyHtml = true;
@@ -2681,7 +2684,7 @@ namespace OOP2
 
                 var message = new MailMessage();
                 message.From = new MailAddress("snmcorporation.dlic@gmail.com");
-                message.To.Add("vaughanash02@gmail.com");
+                message.To.Add(clientEmail);
                 message.Subject = "Appointment Cancellation Notice";
                 message.Body = emailBody;
                 message.IsBodyHtml = true;
@@ -2743,7 +2746,7 @@ namespace OOP2
 
                 var message = new MailMessage();
                 message.From = new MailAddress("snmcorporation.dlic@gmail.com");
-                message.To.Add("vaughanash02@gmail.com");
+                message.To.Add(clientEmail);
                 message.Subject = "Appointment Cancellation Notice";
                 message.Body = emailBody;
                 message.IsBodyHtml = true;
@@ -2806,7 +2809,7 @@ namespace OOP2
 
                 var message = new MailMessage();
                 message.From = new MailAddress("snmcorporation.dlic@gmail.com");
-                message.To.Add("vaughanash02@gmail.com");
+                message.To.Add(clientEmail);
                 message.Subject = "Appointment Cancellation Notice";
                 message.Body = emailBody;
                 message.IsBodyHtml = true;
@@ -3908,7 +3911,7 @@ namespace OOP2
                 conn.Open();
                 string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID, [View Status]
                          FROM Notifications
-                         WHERE Facility_ID = ? AND Sender = IN (?, ?)
+                         WHERE Facility_ID = ? AND Sender IN (?, ?)
                          ORDER BY [Date and Time] DESC";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))

@@ -29,7 +29,6 @@ using System.Configuration.Provider;
 
 namespace OOP2
 {
-
     public partial class ClientDashboard : Form, ClientInfo, FacilityInfo
     {
         OleDbConnection? myConn;
@@ -73,6 +72,7 @@ namespace OOP2
         public DateTime workingend;
         DateTime currentMonth = DateTime.Today;
         List<DateTime> exceptionDays = new List<DateTime>();
+
         string locs = "", Ems = "", selectedTime = "", filter1 = "", filter2 = "", appdate = "", apptime = "";
         int facid, Appid;
         int clientId;
@@ -83,7 +83,8 @@ namespace OOP2
         {
             InitializeComponent();
             InfoGetter(); LoadHistory(Appid, facid, clientId); LoadUpcomingHistory(Appid, facid, clientId);
-            Loaders(); LoadTopFacilities(); HiLabel.Text = $"Hi {FName},";
+            Loaders(); LoadTopFacilities(); 
+            HiLabel.Text = $"Hi {FName},";
             AppSerchtext.TextChanged += AppSerchtext_TextChanged;
             DashboardPanel.Visible = true;
             DashboardPanel2.Visible = false;
@@ -133,6 +134,7 @@ namespace OOP2
             MessagePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MessagePanel.Width, MessagePanel.Height, 10, 10));
             RateButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, RateButton.Width, RateButton.Height, 10, 10));
             RecomdPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, RecomdPanel.Width, RecomdPanel.Height, 10, 10));
+
             //DASHBOARD
             DashboardPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel.Width, DashboardPanel.Height, 20, 20));
             DashboardPanel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DashboardPanel2.Width, DashboardPanel2.Height, 20, 20));
@@ -153,6 +155,7 @@ namespace OOP2
             LogoButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogoButton.Width, LogoButton.Height, 10, 10));
             LogosButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LogosButton.Width, LogosButton.Height, 10, 10));
             AppointmentPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentPanel.Width, AppointmentPanel.Height, 10, 10));
+
             //SERVICES
             ServicesPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ServicesPanel.Width, ServicesPanel.Height, 10, 10));
             BeautySPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BeautySPanel.Width, BeautySPanel.Height, 10, 10));
@@ -169,6 +172,7 @@ namespace OOP2
             EduSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, EduSbutton.Width, EduSbutton.Height, 10, 10));
             FoodSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FoodSbutton.Width, FoodSbutton.Height, 10, 10));
             MisSbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, MisSbutton.Width, MisSbutton.Height, 10, 10));
+
             //SERVICES 2
             SerPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerPanel.Width, SerPanel.Height, 10, 10));
             FacProPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FacProPanel.Width, FacProPanel.Height, 10, 10));
@@ -178,14 +182,17 @@ namespace OOP2
             BaADTPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaADTPanel.Width, BaADTPanel.Height, 10, 10));
             SOTable.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SOTable.Width, SOTable.Height, 10, 10));
             FPBookAppButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FPBookAppButton.Width, FPBookAppButton.Height, 10, 10));
+
             //Calendar
             CalendarPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CalendarPanel.Width, CalendarPanel.Height, 10, 10));
             calendarsButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, calendarsButton.Width, calendarsButton.Height, 10, 10));
             CACnext.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CACnext.Width, CACnext.Height, 10, 10));
             CACprev.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CACprev.Width, CACprev.Height, 10, 10));
+
             //Appointment
             AppointmentsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppointmentsPanel.Width, AppointmentsPanel.Height, 10, 10));
             appointmentsbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, appointmentsbutton.Width, appointmentsbutton.Height, 10, 10));
+
             //APPOINTMENT DETAILS
             AstoreproPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AstoreproPanel.Width, AstoreproPanel.Height, 10, 10));
             AstatPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AstatPanel.Width, AstatPanel.Height, 10, 10));
@@ -194,6 +201,7 @@ namespace OOP2
             BaADTPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BaADTPanel.Width, BaADTPanel.Height, 10, 10));
             ATCPrev.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCPrev.Width, ATCPrev.Height, 10, 10));
             ATCNext.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ATCNext.Width, ATCNext.Height, 10, 10));
+
             //PROFILE
             ProPicPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ProPicPanel.Width, ProPicPanel.Height, 10, 10));
             PIPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIPanel.Width, PIPanel.Height, 10, 10));
@@ -206,8 +214,6 @@ namespace OOP2
             PIEpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PIEpanel.Width, PIEpanel.Height, 10, 10));
             DeleteAccButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DeleteAccButton.Width, DeleteAccButton.Height, 10, 10));
 
-
-            //button60.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button60.Width, button60.Height, 10, 10));
             //SETTINGS
             GeneralPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GeneralPanel.Width, GeneralPanel.Height, 10, 10));
             AppearancePanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, AppearancePanel.Width, AppearancePanel.Height, 10, 10));
@@ -306,7 +312,6 @@ namespace OOP2
             HeaderPanel.Location = new Point(75, 44);
             panel44.Visible = true;
         }
-
         private void LogosButton_Click(object sender, EventArgs e)
         {
             dbp1 = true;
@@ -571,7 +576,6 @@ namespace OOP2
                 notify = false;
             }
         }
-
         private void DashboardButton_Click(object sender, EventArgs e)
         {
             InfoGetter();
@@ -624,7 +628,6 @@ namespace OOP2
                 notify = false;
             }
         }
-
         private void SerStoreButton1_Click(object sender, EventArgs e)
         {
             //PROFILE
@@ -641,7 +644,6 @@ namespace OOP2
                 notify = false;
             }
         }
-
         private void FPButton_Click(object sender, EventArgs e)
         {
             //PROFILE
@@ -657,7 +659,6 @@ namespace OOP2
                 notify = false;
             }
         }
-
         private void FPBookAppButton_Click(object sender, EventArgs e)
         {
             FacilityProPanel.Visible = false;
@@ -671,7 +672,6 @@ namespace OOP2
                 notify = false;
             }
         }
-
         private void SerButton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
@@ -715,7 +715,6 @@ namespace OOP2
             }
             sercat = null;
         }
-
         private void CalendarButton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
@@ -819,7 +818,6 @@ namespace OOP2
             FilterBox.Visible = true; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
             LoadHistory(Appid, facid, clientId);
         }
-
         private void AppDetsbutton_Click(object sender, EventArgs e)
         {
             //DASHBOARD
@@ -870,7 +868,6 @@ namespace OOP2
             }
             FilterBox.Visible = true; FilterDateBox.Visible = false; FilterStatusBox.Visible = false; AppSearch.Visible = false;
         }
-
         private void ProfileButton_Click(object sender, EventArgs e)
         {
             InfoGetter();
@@ -973,7 +970,6 @@ namespace OOP2
                 notify = false;
             }
         }
-
         private void PIEditButton_Click(object sender, EventArgs e)
         {
             WelcomeLabel.Visible = false;
@@ -1008,7 +1004,6 @@ namespace OOP2
                 FillEM.Visible = true;
             }
         }
-
         private void DeleteAccButton_Click(object sender, EventArgs e)
         {
             DialogResult results = System.Windows.Forms.MessageBox.Show("Are you sure you want to permanently delete this account? This action cannot be undone.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -1405,7 +1400,6 @@ namespace OOP2
                 }
             }
         }
-
         public void ViewFacDets(int ID)
         {
             //PROFILE
@@ -1456,7 +1450,6 @@ namespace OOP2
             facid = ID;
             LoadFacilityData(ID);
         }
-
         private void LoadFacilityData(int ID)
         {
             ClientSopanel.Controls.Clear();
@@ -2226,7 +2219,7 @@ namespace OOP2
                             rating.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, usersPanel.Width, usersPanel.Height, 10, 10));
                             rating.Anchor = AnchorStyles.Top | AnchorStyles.Right;
                             rating.Width = Upcomingpanel.ClientSize.Width - 20;
-                            rating.Location = new Point(0, margin);
+                            rating.Location = new Point(10, margin);
                             margin += rating.Height + 10;
 
                             string adminQuery = "SELECT [Appointment Status], [Appointment Date], [Date Booked] FROM Appointments WHERE [Client_ID] = ? AND [Facility_ID] = ? AND [Appointment_ID] = ?";
@@ -3038,7 +3031,7 @@ namespace OOP2
                 conn.Open();
                 string query = @"SELECT Title, Message, [Date and Time], Appointment_ID, Facility_ID, Client_ID, [View Status]
                          FROM Notifications
-                         WHERE Facility_ID = ? AND Sender = ?
+                         WHERE Client_ID = ? AND Sender = ?
                          ORDER BY [Date and Time] DESC";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -3173,6 +3166,11 @@ namespace OOP2
             Messagerpanel.Visible = true; Messagerpanel.BringToFront();
             facid = 2;
             LoadChatMessages(clientId, facid);
+        }
+
+        private void RecomdPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

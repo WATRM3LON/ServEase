@@ -51,7 +51,6 @@ namespace OOP2
             base.OnClick(e);
             ToggleSelection();
         }
-
         private void ToggleSelection()
         {
             IsSelected = !IsSelected;
@@ -59,6 +58,5 @@ namespace OOP2
 
             ServiceClicked?.Invoke(this, EventArgs.Empty);
         }
-
     }
 }

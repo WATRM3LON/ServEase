@@ -613,6 +613,7 @@
             label1.Size = new System.Drawing.Size(143, 23);
             label1.TabIndex = 10;
             label1.Text = "Forgot Password?";
+            label1.Visible = false;
             // 
             // LoginButton
             // 
@@ -692,6 +693,7 @@
             PasswordLTextBox.Location = new System.Drawing.Point(3, 8);
             PasswordLTextBox.Multiline = true;
             PasswordLTextBox.Name = "PasswordLTextBox";
+            PasswordLTextBox.PasswordChar = '+';
             PasswordLTextBox.Size = new System.Drawing.Size(269, 37);
             PasswordLTextBox.TabIndex = 8;
             PasswordLTextBox.Click += PasswordLTextBox_Click;

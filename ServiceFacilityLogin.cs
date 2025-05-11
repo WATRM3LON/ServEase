@@ -37,6 +37,7 @@ namespace OOP2
         {
             InitializeComponent();
             Loaders();
+            PasswordLTextBox.UseSystemPasswordChar = true;
         }
         public void Loaders()
         {
@@ -344,19 +345,20 @@ namespace OOP2
             {
                 using (OleDbConnection myConn = new OleDbConnection(connection))
                 {
+                    string stat = "Pending";
                     myConn.Open();
                     string query = "INSERT INTO [Service Facilities] ([Facility Name], [Facility Location], [Owner First Name], [Owner Last Name], [Contact Number], [Email Address], [Password], [Service Category], [Specific Category], [Working Hours Start], [Working Hours End], [Working Days], [Exception Day (Closed)],Ratings, [Approval Status], [Tags]) " +
-                                   "VALUES (@FacilityName, @FLocation, @OFName, @OLName, @CNumber, @EmailAdd, @Password, @Servicecategory, @specificcategory, @Workinghoursstart, @Workinghoursend, @Workingdays, @closed, @Ratings, @Approvalstatus, @tags)";
+                                   $"VALUES (NULL, NULL, '{FNameTextBox.Text}', '{LNameTextBox.Text}', '{CNumberSTextBox.Text}', '{EmailSTextBox.Text}', '{CPasswordTextBox.Text}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{stat}', NULL)";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                     {
-                        cmd.Parameters.AddWithValue("@FacilityName", DBNull.Value);
+                        /*cmd.Parameters.AddWithValue("@FacilityName", DBNull.Value);
                         cmd.Parameters.AddWithValue("@FLocation", DBNull.Value);
                         cmd.Parameters.AddWithValue("@OFName", FNameTextBox.Text);
                         cmd.Parameters.AddWithValue("@OLName", LNameTextBox.Text);
                         cmd.Parameters.AddWithValue("@CNumber", CNumberSTextBox.Text);
                         cmd.Parameters.AddWithValue("@EmailAdd", EmailSTextBox.Text);
-                        cmd.Parameters.AddWithValue("@Password", PasswordSTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Password", CPasswordTextBox.Text);
                         cmd.Parameters.AddWithValue("@Servicecategory", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workinghoursstart", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Workinghoursend", DBNull.Value);
@@ -364,10 +366,10 @@ namespace OOP2
                         cmd.Parameters.AddWithValue("@closed", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Ratings", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Approvalstatus", "Pending");
-                        cmd.Parameters.AddWithValue("@tags", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@tags", DBNull.Value);*/
 
                         cmd.ExecuteNonQuery();
-                       
+
                     }
 
                     int newFacilityId = 0;
@@ -405,13 +407,12 @@ namespace OOP2
                     }
 
                     string facilityfiles = "INSERT INTO [Facility Files] " +
-                                                 "(Facility_ID, [Profile Picture], [Business Registration], [Valid Government-issued ID], [Facility Photos], [Service Licenses / Certifications], [Proof of Address], [Tax Documents], [Insurance or Safety Compliance], [Uploaded Date], [Note]) " +
-                                                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                                                 "(Facility_ID, [Profile Picture], [Business Registration], [Valid Government-issued ID], [Service Licenses / Certifications], [Proof of Address], [Tax Documents], [Insurance or Safety Compliance], [Uploaded Date], [Note]) " +
+                                                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                     using (OleDbCommand cmd = new OleDbCommand(facilityfiles, myConn))
                     {
                         cmd.Parameters.AddWithValue("?", newFacilityId);
-                        cmd.Parameters.AddWithValue("?", DBNull.Value);
                         cmd.Parameters.AddWithValue("?", DBNull.Value);
                         cmd.Parameters.AddWithValue("?", DBNull.Value);
                         cmd.Parameters.AddWithValue("?", DBNull.Value);
@@ -437,7 +438,7 @@ namespace OOP2
                             cmd.Parameters.AddWithValue("?", DBNull.Value);
                             cmd.Parameters.AddWithValue("?", DBNull.Value);
                             cmd.Parameters.AddWithValue("?", DBNull.Value);
-                            cmd.Parameters.AddWithValue("?", DBNull.Value); 
+                            cmd.Parameters.AddWithValue("?", DBNull.Value);
 
                             cmd.ExecuteNonQuery();
                         }
@@ -447,7 +448,7 @@ namespace OOP2
                     {
                         string ServiceoffQuery = "INSERT INTO [Facility Timeslots] " +
                                                  "(Facility_ID, [Start Time], [End Time], [Status]) " +
-                                                 "VALUES (?, ?, ?, ?, ?)";
+                                                 "VALUES (?, ?, ?, ?)";
 
                         using (OleDbCommand cmd = new OleDbCommand(ServiceoffQuery, myConn))
                         {
@@ -510,6 +511,11 @@ namespace OOP2
         {
             InvalidLEP.Visible = false;
             PasswordLPanel.BackColor = PasswordLTextBox.BackColor = Color.White;
+        }
+
+        private void Unhidebutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5738,6 +5738,7 @@
             QRbutton.Size = new System.Drawing.Size(74, 70);
             QRbutton.TabIndex = 75;
             QRbutton.UseVisualStyleBackColor = true;
+            QRbutton.Visible = false;
             QRbutton.Click += QRbutton_Click;
             // 
             // QRBox
@@ -6178,6 +6179,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(254, 241, 245);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ViewdetailsPanel);
             Controls.Add(DBrevenue);
             Controls.Add(DBanalytics);
             Controls.Add(AppCountpanel);
@@ -6198,7 +6200,6 @@
             Controls.Add(CloseButton);
             Controls.Add(HeaderPanel);
             Controls.Add(EditFIPanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(UploadfilesPanel);
             Controls.Add(AppointmentsPanel);
             Controls.Add(ATPanel);

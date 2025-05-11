@@ -908,17 +908,18 @@
             RecomdPanel.BackColor = System.Drawing.Color.FromArgb(247, 247, 247);
             RecomdPanel.Controls.Add(RecodPanel);
             RecomdPanel.Controls.Add(Recomdlabel);
-            RecomdPanel.Location = new System.Drawing.Point(277, 594);
+            RecomdPanel.Location = new System.Drawing.Point(277, 602);
             RecomdPanel.Name = "RecomdPanel";
-            RecomdPanel.Size = new System.Drawing.Size(893, 363);
+            RecomdPanel.Size = new System.Drawing.Size(893, 338);
             RecomdPanel.TabIndex = 29;
+            RecomdPanel.Paint += RecomdPanel_Paint;
             // 
             // RecodPanel
             // 
             RecodPanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            RecodPanel.Location = new System.Drawing.Point(13, 59);
+            RecodPanel.Location = new System.Drawing.Point(13, 67);
             RecodPanel.Name = "RecodPanel";
-            RecodPanel.Size = new System.Drawing.Size(868, 293);
+            RecodPanel.Size = new System.Drawing.Size(868, 260);
             RecodPanel.TabIndex = 39;
             // 
             // Recomdlabel
@@ -4899,13 +4900,14 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(219, 247, 210);
             ClientSize = new System.Drawing.Size(1219, 990);
+            Controls.Add(ViewdetailsPanel);
+            Controls.Add(RecomdPanel);
             Controls.Add(ProfilePanel);
             Controls.Add(NotificationPanel);
             Controls.Add(AdsBox);
             Controls.Add(FilterBox);
             Controls.Add(FilterStatusBox);
             Controls.Add(FilterDateBox);
-            Controls.Add(RecomdPanel);
             Controls.Add(AppointmentPanel);
             Controls.Add(panel44);
             Controls.Add(NotifyButton);
@@ -4921,7 +4923,6 @@
             Controls.Add(Messagerpanel);
             Controls.Add(AppSearch);
             Controls.Add(FacilityProPanel);
-            Controls.Add(ViewdetailsPanel);
             Controls.Add(CalendarPanel);
             Controls.Add(CalendarAppointmentPanel);
             Controls.Add(AppointmentsPanel);

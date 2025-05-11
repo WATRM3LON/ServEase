@@ -16,7 +16,6 @@ namespace OOP2
         {
             InitializeComponent();
         }
-
         public void SetData(string Servicename, string Descritpion, decimal Price, string Duration)
         {
             ServiceName.Text = Servicename;

@@ -237,6 +237,7 @@
             NotifyButton.TabIndex = 54;
             NotifyButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             NotifyButton.UseVisualStyleBackColor = false;
+            NotifyButton.Click += NotifyButton_Click;
             // 
             // DashboardPanel2
             // 
@@ -285,6 +286,7 @@
             SccButton.TabIndex = 19;
             SccButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             SccButton.UseVisualStyleBackColor = false;
+            SccButton.Visible = false;
             // 
             // CButton
             // 
@@ -400,6 +402,7 @@
             SCButton.Text = " Source Code";
             SCButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             SCButton.UseVisualStyleBackColor = false;
+            SCButton.Visible = false;
             // 
             // RequestsButton
             // 

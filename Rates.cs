@@ -49,14 +49,6 @@ namespace OOP2
             var g = e.Graphics;
             g.Clear(Color.Honeydew);
 
-            /*using (var questionFont = new Font("Segoe UI", 14, FontStyle.Bold))
-            using (var textBrush = new SolidBrush(Color.Black))
-            {
-                var question = "How do you rate this\nService Facility?";
-                var size = g.MeasureString(question, questionFont);
-                g.DrawString(question, questionFont, textBrush, (Width - size.Width) / 2, 10);
-            }*/
-
             int starsTop = 80;
             int starsWidth = Width - 80;
             int starSize = starsWidth / starCount - 10;

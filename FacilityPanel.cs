@@ -29,7 +29,6 @@ namespace OOP2
         {
             InitializeComponent();
         }
-
         public void SetData(string Servicename, string ratings, string workinghours, string pricerange)
         {
             SerStoreButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SerStoreButton.Width, SerStoreButton.Height, 10, 10));
@@ -38,7 +37,6 @@ namespace OOP2
             WorkingHoursText.Text = workinghours;
             Pricerangetext.Text = pricerange;
         }
-
         private void SerStoreButton_Click(object sender, EventArgs e)
         {
             ViewProfileClicked?.Invoke(this, EventArgs.Empty);

@@ -1451,5 +1451,26 @@ namespace OOP2
         {
             NotificationPanel.Visible = false;
         }
+        bool notify = false;
+        private void NotifyButton_Click(object sender, EventArgs e)
+        {
+            clientId = 3;
+
+            if (notify == false)
+            {
+                NotificationPanel.Visible = true;
+                NotifyButton.BackColor = Color.White;
+                notify = true;
+                NotificationPanel.BringToFront();
+                LoadFacilityNotifications(clientId);
+            }
+            else
+            {
+                NotificationPanel.Visible = false;
+                NotifyButton.BackColor = ColorTranslator.FromHtml("#cff1c4");
+                notify = false;
+            }
+
+        }
     }
 }
