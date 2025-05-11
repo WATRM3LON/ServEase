@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OOP2
+namespace OOP2.Forms
 {
     public interface ClientInfo
     {
@@ -16,21 +16,21 @@ namespace OOP2
         string Password { get; set; }
         string ContactNumber { get; set; }
         string LocationAddress { get; set; }
-        int count {  get; set; }
+        int count { get; set; }
         string Sex { get; set; }
     }
 
     public interface FacilityInfo
     {
         string Facname { get; set; }
-        string SerCat {  get; set; }
+        string SerCat { get; set; }
         string SpeCat { get; set; }
         DateTime WorHours { get; set; }
         string WorDays { get; set; }
-        string Ratings { get; set; }   
+        string Ratings { get; set; }
         string AppStatus { get; set; }
-        string Tags {  get; set; }
-        
+        string Tags { get; set; }
+
 
     }
     public abstract class Updates : Form

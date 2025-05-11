@@ -27,6 +27,7 @@ using ZXing.Common;
 using System.Net.Mail;
 using System.Net;
 using System.Configuration.Provider;
+using OOP2.Forms;
 
 namespace OOP2
 {
